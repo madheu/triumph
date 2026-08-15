@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triumph — Praxis 5001 Diagnostic Study System</title>
+
+  <!--
+    ============================================================
+    TRIUMPH · LANDING PAGE · v2 (Junior pass)
+    ============================================================
+    ASSUMPTIONS (待用户确认):
+    - 产品名 "Triumph"（用户定）
+    - 定位: Praxis 5001 备考 = 免费题库 + 诊断 + 通过率预测 + 计划
+    - 定价 $15/mo 是产品假设，未验证，Landing 用于验证付费意愿
+    - 配色: 莫兰迪色系，主色灰调粉 #C09D9B（v2 变更）
+    - 文案为真实调研数据 (NCTQ/EdWeek/论坛)，不编造
+    PLACEHOLDERS:
+    - [wordmark logo] 暂用文字标，最终 logo 待定
+    - 诊断报告交互在下一版 (diagnostic-demo)
+    ============================================================
+  -->
+
+  <!-- React + Babel pinned -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Fonts: Instrument Serif (editorial display) + Instrument Sans (body) + JetBrains Mono (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; width: 100%; overflow-x: hidden; }
+    *, *::before, *::after { min-width: 0; }
+    body {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    :root {
+      --bg: #F2EFE9;
+      --bg-soft: #E8E3D8;
+      --ink: #3C3733;
+      --ink-soft: #6E6760;
+      --line: #D8D1C5;
+      --accent: #C09D9B;
+      --accent-deep: #A67D7A;
+      --on-accent: #332E2B;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Instrument Sans", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    ::selection { background: var(--ink); color: var(--bg); }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+    .serif-it { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .mono { font-family: var(--mono); }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding: 28px 0 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .wordmark {
+      font-family: var(--serif); font-style: italic; font-size: 26px;
+      letter-spacing: -0.01em;
+    }
+    .nav-note { font-size: 13px; color: var(--ink-soft); }
+    .nav-cta {
+      font-size: 14px; font-weight: 600; color: var(--accent);
+      text-decoration: none; border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 96px 0 72px; }
+    .hero .eyebrow { display: block; margin-bottom: 28px; }
+    .hero h1 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(44px, 6.4vw, 76px);
+      line-height: 1.06; letter-spacing: -0.015em;
+      max-width: 16em;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero .lede {
+      margin-top: 32px; max-width: 34em;
+      font-size: 19px; line-height: 1.65; color: var(--ink-soft);
+    }
+    .hero .lede strong { color: var(--ink); font-weight: 600; }
+    .hero-cta-row { margin-top: 40px; display: flex; gap: 24px; align-items: center; }
+    .btn-primary {
+      background: var(--accent); color: var(--on-accent);
+      border: none; padding: 15px 30px;
+      font-family: var(--sans); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: background 0.18s ease;
+    }
+    .btn-primary:hover { background: var(--accent-deep); }
+    .btn-secondary {
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--line); padding: 14px 28px;
+      font-family: var(--sans); font-size: 15px; font-weight: 500;
+      cursor: pointer; transition: border-color 0.18s ease;
+    }
+    .btn-secondary:hover { border-color: var(--ink); }
+
+    /* hero 底部：四科标注（编辑式，线条分隔） */
+    .hero-subtests { margin-top: 72px; border-top: 1px solid var(--line); }
+    .subtest-row {
+      display: grid; grid-template-columns: 90px 1fr 1fr auto;
+      gap: 20px; align-items: baseline;
+      padding: 18px 0; border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .subtest-code { font-family: var(--mono); color: var(--ink-soft); }
+    .subtest-name { font-family: var(--serif); font-size: 20px; }
+    .subtest-desc { color: var(--ink-soft); font-size: 14px; }
+    .subtest-num { font-family: var(--mono); color: var(--accent); }
+
+    /* ---------- Problem ---------- */
+    .problem { padding: 88px 0; background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .problem .wrap { max-width: 760px; }
+    .problem .eyebrow { display: block; margin-bottom: 24px; }
+    .problem h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(30px, 3.6vw, 42px); line-height: 1.2;
+      margin-bottom: 28px;
+    }
+    .problem p { font-size: 17px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 18px; }
+    .problem p strong { color: var(--ink); font-weight: 600; }
+    .stat-row {
+      margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 32px; border-top: 1px solid var(--line); padding-top: 32px;
+    }
+    .stat .mono { font-size: 30px; color: var(--accent); display: block; margin-bottom: 8px; }
+    .stat span:last-child { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+
+    /* ---------- How it works ---------- */
+    .how { padding: 96px 0; }
+    .how .eyebrow { display: block; margin-bottom: 24px; }
+    .how h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(30px, 3.6vw, 42px); line-height: 1.2;
+      margin-bottom: 56px; max-width: 18em;
+    }
+    .step {
+      display: grid; grid-template-columns: 90px 1fr;
+      gap: 28px; padding: 28px 0; border-top: 1px solid var(--line);
+    }
+    .step:last-child { border-bottom: 1px solid var(--line); }
+    .step-num { font-family: var(--mono); color: var(--accent); font-size: 15px; padding-top: 4px; }
+    .step h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; margin-bottom: 8px; }
+    .step p { color: var(--ink-soft); line-height: 1.65; max-width: 36em; }
+
+    /* ---------- Pricing ---------- */
+    .pricing { padding: 88px 0; background: var(--bg-soft); border-top: 1px solid var(--line); }
+    .pricing .wrap { max-width: 760px; }
+    .pricing .eyebrow { display: block; margin-bottom: 24px; }
+    .pricing h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(30px, 3.6vw, 42px); line-height: 1.2; margin-bottom: 40px;
+    }
+    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .price-cell { background: var(--bg); padding: 36px; }
+    .price-cell h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin-bottom: 10px; }
+    .price-cell .mono { font-size: 34px; display: block; margin-bottom: 16px; }
+    .price-cell ul { list-style: none; margin: 16px 0 24px; }
+    .price-cell li { font-size: 14px; color: var(--ink-soft); padding: 6px 0; border-top: 1px solid var(--line); }
+    .price-cell li:first-child { border-top: none; }
+    .price-cell .btn-primary, .price-cell .btn-secondary { width: 100%; }
+
+    /* ---------- Footer ---------- */
+    .footer { padding: 48px 0 64px; }
+    .footer p { font-size: 12px; color: var(--ink-soft); line-height: 1.7; max-width: 60em; }
+
+    @media (max-width: 760px) {
+      .wrap { padding: 0 50px; }
+      .nav-note { display: none; }
+      .hero { padding: 56px 0 48px; }
+      .hero h1 { font-size: clamp(34px, 9vw, 46px); line-height: 1.12; }
+      .hero .lede { font-size: 17px; line-height: 1.6; }
+      .hero-cta-row { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-cta-row .btn-primary, .hero-cta-row .btn-secondary { width: 100%; }
+      .hero-subtests { margin-top: 48px; }
+      .subtest-row { grid-template-columns: 60px 1fr; gap: 12px; padding: 14px 0; }
+      .subtest-desc { grid-column: 2; font-size: 13px; line-height: 1.5; }
+      .problem { padding: 56px 0; }
+      .stat-row { grid-template-columns: 1fr; gap: 22px; }
+      .how { padding: 56px 0; }
+      .step { grid-template-columns: 44px 1fr; gap: 14px; padding: 22px 0; }
+      .step h3 { font-size: 21px; }
+      .step p { font-size: 15px; }
+      .pricing { padding: 56px 0; }
+      .price-grid { grid-template-columns: 1fr; }
+      .price-cell { padding: 28px 22px; }
+      .footer { padding: 36px 0 48px; }
+      h1, h2, h3, p, li, .subtest-desc { overflow-wrap: break-word; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const LP = {
+      // 色彩/字型走 :root CSS 变量，这里不放色值
+    };
+
+    function Nav() {
+      return (
+        <header className="nav wrap">
+          <div className="wordmark">Triumph<span style={{color:'var(--accent)'}}>.</span></div>
+          <div style={{display:'flex', gap:24, alignItems:'baseline'}}>
+            <span className="nav-note">Praxis 5001 · unofficial</span>
+            <a className="nav-cta" href="#pricing">Free diagnostic →</a>
+          </div>
+        </header>
+      );
+    }
+
+    function Hero() {
+      const subtests = [
+        { code: '5002', name: 'Reading & Language Arts', desc: 'Phonics, vocabulary, comprehension, writing instruction.', num: '80 q' },
+        { code: '5003', name: 'Mathematics', desc: 'Number sense, algebra, geometry, data — and how to teach it.', num: '50 q' },
+        { code: '5004', name: 'Social Studies', desc: 'US history & government, geography, world history, economics.', num: '60 q' },
+        { code: '5005', name: 'Science', desc: 'Earth, life & physical science — plus inquiry and pedagogy.', num: '55 q' },
+      ];
+      return (
+        <section className="hero wrap">
+          <span className="eyebrow">A diagnostic study system for the Praxis 5001</span>
+          <h1>You've studied. You've practiced. <em>But do you know if you'll pass?</em></h1>
+          <p className="lede">
+            The Praxis 5001 is <strong>four separate tests</strong> — and it passes you on all of them or none.
+            Most people study them like one exam and find out too late which one was the weakest.
+            Triumph turns free practice into <strong>an honest readiness score</strong>, a plan for your
+            actual weak spots, and a forecast of how close you are to the pass.
+          </p>
+          <div className="hero-cta-row">
+            <button className="btn-primary" onClick={() => window.location.href = 'diagnostic.html'}>Run the free diagnostic</button>
+            <button className="btn-secondary" onClick={() => window.location.href = 'diagnostic.html'}>Try sample questions now</button>
+          </div>
+
+          {/* 四科标注：编辑式目录行 */}
+          <div className="hero-subtests">
+            {subtests.map(s => (
+              <div className="subtest-row" key={s.code}>
+                <span className="subtest-code">{s.code}</span>
+                <span className="subtest-name">{s.name}</span>
+                <span className="subtest-desc">{s.desc}</span>
+                <span className="subtest-num">{s.num}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    function Problem() {
+      return (
+        <section className="problem">
+          <div className="wrap">
+            <span className="eyebrow">Why this exam breaks people</span>
+            <h2>It's not one test. It's four gates, <em>in sequence.</em></h2>
+            <p>
+              Every subtest has its own passing score. Score high on math and fail science —
+              <strong>you don't pass, you retake science</strong> (full price, 28 days later).
+              Most candidates discover the weak one only after the score report arrives.
+            </p>
+            <p>
+              This is not a niche fear. A <strong>majority of first-time elementary teacher
+              candidates fail</strong> the most widely used licensure exam, and its first-time
+              pass rate sits <strong>below the bar exam</strong>. Some candidates sit for it
+              eleven times.
+            </p>
+            <div className="stat-row">
+              <div className="stat">
+                <span className="mono">&gt;50%</span>
+                <span>of first-time elementary candidates fail the licensure exam (NCTQ)</span>
+              </div>
+              <div className="stat">
+                <span className="mono">4/4</span>
+                <span>subtests must pass — one failing gate means a full retake</span>
+              </div>
+              <div className="stat">
+                <span className="mono">11×</span>
+                <span>attempts by one candidate on the teacher forums (real post)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function How() {
+      const steps = [
+        { n: '01', t: 'Practice free, on the real blueprint', d: 'A free question bank organized by the four subtests — same categories, same weights as the official Study Companion. No paywall on the questions themselves.' },
+        { n: '02', t: 'Get a readiness score, not a vague percentage', d: 'Your answers map to each subtest\u2019s categories. Triumph converts them to an estimated scaled score and tells you where you sit against your state\u2019s passing line.' },
+        { n: '03', t: 'A plan built for your weakest gate', d: 'Study time goes where the gap is — 60% on the subtest most likely to fail you, not equal effort across all four.' },
+        { n: '04', t: 'Track it like a training program', d: 'Progress, retake-readiness, and a study schedule that updates as you improve. No more guessing in the last two weeks.' },
+      ];
+      return (
+        <section className="how wrap">
+          <span className="eyebrow">How it works</span>
+          <h2>Free practice is the bait. <em>The system is the catch.</em></h2>
+          {steps.map(s => (
+            <div className="step" key={s.n}>
+              <div className="step-num">{s.n}</div>
+              <div>
+                <h3>{s.t}</h3>
+                <p>{s.d}</p>
+              </div>
+            </div>
+          ))}
+        </section>
+      );
+    }
+
+    function Pricing() {
+      return (
+        <section className="pricing" id="pricing">
+          <div className="wrap">
+            <span className="eyebrow">Pricing</span>
+            <h2>Cheaper than one retake. <em>Far cheaper than eleven.</em></h2>
+            <div className="price-grid">
+              <div className="price-cell">
+                <h3>Practice</h3>
+                <span className="mono">$0</span>
+                <ul>
+                  <li>Free question bank, all four subtests</li>
+                  <li>Category-level practice tracking</li>
+                  <li>Unlimited attempts</li>
+                </ul>
+                <button className="btn-secondary" onClick={() => window.location.href = 'diagnostic.html'}>Start free</button>
+              </div>
+              <div className="price-cell">
+                <h3>Triumph</h3>
+                <span className="mono">$15<span style={{fontSize:14, color:'var(--ink-soft)'}}>/mo</span></span>
+                <ul>
+                  <li>Readiness score &amp; pass-probability forecast</li>
+                  <li>Personalized study plan by weak subtest</li>
+                  <li>Progress tracking &amp; retake-readiness</li>
+                </ul>
+                <button className="btn-primary" onClick={() => window.location.href = 'diagnostic.html'}>Get the forecast</button>
+              </div>
+            </div>
+            <p style={{marginTop:24, fontSize:13, color:'var(--ink-soft)'}}>
+              A retake costs about $130 and 28 days. The plan costs $15. (Price is a hypothesis for validation.)
+            </p>
+          </div>
+        </section>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="footer wrap">
+          <p>
+            Triumph is an independent study tool. It is not affiliated with, endorsed by,
+            or sponsored by ETS, and is not approved by ETS. Praxis is a trademark of ETS.
+            All practice questions are original and aligned to the published test blueprint;
+            no official test items are reproduced.
+          </p>
+        </footer>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Nav />
+          <Hero />
+          <Problem />
+          <How />
+          <Pricing />
+          <Footer />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
