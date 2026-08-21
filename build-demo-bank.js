@@ -1,9 +1,10 @@
-// build-demo-bank.js — 把题库 JSON 构建进 Diagnostic Demo.html 的 DM_BANK
+// build-demo-bank.js — 把题库 JSON 构建进 triumph/diagnostic.html 的 DM_BANK
 // 用法: node build-demo-bank.js [source.json]
 // 默认源: E:/hermes-workspace/praxis_5001/template3-all-subtests-86.json
+// 注意: 构建后需运行 .\sync-site.ps1 同步到 site/ 再 .\deploy.ps1 部署
 const fs = require('fs');
 
-const demoPath = 'E:/harness/praxis-5001/Diagnostic Demo.html';
+const demoPath = 'E:\Triumph\praxis-5001/triumph/diagnostic.html';
 const srcPath = process.argv[2] || 'E:/hermes-workspace/praxis_5001/template3-all-subtests-86.json';
 const SUB = { '5002': 'Reading and Language Arts', '5003': 'Mathematics', '5004': 'Social Studies', '5005': 'Science' };
 

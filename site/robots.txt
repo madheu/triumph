@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+Disallow: /diagnostic.html
+Sitemap: https://trytriumph.de5.net/sitemap.xml

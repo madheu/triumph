@@ -1,11 +1,11 @@
 // merge-batches.js — 合并 Hermes 题库批次为 questions-full.json
 // 用法: node merge-batches.js
 // 输入: E:/hermes-workspace/praxis_5001/ 下的 questions.json + batch1..4.json（存在的都会合并）
-// 输出: E:/harness/praxis-5001/assets/questions-full.json（校验 id 唯一，重复则报错退出）
+// 输出: E:\Triumph\praxis-5001/assets/questions-full.json（校验 id 唯一，重复则报错退出）
 const fs = require('fs');
 
 const dir = 'E:/hermes-workspace/praxis_5001/';
-const outDir = 'E:/harness/praxis-5001/assets/';
+const outDir = 'E:\Triumph\praxis-5001/assets/';
 const files = ['questions.json', 'batch1.json', 'batch2.json', 'batch3.json', 'batch4.json'];
 
 let all = [];

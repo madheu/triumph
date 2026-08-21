@@ -1,0 +1,131 @@
+/* Triumph mobile-enhance.css — 统一移动端增强（所有页面注入）
+ * 依据 ui-ux-pro-max skill 规则：触控目标 44-48px、间距 ≥8px、
+ * 无横向滚动、长 token 用 overflow-wrap:anywhere（不用 break-all 切词）、
+ * tap delay 消除、下拉刷新控制、曲面屏安全区、减少动效
+ */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+/* ---------- 曲面屏/刘海安全区 ---------- */
+body {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ---------- 曲面屏边距（核心修复）：覆盖页面内联的 40/50px ----------
+ * realme GT Neo 6 SE 等曲面屏：视觉边缘被弯曲吃掉了 ~10px，
+ * 且浏览器可能报 620px 以上宽度导致页面 620px 断点不生效。
+ * 提高到 900px 断点 + 56px，保证曲面屏和常规手机都够。 */
+@media (max-width: 900px) {
+  .wrap { padding-left: 56px !important; padding-right: 56px !important; }
+  /* 页眉页脚跟随（nav/footer 一般带 wrap 类，双保险） */
+  .nav, .footer, header.nav, footer.footer { padding-left: 56px !important; padding-right: 56px !important; }
+}
+/* 超窄屏同样保持 56px，不缩水 */
+@media (max-width: 480px) {
+  .wrap { padding-left: 56px !important; padding-right: 56px !important; }
+  .nav, .footer, header.nav, footer.footer { padding-left: 56px !important; padding-right: 56px !important; }
+}
+
+/* ---------- 点击延迟与下拉刷新控制 ---------- */
+a, button, .opt, .sub-link, .km-tab, .btn-primary, .btn-ghost {
+  touch-action: manipulation;
+}
+/* 做题/诊断页防误触下拉刷新丢进度 */
+.quiz, .intro, .report, .card-box, main {
+  overscroll-behavior-y: contain;
+}
+
+/* ---------- 触控目标（Android 48dp / iOS 44pt 取 48px，窄屏生效） ---------- */
+@media (max-width: 760px) {
+  .nav-cta, .nav-btn, .btn-primary, .btn-ghost, .opt, .km-tab, button, .sub-link {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .nav-cta { padding: 12px 2px; text-decoration: none; }
+  .nav-btn { padding: 12px 14px; }
+  a.sub-link { min-height: 52px; }
+  .km-tab { min-height: 44px; }
+  button.nav-btn { display: inline-flex; }
+}
+
+/* ---------- 窄屏导航：折叠为两行，间距 ≥8px ---------- */
+@media (max-width: 620px) {
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px 0 !important;
+    padding: 20px 0 16px;
+  }
+  .nav .wordmark { align-self: flex-start; }
+  /* 只折叠"链接容器"（header 下的第一个普通 flex div），排除 modal 等 fixed 元素 */
+  .nav > div[style*="flex"], .nav > div:not(.modal):not(.modal-box) {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+  }
+  /* 375px 宽度下 4 个链接放不下（360px > 275px 可用）：
+     仅首页（.nav-links，4 个链接）隐藏次要链接，保留 Log in + Free diagnostic。
+     文章页/dashboard/srs（2-3 个链接）不受影响。
+     Dashboard 页面内部有全部入口，不损失可达性 */
+  .nav-links .nav-cta[href="resources"],
+  .nav-links .nav-cta[href="dashboard"] {
+    display: none;
+  }
+}
+
+/* ---------- 表格横向滚动（防溢出） ---------- */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll table { min-width: 480px; }
+/* 兜底：任何裸 table 也滚动（旧文章页） */
+@media (max-width: 760px) {
+  article table:not(.no-scroll) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  article table:not(.no-scroll) th { min-width: 90px; }
+  article table:not(.no-scroll) td { min-width: 120px; }
+}
+
+/* ---------- 防横向溢出（skill 规则：长 token 用 anywhere，不切断正文单词） ---------- */
+h1, h2, h3, p, li, a, span, .card-q, .opt, td, th {
+  overflow-wrap: anywhere;
+}
+/* 长 token（URL/ID/邮箱）用 anywhere 并允许收缩 */
+.nav-email, code, .stat .v {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+img, svg, video { max-width: 100%; height: auto; }
+/* 修 flex/grid 子项溢出：允许文本子项收缩（只针对直接子项，避免误伤） */
+.flex > *, .grid > * { min-inline-size: 0; }
+article h1, article h2, article h3, article p, article li { min-inline-size: 0; }
+
+/* ---------- 窄屏微调 ---------- */
+@media (max-width: 480px) {
+  .card-box { padding: 20px 16px; }
+  .card-q { font-size: 19px; }
+  .stat-line { font-size: 13px; }
+  .cta-box { padding: 16px 18px; }
+}
+
+/* ---------- 减少动效（无障碍） ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

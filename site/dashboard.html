@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dashboard — Triumph</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://trytriumph.de5.net/dashboard">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MSR1Q1G7W9');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- React + Babel pinned -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { min-width: 0; }
+    :root {
+      --bg: #F2EFE9; --bg-soft: #E8E3D8; --ink: #3C3733; --ink-soft: #6E6760;
+      --line: #D8D1C5; --accent: #C09D9B; --accent-deep: #A67D7A;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Instrument Sans", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    html, body { height: 100%; width: 100%; overflow-x: hidden; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { text-wrap: balance; }
+    p, li, td { overflow-wrap: break-word; }
+    a { color: var(--accent-deep); text-decoration: none; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 36px; }
+    @media (max-width: 900px) { .wrap { padding: 0 50px; } }
+
+    .nav { display: flex; align-items: baseline; justify-content: space-between; padding: 26px 0 22px; border-bottom: 1px solid var(--line);  flex-wrap: wrap; gap: 10px 18px;}
+    .wordmark { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--ink); display: inline-flex; align-items: center; min-height: 44px; }
+    .nav-cta { font-size: 14px; font-weight: 600; color: var(--accent); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    .nav-email { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+
+    .dash-head { padding: 40px 0 24px; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); display: block; margin-bottom: 14px; }
+    .dash-head h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4vw, 42px); line-height: 1.15; }
+    .dash-head h1 em { font-style: italic; color: var(--accent); }
+
+    .grid { display: grid; grid-template-columns: 230px 1fr 250px; gap: 26px; align-items: start; padding-bottom: 60px; }
+    @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; gap: 18px; } }
+
+    .panel { background: var(--bg); border: 1px solid var(--line); padding: 20px; }
+    .panel h2 { font-family: var(--serif); font-weight: 400; font-size: 19px; margin-bottom: 14px; }
+    .panel h2 em { font-style: italic; color: var(--accent); }
+
+    /* Left: subtest links */
+    .sub-link { display: block; padding: 12px 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink); transition: background .15s; }
+    .sub-link:hover { background: var(--bg-soft); }
+    .sub-link .code { font-family: var(--mono); color: var(--accent-deep); margin-right: 8px; font-size: 12px; }
+    .sub-link .n { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); float: right; }
+
+    /* Center: knowledge map (simplified) */
+    .km-tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); margin-bottom: 14px; flex-wrap: wrap; }
+    .km-tab { background: none; border: none; padding: 8px 14px; font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--ink-soft); cursor: pointer; border-bottom: 2px solid transparent; }
+    .km-tab.active { color: var(--ink); border-bottom-color: var(--accent); }
+    .km-node { padding: 10px 0; border-top: 1px solid var(--line); }
+    .km-node:first-child { border-top: none; }
+    .km-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .km-name { font-size: 14px; }
+    .km-pct { font-family: var(--mono); font-size: 12px; color: var(--accent-deep); }
+    .km-bar { height: 5px; background: var(--line); }
+    .km-fill { height: 5px; background: var(--accent); }
+
+    /* Right: countdown + stats */
+    .cd-input { width: 100%; padding: 10px 12px; font-family: var(--sans); font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); outline: none; margin-bottom: 10px; }
+    .cd-input:focus { border-color: var(--accent); }
+    .cd-input:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+    .cd-num { font-family: var(--mono); font-size: 34px; color: var(--accent); line-height: 1; margin: 8px 0 4px; }
+    .cd-label { font-size: 12px; color: var(--ink-soft); }
+    .stat-line { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid var(--line); font-size: 14px; }
+    .stat-line .v { font-family: var(--mono); color: var(--accent-deep); }
+
+    .login-bar { text-align: center; padding: 14px 0 40px; }
+    .login-bar p { font-size: 13px; color: var(--ink-soft); }
+
+    .footer { padding: 36px 0 56px; border-top: 1px solid var(--line); }
+    .footer p { font-size: 12px; color: var(--ink-soft); line-height: 1.7; max-width: 60em; }
+  </style>
+  <link rel="stylesheet" href="css/mobile-enhance.css?v=20260821">
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="js/auth.js"></script>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const SUBTESTS = [
+      { code: '5002', name: 'Reading & Language Arts', q: 214 },
+      { code: '5003', name: 'Mathematics', q: 172 },
+      { code: '5004', name: 'Social Studies', q: 240 },
+      { code: '5005', name: 'Science', q: 343 },
+    ];
+
+    // 简化知识 map：每科的知识点 + 熟练度（mock，后续接真实做题数据）
+    const KNOWLEDGE = {
+      '5002': [
+        { k: 'Reading', lvl: 0.72 },
+        { k: 'Writing, Speaking, and Listening', lvl: 0.41 },
+      ],
+      '5003': [
+        { k: 'Numbers and Operations', lvl: 0.65 },
+        { k: 'Algebraic Thinking', lvl: 0.38 },
+        { k: 'Geometry and Measurement, Data, Statistics, and Probability', lvl: 0.22 },
+      ],
+      '5004': [
+        { k: 'United States History, Government, and Citizenship', lvl: 0.55 },
+        { k: 'Geography, Anthropology, and Sociology', lvl: 0.60 },
+        { k: 'World History and Economics', lvl: 0.30 },
+      ],
+      '5005': [
+        { k: 'Earth Science', lvl: 0.48 },
+        { k: 'Life Science', lvl: 0.66 },
+        { k: 'Physical Science', lvl: 0.35 },
+      ],
+    };
+
+    function DB_Nav({ user, onLogout }) {
+      return (
+        <header className="nav wrap">
+          <a className="wordmark" href="/" aria-label="Triumph home">Triumph<span style={{color:'var(--accent)'}}>.</span></a>
+          <div style={{display:'flex', gap:20, alignItems:'baseline'}}>
+            {user && <span className="nav-email">{user}</span>}
+            <a className="nav-cta" href="diagnostic">Free diagnostic →</a>
+            {user ? <button type="button" onClick={onLogout} style={{background:'none',border:'none',fontFamily:'var(--sans)',fontSize:14,color:'var(--ink-soft)',cursor:'pointer',textDecoration:'underline'}}>Log out</button> : <a className="nav-cta" href="login">Log in</a>}
+          </div>
+        </header>
+      );
+    }
+
+    const readStoredValue = (key, fallback) => {
+      try {
+        const raw = localStorage.getItem(key);
+        if (raw === null) return fallback;
+        try { return JSON.parse(raw); } catch (e) { return raw; }
+      } catch (e) { return fallback; }
+    };
+
+    function DB_App() {
+      const [user, setUser] = useState(() => window.TriumphAuth.isLoggedIn() ? window.TriumphAuth.user : '');
+      const [syncNote, setSyncNote] = useState('');
+
+      // 页面加载时：已登录 → 推送本地+拉取云端（完整合并）
+      useEffect(() => {
+        if (!window.TriumphAuth.isLoggedIn()) return;
+        let alive = true;
+        (async () => {
+          try {
+            await window.TriumphAuth.syncAll();
+            if (!alive) return;
+            setPassPct(Number(window.TriumphAuth.localGet('triumph_last_pass', 0)));
+            setToday(window.TriumphAuth.localGet('triumph_today', null));
+            setExamDate(window.TriumphAuth.localGet('triumph_exam_date', ''));
+            const ans = window.TriumphAuth.localGet('triumph_answers', []);
+            setAnswers(ans);
+            setSyncNote('Synced');
+          } catch (e) { setSyncNote('Cloud sync unavailable — showing local data'); }
+        })();
+        return () => { alive = false; };
+      }, []);
+
+      const [kmTab, setKmTab] = useState('5002');
+      const [examDate, setExamDate] = useState(() => readStoredValue('triumph_exam_date', ''));
+      const [now, setNow] = useState(Date.now());
+      const [passPct, setPassPct] = useState(() => Number(readStoredValue('triumph_last_pass', 0)) || 0);
+      const [today, setToday] = useState(() => readStoredValue('triumph_today', null));
+      const [answers, setAnswers] = useState(() => window.TriumphAuth.localGet('triumph_answers', []));
+      const [lastScore] = useState(() => window.TriumphAuth.localGet('triumph_last_score', ''));
+
+      useEffect(() => { const t = setInterval(() => setNow(Date.now()), 60000); return () => clearInterval(t); }, []);
+
+      // 熟练度引擎：按 科目×知识点 聚合作答记录
+      const agg = {};
+      answers.forEach(a => {
+        const k = a.sub + '|' + a.category;
+        if (!agg[k]) agg[k] = { total: 0, correct: 0 };
+        agg[k].total++;
+        if (a.correct) agg[k].correct++;
+      });
+      const masteryFor = (sub, cat) => {
+        const d = agg[sub + '|' + cat];
+        if (!d || d.total === 0) return null;
+        // 贝叶斯平滑：小样本向 50% 收缩，避免一题定生死
+        const rate = (d.correct + 1.5) / (d.total + 3);
+        return { rate, total: d.total, raw: d.correct / d.total };
+      };
+
+      const isTodayDone = today && today.date === new Date().toISOString().slice(0, 10);
+      const todayLabel = !today ? 'Not started' : isTodayDone ? 'Done ' + today.done + '/' + today.total + ' · ' + (today.total > 0 ? Math.round(today.right / today.total * 100) : 0) + '%' : today.done + '/' + today.total + ' in progress';
+
+      const daysLeft = examDate ? Math.max(0, Math.ceil((new Date(examDate).getTime() - now) / 86400000)) : null;
+      
+      const logout = () => { window.TriumphAuth.logout(); setUser(''); };
+
+      // 关键本地数据变化后自动推送云端（登录时）
+      const pushCloud = async () => {
+        if (!window.TriumphAuth.isLoggedIn()) return;
+        try { await window.TriumphAuth.syncPush(); setSyncNote('Synced'); } catch (e) {}
+      };
+      const saveDate = d => { setExamDate(d); window.TriumphAuth.localSet('triumph_exam_date', d); pushCloud(); };
+
+      return (
+        <div>
+          <DB_Nav user={user} onLogout={logout} />
+
+          <main>
+          <header className="dash-head wrap">
+            <span className="eyebrow">Dashboard</span>
+            <h1>{user ? 'Welcome back' : 'Your study dashboard'} — <em>know where you stand.</em></h1>
+          </header>
+
+          {!user && (
+            <div className="login-bar wrap">
+              <p><a href="login" style={{fontWeight:600}}>Log in</a> to sync your results, plan, and progress across devices. Not registered yet? <a href="login" style={{fontWeight:600}}>Create a free account</a>.</p>
+            </div>
+          )}
+          {syncNote && user && <div className="login-bar wrap" style={{paddingBottom:6}}><p>{syncNote}</p></div>}
+
+          <div className="grid wrap">
+            {/* Left: today's tasks + subtest practice links */}
+            <aside className="panel">
+              <h2>Today <em>· tasks</em></h2>
+              <a className="sub-link" href="practice?mode=today" style={{borderTop:'none', background:'var(--bg-soft)'}}>
+                <span className="code">TODAY</span>Today's tasks
+                <span className="n">{todayLabel}</span>
+              </a>
+              {isTodayDone && today.total > 0 && (
+                <div className="km-bar" style={{margin:'0 14px 12px'}}><div className="km-fill" style={{width: Math.round(today.right / today.total * 100) + '%'}} /></div>
+              )}
+              <h2 style={{marginTop:18}}>Memory <em>cards</em></h2>
+              <a className="sub-link" href="srs">
+                <span className="code">SRS</span>Review due cards
+                <span className="n">due today</span>
+              </a>
+              <h2 style={{marginTop:18}}>Practice <em>by subtest</em></h2>
+              {SUBTESTS.map(s => (
+                <a className="sub-link" key={s.code} href={'practice?subtest=' + s.code}>
+                  <span className="code">{s.code}</span>{s.name}
+                  <span className="n">{s.q} q</span>
+                </a>
+              ))}
+              <a className="sub-link" href="practice"><span className="code">ALL</span>Mixed practice</a>
+              <a className="sub-link" href="diagnostic" style={{borderTop:'2px solid var(--accent)'}}><span className="code">DIAG</span>Full readiness diagnostic</a>
+            </aside>
+
+            {/* Center: knowledge map (simplified) */}
+            <section className="panel">
+              <h2>Knowledge <em>map</em></h2>
+              <div className="km-tabs" role="tablist" aria-label="Knowledge map subtests">
+                {SUBTESTS.map(s => (
+                  <button key={s.code} type="button" role="tab" id={'km-tab-' + s.code} aria-selected={kmTab === s.code} aria-controls={'km-panel-' + s.code} className={'km-tab' + (kmTab === s.code ? ' active' : '')} onClick={() => setKmTab(s.code)}>{s.code}</button>
+                ))}
+              </div>
+              <div role="tabpanel" id={'km-panel-' + kmTab} aria-labelledby={'km-tab-' + kmTab}>
+              {(KNOWLEDGE[kmTab] || []).map(n => {
+                const m = masteryFor(kmTab, n.k);
+                const lvl = m ? m.rate : 0;
+                const testing = m && m.total < 5;
+                return (
+                  <div className="km-node" key={n.k}>
+                    <div className="km-row">
+                      <span className="km-name" style={{opacity: m ? 0.35 + lvl * 0.65 : 0.25}}>{n.k}</span>
+                      <span className="km-pct">{m ? Math.round(lvl * 100) + '%' : '—'}</span>
+                    </div>
+                    <div className="km-bar"><div className="km-fill" style={{width: (m ? Math.round(lvl * 100) : 0) + '%'}} /></div>
+                    {testing && <div className="card-reveal" style={{fontSize:11, marginTop:4}}>testing — {m.total} answer{m.total === 1 ? '' : 's'} so far</div>}
+                  </div>
+                );
+              })}
+              </div>
+              <p style={{marginTop:16, fontSize:12, color:'var(--ink-soft)'}}>
+                Mastery comes from your practice results — practice each topic to light it up. Topics without data show as "—".
+              </p>
+            </section>
+
+            {/* Right: countdown + stats */}
+            <aside className="panel">
+              <h2>Countdown <em>&amp; stats</em></h2>
+              <input className="cd-input" type="date" aria-label="Exam date" value={examDate} onChange={e => saveDate(e.target.value)} />
+              {daysLeft !== null ? (
+                <div>
+                  <div className="cd-num">{daysLeft}</div>
+                  <div className="cd-label">days until your exam</div>
+                </div>
+              ) : (
+                <div className="cd-label" style={{marginBottom:10}}>Pick your test date above.</div>
+              )}
+              <div className="stat-line"><span>Pass probability</span><span className="v">{passPct ? passPct + '%' : '—'}</span></div>
+              <div className="stat-line"><span>Questions in bank</span><span className="v">969</span></div>
+              <div className="stat-line"><span>Last diagnostic</span><span className="v">{lastScore || '—'}</span></div>
+              <p style={{marginTop:14, fontSize:12, color:'var(--ink-soft)'}}>Daily tasks focus on your weakest gate. Memory cards use spaced repetition — review what you missed, then forget it less.</p>
+            </aside>
+          </div>
+          </main>
+
+          <footer className="footer wrap">
+            <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS.</p>
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    if (window.TriumphAuth) {
+      root.render(<DB_App />);
+    } else {
+      root.render(<div className="wrap" style={{padding:'60px 36px'}}><p>Dashboard is temporarily unavailable — please refresh the page.</p></div>);
+    }
+  </script>
+</body>
+</html>

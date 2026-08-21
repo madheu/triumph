@@ -34,8 +34,8 @@ download and read it before each new subtest batch.
 folder; use it if present, otherwise download:
 
 - Local (preferred, if present):
-  `E:\harness\praxis-5001\assets\official-blueprint-5001.md` (extracted outline)
-  and/or `E:\harness\praxis-5001\assets\StudyCompanion-5001-official.pdf`
+  `E:\Triumph\praxis-5001\assets\official-blueprint-5001.md` (extracted outline)
+  and/or `E:\Triumph\praxis-5001\assets\StudyCompanion-5001-official.pdf`
 - Download sources, in order:
   1. ETS official: `https://www.ets.org/praxis/prepare/materials/` → search
      "Elementary Education: Multiple Subjects" → download the Study Companion
@@ -45,7 +45,7 @@ folder; use it if present, otherwise download:
      "Praxis 5001 Study Companion PDF" (e.g. university-hosted copies).
 
   After downloading, save a copy of the PDF to
-  `E:\harness\praxis-5001\assets\StudyCompanion-5001-official.pdf` and the
+  `E:\Triumph\praxis-5001\assets\StudyCompanion-5001-official.pdf` and the
   extracted outline to `official-blueprint-5001.md` so future batches reuse them.
 
 **Step 0.2 — Extract the blueprint.** From the Study Companion, capture for
@@ -201,8 +201,8 @@ Sequence restarts per subtest. Validate JSON before output.
 
 ## 8. References
 
-- Official outline (local, when present): `E:\harness\praxis-5001\assets\official-blueprint-5001.md`
-- Official Study Companion PDF (local, when present): `E:\harness\praxis-5001\assets\StudyCompanion-5001-official.pdf`
-- Triumph question template: `E:\harness\praxis-5001\题库数据格式模板.json`
-- Exam & market research: `E:\harness\5001备考行为地图.md`
+- Official outline (local, when present): `E:\Triumph\praxis-5001\assets\official-blueprint-5001.md`
+- Official Study Companion PDF (local, when present): `E:\Triumph\praxis-5001\assets\StudyCompanion-5001-official.pdf`
+- Triumph question template: `E:\Triumph\praxis-5001\题库数据格式模板.json`
+- Exam & market research: `E:\Triumph\5001备考行为地图.md`
 - Official exam page (verify blueprint when reachable): https://parapro.ets.org/test-5001.html

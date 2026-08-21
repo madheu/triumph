@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Log in or Sign up | Triumph</title>
+  <meta name="description" content="Log in to Triumph to sync your Praxis 5001 diagnostic results, study plan, and progress across devices.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://trytriumph.de5.net/login">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { min-width: 0; }
+    :root {
+      --bg: #F2EFE9; --bg-soft: #E8E3D8; --ink: #3C3733; --ink-soft: #6E6760;
+      --line: #D8D1C5; --accent: #C09D9B; --accent-deep: #A67D7A; --on-accent: #332E2B;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Instrument Sans", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    html, body { height: 100%; width: 100%; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.7; }
+    a { color: var(--accent-deep); }
+    .wrap { max-width: 440px; margin: 0 auto; padding: 0 24px; }
+
+    .nav { display: flex; align-items: baseline; justify-content: space-between; padding: 28px 0 24px; border-bottom: 1px solid var(--line); }
+    .wordmark { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--ink); text-decoration: none; }
+
+    .auth { padding: 64px 0 40px; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); display: block; margin-bottom: 18px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 5vw, 40px); line-height: 1.15; margin-bottom: 14px; }
+    h1 em { font-style: italic; color: var(--accent); }
+    .sub { color: var(--ink-soft); font-size: 15px; margin-bottom: 32px; max-width: 34em; }
+
+    .card { background: var(--bg-soft); padding: 26px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
+    input { width: 100%; padding: 12px 14px; font-family: var(--sans); font-size: 16px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); outline: none; }
+    input:focus { border-color: var(--accent); }
+    input:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+    .btn-primary { width: 100%; background: var(--accent); color: var(--on-accent); border: none; padding: 13px 20px; font-family: var(--sans); font-size: 15px; font-weight: 600; cursor: pointer; }
+    .btn-primary:hover { background: var(--accent-deep); color: var(--bg); }
+    .btn-primary:disabled { opacity: .5; cursor: wait; }
+    .error { font-size: 13px; color: var(--accent-deep); margin: 10px 0 0; min-height: 1.2em; }
+    .switch { text-align: center; margin-top: 22px; font-size: 14px; color: var(--ink-soft); }
+    .switch button { background: none; border: none; font-family: var(--sans); font-size: 14px; color: var(--accent-deep); font-weight: 600; cursor: pointer; padding: 10px 6px; min-height: 44px; }
+    .hint { font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
+    .link-btn { background: none; border: none; padding: 0; font-family: var(--sans); font-size: 13px; color: var(--accent-deep); cursor: pointer; text-decoration: underline; margin-top: 6px; }
+
+    .footer { padding: 40px 0 56px; }
+    .footer p { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  </style>
+  <link rel="stylesheet" href="css/mobile-enhance.css?v=20260821">
+</head>
+<body>
+  <header class="nav wrap">
+    <a class="wordmark" href="/">Triumph<span style="color:var(--accent)">.</span></a>
+  </header>
+
+  <main class="auth wrap">
+    <span class="eyebrow">Account</span>
+    <h1>Your progress, <em>on every device.</em></h1>
+    <p class="sub">Log in to sync your diagnostic results, study plan, daily tasks, and memory cards across devices. Free — no payment needed.</p>
+
+    <div class="card">
+      <form id="auth-form" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field" id="password-field">
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" placeholder="8+ characters" required>
+        </div>
+        <div class="field" id="code-field" style="display:none">
+          <label for="code">Verification code</label>
+          <input id="code" type="text" inputmode="numeric" maxlength="6" placeholder="6-digit code from your email" autocomplete="one-time-code">
+          <button type="button" id="resend-btn" class="link-btn">Resend code</button>
+        </div>
+        <button class="btn-primary" id="submit" type="submit">Log in</button>
+        <p class="error" id="error" role="alert" aria-live="assertive"></p>
+        <p class="hint" id="hint" aria-live="polite"></p>
+      </form>
+      <div class="switch">
+        <span id="switch-label">No account yet?</span>
+        <button id="switch-btn" type="button">Sign up</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer wrap">
+    <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS.</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      const A = window.TriumphAuth;
+      if (!A) {
+        const errBox = document.getElementById('error');
+        if (errBox) errBox.textContent = 'Login is temporarily unavailable — please refresh the page.';
+        return;
+      }
+      let mode = 'login'; // login | register | verify
+      let pendingEmail = '';
+
+      const emailEl = document.getElementById('email');
+      const passEl = document.getElementById('password');
+      const codeEl = document.getElementById('code');
+      const codeField = document.getElementById('code-field');
+      const passwordField = document.getElementById('password-field');
+      const submitEl = document.getElementById('submit');
+      const errEl = document.getElementById('error');
+      const hintEl = document.getElementById('hint');
+      const switchBtn = document.getElementById('switch-btn');
+      const switchLabel = document.getElementById('switch-label');
+      const resendBtn = document.getElementById('resend-btn');
+      const form = document.getElementById('auth-form');
+
+      function setMode(m) {
+        mode = m;
+        const isVerify = m === 'verify';
+        codeField.style.display = isVerify ? 'block' : 'none';
+        passwordField.style.display = isVerify ? 'none' : 'block';
+        emailEl.style.display = isVerify ? 'none' : 'block';
+        submitEl.textContent = isVerify ? 'Verify & continue' : (m === 'login' ? 'Log in' : 'Create account');
+        switchLabel.textContent = m === 'login' ? 'No account yet?' : (m === 'register' ? 'Already have an account?' : 'Use a different email');
+        switchBtn.textContent = m === 'login' ? 'Sign up' : (m === 'register' ? 'Log in' : 'Sign up');
+        passEl.setAttribute('autocomplete', m === 'login' ? 'current-password' : 'new-password');
+        hintEl.textContent = m === 'register' ? 'Password must be at least 8 characters. We\u2019ll email you a verification code.' : '';
+        errEl.textContent = '';
+        if (isVerify) { emailEl.removeAttribute('required'); codeEl.setAttribute('required', ''); }
+        else { codeEl.removeAttribute('required'); emailEl.setAttribute('required', ''); }
+      }
+      switchBtn.addEventListener('click', () => {
+        if (mode === 'verify') { setMode('register'); return; }
+        setMode(mode === 'login' ? 'register' : 'login');
+      });
+      resendBtn.addEventListener('click', async () => {
+        if (!pendingEmail) return;
+        resendBtn.disabled = true;
+        try { await A.resendCode(pendingEmail); errEl.textContent = 'New code sent — check your inbox.'; }
+        catch (e) { errEl.textContent = 'Could not resend. Try again in a moment.'; }
+        finally { resendBtn.disabled = false; }
+      });
+
+      // 页面加载时若有待验证邮箱，直接进验证阶段
+      const pending = A.getPendingVerify();
+      if (pending) { pendingEmail = pending; emailEl.value = pending; setMode('verify'); }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = emailEl.value.trim().toLowerCase();
+        const password = passEl.value;
+        const code = codeEl.value.trim();
+
+        if (mode === 'verify') {
+          if (!/^\d{6}$/.test(code)) { errEl.textContent = 'Enter the 6-digit code from your email.'; return; }
+          submitEl.disabled = true; errEl.textContent = '';
+          try {
+            await A.verify(pendingEmail, code);
+            try { await A.syncAll(); } catch (syncErr) {}
+            window.location.href = 'dashboard';
+          } catch (err) {
+            const msg = {
+              wrong_code: 'That code isn\u2019t right. Check the email and try again.',
+              code_expired: 'That code expired. Resend a new one.',
+              not_registered: 'No account found for that email — sign up first.',
+              already_verified: 'This email is already verified — just log in.',
+            }[err.code] || (err.message || 'Something went wrong.');
+            errEl.textContent = msg;
+          } finally { submitEl.disabled = false; }
+          return;
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = 'Please enter a valid email address.'; return; }
+        if (mode === 'register' && password.length < 8) { errEl.textContent = 'Password must be at least 8 characters.'; return; }
+
+        submitEl.disabled = true;
+        errEl.textContent = '';
+        try {
+          if (mode === 'login') {
+            await A.login(email, password);
+            try { await A.syncAll(); } catch (syncErr) {}
+            window.location.href = 'dashboard';
+          } else {
+            const user = await A.register(email, password);
+            // 注册成功：如果后端已直接激活（无邮件通道），直接跳转 dashboard
+            if (A.isLoggedIn()) {
+              try { await A.syncAll(); } catch (syncErr) {}
+              window.location.href = 'dashboard';
+            } else {
+              pendingEmail = email;
+              setMode('verify');
+              errEl.textContent = 'Verification code sent to ' + email + ' — enter it below.';
+            }
+          }
+        } catch (err) {
+          if (err.code === 'verification_required') {
+            pendingEmail = err.email;
+            setMode('verify');
+            errEl.textContent = 'Verification code sent to ' + err.email + ' — enter it below.';
+          } else if (err.code === 'not_verified') {
+            pendingEmail = email;
+            setMode('verify');
+            errEl.textContent = 'This email needs verification first. We\u2019ve sent a code — check your inbox.';
+          } else {
+            const msg = {
+              invalid_email: 'That email address is not valid.',
+              password_too_short: 'Password must be at least 8 characters.',
+              email_taken: 'That email is already registered. Try logging in.',
+              invalid_credentials: 'Email or password is incorrect.',
+              unauthorized: 'Session expired — please try again.',
+            }[err.code] || (err.message || 'Something went wrong. Please try again.');
+            errEl.textContent = msg;
+          }
+        } finally {
+          submitEl.disabled = false;
+        }
+      });
+
+      // 已登录则直接进 dashboard
+      if (A.isLoggedIn()) window.location.href = 'dashboard';
+    })();
+  </script>
+</body>
+</html>

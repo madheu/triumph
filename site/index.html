@@ -2,8 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Triumph — Praxis 5001 Diagnostic Study System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="google-site-verification" content="_77iubezyoYbsSm0Sw_4tkq9zuWoAZ35pkeNsgSqdj0">
+  <title>Triumph — Free Praxis 5001 Readiness Diagnostic for Teacher Candidates</title>
+  <meta name="description" content="Free Praxis 5001 (Elementary Education: Multiple Subjects) readiness diagnostic. Answer 12 original questions across all four subtests, get an estimated scaled score, find your weakest gate, and see how close you are to your state's passing line.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Triumph — Free Praxis 5001 Readiness Diagnostic">
+  <meta property="og:description" content="12 original questions across all four 5001 subtests → estimated scaled score → your weakest gate → pass forecast.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://trytriumph.de5.net/">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MSR1Q1G7W9');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Triumph",
+    "description": "Free Praxis 5001 readiness diagnostic for teacher candidates.",
+    "url": "https://trytriumph.de5.net/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://trytriumph.de5.net/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
   <!--
     ============================================================
@@ -76,10 +107,11 @@
       display: flex; align-items: baseline; justify-content: space-between;
       padding: 28px 0 24px;
       border-bottom: 1px solid var(--line);
-    }
+     flex-wrap: wrap; gap: 10px 18px;}
     .wordmark {
       font-family: var(--serif); font-style: italic; font-size: 26px;
       letter-spacing: -0.01em;
+      display: inline-flex; align-items: center; min-height: 44px;
     }
     .nav-note { font-size: 13px; color: var(--ink-soft); }
     .nav-cta {
@@ -87,6 +119,18 @@
       text-decoration: none; border-bottom: 1px solid currentColor;
       padding-bottom: 2px;
     }
+    .nav-email { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+    .nav-btn { background: none; border: 1px solid var(--line); padding: 7px 14px; font-family: var(--sans); font-size: 14px; color: var(--ink); cursor: pointer; transition: border-color .15s; }
+    .nav-btn:hover { border-color: var(--ink); }
+
+    /* Login modal */
+    .modal { position: fixed; inset: 0; background: rgba(60,55,51,.42); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+    .modal-box { background: var(--bg); border: 1px solid var(--line); max-width: 380px; width: 100%; padding: 28px; position: relative; }
+    .modal-sub { font-size: 13px; color: var(--ink-soft); margin: 0 0 14px; line-height: 1.6; }
+    .modal-close { position: absolute; top: 12px; right: 14px; background: none; border: none; font-size: 14px; color: var(--ink-soft); cursor: pointer; }
+    .pw-input { width: 100%; padding: 12px 14px; font-family: var(--sans); font-size: 15px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); outline: none; transition: border-color .15s; }
+    .pw-input:focus { border-color: var(--accent); }
+    .pw-error { font-size: 12px; color: var(--accent-deep); margin-top: 6px; }
 
     /* ---------- Hero ---------- */
     .hero { padding: 96px 0 72px; }
@@ -189,6 +233,13 @@
     .footer p { font-size: 12px; color: var(--ink-soft); line-height: 1.7; max-width: 60em; }
 
     @media (max-width: 760px) {
+      .nav { gap: 8px 14px; }
+
+      .nav-cta { font-size: 13px; }
+
+      .nav-btn { padding: 5px 10px; font-size: 13px; }
+
+      .nav-email { display: none; }
       .wrap { padding: 0 50px; }
       .nav-note { display: none; }
       .hero { padding: 56px 0 48px; }
@@ -212,10 +263,12 @@
       h1, h2, h3, p, li, .subtest-desc { overflow-wrap: break-word; }
     }
   </style>
+  <link rel="stylesheet" href="css/mobile-enhance.css?v=20260821">
 </head>
 <body>
   <div id="root"></div>
 
+  <script src="js/auth.js"></script>
   <script type="text/babel">
     const { useState } = React;
 
@@ -224,14 +277,113 @@
     };
 
     function Nav() {
+      const [user, setUser] = useState(() => { try { return localStorage.getItem('triumph_user') || ''; } catch (e) { return ''; } });
+      const [showLogin, setShowLogin] = useState(false);
+      const [email, setEmail] = useState('');
+      const [password, setPassword] = useState('');
+      const [authMode, setAuthMode] = useState('login');
+      const [busy, setBusy] = useState(false);
+      const [code, setCode] = useState('');
+      const [pendingEmail, setPendingEmail] = useState('');
+      const [err, setErr] = useState('');
+
+      const doVerify = async () => {
+        if (code.trim().length !== 6) { setErr('Enter the 6-digit code from your email.'); return; }
+        setBusy(true); setErr('');
+        try {
+          await window.TriumphAuth.verify(pendingEmail, code.trim());
+          try { await window.TriumphAuth.syncAll(); } catch (e) {}
+          setUser(window.TriumphAuth.user); setShowLogin(false); setEmail(''); setPassword(''); setCode(''); setErr('');
+        } catch (e) {
+          setErr({ wrong_code: 'That code isn\u2019t right. Check the email and try again.', code_expired: 'That code expired. Resend a new one.', not_registered: 'No account found — sign up first.' }[e.code] || (e.message || 'Something went wrong.'));
+        } finally { setBusy(false); }
+      };
+      const doResend = async () => {
+        if (!pendingEmail) return;
+        setBusy(true); setErr('');
+        try { await window.TriumphAuth.resendCode(pendingEmail); setErr('New code sent — check your inbox.'); }
+        catch (e) { setErr('Could not resend. Try again in a moment.'); }
+        finally { setBusy(false); }
+      };
+      const doAuth = async () => {
+        if (authMode === 'verify') { doVerify(); return; }
+        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+        if (!ok) { setErr('Please enter a valid email.'); return; }
+        if (authMode === 'register' && password.length < 8) { setErr('Password must be at least 8 characters.'); return; }
+        setBusy(true); setErr('');
+        try {
+          if (authMode === 'login') {
+            await window.TriumphAuth.login(email.trim(), password);
+            try { await window.TriumphAuth.syncAll(); } catch (e) {}
+            setUser(window.TriumphAuth.user); setShowLogin(false); setEmail(''); setPassword(''); setErr('');
+          } else {
+            await window.TriumphAuth.register(email.trim(), password);
+            setPendingEmail(email.trim());
+            setAuthMode('verify');
+            setErr('Verification code sent to ' + email.trim() + '.');
+          }
+        } catch (e) {
+          if (e.code === 'verification_required' || e.code === 'not_verified') {
+            setPendingEmail(e.email || email.trim());
+            setAuthMode('verify');
+            setErr('Verification code sent — check your inbox.');
+          } else {
+            setErr({ invalid_email: 'That email address is not valid.', password_too_short: 'Password must be at least 8 characters.', email_taken: 'That email is already registered. Try logging in.', invalid_credentials: 'Email or password is incorrect.' }[e.code] || (e.message || 'Something went wrong.'));
+          }
+        } finally { setBusy(false); }
+      };
+      const doLogout = () => { window.TriumphAuth.logout(); setUser(''); };
+
       return (
         <header className="nav wrap">
-          <div className="wordmark">Triumph<span style={{color:'var(--accent)'}}>.</span></div>
-          <div style={{display:'flex', gap:24, alignItems:'baseline'}}>
+          <a className="wordmark" href="/" aria-label="Triumph home" style={{textDecoration:'none',color:'inherit'}}>Triumph<span style={{color:'var(--accent)'}}>.</span></a>
+          <div className="nav-links" style={{display:'flex', gap:24, alignItems:'baseline'}}>
             <span className="nav-note">Praxis 5001 · unofficial</span>
-            <a className="nav-cta" href="#pricing">Free diagnostic →</a>
+            <a className="nav-cta" href="resources">Resources</a>
+            <a className="nav-cta" href="dashboard">Dashboard</a>
+            {user ? (
+              <>
+                <span className="nav-email">{user}</span>
+                <button className="nav-btn" onClick={doLogout}>Log out</button>
+              </>
+            ) : (
+              <button className="nav-btn" onClick={() => setShowLogin(true)}>Log in</button>
+            )}
+            <a className="nav-cta" href="diagnostic">Free diagnostic →</a>
           </div>
-        </header>
+                    {showLogin && (
+            <div className="modal" onClick={() => setShowLogin(false)}>
+              <div className="modal-box" onClick={e => e.stopPropagation()}>
+                <button className="modal-close" onClick={() => setShowLogin(false)}>×</button>
+                <span className="eyebrow">{authMode === 'login' ? 'Log in' : 'Sign up'}</span>
+                <h3 style={{fontFamily:'var(--serif)',fontWeight:400,fontSize:24,margin:'10px 0 8px'}}>{authMode === 'login' ? 'Welcome back.' : 'Create your account.'}</h3>
+                <p className="modal-sub">Log in to sync your diagnostic results, study plan, and progress across devices.</p>
+                <input className="pw-input" type="email" placeholder="you@example.com" value={email}
+                  onChange={e => setEmail(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') doAuth(); }} />
+                <input className="pw-input" type="password" placeholder="Password (8+ characters)" value={password}
+                  onChange={e => setPassword(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') doAuth(); }}
+                  style={{marginTop:10, display: authMode === 'verify' ? 'none' : 'block'}} />
+                {authMode === 'verify' && (
+                  <>
+                    <input className="pw-input" type="text" inputMode="numeric" maxLength="6" placeholder="6-digit verification code" value={code}
+                      onChange={e => setCode(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') doAuth(); }}
+                      style={{marginTop:10}} />
+                    <button type="button" onClick={doResend} disabled={busy}
+                      style={{background:'none',border:'none',padding:0,marginTop:8,fontFamily:'var(--sans)',fontSize:13,fontWeight:600,color:'var(--accent-deep)',cursor:'pointer',textDecoration:'underline'}}>Resend code</button>
+                  </>
+                )}
+                {err && <div className="pw-error">{err}</div>}
+                <button className="btn-primary" style={{width:'100%',marginTop:12}} disabled={busy} onClick={doAuth}>
+                  {busy ? 'Please wait…' : (authMode === 'login' ? 'Log in' : 'Create account')}
+                </button>
+                <p className="modal-sub" style={{marginTop:12}}>
+                  {authMode === 'login' ? 'No account yet? ' : 'Already registered? '}
+                  <button style={{background:'none',border:'none',padding:0,fontFamily:'var(--sans)',fontSize:13,fontWeight:600,color:'var(--accent-deep)',cursor:'pointer',textDecoration:'underline'}}
+                    onClick={() => { setAuthMode(authMode === 'verify' ? 'register' : (authMode === 'login' ? 'register' : 'login')); setErr(''); }}>{authMode === 'verify' ? 'Use a different email' : (authMode === 'login' ? 'Sign up' : 'Log in')}</button>
+                </p>
+              </div>
+            </div>
+          )}</header>
       );
     }
 
@@ -253,8 +405,8 @@
             actual weak spots, and a forecast of how close you are to the pass.
           </p>
           <div className="hero-cta-row">
-            <button className="btn-primary" onClick={() => window.location.href = 'diagnostic.html'}>Run the free diagnostic</button>
-            <button className="btn-secondary" onClick={() => window.location.href = 'diagnostic.html'}>Try sample questions now</button>
+            <button className="btn-primary" onClick={() => window.location.href = 'diagnostic'}>Run the free diagnostic</button>
+            <button className="btn-secondary" onClick={() => window.location.href = 'diagnostic'}>Try sample questions now</button>
           </div>
 
           {/* 四科标注：编辑式目录行 */}
@@ -347,7 +499,7 @@
                   <li>Category-level practice tracking</li>
                   <li>Unlimited attempts</li>
                 </ul>
-                <button className="btn-secondary" onClick={() => window.location.href = 'diagnostic.html'}>Start free</button>
+                <button className="btn-secondary" onClick={() => window.location.href = 'diagnostic'}>Start free</button>
               </div>
               <div className="price-cell">
                 <h3>Triumph</h3>
@@ -357,7 +509,7 @@
                   <li>Personalized study plan by weak subtest</li>
                   <li>Progress tracking &amp; retake-readiness</li>
                 </ul>
-                <button className="btn-primary" onClick={() => window.location.href = 'diagnostic.html'}>Get the forecast</button>
+                <button className="btn-primary" onClick={() => window.location.href = 'diagnostic'}>Get the forecast</button>
               </div>
             </div>
             <p style={{marginTop:24, fontSize:13, color:'var(--ink-soft)'}}>
@@ -377,6 +529,11 @@
             All practice questions are original and aligned to the published test blueprint;
             no official test items are reproduced.
           </p>
+          <p style={{marginTop:18}}>
+            Built by an independent developer. Questions, feedback, or partnership ideas — email{' '}
+            <a href="mailto:abc15531888397@gmail.com">abc15531888397@gmail.com</a> or follow{' '}
+            <a href="https://x.com/madehu" target="_blank" rel="noopener noreferrer">@madehu</a> on X.
+          </p>
         </footer>
       );
     }
@@ -385,10 +542,12 @@
       return (
         <div>
           <Nav />
-          <Hero />
-          <Problem />
-          <How />
-          <Pricing />
+          <main>
+            <Hero />
+            <Problem />
+            <How />
+            <Pricing />
+          </main>
           <Footer />
         </div>
       );

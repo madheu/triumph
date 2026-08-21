@@ -12,8 +12,8 @@
 1. 下载 Praxis 5001 官方 Study Companion PDF（尝试 https://www.ets.org/praxis/prepare/materials/
    或 https://parapro.ets.org/test-5001.html，找不到就用 skill §0.1 里的镜像来源）
 2. 提取四科大纲：5002/5003/5004/5005 的 content categories、每类题数、题型格式
-3. 把提取结果整理成 markdown 保存到 E:\harness\praxis-5001\assets\official-blueprint-5001.md
-4. 如果下载成功，把 PDF 也保存到 E:\harness\praxis-5001\assets\StudyCompanion-5001-official.pdf
+3. 把提取结果整理成 markdown 保存到 E:\Triumph\praxis-5001\assets\official-blueprint-5001.md
+4. 如果下载成功，把 PDF 也保存到 E:\Triumph\praxis-5001\assets\StudyCompanion-5001-official.pdf
 然后告诉我：四科各有哪些 categories、各类题数比例、blueprint 版本。
 ```
 
@@ -21,7 +21,7 @@
 
 ```
 请使用 praxis-question-writer 技能。
-官方大纲已就绪（E:\harness\praxis-5001\assets\official-blueprint-5001.md），
+官方大纲已就绪（E:\Triumph\praxis-5001\assets\official-blueprint-5001.md），
 出题前先读它，按官方 categories 和题量比例来。
 为 Praxis 5001 出 8 道原创练习题：
 - 科目：5002 Mathematics
@@ -59,4 +59,4 @@
 
 - 每次小批量（5–10 题）比一次 100 题质量高、出错少（省返工 token）
 - 让 Hermes 输出 JSON 到文件而不是粘贴对话里，省输出 token
-- 出完把 JSON 文件给我（或拷到 E:\harness\praxis-5001\），我做质量审计 + 版权抽查 + 接入 Diagnostic Demo
+- 出完把 JSON 文件给我（或拷到 E:\Triumph\praxis-5001\），我做质量审计 + 版权抽查 + 接入 Diagnostic Demo

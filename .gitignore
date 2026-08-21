@@ -1,0 +1,30 @@
+# ---- Cloudflare / build ----
+.wrangler/
+node_modules/
+dist/
+
+# ---- Backups & binaries ----
+backups/
+*.zip
+*.7z
+
+# ---- Question-bank intermediate batches (final = assets/questions-full.json) ----
+assets/batches/
+
+# ---- Audit / review artifacts (regenerable, not source) ----
+review-fixes.json
+audit-before.json
+final-validation.json
+subagent-review-*.txt
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Env / secrets (never commit) ----
+.env
+.env.*
+*.pem
+*.key
+secrets.json

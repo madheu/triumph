@@ -1,0 +1,15 @@
+# Triumph Pages 项目配置
+# 部署: .\deploy.ps1（wrangler pages deploy site）
+name = "triumph"
+pages_build_output_dir = "site"
+compatibility_date = "2026-08-20"
+
+# KV namespace：用户数据 + 学习状态（id 来自 wrangler kv namespace create）
+[[kv_namespaces]]
+binding = "TRIUMPH_KV"
+id = "07ad9fc5b16b4bccb31cc92080a29e88"
+
+# 发件地址（验证码邮件）
+# vars 在 Pages 控制台或此处配置
+[vars]
+EMAIL_FROM = "Triumph <onboarding@resend.dev>"

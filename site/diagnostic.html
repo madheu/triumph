@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Triumph — Diagnostic Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Triumph — Praxis 5001 Diagnostic</title>
 
   <!--
     ============================================================
@@ -55,8 +56,8 @@
     p { text-wrap: pretty; }
     .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
 
-    .nav { display: flex; align-items: baseline; justify-content: space-between; padding: 26px 0 22px; border-bottom: 1px solid var(--line); }
-    .wordmark { font-family: var(--serif); font-style: italic; font-size: 25px; }
+    .nav { display: flex; align-items: baseline; justify-content: space-between; padding: 26px 0 22px; border-bottom: 1px solid var(--line);  flex-wrap: wrap; gap: 10px 18px;}
+    .wordmark { font-family: var(--serif); font-style: italic; font-size: 25px; display: inline-flex; align-items: center; min-height: 44px; }
     .nav-note { font-size: 13px; color: var(--ink-soft); }
 
     .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); display: block; }
@@ -67,6 +68,8 @@
     .intro h1 em { font-style: italic; color: var(--accent); }
     .intro p { color: var(--ink-soft); line-height: 1.7; max-width: 34em; margin-bottom: 14px; }
     .intro .meta { display: flex; gap: 28px; margin: 28px 0 36px; font-family: var(--mono); font-size: 13px; color: var(--ink-soft); }
+    .intro-return { border-left: 2px solid var(--accent); background: var(--bg-soft); padding: 16px 20px; margin: 20px 0 26px; font-size: 15px; line-height: 1.6; }
+    .intro-return p:last-child { margin-bottom: 0; }
 
     /* --- Question --- */
     .quiz { padding: 48px 0 72px; }
@@ -90,6 +93,7 @@
     .opt.wrong { border-color: var(--wrong); background: color-mix(in srgb, var(--wrong) 16%, var(--bg)); }
     .opt.wrong .opt-key { color: var(--wrong-deep); }
     .opt .opt-key { font-family: var(--mono); color: var(--accent); margin-right: 10px; font-size: 13px; }
+    .mono { font-family: var(--mono); }
     .explain {
       margin-top: 6px; padding: 16px 20px;
       border-left: 2px solid var(--accent);
@@ -156,6 +160,33 @@
     .paywall .price small { font-size: 13px; color: var(--ink-soft); }
     .paywall .demo-note { font-size: 12px; color: var(--ink-soft); margin-top: 14px; }
 
+    /* --- Email collection form --- */
+    .pw-form { margin-top: 18px; }
+    .pw-field { margin-bottom: 14px; }
+    .pw-label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 6px; font-weight: 500; }
+    .pw-input { width: 100%; padding: 12px 14px; font-family: var(--sans); font-size: 15px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); outline: none; transition: border-color .15s ease; }
+    .pw-input:focus { border-color: var(--accent); }
+    .pw-error { font-size: 12px; color: var(--accent-deep); margin-top: 6px; }
+    .pw-privacy { font-size: 12px; color: var(--ink-soft); margin-top: 14px; line-height: 1.6; }
+    .pw-success { margin: 6px 0 0; font-size: 13px; color: var(--ink); }
+
+    /* --- Learn mode --- */
+    .learn { padding: 40px 0 72px; }
+    .learn-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 26px 0 24px; }
+    .learn-tab { background: none; border: none; padding: 12px 20px; font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--ink-soft); cursor: pointer; border-bottom: 2px solid transparent; transition: color .15s; }
+    .learn-tab.active { color: var(--ink); border-bottom-color: var(--accent); }
+    .learn-tab:hover { color: var(--ink); }
+    .learn-summary { border-left: 2px solid var(--accent); background: var(--bg-soft); padding: 16px 20px; margin-bottom: 22px; font-size: 15px; line-height: 1.6; }
+    .task-progress { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; }
+    .card-item { border-top: 1px solid var(--line); padding: 16px 0; }
+    .card-q { font-family: var(--serif); font-size: 18px; line-height: 1.4; margin-bottom: 8px; }
+    .card-reveal { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+    .card-actions { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-sm { padding: 9px 16px; font-size: 13px; }
+    .btn-ghost { background: none; border: 1px solid var(--line); color: var(--ink); padding: 9px 16px; font-size: 13px; cursor: pointer; }
+    .btn-ghost:hover { border-color: var(--ink); }
+    .done-tag { font-family: var(--mono); font-size: 12px; color: var(--accent-deep); }
+
     .unlocked-box { margin-top: 40px; }
     .unlocked-box h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin-bottom: 14px; }
     .unlocked-box h3 em { color: var(--accent); }
@@ -166,6 +197,13 @@
     .footer p { font-size: 12px; color: var(--ink-soft); line-height: 1.7; max-width: 60em; margin-top: 24px; }
 
     @media (max-width: 620px) {
+      .nav { gap: 8px 14px; }
+
+      .nav-cta { font-size: 13px; }
+
+      .nav-btn { padding: 5px 10px; font-size: 13px; }
+
+      .nav-email { display: none; }
       .wrap { padding: 0 50px; }
       .nav-note { display: none; }
       .intro { padding: 48px 0 36px; }
@@ -191,794 +229,29 @@
       p, h1, h2, h3, .opt, .explain, .plan-item { overflow-wrap: break-word; }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MSR1Q1G7W9');
+  </script>
+  <link rel="stylesheet" href="css/mobile-enhance.css?v=20260821">
 </head>
 <body>
   <div id="root"></div>
 
+  <script src="questions.js"></script>
   <script type="text/babel">
-    const { useState } = React;
+    const { useEffect, useRef, useState } = React;
 
     // ============ QUESTION BANK (original, blueprint-aligned) ============
     // 来源: Hermes + praxis-question-writer skill, 基于 ETS 官方 Study Companion 大纲
     // 科目代码按官方: 5002 = Reading & Language Arts, 5003 = Mathematics,
     //                 5004 = Social Studies, 5005 = Science
     // 每次诊断从 DM_BANK 随机抽取（每科 3 题），见 DM_drawSession · 题库 86 题（template3，官方蓝图）
-    const DM_BANK = [
-      { id: `5002-001`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which word begins with the same phoneme as the word giant?`,
-        options: [
-          `goat`,
-          `garden`,
-          `giraffe`,
-          `gum`,
-        ], answer: 2,
-        explain: `Giraffe and giant both begin with the /j/ phoneme, even though the initial letter is g. The other choices begin with the hard /g/ sound.` },
-      { id: `5002-002`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A first-grade student can identify rhyming words but cannot blend the sounds /m/, /a/, and /p/. Which activity most directly addresses the student's need?`,
-        options: [
-          `Sorting picture cards by initial letter`,
-          `Sliding counters together while saying each sound and then the whole word`,
-          `Copying the word map three times`,
-          `Listening to a story and naming the setting`,
-        ], answer: 1,
-        explain: `Moving counters together while pronouncing individual sounds explicitly models phoneme blending. Sorting by initial letters practices categorization, but it does not teach the student to combine a sequence of phonemes.` },
-      { id: `5002-003`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `In the word replayed, which morpheme indicates that the action occurred in the past?`,
-        options: [
-          `re-`,
-          `play`,
-          `-ed`,
-          `replay`,
-        ], answer: 2,
-        explain: `The suffix -ed marks the past tense of the verb play. The prefix re- means again, while play carries the word's central lexical meaning.` },
-      { id: `5002-004`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A passage describes a town council's decision to replace a vacant lot with a community garden. The first paragraph presents residents' complaints about the lot, the second explains the council's proposal, and the final paragraph reports early results. Which text structure best describes the passage as a whole?`,
-        options: [
-          `Chronological sequence`,
-          `Compare and contrast`,
-          `Problem and solution`,
-          `Cause and effect only`,
-        ], answer: 2,
-        explain: `The vacant lot is presented as a problem, the garden as the proposed solution, and the results as evidence about that solution. Although events occur over time, chronology organizes details rather than expressing the passage's main logical structure.` },
-      { id: `5002-005`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `After students read two accounts of the same local flood, one from a newspaper and one from a resident's diary, which task best develops their understanding of point of view?`,
-        options: [
-          `List every unfamiliar word in both accounts`,
-          `Compare which details each author includes and explain how the author's role may shape the account`,
-          `Rewrite both accounts using shorter sentences`,
-          `Arrange the paragraphs from both accounts by length`,
-        ], answer: 1,
-        explain: `Comparing selected details and connecting them to each author's role makes perspective visible and evidence based. Vocabulary collection may support comprehension, but it does not directly analyze point of view.` },
-      { id: `5002-006`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which feature of an informational book is most useful for locating every page on which volcanoes are discussed?`,
-        options: [
-          `caption`,
-          `index`,
-          `title page`,
-          `glossary`,
-        ], answer: 1,
-        explain: `An index lists topics alphabetically and gives the pages where each topic appears. A glossary defines selected terms but does not provide a complete map of topic locations.` },
-      { id: `5002-007`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `In a story, Mara repeatedly checks the dark clouds, carries boxes indoors, and tells her brother to secure the gate. Which inference is best supported by these details?`,
-        options: [
-          `Mara expects severe weather`,
-          `Mara plans to leave home permanently`,
-          `Mara dislikes working with her brother`,
-          `Mara has lost an animal`,
-        ], answer: 0,
-        explain: `The dark clouds and preparations to protect belongings support the inference that Mara expects severe weather. The other choices add motives or events for which the text provides no evidence.` },
-      { id: `5002-008`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A third-grade student reads grade-level words accurately but in a slow, word-by-word manner that interferes with comprehension. Which instructional plan is most appropriate?`,
-        options: [
-          `Provide repeated oral reading of a short passage with modeling and feedback`,
-          `Return to isolated consonant-letter drills for several weeks`,
-          `Assign silent reading of a substantially harder chapter each night`,
-          `Ask the student to memorize weekly dictionary definitions`,
-        ], answer: 0,
-        explain: `Modeled, repeated oral reading with feedback builds automaticity, phrasing, and rate while preserving attention to meaning. Isolated consonant drills target decoding accuracy, which the student has already demonstrated.` },
-      { id: `5002-009`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which word contains a vowel team representing a single vowel sound?`,
-        options: [
-          `ship`,
-          `coat`,
-          `lamp`,
-          `best`,
-        ], answer: 1,
-        explain: `In coat, the vowel team oa represents one long-o sound. Each of the other words uses a single vowel letter between consonants rather than a vowel team.` },
-      { id: `5002-010`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `An author explains that city trees lower summer temperatures, absorb storm water, and provide habitat, then notes that maintaining them requires funding and planning. What is the author's primary purpose?`,
-        options: [
-          `To entertain readers with a fictional account of urban wildlife`,
-          `To argue that cities should remove costly trees`,
-          `To inform readers about both benefits and practical demands of urban trees`,
-          `To give step-by-step directions for planting a tree`,
-        ], answer: 2,
-        explain: `The author presents factual benefits and acknowledges practical requirements, indicating a balanced informative purpose. Mentioning costs does not by itself establish an argument for removing trees.` },
-      { id: `5002-011`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which phrase is an example of personification?`,
-        options: [
-          `the wind whispered through the grass`,
-          `the grass was bright green`,
-          `the wind moved from the west`,
-          `the field measured ten acres`,
-        ], answer: 0,
-        explain: `Describing the wind as whispering gives it a human action, which is personification. The other phrases provide literal descriptions or measurements.` },
-      { id: `5002-012`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which teacher prompt best helps students determine the theme of a short story rather than merely identify its topic?`,
-        options: [
-          `What single word names what the story is about?`,
-          `What lesson does the character's experience suggest, and which events support that lesson?`,
-          `Where and when does the story take place?`,
-          `How many times does the main character speak?`,
-        ], answer: 1,
-        explain: `A theme expresses a broader message or lesson and should be supported by events in the text. Naming a topic produces only a subject such as friendship, not a thematic statement about that subject.` },
-      { id: `5002-013`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A science article includes a diagram showing how water moves among the ocean, clouds, and land. How does the diagram most likely contribute to the article?`,
-        options: [
-          `It replaces the need to read any technical vocabulary`,
-          `It visually represents relationships and direction of movement described in the text`,
-          `It proves that every water molecule follows an identical path`,
-          `It identifies the author's personal opinion about rainfall`,
-        ], answer: 1,
-        explain: `A cycle diagram makes relationships and directional movement easier to see while complementing the prose explanation. It does not eliminate the need to read or claim that all individual molecules travel identically.` },
-      { id: `5002-014`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A student reads, 'Unlike the arid plateau, the valley was lush, with ferns crowding the riverbank.' Which reasoning best determines the meaning of arid?`,
-        options: [
-          `The contrast signal unlike and the description of lush vegetation suggest that arid means dry`,
-          `The nearby word valley suggests that arid means low`,
-          `The mention of ferns suggests that arid means shaded`,
-          `The riverbank context suggests that arid means flooded`,
-        ], answer: 0,
-        explain: `The explicit contrast between the arid plateau and the lush, plant-filled valley indicates that arid means dry or lacking moisture. Inferring low from valley ignores that arid directly modifies plateau and is clarified by the contrast.` },
-      { id: `5002-015`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which sentence uses a comma correctly after an introductory phrase?`,
-        options: [
-          `Before the concert we found our seats.`,
-          `Before, the concert we found our seats.`,
-          `Before the concert, we found our seats.`,
-          `Before the concert we, found our seats.`,
-        ], answer: 2,
-        explain: `The comma correctly separates the introductory prepositional phrase Before the concert from the independent clause. Placing the comma inside the phrase or between the subject and verb disrupts the sentence's structure.` },
-      { id: `5002-016`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A student has drafted a persuasive letter with clear reasons but no evidence. Which teacher response would best guide the next revision?`,
-        options: [
-          `Correct all spelling errors before discussing ideas`,
-          `Ask the student to add facts, examples, or experiences that support each reason`,
-          `Tell the student to replace every short sentence with a longer one`,
-          `Have the student copy the opening paragraph in neater handwriting`,
-        ], answer: 1,
-        explain: `Adding relevant evidence strengthens the link between claims and reasons, addressing the most important weakness in the draft. Editing spelling is useful later, but it does not improve the argument's support during substantive revision.` },
-      { id: `5002-017`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which sentence has correct subject-verb agreement?`,
-        options: [
-          `The basket of apples sit on the counter.`,
-          `The basket of apples sits on the counter.`,
-          `The baskets of apples sits on the counter.`,
-          `The basket of apples are sitting on the counter.`,
-        ], answer: 1,
-        explain: `The singular subject basket requires the singular verb sits; the intervening plural noun apples does not change the subject's number. The other options mismatch the grammatical number of the subject and verb.` },
-      { id: `5002-018`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which revision most effectively combines the ideas while preserving their logical relationship? 'The trail was muddy. The hikers continued. They wanted to reach the shelter before dark.'`,
-        options: [
-          `The trail was muddy, and the hikers continued, and they wanted the shelter.`,
-          `Because the trail was muddy, the hikers wanted to reach the shelter before dark.`,
-          `Although the trail was muddy, the hikers continued so that they could reach the shelter before dark.`,
-          `The hikers continued before dark, but the muddy trail reached the shelter.`,
-        ], answer: 2,
-        explain: `Although accurately signals contrast between the muddy conditions and continuing, while so that expresses the hikers' purpose. The because option incorrectly makes the mud the cause of their desire to reach shelter.` },
-      { id: `5002-019`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A student is writing instructions for planting bean seeds. Which organizational choice would best support the purpose?`,
-        options: [
-          `Present the steps in the order they should be completed`,
-          `Begin with a comparison of several unrelated plants`,
-          `Arrange sentences from shortest to longest`,
-          `Save all action verbs for the final paragraph`,
-        ], answer: 0,
-        explain: `Procedural writing is clearest when actions appear in the sequence in which readers must perform them. Organizing by sentence length does not help readers carry out the task.` },
-      { id: `5002-020`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `During a group discussion, two students dominate while others rarely speak. Which teacher strategy best promotes equitable participation and active listening?`,
-        options: [
-          `Allow the strongest speakers to summarize every response`,
-          `Assign rotating roles and require each speaker to paraphrase a previous idea before adding a new one`,
-          `End the discussion and give students a silent worksheet`,
-          `Grade only the total number of comments each student makes`,
-        ], answer: 1,
-        explain: `Rotating roles distribute opportunities, and paraphrasing requires students to listen and connect ideas. Counting comments alone may reward frequent speaking without improving listening or the quality of participation.` },
-      { id: `5002-021`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which source is most appropriate for finding the current hours of a local public library?`,
-        options: [
-          `the library's official website`,
-          `a historical novel set in the town`,
-          `an undated personal diary`,
-          `a printed atlas of the state`,
-        ], answer: 0,
-        explain: `The library's official website is the most direct and likely current source for operating hours. An undated diary may mention the library but cannot reliably establish present-day information.` },
-      { id: `5002-022`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which sentence is most appropriate for a formal report to the school board?`,
-        options: [
-          `The new schedule is super awesome for everybody.`,
-          `You guys should totally keep the new schedule.`,
-          `Survey results indicate that most families support the new schedule.`,
-          `I guess the schedule is kind of okay.`,
-        ], answer: 2,
-        explain: `The sentence uses precise, evidence-based language and an appropriately formal register. Expressions such as super awesome and you guys are conversational and unsupported.` },
-      { id: `5002-023`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A multilingual student contributes sophisticated ideas during oral rehearsal but writes only brief, disconnected sentences. Which support best preserves the student's ideas while developing written organization?`,
-        options: [
-          `Reduce the assignment to copying isolated vocabulary words`,
-          `Have the student record the oral explanation, use a graphic organizer to group ideas, and draft from the organizer`,
-          `Require an error-free first draft without additional planning time`,
-          `Replace the writing task with a multiple-choice grammar quiz`,
-        ], answer: 1,
-        explain: `Recording and organizing oral ideas leverages the student's demonstrated language resources while scaffolding transfer to coherent writing. Copying words narrows the cognitive demand and does not connect the student's strong ideas into a composition.` },
-      { id: `5002-024`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which thesis statement is most focused for a short argumentative essay about recess?`,
-        options: [
-          `Schools have many schedules and many students.`,
-          `Recess is a topic that people discuss.`,
-          `Elementary schools should provide daily recess because physical activity supports attention and social development.`,
-          `There are several things to say about education.`,
-        ], answer: 2,
-        explain: `The selected thesis states a clear position and previews two relevant lines of support. The other choices merely announce a broad topic without making a defensible claim.` },
-      { id: `5002-025`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A student cites a web article claiming that a particular study method doubles test scores. Which action is most important before using the claim in a research report?`,
-        options: [
-          `Choose the article if its page has colorful graphs`,
-          `Verify the author's expertise, publication date, evidence, and whether other credible sources corroborate the claim`,
-          `Use the claim if it appears near the top of search results`,
-          `Replace the numerical claim with a stronger adjective`,
-        ], answer: 1,
-        explain: `Evaluating authority, currency, evidence, and corroboration addresses both the source's credibility and the claim's reliability. Search ranking and visual design do not establish sound research methods or trustworthy findings.` },
-      { id: `5002-026`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which sentence uses the pronoun correctly?`,
-        options: [
-          `The coach gave the forms to Maya and I.`,
-          `The coach gave the forms to Maya and me.`,
-          `The coach gave Maya and myself the forms.`,
-          `The coach gave the forms to she and Maya.`,
-        ], answer: 1,
-        explain: `Me is the correct objective-case pronoun because it is part of the object of the preposition to. I is subjective case, and myself requires a first-person subject or an appropriate emphatic use.` },
-      { id: `5002-027`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which minilesson would most directly help students revise paragraphs that contain several relevant details but lack coherence?`,
-        options: [
-          `Practice arranging details around a topic sentence and adding transitions that show relationships`,
-          `Memorize the spelling of twenty unrelated words`,
-          `Count the number of letters in each sentence`,
-          `Replace every verb with a form of be`,
-        ], answer: 0,
-        explain: `Grouping details around a controlling idea and using meaningful transitions directly strengthen paragraph coherence. Spelling practice addresses conventions rather than relationships among ideas.` },
-      { id: `5002-028`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Which revision best eliminates the ambiguous pronoun reference in the sentence 'When Elena spoke with Priya, she explained the experiment clearly'?`,
-        options: [
-          `When Elena spoke with Priya, she clearly explained it.`,
-          `Elena clearly explained the experiment while speaking with Priya.`,
-          `When Elena spoke, Priya, she explained the clear experiment.`,
-          `Speaking with Priya, the experiment was clearly explained by her.`,
-        ], answer: 1,
-        explain: `Naming Elena as the subject makes the person who explained the experiment explicit. The first option retains the ambiguous she, while the passive construction in the final option creates an illogical modifier and another vague pronoun.` },
-      { id: `5002-029`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `A speaker presents playground redesign options to families at a public meeting. Which adaptation would best address this audience?`,
-        options: [
-          `Use unexplained engineering abbreviations throughout`,
-          `Show labeled visuals, explain costs in plain language, and reserve time for questions`,
-          `Read raw measurements without connecting them to any option`,
-          `Assume every listener has reviewed the technical plans`,
-        ], answer: 1,
-        explain: `Clear visuals, accessible cost explanations, and questions help a varied public audience understand and participate. Unexplained abbreviations assume specialized knowledge and create a barrier to comprehension.` },
-      { id: `5002-030`, code: `5002`, subtest: `Reading and Language Arts`,
-        q: `Students are peer reviewing narrative drafts, but their comments are limited to 'good story' or corrections of surface errors. Which change would most improve the usefulness of peer feedback?`,
-        options: [
-          `Ask reviewers to assign a single overall score without explanation`,
-          `Provide prompts that require reviewers to identify a clear strength, ask a reader question, and suggest one revision tied to narrative goals`,
-          `Prohibit students from discussing meaning until every comma is correct`,
-          `Have reviewers rewrite their partners' drafts in their own style`,
-        ], answer: 1,
-        explain: `Criteria-based prompts focus reviewers on specific evidence, reader response, and an actionable revision related to the genre's goals. Rewriting a partner's work removes author ownership rather than helping the writer make decisions.` },
-      { id: `5003-001`, code: `5003`, subtest: `Mathematics`,
-        q: `What is the greatest common factor of 18 and 24?`,
-        options: [
-          `3`,
-          `6`,
-          `9`,
-          `12`,
-        ], answer: 1,
-        explain: `The factors common to 18 and 24 are 1, 2, 3, and 6, so the greatest common factor is 6. The choice 12 is a factor of 24 but not of 18.` },
-      { id: `5003-002`, code: `5003`, subtest: `Mathematics`,
-        q: `Which comparison is correct?`,
-        options: [
-          `5/8 < 0.60`,
-          `5/8 = 62%`,
-          `5/8 > 0.63`,
-          `5/8 = 0.625`,
-        ], answer: 3,
-        explain: `Dividing 5 by 8 gives 0.625, so the equality in the fourth option is correct. This value is 62.5%, not 62%, and it lies between 0.60 and 0.63.` },
-      { id: `5003-003`, code: `5003`, subtest: `Mathematics`,
-        q: `A store reduces the price of a $48 backpack by 25%. What is the sale price?`,
-        options: [
-          `$12`,
-          `$24`,
-          `$36`,
-          `$42`,
-        ], answer: 2,
-        explain: `Twenty-five percent of $48 is $12, and subtracting the discount gives $48 - $12 = $36. The $12 option is the amount of the discount, not the sale price.` },
-      { id: `5003-004`, code: `5003`, subtest: `Mathematics`,
-        q: `A recipe uses 2 cups of rice for every 3 cups of broth. Which amount of broth is needed for 6 cups of rice?`,
-        options: [
-          `4 cups`,
-          `7 cups`,
-          `9 cups`,
-          `12 cups`,
-        ], answer: 2,
-        explain: `Six cups of rice is three times 2 cups, so the corresponding broth amount is three times 3 cups, or 9 cups. Adding the same number to both parts would not preserve the multiplicative ratio.` },
-      { id: `5003-005`, code: `5003`, subtest: `Mathematics`,
-        q: `A student can compute 3/4 ÷ 1/8 by using an invert-and-multiply rule but cannot explain the result. Which activity would best develop the student's conceptual understanding?`,
-        options: [
-          `Have the student memorize a second version of the rule`,
-          `Have the student mark eighths on a number line and count how many fit in 3/4`,
-          `Have the student convert both fractions to decimals and use a calculator`,
-          `Have the student practice twenty similar division problems`,
-        ], answer: 1,
-        explain: `Partitioning a number line into eighths shows that six groups of 1/8 fit in 3/4, directly modeling the meaning of division. Additional rule practice may improve fluency but does not address the missing conceptual explanation.` },
-      { id: `5003-006`, code: `5003`, subtest: `Mathematics`,
-        q: `A positive integer leaves a remainder of 2 when divided by 5. Which expression must be divisible by 5?`,
-        options: [
-          `n + 2`,
-          `n + 3`,
-          `2n + 1`,
-          `3n + 2`,
-        ], answer: 1,
-        explain: `Such an integer can be written as n = 5k + 2, so n + 3 = 5k + 5, which is divisible by 5. For example, n + 2 leaves remainder 4, so merely adding the original remainder does not produce a multiple of 5.` },
-      { id: `5003-007`, code: `5003`, subtest: `Mathematics`,
-        q: `A student claims that 0.4 × 0.3 = 0.12 because multiplying tenths produces hundredths, but writes 0.4 × 3 = 0.12 as well. Which response best addresses the misconception?`,
-        options: [
-          `Ask the student to rewrite both products vertically and count decimal places`,
-          `Use four tenths represented on a place-value grid and show that three groups equal twelve tenths`,
-          `Tell the student that multiplying by a whole number always moves the decimal right`,
-          `Have the student round both factors before multiplying`,
-        ], answer: 1,
-        explain: `A place-value model shows that three groups of four tenths total twelve tenths, or 1.2, distinguishing a whole-number factor from a tenths factor. Counting decimal places as a memorized procedure would not by itself repair the student's misunderstanding of unit size.` },
-      { id: `5003-008`, code: `5003`, subtest: `Mathematics`,
-        q: `After a quantity is increased by 20%, the result is 72. What was the original quantity?`,
-        options: [
-          `57.6`,
-          `60`,
-          `62`,
-          `64`,
-        ], answer: 1,
-        explain: `If x is the original quantity, then 1.20x = 72, so x = 60. Subtracting 20% of 72 gives 57.6, but that incorrectly treats the final value as the base of the increase.` },
-      { id: `5003-009`, code: `5003`, subtest: `Mathematics`,
-        q: `Which expression represents five less than three times a number n?`,
-        options: [
-          `3(n - 5)`,
-          `3n - 5`,
-          `5 - 3n`,
-          `5n - 3`,
-        ], answer: 1,
-        explain: `Three times n is 3n, and five less than that quantity is 3n - 5. The expression 3(n - 5) subtracts 5 before multiplying and therefore represents a different relationship.` },
-      { id: `5003-010`, code: `5003`, subtest: `Mathematics`,
-        q: `The first three figures in a tile pattern contain 5, 8, and 11 tiles. If the pattern continues by the same rule, which expression gives the number of tiles T in figure n?`,
-        options: [
-          `T = 3n + 2`,
-          `T = 5n + 3`,
-          `T = 3n + 5`,
-          `T = 8n - 3`,
-        ], answer: 0,
-        explain: `The number of tiles increases by 3 for each increase of 1 in n, so the coefficient of n is 3. Substituting n = 1 into 3n + 2 gives 5, confirming the constant term; 3n + 5 would begin at 8 instead.` },
-      { id: `5003-011`, code: `5003`, subtest: `Mathematics`,
-        q: `A student says the equation 7 + 4 = __ + 5 cannot be solved because the blank comes after the equal sign. Which instructional move would best build an accurate meaning of the equal sign?`,
-        options: [
-          `Explain that the equal sign means the answer comes next`,
-          `Use a balance model to compare the value on each side of several equations`,
-          `Move the blank to the right end of the equation`,
-          `Ask the student to memorize that the missing number is 6`,
-        ], answer: 1,
-        explain: `A balance model emphasizes that the equal sign states that two expressions have the same value, regardless of where a blank appears. Describing the sign as an instruction to produce an answer reinforces the student's operational misconception.` },
-      { id: `5003-012`, code: `5003`, subtest: `Mathematics`,
-        q: `For which value of k does the equation 3(x - 2) + k = 3x + 1 have infinitely many solutions?`,
-        options: [
-          `-7`,
-          `-5`,
-          `5`,
-          `7`,
-        ], answer: 3,
-        explain: `Expanding the left side gives 3x - 6 + k. For the equation to be true for every x, the constant terms must match, so -6 + k = 1 and k = 7; any other value produces a contradiction rather than a single solution because the x-terms already cancel.` },
-      { id: `5003-013`, code: `5003`, subtest: `Mathematics`,
-        q: `Students are beginning to use variables. Which task best helps them understand that a variable can represent a range of possible values rather than one hidden number?`,
-        options: [
-          `Solve x + 9 = 14`,
-          `List values of n that make n < 6 true`,
-          `Evaluate 4a when a = 3`,
-          `Copy the definition of variable from a textbook`,
-        ], answer: 1,
-        explain: `An inequality such as n < 6 has many solutions, so listing them makes the variable's varying role explicit. Solving x + 9 = 14 instead positions the variable as one unknown value.` },
-      { id: `5003-014`, code: `5003`, subtest: `Mathematics`,
-        q: `Table A contains the pairs (2, 7), (4, 14), and (6, 21). Table B contains the pairs (2, 8), (4, 14), and (6, 20). Which statement is correct?`,
-        options: [
-          `Both tables represent proportional relationships`,
-          `Only Table A represents a proportional relationship`,
-          `Only Table B represents a proportional relationship`,
-          `Neither table represents a proportional relationship`,
-        ], answer: 1,
-        explain: `In Table A, every ratio y/x equals 3.5, so the relationship is proportional. In Table B, the ratios are 4, 3.5, and 10/3, so a constant additive change in y does not make the relationship proportional.` },
-      { id: `5003-015`, code: `5003`, subtest: `Mathematics`,
-        q: `An angle measures 125 degrees. How is the angle classified?`,
-        options: [
-          `Acute`,
-          `Right`,
-          `Obtuse`,
-          `Straight`,
-        ], answer: 2,
-        explain: `An obtuse angle measures more than 90 degrees but less than 180 degrees, so a 125-degree angle is obtuse. A straight angle measures exactly 180 degrees.` },
-      { id: `5003-016`, code: `5003`, subtest: `Mathematics`,
-        q: `A rectangle has length 10 cm and width 6 cm. Its length is increased by 20% while its width is decreased by 20%. How does its area change?`,
-        options: [
-          `It decreases by 4%`,
-          `It stays the same`,
-          `It increases by 4%`,
-          `It increases by 40%`,
-        ], answer: 0,
-        explain: `The new dimensions are 12 cm and 4.8 cm, giving an area of 57.6 square centimeters compared with the original 60. Thus the area is multiplied by 1.2 × 0.8 = 0.96, a 4% decrease; equal percentage changes in opposite directions do not cancel multiplicatively.` },
-      { id: `5003-017`, code: `5003`, subtest: `Mathematics`,
-        q: `The data set is 4, 6, 6, 9, and 15. What is the mean?`,
-        options: [
-          `6`,
-          `7`,
-          `8`,
-          `9`,
-        ], answer: 2,
-        explain: `The values sum to 40, and 40 divided by 5 is 8. The choice 6 is both the median and the mode, not the mean.` },
-      { id: `5003-018`, code: `5003`, subtest: `Mathematics`,
-        q: `A bag contains 3 red, 2 blue, and 1 green marble. Two marbles are drawn at random without replacement. What is the probability that both marbles are the same color?`,
-        options: [
-          `1/6`,
-          `4/15`,
-          `1/3`,
-          `2/5`,
-        ], answer: 1,
-        explain: `There are 15 unordered pairs in total, and same-color pairs consist of 3 red-red pairs and 1 blue-blue pair, for 4 favorable pairs. Therefore the probability is 4/15; treating the draws as independent would ignore that the first marble is not replaced.` },
-      { id: `5003-019`, code: `5003`, subtest: `Mathematics`,
-        q: `A student says that any two rectangles with the same perimeter must have the same area. Which activity would best help the student test and revise this claim?`,
-        options: [
-          `Measure the perimeter of one rectangle several times`,
-          `Build several rectangles with a fixed number of unit-length segments and compare their unit-square areas`,
-          `Memorize the formulas for perimeter and area`,
-          `Sort shapes into rectangles and nonrectangles`,
-        ], answer: 1,
-        explain: `Constructing multiple rectangles with one fixed perimeter lets the student produce counterexamples and compare their areas directly. Memorizing formulas does not provide the same evidence that equal perimeters can enclose different areas.` },
-      { id: `5003-020`, code: `5003`, subtest: `Mathematics`,
-        q: `A class records plant heights for two groups. Group X has mean 18 cm and range 2 cm; Group Y has mean 18 cm and range 12 cm. Which teacher prompt would best focus students on what the summaries reveal?`,
-        options: [
-          `Which group has the taller mean plant?`,
-          `How can both groups have the same center but different variability?`,
-          `Which individual plant in Group Y is exactly 18 cm tall?`,
-          `Why does the larger range prove that Group Y has more plants?`,
-        ], answer: 1,
-        explain: `The prompt asks students to distinguish center from spread: equal means indicate the same average, while different ranges indicate different variability. A mean of 18 does not guarantee that either group contains an individual plant exactly 18 cm tall, and range does not determine sample size.` },
-      { id: `5004-001`, code: `5004`, subtest: `Social Studies`,
-        q: `Which principle of the United States Constitution divides authority among the legislative, executive, and judicial branches?`,
-        options: [
-          `Federalism`,
-          `Popular sovereignty`,
-          `Separation of powers`,
-          `Judicial review`,
-        ], answer: 2,
-        explain: `Separation of powers assigns distinct responsibilities to the three branches of the federal government. Federalism, the strongest distractor, instead divides power between the national government and state governments.` },
-      { id: `5004-002`, code: `5004`, subtest: `Social Studies`,
-        q: `A state law conflicts with a valid federal law on the same subject. Which constitutional principle most directly guides a court in resolving the conflict?`,
-        options: [
-          `The Supremacy Clause`,
-          `The Establishment Clause`,
-          `The reserved-powers principle`,
-          `The protection against double jeopardy`,
-        ], answer: 0,
-        explain: `The Supremacy Clause establishes that the Constitution and valid federal laws take priority over conflicting state laws. Reserved powers protect state authority in areas not delegated to the federal government, but they do not make a conflicting state law superior.` },
-      { id: `5004-003`, code: `5004`, subtest: `Social Studies`,
-        q: `A teacher wants students to distinguish a primary source from a secondary source while studying westward expansion. Which activity best develops that skill?`,
-        options: [
-          `Comparing a settler's 1849 diary entry with a modern historian's account of migration`,
-          `Memorizing the dates when several western territories became states`,
-          `Labeling the routes of major trails on a blank physical map`,
-          `Summarizing two modern textbook chapters about frontier communities`,
-        ], answer: 0,
-        explain: `Comparing a firsthand diary with a later historical interpretation makes the difference between primary and secondary evidence explicit. Two modern textbook chapters are both secondary sources, so that activity would not establish the contrast.` },
-      { id: `5004-004`, code: `5004`, subtest: `Social Studies`,
-        q: `Which document announced that the thirteen colonies regarded themselves as independent states?`,
-        options: [
-          `The Articles of Confederation`,
-          `The Declaration of Independence`,
-          `The Federalist Papers`,
-          `The Bill of Rights`,
-        ], answer: 1,
-        explain: `The Declaration of Independence formally stated the colonies' decision to separate from Great Britain. The Articles of Confederation created an early framework of government but did not serve as the announcement of independence.` },
-      { id: `5004-005`, code: `5004`, subtest: `Social Studies`,
-        q: `Why did the framers give the House of Representatives a shorter term of office than the Senate?`,
-        options: [
-          `To make the House more responsive to changes in public opinion`,
-          `To allow the House to appoint federal judges more frequently`,
-          `To prevent the House from participating in revenue legislation`,
-          `To ensure that state governments directly control House members`,
-        ], answer: 0,
-        explain: `Two-year terms keep House members closely accountable to voters and responsive to shifts in public opinion. The House does participate in revenue legislation, and federal judges are nominated by the president and confirmed by the Senate.` },
-      { id: `5004-006`, code: `5004`, subtest: `Social Studies`,
-        q: `Which development most directly strengthened the federal government's ability to regulate economic activity across state lines during the twentieth century?`,
-        options: [
-          `Broad judicial interpretations of the Commerce Clause`,
-          `The direct election of United States senators`,
-          `The creation of bicameral state legislatures`,
-          `Narrow interpretations of the Full Faith and Credit Clause`,
-        ], answer: 0,
-        explain: `Broad readings of the Commerce Clause allowed Congress to regulate many activities connected to interstate commerce. Direct election of senators changed democratic representation, but it did not itself expand federal regulatory authority over interstate economic activity.` },
-      { id: `5004-007`, code: `5004`, subtest: `Social Studies`,
-        q: `Students are examining whether the New Deal changed the role of the federal government. Which set of evidence would best support an evidence-based discussion?`,
-        options: [
-          `Excerpts from a New Deal law, employment data, and contrasting contemporary speeches`,
-          `A list of presidents in chronological order and a map of state capitals`,
-          `A single recent editorial that praises federal economic programs`,
-          `Definitions of unrelated constitutional amendments copied from a glossary`,
-        ], answer: 0,
-        explain: `The law, data, and contrasting speeches provide varied evidence about policy, outcomes, and contemporary viewpoints. A single recent editorial offers only one retrospective opinion and is insufficient for evaluating the historical change.` },
-      { id: `5004-008`, code: `5004`, subtest: `Social Studies`,
-        q: `Which constitutional amendment applied national citizenship and equal protection requirements to the states?`,
-        options: [
-          `The Tenth Amendment`,
-          `The Twelfth Amendment`,
-          `The Fourteenth Amendment`,
-          `The Seventeenth Amendment`,
-        ], answer: 2,
-        explain: `The Fourteenth Amendment defines national citizenship and prohibits states from denying equal protection of the laws. The Tenth Amendment reserves undelegated powers, but it does not establish the cited citizenship and equality guarantees.` },
-      { id: `5004-009`, code: `5004`, subtest: `Social Studies`,
-        q: `During a civics unit, which task best assesses whether students understand checks and balances rather than merely recall branch names?`,
-        options: [
-          `Matching each branch to the building where it works`,
-          `Explaining how a presidential veto and a congressional override limit one another`,
-          `Listing the three branches in the order presented in the Constitution`,
-          `Defining the word government using a classroom glossary`,
-        ], answer: 1,
-        explain: `Explaining the interaction between a veto and an override requires students to show how two branches restrain each other's power. Listing branch names measures recall but not understanding of checks and balances.` },
-      { id: `5004-010`, code: `5004`, subtest: `Social Studies`,
-        q: `Which map feature identifies the meaning of symbols used on a map?`,
-        options: [
-          `Scale`,
-          `Legend`,
-          `Latitude`,
-          `Compass rose`,
-        ], answer: 1,
-        explain: `A legend, or key, explains the symbols and colors displayed on a map. A scale shows the relationship between map distance and actual distance rather than defining symbols.` },
-      { id: `5004-011`, code: `5004`, subtest: `Social Studies`,
-        q: `A town grows where a navigable river crosses a major overland route. Which geographic concept best explains the town's initial development?`,
-        options: [
-          `Its situation created connections between transportation networks`,
-          `Its climate guaranteed equal rainfall in every season`,
-          `Its absolute location eliminated the need for trade`,
-          `Its cultural landscape prevented movement into the region`,
-        ], answer: 0,
-        explain: `Situation refers to a place's location relative to other features, and the crossing of transport routes creates access and exchange opportunities. Absolute location gives coordinates but does not by itself explain why the settlement grew.` },
-      { id: `5004-012`, code: `5004`, subtest: `Social Studies`,
-        q: `A class is investigating why families migrate from one region to another. Which activity best helps students avoid a single-cause explanation?`,
-        options: [
-          `Sorting source excerpts into interacting economic, environmental, political, and social factors`,
-          `Selecting one migration story and treating its cause as typical of every migrant`,
-          `Copying definitions of immigration and emigration without examining cases`,
-          `Ranking destinations only by their straight-line distance from the origin`,
-        ], answer: 0,
-        explain: `Sorting varied evidence across several categories helps students see that migration decisions often involve interacting push and pull factors. Generalizing from one story would encourage the very single-cause reasoning the lesson is meant to correct.` },
-      { id: `5004-013`, code: `5004`, subtest: `Social Studies`,
-        q: `Residents of a coastal community elevate new buildings after repeated flooding. This response is best described as which type of human-environment interaction?`,
-        options: [
-          `Adaptation to an environmental hazard`,
-          `Diffusion of a language trait`,
-          `Creation of an absolute location`,
-          `Elimination of regional interdependence`,
-        ], answer: 0,
-        explain: `Elevating buildings changes human practices to reduce harm from a recurring environmental hazard, so it is adaptation. Cultural diffusion concerns the spread of ideas or traits and does not directly describe this structural response.` },
-      { id: `5004-014`, code: `5004`, subtest: `Social Studies`,
-        q: `In sociology, which term refers to an expected pattern of behavior associated with a particular social status?`,
-        options: [
-          `Role`,
-          `Artifact`,
-          `Dialect`,
-          `Demographic transition`,
-        ], answer: 0,
-        explain: `A social role is the set of behaviors and expectations associated with a status, such as teacher or voter. An artifact is a material object produced by a culture and does not name an expected behavior pattern.` },
-      { id: `5004-015`, code: `5004`, subtest: `Social Studies`,
-        q: `Which classroom resource is most appropriate for helping students compare population density among regions?`,
-        options: [
-          `A choropleth map shaded by people per square mile`,
-          `A political map showing only national borders`,
-          `A time line of major inventions`,
-          `A climate graph for one weather station`,
-        ], answer: 0,
-        explain: `A choropleth map uses graded shading to display how a numerical rate, such as population density, varies across areas. A political map can locate boundaries but does not show the density values needed for comparison.` },
-      { id: `5004-016`, code: `5004`, subtest: `Social Studies`,
-        q: `Which development was a major feature of the Neolithic Revolution?`,
-        options: [
-          `The adoption of settled agriculture`,
-          `The invention of steam-powered factories`,
-          `The establishment of transatlantic colonies`,
-          `The creation of modern nation-states`,
-        ], answer: 0,
-        explain: `The Neolithic Revolution involved the shift from hunting and gathering toward farming and settled communities. Steam-powered factories belong to the much later Industrial Revolution.` },
-      { id: `5004-017`, code: `5004`, subtest: `Social Studies`,
-        q: `A baker can use an hour either to make 20 loaves of bread or to prepare 5 cakes. If the baker spends that hour making cakes, what is the opportunity cost?`,
-        options: [
-          `The 20 loaves that could have been made`,
-          `The money previously spent on the oven`,
-          `The total number of cakes prepared that day`,
-          `The price charged for one loaf of bread`,
-        ], answer: 0,
-        explain: `Opportunity cost is the value of the next-best alternative forgone, which is the 20 loaves the baker could have produced. The prior cost of the oven is a sunk cost, not the alternative sacrificed in this one-hour choice.` },
-      { id: `5004-018`, code: `5004`, subtest: `Social Studies`,
-        q: `A teacher wants students to evaluate whether trade benefited two ancient societies rather than assume that only one side gained. Which learning task is most effective?`,
-        options: [
-          `Tracing exchanged goods and technologies, then assessing evidence of gains and costs for each society`,
-          `Memorizing the names of rulers without examining records of exchange`,
-          `Coloring both societies on a map using the same shade`,
-          `Reading one society's celebratory account as a complete record of trade`,
-        ], answer: 0,
-        explain: `Tracing exchanges and evaluating effects on both societies requires balanced use of evidence and recognizes that trade can create different gains and costs. Relying on one celebratory account provides a limited viewpoint and cannot support a comparative judgment.` },
-      { id: `5004-019`, code: `5004`, subtest: `Social Studies`,
-        q: `If demand for oranges increases while supply remains unchanged, what will most likely happen to the market price in the short run?`,
-        options: [
-          `It will rise as buyers compete for the existing supply`,
-          `It will fall because production costs immediately disappear`,
-          `It will remain fixed because demand cannot affect price`,
-          `It will become zero until growers increase supply`,
-        ], answer: 0,
-        explain: `With supply unchanged, an increase in demand generally raises the equilibrium price as buyers compete for the available quantity. The idea that demand cannot affect price ignores the interaction of supply and demand in a market.` },
-      { id: `5004-020`, code: `5004`, subtest: `Social Studies`,
-        q: `Why did many early civilizations develop near major rivers?`,
-        options: [
-          `Rivers supported irrigation, transportation, and concentrated settlement`,
-          `Rivers prevented communities from exchanging goods with neighbors`,
-          `Rivers removed the need for organized labor and government`,
-          `Rivers ensured that crops could grow without seasonal variation`,
-        ], answer: 0,
-        explain: `Major rivers supplied water, fertile floodplains, and transportation routes that supported dense settlements and economic exchange. They did not remove the need for coordination; irrigation and flood control often required organized communal labor.` },
-      { id: `5005-001`, code: `5005`, subtest: `Science`,
-        q: `Which layer of Earth is composed primarily of solid rock and includes the continents and ocean floors?`,
-        options: [
-          `Crust`,
-          `Outer core`,
-          `Inner core`,
-          `Lower mantle`,
-        ], answer: 0,
-        explain: `The crust is Earth's thin, solid outermost layer and forms both continental and oceanic surfaces. The outer core is liquid metal, while the inner core lies at Earth's center.` },
-      { id: `5005-002`, code: `5005`, subtest: `Science`,
-        q: `A coastal town experiences two high tides and two low tides during most days. Which interaction is primarily responsible for this repeating pattern?`,
-        options: [
-          `The gravitational attraction between the Moon and Earth`,
-          `The changing distance between Earth and the Sun each day`,
-          `The movement of tectonic plates beneath the ocean`,
-          `The transfer of heat by deep-ocean currents`,
-        ], answer: 0,
-        explain: `The Moon's gravity produces tidal bulges, and Earth's rotation carries coastal locations through them. Ocean currents redistribute water and heat but do not create the regular daily tidal cycle.` },
-      { id: `5005-003`, code: `5005`, subtest: `Science`,
-        q: `Students claim that summer occurs because Earth is closer to the Sun in June. Which model would best help them revise this explanation?`,
-        options: [
-          `A tilted globe moved around a lamp while students compare light angles in each hemisphere`,
-          `A scale model showing the relative diameters of Earth and the Sun`,
-          `A chart listing the planets in order from the Sun`,
-          `A diagram showing the layers of Earth's atmosphere`,
-        ], answer: 0,
-        explain: `Moving a tilted globe around a lamp shows that seasons result from changing sunlight angle and day length as Earth orbits the Sun. A size model does not address why the hemispheres experience opposite seasons.` },
-      { id: `5005-004`, code: `5005`, subtest: `Science`,
-        q: `A rock contains rounded pebbles cemented together in a finer material. Which sequence most likely formed the rock?`,
-        options: [
-          `Weathering and transport, deposition, compaction, and cementation`,
-          `Melting, cooling, crystallization, and uplift`,
-          `Deep burial, intense heat, foliation, and erosion`,
-          `Evaporation, condensation, precipitation, and infiltration`,
-        ], answer: 0,
-        explain: `Rounded fragments indicate transport and abrasion before deposition, and cementation turns the sediment into conglomerate. Melting and cooling would form igneous rock rather than a rock made of visible pebbles.` },
-      { id: `5005-005`, code: `5005`, subtest: `Science`,
-        q: `A class wants to test whether dark soil warms faster than light sand in sunlight. Which procedure would provide the strongest evidence?`,
-        options: [
-          `Place equal masses in identical containers under the same lamp and record both temperatures at regular intervals`,
-          `Place the soil outdoors and the sand indoors, then compare them at noon`,
-          `Heat unequal masses on different days and record only their final temperatures`,
-          `Ask several students which material feels warmer after touching each one`,
-        ], answer: 0,
-        explain: `Identical containers, equal masses, a common energy source, and repeated measurements control relevant variables and produce comparable data. Using different locations or relying on touch introduces confounding factors and subjective evidence.` },
-      { id: `5005-006`, code: `5005`, subtest: `Science`,
-        q: `Which structure controls the movement of substances into and out of a cell?`,
-        options: [
-          `Cell membrane`,
-          `Nucleus`,
-          `Chromosome`,
-          `Cytoplasm`,
-        ], answer: 0,
-        explain: `The cell membrane is selectively permeable and regulates what enters and leaves the cell. The nucleus stores genetic information but does not form the cell's exchange boundary.` },
-      { id: `5005-007`, code: `5005`, subtest: `Science`,
-        q: `A rabbit population declines sharply after a disease reduces the local grass population. Which relationship best explains the decline?`,
-        options: [
-          `The rabbits have less available food energy`,
-          `The rabbits receive less oxygen from the grass`,
-          `The rabbits lose inherited traits when grass is scarce`,
-          `The disease changes the rabbits from consumers into producers`,
-        ], answer: 0,
-        explain: `Rabbits obtain chemical energy by consuming plants, so reduced grass limits a key resource and lowers carrying capacity. Plants release oxygen, but the direct food-web relationship is the relevant explanation for the population change.` },
-      { id: `5005-008`, code: `5005`, subtest: `Science`,
-        q: `Students sort pictures of a bat, butterfly, bird, and bee into one group because all four can fly. Which question would best prompt them to classify by inherited biological characteristics instead?`,
-        options: [
-          `Which animals have hair and feed milk to their young?`,
-          `Which animals can move higher than a tree?`,
-          `Which animals are easiest to observe outdoors?`,
-          `Which animals make sounds while moving?`,
-        ], answer: 0,
-        explain: `Hair and milk production are defining mammalian traits and identify the bat by inherited biological characteristics. Flight is an analogous function shared by organisms from different taxonomic groups.` },
-      { id: `5005-009`, code: `5005`, subtest: `Science`,
-        q: `In a population of insects, individuals with coloring that matches tree bark are eaten less often by birds. Over many generations, what outcome is most likely?`,
-        options: [
-          `Bark-colored insects become more common because they leave more offspring`,
-          `Each insect changes its color after seeing the tree bark`,
-          `Birds stop eating insects because camouflage removes hunger`,
-          `All insects become genetically identical in one generation`,
-        ], answer: 0,
-        explain: `If camouflage is heritable, insects with that trait are more likely to survive and reproduce, increasing the trait's frequency over generations. Individual insects do not intentionally acquire inherited coloration in response to need.` },
-      { id: `5005-010`, code: `5005`, subtest: `Science`,
-        q: `Students conclude that fertilizer caused taller bean plants after comparing fertilized plants by a sunny window with unfertilized plants in a shaded hallway. What is the most important improvement to the investigation?`,
-        options: [
-          `Keep light conditions the same for both groups`,
-          `Measure each plant only at the end`,
-          `Use a different species for the unfertilized group`,
-          `Give the fertilized group additional water`,
-        ], answer: 0,
-        explain: `Light exposure is a confounding variable because it differs along with fertilizer treatment and can affect growth. Holding light constant would allow differences in height to be attributed more confidently to fertilizer.` },
-      { id: `5005-011`, code: `5005`, subtest: `Science`,
-        q: `Which instrument is most appropriate for measuring the mass of a small rock?`,
-        options: [
-          `Balance`,
-          `Thermometer`,
-          `Graduated cylinder`,
-          `Meter stick`,
-        ], answer: 0,
-        explain: `A balance measures mass by comparing an object with a known reference or calibrated scale. A graduated cylinder measures liquid volume and may be used for displacement, but it does not directly measure mass.` },
-      { id: `5005-012`, code: `5005`, subtest: `Science`,
-        q: `Two identical toy cars are pushed with different forces on the same smooth floor. Which result is expected if the cars begin at rest?`,
-        options: [
-          `The car receiving the greater net force has the greater acceleration`,
-          `Both cars have the same acceleration because their masses are equal`,
-          `The car receiving the smaller force travels faster immediately`,
-          `Neither car accelerates unless its mass changes`,
-        ], answer: 0,
-        explain: `For equal masses, Newton's second law predicts that the larger net force produces the larger acceleration. Equal mass alone does not produce equal acceleration when the net forces differ.` },
-      { id: `5005-013`, code: `5005`, subtest: `Science`,
-        q: `A student says a bulb in a simple circuit lights because electricity is used up before it returns to the battery. Which activity would best address this misconception?`,
-        options: [
-          `Measure current at points before and after the bulb in a closed series circuit`,
-          `Compare the printed wattages of several disconnected bulbs`,
-          `Place a magnet near the battery and observe the bulb`,
-          `Measure the bulb's length before and after it lights`,
-        ], answer: 0,
-        explain: `Current measurements at multiple points in a simple series circuit show that charge flow is continuous rather than consumed by the bulb. Wattage labels do not directly test the student's claim about current before and after the bulb.` },
-      { id: `5005-014`, code: `5005`, subtest: `Science`,
-        q: `When light passes from air into water at an angle and changes direction, the change is called:`,
-        options: [
-          `refraction`,
-          `reflection`,
-          `radiation`,
-          `conduction`,
-        ], answer: 0,
-        explain: `Refraction is the bending of light as its speed changes when it enters a different medium. Reflection occurs when light bounces from a surface instead of passing into it.` },
-      { id: `5005-015`, code: `5005`, subtest: `Science`,
-        q: `A sealed syringe contains air and its tip is blocked. When the plunger is pushed inward, the air occupies less volume and the pressure rises. Which particle explanation best accounts for the pressure increase?`,
-        options: [
-          `The particles collide with the syringe walls more frequently in the smaller space`,
-          `The particles become larger as the plunger moves inward`,
-          `New air particles form inside the sealed syringe`,
-          `The particles stop moving and settle against the plunger`,
-        ], answer: 0,
-        explain: `Compressing the gas places the same number of moving particles in less volume, increasing the frequency of wall collisions and therefore pressure. The particles themselves do not grow, and no new matter enters a sealed syringe.` },
-      { id: `5005-016`, code: `5005`, subtest: `Science`,
-        q: `A metal spoon and a wooden spoon have been in the same room overnight. The metal spoon feels colder even though both are at room temperature. What is the best explanation?`,
-        options: [
-          `Metal transfers thermal energy away from the hand faster than wood does`,
-          `Metal has a lower temperature because it is denser`,
-          `Wood produces thermal energy when it is touched`,
-          `Wood prevents the surrounding air from reaching it`,
-        ], answer: 0,
-        explain: `Both spoons can be at the same temperature, but metal's greater thermal conductivity draws energy from the hand more rapidly and therefore feels colder. Density alone does not imply a lower equilibrium temperature.` },
-    ];
+    const DM_BANK = window.DM_BANK_EXT || []; // 题库来自 questions.js（build-questions-js.js 生成）
 
     // Draw a session: perSubtest items per subtest, then shuffle across all four
     function DM_drawSession(bank, perSubtest) {
@@ -1016,21 +289,42 @@
     function DM_Nav() {
       return (
         <header className="nav wrap">
-          <div className="wordmark">Triumph<span style={{color:'var(--accent)'}}>.</span></div>
-          <span className="nav-note">Free diagnostic · 6 questions</span>
+          <a className="wordmark" href="/" aria-label="Triumph home" style={{textDecoration:'none', color:'inherit'}}>Triumph<span style={{color:'var(--accent)'}}>.</span></a>
+          <div style={{display:'flex', gap:20, alignItems:'baseline'}}>
+            <span className="nav-note">Free diagnostic · 12 questions</span>
+            <a className="nav-cta" href="/">Home</a>
+          </div>
         </header>
       );
     }
 
     function DM_Intro({ onStart }) {
+      // 重访检测：之前解锁过？上次通过概率多少？
+      const prevVisit = (() => {
+        try {
+          const at = Number(localStorage.getItem('triumph_unlocked_at') || 0);
+          const pass = Number(localStorage.getItem('triumph_last_pass') || 0);
+          if (at && pass) {
+            const days = Math.max(0, Math.floor((Date.now() - at) / 86400000));
+            return { days, pass };
+          }
+        } catch (e) {}
+        return null;
+      })();
       return (
         <section className="intro wrap">
           <span className="eyebrow">Free readiness diagnostic</span>
           <h1>Twelve questions. Eight minutes. <em>One honest answer.</em></h1>
+          {prevVisit && (
+            <div className="intro-return">
+              <p><strong>Welcome back!</strong> Your last diagnostic showed a <span className="mono" style={{color:'var(--accent)'}}>{prevVisit.pass}%</span> pass probability{prevVisit.days > 0 ? ' · ' + prevVisit.days + ' day' + (prevVisit.days === 1 ? '' : 's') + ' ago' : ''}.</p>
+              <p style={{marginBottom:0}}>Re-diagnose now and see how your score moves.</p>
+            </div>
+          )}
           <p>
             We draw twelve questions at random from our growing bank, sampling all four Praxis 5001
             subtests — reading &amp; language arts, mathematics, social studies, and science. At the end
-            you\u2019ll get an estimated scaled score, your weakest gate, and a pass-probability forecast.
+            you&rsquo;ll get an estimated scaled score, your weakest gate, and a pass-probability forecast.
           </p>
           <p style={{marginBottom:0}}>No account. No payment. Original sample questions only.</p>
           <div className="meta">
@@ -1079,7 +373,7 @@
       );
     }
 
-    function DM_Report({ questions, answers, onRestart }) {
+    function DM_Report({ questions, answers, prevResult, onRestart, onStartLearn }) {
       const accs = questions.map(q => ({ q, correct: answers[q.id] === q.answer }));
       const bySub = {};
       accs.forEach(({ q, correct }) => {
@@ -1087,17 +381,54 @@
         bySub[q.subtest].total += 1;
         if (correct) bySub[q.subtest].correct += 1;
       });
-      const subOrder = ['Reading and Language Arts', 'Mathematics', 'Social Studies', 'Science'];
+      const subOrder = ['Reading and Language Arts', 'Mathematics', 'Social Studies', 'Science'].filter(s => bySub[s] && bySub[s].total > 0);
       const subAccs = subOrder.map(s => bySub[s].correct / bySub[s].total);
       const { per, avg } = DM_estimateScore(subAccs);
       const passPct = DM_passProbability(avg);
       const weakestIdx = subAccs.indexOf(Math.min(...subAccs));
+      const subNameToCode = { 'Reading and Language Arts': '5002', 'Mathematics': '5003', 'Social Studies': '5004', 'Science': '5005' };
 
-      const [unlocked, setUnlocked] = useState(false);
+      const [pwStep, setPwStep] = useState(() => {
+        // 已解锁用户（本设备留过邮箱）重诊时直接解锁，不再过付费墙
+        try { return localStorage.getItem('triumph_unlocked_at') ? 'unlocked' : 'locked'; } catch (e) { return 'locked'; }
+      });
+      const [email, setEmail] = useState('');
+      const [fname, setFname] = useState('');
+      const [emailError, setEmailError] = useState('');
+
+      const submitEmail = () => {
+        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+        if (!ok) { setEmailError('Please enter a valid email address.'); return; }
+        setEmailError('');
+        try {
+          localStorage.setItem('triumph_email', email.trim());
+          if (fname.trim()) localStorage.setItem('triumph_name', fname.trim());
+          localStorage.setItem('triumph_unlocked_at', String(Date.now()));
+        } catch (e) {}
+        setPwStep('unlocked');
+      };
+
+      const savedResult = useRef(false);
+      useEffect(() => {
+        if (savedResult.current) return;
+        savedResult.current = true;
+        try {
+          localStorage.setItem('triumph_last_score', String(avg));
+          localStorage.setItem('triumph_last_pass', String(passPct));
+          localStorage.setItem('triumph_last_completed_at', String(Date.now()));
+          localStorage.setItem('triumph_weakest', subNameToCode[subOrder[weakestIdx]] || '5003');
+        } catch (e) {}
+      }, [avg, passPct]);
 
       return (
         <section className="report wrap">
           <span className="eyebrow">Your diagnostic report</span>
+          {prevResult && (
+            <p className="score-caption" style={{marginTop:6, padding:'10px 14px', background:'var(--bg-soft)', borderLeft:'2px solid var(--accent)'}}>
+              <strong>Progress check:</strong> last diagnostic {prevResult.score} ({prevResult.pass}%) → now <span className="mono" style={{color:'var(--accent)'}}>{avg}</span> ({passPct}%)
+              {avg > prevResult.score ? ' — improving.' : avg < prevResult.score ? ' — a dip; the plan adjusts below.' : ' — steady.'}
+            </p>
+          )}
           <div className="score-head">
             <span className="big-score">{avg}</span>
             <span className="score-caption">
@@ -1140,37 +471,71 @@
               <span className="eyebrow" style={{margin:0}}>Pass forecast &amp; study plan</span>
               <span className="lock-tag">● TRIUMPH</span>
             </div>
-            {!unlocked ? (
+            {pwStep === 'locked' ? (
               <div>
                 <div className="locked-content">
                   <div className="mock-line w70" /><div className="mock-line" /><div className="mock-line w50" />
                 </div>
                 <div className="cta-row">
-                  <button className="btn-primary" onClick={() => setUnlocked(true)}>Unlock my pass forecast</button>
+                  <button className="btn-primary" onClick={() => setPwStep('email')}>Unlock my pass forecast</button>
                   <span className="price">$15<small>/mo</small></span>
                 </div>
                 <p className="demo-note">
-                  Demo: this unlock simulates the paid tier. A real retake costs ~$130 and 28 days.
-                  (Prototype — payment not wired.)
+                  A real retake costs ~$130 and 28 days. The forecast costs less than a coffee a week.
+                  (Prototype — payment not wired yet.)
                 </p>
+              </div>
+            ) : pwStep === 'email' ? (
+              <div>
+                <p className="score-caption" style={{marginBottom:16}}>
+                  Enter your email to unlock your <strong>pass forecast</strong> and <strong>personalized study plan</strong>.
+                  Free to start — you'll see the full report immediately.
+                </p>
+                <div className="pw-form">
+                  <div className="pw-field">
+                    <label className="pw-label">Email</label>
+                    <input className="pw-input" type="email" placeholder="you@example.com" value={email}
+                      onChange={e => setEmail(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') submitEmail(); }} />
+                    {emailError && <div className="pw-error">{emailError}</div>}
+                  </div>
+                  <div className="pw-field">
+                    <label className="pw-label">First name <span style={{opacity:.6}}>(optional)</span></label>
+                    <input className="pw-input" type="text" placeholder="Alex" value={fname}
+                      onChange={e => setFname(e.target.value)} />
+                  </div>
+                  <div className="cta-row" style={{marginTop:18}}>
+                    <button className="btn-primary" onClick={submitEmail}>Unlock my pass forecast</button>
+                    <span className="price">$15<small>/mo</small></span>
+                  </div>
+                  <p className="pw-privacy">
+                    14-day free trial · cancel anytime · we never share your email.
+                    (Prototype: this demo saves your email to this browser only — nothing is sent anywhere yet.)
+                  </p>
+                </div>
               </div>
             ) : (
               <div className="unlocked-box" style={{marginTop:24}}>
-                <h3>Your pass forecast &amp; plan <em>(unlocked)</em></h3>
+                <h3>{fname.trim() ? 'Welcome, ' + fname.trim() + ' — ' : 'Welcome — '}here's your pass forecast <em>(unlocked)</em></h3>
                 <p className="score-caption" style={{marginBottom:16}}>
                   Based on this diagnostic, we estimate a <span className="mono" style={{color:'var(--accent)'}}>{passPct}%</span>
                   chance of passing at your current level. Your weakest gate ({subOrder[weakestIdx]}) should get
                   about 60% of your study time. Sample week:
                 </p>
-                <div className="plan-item"><span className="day">MON</span> 5002 Mathematics — fractions &amp; decimals (20 min) + 8 practice questions</div>
+                <div className="plan-item"><span className="day">MON</span> 5003 Mathematics — fractions &amp; decimals (20 min) + 8 practice questions</div>
                 <div className="plan-item"><span className="day">TUE</span> {subOrder[weakestIdx]} — targeted review of missed concepts (25 min)</div>
                 <div className="plan-item"><span className="day">WED</span> Mixed 10-question set across all four subtests</div>
                 <div className="plan-item"><span className="day">THU</span> {subOrder[weakestIdx]} — timed micro-quiz (10 questions, 12 min)</div>
-                <div className="plan-item"><span className="day">FRI</span> 5003 Reading &amp; Language Arts — vocabulary &amp; phonics review</div>
+                <div className="plan-item"><span className="day">FRI</span> 5002 Reading &amp; Language Arts — vocabulary &amp; phonics review</div>
                 <div className="plan-item"><span className="day">SAT</span> Full simulated subtest, timed, no notes</div>
                 <div className="plan-item"><span className="day">SUN</span> Rest + re-diagnose to measure improvement</div>
-                <div className="cta-row" style={{marginTop:24}}>
-                  <button className="btn-primary" onClick={onRestart}>Re-run diagnostic</button>
+                <p className="pw-privacy" style={{marginTop:18, marginBottom:0}}>
+                  <strong>Come back next week.</strong> Re-run this diagnostic in 7 days and watch your pass probability move —
+                  your score history is saved on this device so you can compare.
+                </p>
+                <div className="cta-row" style={{marginTop:20}}>
+                  <button className="btn-primary" onClick={onStartLearn}>Start your daily study →</button>
+                  <a className="btn-ghost" href="/dashboard" style={{textDecoration:'none',display:'inline-block',padding:'13px 20px'}}>Dashboard</a>
+                  <button className="btn-ghost" onClick={onRestart}>Re-run diagnostic</button>
                   <span className="demo-note" style={{margin:0}}>Prototype — real accounts &amp; billing pending.</span>
                 </div>
               </div>
@@ -1180,18 +545,105 @@
       );
     }
 
+    function DM_Learn({ weakestCode, weakestName, onBack, onRestart }) {
+      const [tab, setTab] = useState('tasks');
+      const shuffle = a => { const x = a.slice(); for (let i = x.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [x[i], x[j]] = [x[j], x[i]]; } return x; };
+      const [taskQs] = useState(() => {
+        const weak = shuffle(DM_BANK.filter(q => q.code === weakestCode));
+        const rest = shuffle(DM_BANK.filter(q => q.code !== weakestCode));
+        return [...weak.slice(0, 5), ...rest.slice(0, 3)].slice(0, 8);
+      });
+      const [tIndex, setTIndex] = useState(0);
+      const [tSelected, setTSelected] = useState(null);
+      const [tAnswered, setTAnswered] = useState(false);
+      const [tDone, setTDone] = useState(0);
+      const [tCorrect, setTCorrect] = useState(0);
+      const [wrongIds, setWrongIds] = useState([]);
+      const tq = taskQs[tIndex];
+      const cardIds = [...new Set(wrongIds)];
+      const cardQs = cardIds.map(id => DM_BANK.find(q => q.id === id)).filter(Boolean);
+      const [reviewed, setReviewed] = useState(() => { try { return JSON.parse(localStorage.getItem('triumph_reviewed') || '[]'); } catch (e) { return []; } });
+      const selectTask = i => {
+        if (tAnswered) return;
+        setTSelected(i); setTAnswered(true);
+        if (i === tq.answer) setTCorrect(c => c + 1); else setWrongIds(w => [...w, tq.id]);
+      };
+      const nextTask = () => {
+        setTDone(d => d + 1);
+        if (tIndex < taskQs.length - 1) { setTIndex(i => i + 1); setTSelected(null); setTAnswered(false); }
+        else setTab('cards');
+      };
+      const markReviewed = id => {
+        const next = reviewed.includes(id) ? reviewed : [...reviewed, id];
+        setReviewed(next); try { localStorage.setItem('triumph_reviewed', JSON.stringify(next)); } catch (e) {}
+      };
+      return (
+        <section className="learn wrap">
+          <span className="eyebrow">Learning mode · {weakestName} is your weakest gate</span>
+          <h2 style={{fontFamily:'var(--serif)',fontWeight:400,fontSize:'clamp(26px,3.4vw,34px)',lineHeight:1.2,marginTop:10}}>
+            {tab === 'tasks' && 'Today\u2019s tasks'}{tab === 'cards' && 'Memory cards'}{tab === 'progress' && 'Your progress'}
+          </h2>
+          <div className="learn-tabs">
+            <button className={'learn-tab' + (tab === 'tasks' ? ' active' : '')} onClick={() => setTab('tasks')}>Tasks</button>
+            <button className={'learn-tab' + (tab === 'cards' ? ' active' : '')} onClick={() => setTab('cards')}>Cards ({cardQs.length})</button>
+            <button className={'learn-tab' + (tab === 'progress' ? ' active' : '')} onClick={() => setTab('progress')}>Progress</button>
+          </div>
+          {tab === 'tasks' && tq && <DM_Quiz q={tq} index={tIndex} total={taskQs.length} answered={tAnswered} selected={tSelected} onSelect={selectTask} onNext={nextTask} onPrev={() => {}} isLast={false} />}
+          {tab === 'cards' && <div>{cardQs.length === 0 ? <p className="score-caption">No missed questions yet — complete today’s tasks first.</p> : cardQs.map(c => {
+            const done = reviewed.includes(c.id);
+            return <div className="card-item" key={c.id}><div className="card-q">{c.q}</div>{done ? <p className="card-reveal">Correct answer: <strong>{c.options[c.answer]}</strong> · {c.explain} <span className="done-tag">✓ reviewed</span></p> : <button className="btn-sm btn-ghost" onClick={() => { alert('Answer: ' + c.options[c.answer] + '\n\n' + c.explain); markReviewed(c.id); }}>Reveal answer</button>}</div>;
+          })}</div>}
+          {tab === 'progress' && <div><div className="learn-summary"><p><strong>Today:</strong> {tDone} of {taskQs.length} tasks completed · {tCorrect} correct</p><p style={{marginBottom:0}}>Re-run the diagnostic next week to measure movement.</p></div><div className="cta-row"><button className="btn-primary" onClick={onRestart}>New diagnostic</button><button className="btn-ghost" onClick={onBack}>Back to report</button></div></div>}
+        </section>
+      );
+    }
+
     function DM_App() {
-      const [stage, setStage] = useState('intro'); // intro | quiz | report
+      const [stage, setStage] = useState('intro'); // intro | quiz | report | learn
       const [session, setSession] = useState([]);
       const [qIndex, setQIndex] = useState(0);
       const [selected, setSelected] = useState(null);
       const [answered, setAnswered] = useState(false);
       const [answers, setAnswers] = useState({});
+      const [comparisonBase, setComparisonBase] = useState(null);
 
       const total = session.length;
       const q = session[qIndex];
 
-      const start = () => { setSession(DM_drawSession(DM_BANK, 3)); setStage('quiz'); };
+      // 最弱门计算（从本次诊断结果）
+      const weakest = (() => {
+        const bySub = {};
+        session.forEach(sq => {
+          if (!bySub[sq.code]) bySub[sq.code] = { total: 0, correct: 0 };
+          bySub[sq.code].total++;
+          if (answers[sq.id] === sq.answer) bySub[sq.code].correct++;
+        });
+        let worst = null, worstRate = 1;
+        Object.keys(bySub).forEach(k => {
+          const r = bySub[k].total ? bySub[k].correct / bySub[k].total : 1;
+          if (r < worstRate) { worstRate = r; worst = k; }
+        });
+        return worst || '5003';
+      })();
+      const weakNameMap = { '5002': 'Reading & Language Arts', '5003': 'Mathematics', '5004': 'Social Studies', '5005': 'Science' };
+
+      const start = () => {
+        try {
+          const score = Number(localStorage.getItem('triumph_last_score') || 0);
+          const pass = Number(localStorage.getItem('triumph_last_pass') || 0);
+          setComparisonBase(score > 0 ? { score, pass } : null);
+        } catch (e) { setComparisonBase(null); }
+        // 支持 ?subtest=5002 等：只做该科目的题（来自 Dashboard 做题链接）
+        const focusSub = new URLSearchParams(window.location.search).get('subtest');
+        if (focusSub && DM_BANK.some(q => q.code === focusSub)) {
+          const pool = DM_BANK.filter(q => q.code === focusSub);
+          const sh = a => { const x = a.slice(); for (let i = x.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [x[i], x[j]] = [x[j], x[i]]; } return x; };
+          setSession(sh(pool).slice(0, 12));
+        } else {
+          setSession(DM_drawSession(DM_BANK, 3));
+        }
+        setStage('quiz');
+      };
       const select = i => { setSelected(i); setAnswered(true); setAnswers({ ...answers, [q.id]: i }); };
       const next = () => {
         if (qIndex < total - 1) { setQIndex(qIndex + 1); setSelected(null); setAnswered(false); }
@@ -1203,12 +655,15 @@
       return (
         <div>
           <DM_Nav />
+          <main>
           {stage === 'intro' && <DM_Intro onStart={start} />}
           {stage === 'quiz' && total > 0 && (
             <DM_Quiz q={q} index={qIndex} total={total} answered={answered} selected={selected}
               onSelect={select} onNext={next} onPrev={prev} isLast={qIndex === total - 1} />
           )}
-          {stage === 'report' && <DM_Report questions={session} answers={answers} onRestart={restart} />}
+          {stage === 'report' && <DM_Report questions={session} answers={answers} prevResult={comparisonBase} onRestart={restart} onStartLearn={() => setStage('learn')} />}
+          {stage === 'learn' && <DM_Learn weakestCode={weakest} weakestName={weakNameMap[weakest] || weakest} onBack={() => setStage('report')} onRestart={restart} />}
+          </main>
           <footer className="footer wrap">
             <p>
               Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS.

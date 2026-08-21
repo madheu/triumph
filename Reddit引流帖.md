@@ -17,7 +17,7 @@ I've been watching how people study for the Praxis 5001, and the pattern keeps c
 
 I'm a solo developer building a study tool around one question nobody seems to answer well: **"Am I actually ready to pass?"** It's a free diagnostic that:
 
-- samples all four subtests (5002 math, 5003 reading, 5004 social studies, 5005 science)
+- samples all four subtests (5002 reading & language arts, 5003 mathematics, 5004 social studies, 5005 science)
 - estimates your scaled score against your state's passing line
 - tells you which gate is your weakest — the one most likely to fail you
 - generates a study plan that puts ~60% of your time on that gate (not equal effort on all four)
@@ -26,8 +26,8 @@ I'm **not selling anything yet** — the diagnostic itself is free, and the paid
 
 **What I'm asking for:**
 
-1. Take the 5-minute diagnostic → [link to your deployed diagnostic or waitlist]
-2. Fill out this 4-question survey → [link to your form]
+1. Take the 8-minute diagnostic → https://triumph-6eq.pages.dev/diagnostic.html
+2. Fill out this 4-question survey → [问卷链接，建好 Google Forms 后填]
 3. Tell me bluntly: what do you *actually* do when you study for the 5001? What do you hate about it?
 
 No account needed. All sample questions are original — nothing copied from ETS.

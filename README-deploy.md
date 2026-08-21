@@ -1,18 +1,39 @@
-# 部署说明：Cloudflare Pages + GitHub 自动部署
+# 部署说明：Triumph（Cloudflare Pages，wrangler 直传为主）
 
 ## 目录结构
 
 ```
-E:\harness\praxis-5001\
-├── site\                 ← 唯一的部署目录（Cloudflare Pages 构建目录）
-│   ├── index.html        ← 首页（Landing）
-│   └── diagnostic.html   ← 诊断工具
+E:\Triumph\praxis-5001\
+├── triumph\            ← 开发源文件（改代码在这里改）
+│   ├── index.html      ← 首页（Landing）
+│   └── diagnostic.html ← 诊断工具（题库内嵌 DM_BANK，86 题）
+├── site\               ← 部署目录（Cloudflare Pages 构建目录，triumph/ 的副本）
+│   ├── index.html
+│   ├── diagnostic.html
+│   ├── robots.txt      ← 屏蔽 /diagnostic.html 进索引
+│   └── sitemap.xml
 ├── （其余 .md/.js/.json 都是开发文件，不部署）
 ```
 
-**改代码后的流程**：修改 `E:\harness\praxis-5001\index.html` / `diagnostic.html` 后，需要**同步到 site/** 再 commit——`sync-site.ps1` 脚本帮你完成（复制 + commit，如下）。
+## 主流程（当前实际用的方式：wrangler 直传，不依赖 git）
 
-## 一次性设置（你只需做一次，约 10 分钟）
+**改代码后：**
+
+1. 修改 `triumph\index.html` / `triumph\diagnostic.html`（题库更新先 `node build-demo-bank.js`）
+2. 同步到部署目录：
+   ```powershell
+   .\sync-site.ps1 "改了什么"
+   ```
+   （复制 triumph/ → site/；非 git 仓库时跳过 commit，提示用 deploy）
+3. 部署（10 秒）：
+   ```powershell
+   .\deploy.ps1
+   ```
+   预期输出 **Uploaded 4 files** → 访问 https://triumph-6eq.pages.dev
+
+> ⚠️ 编码注意：项目里所有 `.ps1` 必须是 **UTF-8 带 BOM**，否则 Windows PowerShell 5.1 会把中文按 ANSI 解码导致语法错误。已确认 deploy.ps1 / sync-site.ps1 均带 BOM。
+
+## 备选：GitHub + Cloudflare Pages 自动部署（想自动更新时再配）
 
 ### 1. GitHub 建仓库
 1. 打开 https://github.com/new
@@ -21,7 +42,8 @@ E:\harness\praxis-5001\
 
 ### 2. 连接本地仓库并推送（在你机器终端执行）
 ```powershell
-cd E:\harness\praxis-5001
+cd E:\Triumph\praxis-5001
+git init
 git add -A
 git commit -m "triumph site v1"
 git branch -M main
@@ -38,28 +60,10 @@ git push -u origin main
    - **构建输出目录（Build output directory）**：填 `site`
 4. 保存并部署 → 拿到 `https://triumph.pages.dev`
 
-## 以后每次改代码（自动部署）
-
-在 `E:\harness\praxis-5001\` 下运行（或让我改完告诉你）：
-```powershell
-.\sync-site.ps1 "改了什么：移动端留白加大"
-```
-这个脚本：复制两个 html 到 site/ → git add → commit → **提示你 push**。
-
-然后：
-```powershell
-git push
-```
-→ Cloudflare Pages 检测到 push → **自动重新部署**（约 1 分钟）→ 手机刷新即见新版本。
-
-## 可选：全自动（连 push 都省）
-
-Cloudflare Pages 支持 **GitHub Actions 或 Webhook**，或你配置 GitHub 自动推送。最省事的是：
-- 安装一个"文件监控 + 自动 git commit/push"的小工具（如 watchman），或
-- 用 VS Code 的 Git 面板点一下 push
+配好后每次 push 自动重新部署（约 1 分钟）。**但注意**：项目已有 `triumph-6eq` 这个 Pages 项目名（wrangler 在用），GitHub 方式会新建一个 Pages 项目（新 URL）——两条线可以并存，发帖用哪个 URL 保持一致即可。
 
 ## 与当前 Workers 部署的关系
 
-- 你的 `triumph.abc15531888397.workers.dev` 是手动上传的 Workers 版本
-- Pages 配好后用 `triumph.pages.dev`（新 URL），发帖时用新 URL
-- 两个可以并存，Pages 才是"改完自动更新"的那个
+- `triumph.abc15531888397.workers.dev` 是早期手动上传的 Workers 版本
+- 现在主 URL 是 **https://triumph-6eq.pages.dev**（发帖/问卷都用这个）
+- Workers 旧版可留可弃，两者并存不冲突
