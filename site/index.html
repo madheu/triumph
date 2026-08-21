@@ -318,9 +318,8 @@
             setUser(window.TriumphAuth.user); setShowLogin(false); setEmail(''); setPassword(''); setErr('');
           } else {
             await window.TriumphAuth.register(email.trim(), password);
-            setPendingEmail(email.trim());
-            setAuthMode('verify');
-            setErr('Verification code sent to ' + email.trim() + '.');
+            try { await window.TriumphAuth.syncAll(); } catch (e) {}
+            setUser(window.TriumphAuth.user); setShowLogin(false); setEmail(''); setPassword(''); setErr('');
           }
         } catch (e) {
           if (e.code === 'verification_required' || e.code === 'not_verified') {
@@ -352,8 +351,8 @@
             <a className="nav-cta" href="diagnostic">Free diagnostic →</a>
           </div>
                     {showLogin && (
-            <div className="modal" onClick={() => setShowLogin(false)}>
-              <div className="modal-box" onClick={e => e.stopPropagation()}>
+            <div className="modal" onMouseDown={e => { if (e.target === e.currentTarget) setShowLogin(false); }}>
+              <div className="modal-box">
                 <button className="modal-close" onClick={() => setShowLogin(false)}>×</button>
                 <span className="eyebrow">{authMode === 'login' ? 'Log in' : 'Sign up'}</span>
                 <h3 style={{fontFamily:'var(--serif)',fontWeight:400,fontSize:24,margin:'10px 0 8px'}}>{authMode === 'login' ? 'Welcome back.' : 'Create your account.'}</h3>

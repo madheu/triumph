@@ -14,8 +14,7 @@ export async function onRequestPost(context) {
   const { hashHex } = await hashPassword(password, rec.saltHex);
   if (!timingSafeEqual(hashHex, rec.hashHex)) return json({ error: 'invalid_credentials' }, 401);
 
-  if (!rec.verified) return json({ error: 'not_verified', email }, 403);
-
+  // 账号均为直接激活，登录不要求验证码
   const jwt = await signJwt({ sub: rec.id, email, iat: Date.now(), exp: Date.now() + 30 * 86400000 }, env.JWT_SECRET);
   return json({ token: jwt, user: { id: rec.id, email }, verified: true });
 }

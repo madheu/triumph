@@ -41,16 +41,10 @@
     },
 
     // ---------- Auth ----------
-    // 注册：返回 { need_verify } 时需要走 verify 流程
+    // 注册：直接激活，返回用户并写入会话
     async register(email, password) {
       const d = await this._req('/api/register', 'POST', { email, password });
-      if (d.need_verify) {
-        try { localStorage.setItem(VERIFY_KEY, email.toLowerCase()); } catch (e) {}
-        const err = new Error('verification_required');
-        err.code = 'verification_required';
-        err.email = email;
-        throw err;
-      }
+      try { localStorage.removeItem(VERIFY_KEY); } catch (e) {}
       this._setSession(d.token, d.user.email);
       return d.user;
     },
@@ -70,6 +64,7 @@
     },
     async login(email, password) {
       const d = await this._req('/api/login', 'POST', { email, password });
+      try { localStorage.removeItem(VERIFY_KEY); } catch (e) {}
       this._setSession(d.token, d.user.email);
       return d.user;
     },
