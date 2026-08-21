@@ -322,10 +322,18 @@
             setUser(window.TriumphAuth.user); setShowLogin(false); setEmail(''); setPassword(''); setErr('');
           }
         } catch (e) {
-          if (e.code === 'verification_required' || e.code === 'not_verified') {
+          if (e.code === 'verification_required') {
             setPendingEmail(e.email || email.trim());
             setAuthMode('verify');
             setErr('Verification code sent — check your inbox.');
+          } else if (e.code === 'mail_failed') {
+            setPendingEmail(e.email || email.trim());
+            setAuthMode('verify');
+            setErr('Email could not be sent right now. Tap "Resend code" to try again.');
+          } else if (e.code === 'not_verified') {
+            setPendingEmail(e.email || email.trim());
+            setAuthMode('verify');
+            setErr('This email needs verification first. A code was sent — check your inbox.');
           } else {
             setErr({ invalid_email: 'That email address is not valid.', password_too_short: 'Password must be at least 8 characters.', email_taken: 'That email is already registered. Try logging in.', invalid_credentials: 'Email or password is incorrect.' }[e.code] || (e.message || 'Something went wrong.'));
           }

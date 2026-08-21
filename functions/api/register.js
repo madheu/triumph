@@ -1,5 +1,6 @@
-// POST /api/register — 注册：直接创建账号并激活（当前不要求邮箱验证码）
-import { json, hashPassword, signJwt, USER_KEY, STATE_KEY } from './_shared.js';
+// POST /api/register — 注册：创建未激活账号 + 发验证码邮件（两阶段验证）
+// 流程: register -> need_verify -> verify(输码) -> 激活
+import { json, hashPassword, genCode, sendVerificationEmail, USER_KEY, CODE_KEY } from './_shared.js';
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -10,19 +11,31 @@ export async function onRequestPost(context) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({ error: 'invalid_email' }, 400);
   if (password.length < 8) return json({ error: 'password_too_short' }, 400);
 
-  const existing = await env.TRIUMPH_KV.get(USER_KEY(email));
-  if (existing) return json({ error: 'email_taken' }, 409);
+  let userId;
+  const existingJson = await env.TRIUMPH_KV.get(USER_KEY(email));
+  if (existingJson) {
+    const existing = JSON.parse(existingJson);
+    if (existing.verified) return json({ error: 'email_taken' }, 409);
+    userId = existing.id; // 未验证账号重注册：复用 id，更新密码
+  } else {
+    userId = crypto.randomUUID();
+  }
 
-  // 哈希密码 + 直接激活账号
+  // 哈希密码 + 存未激活账号
   const { saltHex, hashHex } = await hashPassword(password);
-  const userId = crypto.randomUUID();
   await env.TRIUMPH_KV.put(USER_KEY(email), JSON.stringify({
-    id: userId, email, saltHex, hashHex, verified: true, createdAt: Date.now(),
-  }));
-  await env.TRIUMPH_KV.put(STATE_KEY(userId), JSON.stringify({
-    createdAt: Date.now(), answers: [], mastery: {}, plan: null, srs: {}, tasks: {},
+    id: userId, email, saltHex, hashHex, verified: false, createdAt: Date.now(),
   }));
 
-  const jwt = await signJwt({ sub: userId, email, iat: Date.now(), exp: Date.now() + 30 * 86400000 }, env.JWT_SECRET);
-  return json({ token: jwt, user: { id: userId, email }, verified: true });
+  // 生成并保存验证码
+  const code = genCode();
+  await env.TRIUMPH_KV.put(CODE_KEY(email), JSON.stringify({ code, exp: Date.now() + 15 * 60000, email }), { expirationTtl: 900 });
+
+  try {
+    await sendVerificationEmail(env, email, code);
+    return json({ need_verify: true, message: 'Verification email sent.' });
+  } catch (e) {
+    // 邮件失败：保留账号 + 验证码，前端引导「重发验证码」，不再回滚
+    return json({ error: 'mail_failed', message: 'Failed to send verification email.' }, 502);
+  }
 }

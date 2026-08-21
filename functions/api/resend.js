@@ -17,6 +17,6 @@ export async function onRequestPost(context) {
     await sendVerificationEmail(env, email, code);
     return json({ ok: true });
   } catch (e) {
-    return json({ error: 'mail_failed', detail: String(e.message || e) }, 500);
+    return json({ error: 'mail_failed', message: 'Failed to resend verification email.' }, 502);
   }
 }

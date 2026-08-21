@@ -41,10 +41,28 @@
     },
 
     // ---------- Auth ----------
-    // 注册：直接激活，返回用户并写入会话
+    // 注册：后端返回 need_verify 时抛 verification_required；邮件失败抛 mail_failed
     async register(email, password) {
-      const d = await this._req('/api/register', 'POST', { email, password });
-      try { localStorage.removeItem(VERIFY_KEY); } catch (e) {}
+      let d;
+      try {
+        d = await this._req('/api/register', 'POST', { email, password });
+      } catch (e) {
+        if (e.code === 'mail_failed') {
+          try { localStorage.setItem(VERIFY_KEY, email.toLowerCase()); } catch (e2) {}
+          const err = new Error('mail_failed');
+          err.code = 'mail_failed';
+          err.email = email;
+          throw err;
+        }
+        throw e;
+      }
+      if (d.need_verify) {
+        try { localStorage.setItem(VERIFY_KEY, email.toLowerCase()); } catch (e) {}
+        const err = new Error('verification_required');
+        err.code = 'verification_required';
+        err.email = email;
+        throw err;
+      }
       this._setSession(d.token, d.user.email);
       return d.user;
     },

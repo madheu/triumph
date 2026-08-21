@@ -146,6 +146,10 @@
         finally { resendBtn.disabled = false; }
       });
 
+      // 页面加载时若有待验证邮箱，直接进验证阶段
+      const pending = A.getPendingVerify();
+      if (pending) { pendingEmail = pending; emailEl.value = pending; setMode('verify'); }
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = emailEl.value.trim().toLowerCase();
@@ -182,24 +186,20 @@
             try { await A.syncAll(); } catch (syncErr) {}
             window.location.href = 'dashboard';
           } else {
-            const user = await A.register(email, password);
-            // 注册成功：如果后端已直接激活（无邮件通道），直接跳转 dashboard
-            if (A.isLoggedIn()) {
-              try { await A.syncAll(); } catch (syncErr) {}
-              window.location.href = 'dashboard';
-            } else {
-              pendingEmail = email;
-              setMode('verify');
-              errEl.textContent = 'Verification code sent to ' + email + ' — enter it below.';
-            }
+            await A.register(email, password);
+            // 正常会抛 verification_required / mail_failed，由下方 catch 处理
           }
         } catch (err) {
           if (err.code === 'verification_required') {
-            pendingEmail = err.email;
+            pendingEmail = err.email || email;
             setMode('verify');
-            errEl.textContent = 'Verification code sent to ' + err.email + ' — enter it below.';
+            errEl.textContent = 'Verification code sent to ' + (err.email || email) + ' — enter it below.';
+          } else if (err.code === 'mail_failed') {
+            pendingEmail = err.email || email;
+            setMode('verify');
+            errEl.textContent = 'Email could not be sent right now. Tap "Resend code" to try again.';
           } else if (err.code === 'not_verified') {
-            pendingEmail = email;
+            pendingEmail = err.email || email;
             setMode('verify');
             errEl.textContent = 'This email needs verification first. We\u2019ve sent a code — check your inbox.';
           } else {

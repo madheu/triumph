@@ -75,13 +75,16 @@ export function genCode() {
 // ---------- 邮件发送（MailChannels 免费通道，已弃用）备用：SMTP via Mailgun/Resend
 // 统一出口：env.EMAIL_FROM 为发件地址，优先用 Resend/Mailgun 风格 API（env.EMAIL_API_KEY）
 export async function sendVerificationEmail(env, email, code) {
+  const from = env.EMAIL_FROM || '';
+  if (!from) throw new Error('EMAIL_FROM not configured');
+
   // 方案1：Resend（推荐，免费额度）— env.RESEND_API_KEY
   if (env.RESEND_API_KEY) {
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + env.RESEND_API_KEY },
       body: JSON.stringify({
-        from: env.EMAIL_FROM || 'onboarding@resend.dev',
+        from,
         to: [email],
         subject: 'Your Triumph verification code',
         html: `<p>Your Triumph verification code is:</p>
@@ -90,13 +93,16 @@ export async function sendVerificationEmail(env, email, code) {
                <p style="color:#6E6760;font-size:12px">Triumph · independent Praxis 5001 study tool · not affiliated with ETS</p>`,
       }),
     });
-    if (!res.ok) throw new Error('resend_failed:' + res.status);
+    if (!res.ok) {
+      const body = await res.text().catch(() => '');
+      throw new Error('resend_failed:' + res.status + (body ? ':' + body.slice(0, 300) : ''));
+    }
     return true;
   }
   // 方案2：Mailgun — env.MAILGUN_API_KEY + env.MAILGUN_DOMAIN
   if (env.MAILGUN_API_KEY && env.MAILGUN_DOMAIN) {
     const form = new URLSearchParams();
-    form.set('from', env.EMAIL_FROM || 'Triumph <verify@' + env.MAILGUN_DOMAIN + '>');
+    form.set('from', from);
     form.set('to', email);
     form.set('subject', 'Your Triumph verification code');
     form.set('html', `<p>Your Triumph verification code is:</p><p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p><p>Expires in 15 minutes.</p>`);
@@ -105,7 +111,10 @@ export async function sendVerificationEmail(env, email, code) {
       headers: { 'Authorization': 'Basic ' + btoa('api:' + env.MAILGUN_API_KEY) },
       body: form,
     });
-    if (!res.ok) throw new Error('mailgun_failed:' + res.status);
+    if (!res.ok) {
+      const body = await res.text().catch(() => '');
+      throw new Error('mailgun_failed:' + res.status + (body ? ':' + body.slice(0, 300) : ''));
+    }
     return true;
   }
   throw new Error('no_mail_provider');
