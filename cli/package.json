@@ -1,0 +1,39 @@
+{
+  "name": "triumph-praxis",
+  "version": "1.0.0",
+  "description": "Official CLI for the Triumph Praxis 5001 API — free practice questions, subtest stats, study guides, and scoped API keys for the ETS Praxis 5001 (Elementary Education: Multiple Subjects).",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "triumph-praxis": "triumph-praxis.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://trytriumph.de5.net/developers"
+  },
+  "homepage": "https://trytriumph.de5.net/developers",
+  "bugs": {
+    "email": "abc15531888397@gmail.com"
+  },
+  "keywords": [
+    "praxis",
+    "praxis-5001",
+    "praxis-5002",
+    "praxis-5003",
+    "praxis-5004",
+    "praxis-5005",
+    "teacher-certification",
+    "test-prep",
+    "education",
+    "study-guide",
+    "api",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "triumph-praxis.js",
+    "README.md"
+  ]
+}

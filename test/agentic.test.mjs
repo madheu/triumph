@@ -1,0 +1,639 @@
+// agentic.test.mjs — comprehensive suite for the Triumph agentic-readiness surface.
+// Run: npm test   (node --test test/)
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { pathToFileURL } from 'node:url';
+import YAML from 'yaml';
+
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
+const SITE = ROOT + 'site/';
+
+const workerModule = await import(pathToFileURL(SITE + '_worker.js').href);
+const {
+  default: worker,
+  openApiSpec,
+  specToYaml,
+  parseAccept,
+  negotiatePageVariant,
+  varyWithAccept,
+  MD_ROUTES,
+} = workerModule;
+
+/* ================= shared mock environment ================= */
+
+const siteRoot = SITE;
+function makeEnv(kvStore = new Map()) {
+  return {
+    JWT_SECRET: 'test-secret',
+    TRIUMPH_KV: {
+      get: async (k, type) => { const v = kvStore.has(k) ? kvStore.get(k) : null; return v === null ? null : (type === 'json' ? JSON.parse(v) : v); },
+      put: async (k, v) => { kvStore.set(k, v); },
+      delete: async k => { kvStore.delete(k); },
+    },
+    ASSETS: {
+      async fetch(req) {
+        const u = new URL(req.url);
+        let p = u.pathname === '/' ? '/index.html' : u.pathname;
+        // pretty-URL resolution like Pages: /about → /about.html
+        if (!p.includes('.') && existsSync(siteRoot + p + '.html')) p += '.html';
+        try {
+          const body = readFileSync(siteRoot + p);
+          const ext = p.endsWith('.json') ? 'application/json'
+            : p.endsWith('.md') ? 'text/markdown; charset=utf-8'
+            : p.endsWith('.txt') ? 'text/plain; charset=utf-8'
+            : p.endsWith('.xml') ? 'application/xml'
+            : 'text/html; charset=utf-8';
+          return new Response(body, { status: 200, headers: { 'Content-Type': ext } });
+        } catch {
+          return new Response('not found', { status: 404 });
+        }
+      },
+    },
+  };
+}
+
+const call = (env, path, method = 'GET', body, headers = {}) =>
+  worker.fetch(new Request('https://trytriumph.de5.net' + path, {
+    method,
+    headers: { ...(body ? { 'Content-Type': 'application/json' } : {}), ...headers },
+    body: body ? JSON.stringify(body) : undefined,
+  }), env, {});
+
+/* ================= 1. Accept: markdown negotiation (fix #7) ================= */
+
+test('parseAccept ranks q-values then specificity then order', () => {
+  let e = parseAccept('text/html;q=0.8, text/markdown');
+  assert.equal(e[0].type, 'text/markdown');
+  e = parseAccept('*/*');
+  assert.equal(e[0].type, '*/*');
+  assert.ok(parseAccept(null) === null);
+  assert.ok(parseAccept('') === null);
+});
+
+test('negotiatePageVariant: markdown explicitly requested → text/markdown', () => {
+  assert.equal(negotiatePageVariant('text/markdown').variant, 'text/markdown');
+  assert.equal(negotiatePageVariant('text/markdown, text/html;q=0.8').variant, 'text/markdown');
+  assert.equal(negotiatePageVariant('text/markdown;q=0.9, */*;q=0.1').variant, 'text/markdown');
+});
+
+test('negotiatePageVariant: default and wildcard-only → HTML', () => {
+  assert.ok(negotiatePageVariant(null).variant === 'text/html');
+  assert.ok(negotiatePageVariant(undefined).variant === 'text/html');
+  assert.ok(negotiatePageVariant('*/*').variant === 'text/html');
+  const browser = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8';
+  assert.ok(negotiatePageVariant(browser).variant === 'text/html');
+});
+
+test('negotiatePageVariant: q=0 exclusion honored', () => {
+  assert.equal(negotiatePageVariant('text/markdown;q=0, text/html;q=0.5').variant, 'text/html');
+  assert.equal(negotiatePageVariant('text/html;q=0, text/markdown;q=1').variant, 'text/markdown');
+});
+
+test('negotiatePageVariant: genuinely unsatisfiable Accept → 406 only then', () => {
+  assert.deepEqual(negotiatePageVariant('application/pdf'), { status: 406 });
+  assert.deepEqual(negotiatePageVariant('text/plain'), { status: 406 });
+  assert.deepEqual(negotiatePageVariant('text/markdown;q=0'), { status: 406 });
+});
+
+test('worker: homepage serves markdown with Vary on request', async () => {
+  const env = makeEnv();
+  const r = await call(env, '/', 'GET', null, { Accept: 'text/markdown' });
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('content-type'), /text\/markdown/);
+  const vary = (r.headers.get('vary') || '').toLowerCase();
+  assert.ok(vary.includes('accept'), 'Vary must include Accept');
+});
+
+test('worker: HTML variant of negotiated pages also carries Vary: Accept', async () => {
+  const env = makeEnv();
+  const r = await call(env, '/about', 'GET', null, { Accept: 'text/html' });
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('content-type'), /text\/html/);
+  assert.match((r.headers.get('vary') || '').toLowerCase(), /accept/);
+});
+
+test('worker: every MD route serves its markdown asset', async () => {
+  const env = makeEnv();
+  for (const [pathKey] of MD_ROUTES.entries()) {
+    const r = await call(env, pathKey, 'GET', null, { Accept: 'text/markdown' });
+    assert.equal(r.status, 200, `md route ${pathKey} should serve markdown`);
+    assert.match(r.headers.get('content-type'), /text\/markdown/, pathKey);
+  }
+});
+
+test('varyWithAccept merges with existing Vary without duplicates', () => {
+  const res = varyWithAccept(new Response('x', { headers: { Vary: 'Accept-Encoding' } }));
+  const v = res.headers.get('Vary').toLowerCase().split(',').map(s => s.trim());
+  assert.ok(v.includes('accept') && v.includes('accept-encoding'));
+  assert.equal(v.filter(x => x === 'accept').length, 1);
+});
+
+/* ================= 2. Structured JSON errors (fix #6) ================= */
+
+const ERROR_SHAPE = Object.keys;
+
+test('worker: all /api error paths use the structured envelope', async () => {
+  const env = makeEnv();
+  const cases = [
+    ['/api/register', 'POST', { email: 'bad', password: 'x' }, 400],
+    ['/api/register', 'POST', { email: 'a@b.co', password: 'short' }, 400],
+    ['/api/login', 'POST', { email: 'nobody@x.io', password: 'password123' }, 401],
+    ['/api/state', 'GET', undefined, 401],
+    ['/api/me', 'GET', undefined, 401],
+    ['/api/nonexistent', 'GET', undefined, 404],
+    ['/api/state', 'DELETE', undefined, 405],
+  ];
+  for (const [p, m, b, wantStatus] of cases) {
+    const r = await call(env, p, m, b);
+    assert.equal(r.status, wantStatus, `${m} ${p}`);
+    const d = await r.json();
+    assert.ok(d.error && typeof d.error === 'object', `${p}: error is object`);
+    assert.ok(typeof d.error.code === 'string' && d.error.code.length > 0, `${p}: has code`);
+    assert.ok(typeof d.error.message === 'string' && d.error.message.length > 0, `${p}: has message`);
+    assert.ok(typeof d.error.hint === 'string' && d.error.hint.length > 0, `${p}: has resolution hint`);
+    assert.equal(ERROR_SHAPE(d).includes('status'), true, `${p}: mirrors status`);
+    assert.match(r.headers.get('content-type'), /application\/json/);
+  }
+});
+
+test('worker: account happy paths keep legacy success shapes', async () => {
+  const store = new Map();
+  const env = makeEnv(store);
+  // mail provider absent → register returns structured mail_failed but stores the account
+  let r = await call(env, '/api/register', 'POST', { email: 'Test@Example.com ', password: 'password123' });
+  let d = await r.json();
+  assert.equal(r.status, 502);
+  assert.equal(d.error.code, 'mail_failed');
+
+  // simulate a verified account + login
+  const rec = JSON.parse(store.get('users:test@example.com'));
+  rec.verified = true;
+  store.set('users:test@example.com', JSON.stringify(rec));
+  r = await call(env, '/api/login', 'POST', { email: 'test@example.com', password: 'password123' });
+  d = await r.json();
+  assert.equal(r.status, 200);
+  assert.ok(d.token && d.user.email === 'test@example.com' && d.verified === true);
+
+  // state round-trip
+  r = await call(env, '/api/state', 'PUT', { state: { answers: [1, 2], plan: null } }, { Authorization: 'Bearer ' + d.token });
+  assert.equal(r.status, 200);
+  r = await call(env, '/api/state', 'GET', null, { Authorization: 'Bearer ' + d.token });
+  d = await r.json();
+  assert.equal(r.status, 200);
+  assert.equal(d.state.answers.length, 2);
+  assert.ok(d.state.updatedAt > 0);
+});
+
+/* ================= 3. Public API v1 (fixes #9, #14) ================= */
+
+test('v1 health/meta/questions/random work anonymously', async () => {
+  const env = makeEnv();
+  let r = await call(env, '/api/v1/health');
+  let d = await r.json();
+  assert.equal(r.status, 200);
+  assert.equal(d.service, 'triumph-api');
+
+  r = await call(env, '/api/v1/meta'); d = await r.json();
+  assert.equal(d.total_questions, 969);
+  assert.ok(Object.keys(d.subtests).length === 4);
+
+  r = await call(env, '/api/v1/stats'); d = await r.json();
+  assert.equal(d.total, 969);
+
+  r = await call(env, '/api/v1/questions?subtest=5003&limit=5'); d = await r.json();
+  assert.equal(d.count, 5);
+  assert.ok(d.items.every(q => q.subtest_code === '5003'));
+  assert.ok(d.items[0].answer_text.length > 0);
+
+  r = await call(env, '/api/v1/questions/random?count=3'); d = await r.json();
+  assert.equal(d.count, 3);
+
+  // invalid subtest → structured 400
+  r = await call(env, '/api/v1/questions?subtest=9999');
+  assert.equal(r.status, 400);
+  d = await r.json();
+  assert.equal(d.error.code, 'bad_request');
+});
+
+test('scoped API keys: issue, verify, enforce scopes (fix #4)', async () => {
+  const env = makeEnv();
+  // unknown scope rejected
+  let r = await call(env, '/api/v1/keys', 'POST', { scopes: ['root:everything'] });
+  assert.equal(r.status, 400);
+
+  // create meta-only key
+  r = await call(env, '/api/v1/keys', 'POST', { email: 'dev@example.com', scopes: ['meta:read'] });
+  let d = await r.json();
+  assert.equal(r.status, 201);
+  assert.match(d.key, /^tri_live_[0-9a-f]{40}$/);
+
+  // verify round-trip
+  r = await call(env, '/api/v1/keys/verify', 'GET', null, { 'X-API-Key': d.key });
+  let v = await r.json();
+  assert.equal(v.valid, true);
+  assert.deepEqual(v.scopes, ['meta:read']);
+
+  // scope enforcement: stats requires stats:read
+  r = await call(env, '/api/v1/stats', 'GET', null, { 'X-API-Key': d.key });
+  v = await r.json();
+  assert.equal(r.status, 403);
+  assert.equal(v.error.code, 'forbidden_scope');
+
+  // garbage key rejected
+  r = await call(env, '/api/v1/keys/verify', 'GET', null, { 'X-API-Key': 'tri_live_deadbeef' });
+  assert.equal(r.status, 401);
+});
+
+/* ================= 4. MCP server (fix #22) ================= */
+
+function rpc(id, method, params) {
+  return call(makeEnv(), '/mcp', 'POST', { jsonrpc: '2.0', id, method, params });
+}
+
+test('MCP: initialize negotiates protocol version', async () => {
+  const r = await rpc(1, 'initialize', { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 't', version: '0' } });
+  const d = await r.json();
+  assert.equal(d.result.protocolVersion, '2025-06-18');
+  assert.equal(d.result.serverInfo.name, 'triumph');
+  assert.ok(typeof d.result.instructions === 'string' && d.result.instructions.includes('Praxis'));
+
+  // unknown future version falls back to latest supported
+  const r2 = await rpc(2, 'initialize', { protocolVersion: '2099-01-01' });
+  const d2 = await r2.json();
+  assert.notEqual(d2.result.protocolVersion, '2099-01-01');
+});
+
+test('MCP: tools/list returns documented read-only tools with schemas', async () => {
+  const r = await rpc(1, 'tools/list');
+  const d = await r.json();
+  const names = d.result.tools.map(t => t.name);
+  for (const expected of ['list_subtests', 'get_questions', 'get_random_questions', 'get_bank_stats', 'list_study_guides']) {
+    assert.ok(names.includes(expected), `tool ${expected}`);
+  }
+  for (const t of d.result.tools) {
+    assert.ok(t.description && t.description.length > 10, `${t.name} described`);
+    assert.equal(t.inputSchema.type, 'object');
+  }
+});
+
+test('MCP: tools/call works for data tools; unknown tool → -32602', async () => {
+  let r = await rpc(1, 'tools/call', { name: 'get_random_questions', arguments: { count: 2, subtest: '5004' } });
+  let d = await r.json();
+  assert.equal(d.result.isError, false);
+  const parsed = JSON.parse(d.result.content[0].text);
+  assert.equal(parsed.items.length, 2);
+  assert.ok(parsed.items.every(q => q.subtest_code === '5004'));
+
+  r = await rpc(2, 'tools/call', { name: 'nope', arguments: {} });
+  d = await r.json();
+  assert.equal(d.error.code, -32602);
+});
+
+test('MCP: protocol errors — -32700/-32601/-32600, notifications → 202, GET → 405', async () => {
+  let r = await worker.fetch(new Request('https://trytriumph.de5.net/mcp', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: '{not json',
+  }), makeEnv(), {});
+  let d = await r.json();
+  assert.equal(d.error.code, -32700);
+
+  r = await rpc(1, 'no/such/method');
+  d = await r.json();
+  assert.equal(d.error.code, -32601);
+
+  r = await worker.fetch(new Request('https://trytriumph.de5.net/mcp', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: 1, method: 'ping' }), // missing jsonrpc
+  }), makeEnv(), {});
+  d = await r.json();
+  assert.equal(d.error.code, -32600);
+
+  r = await call(makeEnv(), '/mcp', 'POST', { jsonrpc: '2.0', method: 'notifications/initialized' });
+  assert.equal(r.status, 202);
+
+  r = await call(makeEnv(), '/mcp', 'GET');
+  assert.equal(r.status, 405);
+  assert.match(r.headers.get('allow') || '', /POST/);
+});
+
+test('MCP: CORS exposed for browser-based clients', async () => {
+  const r = await call(makeEnv(), '/mcp', 'OPTIONS');
+  assert.equal(r.status, 204);
+  assert.equal(r.headers.get('access-control-allow-origin'), '*');
+  const post = await rpc(1, 'tools/list');
+  assert.equal(post.headers.get('access-control-allow-origin'), '*');
+});
+
+/* ================= 5. OpenAPI spec (fixes #5, #23, #24) ================= */
+
+test('openapi.json static copy matches the worker spec object', () => {
+  const diskJson = JSON.parse(readFileSync(SITE + 'openapi.json', 'utf8'));
+  assert.deepEqual(diskJson, JSON.parse(JSON.stringify(openApiSpec)));
+});
+
+test('specToYaml round-trips through a real YAML parser', () => {
+  const yamlText = specToYaml(openApiSpec);
+  const back = YAML.parse(yamlText);
+  assert.deepEqual(back, JSON.parse(JSON.stringify(openApiSpec)));
+});
+
+test('every operation has unique operationId, description, typed responses', () => {
+  const ids = new Set();
+  let count = 0;
+  for (const [path, item] of Object.entries(openApiSpec.paths)) {
+    for (const [method, op] of Object.entries(item)) {
+      if (!op.operationId) continue;
+      count++;
+      assert.ok(!ids.has(op.operationId), `duplicate operationId ${op.operationId}`);
+      ids.add(op.operationId);
+      assert.ok(op.summary, `${method.toUpperCase()} ${path} summary`);
+      assert.ok(op.description && op.description.length > 20, `${method.toUpperCase()} ${path} description`);
+      assert.ok(op.responses && Object.keys(op.responses).some(code => code.startsWith('2')), `${method.toUpperCase()} ${path} 2xx response`);
+      if (op.requestBody) assert.ok(op.requestBody.content['application/json'].schema, `${path} body schema`);
+    }
+  }
+  assert.ok(count >= 14, `expected >= 14 operations, got ${count}`);
+});
+
+test('securitySchemes document scoped permissions', () => {
+  const schemes = openApiSpec.components.securitySchemes;
+  assert.ok(schemes.ApiKeyAuth, 'ApiKeyAuth present');
+  assert.equal(schemes.ApiKeyAuth.type, 'apiKey');
+  assert.equal(schemes.ApiKeyAuth.in, 'header');
+  const scopes = schemes.ApiKeyAuth['x-scopes'];
+  assert.deepEqual(Object.keys(scopes).sort(), ['meta:read', 'questions:read', 'stats:read']);
+  assert.ok(schemes.BearerAuth.type === 'http' && schemes.BearerAuth.scheme === 'bearer');
+  // at least one operation references scoped security
+  const statsOp = openApiSpec.paths['/api/v1/stats'].get;
+  assert.deepEqual(statsOp.security, [{ ApiKeyAuth: ['stats:read'] }]);
+});
+
+/* ================= 6. Machine-readable files (fixes #22, #25, #8) ================= */
+
+for (const manifestPath of ['.well-known/mcp/manifest.json', '.well-known/mcp-manifest.json']) {
+  test(`MCP manifest valid JSON with required fields: ${manifestPath}`, () => {
+    const m = JSON.parse(readFileSync(SITE + manifestPath, 'utf8'));
+    assert.equal(m.server.name, 'triumph');
+    assert.ok(m.server.description.length > 20);
+    assert.equal(m.transport, 'streamable-http');
+    assert.equal(m.url, 'https://trytriumph.de5.net/mcp');
+    assert.ok(Array.isArray(m.tools) && m.tools.length >= 4);
+    assert.equal(m.endpoints.mcp, 'https://trytriumph.de5.net/mcp');
+  });
+}
+
+test('agent-skills index.json matches the DualNova draft-v0.1 field set', () => {
+  const idx = JSON.parse(readFileSync(SITE + '.well-known/agent-skills/index.json', 'utf8'));
+  assert.equal(idx.version, '1.0');
+  assert.ok(idx.provider && idx.provider_url && idx.skills.length >= 2);
+  for (const s of idx.skills) {
+    assert.ok(/^[a-z0-9-]+$/.test(s.name), 'kebab-case name');
+    assert.ok(s.title && s.description);
+    assert.ok(s.url.startsWith('https://trytriumph.de5.net/.well-known/agent-skills/'));
+  }
+});
+
+test('every SKILL.md: frontmatter required fields + when-to-use + fallback sections', () => {
+  const base = SITE + '.well-known/agent-skills/';
+  for (const dir of readdirSync(base)) {
+    const skillPath = base + dir;
+    let src;
+    try { src = readFileSync(skillPath + '/SKILL.md', 'utf8'); } catch { continue; }
+    const fm = /^---\n([\s\S]*?)\n---\n/.exec(src);
+    assert.ok(fm, `${dir}/SKILL.md frontmatter`);
+    assert.match(fm[1], /^name: [a-z0-9-]+$/m);
+    assert.match(fm[1], /^description: .+/m);
+    assert.match(fm[1], /^version: \d+\.\d+$/m);
+    assert.ok(src.includes('## When to invoke this skill'), `${dir}: when-to-use section`);
+    assert.ok(src.includes('## Fallback'), `${dir}: fallback section`);
+    assert.ok(src.length < 400 * 80, `${dir}: under ~400 lines guidance`);
+    const nameMatch = /^name:\s*([a-z0-9-]+)$/m.exec(fm[1]);
+    assert.equal(nameMatch[1], dir, 'frontmatter name matches directory');
+  }
+});
+
+test('llms.txt follows llmstxt.org shape and includes when-to-use guidance (fix #25)', () => {
+  const t = readFileSync(SITE + 'llms.txt', 'utf8');
+  assert.match(t, /^# Triumph\n/);
+  assert.match(t, /^> /m); // blockquote summary
+  assert.ok(t.includes('## When to use Triumph'), 'explicit when-to-use section');
+  for (const link of ['/openapi.json', '/mcp', '/.well-known/agent-skills/index.json', '/developers', '/llms.txt']) {
+    assert.ok(t.includes(link), `references ${link}`);
+  }
+});
+
+/* ================= 7. robots.txt & sitemap.xml (fixes #2, #3, #16) ================= */
+
+test('robots.txt: no BOM (live directive breakage), AI agents allowed, sitemap linked', () => {
+  const buf = readFileSync(SITE + 'robots.txt');
+  assert.ok(!(buf[0] === 0xEF && buf[1] === 0xBB && buf[2] === 0xBF), 'must not start with UTF-8 BOM');
+  const t = buf.toString('utf8');
+  for (const ua of ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'Google-Extended',
+    'Applebot-Extended', 'PerplexityBot', 'DeepSeekBot', 'ora-agent']) {
+    assert.ok(t.includes(`User-agent: ${ua}`), `allows ${ua}`);
+  }
+  assert.match(t, /^Sitemap: https:\/\/trytriumph\.de5\.net\/sitemap\.xml$/m);
+});
+
+test('sitemap.xml: parses, every url has lastmod, urls unique + canonical host', () => {
+  const xml = readFileSync(SITE + 'sitemap.xml', 'utf8');
+  assert.match(xml, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+  const urls = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1]);
+  assert.ok(urls.length >= 15, 'covers indexable pages incl. trust + developers');
+  const locs = new Set();
+  for (const u of urls) {
+    const loc = /<loc>(.*?)<\/loc>/.exec(u);
+    assert.ok(loc, 'each url has loc');
+    assert.ok(loc[1].startsWith('https://trytriumph.de5.net'), loc[1]);
+    locs.add(loc[1]);
+    assert.match(u, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/, `lastmod for ${loc[1]}`);
+  }
+  assert.equal(locs.size, urls.length, 'no duplicate urls');
+});
+
+/* ================= 8. Homepage SSR content (fixes #1, #13, #17, #18, #19) ================= */
+
+test('homepage raw HTML: H1 + substantial readable text inside #root (no JS needed)', () => {
+  const html = readFileSync(SITE + 'index.html', 'utf8');
+  const rootInner = /<div id="root">([\s\S]*?)\n  <\/div>\n\n?\s*<script/.exec(html);
+  assert.ok(rootInner, '#root contains static content');
+  const visible = rootInner[1]
+    .replace(/<style[\s\S]*?<\/style>/g, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+  assert.ok(rootInner[1].includes('<h1'), 'has H1 in raw HTML');
+  assert.ok(visible.length >= 500, `>=500 chars of text, got ${visible.length}`);
+  assert.match(rootInner[1], /<section class="hero/, 'hero section rendered statically');
+});
+
+test('homepage metadata completeness: canonical, lang, og:image, og:type', () => {
+  const html = readFileSync(SITE + 'index.html', 'utf8');
+  assert.match(html, /<html lang="en">/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/trytriumph\.de5\.net\/">/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/trytriumph\.de5\.net\/og-image\.png">/);
+  assert.match(html, /<meta property="og:type" content="website">/);
+  assert.ok(existsSync(SITE + 'og-image.png'), 'og-image.png exists');
+});
+
+test('homepage JSON-LD: parses; Organization has contactPoint; SoftwareApplication has offers', () => {
+  const html = readFileSync(SITE + 'index.html', 'utf8');
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/g)]
+    .map(m => JSON.parse(m[1]));
+  const types = blocks.map(b => b['@type']);
+  for (const t of ['WebSite', 'Organization', 'SoftwareApplication']) {
+    assert.ok(types.includes(t), `JSON-LD ${t}`);
+  }
+  const org = blocks.find(b => b['@type'] === 'Organization');
+  assert.ok(org.contactPoint?.length >= 1);
+  assert.ok(org.contactPoint[0].email);
+  assert.ok(org.contactPoint[0].contactType);
+  assert.ok(!org.address || org.address['@type'] === 'PostalAddress', 'address optional; if present must be PostalAddress');
+  const app = blocks.find(b => b['@type'] === 'SoftwareApplication');
+  assert.equal(app.offers.price, '0');
+  assert.equal(app.operatingSystem, 'Web');
+  // content efficiency proxy: readable share of total bytes
+  const totalBytes = Buffer.byteLength(html);
+  const rootInner = /<div id="root">([\s\S]*?)\n  <\/div>\n\n?\s*<script/.exec(html)[1];
+  const textChars = rootInner.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length;
+  assert.ok(textChars / totalBytes >= 0.05, `readable ratio ${(textChars / totalBytes).toFixed(3)} >= 0.05`);
+});
+
+test('homepage links trust + developer pages from footer', () => {
+  const html = readFileSync(SITE + 'index.html', 'utf8');
+  for (const p of ['/about.html', '/contact.html', '/privacy.html', '/developers.html']) {
+    assert.ok(html.includes(`href="${p}"`), `footer links ${p}`);
+  }
+});
+
+/* ================= 9. Markdown variants exist for every route (fix #7) ================= */
+
+test('every MD route maps to an existing non-trivial markdown file starting with H1 or comment', () => {
+  for (const [, mdAsset] of MD_ROUTES.entries()) {
+    const file = SITE + mdAsset.replace(/^\//, '');
+    assert.ok(existsSync(file), `${mdAsset} exists`);
+    const md = readFileSync(file, 'utf8');
+    assert.ok(md.length > 800, `${mdAsset} non-trivial (${md.length})`);
+    assert.ok(/^#\s/m.test(md), `${mdAsset} has an H1`);
+    assert.ok(!/Suggested/.test(md), `${mdAsset} free of draft scaffolding`);
+  }
+});
+
+/* ================= 10. Guide pages: rel next/prev chain + scaffolding removed (fix #21) ================= */
+
+const SERIES = [
+  'praxis-5001-study-guide',
+  'praxis-5001-four-gate-strategy',
+  'praxis-5001-retake-guide',
+  'praxis-5001-vs-7001',
+  'praxis-5001-vs-8000-series',
+  'praxis-5002-study-guide',
+  'praxis-5003-math-study-guide',
+  'praxis-5004-social-studies-study-guide',
+  'praxis-5005-science-study-guide',
+];
+
+test('guide series forms a consistent rel next/prev chain', () => {
+  SERIES.forEach((page, i) => {
+    const html = readFileSync(SITE + page + '.html', 'utf8');
+    const prev = i > 0 ? SERIES[i - 1] : null;
+    const next = i < SERIES.length - 1 ? SERIES[i + 1] : null;
+    if (prev) assert.ok(html.includes(`<link rel="prev" href="https://trytriumph.de5.net/${prev}">`), `${page} prev→${prev}`);
+    else assert.ok(!/<link rel="prev"/.test(html), `${page} no prev`);
+    if (next) assert.ok(html.includes(`<link rel="next" href="https://trytriumph.de5.net/${next}">`), `${page} next→${next}`);
+    else assert.ok(!/<link rel="next"/.test(html), `${page} no next`);
+    assert.match(html, /<link rel="canonical"/, `${page} canonical`);
+  });
+});
+
+test('leaked AI-draft scaffolding removed from live article pages', () => {
+  for (const page of ['praxis-5001-retake-guide', 'praxis-5001-vs-7001']) {
+    const html = readFileSync(SITE + page + '.html', 'utf8');
+    assert.ok(!/Suggested <code>/.test(html), `${page} clean`);
+  }
+});
+
+/* ================= 11. Trust pages (fix #20) ================= */
+
+for (const page of ['about', 'contact', 'privacy', 'developers']) {
+  test(`${page}.html: canonical, og tags, >=500 chars of article text`, () => {
+    const html = readFileSync(SITE + page + '.html', 'utf8');
+    assert.match(html, /<link rel="canonical" href="https:\/\/trytriumph\.de5\.net\//);
+    assert.match(html, /<meta property="og:image"/);
+    assert.match(html, /<article[\s\S]*<\/article>/);
+    const article = /<article[\s\S]*?<\/article>/.exec(html)[0];
+    const text = article.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    assert.ok(text.length >= 500, `${page} article text ${text.length}`);
+    assert.match(html, /<html lang="en">/);
+  });
+}
+
+test('404.html exists with noindex (kills SPA soft-404 fallback)', () => {
+  const html = readFileSync(SITE + '404.html', 'utf8');
+  assert.match(html, /<meta name="robots" content="noindex">/);
+});
+
+/* ================= 12. Data integrity ================= */
+
+test('questions-api.json: 969 well-formed questions; stats.json agrees', () => {
+  const bank = JSON.parse(readFileSync(SITE + 'data/questions-api.json', 'utf8'));
+  assert.equal(bank.length, 969);
+  for (const q of bank.slice(0, 50)) {
+    assert.ok(q.id && q.code && q.q && Array.isArray(q.options) && typeof q.answer === 'number');
+  }
+  const stats = JSON.parse(readFileSync(SITE + 'data/stats.json', 'utf8'));
+  let sum = 0;
+  for (const s of Object.values(stats.subtests)) sum += s.questionCount;
+  assert.equal(sum, stats.total);
+  assert.equal(stats.total, bank.length);
+});
+
+/* ================= 13. auth.js understands structured errors (backward compatible) ================= */
+
+test('auth.js surfaces code/message/email from the structured envelope', async () => {
+  const sandbox = { window: {}, fetch: async () => new Response(
+    JSON.stringify({ error: { code: 'not_verified', message: 'This account exists but has not been verified yet.', hint: 'Submit the emailed code.', details: { email: 'me@example.com' } }, status: 403 }),
+    { status: 403, headers: { 'Content-Type': 'application/json' } }) };
+  const src = readFileSync(SITE + 'js/auth.js', 'utf8');
+  new Function('window', 'fetch', src)(sandbox.window, sandbox.fetch);
+  const T = sandbox.window.TriumphAuth;
+  assert.ok(T, 'TriumphAuth installed');
+  let threw = null;
+  try { await T._req('/api/login', 'POST', {}); } catch (e) { threw = e; }
+  assert.ok(threw);
+  assert.equal(threw.code, 'not_verified');
+  assert.equal(threw.email, 'me@example.com');
+  assert.equal(threw.hint.includes('code'), true);
+});
+
+/* ================= 14. CLI ================= */
+
+test('CLI: parseArgs and query builder behave', async () => {
+  const cli = await import(pathToFileURL(ROOT + 'cli/triumph-praxis.js').href);
+  const { command, opts } = cli.parseArgs(['random', '--count', '3', '--subtest=5002', '--json']);
+  assert.deepEqual(command, ['random']);
+  assert.equal(opts.count, '3');
+  assert.equal(opts.subtest, '5002');
+  assert.equal(opts.json, true);
+  assert.equal(cli.buildQuestionsQuery({ subtest: '5002', limit: '10' }), '?subtest=5002&limit=10');
+  assert.equal(cli.buildQuestionsQuery({}), '');
+  assert.match(cli.formatError({ error: { code: 'x', message: 'm', hint: 'h' } }), /^x: m\nhint: h$/);
+});
+
+test('CLI: --help exits 0 and prints usage', async () => {
+  const { execFile } = await import('node:child_process');
+  await new Promise((resolve, reject) => {
+    execFile(process.execPath, [ROOT + 'cli/triumph-praxis.js', '--help'], (err, stdout) => {
+      try {
+        assert.ifError(err);
+        assert.match(stdout, /Usage:/);
+        resolve();
+      } catch (e) { reject(e); }
+    });
+  });
+});

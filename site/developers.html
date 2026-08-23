@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Triumph API — Developer Docs for the Praxis 5001 Question Bank | Triumph</title>
+  <meta name="description" content="Developer portal for Triumph: free REST API for 969 original Praxis 5001 practice questions, OpenAPI spec, MCP server, scoped API keys, and agent skills. Quickstart in one curl.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://trytriumph.de5.net/developers">
+  <meta property="og:title" content="Triumph API — Developer Documentation">
+  <meta property="og:description" content="Free REST API for the Praxis 5001 question bank: OpenAPI spec, MCP server (Streamable HTTP), scoped API keys, quickstart in one curl.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trytriumph.de5.net/developers">
+  <meta property="og:image" content="https://trytriumph.de5.net/og-image.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MSR1Q1G7W9');
+  </script>
+
+  <link rel="mcp-manifest" type="application/json" href="/.well-known/mcp-manifest.json">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Triumph API Developer Portal",
+    "url": "https://trytriumph.de5.net/developers",
+    "isPartOf": { "@type": "WebSite", "name": "Triumph", "url": "https://trytriumph.de5.net/" },
+    "publisher": { "@id": "https://trytriumph.de5.net/#organization" },
+    "about": { "@type": "SoftwareApplication", "name": "Triumph API", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { min-width: 0; }
+    :root {
+      --bg: #F2EFE9; --bg-soft: #E8E3D8; --ink: #3C3733; --ink-soft: #6E6760;
+      --line: #D8D1C5; --accent: #C09D9B; --accent-deep: #A67D7A;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Instrument Sans", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    html, body { height: 100%; width: 100%; overflow-x: hidden; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.75; }
+    h1, h2, h3 { text-wrap: balance; }
+    p, li, td { overflow-wrap: break-word; }
+    a { color: var(--accent-deep); }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); display: block; }
+    article.wrap { padding-top: 56px; padding-bottom: 72px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 5vw, 52px); line-height: 1.12; margin: 18px 0 20px; max-width: 16em; }
+    h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.2; margin: 48px 0 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+    h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; }
+    p { font-size: 16px; color: var(--ink-soft); margin-bottom: 14px; }
+    p strong { color: var(--ink); font-weight: 600; }
+    ul { margin: 0 0 16px 20px; color: var(--ink-soft); font-size: 15px; line-height: 1.85; }
+    li { margin-bottom: 4px; }
+    code { font-family: var(--mono); font-size: 13.5px; background: var(--bg-soft); padding: 2px 6px; }
+    pre { font-family: var(--mono); font-size: 13.5px; line-height: 1.65; background: #3C3733; color: #EDE7DC; padding: 18px 20px; overflow-x: auto; margin: 12px 0 20px; white-space: pre; }
+    pre code { background: none; padding: 0; color: inherit; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 22px; font-size: 14.5px; }
+    th, td { border-top: 1px solid var(--line); padding: 9px 12px 9px 0; text-align: left; vertical-align: top; color: var(--ink-soft); }
+    th { color: var(--ink); font-weight: 600; }
+    tr:last-child td { border-bottom: 1px solid var(--line); }
+    td code, th code { white-space: nowrap; }
+    .nav { display: flex; align-items: baseline; justify-content: space-between; padding: 28px 0 24px; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 10px 18px; max-width: 1080px; }
+    .wordmark { font-family: var(--serif); font-style: italic; font-size: 26px; color: inherit; text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+    .nav-links { display: flex; gap: 24px; align-items: baseline; flex-wrap: wrap; }
+    .nav-note { font-size: 13px; color: var(--ink-soft); }
+    .nav-cta { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    footer.footer { padding: 40px 40px 64px; max-width: 1080px; margin: 0 auto; border-top: 1px solid var(--line); margin-top: 24px; }
+    footer.footer p { font-size: 12px; line-height: 1.7; max-width: 60em; margin-bottom: 8px; }
+    @media (max-width: 760px) {
+      .wrap { padding: 0 50px; }
+      .nav { gap: 8px 14px; } .nav-note { display: none; }
+      article.wrap { padding-top: 40px; }
+      pre { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav wrap">
+    <a class="wordmark" href="/" aria-label="Triumph home">Triumph<span style="color:var(--accent)">.</span></a>
+    <div class="nav-links">
+      <span class="nav-note">Praxis 5001 · unofficial</span>
+      <a class="nav-cta" href="/">Home</a>
+      <a class="nav-cta" href="/resources">Resources</a>
+      <a class="nav-cta" href="/diagnostic.html">Free diagnostic →</a>
+    </div>
+  </header>
+
+  <article class="wrap">
+    <span class="eyebrow">Developers · Triumph API v1</span>
+    <h1>The Praxis 5001 question bank, as an API.</h1>
+    <p style="font-size:18px;max-width:34em">969 original practice questions across four subtests, bank statistics, and study-guide metadata — free, documented, and machine-readable. No account needed to start.</p>
+
+    <h2>Quickstart</h2>
+    <p>Every read endpoint works anonymously. Try it:</p>
+<pre><code>curl "https://trytriumph.de5.net/api/v1/questions/random?count=3&amp;subtest=5003"</code></pre>
+    <p>That returns three random original math questions with options, correct answers, and explanations as JSON. Health check: <code>GET /api/v1/health</code>. Full reference: <a href="/openapi.json"><strong>/openapi.json</strong></a> (OpenAPI 3.1) or <a href="/api/openapi.yaml">/api/openapi.yaml</a>.</p>
+
+    <h2>Sandbox &amp; base URL</h2>
+    <p><strong>Base URL:</strong> <code>https://trytriumph.de5.net</code>. The public read API doubles as a sandbox: it is live data with anonymous access, so you can prototype without provisioning anything. There is no separate staging host.</p>
+
+    <h2>Authentication &amp; scoped permissions</h2>
+    <p>All reads work anonymously (public tier). For attribution and higher limits, create a <strong>free scoped API key</strong> — self-serve, no signup:</p>
+<pre><code>curl -X POST https://trytriumph.de5.net/api/v1/keys \
+  -H "Content-Type: application/json" \
+  -d '{"email":"you@example.com","scopes":["questions:read","stats:read"]}'</code></pre>
+    <p>The key (<code>tri_live_…</code>) is shown once; send it as <code>X-API-Key</code>. Scope enforcement is real: a key without <code>stats:read</code> receives a structured <code>forbidden_scope</code> error from <code>/api/v1/stats</code>. Verify any key with <code>GET /api/v1/keys/verify</code>.</p>
+    <table>
+      <tr><th>Scope</th><th>Grants access to</th></tr>
+      <tr><td><code>meta:read</code></td><td><code>GET /api/v1/meta</code> — subtest metadata and doc links</td></tr>
+      <tr><td><code>questions:read</code></td><td><code>GET /api/v1/questions</code>, <code>GET /api/v1/questions/random</code></td></tr>
+      <tr><td><code>stats:read</code></td><td><code>GET /api/v1/stats</code> — per-category counts</td></tr>
+    </table>
+
+    <h2>Endpoints</h2>
+    <table>
+      <tr><th>Method &amp; path</th><th>Purpose</th></tr>
+      <tr><td><code>GET /api/v1/health</code></td><td>Uptime probe + endpoint index</td></tr>
+      <tr><td><code>GET /api/v1/meta</code></td><td>Subtest names, categories, counts, doc links</td></tr>
+      <tr><td><code>GET /api/v1/stats</code></td><td>Question counts per subtest/category</td></tr>
+      <tr><td><code>GET /api/v1/questions</code></td><td>Paginated bank — filters: <code>subtest</code>, <code>category</code>, <code>search</code>; <code>limit</code> ≤ 100, <code>offset</code></td></tr>
+      <tr><td><code>GET /api/v1/questions/random</code></td><td>Random draw — <code>count</code> ≤ 50</td></tr>
+      <tr><td><code>POST /api/v1/keys</code></td><td>Create scoped API key (rate limit: 10/hour/IP)</td></tr>
+      <tr><td><code>GET /api/v1/keys/verify</code></td><td>Validate a key, list its scopes</td></tr>
+    </table>
+    <p>Account endpoints used by the web app (<code>/api/register</code>, <code>/api/login</code>, <code>/api/verify</code>, <code>/api/state</code>…) are documented in the same OpenAPI file and use JWT bearer tokens.</p>
+
+    <h2>Error format</h2>
+    <p>Every non-2xx response is structured JSON — never an HTML page:</p>
+<pre><code>{
+  "error": {
+    "code": "invalid_email",
+    "message": "The email address is not valid.",
+    "hint": "Provide a valid email address such as you@example.com."
+  },
+  "status": 400
+}</code></pre>
+
+    <h2>MCP server (Model Context Protocol)</h2>
+    <p>Agents can call Triumph natively over MCP Streamable HTTP:</p>
+<pre><code>POST https://trytriumph.de5.net/mcp
+Content-Type: application/json
+
+{"jsonrpc":"2.0","id":1,"method":"tools/list"}</code></pre>
+    <p>Tools: <code>list_subtests</code>, <code>get_questions</code>, <code>get_random_questions</code>, <code>get_bank_stats</code>, <code>list_study_guides</code> — all read-only, no auth. Manifests: <a href="/.well-known/mcp/manifest.json">/.well-known/mcp/manifest.json</a> and <a href="/.well-known/mcp-manifest.json">/.well-known/mcp-manifest.json</a>.</p>
+
+    <h2>Agent integration extras</h2>
+    <ul>
+      <li><strong>Markdown negotiation:</strong> send <code>Accept: text/markdown</code> on any content page (e.g. this one or any study guide) and you get clean markdown with <code>Vary: Accept</code> handled. Direct links: <code>/md/&lt;page&gt;.md</code>.</li>
+      <li><strong>llms.txt:</strong> <a href="/llms.txt">/llms.txt</a> — site map for LLMs including a when-to-use guide.</li>
+      <li><strong>Agent skills:</strong> <a href="/.well-known/agent-skills/index.json">/.well-known/agent-skills/index.json</a> — SKILL.md instruction files for fetching questions, quizzing, and finding guides.</li>
+      <li><strong>CLI (npm):</strong> <code>triumph-praxis</code> — <code>npx triumph-praxis random --subtest 5004 --count 5</code>. Package source ships in the repository under <code>cli/</code>.</li>
+    </ul>
+
+    <h2>Status &amp; support</h2>
+    <p>Uptime probe: <a href="/api/v1/health">/api/v1/health</a>. Questions, bug reports, or rate-limit increases: email <strong>abc15531888397@gmail.com</strong> with subject "API" — see <a href="/contact">contact page</a>. Content licensing: all questions are original and free to surface with attribution to trytriumph.de5.net.</p>
+  </article>
+
+  <footer class="footer">
+    <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. All practice questions are original and aligned to the published test blueprint; no official test items are reproduced.</p>
+    <p><a href="/">Home</a> · <a href="/resources">Resources</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/developers">Developers</a></p>
+  </footer>
+</body>
+</html>

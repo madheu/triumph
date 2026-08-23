@@ -1,11 +1,21 @@
-﻿# sync-site.ps1 — 同步开发文件到部署目录
+# sync-site.ps1 — 同步开发文件到部署目录
 # 用法: .\sync-site.ps1 "提交说明"
 # 作用: 复制 triumph/index.html + triumph/diagnostic.html 到 site/ → 若在 git 仓库则 commit → 提示 push
-param([string]$msg = "update site")
+#
+# ⚠️ 2026-08-22 警告: site/index.html 已远超 triumph/ 的旧开发稿（新增了 SSR 静态内容、
+#    JSON-LD、og:image 等）。直接同步会把线上版本倒退回旧稿。此脚本现在默认拒绝执行；
+#    确认要覆盖时才用 .\sync-site.ps1 -Force "msg"。部署请直接运行 .\deploy.ps1。
+param([string]$msg = "update site", [switch]$Force)
 $ErrorActionPreference = "Stop"
 $proj = $PSScriptRoot
 $src = "$proj\triumph"     # 开发源（文件已整理进 triumph/ 子目录）
 $site = "$proj\site"
+
+if (-not $Force) {
+  Write-Host "拒绝执行: triumph/ 里的 index.html 是过时的开发稿，直接同步会让 site/ 回退。" -ForegroundColor Red
+  Write-Host "如确认覆盖请加 -Force；否则用 .\deploy.ps1 直接部署 site/。" -ForegroundColor Yellow
+  exit 1
+}
 
 if (!(Test-Path "$src\index.html") -or !(Test-Path "$src\diagnostic.html")) {
   Write-Host "错误: triumph/ 源文件缺失" -ForegroundColor Red; exit 1

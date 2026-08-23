@@ -1,4 +1,4 @@
-﻿# deploy.ps1 一键部署 Triumph 到 Cloudflare Pages
+# deploy.ps1 一键部署 Triumph 到 Cloudflare Pages
 # 用法: .\deploy.ps1           部署 site/ 目录
 # 首次使用（只需一次）:
 #   npm install -g wrangler
@@ -30,7 +30,13 @@ if ($LASTEXITCODE -ne 0) {
   wrangler login
 }
 
-# 3. 部署 site/ 到 Pages（项目名 triumph；--commit-dirty=true 避免 git 无 HEAD 时判文件未变）
+# 3. 先构建 worker bundle（site/_worker.js 由 worker-src/*.mjs 生成）
+#    node 输出 stderr 会被 PowerShell 当 NativeCommandError，用 cmd 包装规避
+Write-Host "Building worker bundle..." -ForegroundColor Cyan
+cmd /c "node build-worker.mjs 2>&1"
+if ($LASTEXITCODE -ne 0) { Write-Host "worker bundle build failed" -ForegroundColor Red; exit 1 }
+
+# 4. 部署 site/ 到 Pages（项目名 triumph；--commit-dirty=true 避免 git 无 HEAD 时判文件未变）
 Write-Host "Deploying..." -ForegroundColor Cyan
 Push-Location $proj
 wrangler pages deploy $site --project-name triumph --branch main --commit-dirty=true

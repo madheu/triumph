@@ -1,0 +1,8 @@
+allowBuilds:
+  esbuild: true
+
+# admin/ 是独立前端应用（自己的 package.json + 依赖），
+# 不参与根 workspace 共享 store，避免依赖串扰。
+# 在 admin/ 目录里单独执行 pnpm install。
+exclude:
+  - admin

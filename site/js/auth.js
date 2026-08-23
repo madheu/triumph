@@ -32,9 +32,20 @@
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        const err = new Error(data.error || 'request failed');
-        err.code = data.error;
+        // Structured error envelope: { error: { code, message, hint, details? }, status }
+        // Backward compatible with the legacy flat shape { error: "code" }.
+        const raw = data && data.error;
+        const code = typeof raw === 'string' ? raw : (raw && raw.code) || 'request failed';
+        const message = (raw && typeof raw === 'object' && raw.message) || code;
+        const err = new Error(message);
+        err.code = code;
         err.status = res.status;
+        if (raw && typeof raw === 'object') {
+          err.hint = raw.hint || '';
+          if (raw.details) err.details = raw.details;
+          // not_verified carries { email } so the UI can prefill the verify step
+          if (code === 'not_verified' && raw.details && raw.details.email) err.email = raw.details.email;
+        }
         throw err;
       }
       return data;

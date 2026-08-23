@@ -10,7 +10,15 @@
   <meta property="og:title" content="Triumph — Free Praxis 5001 Readiness Diagnostic">
   <meta property="og:description" content="12 original questions across all four 5001 subtests → estimated scaled score → your weakest gate → pass forecast.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trytriumph.de5.net/">
+  <meta property="og:site_name" content="Triumph">
+  <meta property="og:image" content="https://trytriumph.de5.net/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Triumph — free Praxis 5001 readiness diagnostic">
   <link rel="canonical" href="https://trytriumph.de5.net/">
+  <link rel="mcp-manifest" type="application/json" href="/.well-known/mcp-manifest.json">
+  <link rel="alternate" type="text/markdown" href="/md/index.md" title="Markdown version">
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
@@ -28,11 +36,60 @@
     "name": "Triumph",
     "description": "Free Praxis 5001 readiness diagnostic for teacher candidates.",
     "url": "https://trytriumph.de5.net/",
+    "publisher": { "@id": "https://trytriumph.de5.net/#organization" },
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://trytriumph.de5.net/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://trytriumph.de5.net/#organization",
+    "name": "Triumph",
+    "url": "https://trytriumph.de5.net/",
+    "description": "Independent study tool for the ETS Praxis 5001 (Elementary Education: Multiple Subjects): free original question bank, readiness diagnostic, and study guides.",
+    "email": "abc15531888397@gmail.com",
+    "logo": "https://trytriumph.de5.net/og-image.png",
+    "sameAs": ["https://x.com/madehu"],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "abc15531888397@gmail.com",
+        "url": "https://trytriumph.de5.net/contact",
+        "availableLanguage": ["English"]
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Triumph",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "url": "https://trytriumph.de5.net/",
+    "description": "Free Praxis 5001 readiness diagnostic and practice-question bank: 969 original questions across the four subtests, estimated scaled scores, weakest-gate analysis, and a personalized study plan.",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Practice tier: free question bank and diagnostic. Optional Triumph plan at $15/month for forecasting and planning."
+    },
+    "featureList": [
+      "969 original Praxis 5001 practice questions",
+      "Readiness diagnostic with estimated scaled scores",
+      "Weakest-subtest (gate) analysis",
+      "Personalized study plan",
+      "Free public API and MCP server"
+    ],
+    "publisher": { "@id": "https://trytriumph.de5.net/#organization" }
   }
   </script>
 
@@ -266,7 +323,174 @@
   <link rel="stylesheet" href="css/mobile-enhance.css?v=20260821">
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Static server-rendered content: shown without JavaScript; replaced by the React app on load.
+         Keep this markup in sync with the JSX components below. -->
+    <header class="nav wrap">
+      <a class="wordmark" href="/" aria-label="Triumph home" style="text-decoration:none;color:inherit">Triumph<span style="color:var(--accent)">.</span></a>
+      <div class="nav-links" style="display:flex;gap:24px;align-items:baseline">
+        <span class="nav-note">Praxis 5001 · unofficial</span>
+        <a class="nav-cta" href="/resources.html">Resources</a>
+        <a class="nav-cta" href="/dashboard.html">Dashboard</a>
+        <a class="nav-cta" href="/login.html">Log in</a>
+        <a class="nav-cta" href="/diagnostic.html">Free diagnostic →</a>
+      </div>
+    </header>
+    <main>
+      <section class="hero wrap">
+        <span class="eyebrow">A diagnostic study system for the Praxis 5001</span>
+        <h1>You've studied. You've practiced. <em>But do you know if you'll pass?</em></h1>
+        <p class="lede">
+          The Praxis 5001 is <strong>four separate tests</strong> — and it passes you on all of them or none.
+          Most people study them like one exam and find out too late which one was the weakest.
+          Triumph turns free practice into <strong>an honest readiness score</strong>, a plan for your
+          actual weak spots, and a forecast of how close you are to the pass.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="/diagnostic.html" style="text-decoration:none;display:inline-block">Run the free diagnostic</a>
+          <a class="btn-secondary" href="/practice.html" style="text-decoration:none;display:inline-block">Try sample questions now</a>
+        </div>
+        <div class="hero-subtests">
+          <div class="subtest-row">
+            <span class="subtest-code">5002</span>
+            <span class="subtest-name">Reading &amp; Language Arts</span>
+            <span class="subtest-desc">Phonics, vocabulary, comprehension, writing instruction.</span>
+            <span class="subtest-num">80 q</span>
+          </div>
+          <div class="subtest-row">
+            <span class="subtest-code">5003</span>
+            <span class="subtest-name">Mathematics</span>
+            <span class="subtest-desc">Number sense, algebra, geometry, data — and how to teach it.</span>
+            <span class="subtest-num">50 q</span>
+          </div>
+          <div class="subtest-row">
+            <span class="subtest-code">5004</span>
+            <span class="subtest-name">Social Studies</span>
+            <span class="subtest-desc">US history &amp; government, geography, world history, economics.</span>
+            <span class="subtest-num">60 q</span>
+          </div>
+          <div class="subtest-row">
+            <span class="subtest-code">5005</span>
+            <span class="subtest-name">Science</span>
+            <span class="subtest-desc">Earth, life &amp; physical science — plus inquiry and pedagogy.</span>
+            <span class="subtest-num">55 q</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="problem">
+        <div class="wrap">
+          <span class="eyebrow">Why this exam breaks people</span>
+          <h2>It's not one test. It's four gates, <em>in sequence.</em></h2>
+          <p>
+            Every subtest has its own passing score. Score high on math and fail science —
+            <strong>you don't pass, you retake science</strong> (full price, 28 days later).
+            Most candidates discover the weak one only after the score report arrives.
+          </p>
+          <p>
+            This is not a niche fear. A <strong>majority of first-time elementary teacher
+            candidates fail</strong> the most widely used licensure exam, and its first-time
+            pass rate sits <strong>below the bar exam</strong>. Some candidates sit for it
+            eleven times.
+          </p>
+          <div class="stat-row">
+            <div class="stat">
+              <span class="mono">&gt;50%</span>
+              <span>of first-time elementary candidates fail the licensure exam (NCTQ)</span>
+            </div>
+            <div class="stat">
+              <span class="mono">4/4</span>
+              <span>subtests must pass — one failing gate means a full retake</span>
+            </div>
+            <div class="stat">
+              <span class="mono">11×</span>
+              <span>attempts by one candidate on the teacher forums (real post)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how wrap">
+        <span class="eyebrow">How it works</span>
+        <h2>Free practice is the bait. <em>The system is the catch.</em></h2>
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <h3>Practice free, on the real blueprint</h3>
+            <p>A free question bank organized by the four subtests — same categories, same weights as the official Study Companion. No paywall on the questions themselves.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <h3>Get a readiness score, not a vague percentage</h3>
+            <p>Your answers map to each subtest's categories. Triumph converts them to an estimated scaled score and tells you where you sit against your state's passing line.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <h3>A plan built for your weakest gate</h3>
+            <p>Study time goes where the gap is — 60% on the subtest most likely to fail you, not equal effort across all four.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <h3>Track it like a training program</h3>
+            <p>Progress, retake-readiness, and a study schedule that updates as you improve. No more guessing in the last two weeks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <div class="wrap">
+          <span class="eyebrow">Pricing</span>
+          <h2>Cheaper than one retake. <em>Far cheaper than eleven.</em></h2>
+          <div class="price-grid">
+            <div class="price-cell">
+              <h3>Practice</h3>
+              <span class="mono">$0</span>
+              <ul>
+                <li>Free question bank, all four subtests</li>
+                <li>Category-level practice tracking</li>
+                <li>Unlimited attempts</li>
+              </ul>
+              <a class="btn-secondary" href="/practice.html" style="text-decoration:none;display:block;text-align:center;width:100%">Start free</a>
+            </div>
+            <div class="price-cell">
+              <h3>Triumph</h3>
+              <span class="mono">$15<span style="font-size:14px;color:var(--ink-soft)">/mo</span></span>
+              <ul>
+                <li>Readiness score &amp; pass-probability forecast</li>
+                <li>Personalized study plan by weak subtest</li>
+                <li>Progress tracking &amp; retake-readiness</li>
+              </ul>
+              <a class="btn-primary" href="/diagnostic.html" style="text-decoration:none;display:block;text-align:center;width:100%">Get the forecast</a>
+            </div>
+          </div>
+          <p style="margin-top:24px;font-size:13px;color:var(--ink-soft)">
+            A retake costs about $130 and 28 days. The plan costs $15. (Price is a hypothesis for validation.)
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer wrap">
+      <p>
+        Triumph is an independent study tool. It is not affiliated with, endorsed by,
+        or sponsored by ETS, and is not approved by ETS. Praxis is a trademark of ETS.
+        All practice questions are original and aligned to the published test blueprint;
+        no official test items are reproduced.
+      </p>
+      <p style="margin-top:18px">
+        Built by an independent developer. Questions, feedback, or partnership ideas — email
+        <a href="mailto:abc15531888397@gmail.com">abc15531888397@gmail.com</a> or follow
+        <a href="https://x.com/madehu" target="_blank" rel="noopener noreferrer">@madehu</a> on X.
+      </p>
+      <p style="margin-top:18px"><a href="/">Home</a> · <a href="/resources.html">Resources</a> · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/developers.html">Developers / API</a></p>
+    </footer>
+  </div>
 
   <script src="js/auth.js"></script>
   <script type="text/babel">
@@ -540,6 +764,9 @@
             Built by an independent developer. Questions, feedback, or partnership ideas — email{' '}
             <a href="mailto:abc15531888397@gmail.com">abc15531888397@gmail.com</a> or follow{' '}
             <a href="https://x.com/madehu" target="_blank" rel="noopener noreferrer">@madehu</a> on X.
+          </p>
+          <p style={{marginTop:18}}>
+            <a href="/">Home</a> · <a href="/resources.html">Resources</a> · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/developers.html">Developers / API</a>
           </p>
         </footer>
       );

@@ -1,0 +1,18 @@
+{
+  "name": "triumph-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Triumph (trytriumph.de5.net) deployment directory + tooling. Deploy with .\\deploy.ps1. NOTE: sync-site.ps1 must NOT be run (it would regress newer files in site/).",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/agentic.test.mjs test/smoke-worker.mjs test/admin-gate.test.mjs test/p1-billing.test.mjs",
+    "test:parity": "node test/diff-worker.mjs",
+    "build:worker": "node build-worker.mjs",
+    "build:md": "node tools/html-to-md.mjs",
+    "build:data": "node tools/build-data.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "yaml": "^2.5.0"
+  }
+}

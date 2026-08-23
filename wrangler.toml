@@ -9,6 +9,17 @@ compatibility_date = "2026-08-20"
 binding = "TRIUMPH_KV"
 id = "07ad9fc5b16b4bccb31cc92080a29e88"
 
+# D1 数据库：订单/订阅/工单/题库/工具注册表/审计（后台管理用）
+# 首次创建（需 Cloudflare 登录，一次性）:
+#   wrangler d1 create triumph_db
+#   把返回的 database_id 填到下面，然后:
+#   wrangler d1 execute triumph_db --file=db/schema.sql
+#   wrangler d1 execute triumph_db --file=db/import-questions.sql
+[[d1_databases]]
+binding = "TRIUMPH_D1"
+database_name = "triumph_db"
+database_id = "5d04a307-4dc9-4236-9492-817f17f3a351"
+
 # 发件地址（验证码邮件）
 # vars 在 Pages 控制台或此处配置
 [vars]

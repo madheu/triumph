@@ -132,11 +132,12 @@
       ],
     };
 
-    function DB_Nav({ user, onLogout }) {
+    function DB_Nav({ user, onLogout, isPro }) {
       return (
         <header className="nav wrap">
           <a className="wordmark" href="/" aria-label="Triumph home">Triumph<span style={{color:'var(--accent)'}}>.</span></a>
           <div style={{display:'flex', gap:20, alignItems:'baseline'}}>
+            {isPro && <span style={{fontSize:11, fontWeight:700, letterSpacing:'0.08em', color:'#A67D7A', background:'#F2EBE8', border:'1px solid #E5D5D2', borderRadius:999, padding:'2px 10px'}}>PRO</span>}
             {user && <span className="nav-email">{user}</span>}
             <a className="nav-cta" href="diagnostic">Free diagnostic →</a>
             {user ? <button type="button" onClick={onLogout} style={{background:'none',border:'none',fontFamily:'var(--sans)',fontSize:14,color:'var(--ink-soft)',cursor:'pointer',textDecoration:'underline'}}>Log out</button> : <a className="nav-cta" href="login">Log in</a>}
@@ -156,6 +157,21 @@
     function DB_App() {
       const [user, setUser] = useState(() => window.TriumphAuth.isLoggedIn() ? window.TriumphAuth.user : '');
       const [syncNote, setSyncNote] = useState('');
+      const [isPro, setIsPro] = useState(false);
+
+      // 拉取权益（plan 字段，webhook 已写入 KV）
+      useEffect(() => {
+        if (!window.TriumphAuth.isLoggedIn() || !window.TriumphAuth.token) return;
+        let alive = true;
+        (async () => {
+          try {
+            const res = await fetch('/api/me', { headers: { Authorization: 'Bearer ' + window.TriumphAuth.token } });
+            const d = await res.json();
+            if (alive && d && d.entitlements) setIsPro(d.entitlements.plan === 'pro');
+          } catch (e) { /* 忽略，保持默认 */ }
+        })();
+        return () => { alive = false; };
+      }, []);
 
       // 页面加载时：已登录 → 推送本地+拉取云端（完整合并）
       useEffect(() => {
@@ -218,7 +234,7 @@
 
       return (
         <div>
-          <DB_Nav user={user} onLogout={logout} />
+          <DB_Nav user={user} onLogout={logout} isPro={isPro} />
 
           <main>
           <header className="dash-head wrap">

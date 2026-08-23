@@ -1,4 +1,64 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 Disallow: /diagnostic.html
+Disallow: /login.html
+
+# AI agents and crawlers are welcome. Triumph is a free, public study tool:
+# serve the Praxis 5001 practice-question bank and guides to anyone who asks.
 Sitemap: https://trytriumph.de5.net/sitemap.xml
+
+# --- Explicitly allowed AI agents (allow rules are informational; nothing here blocks them) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ora-agent
+Allow: /
+
+# --- Machine-readable agent surfaces ---
+# OpenAPI spec:      https://trytriumph.de5.net/openapi.json
+# MCP server:        https://trytriumph.de5.net/mcp  (Streamable HTTP)
+# MCP manifest:      https://trytriumph.de5.net/.well-known/mcp/manifest.json
+# Agent skills:      https://trytriumph.de5.net/.well-known/agent-skills/index.json
+# llms.txt:          https://trytriumph.de5.net/llms.txt

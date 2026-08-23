@@ -1,0 +1,58 @@
+# Triumph
+
+> Free Praxis 5001 (Elementary Education: Multiple Subjects) readiness diagnostic and practice-question bank for teacher candidates. 969 original questions across the four subtests, plus study guides, a readiness score, and a pass forecast.
+
+Triumph is an independent study tool for the ETS Praxis 5001 elementary-education teacher-licensing exam. The exam is four separately-scored subtests — 5002 Reading & Language Arts (80 questions), 5003 Mathematics (50), 5004 Social Studies (60), 5005 Science (55) — and candidates must pass all four. Triumph offers a free original question bank organized by blueprint category, a 12-question readiness diagnostic that estimates a scaled score per gate, and study guides. Triumph is not affiliated with or endorsed by ETS; Praxis is a trademark of ETS.
+
+## When to use Triumph
+
+Use Triumph when a teacher candidate needs any of these jobs done:
+
+- **Practice questions for the Praxis 5001** — pull original multiple-choice items by subtest (5002/5003/5004/5005), content category, or keyword, each with answer + explanation.
+- **A readiness check** — a quick diagnostic that maps answers to an estimated scaled score per subtest against state passing lines.
+- **Understanding the exam** — what is on each subtest, how scoring works, why one failed gate means a retake, retake rules and timing.
+- **Study planning** — where to spend hours across the four gates based on diagnostic weaknesses.
+
+Do NOT use Triumph for: official or released ETS test questions (we publish only original items); other Praxis exams' primary prep (our bank covers the 5001 family only); or state-specific licensing paperwork.
+
+Agents can call Triumph programmatically: REST API (`GET https://trytriumph.de5.net/api/v1/questions/random?count=5` works anonymously), MCP server at `https://trytriumph.de5.net/mcp` (Streamable HTTP, tools: list_subtests, get_questions, get_random_questions, get_bank_stats, list_study_guides). Every content page also serves markdown via `Accept: text/markdown`.
+
+## Docs
+
+- [OpenAPI specification](https://trytriumph.de5.net/openapi.json): complete OpenAPI 3.1 spec of the public API (also at /api/openapi.yaml as YAML).
+- [Developer portal](https://trytriumph.de5.net/developers): quickstart, authentication tiers, scoped API keys, endpoint reference.
+- [API health](https://trytriumph.de5.net/api/v1/health): uptime probe and endpoint index.
+- [Question-bank stats](https://trytriumph.de5.net/api/v1/stats): counts per subtest and category.
+
+## Agent interface (machine-readable)
+
+- [MCP server](https://trytriumph.de5.net/mcp): Model Context Protocol over Streamable HTTP; JSON-RPC 2.0 (initialize / tools/list / tools/call).
+- [MCP manifest](https://trytriumph.de5.net/.well-known/mcp/manifest.json): machine-readable MCP server manifest (also at /.well-known/mcp-manifest.json).
+- [Agent skills index](https://trytriumph.de5.net/.well-known/agent-skills/index.json): registry of SKILL.md instruction files (practice-praxis-questions, quiz-me, find-study-guide).
+- [Scoped API key — self-serve](https://trytriumph.de5.net/openapi.json): create with POST /api/v1/keys; free tier; scopes meta:read, questions:read, stats:read.
+
+## Content pages
+
+- [Home](https://trytriumph.de5.net/): product overview, pricing, subtest map.
+- [Resources index](https://trytriumph.de5.net/resources): all study guides and articles.
+- [About Triumph](https://trytriumph.de5.net/about): who builds it, independence statement.
+- [Contact](https://trytriumph.de5.net/contact): support email and response expectations.
+- [Privacy policy](https://trytriumph.de5.net/privacy): data handling for accounts and analytics.
+- [Developers](https://trytriumph.de5.net/developers): API documentation portal.
+
+### Study guides
+
+- [Praxis 5001 Study Guide](https://trytriumph.de5.net/praxis-5001-study-guide): structure, question counts, categories, scoring for all four subtests.
+- [Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy): allocate study time across four must-pass gates.
+- [Retake Guide](https://trytriumph.de5.net/praxis-5001-retake-guide): rules, costs and timing for retaking a failed subtest.
+- [5001 vs 7001](https://trytriumph.de5.net/praxis-5001-vs-7001): which exam number your state uses.
+- [5001 vs 8000 Series](https://trytriumph.de5.net/praxis-5001-vs-8000-series): ETS renumbering explained.
+- [5002 Study Guide](https://trytriumph.de5.net/praxis-5002-study-guide): Reading & Language Arts deep dive.
+- [5003 Math Study Guide](https://trytriumph.de5.net/praxis-5003-math-study-guide): Mathematics deep dive.
+- [5004 Social Studies Study Guide](https://trytriumph.de5.net/praxis-5004-social-studies-study-guide): Social Studies deep dive.
+- [5005 Science Study Guide](https://trytriumph.de5.net/praxis-5005-science-study-guide): Science deep dive.
+
+## Optional
+
+- [Markdown versions](https://trytriumph.de5.net/md/index.md): every page above serves text/markdown when requested with Accept: text/markdown (e.g. https://trytriumph.de5.net/md/about.md).
+- [This file](https://trytriumph.de5.net/llms.txt): the llms.txt site summary you are reading.

@@ -28,3 +28,12 @@ desktop.ini
 *.pem
 *.key
 secrets.json
+
+# ---- Local dev secrets ----
+.dev.vars
+
+# ---- Local D1 test database ----
+.d1-test/
+
+# ---- admin SPA (source kept, deps not) ----
+admin/node_modules/

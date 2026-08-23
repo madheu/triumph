@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upgrade — Triumph Pro</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      --brand: #C09D9B; --brand-dark: #A67D7A; --ink: #3A3532; --ink-soft: #6E6760;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #FAF9F7; color: var(--ink); min-height: 100vh; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 24px; }
+    header { padding: 28px 0 12px; }
+    .wordmark { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; color: var(--brand-dark); }
+    .card { background: #fff; border: 1px solid #EDEAE6; border-radius: 16px; padding: 32px; margin-top: 20px; }
+    h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+    .sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 24px; }
+    .price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 20px; }
+    .price { font-size: 36px; font-weight: 700; }
+    .price small { font-size: 15px; color: var(--ink-soft); font-weight: 400; }
+    .benefits { list-style: none; margin-bottom: 24px; }
+    .benefits li { padding: 8px 0; border-bottom: 1px solid #F5F2EF; font-size: 14px; color: var(--ink); }
+    .benefits li::before { content: '✓ '; color: var(--brand-dark); font-weight: 700; }
+    .btn { display: inline-block; width: 100%; text-align: center; padding: 14px; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
+    .btn-primary { background: var(--brand-dark); color: #fff; }
+    .btn-primary:hover { background: #956b68; }
+    .btn-secondary { background: #fff; color: var(--brand-dark); border: 1px solid var(--brand); margin-top: 12px; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .note { font-size: 12px; color: var(--ink-soft); margin-top: 16px; line-height: 1.6; }
+    .status-box { background: #F7F3F0; border-radius: 10px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+    .status-box.pro { background: #F2EBE8; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+    .badge.pro { background: #E5D5D2; color: #8A5F5C; }
+    .badge.free { background: #EEE; color: #777; }
+    .err { background: #FDEBEB; color: #B33A3A; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 16px; display: none; }
+    .muted { color: var(--ink-soft); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="wordmark">Triumph<span style="color:#C09D9B">.</span></div>
+    </header>
+
+    <div class="card">
+      <h1>Unlock Triumph Pro</h1>
+      <p class="sub">All future premium tools &amp; adaptive study features. Cancel anytime.</p>
+
+      <div id="status-box" class="status-box" style="display:none"></div>
+      <div id="err" class="err"></div>
+
+      <div class="price-row">
+        <span class="price">$15<small>/month</small></span>
+      </div>
+      <ul class="benefits">
+        <li>Adaptive daily tasks generated from your weakest areas</li>
+        <li>Pass-probability tracking week over week</li>
+        <li>SRS memory cards for every missed concept</li>
+        <li>Early access to all new Pro study tools</li>
+      </ul>
+
+      <button id="upgrade-btn" class="btn btn-primary">Upgrade to Pro</button>
+      <button id="portal-btn" class="btn btn-secondary" style="display:none">Manage subscription</button>
+
+      <p class="note">
+        Secure checkout by <strong>Creem</strong> (Merchant of Record) — handles tax &amp; payments worldwide.
+        After checkout you'll be redirected back automatically. Cancel anytime from your billing portal.
+      </p>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    (function () {
+      const A = window.TriumphAuth;
+      const errEl = document.getElementById('err');
+      const statusBox = document.getElementById('status-box');
+      const upgradeBtn = document.getElementById('upgrade-btn');
+      const portalBtn = document.getElementById('portal-btn');
+
+      function showErr(msg) { errEl.textContent = msg; errEl.style.display = 'block'; }
+      function hideErr() { errEl.style.display = 'none'; }
+
+      async function refreshStatus() {
+        if (!A || !A.token) return; // 未登录：按钮引导去登录
+        try {
+          const res = await fetch('/api/me', { headers: { Authorization: 'Bearer ' + A.token } });
+          const d = await res.json();
+          const ent = d.entitlements || {};
+          const isPro = ent.plan === 'pro';
+          statusBox.style.display = 'block';
+          statusBox.className = 'status-box' + (isPro ? ' pro' : '');
+          if (isPro) {
+            const until = ent.currentPeriodEnd ? new Date(ent.currentPeriodEnd).toLocaleDateString() : '—';
+            statusBox.innerHTML =
+              '<span class="badge pro">PRO</span><br/>' +
+              'You have Triumph Pro. Renews on ' + until + '.<br/>' +
+              '<span class="muted">Manage billing from the button below.</span>';
+            upgradeBtn.textContent = 'Upgrade again';
+            portalBtn.style.display = 'block';
+          } else {
+            statusBox.innerHTML = '<span class="badge free">FREE</span><br/>You are on the free plan.';
+          }
+        } catch (e) { /* 忽略，保持默认 */ }
+      }
+
+      upgradeBtn.addEventListener('click', async function () {
+        hideErr();
+        if (!A || !A.token) { location.href = '/login.html?next=/upgrade.html'; return; }
+        this.disabled = true; this.textContent = 'Redirecting to secure checkout…';
+        try {
+          const res = await fetch('/api/billing/checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + A.token },
+          });
+          const d = await res.json().catch(() => ({}));
+          if (!res.ok || !d.checkout_url) throw new Error(d?.error?.hint || 'Could not start checkout.');
+          location.href = d.checkout_url;
+        } catch (e) {
+          this.disabled = false; this.textContent = 'Upgrade to Pro';
+          showErr(e.message);
+        }
+      });
+
+      portalBtn.addEventListener('click', async function () {
+        hideErr();
+        if (!A || !A.token) return;
+        this.disabled = true;
+        try {
+          const res = await fetch('/api/billing/portal', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + A.token },
+          });
+          const d = await res.json().catch(() => ({}));
+          if (!res.ok || !d.portal_url) throw new Error(d?.error?.hint || 'Could not open billing portal.');
+          location.href = d.portal_url;
+        } catch (e) {
+          this.disabled = false;
+          showErr(e.message);
+        }
+      });
+
+      A && A.init && A.init();
+      refreshStatus();
+    })();
+  </script>
+</body>
+</html>
