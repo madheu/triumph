@@ -81,15 +81,7 @@ export async function hBillingWebhook(request, env) {
     const key = await crypto.subtle.importKey('raw', enc.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']);
     const sigBytes = hexToBytes(signature);
     const ok = sigBytes.length === 32 && await crypto.subtle.verify('HMAC', key, sigBytes, enc.encode(raw));
-    if (!ok) {
-      // 调试：记录收到的 signature 前 16 位（不记录完整 secret，只记 sig 前缀用于比对）
-      await env.TRIUMPH_KV.put('diag:whsig:' + Date.now(), JSON.stringify({
-        received_sig_prefix: signature.slice(0, 16),
-        secret_prefix: secret.slice(0, 6),
-        len: signature.length,
-      }), { expirationTtl: 3600 }).catch(() => {});
-      return json({ ok: false, error: 'bad signature' }, 401);
-    }
+    if (!ok) return json({ ok: false, error: 'bad signature' }, 401);
   }
 
   let evt;
