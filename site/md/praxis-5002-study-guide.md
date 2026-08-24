@@ -6,6 +6,8 @@
 
 *2026-08-20 · Reading time: about 7 min*
 
+date: "2026-08-20"
+
 The Praxis 5002 Reading and Language Arts subtest asks more than whether you can define literacy terms. You need to recognize how children learn to read and write, interpret evidence in classroom scenarios, and choose instruction that fits a student’s need.
 
 The most efficient approach is to connect **skill → student evidence → appropriate next step**. This Praxis 5002 study guide covers the major concepts and gives you a practical preparation plan. If you are taking the full Elementary Education: Multiple Subjects test, start with our [free Praxis 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic) to see where reading and language arts fit into your priorities.

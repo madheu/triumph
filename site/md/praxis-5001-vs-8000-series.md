@@ -4,7 +4,9 @@
 
 # Praxis 5001 vs. the New 8000 Series: What Candidates Need to Check
 
-*2026-08-20 · Reading time: about 7 min*
+*2026-08-20 · Reading time: about 8 min*
+
+date: "2026-08-20"
 
 If you are preparing for an elementary education license, you may now see two different sets of Praxis test codes: the familiar **Praxis 5001** series and the new **8000-series Elementary Education Fundamentals** tests. The change is real—but it does **not** mean every candidate should automatically register for the new tests.
 
@@ -64,7 +66,7 @@ These differences matter for study planning. A prep resource built only around t
 
 The new tests are designed to work with **Praxis Steps**, a modular testing approach. ETS says Steps will allow candidates to take or retake one content category at a time, receive more targeted diagnostic feedback, and avoid repeating an entire test when only one step remains.[1]
 
-That does not mean every 8000-series appointment is automatically broken into small categories from day one. ETS states that Praxis Steps capabilities will become available **shortly after** the Elementary Education Fundamentals tests launch.[1] Candidates should therefore check the live registration details for their test date rather than assuming a specific Steps option is already available.
+That does not mean every 8000-series appointment is automatically broken into small categories from day one. ETS's product pages now show a concrete rollout: category-level testing through Praxis Steps launches for the **8002–8005 tests in September 2026**, with the 8006 Teaching Reading following in **2027**.[1][8] ETS's own wording also matters: the modular option applies "if your state accepts" the redesigned tests — so far, states have not announced adoption dates. Check the live registration details for your test date rather than assuming a specific Steps option is already available.
 
 Praxis Steps also does not override licensing rules. A state or program still decides which tests count and what qualifying results candidates must earn.[7]
 
@@ -122,6 +124,8 @@ The Praxis 8000 series is a significant elementary education redesign, not a uni
 [2] [ETS, “Elementary Education: Multiple Subjects (5001; subtests 5002, 5003, 5004, 5005)”](https://praxis.ets.org/test/elementary-education-multiple-subjects-subtests-5001.html)
 
 [7] [ETS, “Praxis Teacher Certification Requirements by State”](https://praxis.ets.org/state-requirements.html)
+
+[8] [ETS, “Elementary Education Fundamentals: Reading and Language Arts (8002)” product page](https://praxis.ets.org/test/elementary-education-fundamentals-reading-and-language-arts-8002.html)
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
 

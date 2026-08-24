@@ -6,6 +6,7 @@ const nav = [
   { to: '/users', label: '用户管理' },
   { to: '/orders', label: '订单与订阅' },
   { to: '/tickets', label: '工单' },
+  { to: '/questions', label: '题库管理' },
   { to: '/content', label: '内容管理' },
   { to: '/analytics', label: '行为分析' },
 ];

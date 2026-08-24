@@ -26,6 +26,7 @@ import { PASSWORD_ROUTES } from './password.mjs';
 import { BILLING_ROUTES } from './billing.mjs';
 import { V1_ROUTES } from './public-api.mjs';
 import { ADMIN_ROUTES } from './admin.mjs';
+import { CMS_ROUTES } from './cms.mjs';
 import { MD_ROUTES, PRODUCIBLE_PAGE_TYPES, negotiatePageVariant, varyWithAccept } from './content.mjs';
 import { handleMcp } from './mcp.mjs';
 import { openApiSpec, specToYaml } from './openapi.mjs';
@@ -52,6 +53,27 @@ export default {
     try {
       const url = new URL(request.url);
       const path = normalizePath(url.pathname);
+
+      /* ---------- canonical host consolidation (SEO) ---------- */
+      // Mirror hosts such as triumph-6eq.pages.dev serve identical content with
+      // a 200, which splits indexing signals across hosts in search engines.
+      // Redirect GET/HEAD page requests on any non-canonical host to the
+      // production domain so every mirror 301s to trytriumph.de5.net.
+      // Exempt: local dev hosts, API/MCP/well-known endpoints (programmatic
+      // clients must keep working), and non-main preview deployments.
+      {
+        const host = url.hostname.toLowerCase();
+        const isLocalDev = host === 'localhost' || host === '127.0.0.1' || host === '[::1]';
+        const isCanonical = host === 'trytriumph.de5.net';
+        const isProgrammatic =
+          path.startsWith('/api/') || path === '/mcp' || path.startsWith('/.well-known/');
+        const isPreviewBranch =
+          typeof env?.CF_PAGES_BRANCH === 'string' && env.CF_PAGES_BRANCH !== 'main';
+        const isPageRequest = request.method === 'GET' || request.method === 'HEAD';
+        if (isPageRequest && !isLocalDev && !isCanonical && !isProgrammatic && !isPreviewBranch) {
+          return Response.redirect(`https://trytriumph.de5.net${url.pathname}${url.search}`, 301);
+        }
+      }
 
       /* ---------- machine routes ---------- */
 
@@ -90,6 +112,12 @@ export default {
         if (adminRoute) {
           const handler = adminRoute[request.method];
           if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(adminRoute) }));
+          return withCors(await handler(request, env));
+        }
+        const cms = CMS_ROUTES[path];
+        if (cms) {
+          const handler = cms[request.method];
+          if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(cms) }));
           return withCors(await handler(request, env));
         }
         const v1 = V1_ROUTES[path];

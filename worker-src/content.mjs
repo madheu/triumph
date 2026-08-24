@@ -9,6 +9,15 @@ export const MD_ROUTES = (() => {
     '/praxis-5001-vs-7001', '/praxis-5001-vs-8000-series',
     '/praxis-5002-study-guide', '/praxis-5003-math-study-guide',
     '/praxis-5004-social-studies-study-guide', '/praxis-5005-science-study-guide',
+    // 2026-08-20 batch: keyword articles
+    '/praxis-5001-passing-scores', '/praxis-5001-free-practice-test', '/praxis-5001-registration-guide',
+    // 2026-08-20 batch: state landing pages
+    '/praxis-5001-virginia-requirements', '/praxis-5001-tennessee-requirements',
+    '/praxis-5001-new-jersey-requirements', '/praxis-5001-south-carolina-requirements',
+    '/praxis-5001-kentucky-requirements',
+    // 2026-08-24 batch: non-5001 state research pages
+    '/praxis-5001-pennsylvania-requirements', '/praxis-5001-alabama-requirements',
+    '/praxis-5001-maryland-requirements',
   ];
   const map = new Map();
   const mdName = p => (p === '/' || p === '/index' ? '/md/index.md' : `/md${p}.md`);

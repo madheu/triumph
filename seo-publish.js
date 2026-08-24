@@ -4,13 +4,14 @@
 // 输出: E:/Triumph/praxis-5001/site/<slug>.html
 // 支持: front matter、GFM 表格（含对齐）、内链(/diagnostic 等)、外链、blockquote、
 //       有序/无序列表、checkbox 列表、行内 code、粗斜体、裸 URL 自动链接、Sources 小节
-const fs = require('fs');
-const path = require('path');
+// 州落地页: front matter 含 state_name 时启用 geo meta + contentLocation JSON-LD + 州专属头部
+import fs from 'fs';
+import path from 'path';
 
 const SRC_DIR = 'E:/Triumph/Triumph SEO';
 const OUT_DIR = 'E:/Triumph/praxis-5001/site';
 const SITE = 'https://trytriumph.de5.net'; // 正式公开域名（canonical 统一用它）
-const DATE = '2026-08-20';
+const DATE = '2026-08-24';
 
 // ---------- YAML front matter ----------
 function parseFrontMatter(md) {
@@ -134,6 +135,17 @@ function eyebrowFor(title) {
   return 'Resource · Praxis';
 }
 
+// 州落地页专用：州代码 → US 地区标签（geo meta 用）
+function geoRegionFor(state) {
+  const codes = {
+    'Virginia': 'US-VA', 'Tennessee': 'US-TN', 'South Carolina': 'US-SC',
+    'Pennsylvania': 'US-PA', 'Alabama': 'US-AL', 'Kentucky': 'US-KY',
+    'Maryland': 'US-MD', 'Georgia': 'US-GA', 'North Carolina': 'US-NC',
+    'Ohio': 'US-OH', 'Indiana': 'US-IN', 'Texas': 'US-TX',
+  };
+  return codes[state] || 'US';
+}
+
 // 检查清单要求的"内容集群内链"：单科指南回链总指南 + Four-Gate；8000 文章链回 vs-7001
 function relatedLinks(slug) {
   if (slug.startsWith('praxis-500')) {
@@ -142,12 +154,70 @@ function relatedLinks(slug) {
   if (slug.includes('8000')) {
     return `<p>Related: <a href="/praxis-5001-vs-7001">Praxis 5001 vs 7001: What&rsquo;s Changing</a></p>`;
   }
+  if (slug.includes('passing-scores')) {
+    return `<p>Related: <a href="/praxis-5001-study-guide">Praxis 5001 Study Guide</a> &middot; <a href="/praxis-5001-vs-8000-series">Praxis 5001 vs the 8000 Series</a></p>`;
+  }
   return '';
 }
 
-function page({ title, slug, desc, body, words }) {
+// guide 系列 rel next/prev 链（与 test/agentic.test.mjs 的 SERIES 保持一致）
+const GUIDE_SERIES = [
+  'praxis-5001-study-guide',
+  'praxis-5001-four-gate-strategy',
+  'praxis-5001-retake-guide',
+  'praxis-5001-vs-7001',
+  'praxis-5001-vs-8000-series',
+  'praxis-5002-study-guide',
+  'praxis-5003-math-study-guide',
+  'praxis-5004-social-studies-study-guide',
+  'praxis-5005-science-study-guide',
+];
+
+function prevNextLinks(slug) {
+  const i = GUIDE_SERIES.indexOf(slug);
+  if (i === -1) return '';
+  const links = [];
+  if (i > 0) links.push(`<link rel="prev" href="${SITE}/${GUIDE_SERIES[i - 1]}">`);
+  if (i < GUIDE_SERIES.length - 1) links.push(`<link rel="next" href="${SITE}/${GUIDE_SERIES[i + 1]}">`);
+  return links.join('\n  ');
+}
+
+// 州落地页 extra head：geo meta + contentLocation JSON-LD
+function stateHeadExtra(data) {
+  if (!data.state_name) return '';
+  const region = geoRegionFor(data.state_name);
+  return `
+  <meta name="geo.region" content="${region}">
+  <meta name="geo.placename" content="${data.state_name}">
+`;
+}
+
+// 州落地页 JSON-LD 在 Article 基础上加 contentLocation
+function articleLd(data) {
+  const base = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": data.title,
+    "description": data.meta_description,
+    "datePublished": data.date || DATE,
+    "author": { "@type": "Organization", "name": "Triumph" },
+    "publisher": { "@type": "Organization", "name": "Triumph" },
+    "mainEntityOfPage": `${SITE}/${data.slug}`
+  };
+  if (data.state_name) {
+    base.contentLocation = { "@type": "State", "name": data.state_name };
+  }
+  return JSON.stringify(base, null, 2);
+}
+
+function page({ title, slug, desc, body, words, data = {} }) {
   const readMin = Math.max(3, Math.round(words / 200));
   const related = relatedLinks(slug);
+  const isState = !!data.state_name;
+  const eyebrow = isState ? `State guide · Praxis ${data.state_name}` : eyebrowFor(title);
+  const pubDate = data.date || DATE;
+  const ld = articleLd({ title, slug, meta_description: desc, state_name: data.state_name, date: pubDate });
+  const seriesLinks = prevNextLinks(slug);
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,12 +227,11 @@ function page({ title, slug, desc, body, words }) {
   <meta name="description" content="${esc(desc)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${SITE}/${slug}">
-  <meta property="og:title" content="${esc(title)}">
+  ${seriesLinks ? `${seriesLinks}\n  ` : ''}<meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${SITE}/${slug}">
-
-  <!-- Google tag (gtag.js) -->
+${stateHeadExtra(data)}<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -172,16 +241,7 @@ function page({ title, slug, desc, body, words }) {
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": ${JSON.stringify(title)},
-    "description": ${JSON.stringify(desc)},
-    "datePublished": "${DATE}",
-    "author": { "@type": "Organization", "name": "Triumph" },
-    "publisher": { "@type": "Organization", "name": "Triumph" },
-    "mainEntityOfPage": "${SITE}/${slug}"
-  }
+  ${ld}
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -259,9 +319,9 @@ function page({ title, slug, desc, body, words }) {
   </header>
 
   <article class="wrap">
-    <span class="eyebrow">${eyebrowFor(title)}</span>
+    <span class="eyebrow">${eyebrow}</span>
     <h1>${esc(title)}</h1>
-    <div class="meta-line">${DATE} · Reading time: about ${readMin} min</div>
+    <div class="meta-line">${pubDate} · Reading time: about ${readMin} min</div>
 ${body}
     <div class="cta-box">
       <p style="margin:0"><strong>Not sure which gate is weakest?</strong> Take the free Praxis readiness diagnostic &rarr; <a href="/diagnostic">Triumph readiness check</a></p>
@@ -270,7 +330,8 @@ ${related ? `<div class="related">${related}</div>` : ''}
   </article>
 
   <footer class="footer wrap">
-    <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. Exam facts (question counts, timing, fees) reflect ETS pages as of ${DATE} and can change — confirm with ETS and your state licensing agency before registering.</p>
+    ${isState && data.agency_name ? `<p><strong>${data.state_name} certification authority:</strong> <a href="${data.agency_url || '#'}">${data.agency_name}</a>. Confirm every requirement — test codes, qualifying scores, deadlines, and reciprocity rules — with the agency and with ETS before registering.</p>` : ''}
+    <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. Exam facts (question counts, timing, fees) reflect ETS pages as of ${pubDate} and can change — confirm with ETS and your state licensing agency before registering.</p>
   </footer>
 </body>
 </html>
@@ -278,7 +339,7 @@ ${related ? `<div class="related">${related}</div>` : ''}
 }
 
 // ---------- 主流程 ----------
-const files = fs.readdirSync(SRC_DIR).filter(f => /^\D*\d{4}.*\.md$|^Praxis.*\.md$/.test(f) && !/^\d{2}-/.test(f));
+const files = fs.readdirSync(SRC_DIR).filter(f => /^\D*\d{4}.*\.md$|^Praxis.*\.md$|^State.*\.md$/.test(f) && !/^\d{2}-/.test(f));
 const results = [];
 for (const f of files) {
   const md = fs.readFileSync(path.join(SRC_DIR, f), 'utf8');
@@ -288,10 +349,10 @@ for (const f of files) {
   const html = mdToHtml(body);
   // 表格包一层横向滚动容器（移动端防溢出）
   const safeHtml = html.replace(/<table>/g, '<div class="table-scroll"><table>').replace(/<\/table>/g, '</table></div>');
-  const out = page({ title: data.title, slug: data.slug, desc: data.meta_description, body: safeHtml, words });
+  const out = page({ title: data.title, slug: data.slug, desc: data.meta_description, body: safeHtml, words, data });
   const outPath = path.join(OUT_DIR, data.slug + '.html');
   fs.writeFileSync(outPath, out, 'utf8');
-  results.push({ file: f, slug: data.slug, title: data.title, words, out: outPath });
-  console.log(`✓ ${f} -> ${data.slug}.html (${words} words)`);
+  results.push({ file: f, slug: data.slug, title: data.title, words, out: outPath, state: data.state_name || null });
+  console.log(`✓ ${f} -> ${data.slug}.html (${words} words)${data.state_name ? ` [state: ${data.state_name}]` : ''}`);
 }
 console.log(`\n共生成 ${results.length} 篇`);

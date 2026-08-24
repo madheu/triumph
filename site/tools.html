@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Tools — Triumph</title>
+  <meta name="description" content="Learning tools for Praxis 5001 prep: diagnostics, question bank drills, and spaced-repetition memory cards." />
+  <style>
+    :root {
+      --brand: #C09D9B; --brand-dark: #A67D7A; --ink: #3A3532; --ink-soft: #6E6760;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #FAF9F7; color: var(--ink); min-height: 100vh; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header { padding: 28px 0 12px; display: flex; justify-content: space-between; align-items: baseline; }
+    .wordmark { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; color: var(--brand-dark); text-decoration: none; }
+    .nav-link { font-size: 14px; color: var(--ink-soft); text-decoration: none; margin-left: 20px; }
+    .nav-link:hover { color: var(--brand-dark); }
+    h1 { font-size: 30px; font-weight: 700; margin-top: 24px; }
+    .sub { color: var(--ink-soft); font-size: 15px; margin: 8px 0 32px; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .tool-card {
+      background: #fff; border: 1px solid #EDEAE6; border-radius: 16px; padding: 26px;
+      display: flex; flex-direction: column; text-decoration: none; color: inherit;
+      transition: transform .15s ease, box-shadow .15s ease; position: relative;
+    }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(58,53,50,.08); }
+    .tool-icon { font-size: 34px; margin-bottom: 14px; }
+    .tool-name { font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+    .tool-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; flex: 1; }
+    .tool-go { margin-top: 18px; font-size: 14px; font-weight: 600; color: var(--brand-dark); }
+    .lock {
+      position: absolute; top: 16px; right: 16px; background: #E5D5D2; color: #8A5F5C;
+      font-size: 11px; font-weight: 700; letter-spacing: .06em; padding: 3px 10px; border-radius: 999px;
+    }
+    .empty { text-align: center; color: var(--ink-soft); padding: 60px 0; font-size: 14px; grid-column: 1/-1; }
+    footer { margin-top: 56px; padding: 24px 0; border-top: 1px solid #EDEAE6; font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="wordmark" href="/">Triumph<span style="color:#C09D9B">.</span></a>
+      <nav>
+        <a class="nav-link" href="/dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/upgrade.html">Upgrade</a>
+      </nav>
+    </header>
+
+    <h1>Study Tools</h1>
+    <p class="sub">Everything you need to prepare — start with a free diagnostic, drill the bank, and lock concepts in with spaced repetition.</p>
+
+    <div class="grid" id="tools-grid">
+      <div class="empty">Loading tools…</div>
+    </div>
+
+    <footer>
+      Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS.
+      Praxis is a trademark of ETS.
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      // Pro 判定：登录用户从 /api/me 拿权益；未登录视为 free（Pro 工具显示锁但可点击去 upgrade）
+      var isPro = false;
+      try {
+        var t = window.TriumphAuth && window.TriumphAuth.token;
+        if (t) {
+          fetch('/api/me', { headers: { Authorization: 'Bearer ' + t } })
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+              if (d && d.entitlements && d.entitlements.plan === 'pro') { isPro = true; render(window.__TOOLS__ || []); }
+            })
+            .catch(function () {});
+        }
+      } catch (e) {}
+
+      function esc(s) {
+        return String(s || '').replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function render(tools) {
+        var grid = document.getElementById('tools-grid');
+        if (!tools.length) {
+          grid.innerHTML = '<div class="empty">Tools coming soon.</div>';
+          return;
+        }
+        grid.innerHTML = tools.map(function (t) {
+          var locked = t.audience === 'pro' && !isPro;
+          var href = locked ? '/upgrade.html' : (t.entry || '#');
+          return '<a class="tool-card" href="' + esc(href) + '">' +
+            (locked ? '<span class="lock">PRO</span>' : '') +
+            '<div class="tool-icon">' + esc(t.icon || '🧰') + '</div>' +
+            '<div class="tool-name">' + esc(t.name) + '</div>' +
+            '<div class="tool-desc">' + esc(t.description) + '</div>' +
+            '<div class="tool-go">' + (locked ? 'Unlock with Pro →' : 'Open →') + '</div>' +
+            '</a>';
+        }).join('');
+      }
+
+      fetch('/api/tools')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var items = (d && d.items) || [];
+          window.__TOOLS__ = items;
+          render(items);
+        })
+        .catch(function () {
+          document.getElementById('tools-grid').innerHTML = '<div class="empty">Tools temporarily unavailable — refresh to retry.</div>';
+        });
+
+      // auth.js 加载后如果发现已登录且是 Pro，重新渲染解锁
+    })();
+  </script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

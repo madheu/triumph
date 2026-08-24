@@ -45,6 +45,7 @@ export const ERROR_CATALOG = {
   not_verified:       { status: 403, message: 'This account exists but has not been verified yet.', hint: 'Submit the emailed 6-digit code via POST /api/verify, or request a new one via POST /api/resend.' },
   email_taken:        { status: 409, message: 'An account with this email already exists.', hint: 'Use POST /api/login instead, or recover the password from the login page.' },
   not_found:          { status: 404, message: 'The requested resource does not exist.', hint: 'Consult /openapi.json for the list of available endpoints.' },
+  conflict:           { status: 409, message: 'The resource conflicts with an existing one.', hint: 'Change the unique field (e.g. slug or id) and retry.' },
   not_registered:     { status: 404, message: 'No account was found for this email.', hint: 'Create the account first with POST /api/register.' },
   method_not_allowed: { status: 405, message: 'HTTP method not allowed for this endpoint.', hint: 'See the allowed methods for this path in /openapi.json.' },
   mail_failed:        { status: 502, message: 'The verification email could not be sent right now.', hint: 'Your account was created; retry with POST /api/resend { "email": "..." } in a moment.' },

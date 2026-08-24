@@ -6,6 +6,8 @@
 
 *2026-08-20 · Reading time: about 9 min*
 
+date: "2026-08-20"
+
 The Praxis Elementary Education: Science Subtest (5005) does not reward memorizing isolated facts alone. You need to recognize core science ideas, interpret evidence, and apply those ideas to classroom-style situations.
 
 This Praxis 5005 science study guide breaks the test into four practical areas: Earth and space science, life science, physical science, and scientific inquiry. It also includes common misconceptions, graph and variable strategies, and a focused study plan.

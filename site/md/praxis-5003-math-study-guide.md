@@ -6,6 +6,8 @@
 
 *2026-08-20 · Reading time: about 10 min*
 
+date: "2026-08-20"
+
 The Praxis 5003 Mathematics subtest is not advanced mathematics. It is a test of whether a beginning elementary teacher can reason accurately about numbers, representations, patterns, geometry, measurement, and data—and recognize instruction that helps children understand those ideas.
 
 That distinction matters. Memorizing formulas may help with a few items, but it will not prepare you for questions about a student's misconception, the best model for a fraction, or why a procedure works.

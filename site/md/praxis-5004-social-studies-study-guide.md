@@ -6,6 +6,8 @@
 
 *2026-08-20 · Reading time: about 9 min*
 
+date: "2026-08-20"
+
 The Praxis Elementary Education: Social Studies Subtest (5004) covers a wide span of history and social science—but your preparation does not need to become an endless list of names and dates. The best approach is to learn a small number of organizing frameworks, practice applying them, and spend the most time where the test places the most weight.
 
 As of August 20, 2026, ETS lists Praxis 5004 with **60 questions in 60 minutes** and an individual test fee of **$64**.[5] ETS’s detailed description calls the questions selected-response, although its feature panel also mentions numeric-entry; prepare primarily for selected-response items but review the live test page before registering. Confirm your state’s current test-code requirement as well. The published timing gives you an average of one minute per question, so both knowledge and decision speed matter.

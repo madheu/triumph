@@ -51,6 +51,20 @@ Agents can call Triumph programmatically: REST API (`GET https://trytriumph.de5.
 - [5003 Math Study Guide](https://trytriumph.de5.net/praxis-5003-math-study-guide): Mathematics deep dive.
 - [5004 Social Studies Study Guide](https://trytriumph.de5.net/praxis-5004-social-studies-study-guide): Social Studies deep dive.
 - [5005 Science Study Guide](https://trytriumph.de5.net/praxis-5005-science-study-guide): Science deep dive.
+- [Praxis 5001 Passing Scores](https://trytriumph.de5.net/praxis-5001-passing-scores): how to find your state's qualifying score for 5002–5005.
+- [Praxis 5001 Registration Guide](https://trytriumph.de5.net/praxis-5001-registration-guide): cost, scheduling, and the four-step registration process.
+- [Free Praxis 5001 Practice Tests](https://trytriumph.de5.net/praxis-5001-free-practice-test): what to look for in free practice material, plus the free diagnostic and question bank.
+
+### State guides
+
+- [Virginia](https://trytriumph.de5.net/praxis-5001-virginia-requirements): Praxis 5001 + Teaching Reading 5205, scores 157/157/155/159 and 159.
+- [Tennessee](https://trytriumph.de5.net/praxis-5001-tennessee-requirements): Praxis 5001 + 5205; scores must reach the state via TNCompass (code 8190).
+- [New Jersey](https://trytriumph.de5.net/praxis-5001-new-jersey-requirements): Praxis 5001 for Elementary K–6, scores 157/157/155/159.
+- [South Carolina](https://trytriumph.de5.net/praxis-5001-south-carolina-requirements): 5001 accepted only through Aug 2026/2027; 5901 bundle and 7811 CKT are the newer options.
+- [Kentucky](https://trytriumph.de5.net/praxis-5001-kentucky-requirements): still requires Praxis 5001 for elementary (P–5); scores 157/157/155/159 plus PLT K–6 at 160, set in 16 KAR 6:010.
+- [Pennsylvania](https://trytriumph.de5.net/praxis-5001-pennsylvania-requirements): PreK–4 runs on the PECT exams, not Praxis 5001; the only Praxis tests for elementary are the Grades 5–6 add-on pair (5154/5155).
+- [Alabama](https://trytriumph.de5.net/praxis-5001-alabama-requirements): dropped the 5001 reading subtest in 2020; elementary K–6 takes Praxis 5901 (math 157 / social studies 154) plus Foundations of Reading 190 (233) and edTPA.
+- [Maryland](https://trytriumph.de5.net/praxis-5001-maryland-requirements): no 5001; elementary 1–6 takes Teaching Reading 5205 (159) plus the 7811 CKT series (161/150/154/161).
 
 ## Optional
 

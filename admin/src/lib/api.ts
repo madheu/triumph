@@ -66,3 +66,36 @@ export function getStoredUser(): AdminUser | null {
     return null;
   }
 }
+
+/* ============ P2：通用后台请求 helper ============ */
+
+export class ApiError extends Error {
+  code: string;
+  constructor(code: string, message: string) { super(message); this.code = code; }
+}
+
+/** 带鉴权的 GET */
+export async function apiGet<T>(path: string): Promise<T> {
+  const res = await fetch(path, { headers: { Authorization: 'Bearer ' + getToken() } });
+  const d = await res.json().catch(() => ({}));
+  if (!res.ok || (d as any)?.ok === false) {
+    const e = (d as any)?.error || {};
+    throw new ApiError(e.code || 'request_failed', e.hint || e.message || `请求失败 (${res.status})`);
+  }
+  return d as T;
+}
+
+/** 带鉴权的写请求（PATCH/POST/PUT） */
+export async function apiSend<T>(method: 'POST' | 'PATCH' | 'PUT', path: string, body: unknown): Promise<T> {
+  const res = await fetch(path, {
+    method,
+    headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + getToken() },
+    body: JSON.stringify(body),
+  });
+  const d = await res.json().catch(() => ({}));
+  if (!res.ok || (d as any)?.ok === false) {
+    const e = (d as any)?.error || {};
+    throw new ApiError(e.code || 'request_failed', e.hint || e.message || `请求失败 (${res.status})`);
+  }
+  return d as T;
+}

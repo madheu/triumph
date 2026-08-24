@@ -10,6 +10,9 @@ $ErrorActionPreference = "Stop"
 $proj = $PSScriptRoot
 $site = "$proj\site"
 
+# 本机代理：wrangler 访问 Cloudflare API 需要走代理，否则 whoami/deploy 会网络超时
+if (-not $env:HTTPS_PROXY) { $env:HTTP_PROXY = 'http://127.0.0.1:7890'; $env:HTTPS_PROXY = 'http://127.0.0.1:7890' }
+
 if (!(Test-Path "$site\index.html") -or !(Test-Path "$site\diagnostic.html")) {
   Write-Host "错误: site/ 缺少部署文件，先运行 .\sync-site.ps1" -ForegroundColor Red
   exit 1

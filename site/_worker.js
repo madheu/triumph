@@ -40,6 +40,7 @@ var ERROR_CATALOG = {
   not_verified: { status: 403, message: "This account exists but has not been verified yet.", hint: "Submit the emailed 6-digit code via POST /api/verify, or request a new one via POST /api/resend." },
   email_taken: { status: 409, message: "An account with this email already exists.", hint: "Use POST /api/login instead, or recover the password from the login page." },
   not_found: { status: 404, message: "The requested resource does not exist.", hint: "Consult /openapi.json for the list of available endpoints." },
+  conflict: { status: 409, message: "The resource conflicts with an existing one.", hint: "Change the unique field (e.g. slug or id) and retry." },
   not_registered: { status: 404, message: "No account was found for this email.", hint: "Create the account first with POST /api/register." },
   method_not_allowed: { status: 405, message: "HTTP method not allowed for this endpoint.", hint: "See the allowed methods for this path in /openapi.json." },
   mail_failed: { status: 502, message: "The verification email could not be sent right now.", hint: 'Your account was created; retry with POST /api/resend { "email": "..." } in a moment.' },
@@ -838,6 +839,50 @@ var V1_ROUTES = {
   "/api/v1/keys/verify": { GET: v1VerifyKey }
 };
 
+// worker-src/db.mjs
+async function d1Exec2(env, sql, params = []) {
+  if (!env.TRIUMPH_D1) return null;
+  try {
+    const stmt = env.TRIUMPH_D1.prepare(sql);
+    const res = await (params.length ? stmt.bind(...params) : stmt).run();
+    return res;
+  } catch (e) {
+    console.error("d1 error:", String(e && e.message || e));
+    return null;
+  }
+}
+async function d1All(env, sql, params = []) {
+  if (!env.TRIUMPH_D1) return null;
+  try {
+    const stmt = env.TRIUMPH_D1.prepare(sql);
+    const res = await (params.length ? stmt.bind(...params) : stmt).all();
+    return res && Array.isArray(res.results) ? res.results : [];
+  } catch (e) {
+    console.error("d1 all error:", String(e && e.message || e));
+    return null;
+  }
+}
+async function d1One(env, sql, params = []) {
+  const rows = await d1All(env, sql, params);
+  return rows && rows.length ? rows[0] : null;
+}
+async function audit(env, actor, action, targetType, targetId, detail) {
+  await d1Exec2(
+    env,
+    `INSERT OR IGNORE INTO admin_audit_log (id, actor, action, target_type, target_id, detail_json, ts)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    [
+      crypto.randomUUID(),
+      actor || "unknown",
+      action,
+      targetType || null,
+      targetId || null,
+      detail ? JSON.stringify(detail).slice(0, 2e3) : null,
+      Date.now()
+    ]
+  );
+}
+
 // worker-src/admin.mjs
 function adminEmails(env) {
   return (env.ADMIN_EMAILS || "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
@@ -924,10 +969,305 @@ async function hAdminPasswordResetLink(request, env) {
     expires_in_minutes: 30
   });
 }
+function questionOut(row) {
+  if (!row) return null;
+  let options = row.options_json;
+  try {
+    options = typeof row.options_json === "string" ? JSON.parse(row.options_json) : row.options_json || [];
+  } catch {
+    options = [];
+  }
+  return { ...row, options_json: void 0, options };
+}
+var Q_STATUSES = ["draft", "active", "retired"];
+var Q_DIFFICULTIES = ["easy", "medium", "hard"];
+async function hAdminQuestions(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  if (!env.TRIUMPH_D1) return json({ ok: true, items: [], total: 0, note: "D1 not bound" });
+  const url = new URL(request.url);
+  const subtest = (url.searchParams.get("subtest") || "").trim();
+  const status = (url.searchParams.get("status") || "").trim();
+  const q = (url.searchParams.get("q") || "").trim();
+  const limit = Math.min(100, Math.max(1, parseInt(url.searchParams.get("limit") || "50", 10) || 50));
+  const offset = Math.max(0, parseInt(url.searchParams.get("offset") || "0", 10) || 0);
+  const where = [];
+  const params = [];
+  if (subtest) {
+    where.push("subtest = ?");
+    params.push(subtest);
+  }
+  if (status && Q_STATUSES.includes(status)) {
+    where.push("status = ?");
+    params.push(status);
+  }
+  if (q) {
+    where.push("(stem_md LIKE ? OR id LIKE ? OR category LIKE ?)");
+    params.push(`%${q}%`, `%${q}%`, `%${q}%`);
+  }
+  const whereSql = where.length ? "WHERE " + where.join(" AND ") : "";
+  const total = await d1One(env, `SELECT COUNT(*) AS n FROM questions ${whereSql}`, params);
+  const rows = await d1All(
+    env,
+    `SELECT * FROM questions ${whereSql} ORDER BY id LIMIT ? OFFSET ?`,
+    [...params, limit, offset]
+  );
+  if (rows === null || total === null) return apiError("internal_error", { hint: "D1 query failed." });
+  return json({ ok: true, items: rows.map(questionOut), total: total.n, limit, offset });
+}
+async function hAdminQuestionDetail(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const url = new URL(request.url);
+  const id = (url.searchParams.get("id") || "").trim();
+  if (!id) return apiError("bad_request", { field: "id" });
+  const row = await d1One(env, `SELECT * FROM questions WHERE id = ?`, [id]);
+  if (!row) return apiError("not_found", { field: "id" });
+  return json({ ok: true, question: questionOut(row) });
+}
+async function hAdminQuestionUpdate(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const body = await request.json().catch(() => null);
+  if (!body || !body.id) return apiError("bad_request", { field: "id" });
+  const id = String(body.id).trim();
+  const existing = await d1One(env, `SELECT * FROM questions WHERE id = ?`, [id]);
+  if (!existing) return apiError("not_found", { field: "id" });
+  const sets = [];
+  const params = [];
+  if (typeof body.stem_md === "string" && body.stem_md.trim()) {
+    sets.push("stem_md = ?");
+    params.push(body.stem_md);
+  }
+  if (Array.isArray(body.options)) {
+    if (body.options.length < 2 || body.options.length > 6) return apiError("bad_request", { field: "options", hint: "2-6 options." });
+    sets.push("options_json = ?");
+    params.push(JSON.stringify(body.options));
+  }
+  if (body.answer_index !== void 0) {
+    const ai = parseInt(body.answer_index, 10);
+    if (isNaN(ai) || ai < 0) return apiError("bad_request", { field: "answer_index" });
+    sets.push("answer_index = ?");
+    params.push(ai);
+  }
+  if (typeof body.explanation_md === "string") {
+    sets.push("explanation_md = ?");
+    params.push(body.explanation_md);
+  }
+  if (typeof body.difficulty === "string") {
+    if (!Q_DIFFICULTIES.includes(body.difficulty)) return apiError("bad_request", { field: "difficulty", allowed: Q_DIFFICULTIES });
+    sets.push("difficulty = ?");
+    params.push(body.difficulty);
+  }
+  if (typeof body.status === "string") {
+    if (!Q_STATUSES.includes(body.status)) return apiError("bad_request", { field: "status", allowed: Q_STATUSES });
+    sets.push("status = ?");
+    params.push(body.status);
+  }
+  if (!sets.length) return apiError("bad_request", { hint: "Nothing to update. Send at least one editable field." });
+  sets.push("updated_at = ?");
+  params.push(Date.now());
+  params.push(id);
+  const res = await d1Exec2(env, `UPDATE questions SET ${sets.join(", ")} WHERE id = ?`, params);
+  if (res === null) return apiError("internal_error", { hint: "D1 update failed." });
+  await audit(
+    env,
+    admin.email,
+    "question.update",
+    "question",
+    id,
+    { fields: sets.filter((s) => s !== "updated_at = ?"), status: body.status || void 0 }
+  );
+  const updated = await d1One(env, `SELECT * FROM questions WHERE id = ?`, [id]);
+  return json({ ok: true, question: questionOut(updated) });
+}
+var CONTENT_TYPES = ["plan", "map", "email", "page", "faq"];
+async function hAdminContentList(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  if (!env.TRIUMPH_D1) return json({ ok: true, items: [], note: "D1 not bound" });
+  const url = new URL(request.url);
+  const type = (url.searchParams.get("type") || "").trim();
+  const rows = type ? await d1All(env, `SELECT id, type, slug, title, status, updated_by, updated_at FROM content_items WHERE type = ? ORDER BY updated_at DESC`, [type]) : await d1All(env, `SELECT id, type, slug, title, status, updated_by, updated_at FROM content_items ORDER BY updated_at DESC`);
+  if (rows === null) return apiError("internal_error", { hint: "D1 query failed." });
+  return json({ ok: true, items: rows });
+}
+async function hAdminContentCreate(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const body = await request.json().catch(() => null);
+  if (!body) return apiError("bad_request", { hint: "Send a JSON object." });
+  const type = String(body.type || "").trim();
+  const slug = String(body.slug || "").trim().toLowerCase().replace(/\s+/g, "-");
+  const title = String(body.title || "").trim();
+  if (!CONTENT_TYPES.includes(type)) return apiError("bad_request", { field: "type", allowed: CONTENT_TYPES });
+  if (!slug || !/^[a-z0-9-]+$/.test(slug)) return apiError("bad_request", { field: "slug", hint: "lowercase letters/digits/hyphens" });
+  if (!title) return apiError("bad_request", { field: "title" });
+  const dupe = await d1One(env, `SELECT id FROM content_items WHERE slug = ?`, [slug]);
+  if (dupe) return apiError("conflict", { field: "slug", hint: "Slug already exists." });
+  const metaJson = body.meta_json ? JSON.stringify(body.meta_json) : null;
+  const res = await d1Exec2(
+    env,
+    `INSERT INTO content_items (id, type, slug, title, status, body_md, meta_json, updated_by, updated_at)
+     VALUES (?, ?, ?, ?, 'draft', ?, ?, ?, ?)`,
+    [crypto.randomUUID(), type, slug, title, String(body.body_md || ""), metaJson, admin.email, Date.now()]
+  );
+  if (res === null) return apiError("internal_error", { hint: "D1 insert failed." });
+  const created = await d1One(env, `SELECT * FROM content_items WHERE slug = ?`, [slug]);
+  await d1Exec2(
+    env,
+    `INSERT INTO content_revisions (id, item_id, version, snapshot_json, edited_by, created_at) VALUES (?, ?, 1, ?, ?, ?)`,
+    [crypto.randomUUID(), created.id, JSON.stringify(created), admin.email, Date.now()]
+  );
+  await audit(env, admin.email, "content.create", "content_item", created.id, { type, slug });
+  return json({ ok: true, item: created }, 201);
+}
+async function hAdminContentDetail(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const url = new URL(request.url);
+  const id = (url.searchParams.get("id") || "").trim();
+  if (!id) return apiError("bad_request", { field: "id" });
+  const item = await d1One(env, `SELECT * FROM content_items WHERE id = ?`, [id]);
+  if (!item) return apiError("not_found", { field: "id" });
+  const revs = await d1All(env, `SELECT version, edited_by, created_at FROM content_revisions WHERE item_id = ? ORDER BY version DESC LIMIT 20`, [id]);
+  let meta = item.meta_json;
+  try {
+    meta = typeof item.meta_json === "string" ? JSON.parse(item.meta_json) : item.meta_json || null;
+  } catch {
+  }
+  return json({ ok: true, item: { ...item, meta_json: void 0, meta }, revisions: revs || [] });
+}
+async function hAdminContentUpdate(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const body = await request.json().catch(() => null);
+  if (!body || !body.id) return apiError("bad_request", { field: "id" });
+  const existing = await d1One(env, `SELECT * FROM content_items WHERE id = ?`, [String(body.id).trim()]);
+  if (!existing) return apiError("not_found", { field: "id" });
+  const sets = [];
+  const params = [];
+  if (typeof body.title === "string" && body.title.trim()) {
+    sets.push("title = ?");
+    params.push(body.title.trim());
+  }
+  if (typeof body.body_md === "string") {
+    sets.push("body_md = ?");
+    params.push(body.body_md);
+  }
+  if (body.meta_json !== void 0) {
+    sets.push("meta_json = ?");
+    params.push(JSON.stringify(body.meta_json));
+  }
+  if (typeof body.status === "string") {
+    if (!["draft", "published"].includes(body.status)) return apiError("bad_request", { field: "status", allowed: ["draft", "published"] });
+    sets.push("status = ?");
+    params.push(body.status);
+  }
+  if (!sets.length) return apiError("bad_request", { hint: "Nothing to update." });
+  sets.push("updated_by = ?");
+  sets.push("updated_at = ?");
+  params.push(admin.email, Date.now());
+  params.push(existing.id);
+  const res = await d1Exec2(env, `UPDATE content_items SET ${sets.join(", ")} WHERE id = ?`, params);
+  if (res === null) return apiError("internal_error", { hint: "D1 update failed." });
+  const maxRev = await d1One(env, `SELECT MAX(version) AS v FROM content_revisions WHERE item_id = ?`, [existing.id]);
+  const nextV = (maxRev && maxRev.v || 0) + 1;
+  const fresh = await d1One(env, `SELECT * FROM content_items WHERE id = ?`, [existing.id]);
+  await d1Exec2(
+    env,
+    `INSERT INTO content_revisions (id, item_id, version, snapshot_json, edited_by, created_at) VALUES (?, ?, ?, ?, ?, ?)`,
+    [crypto.randomUUID(), existing.id, nextV, JSON.stringify(fresh), admin.email, Date.now()]
+  );
+  await audit(
+    env,
+    admin.email,
+    "content.update",
+    "content_item",
+    existing.id,
+    { fields: sets.filter((s) => !s.startsWith("updated")), status: body.status || void 0, revision: nextV }
+  );
+  return json({ ok: true, item: fresh, revision: nextV });
+}
+async function hAdminAudit(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  if (!env.TRIUMPH_D1) return json({ ok: true, items: [], note: "D1 not bound" });
+  const url = new URL(request.url);
+  const limit = Math.min(200, Math.max(1, parseInt(url.searchParams.get("limit") || "50", 10) || 50));
+  const action = (url.searchParams.get("action") || "").trim();
+  const items = action ? await d1All(env, `SELECT * FROM admin_audit_log WHERE action = ? ORDER BY ts DESC LIMIT ?`, [action, limit]) : await d1All(env, `SELECT * FROM admin_audit_log ORDER BY ts DESC LIMIT ?`, [limit]);
+  if (items === null) return apiError("internal_error", { hint: "D1 query failed." });
+  return json({ ok: true, items });
+}
 var ADMIN_ROUTES = {
   "/api/admin/me": { GET: hAdminMe },
   "/api/admin/users": { GET: hAdminUsers },
-  "/api/admin/users/password-reset-link": { POST: hAdminPasswordResetLink }
+  "/api/admin/users/password-reset-link": { POST: hAdminPasswordResetLink },
+  // P2 题库管理
+  "/api/admin/questions": { GET: hAdminQuestions },
+  "/api/admin/questions/detail": { GET: hAdminQuestionDetail },
+  "/api/admin/questions/update": { PATCH: hAdminQuestionUpdate },
+  // P2 内容管理
+  "/api/admin/content": { GET: hAdminContentList },
+  "/api/admin/content/create": { POST: hAdminContentCreate },
+  "/api/admin/content/detail": { GET: hAdminContentDetail },
+  "/api/admin/content/update": { PUT: hAdminContentUpdate },
+  // P2 审计
+  "/api/admin/audit": { GET: hAdminAudit }
+};
+
+// worker-src/cms.mjs
+var CORS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, OPTIONS"
+};
+async function hToolsList(request, env) {
+  const rows = await d1All(env, `SELECT slug, name, description, icon, entry, audience, config_json FROM tools WHERE enabled = 1 ORDER BY sort ASC`);
+  if (rows === null) return json({ ok: true, items: [], note: "D1 not ready" });
+  const items = rows.map((r) => {
+    let config = r.config_json;
+    try {
+      config = typeof r.config_json === "string" ? JSON.parse(r.config_json) : r.config_json || null;
+    } catch {
+      config = null;
+    }
+    return { ...r, config_json: void 0, config };
+  });
+  return json({ ok: true, items }, 200, { "Cache-Control": "public, max-age=120", ...CORS });
+}
+async function hContentPublic(request, env) {
+  const url = new URL(request.url);
+  const type = (url.searchParams.get("type") || "").trim();
+  const slug = (url.searchParams.get("slug") || "").trim();
+  if (slug) {
+    if (!/^[a-z0-9-]+$/.test(slug)) return apiError("bad_request", { field: "slug" });
+    const row = await d1One(env, `SELECT id, type, slug, title, body_md, meta_json, updated_at FROM content_items WHERE slug = ? AND status = 'published'`, [slug]);
+    if (!row) return apiError("not_found", { field: "slug" });
+    let meta = row.meta_json;
+    try {
+      meta = typeof row.meta_json === "string" ? JSON.parse(row.meta_json) : row.meta_json || null;
+    } catch {
+      meta = null;
+    }
+    return json({ ok: true, item: { ...row, meta_json: void 0, meta } }, 200, { "Cache-Control": "public, max-age=120", ...CORS });
+  }
+  const rows = type ? await d1All(env, `SELECT id, type, slug, title, meta_json, updated_at FROM content_items WHERE status = 'published' AND type = ? ORDER BY updated_at DESC`, [type]) : await d1All(env, `SELECT id, type, slug, title, meta_json, updated_at FROM content_items WHERE status = 'published' ORDER BY updated_at DESC`);
+  if (rows === null) return json({ ok: true, items: [], note: "D1 not ready" });
+  const items = rows.map((r) => {
+    let meta = r.meta_json;
+    try {
+      meta = typeof r.meta_json === "string" ? JSON.parse(r.meta_json) : r.meta_json || null;
+    } catch {
+      meta = null;
+    }
+    return { ...r, meta_json: void 0, meta };
+  });
+  return json({ ok: true, items }, 200, { "Cache-Control": "public, max-age=120", ...CORS });
+}
+var CMS_ROUTES = {
+  "/api/tools": { GET: hToolsList },
+  "/api/content": { GET: hContentPublic }
 };
 
 // worker-src/content.mjs
@@ -948,7 +1288,21 @@ var MD_ROUTES = (() => {
     "/praxis-5002-study-guide",
     "/praxis-5003-math-study-guide",
     "/praxis-5004-social-studies-study-guide",
-    "/praxis-5005-science-study-guide"
+    "/praxis-5005-science-study-guide",
+    // 2026-08-20 batch: keyword articles
+    "/praxis-5001-passing-scores",
+    "/praxis-5001-free-practice-test",
+    "/praxis-5001-registration-guide",
+    // 2026-08-20 batch: state landing pages
+    "/praxis-5001-virginia-requirements",
+    "/praxis-5001-tennessee-requirements",
+    "/praxis-5001-new-jersey-requirements",
+    "/praxis-5001-south-carolina-requirements",
+    "/praxis-5001-kentucky-requirements",
+    // 2026-08-24 batch: non-5001 state research pages
+    "/praxis-5001-pennsylvania-requirements",
+    "/praxis-5001-alabama-requirements",
+    "/praxis-5001-maryland-requirements"
   ];
   const map = /* @__PURE__ */ new Map();
   const mdName = (p) => p === "/" || p === "/index" ? "/md/index.md" : `/md${p}.md`;
@@ -1775,6 +2129,17 @@ var worker_default = {
     try {
       const url = new URL(request.url);
       const path = normalizePath(url.pathname);
+      {
+        const host = url.hostname.toLowerCase();
+        const isLocalDev = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+        const isCanonical = host === "trytriumph.de5.net";
+        const isProgrammatic = path.startsWith("/api/") || path === "/mcp" || path.startsWith("/.well-known/");
+        const isPreviewBranch = typeof env?.CF_PAGES_BRANCH === "string" && env.CF_PAGES_BRANCH !== "main";
+        const isPageRequest = request.method === "GET" || request.method === "HEAD";
+        if (isPageRequest && !isLocalDev && !isCanonical && !isProgrammatic && !isPreviewBranch) {
+          return Response.redirect(`https://trytriumph.de5.net${url.pathname}${url.search}`, 301);
+        }
+      }
       if (path === "/mcp") return handleMcp(request, env);
       if (path.startsWith("/api/")) {
         if (request.method === "OPTIONS") return corsPreflight();
@@ -1809,6 +2174,12 @@ var worker_default = {
         if (adminRoute) {
           const handler = adminRoute[request.method];
           if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(adminRoute) }));
+          return withCors(await handler(request, env));
+        }
+        const cms = CMS_ROUTES[path];
+        if (cms) {
+          const handler = cms[request.method];
+          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(cms) }));
           return withCors(await handler(request, env));
         }
         const v1 = V1_ROUTES[path];

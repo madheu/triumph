@@ -313,6 +313,16 @@ const PAGES = [
   'praxis-5003-math-study-guide',
   'praxis-5004-social-studies-study-guide',
   'praxis-5005-science-study-guide',
+  // 2026-08-20 batch: keyword articles
+  'praxis-5001-passing-scores',
+  'praxis-5001-free-practice-test',
+  'praxis-5001-registration-guide',
+  // 2026-08-20 batch: state landing pages
+  'praxis-5001-virginia-requirements',
+  'praxis-5001-tennessee-requirements',
+  'praxis-5001-new-jersey-requirements',
+  'praxis-5001-south-carolina-requirements',
+  'praxis-5001-kentucky-requirements',
   // static trust/developer pages — markdown generated from their <article> so it never drifts
   'about',
   'contact',
