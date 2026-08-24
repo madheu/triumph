@@ -720,6 +720,14 @@
             const state = window.TriumphAuth.buildLocalState();
             state.answers = arr.slice(-500);
             window.TriumphAuth.saveState(state).catch(() => {});
+            // 行为上报（P3）：单题增量 → attempts_daily 聚合，best-effort 不阻塞
+            try {
+              fetch('/api/t/attempts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + window.TriumphAuth.token },
+                body: JSON.stringify({ items: [{ subtest: String(q.code), category: q.category || 'general', attempted: 1, correct: correct ? 1 : 0 }] }),
+              }).catch(() => {});
+            } catch (_) {}
           }
         } catch (e) {}
       };

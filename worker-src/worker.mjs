@@ -27,6 +27,8 @@ import { BILLING_ROUTES } from './billing.mjs';
 import { V1_ROUTES } from './public-api.mjs';
 import { ADMIN_ROUTES } from './admin.mjs';
 import { CMS_ROUTES } from './cms.mjs';
+import { TICKET_ROUTES, ADMIN_TICKET_ROUTES } from './tickets.mjs';
+import { ATTEMPT_ROUTES, ADMIN_STATS_ROUTES } from './analytics.mjs';
 import { MD_ROUTES, PRODUCIBLE_PAGE_TYPES, negotiatePageVariant, varyWithAccept } from './content.mjs';
 import { handleMcp } from './mcp.mjs';
 import { openApiSpec, specToYaml } from './openapi.mjs';
@@ -118,6 +120,18 @@ export default {
         if (cms) {
           const handler = cms[request.method];
           if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(cms) }));
+          return withCors(await handler(request, env));
+        }
+        const ticket = TICKET_ROUTES[path] || ADMIN_TICKET_ROUTES[path];
+        if (ticket) {
+          const handler = ticket[request.method];
+          if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(ticket) }));
+          return withCors(await handler(request, env));
+        }
+        const attempt = ATTEMPT_ROUTES[path] || ADMIN_STATS_ROUTES[path];
+        if (attempt) {
+          const handler = attempt[request.method];
+          if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(attempt) }));
           return withCors(await handler(request, env));
         }
         const v1 = V1_ROUTES[path];

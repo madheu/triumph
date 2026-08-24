@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Triumph</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root { --brand: #C09D9B; --brand-dark: #A67D7A; --ink: #3A3532; --ink-soft: #6E6760; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #FAF9F7; color: var(--ink); min-height: 100vh; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 24px; }
+    header { padding: 28px 0 12px; display: flex; justify-content: space-between; align-items: baseline; }
+    .wordmark { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; color: var(--brand-dark); text-decoration: none; }
+    .nav-link { font-size: 14px; color: var(--ink-soft); text-decoration: none; }
+    .nav-link:hover { color: var(--brand-dark); }
+    h1 { font-size: 24px; font-weight: 600; margin-top: 16px; margin-bottom: 8px; }
+    .sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 24px; line-height: 1.6; }
+    .card { background: #fff; border: 1px solid #EDEAE6; border-radius: 16px; padding: 26px; margin-bottom: 20px; }
+    label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 6px; }
+    input[type=text], textarea {
+      width: 100%; padding: 12px 14px; border: 1px solid #E5E0DB; border-radius: 10px;
+      font-size: 15px; margin-bottom: 14px; background: #FDFCFA; color: var(--ink);
+      font-family: inherit;
+    }
+    textarea { resize: vertical; min-height: 90px; }
+    input:focus, textarea:focus { outline: 2px solid var(--brand); border-color: transparent; }
+    .btn { display: inline-block; padding: 12px 22px; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
+    .btn-primary { background: var(--brand-dark); color: #fff; width: 100%; }
+    .btn-primary:hover { background: #956b68; }
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+    .err { background: #FDEBEB; color: #B33A3A; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 16px; display: none; line-height: 1.5; }
+    .ok-msg { background: #EFF7EE; border: 1px solid #D8EAD6; color: #3E6B3A; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 16px; display: none; }
+    .ticket { border: 1px solid #F0EBE7; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+    .ticket-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; gap: 10px; }
+    .ticket-subject { font-weight: 600; font-size: 15px; }
+    .badge { font-size: 11px; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+    .badge.open { background: #FDEBEB; color: #B33A3A; }
+    .badge.pending { background: #FBF3DF; color: #96742B; }
+    .badge.resolved { background: #EFF7EE; color: #3E6B3A; }
+    .msg { font-size: 13.5px; line-height: 1.6; padding: 8px 12px; border-radius: 8px; margin-top: 8px; white-space: pre-wrap; word-break: break-word; }
+    .msg.user { background: #F7F3F0; }
+    .msg.admin { background: #F2EBE8; }
+    .msg .who { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); margin-bottom: 2px; }
+    .muted { color: var(--ink-soft); font-size: 12.5px; }
+    h2 { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
+    a { color: var(--brand-dark); }
+    .login-note { text-align: center; padding: 30px 20px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="wordmark" href="/">Triumph<span style="color:#C09D9B">.</span></a>
+      <a class="nav-link" href="/dashboard.html">Dashboard</a>
+    </header>
+
+    <h1>Support</h1>
+    <p class="sub">Questions about your account, billing, or a refund — we reply right here. You'll see our answer on this page.</p>
+
+    <div id="login-note" class="card login-note" style="display:none">
+      <p class="sub" style="margin-bottom:16px">Please log in first so we can find your account.</p>
+      <a class="btn btn-primary" style="text-decoration:none" href="/login.html">Go to login →</a>
+    </div>
+
+    <div id="app" style="display:none">
+      <div id="err" class="err"></div>
+      <div id="ok" class="ok-msg"></div>
+
+      <div class="card">
+        <h2>Open a new ticket</h2>
+        <form id="form">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" maxlength="200" placeholder="e.g. Refund request / Billing question" required />
+          <label for="body">Message</label>
+          <textarea id="body" maxlength="4000" placeholder="Describe your issue…" required></textarea>
+          <label style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink);cursor:pointer">
+            <input type="checkbox" id="refund" style="width:auto;margin:0" />
+            I am requesting a refund
+          </label>
+          <button type="submit" id="btn" class="btn btn-primary" style="margin-top:14px">Submit ticket</button>
+          <p class="muted" style="margin-top:12px">Up to 5 tickets per hour. We usually reply within one business day.</p>
+        </form>
+      </div>
+
+      <h2>My tickets</h2>
+      <div id="tickets"><p class="muted">Loading…</p></div>
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script>
+    (function () {
+      var $err = document.getElementById('err');
+      var $ok = document.getElementById('ok');
+      function fail(m) { $err.style.display = 'block'; $err.textContent = m; }
+      function clear() { $err.style.display = 'none'; $ok.style.display = 'none'; }
+
+      if (!window.TriumphAuth || !window.TriumphAuth.isLoggedIn()) {
+        document.getElementById('login-note').style.display = 'block';
+        return;
+      }
+      document.getElementById('app').style.display = 'block';
+      var T = window.TriumphAuth;
+
+      var esc = function (s) {
+        return String(s || '').replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      };
+
+      async function api(path, method, body) {
+        var res = await fetch(path, {
+          method: method,
+          headers: body ? { 'Content-Type': 'application/json', Authorization: 'Bearer ' + T.token } : { Authorization: 'Bearer ' + T.token },
+          body: body ? JSON.stringify(body) : undefined,
+        });
+        var d = null;
+        try { d = await res.json(); } catch (e) {}
+        if (!res.ok || !d || d.ok !== true) {
+          var msg = (d && d.error && (d.error.hint || d.error.message)) || ('Request failed (' + res.status + ')');
+          throw new Error(msg);
+        }
+        return d;
+      }
+
+      async function loadTickets() {
+        try {
+          var d = await api('/api/tickets/mine', 'GET');
+          var box = document.getElementById('tickets');
+          if (!d.items.length) { box.innerHTML = '<p class="muted">No tickets yet.</p>'; return; }
+          box.innerHTML = d.items.map(function (t) {
+            return '<div class="ticket">' +
+              '<div class="ticket-head"><span class="ticket-subject">' + esc(t.subject) + '</span>' +
+              '<span class="badge ' + esc(t.status) + '">' + esc(t.status) + (t.refund_requested ? ' · refund' : '') + '</span></div>' +
+              '<span class="muted">' + new Date(t.created_at).toLocaleString() + '</span>' +
+              t.messages.map(function (m) {
+                return '<div class="msg ' + esc(m.author) + '"><span class="who">' + (m.author === 'admin' ? 'Triumph team' : 'You') + '</span>' + esc(m.body) + '</div>';
+              }).join('') +
+              '</div>';
+          }).join('');
+        } catch (e) {
+          document.getElementById('tickets').innerHTML = '<p class="muted">' + esc(e.message) + '</p>';
+        }
+      }
+
+      document.getElementById('form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        clear();
+        var subject = document.getElementById('subject').value.trim();
+        var body = document.getElementById('body').value.trim();
+        var refund = document.getElementById('refund').checked;
+        if (subject.length < 3 || body.length < 3) { fail('Please fill in both the subject and the message.'); return; }
+        var btn = document.getElementById('btn');
+        btn.disabled = true; btn.textContent = 'Submitting…';
+        try {
+          await api('/api/tickets', 'POST', { subject: subject, body: body, refund_requested: refund });
+          $ok.style.display = 'block';
+          $ok.textContent = '✅ Ticket submitted! Check back here for our reply.';
+          document.getElementById('form').reset();
+          loadTickets();
+        } catch (err2) {
+          fail(err2.message);
+        } finally {
+          btn.disabled = false; btn.textContent = 'Submit ticket';
+        }
+      });
+
+      loadTickets();
+    })();
+  </script>
+</body>
+</html>

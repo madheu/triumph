@@ -1270,6 +1270,287 @@ var CMS_ROUTES = {
   "/api/content": { GET: hContentPublic }
 };
 
+// worker-src/tickets.mjs
+var TICKET_STATUSES = ["open", "pending", "resolved"];
+async function resolveUser3(request, env) {
+  const payload = await verifyJwt(bearerToken(request), env.JWT_SECRET);
+  if (!payload || !payload.email) return null;
+  return { id: payload.sub, email: payload.email.toLowerCase() };
+}
+async function hTicketCreate(request, env) {
+  const user = await resolveUser3(request, env);
+  if (!user) return apiError("unauthorized");
+  const body = await request.json().catch(() => null);
+  if (!body) return apiError("bad_request");
+  const subject = String(body.subject || "").trim().slice(0, 200);
+  const text = String(body.body || "").trim().slice(0, 4e3);
+  if (subject.length < 3) return apiError("bad_request", { field: "subject", hint: "Subject must be at least 3 characters." });
+  if (text.length < 3) return apiError("bad_request", { field: "body", hint: "Describe your issue in the message." });
+  const refundRequested = body.refund_requested ? 1 : 0;
+  const rlKey = `rl:tickets:${user.email}:${Math.floor(Date.now() / 36e5)}`;
+  const cur = parseInt(await env.TRIUMPH_KV.get(rlKey) || "0", 10);
+  if (cur >= 5) return apiError("too_many_requests", { hint: "Too many tickets opened. Try again later." });
+  await env.TRIUMPH_KV.put(rlKey, String(cur + 1), { expirationTtl: 3700 });
+  const id = crypto.randomUUID();
+  const res = await d1Exec2(
+    env,
+    `INSERT INTO tickets (id, user_id, subject, status, refund_requested, created_at) VALUES (?, ?, ?, 'open', ?, ?)`,
+    [id, user.id, subject, refundRequested, Date.now()]
+  );
+  if (res === null && !env.TRIUMPH_D1) return apiError("internal_error", { hint: "Ticket storage unavailable." });
+  await d1Exec2(
+    env,
+    `INSERT INTO ticket_messages (id, ticket_id, author, body, created_at) VALUES (?, ?, 'user', ?, ?)`,
+    [crypto.randomUUID(), id, text, Date.now()]
+  );
+  await audit(env, user.email, "ticket.create", "ticket", id, { subject, refund_requested: !!refundRequested });
+  return json({ ok: true, ticket_id: id }, 201);
+}
+async function hTicketMine(request, env) {
+  const user = await resolveUser3(request, env);
+  if (!user) return apiError("unauthorized");
+  if (!env.TRIUMPH_D1) return json({ ok: true, items: [] });
+  const tickets = await d1All(
+    env,
+    `SELECT id, subject, status, refund_requested, created_at, resolved_at FROM tickets WHERE user_id = ? ORDER BY created_at DESC LIMIT 50`,
+    [user.id]
+  );
+  if (tickets === null) return apiError("internal_error");
+  for (const t of tickets) {
+    t.messages = await d1All(
+      env,
+      `SELECT author, body, created_at FROM ticket_messages WHERE ticket_id = ? ORDER BY created_at ASC`,
+      [t.id]
+    ) || [];
+    t.refund_requested = !!t.refund_requested;
+  }
+  return json({ ok: true, items: tickets });
+}
+async function hTicketReply(request, env) {
+  const user = await resolveUser3(request, env);
+  if (!user) return apiError("unauthorized");
+  const body = await request.json().catch(() => null);
+  const ticketId = String(body && body.ticket_id || "").trim();
+  const text = String(body && body.body || "").trim().slice(0, 4e3);
+  if (!ticketId || text.length < 1) return apiError("bad_request", { field: !ticketId ? "ticket_id" : "body" });
+  const t = await d1One(env, `SELECT id, status, user_id FROM tickets WHERE id = ?`, [ticketId]);
+  if (!t || t.user_id !== user.id) return apiError("not_found", { field: "ticket_id" });
+  await d1Exec2(
+    env,
+    `INSERT INTO ticket_messages (id, ticket_id, author, body, created_at) VALUES (?, ?, 'user', ?, ?)`,
+    [crypto.randomUUID(), ticketId, text, Date.now()]
+  );
+  if (t.status === "resolved" || t.status === "pending") {
+    await d1Exec2(env, `UPDATE tickets SET status = 'open', resolved_at = NULL WHERE id = ?`, [ticketId]);
+  }
+  return json({ ok: true });
+}
+async function hAdminTickets(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  if (!env.TRIUMPH_D1) return json({ ok: true, items: [] });
+  const url = new URL(request.url);
+  const status = (url.searchParams.get("status") || "").trim();
+  const rows = status ? await d1All(env, `SELECT * FROM tickets WHERE status = ? ORDER BY created_at DESC LIMIT 100`, [status]) : await d1All(env, `SELECT * FROM tickets ORDER BY created_at DESC LIMIT 100`);
+  if (rows === null) return apiError("internal_error");
+  const items = [];
+  for (const t of rows) {
+    t.refund_requested = !!t.refund_requested;
+    const u = await d1One(env, `SELECT email FROM users WHERE id = ?`, [t.user_id]);
+    items.push({ ...t, user_email: u ? u.email : t.user_id });
+  }
+  return json({ ok: true, items });
+}
+async function hAdminTicketDetail(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const url = new URL(request.url);
+  const id = (url.searchParams.get("id") || "").trim();
+  if (!id) return apiError("bad_request", { field: "id" });
+  const t = await d1One(env, `SELECT * FROM tickets WHERE id = ?`, [id]);
+  if (!t) return apiError("not_found", { field: "id" });
+  t.messages = await d1All(env, `SELECT author, body, created_at FROM ticket_messages WHERE ticket_id = ? ORDER BY created_at ASC`, [id]) || [];
+  t.refund_requested = !!t.refund_requested;
+  return json({ ok: true, ticket: t });
+}
+async function hAdminTicketReply(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const body = await request.json().catch(() => null);
+  const ticketId = String(body && body.ticket_id || "").trim();
+  const text = String(body && body.body || "").trim().slice(0, 4e3);
+  if (!ticketId || !text) return apiError("bad_request", { field: !ticketId ? "ticket_id" : "body" });
+  const t = await d1One(env, `SELECT id FROM tickets WHERE id = ?`, [ticketId]);
+  if (!t) return apiError("not_found", { field: "ticket_id" });
+  await d1Exec2(
+    env,
+    `INSERT INTO ticket_messages (id, ticket_id, author, body, created_at) VALUES (?, ?, 'admin', ?, ?)`,
+    [crypto.randomUUID(), ticketId, text, Date.now()]
+  );
+  await d1Exec2(env, `UPDATE tickets SET status = 'pending' WHERE id = ? AND status = 'open'`, [ticketId]);
+  await audit(env, admin.email, "ticket.reply", "ticket", ticketId, {});
+  return json({ ok: true });
+}
+async function hAdminTicketStatus(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  const body = await request.json().catch(() => null);
+  const ticketId = String(body && body.ticket_id || "").trim();
+  if (!ticketId) return apiError("bad_request", { field: "ticket_id" });
+  const t = await d1One(env, `SELECT * FROM tickets WHERE id = ?`, [ticketId]);
+  if (!t) return apiError("not_found", { field: "ticket_id" });
+  const status = body.status;
+  if (status !== void 0) {
+    if (!TICKET_STATUSES.includes(status)) return apiError("bad_request", { field: "status", allowed: TICKET_STATUSES });
+    await d1Exec2(
+      env,
+      `UPDATE tickets SET status = ?, resolved_at = ? WHERE id = ?`,
+      [status, status === "resolved" ? Date.now() : null, ticketId]
+    );
+  }
+  let refundResult = null;
+  const decision = body.refund_decision;
+  if (decision) {
+    if (!["approve", "reject"].includes(decision)) return apiError("bad_request", { field: "refund_decision", allowed: ["approve", "reject"] });
+    const rid = crypto.randomUUID();
+    await d1Exec2(
+      env,
+      `INSERT OR REPLACE INTO refunds (id, order_id, creem_refund_id, reason, status, operator, created_at) VALUES (?, ?, NULL, ?, ?, ?, ?)`,
+      [
+        rid,
+        body.order_id || null,
+        String(body.reason || "ticket:" + ticketId).slice(0, 500),
+        decision === "approve" ? "approved" : "rejected",
+        admin.email,
+        Date.now()
+      ]
+    );
+    await audit(
+      env,
+      admin.email,
+      decision === "approve" ? "refund.approve" : "refund.reject",
+      "ticket",
+      ticketId,
+      { order_id: body.order_id || null, refund_row: rid }
+    );
+    refundResult = {
+      refund_row: rid,
+      status: decision === "approve" ? "approved" : "rejected",
+      note: "Execute the actual refund in the Creem dashboard; the refund.created webhook will mark the order refunded."
+    };
+  }
+  await audit(env, admin.email, "ticket.status", "ticket", ticketId, { status: status || void 0 });
+  return json({ ok: true, refund: refundResult });
+}
+var TICKET_ROUTES = {
+  "/api/tickets": { POST: hTicketCreate },
+  "/api/tickets/mine": { GET: hTicketMine },
+  "/api/tickets/reply": { POST: hTicketReply }
+};
+var ADMIN_TICKET_ROUTES = {
+  "/api/admin/tickets": { GET: hAdminTickets },
+  "/api/admin/tickets/detail": { GET: hAdminTicketDetail },
+  "/api/admin/tickets/reply": { POST: hAdminTicketReply },
+  "/api/admin/tickets/status": { POST: hAdminTicketStatus }
+};
+
+// worker-src/analytics.mjs
+function todayStr() {
+  return (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+}
+async function hAttemptsReport(request, env) {
+  const payload = await verifyJwt(bearerToken(request), env.JWT_SECRET);
+  if (!payload || !payload.email) return apiError("unauthorized");
+  const userId = payload.sub;
+  const body = await request.json().catch(() => null);
+  const items = body && Array.isArray(body.items) ? body.items : null;
+  if (!items || !items.length) return apiError("bad_request", { field: "items", hint: "Send { items: [...] }." });
+  if (items.length > 50) return apiError("bad_request", { field: "items", hint: "Max 50 rows per report." });
+  const date = body.date && /^\d{4}-\d{2}-\d{2}$/.test(body.date) ? body.date : todayStr();
+  let accepted = 0;
+  for (const it of items) {
+    const subtest = String(it.subtest || "").trim().slice(0, 8);
+    const category = String(it.category || "general").trim().slice(0, 80);
+    let attempted = parseInt(it.attempted, 10) || 0;
+    let correct = parseInt(it.correct, 10) || 0;
+    if (!subtest || attempted <= 0) continue;
+    if (attempted > 200) attempted = 200;
+    if (correct < 0) correct = 0;
+    if (correct > attempted) correct = attempted;
+    await d1Exec2(
+      env,
+      `INSERT INTO attempts_daily (date, user_id, subtest, category, attempted, correct)
+       VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT(date, user_id, subtest, category) DO UPDATE SET
+         attempted = attempted + excluded.attempted,
+         correct = correct + excluded.correct`,
+      [date, userId, subtest, category, attempted, correct]
+    );
+    accepted++;
+  }
+  return json({ ok: true, accepted, date });
+}
+async function hAdminStatsDaily(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  if (!env.TRIUMPH_D1) return json({ ok: true, items: [] });
+  const url = new URL(request.url);
+  const days = Math.min(180, Math.max(1, parseInt(url.searchParams.get("days") || "30", 10) || 30));
+  const since = new Date(Date.now() - days * 864e5).toISOString().slice(0, 10);
+  const rows = await d1All(
+    env,
+    `SELECT date, SUM(attempted) AS attempted, SUM(correct) AS correct, COUNT(DISTINCT user_id) AS active_users
+     FROM attempts_daily WHERE date >= ? GROUP BY date ORDER BY date DESC`,
+    [since]
+  );
+  if (rows === null) return apiError("internal_error");
+  const items = rows.map((r) => ({
+    ...r,
+    accuracy: r.attempted ? Math.round(r.correct / r.attempted * 1e3) / 10 : null
+  }));
+  return json({ ok: true, items, days });
+}
+async function hAdminStatsSummary(request, env) {
+  const admin = await requireAdmin(request, env);
+  if (admin instanceof Response) return apiError("unauthorized");
+  let totalUsers = 0, proUsers = 0;
+  try {
+    let cursor;
+    do {
+      const page = await env.TRIUMPH_KV.list({ prefix: "users:", limit: 100, cursor });
+      for (const k of page.keys) {
+        const rec = await env.TRIUMPH_KV.get(k.name, "json").catch(() => null);
+        if (!rec) continue;
+        totalUsers++;
+        if (rec.plan === "pro") proUsers++;
+      }
+      cursor = page.list_complete ? void 0 : page.cursor;
+    } while (cursor);
+  } catch {
+  }
+  let openTickets = null, todayAttempts = null;
+  if (env.TRIUMPH_D1) {
+    const t = await d1One(env, `SELECT COUNT(*) AS n FROM tickets WHERE status != 'resolved'`);
+    openTickets = t ? t.n : null;
+    const a = await d1One(env, `SELECT COALESCE(SUM(attempted),0) AS n FROM attempts_daily WHERE date = ?`, [todayStr()]);
+    todayAttempts = a ? a.n : null;
+  }
+  return json({
+    ok: true,
+    users_total: totalUsers,
+    users_pro: proUsers,
+    tickets_open: openTickets,
+    attempts_today: todayAttempts
+  });
+}
+var ATTEMPT_ROUTES = {
+  "/api/t/attempts": { POST: hAttemptsReport }
+};
+var ADMIN_STATS_ROUTES = {
+  "/api/admin/stats/daily": { GET: hAdminStatsDaily },
+  "/api/admin/stats/summary": { GET: hAdminStatsSummary }
+};
+
 // worker-src/content.mjs
 var MD_ROUTES = (() => {
   const pages = [
@@ -2180,6 +2461,18 @@ var worker_default = {
         if (cms) {
           const handler = cms[request.method];
           if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(cms) }));
+          return withCors(await handler(request, env));
+        }
+        const ticket = TICKET_ROUTES[path] || ADMIN_TICKET_ROUTES[path];
+        if (ticket) {
+          const handler = ticket[request.method];
+          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(ticket) }));
+          return withCors(await handler(request, env));
+        }
+        const attempt = ATTEMPT_ROUTES[path] || ADMIN_STATS_ROUTES[path];
+        if (attempt) {
+          const handler = attempt[request.method];
+          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(attempt) }));
           return withCors(await handler(request, env));
         }
         const v1 = V1_ROUTES[path];
