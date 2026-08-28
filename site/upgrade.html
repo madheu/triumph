@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upgrade — Triumph Pro</title>
+  <title>Upgrade — Learndiag Pro</title>
   <meta name="robots" content="noindex, nofollow" />
   <style>
     :root {
@@ -41,12 +41,12 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="wordmark">Triumph<span style="color:#C09D9B">.</span></div>
+      <div class="wordmark">Learndiag<span style="color:#C09D9B">.</span></div>
       <a href="/support.html" style="font-size:13.5px;color:var(--ink-soft);text-decoration:none;">Support</a>
     </header>
 
     <div class="card">
-      <h1>Unlock Triumph Pro</h1>
+      <h1>Unlock Learndiag Pro</h1>
       <p class="sub">All future premium tools &amp; adaptive study features. Cancel anytime.</p>
 
       <div id="status-box" class="status-box" style="display:none"></div>
@@ -65,14 +65,23 @@
       <button id="upgrade-btn" class="btn btn-primary">Upgrade to Pro</button>
       <button id="portal-btn" class="btn btn-secondary" style="display:none">Manage subscription</button>
 
+      <div style="text-align:center;margin-top:18px">
+        <a href="https://www.creem.io/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:10px;border:2px solid #151617;background:#F5F2F0;box-shadow:0 2px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:13px;line-height:1;text-decoration:none"><span style="color:#5b5c5e;font-weight:600">Payments secured by</span><svg width="14" height="14" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#B09CFB"/></svg><span style="color:#151617;font-weight:700">Creem</span></a>
+      </div>
+
       <p class="note">
         Secure checkout by <strong>Creem</strong> (Merchant of Record) — handles tax &amp; payments worldwide.
         After checkout you'll be redirected back automatically. Cancel anytime from your billing portal.
       </p>
     </div>
+
+    <p class="note" style="text-align:center;margin-top:28px">
+      By subscribing you agree to the <a href="/terms.html">Terms of Service</a> and
+      <a href="/privacy.html">Privacy Policy</a>.
+    </p>
   </div>
 
-  <script src="js/auth.js"></script>
+  <script src="js/auth.js?v=2"></script>
   <script>
     (function () {
       const A = window.TriumphAuth;
@@ -97,7 +106,7 @@
             const until = ent.currentPeriodEnd ? new Date(ent.currentPeriodEnd).toLocaleDateString() : '—';
             statusBox.innerHTML =
               '<span class="badge pro">PRO</span><br/>' +
-              'You have Triumph Pro. Renews on ' + until + '.<br/>' +
+              'You have Learndiag Pro. Renews on ' + until + '.<br/>' +
               '<span class="muted">Manage billing from the button below.</span>';
             upgradeBtn.textContent = 'Upgrade again';
             portalBtn.style.display = 'block';

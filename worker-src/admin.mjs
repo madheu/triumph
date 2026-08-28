@@ -110,7 +110,7 @@ export async function hAdminPasswordResetLink(request, env) {
   if (!recJson) return apiError('not_registered');
 
   const token = await storeResetToken(env, email);
-  const base = env.SITE_URL || 'https://trytriumph.de5.net';
+  const base = env.SITE_URL || 'https://learndiag.com';
   return json({
     ok: true,
     reset_link: `${base}/reset.html?token=${token}&email=${encodeURIComponent(email)}`,

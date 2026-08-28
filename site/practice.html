@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
-  <title>Practice — Praxis 5001 Question Drills | Triumph</title>
+  <title>Practice — Praxis 5001 Question Drills | Learndiag</title>
 
   <!--
     ============================================================
-    TRIUMPH · DIAGNOSTIC DEMO · v1 (interactive prototype)
+    LEARNIDIAG · DIAGNOSTIC DEMO · v1 (interactive prototype)
     ============================================================
     - 目标: 演示 "做题 → 诊断 → 通过率预测 → 付费墙" 转化路径
     - 题库为 ORIGINAL mock questions（原创，不复制 ETS），标注 mock
@@ -242,7 +242,7 @@
   <div id="root"></div>
 
   <script src="questions.js"></script>
-  <script src="js/auth.js"></script>
+  <script src="js/auth.js?v=2"></script>
   <script type="text/babel">
     const { useEffect, useRef, useState } = React;
 
@@ -289,7 +289,7 @@
     function DM_Nav() {
       return (
         <header className="nav wrap">
-          <a className="wordmark" href="/" aria-label="Triumph home" style={{textDecoration:'none', color:'inherit'}}>Triumph<span style={{color:'var(--accent)'}}>.</span></a>
+          <a className="wordmark" href="/" aria-label="Learndiag home" style={{textDecoration:'none', color:'inherit'}}>Learndiag<span style={{color:'var(--accent)'}}>.</span></a>
           <div style={{display:'flex', gap:20, alignItems:'baseline'}}>
             <span className="nav-note">Practice · instant feedback</span>
             <a className="nav-cta" href="/">Home</a>
@@ -327,7 +327,7 @@
             subtests — reading &amp; language arts, mathematics, social studies, and science. At the end
             you&rsquo;ll get an estimated scaled score, your weakest gate, and a pass-probability forecast.
           </p>
-          <p style={{marginBottom:0}}>No account. No payment. Original sample questions only.</p>
+          <p style={{marginBottom:0}}>Free to take — log in at the end to unlock your full report. Original sample questions only.</p>
           <div className="meta">
             <span>12 random questions</span><span>≈ 8 min</span><span>4 subtests</span>
           </div>
@@ -388,25 +388,41 @@
       const passPct = DM_passProbability(avg);
       const weakestIdx = subAccs.indexOf(Math.min(...subAccs));
 
-      const [pwStep, setPwStep] = useState(() => {
-        // 已解锁用户（本设备留过邮箱）重诊时直接解锁，不再过付费墙
-        try { return localStorage.getItem('triumph_unlocked_at') ? 'unlocked' : 'locked'; } catch (e) { return 'locked'; }
-      });
-      const [email, setEmail] = useState('');
-      const [fname, setFname] = useState('');
-      const [emailError, setEmailError] = useState('');
+      // ---- 时间闸门收费墙（真实化 v2）----
+      // 2026-10-01 前：登录即可看完整版（免费宽限期，兼顾 SEO 收录延迟）；
+      // 2026-10-01 后：仅 Pro（plan==='pro'）可看完整版，其余显示锁定 + 升级引导。
+      const PAYWALL_DEADLINE = new Date('2026-10-01T00:00:00Z').getTime();
+      const [pwStep, setPwStep] = useState('checking'); // checking | locked | unlocked
+      const [lockReason, setLockReason] = useState('login'); // login | upgrade
 
-      const submitEmail = () => {
-        const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-        if (!ok) { setEmailError('Please enter a valid email address.'); return; }
-        setEmailError('');
-        try {
-          localStorage.setItem('triumph_email', email.trim());
-          if (fname.trim()) localStorage.setItem('triumph_name', fname.trim());
-          localStorage.setItem('triumph_unlocked_at', String(Date.now()));
-        } catch (e) {}
-        setPwStep('unlocked');
-      };
+      useEffect(() => {
+        let alive = true;
+        const A = window.TriumphAuth;
+        if (!A) { if (alive) { setLockReason('login'); setPwStep('locked'); } return () => { alive = false; }; }
+        (async () => {
+          if (!A.isLoggedIn()) { if (alive) { setLockReason('login'); setPwStep('locked'); } return; }
+          let plan = 'free';
+          try {
+            const res = await fetch('/api/me', { headers: { Authorization: 'Bearer ' + (A.token || '') } });
+            const d = await res.json();
+            plan = (d && d.entitlements && d.entitlements.plan) || 'free';
+          } catch (e) {}
+          if (!alive) return;
+          if (Date.now() < PAYWALL_DEADLINE) {
+            // 宽限期：登录即解锁
+            try { localStorage.setItem('triumph_unlocked_at', String(Date.now())); } catch (e) {}
+            setPwStep('unlocked');
+          } else {
+            // 锁定期：需 Pro
+            if (plan === 'pro') {
+              try { localStorage.setItem('triumph_unlocked_at', String(Date.now())); } catch (e) {}
+              setPwStep('unlocked');
+            }
+            else { setLockReason('upgrade'); setPwStep('locked'); }
+          }
+        })();
+        return () => { alive = false; };
+      }, []);
 
       const [prevResult] = useState(() => {
         try {
@@ -475,53 +491,34 @@
           <div className="paywall">
             <div className="locked-head">
               <span className="eyebrow" style={{margin:0}}>Pass forecast &amp; study plan</span>
-              <span className="lock-tag">● TRIUMPH</span>
+              <span className="lock-tag">● LEARNIDIAG</span>
             </div>
-            {pwStep === 'locked' ? (
+            {pwStep === 'checking' ? (
+              <div className="locked-content" style={{marginTop:16}}>
+                <div className="mock-line w70" /><div className="mock-line" /><div className="mock-line w50" />
+              </div>
+            ) : pwStep === 'locked' ? (
               <div>
                 <div className="locked-content">
                   <div className="mock-line w70" /><div className="mock-line" /><div className="mock-line w50" />
                 </div>
                 <div className="cta-row">
-                  <button className="btn-primary" onClick={() => setPwStep('email')}>Unlock my pass forecast</button>
+                  {lockReason === 'login' ? (
+                    <a className="btn-primary" href={'/login.html?next=' + encodeURIComponent(location.pathname)} style={{textDecoration:'none',display:'inline-block',padding:'13px 20px'}}>Log in to unlock</a>
+                  ) : (
+                    <button className="btn-primary" onClick={() => { window.location.href = '/upgrade.html'; }}>Upgrade to Pro</button>
+                  )}
                   <span className="price">$15<small>/mo</small></span>
                 </div>
                 <p className="demo-note">
-                  A real retake costs ~$130 and 28 days. The forecast costs less than a coffee a week.
-                  (Prototype — payment not wired yet.)
+                  {lockReason === 'login'
+                    ? 'Your pass forecast and personalized study plan are saved to your account — log in (or create a free account) to unlock them. No credit card required.'
+                    : 'Pass forecast &amp; study plan unlock with Pro. A real retake costs ~$130 and 28 days — your plan helps you pass it the first time.'}
                 </p>
-              </div>
-            ) : pwStep === 'email' ? (
-              <div>
-                <p className="score-caption" style={{marginBottom:16}}>
-                  Enter your email to unlock your <strong>pass forecast</strong> and <strong>personalized study plan</strong>.
-                  Free to start — you'll see the full report immediately.
-                </p>
-                <div className="pw-form">
-                  <div className="pw-field">
-                    <label className="pw-label">Email</label>
-                    <input className="pw-input" type="email" placeholder="you@example.com" value={email}
-                      onChange={e => setEmail(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') submitEmail(); }} />
-                    {emailError && <div className="pw-error">{emailError}</div>}
-                  </div>
-                  <div className="pw-field">
-                    <label className="pw-label">First name <span style={{opacity:.6}}>(optional)</span></label>
-                    <input className="pw-input" type="text" placeholder="Alex" value={fname}
-                      onChange={e => setFname(e.target.value)} />
-                  </div>
-                  <div className="cta-row" style={{marginTop:18}}>
-                    <button className="btn-primary" onClick={submitEmail}>Unlock my pass forecast</button>
-                    <span className="price">$15<small>/mo</small></span>
-                  </div>
-                  <p className="pw-privacy">
-                    14-day free trial · cancel anytime · we never share your email.
-                    (Prototype: this demo saves your email to this browser only — nothing is sent anywhere yet.)
-                  </p>
-                </div>
               </div>
             ) : (
               <div className="unlocked-box" style={{marginTop:24}}>
-                <h3>{fname.trim() ? 'Welcome, ' + fname.trim() + ' — ' : 'Welcome — '}here's your pass forecast <em>(unlocked)</em></h3>
+                <h3>Here's your pass forecast <em>(unlocked)</em></h3>
                 <p className="score-caption" style={{marginBottom:16}}>
                   Based on this diagnostic, we estimate a <span className="mono" style={{color:'var(--accent)'}}>{passPct}%</span>
                   chance of passing at your current level. Your weakest gate ({subOrder[weakestIdx]}) should get
@@ -536,12 +533,12 @@
                 <div className="plan-item"><span className="day">SUN</span> Rest + re-diagnose to measure improvement</div>
                 <p className="pw-privacy" style={{marginTop:18, marginBottom:0}}>
                   <strong>Come back next week.</strong> Re-run this diagnostic in 7 days and watch your pass probability move —
-                  your score history is saved on this device so you can compare.
+                  your score history is saved to your account so you can compare.
                 </p>
                 <div className="cta-row" style={{marginTop:20}}>
                   <button className="btn-primary" onClick={onStartLearn}>Start your daily study →</button>
                   <button className="btn-ghost" onClick={onRestart}>Re-run diagnostic</button>
-                  <span className="demo-note" style={{margin:0}}>Prototype — real accounts &amp; billing pending.</span>
+                  <span className="demo-note" style={{margin:0}}>Your report is saved — come back any time to re-diagnose and watch your pass probability move.</span>
                 </div>
               </div>
             )}
@@ -794,9 +791,10 @@
           </main>
           <footer className="footer wrap">
             <p>
-              Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS.
+              Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS.
               Sample questions are original demonstrations and are not official Praxis items.
             </p>
+          <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
           </footer>
         </div>
       );

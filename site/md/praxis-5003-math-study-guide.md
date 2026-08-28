@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5003-math-study-guide — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5003-math-study-guide — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5003*
 
@@ -12,7 +12,7 @@ The Praxis 5003 Mathematics subtest is not advanced mathematics. It is a test of
 
 That distinction matters. Memorizing formulas may help with a few items, but it will not prepare you for questions about a student's misconception, the best model for a fraction, or why a procedure works.
 
-This Praxis 5003 math study guide shows you what to prioritize, how to handle numeric-entry questions, and when the on-screen calculator helps. If you are taking all four Praxis 5001 subtests, begin with the [Praxis 5001 study guide](https://trytriumph.de5.net/praxis-5001-study-guide), then use Triumph’s [free readiness diagnostic](https://trytriumph.de5.net/diagnostic) to identify your weakest gate.
+This Praxis 5003 math study guide shows you what to prioritize, how to handle numeric-entry questions, and when the on-screen calculator helps. If you are taking all four Praxis 5001 subtests, begin with the [Praxis 5001 study guide](https://learndiag.com/praxis-5001-study-guide), then use Learndiag’s [free readiness diagnostic](https://learndiag.com/diagnostic) to identify your weakest gate.
 
 ## Praxis 5003 Test at a Glance
 
@@ -210,7 +210,7 @@ A strong routine is **estimate → enter → inspect**. Predict the approximate 
 - Rework missed questions without notes.
 - Spend the final sessions on recurring error patterns, not comfortable topics.
 
-If mathematics is your weakest subtest, use the [four-gate strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy): give it more time until it is safely above your target, rather than dividing study hours equally across all four subjects.
+If mathematics is your weakest subtest, use the [four-gate strategy](https://learndiag.com/praxis-5001-four-gate-strategy): give it more time until it is safely above your target, rather than dividing study hours equally across all four subjects.
 
 ## Test-Day Pacing Strategy
 
@@ -248,7 +248,7 @@ Before test day, make sure you can:
 - use the on-screen calculator without depending on it
 - maintain pace across 50 questions in 65 minutes
 
-You do not need equal practice in every chapter. You need evidence about where your errors cluster. [Take Triumph’s free Praxis 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic), identify the weakest gate, and turn that result into your next study session.
+You do not need equal practice in every chapter. You need evidence about where your errors cluster. [Take Learndiag’s free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic), identify the weakest gate, and turn that result into your next study session.
 
 ## Sources
 
@@ -256,6 +256,6 @@ You do not need equal practice in every chapter. You need evidence about where y
 
 [8] [ETS — Calculator Use and Tutorials](https://praxis.ets.org/test-takers/test-day-calculator-use.html)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

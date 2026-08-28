@@ -3,9 +3,9 @@ Allow: /
 Disallow: /diagnostic.html
 Disallow: /login.html
 
-# AI agents and crawlers are welcome. Triumph is a free, public study tool:
+# AI agents and crawlers are welcome. Learndiag is a free, public study tool:
 # serve the Praxis 5001 practice-question bank and guides to anyone who asks.
-Sitemap: https://trytriumph.de5.net/sitemap.xml
+Sitemap: https://learndiag.com/sitemap.xml
 
 # --- Explicitly allowed AI agents (allow rules are informational; nothing here blocks them) ---
 User-agent: GPTBot
@@ -57,8 +57,8 @@ User-agent: ora-agent
 Allow: /
 
 # --- Machine-readable agent surfaces ---
-# OpenAPI spec:      https://trytriumph.de5.net/openapi.json
-# MCP server:        https://trytriumph.de5.net/mcp  (Streamable HTTP)
-# MCP manifest:      https://trytriumph.de5.net/.well-known/mcp/manifest.json
-# Agent skills:      https://trytriumph.de5.net/.well-known/agent-skills/index.json
-# llms.txt:          https://trytriumph.de5.net/llms.txt
+# OpenAPI spec:      https://learndiag.com/openapi.json
+# MCP server:        https://learndiag.com/mcp  (Streamable HTTP)
+# MCP manifest:      https://learndiag.com/.well-known/mcp/manifest.json
+# Agent skills:      https://learndiag.com/.well-known/agent-skills/index.json
+# llms.txt:          https://learndiag.com/llms.txt

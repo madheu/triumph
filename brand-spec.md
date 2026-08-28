@@ -1,18 +1,38 @@
-# Triumph · Brand Spec（v2）
+# Learndiag · Brand Spec（v3）
 
-> 更新：2026-08-14（v1 → v2）
-> 变更：产品名 step → **Triumph**（用户定）；配色 monochrome → **莫兰迪色系**（主色 #C09D9B 灰调粉）
-> 产品名：**Triumph**（暂定，final）
+> 更新：2026-08-28（v2 → v3）
+> 变更：产品名 **Triumph → Learndiag**；主域名 `trytriumph.de5.net → learndiag.com`
+> 背景：原域名 praxis5001.com 因含 ETS 商标「Praxis」存在侵权隐患已退订；改用自有品牌域 **learndiag.com**（无品牌注册冲突，可直接用）
+> 产品名：**Learndiag**（暂定，final）
 > 定位：Praxis 5001 备考系统 —— 免费题库 + 诊断 + 通过率预测 + 个性化计划
 
 ## 🎯 核心资产
 
 ### Logo / Wordmark
-- 文字 logo：衬线（Instrument Serif italic）wordmark "Triumph."
+- 文字 logo：衬线（Instrument Serif italic）wordmark "Learndiag."
 - 风格：编辑式，像出版物栏题，不做图形标
 
 ### 产品截图/UI
 - 无既有产品（新品牌），原型即第一版 UI
+
+## ⚠️ 技术标识保留规则（重要，改品牌时勿动）
+
+以下含 `triumph` 的**技术标识**是功能依赖，**不得**随品牌改名为 Learndiag —— 改动会导致功能/数据损坏：
+
+| 技术标识 | 用途 | 为什么不能改 |
+|---|---|---|
+| `window.TriumphAuth` | 前端全局认证对象 | 所有页面 JS 依赖此名 |
+| `triumph_token` / `triumph_user` / `triumph_pending_verify` | localStorage 登录态 | 改 key 会丢失用户登录/数据 |
+| `triumph_*`（last_pass/today/answers/srs/exam_date 等） | localStorage 学习数据 | 同上，改了丢用户数据 |
+| `env.TRIUMPH_KV` / `env.TRIUMPH_D1` | Cloudflare KV/D1 绑定名 | 与部署配置绑定，改则运行时崩溃 |
+| `window.TRIUMPH_API` | 本地联调 API 覆盖标识 | 前端约定 |
+| `triumph-api` | API service 标识 | 已签发 API key 的兼容性 |
+| `triumph-6eq.pages.dev` | Cloudflare Pages 生成子域 | 平台生成，不可改 |
+| `triumph`（MCP server name / wrangler 项目名） | 平台/协议标识 | 改动影响部署与兼容 |
+| `triumph-praxis`（CLI 包名） | 对外 CLI 工具名 | 已发布产物命名 |
+| URL fragment `#triumph_token=`（Google OAuth 回跳） | 登录回调约定 | 前后端必须一致 |
+
+**品牌改名边界**：只改「页面显示给用户的品牌文字」（title/meta/wordmark/文案/邮件模板），技术标识一律保留。
 
 ## 🎨 辅助资产
 

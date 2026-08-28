@@ -29,11 +29,11 @@ const SCOPES_DESC = Object.assign({}, ...KNOWN_SCOPES.map(s => ({ [s]: `Read acc
 export const openApiSpec = {
   openapi: '3.1.0',
   info: {
-    title: 'Triumph API',
+    title: 'Learndiag API',
     version: API_VERSION,
-    summary: 'Public API for the Triumph Praxis 5001 readiness tool: practice-question bank, subtest metadata and account sync.',
+    summary: 'Public API for the Learndiag Praxis 5001 readiness tool: practice-question bank, subtest metadata and account sync.',
     description:
-      'Triumph is a free Praxis 5001 (Elementary Education: Multiple Subjects) study tool. ' +
+      'Learndiag is a free Praxis 5001 (Elementary Education: Multiple Subjects) study tool. ' +
       'This API exposes the public practice-question bank (969 original questions across four subtests), ' +
       'bank statistics, and the same account endpoints the web app uses.\n\n' +
       '**Authentication tiers**\n\n' +
@@ -41,7 +41,7 @@ export const openApiSpec = {
       `- Scoped API key: send \`X-API-Key: tri_live_...\`. Create a free key with \`POST /api/v1/keys\`. Scopes: ${KNOWN_SCOPES.join(', ')}.\n` +
       '- Bearer JWT: account endpoints (`/api/state`) use the token returned by `POST /api/login`.\n\n' +
       'All errors use one structured envelope: `{ "error": { "code", "message", "hint" }, "status" }`.',
-    contact: { name: 'Triumph support', email: 'abc15531888397@gmail.com', url: `${BASE}/contact` },
+    contact: { name: 'Learndiag support', email: 'abc15531888397@gmail.com', url: `${BASE}/contact` },
     termsOfService: `${BASE}/terms-of-service.md`,
   },
   servers: [{ url: BASE, description: 'Production' }],
@@ -378,7 +378,7 @@ export const openApiSpec = {
       MetaResponse: {
         type: 'object',
         properties: {
-          product: { type: 'string', const: 'Triumph' },
+          product: { type: 'string', const: 'Learndiag' },
           description: { type: 'string' },
           base_url: { type: 'string', format: 'uri' },
           subtests: { type: 'object', description: 'Map of subtest code → { name, questionCount, categories[] }' },

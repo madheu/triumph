@@ -1,4 +1,4 @@
-# 部署说明：Triumph（Cloudflare Pages，wrangler 直传为主）
+# 部署说明：Learndiag（Cloudflare Pages，wrangler 直传为主）
 
 > 2026-08-22 更新：**`site\` 现在是唯一事实来源**（triumph\ 里的 index.html 是过时旧稿，
 > `sync-site.ps1` 已加保护默认拒绝执行）。API 全部搬进 `site\_worker.js`（Pages 高级模式），
@@ -7,7 +7,7 @@
 ## 目录结构
 
 ```
-E:\Triumph\praxis-5001\
+E:\Learndiag\praxis-5001\
 ├── site\                        ← 部署目录（唯一事实来源，wrangler pages deploy 直接上传）
 │   ├── _worker.js               ← ★ 全部 API / MCP / Markdown 协商逻辑（Pages 高级模式）
 │   ├── index.html               ← 首页（含 SSR 静态内容 + JSON-LD + og:image）
@@ -56,11 +56,11 @@ E:\Triumph\praxis-5001\
 ## 上线验证清单（部署后跑一遍）
 
 ```powershell
-curl.exe -s -H "Accept: text/markdown" https://trytriumph.de5.net/      # text/markdown + Vary
-curl.exe -s https://trytriumph.de5.net/api/v1/health
-curl.exe -s -X POST https://trytriumph.de5.net/mcp -H "Content-Type: application/json" ^
+curl.exe -s -H "Accept: text/markdown" https://learndiag.com/      # text/markdown + Vary
+curl.exe -s https://learndiag.com/api/v1/health
+curl.exe -s -X POST https://learndiag.com/mcp -H "Content-Type: application/json" ^
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
-curl.exe -s -o NUL -w "%{http_code}" https://trytriumph.de5.net/no-page # 应为 404
+curl.exe -s -o NUL -w "%{http_code}" https://learndiag.com/no-page # 应为 404
 node tools\verify-live-home.mjs                                          # 先 curl 首页存 %TEMP%\live-home.html
 ```
 
@@ -86,7 +86,7 @@ de5.net zone 开着 **Cloudflare 托管 robots.txt + AI bot 封拦**（AI Audit 
 
 ### 2. 连接本地仓库并推送
 ```powershell
-cd E:\Triumph\praxis-5001
+cd E:\Learndiag\praxis-5001
 git init; git add -A; git commit -m "triumph site v2 (agent-ready)"
 git branch -M main
 git remote add origin https://github.com/<你的用户名>/triumph.git

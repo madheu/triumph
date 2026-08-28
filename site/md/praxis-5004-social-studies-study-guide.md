@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5004-social-studies-study-guide — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5004-social-studies-study-guide — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5004*
 
@@ -12,7 +12,7 @@ The Praxis Elementary Education: Social Studies Subtest (5004) covers a wide spa
 
 As of August 20, 2026, ETS lists Praxis 5004 with **60 questions in 60 minutes** and an individual test fee of **$64**.[5] ETS’s detailed description calls the questions selected-response, although its feature panel also mentions numeric-entry; prepare primarily for selected-response items but review the live test page before registering. Confirm your state’s current test-code requirement as well. The published timing gives you an average of one minute per question, so both knowledge and decision speed matter.
 
-Before you build a study schedule, take Triumph’s **[free Praxis 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic)**. It can help you identify which content areas deserve your next study hour instead of reviewing everything equally.
+Before you build a study schedule, take Learndiag’s **[free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic)**. It can help you identify which content areas deserve your next study hour instead of reviewing everything equally.
 
 ## Praxis 5004 Test Breakdown
 
@@ -147,7 +147,7 @@ Original practice example: A school uses limited funds to replace buses instead 
 
 If you have less time, preserve the same order but combine days. Do not skip error analysis. A wrong answer becomes useful only when you identify why you chose it.
 
-For broader preparation across all four Elementary Education subtests, use the **[Praxis 5001 study guide](https://trytriumph.de5.net/praxis-5001-study-guide)**. To organize decisions about timing, readiness, and score risk, pair this content plan with the **[Praxis 5001 Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)**.
+For broader preparation across all four Elementary Education subtests, use the **[Praxis 5001 study guide](https://learndiag.com/praxis-5001-study-guide)**. To organize decisions about timing, readiness, and score risk, pair this content plan with the **[Praxis 5001 Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)**.
 
 ## The One-Minute Pacing Plan
 
@@ -184,12 +184,12 @@ Before test day, make sure you can:
 - Maintain an average pace of one question per minute
 - Explain why each wrong practice answer is wrong
 
-The highest-yield plan is not “review everything.” It is **diagnose, prioritize, apply, and retest**. Start with Triumph’s **[free Praxis 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic)**, then use your results to turn this guide into a focused study schedule.
+The highest-yield plan is not “review everything.” It is **diagnose, prioritize, apply, and retest**. Start with Learndiag’s **[free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic)**, then use your results to turn this guide into a focused study schedule.
 
 ## Sources
 
 [5] [ETS — Elementary Education: Social Studies Subtest (5004)](https://praxis.ets.org/test/elementary-education-social-studies-subtest-5004.html)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

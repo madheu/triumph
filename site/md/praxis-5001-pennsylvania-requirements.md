@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-pennsylvania-requirements — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-pennsylvania-requirements — request any page with Accept: text/markdown -->
 
 *State guide · Praxis Pennsylvania*
 
@@ -58,9 +58,9 @@ Not for elementary as of this page's snapshot: the ETS Pennsylvania page shows n
 
 ## The Bottom Line
 
-Pennsylvania elementary candidates pass the **PECT PreK–4** modules, not Praxis 5001. The only Praxis tests relevant to elementary in Pennsylvania are the **5154 + 5155** pair for the Grades 5–6 add-on. If you are preparing for the 5001 content areas (reading, math, social studies, science) for a different state, Triumph's [free diagnostic](https://trytriumph.de5.net/diagnostic) and [question bank](https://trytriumph.de5.net/practice) cover exactly those domains — but for a Pennsylvania PK–4 license, start with the PECT program materials.
+Pennsylvania elementary candidates pass the **PECT PreK–4** modules, not Praxis 5001. The only Praxis tests relevant to elementary in Pennsylvania are the **5154 + 5155** pair for the Grades 5–6 add-on. If you are preparing for the 5001 content areas (reading, math, social studies, science) for a different state, Learndiag's [free diagnostic](https://learndiag.com/diagnostic) and [question bank](https://learndiag.com/practice) cover exactly those domains — but for a Pennsylvania PK–4 license, start with the PECT program materials.
 
-**Not sure which exam your state requires?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which exam your state requires?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
 ## Sources
 
@@ -68,4 +68,4 @@ Pennsylvania elementary candidates pass the **PECT PreK–4** modules, not Praxi
 
 [2] Pennsylvania Educator Certification Tests, "PreK–4." [https://www.pa.nesinc.com/TestView.aspx?f=HTML_FRAG/PA006_TestPage.html](https://www.pa.nesinc.com/TestView.aspx?f=HTML_FRAG/PA006_TestPage.html)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://trytriumph.de5.net/praxis-5001-vs-8000-series)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

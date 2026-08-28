@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-four-gate-strategy — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-four-gate-strategy — request any page with Accept: text/markdown -->
 
 # How to Pass the Praxis 5001: The Four-Gate Strategy
 
@@ -115,4 +115,4 @@ Diagnose first. Take a diagnostic that estimates your scaled score and identifie
 
 If you do not know which of the four subtests is your weakest, start there. Take the free 12-question Praxis 5001 diagnostic to get an estimated scaled score and a clear weak-gate ranking. It takes less than 15 minutes and will make the rest of your prep far more efficient.
 
-[Take the free Praxis 5001 diagnostic](https://trytriumph.de5.net/diagnostic)
+[Take the free Praxis 5001 diagnostic](https://learndiag.com/diagnostic)

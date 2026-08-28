@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mistake Log — Record Cause, Learn Method | Learndiag</title>
+  <meta name="description" content="Record wrong questions, identify root causes, learn methods — not memorizing questions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://learndiag.com/mistake-log">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MSR1Q1G7W9');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { min-width: 0; }
+    :root {
+      --bg: #F2EFE9; --bg-soft: #E8E3D8; --ink: #3C3733; --ink-soft: #6E6760;
+      --line: #D8D1C5; --accent: #C09D9B; --accent-deep: #A67D7A; --on-accent: #332E2B;
+      --serif: "Instrument Serif", Georgia, serif;
+      --sans: "Instrument Sans", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    html, body { height: 100%; width: 100%; overflow-x: hidden; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.75; }
+    a { color: var(--accent-deep); }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 760px) { .wrap { padding: 0 28px; } }
+
+    .nav { display: flex; align-items: baseline; justify-content: space-between; padding: 28px 0 24px; border-bottom: 1px solid var(--line); flex-wrap: wrap; gap: 10px 18px; }
+    .wordmark { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--ink); text-decoration: none; }
+    .nav-note { font-size: 13px; color: var(--ink-soft); }
+    .nav-cta { font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    @media (max-width: 760px) { .nav-note { display: none; } }
+
+    .head { padding: 56px 0 24px; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); display: block; margin-bottom: 18px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 5vw, 44px); line-height: 1.12; margin-bottom: 12px; }
+    h1 em { font-style: italic; color: var(--accent); }
+    .sub { color: var(--ink-soft); font-size: 15px; max-width: 38em; }
+
+    .stats { display: flex; gap: 32px; flex-wrap: wrap; padding: 22px 0 6px; }
+    .stat { font-family: var(--mono); }
+    .stat .num { font-size: 26px; color: var(--accent); line-height: 1.1; }
+    .stat .lbl { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+
+    .panel { background: var(--bg); border: 1px solid var(--line); padding: 22px; margin-bottom: 18px; }
+    .panel h2 { font-family: var(--serif); font-weight: 400; font-size: 20px; margin-bottom: 14px; }
+    .panel h2 em { font-style: italic; color: var(--accent); }
+
+    label { font-size: 12px; color: var(--ink-soft); font-weight: 500; display: block; margin-bottom: 6px; letter-spacing: 0.02em; }
+    .field { margin-bottom: 14px; }
+    select, input, textarea {
+      font-family: var(--sans); font-size: 15px; padding: 11px 13px;
+      border: 1px solid var(--line); border-radius: 0; background: var(--bg);
+      color: var(--ink); width: 100%; outline: none;
+    }
+    select:focus, input:focus, textarea:focus { border-color: var(--accent); }
+    select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+    select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--accent-deep) 50%), linear-gradient(135deg, var(--accent-deep) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 34px; }
+    textarea { resize: vertical; min-height: 90px; }
+
+    .btn { display: inline-block; padding: 12px 18px; font-family: var(--sans); font-size: 14px; font-weight: 600; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: var(--on-accent); }
+    .btn-primary:hover { background: var(--accent-deep); color: var(--bg); }
+    .btn-ghost { background: var(--bg); border: 1px solid var(--line); color: var(--ink); }
+    .btn-ghost:hover { border-color: var(--ink); }
+    .btn:disabled { opacity: .5; cursor: wait; }
+    .small { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+
+    .log-item { border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 14px 16px; margin-top: 10px; background: var(--bg); }
+    .log-item .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-deep); border: 1px solid var(--accent); border-radius: 999px; padding: 1px 8px; margin-right: 8px; }
+    .log-item .q { font-family: var(--serif); font-size: 17px; line-height: 1.4; margin: 6px 0 4px; }
+    .log-item .method { font-size: 14px; color: var(--ink-soft); }
+    .log-item .meta { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 6px; }
+    .log-item .del { margin-top: 10px; font-size: 13px; padding: 7px 12px; }
+
+    .empty { text-align: center; padding: 40px 0 12px; color: var(--ink-soft); font-style: italic; }
+
+    .review-box { background: var(--bg-soft); padding: 18px 20px; font-size: 15px; min-height: 96px; border-left: 2px solid var(--accent); margin: 6px 0 16px; }
+    .review-box .cause { color: var(--accent-deep); font-family: var(--mono); font-size: 13px; display: block; margin: 8px 0; }
+
+    .note { font-size: 13px; color: var(--ink-soft); background: var(--bg-soft); border-left: 2px solid var(--accent); padding: 12px 16px; margin: 0 0 20px; }
+
+    .footer { padding: 48px 0 64px; border-top: 1px solid var(--line); margin-top: 48px; }
+    .footer p { font-size: 12px; color: var(--ink-soft); line-height: 1.7; max-width: 60em; }
+  </style>
+  <link rel="stylesheet" href="css/mobile-enhance.css?v=20260821">
+</head>
+<body>
+  <header class="nav wrap">
+    <a class="wordmark" href="/">Learndiag<span style="color:var(--accent)">.</span></a>
+    <div style="display:flex; gap:24px; align-items:baseline;">
+      <span class="nav-note">Mistake log · root cause &amp; method</span>
+      <a class="nav-cta" href="dashboard">Dashboard</a>
+      <a class="nav-cta" href="diagnostic">Free diagnostic →</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="head">
+      <span class="eyebrow">Mistake log</span>
+      <h1>Record the cause, <em>learn the method.</em></h1>
+      <p class="sub">Don't memorize the answer — classify why you missed it (A · B · C), then write the method you'll use next time. Everything stays in this browser.</p>
+    </div>
+
+    <div class="note">
+      <strong>How it works:</strong> type the question or error topic, pick the root-cause class below, and write the reflection method. Stored locally in this browser (localStorage) — clearing your browser data removes it.
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num" id="statCount">0</div><div class="lbl">wrong entries</div></div>
+      <div class="stat"><div class="num" id="statTopQ" style="font-size:16px">—</div><div class="lbl">most wrong topic</div></div>
+      <div class="stat"><div class="num" id="statTopCat" style="font-size:16px">—</div><div class="lbl">top cause</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Add a <em>mistake</em></h2>
+      <form onsubmit="addEntry(event)">
+        <div class="field">
+          <label for="q">Question / Error Topic</label>
+          <input id="q" placeholder="e.g. Growth-rate calculation — picked wrong option" required />
+        </div>
+        <div class="field">
+          <label for="cat">Root-Cause Class</label>
+          <select id="cat" required>
+            <option value="A">A — Careless (calculation / misread option)</option>
+            <option value="B">B — Knowledge Gap (concept / formula not mastered)</option>
+            <option value="C">C — Method Error (wrong approach / steps)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="free">Method / Reflection (learn FROM error)</label>
+          <textarea id="free" placeholder="e.g. Draw the chart first before calculating; don't jump to formula — check units first" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Mistake Log</button>
+        <p class="small">Tip: record the cause and the method — not the answer to memorize.</p>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h2>Mistake <em>list</em> <span class="small" id="countLabel">(0 items)</span></h2>
+      <div id="list"></div>
+      <div style="text-align:center;margin-top:16px"><button onclick="clearAll()" class="btn btn-ghost">Clear All</button></div>
+    </div>
+
+    <div class="panel">
+      <h2>Mistake <em>review</em></h2>
+      <p class="small" style="margin-top:0">Random prompt from your log — read the method, not the answer.</p>
+      <div class="review-box" id="reviewPrompt">Click "Next Review" to load a mistake.</div>
+      <button onclick="nextReview()" class="btn btn-primary">Next Review</button>
+    </div>
+  </main>
+
+  <footer class="footer wrap">
+    <p>Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS.</p>
+  <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  </footer>
+
+  <script>
+    const KEY='mistake_log_v1';
+    function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+    function save(d){localStorage.setItem(KEY,JSON.stringify(d));render();}
+    function hexTag(c){return c==='A'?'Careless':c==='B'?'Gap':c==='C'?'Method':(c||'?');}
+    function computeStats(d){
+      document.getElementById('statCount').textContent=d.length;
+      if(!d.length){document.getElementById('statTopQ').textContent='—';document.getElementById('statTopCat').textContent='—';return;}
+      const freqQ={};const freqCat={};
+      d.forEach(it=>{freqQ[it.q]=(freqQ[it.q]||0)+1; freqCat[it.cat]=(freqCat[it.cat]||0)+1;});
+      const topQ=Object.entries(freqQ).sort((a,b)=>b[1]-a[1])[0][0];
+      const topCat=Object.entries(freqCat).sort((a,b)=>b[1]-a[1])[0][0];
+      document.getElementById('statTopQ').textContent=esc(topQ).slice(0,24);
+      document.getElementById('statTopCat').textContent=hexTag(topCat)+' ×'+freqCat[topCat];
+    }
+    function nextReview(){
+      const d=load(); const box=document.getElementById('reviewPrompt');
+      if(!d.length){box.innerHTML='<em>No mistakes yet — add one above to start reviewing.</em>'; return;}
+      const r=d[Math.floor(Math.random()*d.length)];
+      box.innerHTML='<strong>Review:</strong> '+esc(r.q||'')+'<span class="cause"><strong>Cause:</strong> '+esc(hexTag(r.cat))+'</span><strong>Method learned:</strong> '+esc(r.free||'');
+    }
+    function render(){
+      const list=document.getElementById('list');
+      const d=load();
+      document.getElementById('countLabel').textContent='('+d.length+' items)';
+      if(!d.length){list.innerHTML='<div class="empty">No records yet — add your first wrong-question entry above.</div>';computeStats(d);return;}
+      computeStats(d);
+      list.innerHTML=d.map((it,i)=>
+        '<div class="log-item">'+
+        '<span class="tag">'+(it.cat||'?')+'</span> '+esc(hexTag(it.cat))+
+        '<div class="q">'+esc(it.q||'(no text)')+'</div>'+
+        '<div class="method"><strong>Method learned:</strong> '+esc(it.free||'')+'</div>'+
+        '<div class="meta">Recorded: '+new Date(it.t||Date.now()).toLocaleString('en-US')+'</div>'+
+        '<button class="btn btn-ghost del" onclick="delEntry('+i+')">Delete</button>'+
+        '</div>').join('');
+      computeStats(d);
+    }
+    function esc(s){const d=document.createElement('div');d.textContent=String(s||'');return d.innerHTML;}
+    function addEntry(e){e.preventDefault();
+      const q=document.getElementById('q').value.trim();
+      const cat=document.getElementById('cat').value;
+      const free=document.getElementById('free').value.trim();
+      if(!q||!free) return;
+      const d=load(); d.push({q,cat,free,t:Date.now()}); save(d);
+      document.getElementById('q').value=''; document.getElementById('free').value='';
+    }
+    function delEntry(i){const d=load(); d.splice(i,1); save(d);}
+    function clearAll(){if(confirm('Clear all mistake records?')){localStorage.removeItem(KEY);render();nextReview();}}
+    render(); nextReview();
+  </script>
+</body>
+</html>

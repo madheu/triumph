@@ -29,11 +29,11 @@ async function sendVerificationEmail(env, email, code) {
       body: JSON.stringify({
         from,
         to: [email],
-        subject: 'Your Triumph verification code',
-        html: `<p>Your Triumph verification code is:</p>
+        subject: 'Your Learndiag verification code',
+        html: `<p>Your Learndiag verification code is:</p>
                <p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p>
                <p>Enter this code to activate your account. It expires in 15 minutes.</p>
-               <p style="color:#6E6760;font-size:12px">Triumph · independent Praxis 5001 study tool · not affiliated with ETS</p>`,
+               <p style="color:#6E6760;font-size:12px">Learndiag · independent Praxis 5001 study tool · not affiliated with ETS</p>`,
       }),
     });
     if (!res.ok) {
@@ -46,8 +46,8 @@ async function sendVerificationEmail(env, email, code) {
     const form = new URLSearchParams();
     form.set('from', from);
     form.set('to', email);
-    form.set('subject', 'Your Triumph verification code');
-    form.set('html', `<p>Your Triumph verification code is:</p><p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p><p>Expires in 15 minutes.</p>`);
+    form.set('subject', 'Your Learndiag verification code');
+    form.set('html', `<p>Your Learndiag verification code is:</p><p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p><p>Expires in 15 minutes.</p>`);
     const res = await fetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
       method: 'POST',
       headers: { 'Authorization': 'Basic ' + btoa('api:' + env.MAILGUN_API_KEY) },
@@ -105,6 +105,12 @@ async function hLogin(request, env) {
   const recJson = await env.TRIUMPH_KV.get(USER_KEY(email));
   if (!recJson) return apiError('invalid_credentials');
   const rec = JSON.parse(recJson);
+
+  // Google-only accounts have no password hash — tell the user to sign in with
+  // Google instead of failing with a confusing "incorrect password".
+  if (!rec.hashHex && rec.googleSub) {
+    return apiError('use_google', { email });
+  }
 
   const { hashHex } = await hashPassword(password, rec.saltHex);
   if (!timingSafeEqual(hashHex, rec.hashHex)) return apiError('invalid_credentials');

@@ -1,16 +1,16 @@
-// seo-publish.js — 把 Triumph SEO/*.md 文章转成 site/<slug>.html（纯静态 HTML，无 React 依赖）
+// seo-publish.js — 把 Learndiag SEO/*.md 文章转成 site/<slug>.html（纯静态 HTML，无 React 依赖）
 // 用法: node seo-publish.js
-// 输入: E:/Triumph/Triumph SEO/*.md（带 YAML front matter: title/slug/meta_description）
-// 输出: E:/Triumph/praxis-5001/site/<slug>.html
+// 输入: E:/Learndiag/Learndiag SEO/*.md（带 YAML front matter: title/slug/meta_description）
+// 输出: E:/Learndiag/praxis-5001/site/<slug>.html
 // 支持: front matter、GFM 表格（含对齐）、内链(/diagnostic 等)、外链、blockquote、
 //       有序/无序列表、checkbox 列表、行内 code、粗斜体、裸 URL 自动链接、Sources 小节
 // 州落地页: front matter 含 state_name 时启用 geo meta + contentLocation JSON-LD + 州专属头部
 import fs from 'fs';
 import path from 'path';
 
-const SRC_DIR = 'E:/Triumph/Triumph SEO';
-const OUT_DIR = 'E:/Triumph/praxis-5001/site';
-const SITE = 'https://trytriumph.de5.net'; // 正式公开域名（canonical 统一用它）
+const SRC_DIR = 'E:/Learndiag/Learndiag SEO';
+const OUT_DIR = 'E:/Learndiag/praxis-5001/site';
+const SITE = 'https://learndiag.com'; // 正式公开域名（canonical 统一用它）
 const DATE = '2026-08-24';
 
 // ---------- YAML front matter ----------
@@ -147,15 +147,27 @@ function geoRegionFor(state) {
 }
 
 // 检查清单要求的"内容集群内链"：单科指南回链总指南 + Four-Gate；8000 文章链回 vs-7001
+// 注意顺序：具体 slug 的分支必须放在通用 praxis-500 前缀分支之前，
+// 否则 praxis-5001-vs-8000-series / praxis-5001-passing-scores 会被通用分支提前截获。
 function relatedLinks(slug) {
-  if (slug.startsWith('praxis-500')) {
-    return `<p>Related: <a href="/praxis-5001-study-guide">Praxis 5001 Study Guide (all four subtests)</a> &middot; <a href="/praxis-5001-four-gate-strategy">The Four-Gate Strategy</a></p>`;
+  // 新文章：各州 qualifying score 落地页 → 回链总分数页 + 8000 系列
+  if (slug.includes('passing-score-by-state')) {
+    return `<p>Related: <a href="/praxis-5001-passing-scores">How to Look Up Your State's Qualifying Score</a> &middot; <a href="/praxis-5001-vs-8000-series">Praxis 5001 vs the 8000 Series</a></p>`;
   }
+  // 新文章：四科子考解读 → 回链总指南 + 州分数页
+  if (slug.includes('subtests-explained')) {
+    return `<p>Related: <a href="/praxis-5001-study-guide">Praxis 5001 Study Guide</a> &middot; <a href="/praxis-5001-passing-score-by-state">Passing Scores by State</a></p>`;
+  }
+  // 8000 系列文章 → 链回 vs-7001（须在 startsWith('praxis-500') 之前判断）
   if (slug.includes('8000')) {
     return `<p>Related: <a href="/praxis-5001-vs-7001">Praxis 5001 vs 7001: What&rsquo;s Changing</a></p>`;
   }
+  // 总分数页 → 总指南 + 8000 系列（同样须在通用分支之前）
   if (slug.includes('passing-scores')) {
     return `<p>Related: <a href="/praxis-5001-study-guide">Praxis 5001 Study Guide</a> &middot; <a href="/praxis-5001-vs-8000-series">Praxis 5001 vs the 8000 Series</a></p>`;
+  }
+  if (slug.startsWith('praxis-500')) {
+    return `<p>Related: <a href="/praxis-5001-study-guide">Praxis 5001 Study Guide (all four subtests)</a> &middot; <a href="/praxis-5001-four-gate-strategy">The Four-Gate Strategy</a></p>`;
   }
   return '';
 }
@@ -200,8 +212,8 @@ function articleLd(data) {
     "headline": data.title,
     "description": data.meta_description,
     "datePublished": data.date || DATE,
-    "author": { "@type": "Organization", "name": "Triumph" },
-    "publisher": { "@type": "Organization", "name": "Triumph" },
+    "author": { "@type": "Organization", "name": "Learndiag" },
+    "publisher": { "@type": "Organization", "name": "Learndiag" },
     "mainEntityOfPage": `${SITE}/${data.slug}`
   };
   if (data.state_name) {
@@ -223,7 +235,7 @@ function page({ title, slug, desc, body, words, data = {} }) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${esc(title)} | Triumph</title>
+  <title>${esc(title)} | Learndiag</title>
   <meta name="description" content="${esc(desc)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${SITE}/${slug}">
@@ -309,7 +321,7 @@ ${stateHeadExtra(data)}<!-- Google tag (gtag.js) -->
 </head>
 <body>
   <header class="nav wrap">
-    <a class="wordmark" href="/" aria-label="Triumph home">Triumph<span style="color:var(--accent)">.</span></a>
+    <a class="wordmark" href="/" aria-label="Learndiag home">Learndiag<span style="color:var(--accent)">.</span></a>
     <div style="display:flex; gap:24px; align-items:baseline;">
       <span class="nav-note">Praxis 5001 · unofficial</span>
       <a class="nav-cta" href="/">Home</a>
@@ -324,14 +336,14 @@ ${stateHeadExtra(data)}<!-- Google tag (gtag.js) -->
     <div class="meta-line">${pubDate} · Reading time: about ${readMin} min</div>
 ${body}
     <div class="cta-box">
-      <p style="margin:0"><strong>Not sure which gate is weakest?</strong> Take the free Praxis readiness diagnostic &rarr; <a href="/diagnostic">Triumph readiness check</a></p>
+      <p style="margin:0"><strong>Not sure which gate is weakest?</strong> Take the free Praxis readiness diagnostic &rarr; <a href="/diagnostic">Learndiag readiness check</a></p>
     </div>
 ${related ? `<div class="related">${related}</div>` : ''}
   </article>
 
   <footer class="footer wrap">
     ${isState && data.agency_name ? `<p><strong>${data.state_name} certification authority:</strong> <a href="${data.agency_url || '#'}">${data.agency_name}</a>. Confirm every requirement — test codes, qualifying scores, deadlines, and reciprocity rules — with the agency and with ETS before registering.</p>` : ''}
-    <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. Exam facts (question counts, timing, fees) reflect ETS pages as of ${pubDate} and can change — confirm with ETS and your state licensing agency before registering.</p>
+    <p>Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. Exam facts (question counts, timing, fees) reflect ETS pages as of ${pubDate} and can change — confirm with ETS and your state licensing agency before registering.</p>
   </footer>
 </body>
 </html>

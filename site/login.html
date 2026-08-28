@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Log in or Sign up | Triumph</title>
-  <meta name="description" content="Log in to Triumph to sync your Praxis 5001 diagnostic results, study plan, and progress across devices.">
+  <title>Log in or Sign up | Learndiag</title>
+  <meta name="description" content="Log in to Learndiag to sync your Praxis 5001 diagnostic results, study plan, and progress across devices.">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="canonical" href="https://trytriumph.de5.net/login">
+  <link rel="canonical" href="https://learndiag.com/login">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -35,6 +35,11 @@
     .sub { color: var(--ink-soft); font-size: 15px; margin-bottom: 32px; max-width: 34em; }
 
     .card { background: var(--bg-soft); padding: 26px; }
+    .divider { display: flex; align-items: center; gap: 12px; margin: 20px 0 4px; color: var(--ink-soft); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .google-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px 20px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--ink); background: var(--bg); border: 1px solid var(--line); cursor: pointer; margin-bottom: 20px; }
+    .google-btn:hover { border-color: var(--accent-deep); background: #fff; }
+    .google-btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
     .field { margin-bottom: 16px; }
     label { display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); margin-bottom: 6px; }
     input { width: 100%; padding: 12px 14px; font-family: var(--sans); font-size: 16px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); outline: none; }
@@ -56,7 +61,7 @@
 </head>
 <body>
   <header class="nav wrap">
-    <a class="wordmark" href="/">Triumph<span style="color:var(--accent)">.</span></a>
+    <a class="wordmark" href="/">Learndiag<span style="color:var(--accent)">.</span></a>
   </header>
 
   <main class="auth wrap">
@@ -65,6 +70,11 @@
     <p class="sub">Log in to sync your diagnostic results, study plan, daily tasks, and memory cards across devices. Free — no payment needed.</p>
 
     <div class="card">
+      <button type="button" class="google-btn" id="google-btn" aria-label="Continue with Google">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        <span>Continue with Google</span>
+      </button>
+      <div class="divider">or use email</div>
       <form id="auth-form" novalidate>
         <div class="field">
           <label for="email">Email</label>
@@ -91,10 +101,11 @@
   </main>
 
   <footer class="footer wrap">
-    <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS.</p>
+    <p>Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS.</p>
+  <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
   </footer>
 
-  <script src="js/auth.js"></script>
+  <script src="js/auth.js?v=2"></script>
   <script>
     (function () {
       const A = window.TriumphAuth;
@@ -105,6 +116,12 @@
       }
       let mode = 'login'; // login | register | verify
       let pendingEmail = '';
+      // 登录/注册成功后回跳来源页（站内相对路径才接受；默认 dashboard）
+      let nextUrl = 'dashboard';
+      try {
+        const nx = new URLSearchParams(window.location.search).get('next');
+        if (nx && !/^[a-z]+:/i.test(nx) && !nx.startsWith('//') && !nx.includes('\\')) nextUrl = nx;
+      } catch (e) {}
 
       const emailEl = document.getElementById('email');
       const passEl = document.getElementById('password');
@@ -118,6 +135,34 @@
       const switchLabel = document.getElementById('switch-label');
       const resendBtn = document.getElementById('resend-btn');
       const form = document.getElementById('auth-form');
+      const googleBtn = document.getElementById('google-btn');
+
+      // ---------- Google OAuth: handle the callback fragment ----------
+      // /api/auth/google/callback 302 → /login.html#triumph_token=...&triumph_email=...&created=...&next=...
+      function tryGoogleCallback() {
+        const raw = window.location.hash;
+        if (!raw || raw.indexOf('triumph_token=') === -1) return false;
+        const params = new URLSearchParams(raw.replace(/^#/, ''));
+        const token = params.get('triumph_token');
+        const email = params.get('triumph_email') || '';
+        const next = params.get('next') || 'dashboard';
+        if (!token) return false;
+        // Store the session exactly like a normal login, then forward.
+        A._setSession(token, email);
+        try { A.syncAll(); } catch (syncErr) {}
+        // Clean the fragment so a refresh doesn't re-run this.
+        try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
+        window.location.href = (next && next !== 'login' && next !== 'login.html') ? next : 'dashboard';
+        return true;
+      }
+      if (tryGoogleCallback()) return;
+
+      if (googleBtn) {
+        googleBtn.addEventListener('click', () => {
+          const nx = new URLSearchParams(window.location.search).get('next');
+          A.googleLogin(nx || 'dashboard');
+        });
+      }
 
       function setMode(m) {
         mode = m;
@@ -162,7 +207,7 @@
           try {
             await A.verify(pendingEmail, code);
             try { await A.syncAll(); } catch (syncErr) {}
-            window.location.href = 'dashboard';
+            window.location.href = nextUrl;
           } catch (err) {
             const msg = {
               wrong_code: 'That code isn\u2019t right. Check the email and try again.',
@@ -184,7 +229,7 @@
           if (mode === 'login') {
             await A.login(email, password);
             try { await A.syncAll(); } catch (syncErr) {}
-            window.location.href = 'dashboard';
+            window.location.href = nextUrl;
           } else {
             await A.register(email, password);
             // 正常会抛 verification_required / mail_failed，由下方 catch 处理
@@ -218,7 +263,7 @@
       });
 
       // 已登录则直接进 dashboard
-      if (A.isLoggedIn()) window.location.href = 'dashboard';
+      if (A.isLoggedIn()) window.location.href = nextUrl;
     })();
   </script>
 </body>

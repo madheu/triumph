@@ -45,13 +45,13 @@ export async function storeResetToken(env, email) {
 async function sendResetEmail(env, email, token) {
   const from = env.EMAIL_FROM || '';
   if (!from) throw new Error('EMAIL_FROM not configured');
-  const base = env.SITE_URL || 'https://trytriumph.de5.net';
+  const base = env.SITE_URL || 'https://learndiag.com';
   const link = `${base}/reset.html?token=${token}&email=${encodeURIComponent(email)}`;
-  const html = `<p>We received a request to reset your Triumph password.</p>
+  const html = `<p>We received a request to reset your Learndiag password.</p>
     <p><a href="${link}" style="display:inline-block;background:#A67D7A;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none">Reset my password</a></p>
     <p>If you didn't ask for this, you can safely ignore this email. This link expires in 30 minutes.</p>
-    <p style="color:#6E6760;font-size:12px">Triumph · independent Praxis 5001 study tool · not affiliated with ETS</p>`;
-  const body = { from, to: [email], subject: 'Reset your Triumph password', html };
+    <p style="color:#6E6760;font-size:12px">Learndiag · independent Praxis 5001 study tool · not affiliated with ETS</p>`;
+  const body = { from, to: [email], subject: 'Reset your Learndiag password', html };
   if (env.RESEND_API_KEY) {
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',

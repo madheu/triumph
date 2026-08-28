@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-study-guide — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-study-guide — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5001*
 
@@ -81,13 +81,13 @@ Each subtest produces its own scaled score, typically reported on a 100–200 sc
 
 **Ready to find out which gate is your weakest?** Our free 12-question diagnostic samples all four subtests and estimates your scaled score against a typical passing line — no account, no cost.
 
-→ [Take the free 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic)
+→ [Take the free 5001 readiness diagnostic](https://learndiag.com/diagnostic)
 
 ## Subtest study guides
 
 Go deeper on each gate with our single-subject guides:
 
-- [Praxis 5002 Study Guide](https://trytriumph.de5.net/praxis-5002-study-guide.html) — reading foundations, writing, and literacy pedagogy
-- [Praxis 5003 Math Study Guide](https://trytriumph.de5.net/praxis-5003-math-study-guide.html) — what to study and how to use the calculator
-- [Praxis 5004 Social Studies Study Guide](https://trytriumph.de5.net/praxis-5004-social-studies-study-guide.html) — a high-yield review plan
-- [Praxis 5005 Science Study Guide](https://trytriumph.de5.net/praxis-5005-science-study-guide.html) — earth, life, physical science, and inquiry
+- [Praxis 5002 Study Guide](https://learndiag.com/praxis-5002-study-guide.html) — reading foundations, writing, and literacy pedagogy
+- [Praxis 5003 Math Study Guide](https://learndiag.com/praxis-5003-math-study-guide.html) — what to study and how to use the calculator
+- [Praxis 5004 Social Studies Study Guide](https://learndiag.com/praxis-5004-social-studies-study-guide.html) — a high-yield review plan
+- [Praxis 5005 Science Study Guide](https://learndiag.com/praxis-5005-science-study-guide.html) — earth, life, physical science, and inquiry

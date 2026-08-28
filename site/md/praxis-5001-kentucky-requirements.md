@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-kentucky-requirements — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-kentucky-requirements — request any page with Accept: text/markdown -->
 
 *State guide · Praxis Kentucky*
 
@@ -95,7 +95,7 @@ No switch is announced as of August 2026 — Kentucky still lists the 5001 famil
 
 Kentucky still requires the **Praxis 5001** for elementary (P–5) certification — subtest lines of 157/157/155/159, plus PLT K–6 at 160 and a five-year score-validity window. Confirm the current rules with the Kentucky Education Professional Standards Board and ETS before you register, and re-check if you plan to test after a new test series is adopted.
 
-**Planning your Kentucky study schedule?** Take the free [Triumph readiness diagnostic](https://trytriumph.de5.net/diagnostic) to see which of the four 5001 gates needs work before you book your test. Our [free practice bank](https://trytriumph.de5.net/practice) covers 5002, 5003, 5004, and 5005 by blueprint category.
+**Planning your Kentucky study schedule?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) to see which of the four 5001 gates needs work before you book your test. Our [free practice bank](https://learndiag.com/practice) covers 5002, 5003, 5004, and 5005 by blueprint category.
 
 ## Sources
 
@@ -105,6 +105,6 @@ Kentucky still requires the **Praxis 5001** for elementary (P–5) certification
 
 [3] ETS, "The Praxis Elementary Education Assessment: Updates and Enhancements." [https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

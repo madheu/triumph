@@ -1,4 +1,4 @@
-/* Triumph auth.js — 账户 API 封装 + 云端同步层
+/* Learndiag auth.js — 账户 API 封装 + 云端同步层
  * 依赖: 无。所有页面 <script src="js/auth.js"></script> 后可用 window.TriumphAuth
  * 后端: 同域 Pages Functions（/api/*），不再依赖 workers.dev 域名
  * 可用 window.TRIUMPH_API 覆盖（本地联调时指向其他地址）
@@ -96,6 +96,15 @@
       try { localStorage.removeItem(VERIFY_KEY); } catch (e) {}
       this._setSession(d.token, d.user.email);
       return d.user;
+    },
+    // 跳转到 Google OAuth 授权页（后端 /api/auth/google 处理 PKCE + 302）。
+    // 回调成功后 token 经 fragment 回到 /login.html，由 handleGoogleCallback 接管。
+    googleLogin(next) {
+      const base = this.apiBase || '';
+      const params = new URLSearchParams();
+      const target = (next && typeof next === 'string') ? next : 'dashboard';
+      params.set('next', target);
+      window.location.href = base + '/api/auth/google?' + params.toString();
     },
     async me() {
       if (!this.token) return null;

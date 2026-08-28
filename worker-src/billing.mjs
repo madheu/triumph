@@ -49,7 +49,7 @@ export async function hBillingCheckout(request, env) {
   if (!productId) return apiError('internal_error', { hint: 'CREEM_PRODUCT_ID not configured.' });
 
   // 创建 checkout（Creem REST 用 snake_case 字段；customer.email 直接传无需预建）
-  const successUrl = (env.SITE_URL || 'https://trytriumph.de5.net') + '/upgrade.html';
+  const successUrl = (env.SITE_URL || 'https://learndiag.com') + '/upgrade.html';
   const chkRes = await fetch(CREEM_BASE(env) + '/checkouts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-api-key': key },

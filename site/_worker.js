@@ -38,12 +38,14 @@ var ERROR_CATALOG = {
   invalid_api_key: { status: 401, message: "The supplied API key is not valid.", hint: "Pass a valid key in the X-API-Key header, or create one via POST /api/v1/keys." },
   forbidden_scope: { status: 403, message: "The API key does not include the scope required for this endpoint.", hint: "Recreate the key via POST /api/v1/keys requesting the missing scope listed in the error details." },
   not_verified: { status: 403, message: "This account exists but has not been verified yet.", hint: "Submit the emailed 6-digit code via POST /api/verify, or request a new one via POST /api/resend." },
+  use_google: { status: 409, message: "This account uses Google sign-in \u2014 there is no password.", hint: 'Click "Continue with Google" to sign in, or set a password after signing in.' },
   email_taken: { status: 409, message: "An account with this email already exists.", hint: "Use POST /api/login instead, or recover the password from the login page." },
   not_found: { status: 404, message: "The requested resource does not exist.", hint: "Consult /openapi.json for the list of available endpoints." },
   conflict: { status: 409, message: "The resource conflicts with an existing one.", hint: "Change the unique field (e.g. slug or id) and retry." },
   not_registered: { status: 404, message: "No account was found for this email.", hint: "Create the account first with POST /api/register." },
   method_not_allowed: { status: 405, message: "HTTP method not allowed for this endpoint.", hint: "See the allowed methods for this path in /openapi.json." },
   mail_failed: { status: 502, message: "The verification email could not be sent right now.", hint: 'Your account was created; retry with POST /api/resend { "email": "..." } in a moment.' },
+  google_not_configured: { status: 503, message: "Google sign-in is not configured yet.", hint: "Contact the site owner \u2014 Google OAuth credentials are not set up." },
   too_many_requests: { status: 429, message: "Rate limit exceeded.", hint: "Wait before retrying; free-tier limits reset hourly." },
   internal_error: { status: 500, message: "Unexpected server error.", hint: "Retry the request; if it persists contact abc15531888397@gmail.com." }
 };
@@ -148,11 +150,11 @@ async function sendVerificationEmail(env, email, code) {
       body: JSON.stringify({
         from,
         to: [email],
-        subject: "Your Triumph verification code",
-        html: `<p>Your Triumph verification code is:</p>
+        subject: "Your Learndiag verification code",
+        html: `<p>Your Learndiag verification code is:</p>
                <p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p>
                <p>Enter this code to activate your account. It expires in 15 minutes.</p>
-               <p style="color:#6E6760;font-size:12px">Triumph \xB7 independent Praxis 5001 study tool \xB7 not affiliated with ETS</p>`
+               <p style="color:#6E6760;font-size:12px">Learndiag \xB7 independent Praxis 5001 study tool \xB7 not affiliated with ETS</p>`
       })
     });
     if (!res.ok) {
@@ -165,8 +167,8 @@ async function sendVerificationEmail(env, email, code) {
     const form = new URLSearchParams();
     form.set("from", from);
     form.set("to", email);
-    form.set("subject", "Your Triumph verification code");
-    form.set("html", `<p>Your Triumph verification code is:</p><p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p><p>Expires in 15 minutes.</p>`);
+    form.set("subject", "Your Learndiag verification code");
+    form.set("html", `<p>Your Learndiag verification code is:</p><p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p><p>Expires in 15 minutes.</p>`);
     const res = await fetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
       method: "POST",
       headers: { "Authorization": "Basic " + btoa("api:" + env.MAILGUN_API_KEY) },
@@ -222,6 +224,9 @@ async function hLogin(request, env) {
   const recJson = await env.TRIUMPH_KV.get(USER_KEY(email));
   if (!recJson) return apiError("invalid_credentials");
   const rec = JSON.parse(recJson);
+  if (!rec.hashHex && rec.googleSub) {
+    return apiError("use_google", { email });
+  }
   const { hashHex } = await hashPassword(password, rec.saltHex);
   if (!timingSafeEqual(hashHex, rec.hashHex)) return apiError("invalid_credentials");
   if (!rec.verified) return apiError("not_verified", { email });
@@ -314,6 +319,184 @@ var ACCOUNT_ROUTES = {
   "/api/state": { GET: hStateGet, PUT: hStatePut }
 };
 
+// worker-src/google-auth.mjs
+var GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth";
+var GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token";
+var GOOGLE_KEYS_URL = "https://www.googleapis.com/oauth2/v3/certs";
+var SCOPE = "openid email profile";
+var STATE_KEY_PREFIX = "gauth:state:";
+var STATE_TTL = 600;
+var jwksCache = null;
+function base64urlEncode(input) {
+  if (typeof input === "string") input = new TextEncoder().encode(input);
+  let bin = "";
+  input.forEach((b) => bin += String.fromCharCode(b));
+  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+}
+function base64urlDecode(s) {
+  const b64 = s.replace(/-/g, "+").replace(/_/g, "/");
+  const bin = atob(b64);
+  const u8 = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+  return u8;
+}
+async function genRandomHex(bytes) {
+  const u8 = crypto.getRandomValues(new Uint8Array(bytes));
+  return Array.from(u8).map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+async function sha256Base64url(data) {
+  const hash = await crypto.subtle.digest("SHA-256", typeof data === "string" ? new TextEncoder().encode(data) : data);
+  return base64urlEncode(new Uint8Array(hash));
+}
+async function getGoogleJwk(kid) {
+  const now = Date.now();
+  if (!jwksCache || now - jwksCache.fetchedAt > 3600 * 1e3 || kid && !jwksCache.keys[kid]) {
+    const res = await fetch(GOOGLE_KEYS_URL);
+    if (!res.ok) throw new Error("google_keys_fetch_failed:" + res.status);
+    const { keys } = await res.json();
+    const map = {};
+    for (const k of keys) {
+      const jwk = { kty: k.kty, n: k.n, e: k.e, alg: k.alg };
+      map[k.kid] = await crypto.subtle.importKey("jwk", jwk, { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["verify"]);
+    }
+    jwksCache = { fetchedAt: now, keys: map };
+  }
+  return jwksCache.keys[kid] || null;
+}
+async function verifyGoogleIdToken(token, clientId) {
+  const parts = token.split(".");
+  if (parts.length !== 3) throw new Error("bad_id_token");
+  const header = JSON.parse(new TextDecoder().decode(base64urlDecode(parts[0])));
+  if (header.alg !== "RS256") throw new Error("unexpected_alg:" + header.alg);
+  const key = await getGoogleJwk(header.kid);
+  if (!key) throw new Error("unknown_kid:" + header.kid);
+  const data = new TextEncoder().encode(parts[0] + "." + parts[1]);
+  const sig = base64urlDecode(parts[2]);
+  const valid = await crypto.subtle.verify("RSASSA-PKCS1-v1_5", key, sig, data);
+  if (!valid) throw new Error("bad_signature");
+  const payload = JSON.parse(new TextDecoder().decode(base64urlDecode(parts[1])));
+  if (payload.iss !== "https://accounts.google.com" && payload.iss !== "accounts.google.com") throw new Error("bad_iss");
+  if (payload.aud !== clientId) throw new Error("bad_aud");
+  if (!payload.exp || payload.exp * 1e3 < Date.now()) throw new Error("token_expired");
+  if (!payload.email || payload.email_verified !== true) throw new Error("email_not_verified");
+  return payload;
+}
+async function hGoogleStart(request, env) {
+  const clientId = env.GOOGLE_CLIENT_ID;
+  if (!clientId) return apiError("google_not_configured");
+  const url = new URL(request.url);
+  const nextRaw = url.searchParams.get("next") || "";
+  const mode = url.searchParams.get("mode") || "login";
+  let next = "dashboard";
+  if (nextRaw && !/^[a-z]+:/i.test(nextRaw) && !nextRaw.startsWith("//") && !nextRaw.includes("\\")) {
+    next = nextRaw.replace(/^\//, "");
+  }
+  if (next === "login" || next === "login.html") next = "dashboard";
+  const state = await genRandomHex(24);
+  const verifier = await genRandomHex(32);
+  const challenge = await sha256Base64url(verifier);
+  await env.TRIUMPH_KV.put(
+    STATE_KEY_PREFIX + state,
+    JSON.stringify({ next, mode, verifier, expiresAt: Date.now() + STATE_TTL * 1e3 }),
+    { expirationTtl: STATE_TTL }
+  );
+  const params = new URLSearchParams({
+    client_id: clientId,
+    redirect_uri: `${url.origin}/api/auth/google/callback`,
+    response_type: "code",
+    scope: SCOPE,
+    state,
+    code_challenge: challenge,
+    code_challenge_method: "S256",
+    access_type: "online",
+    prompt: "select_account",
+    include_granted_scopes: "true"
+  });
+  return Response.redirect(GOOGLE_AUTH_URL + "?" + params.toString(), 302);
+}
+async function hGoogleCallback(request, env) {
+  const url = new URL(request.url);
+  const code = url.searchParams.get("code");
+  const state = url.searchParams.get("state");
+  const errParam = url.searchParams.get("error");
+  const fail = (msg) => Response.redirect(`${url.origin}/login.html?error=${encodeURIComponent(msg)}`, 302);
+  if (errParam) return fail("Google sign-in was cancelled or failed. Please try again or use email.");
+  if (!code || !state) return fail("Missing OAuth parameters. Please try again.");
+  const storedJson = await env.TRIUMPH_KV.get(STATE_KEY_PREFIX + state);
+  await env.TRIUMPH_KV.delete(STATE_KEY_PREFIX + state);
+  if (!storedJson) return fail("Sign-in session expired. Please try again.");
+  const stored = JSON.parse(storedJson);
+  const verifier = stored.verifier;
+  const next = stored.next || "dashboard";
+  if (stored.expiresAt && stored.expiresAt < Date.now()) return fail("Sign-in session expired. Please try again.");
+  const clientId = env.GOOGLE_CLIENT_ID;
+  const clientSecret = env.GOOGLE_CLIENT_SECRET;
+  if (!clientId || !clientSecret) return fail("Sign-in is not configured yet. Please try again later.");
+  let tokenData;
+  try {
+    const res = await fetch(GOOGLE_TOKEN_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        code,
+        client_id: clientId,
+        client_secret: clientSecret,
+        redirect_uri: `${url.origin}/api/auth/google/callback`,
+        grant_type: "authorization_code",
+        code_verifier: verifier
+      })
+    });
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      throw new Error("token_exchange_failed:" + res.status + (body ? ":" + body.slice(0, 200) : ""));
+    }
+    tokenData = await res.json();
+  } catch (e) {
+    return fail("Could not complete Google sign-in. Please try again.");
+  }
+  let profile;
+  try {
+    profile = await verifyGoogleIdToken(tokenData.id_token, clientId);
+  } catch (e) {
+    return fail("Google sign-in could not be verified. Please try again.");
+  }
+  const email = String(profile.email || "").trim().toLowerCase();
+  if (!email) return fail("Google did not return an email. Use a Google account with an email address.");
+  const googleSub = String(profile.sub || "");
+  const recKey = USER_KEY(email);
+  let recJson = await env.TRIUMPH_KV.get(recKey);
+  let rec;
+  let created = false;
+  if (recJson) {
+    rec = JSON.parse(recJson);
+    rec.googleSub = googleSub;
+    rec.verified = true;
+    if (!rec.googleProfile) rec.googleProfile = { name: profile.name || "", picture: profile.picture || "" };
+    await env.TRIUMPH_KV.put(recKey, JSON.stringify(rec));
+  } else {
+    rec = {
+      id: crypto.randomUUID(),
+      email,
+      googleSub,
+      verified: true,
+      createdAt: Date.now(),
+      authProvider: "google",
+      googleProfile: { name: profile.name || "", picture: profile.picture || "" }
+    };
+    await env.TRIUMPH_KV.put(recKey, JSON.stringify(rec));
+    await env.TRIUMPH_KV.put(STATE_KEY(rec.id), JSON.stringify({ createdAt: Date.now(), answers: [], mastery: {}, plan: null, srs: {}, tasks: {} }));
+    created = true;
+  }
+  const jwt = await signJwt({ sub: rec.id, email, iat: Date.now(), exp: Date.now() + 30 * 864e5 }, env.JWT_SECRET);
+  const base = url.origin;
+  const frag = `#triumph_token=${encodeURIComponent(jwt)}&triumph_email=${encodeURIComponent(email)}&created=${created ? 1 : 0}&next=${encodeURIComponent(next)}`;
+  return Response.redirect(`${base}/login.html${frag}`, 302);
+}
+var GOOGLE_AUTH_ROUTES = {
+  "/api/auth/google": { GET: hGoogleStart },
+  "/api/auth/google/callback": { GET: hGoogleCallback }
+};
+
 // worker-src/password.mjs
 var RESET_KEY = (email) => `pwreset:${email.toLowerCase().trim()}`;
 var RESET_TTL = 30 * 60;
@@ -334,13 +517,13 @@ async function storeResetToken(env, email) {
 async function sendResetEmail(env, email, token) {
   const from = env.EMAIL_FROM || "";
   if (!from) throw new Error("EMAIL_FROM not configured");
-  const base = env.SITE_URL || "https://trytriumph.de5.net";
+  const base = env.SITE_URL || "https://learndiag.com";
   const link = `${base}/reset.html?token=${token}&email=${encodeURIComponent(email)}`;
-  const html = `<p>We received a request to reset your Triumph password.</p>
+  const html = `<p>We received a request to reset your Learndiag password.</p>
     <p><a href="${link}" style="display:inline-block;background:#A67D7A;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none">Reset my password</a></p>
     <p>If you didn't ask for this, you can safely ignore this email. This link expires in 30 minutes.</p>
-    <p style="color:#6E6760;font-size:12px">Triumph \xB7 independent Praxis 5001 study tool \xB7 not affiliated with ETS</p>`;
-  const body = { from, to: [email], subject: "Reset your Triumph password", html };
+    <p style="color:#6E6760;font-size:12px">Learndiag \xB7 independent Praxis 5001 study tool \xB7 not affiliated with ETS</p>`;
+  const body = { from, to: [email], subject: "Reset your Learndiag password", html };
   if (env.RESEND_API_KEY) {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -446,7 +629,7 @@ async function hBillingCheckout(request, env) {
   if (!key) return apiError("internal_error", { hint: "Creem not configured yet." });
   const productId = env.CREEM_MODE === "test" ? env.CREEM_TEST_PRODUCT_ID || env.CREEM_PRODUCT_ID : env.CREEM_PRODUCT_ID;
   if (!productId) return apiError("internal_error", { hint: "CREEM_PRODUCT_ID not configured." });
-  const successUrl = (env.SITE_URL || "https://trytriumph.de5.net") + "/upgrade.html";
+  const successUrl = (env.SITE_URL || "https://learndiag.com") + "/upgrade.html";
   const chkRes = await fetch(CREEM_BASE(env) + "/checkouts", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-api-key": key },
@@ -614,7 +797,7 @@ var BILLING_ROUTES = {
 };
 
 // worker-src/constants.mjs
-var BASE = "https://trytriumph.de5.net";
+var BASE = "https://learndiag.com";
 var API_VERSION = "1.0.0";
 
 // worker-src/bank.mjs
@@ -726,7 +909,7 @@ async function v1Meta(env) {
   try {
     const stats = await loadStats(env);
     return json({
-      product: "Triumph",
+      product: "Learndiag",
       description: "Free Praxis 5001 (Elementary Education: Multiple Subjects) readiness diagnostic and practice-question bank.",
       base_url: BASE,
       subtests: stats.subtests,
@@ -962,7 +1145,7 @@ async function hAdminPasswordResetLink(request, env) {
   const recJson = await env.TRIUMPH_KV.get("users:" + email);
   if (!recJson) return apiError("not_registered");
   const token = await storeResetToken(env, email);
-  const base = env.SITE_URL || "https://trytriumph.de5.net";
+  const base = env.SITE_URL || "https://learndiag.com";
   return json({
     ok: true,
     reset_link: `${base}/reset.html?token=${token}&email=${encodeURIComponent(email)}`,
@@ -1559,6 +1742,7 @@ var MD_ROUTES = (() => {
     "/about",
     "/contact",
     "/privacy",
+    "/terms",
     "/developers",
     "/resources",
     "/praxis-5001-study-guide",
@@ -1659,8 +1843,8 @@ function varyWithAccept(res) {
 // worker-src/mcp.mjs
 var MCP_PROTOCOL_VERSIONS = ["2025-06-18", "2025-03-26"];
 var MCP_LATEST = MCP_PROTOCOL_VERSIONS[0];
-var MCP_SERVER_INFO = { name: "triumph", title: "Triumph \u2014 Praxis 5001 study tool", version: API_VERSION };
-var MCP_INSTRUCTIONS = "Triumph is a free Praxis 5001 (Elementary Education: Multiple Subjects) readiness tool. Use it when a teacher candidate asks for Praxis 5001 practice questions, subtest/blueprint information, question-bank statistics, or links to the study guides. All tools are read-only and free; no authentication required.";
+var MCP_SERVER_INFO = { name: "triumph", title: "Learndiag \u2014 Praxis 5001 study tool", version: API_VERSION };
+var MCP_INSTRUCTIONS = "Learndiag is a free Praxis 5001 (Elementary Education: Multiple Subjects) readiness tool. Use it when a teacher candidate asks for Praxis 5001 practice questions, subtest/blueprint information, question-bank statistics, or links to the study guides. All tools are read-only and free; no authentication required.";
 async function mcpToolListSubtests(env) {
   const stats = await loadStats(env);
   return { stats };
@@ -1723,7 +1907,7 @@ var MCP_TOOLS = [
   {
     name: "list_subtests",
     title: "List Praxis 5001 subtests",
-    description: "List the four Praxis 5001 subtests (5002 reading, 5003 math, 5004 social studies, 5005 science) with question counts and content categories in the Triumph bank.",
+    description: "List the four Praxis 5001 subtests (5002 reading, 5003 math, 5004 social studies, 5005 science) with question counts and content categories in the Learndiag bank.",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
     readOnlyHint: true
   },
@@ -1769,7 +1953,7 @@ var MCP_TOOLS = [
   {
     name: "list_study_guides",
     title: "List study guides",
-    description: "List Triumph\u2019s free Praxis 5001 study-guide articles with their HTML and markdown URLs.",
+    description: "List Learndiag\u2019s free Praxis 5001 study-guide articles with their HTML and markdown URLs.",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
     readOnlyHint: true
   }
@@ -1911,10 +2095,10 @@ var SCOPES_DESC = Object.assign({}, ...KNOWN_SCOPES.map((s) => ({ [s]: `Read acc
 var openApiSpec = {
   openapi: "3.1.0",
   info: {
-    title: "Triumph API",
+    title: "Learndiag API",
     version: API_VERSION,
-    summary: "Public API for the Triumph Praxis 5001 readiness tool: practice-question bank, subtest metadata and account sync.",
-    description: `Triumph is a free Praxis 5001 (Elementary Education: Multiple Subjects) study tool. This API exposes the public practice-question bank (969 original questions across four subtests), bank statistics, and the same account endpoints the web app uses.
+    summary: "Public API for the Learndiag Praxis 5001 readiness tool: practice-question bank, subtest metadata and account sync.",
+    description: `Learndiag is a free Praxis 5001 (Elementary Education: Multiple Subjects) study tool. This API exposes the public practice-question bank (969 original questions across four subtests), bank statistics, and the same account endpoints the web app uses.
 
 **Authentication tiers**
 
@@ -1923,7 +2107,7 @@ var openApiSpec = {
 - Bearer JWT: account endpoints (\`/api/state\`) use the token returned by \`POST /api/login\`.
 
 All errors use one structured envelope: \`{ "error": { "code", "message", "hint" }, "status" }\`.`,
-    contact: { name: "Triumph support", email: "abc15531888397@gmail.com", url: `${BASE}/contact` },
+    contact: { name: "Learndiag support", email: "abc15531888397@gmail.com", url: `${BASE}/contact` },
     termsOfService: `${BASE}/terms-of-service.md`
   },
   servers: [{ url: BASE, description: "Production" }],
@@ -2260,7 +2444,7 @@ All errors use one structured envelope: \`{ "error": { "code", "message", "hint"
       MetaResponse: {
         type: "object",
         properties: {
-          product: { type: "string", const: "Triumph" },
+          product: { type: "string", const: "Learndiag" },
           description: { type: "string" },
           base_url: { type: "string", format: "uri" },
           subtests: { type: "object", description: "Map of subtest code \u2192 { name, questionCount, categories[] }" },
@@ -2413,12 +2597,12 @@ var worker_default = {
       {
         const host = url.hostname.toLowerCase();
         const isLocalDev = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
-        const isCanonical = host === "trytriumph.de5.net";
+        const isCanonical = host === "learndiag.com";
         const isProgrammatic = path.startsWith("/api/") || path === "/mcp" || path.startsWith("/.well-known/");
         const isPreviewBranch = typeof env?.CF_PAGES_BRANCH === "string" && env.CF_PAGES_BRANCH !== "main";
         const isPageRequest = request.method === "GET" || request.method === "HEAD";
         if (isPageRequest && !isLocalDev && !isCanonical && !isProgrammatic && !isPreviewBranch) {
-          return Response.redirect(`https://trytriumph.de5.net${url.pathname}${url.search}`, 301);
+          return Response.redirect(`https://learndiag.com${url.pathname}${url.search}`, 301);
         }
       }
       if (path === "/mcp") return handleMcp(request, env);
@@ -2438,6 +2622,12 @@ var worker_default = {
           const handler = account[request.method];
           if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(account) }));
           return withCors(await handler(request, env));
+        }
+        const google = GOOGLE_AUTH_ROUTES[path];
+        if (google) {
+          const handler = google[request.method];
+          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(google) }));
+          return handler(request, env);
         }
         const pw = PASSWORD_ROUTES[path];
         if (pw) {

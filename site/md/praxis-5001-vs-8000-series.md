@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-vs-8000-series — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-vs-8000-series — request any page with Accept: text/markdown -->
 
 *Exam updates · Praxis*
 
@@ -115,7 +115,7 @@ Only as a limited content review—not as your sole blueprint. Use materials ali
 
 The Praxis 8000 series is a significant elementary education redesign, not a universal instruction for every candidate to abandon 5001 immediately. First confirm the **test code, effective date, required subjects, and qualifying scores** for your specific licensing pathway. Then build your study plan around the test you actually need.
 
-**Confirmed that you still need Praxis 5001?** [Take Triumph’s Praxis 5001 diagnostic](https://trytriumph.de5.net/diagnostic) to identify your strongest subjects and the areas that need focused review before test day.
+**Confirmed that you still need Praxis 5001?** [Take Learndiag’s Praxis 5001 diagnostic](https://learndiag.com/diagnostic) to identify your strongest subjects and the areas that need focused review before test day.
 
 ## Sources
 
@@ -127,6 +127,6 @@ The Praxis 8000 series is a significant elementary education redesign, not a uni
 
 [8] [ETS, “Elementary Education Fundamentals: Reading and Language Arts (8002)” product page](https://praxis.ets.org/test/elementary-education-fundamentals-reading-and-language-arts-8002.html)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

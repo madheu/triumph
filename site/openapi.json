@@ -1,20 +1,20 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Triumph API",
+    "title": "Learndiag API",
     "version": "1.0.0",
-    "summary": "Public API for the Triumph Praxis 5001 readiness tool: practice-question bank, subtest metadata and account sync.",
-    "description": "Triumph is a free Praxis 5001 (Elementary Education: Multiple Subjects) study tool. This API exposes the public practice-question bank (969 original questions across four subtests), bank statistics, and the same account endpoints the web app uses.\n\n**Authentication tiers**\n\n- Anonymous: all `GET /api/v1/*` reads work with no credentials (public tier).\n- Scoped API key: send `X-API-Key: tri_live_...`. Create a free key with `POST /api/v1/keys`. Scopes: meta:read, questions:read, stats:read.\n- Bearer JWT: account endpoints (`/api/state`) use the token returned by `POST /api/login`.\n\nAll errors use one structured envelope: `{ \"error\": { \"code\", \"message\", \"hint\" }, \"status\" }`.",
+    "summary": "Public API for the Learndiag Praxis 5001 readiness tool: practice-question bank, subtest metadata and account sync.",
+    "description": "Learndiag is a free Praxis 5001 (Elementary Education: Multiple Subjects) study tool. This API exposes the public practice-question bank (969 original questions across four subtests), bank statistics, and the same account endpoints the web app uses.\n\n**Authentication tiers**\n\n- Anonymous: all `GET /api/v1/*` reads work with no credentials (public tier).\n- Scoped API key: send `X-API-Key: tri_live_...`. Create a free key with `POST /api/v1/keys`. Scopes: meta:read, questions:read, stats:read.\n- Bearer JWT: account endpoints (`/api/state`) use the token returned by `POST /api/login`.\n\nAll errors use one structured envelope: `{ \"error\": { \"code\", \"message\", \"hint\" }, \"status\" }`.",
     "contact": {
-      "name": "Triumph support",
+      "name": "Learndiag support",
       "email": "abc15531888397@gmail.com",
-      "url": "https://trytriumph.de5.net/contact"
+      "url": "https://learndiag.com/contact"
     },
-    "termsOfService": "https://trytriumph.de5.net/terms-of-service.md"
+    "termsOfService": "https://learndiag.com/terms-of-service.md"
   },
   "servers": [
     {
-      "url": "https://trytriumph.de5.net",
+      "url": "https://learndiag.com",
       "description": "Production"
     }
   ],
@@ -1459,7 +1459,7 @@
         "properties": {
           "product": {
             "type": "string",
-            "const": "Triumph"
+            "const": "Learndiag"
           },
           "description": {
             "type": "string"

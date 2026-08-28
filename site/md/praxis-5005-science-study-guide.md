@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5005-science-study-guide — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5005-science-study-guide — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5005*
 
@@ -12,7 +12,7 @@ The Praxis Elementary Education: Science Subtest (5005) does not reward memorizi
 
 This Praxis 5005 science study guide breaks the test into four practical areas: Earth and space science, life science, physical science, and scientific inquiry. It also includes common misconceptions, graph and variable strategies, and a focused study plan.
 
-Want to find your weakest Praxis 5001 subtest before you study? Take Triumph’s [free Praxis readiness diagnostic](https://trytriumph.de5.net/diagnostic) and use the results to prioritize your time.
+Want to find your weakest Praxis 5001 subtest before you study? Take Learndiag’s [free Praxis readiness diagnostic](https://learndiag.com/diagnostic) and use the results to prioritize your time.
 
 ## Praxis 5005 Test Overview
 
@@ -206,7 +206,7 @@ This error log is more useful than simply recording a score. It tells you what t
 
 A balanced study guide helps you cover Praxis 5005, but efficient preparation starts with evidence. You may remember life science well and need concentrated work on circuits, or know physical science but lose points on experimental design.
 
-Take Triumph’s [free Praxis 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic) to identify where to focus. Then build your review around missed concepts, not around the chapters that feel most comfortable.
+Take Learndiag’s [free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic) to identify where to focus. Then build your review around missed concepts, not around the chapters that feel most comfortable.
 
 ## Sources
 
@@ -214,6 +214,6 @@ Take Triumph’s [free Praxis 5001 readiness diagnostic](https://trytriumph.de5.
 
 [8] [https://praxis.ets.org/test-takers/test-day-calculator-use.html](https://praxis.ets.org/test-takers/test-day-calculator-use.html)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-free-practice-test — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-free-practice-test — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5001*
 
@@ -33,12 +33,12 @@ The Elementary Education: Multiple Subjects exam is four separately timed, separ
 
 Each subtest is its own gate: you generally need a passing score on every subtest, and passing one does not rescue a failing one.[2] That is why the most useful practice test tells you **which gate is weakest** — not just an average.
 
-## Start Here: Free Praxis 5001 Practice at Triumph
+## Start Here: Free Praxis 5001 Practice at Learndiag
 
-Triumph is a free, independent study tool built for exactly this problem:
+Learndiag is a free, independent study tool built for exactly this problem:
 
-- **[Free readiness diagnostic](https://trytriumph.de5.net/diagnostic)** — 12 original questions across all four subtests. You get an estimated scaled score per subtest, your weakest gate, and a pass forecast against a state passing line.
-- **[Free practice question bank](https://trytriumph.de5.net/practice)** — original questions organized by the official blueprint categories, with explanations. Filter by subtest (5002/5003/5004/5005) or by content category.
+- **[Free readiness diagnostic](https://learndiag.com/diagnostic)** — 12 original questions across all four subtests. You get an estimated scaled score per subtest, your weakest gate, and a pass forecast against a state passing line.
+- **[Free practice question bank](https://learndiag.com/practice)** — original questions organized by the official blueprint categories, with explanations. Filter by subtest (5002/5003/5004/5005) or by content category.
 
 Both are free, require no account to start, and every question is original — not recycled official items, and not approximations that drift from the blueprint.
 
@@ -64,17 +64,17 @@ The question is the test; the explanation is the class. For every miss, write on
 
 ## Free vs. Paid: What Actually Differs
 
-Most free options (including Triumph) cover the blueprint, question styles, and category-level feedback. Paid courses add volume, progress tracking, and sometimes interactive lessons. Volume alone does not predict a pass — **diagnosis plus targeted practice does**. Start free, find your weakest gate, and only consider paid material for that gate if you need more depth.
+Most free options (including Learndiag) cover the blueprint, question styles, and category-level feedback. Paid courses add volume, progress tracking, and sometimes interactive lessons. Volume alone does not predict a pass — **diagnosis plus targeted practice does**. Start free, find your weakest gate, and only consider paid material for that gate if you need more depth.
 
 ## Frequently Asked Questions
 
 ### Is there an official free Praxis 5001 practice test?
 
-ETS offers free Study Companions and a limited set of free resources for some tests, plus official Interactive Practice Tests for purchase.[3] The Study Companions are worth reading for the exact category breakdown. For actual practice questions at scale, free third-party banks like Triumph's are the practical option.
+ETS offers free Study Companions and a limited set of free resources for some tests, plus official Interactive Practice Tests for purchase.[3] The Study Companions are worth reading for the exact category breakdown. For actual practice questions at scale, free third-party banks like Learndiag's are the practical option.
 
 ### Are free Praxis practice questions as good as paid ones?
 
-For identifying your weakest gate and learning the question style, yes — provided the questions match the official blueprint. Triumph's bank is built from the official category weights, with original items and explanations.
+For identifying your weakest gate and learning the question style, yes — provided the questions match the official blueprint. Learndiag's bank is built from the official category weights, with original items and explanations.
 
 ### How many practice questions do I need for the 5001?
 
@@ -86,13 +86,13 @@ No — the 8000-series Elementary Education Fundamentals tests have different qu
 
 ### What's the fastest way to find my weakest subtest?
 
-Take a diagnostic that reports per-gate results. Triumph's [free readiness diagnostic](https://trytriumph.de5.net/diagnostic) maps your answers to estimated scaled scores for all four subtests in about 10 minutes.
+Take a diagnostic that reports per-gate results. Learndiag's [free readiness diagnostic](https://learndiag.com/diagnostic) maps your answers to estimated scaled scores for all four subtests in about 10 minutes.
 
 ## The Bottom Line
 
 Free Praxis 5001 practice helps when it mirrors the blueprint, explains each answer, and tells you which of the four gates to fix first. Start with a diagnosis, drill the weakest subtest in focused blocks, and time yourself on the fastest-paced gates. That pattern — not question volume — is what moves your score.
 
-**Ready to see which gate needs work?** Take the free [Triumph readiness diagnostic](https://trytriumph.de5.net/diagnostic), or jump straight into the [practice question bank](https://trytriumph.de5.net/practice) by subtest.
+**Ready to see which gate needs work?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic), or jump straight into the [practice question bank](https://learndiag.com/practice) by subtest.
 
 ## Sources
 
@@ -104,6 +104,6 @@ Free Praxis 5001 practice helps when it mirrors the blueprint, explains each ans
 
 [4] ETS, "The Praxis Elementary Education Assessment: Updates and Enhancements." [https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

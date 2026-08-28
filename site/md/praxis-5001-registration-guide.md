@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-registration-guide — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-registration-guide — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5001*
 
@@ -103,7 +103,7 @@ Only if your state or licensing agency has already adopted the 8000-series tests
 
 Registration is a four-step online process: pick your test, schedule, review, pay. The total for the combined 5001 is $180 (or $64 per subtest), phone registration adds a $35 surcharge, and rescheduling costs about $40. Register only after confirming your state's test code — with the 8000-series transition underway, that confirmation is the difference between a $180 step toward certification and a $180 mistake.
 
-**Not sure you're ready to register?** Take the free [Triumph readiness diagnostic](https://trytriumph.de5.net/diagnostic) first — it estimates your scaled score per subtest and tells you which gate needs work before you pay for the real exam.
+**Not sure you're ready to register?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) first — it estimates your scaled score per subtest and tells you which gate needs work before you pay for the real exam.
 
 ## Sources
 
@@ -119,6 +119,6 @@ Registration is a four-step online process: pick your test, schedule, review, pa
 
 [6] ETS, "Manage Your Praxis Test Appointment." [https://praxis.ets.org/manage-praxis-test-appointment.html](https://praxis.ets.org/manage-praxis-test-appointment.html)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

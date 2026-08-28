@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-maryland-requirements — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-maryland-requirements — request any page with Accept: text/markdown -->
 
 *State guide · Praxis Maryland*
 
@@ -66,12 +66,12 @@ No adoption is announced on the Maryland page; the current requirement is the 78
 
 ## The Bottom Line
 
-Maryland elementary (1–6) candidates take **Praxis 5205 (159)** plus the **7811 CKT** four-subtest series (161/150/154/161), and Praxis Core only when the GPA is below 3.0. There is no 5001 in the picture, so 5001-specific prep materials cover only part of what Maryland asks. Triumph's [free diagnostic](https://trytriumph.de5.net/diagnostic) and [question bank](https://trytriumph.de5.net/practice) exercise the same content domains Maryland's CKT subtests sample (reading/language arts, math, science, social studies) — a useful baseline, but pair them with CKT-specific practice before test day.
+Maryland elementary (1–6) candidates take **Praxis 5205 (159)** plus the **7811 CKT** four-subtest series (161/150/154/161), and Praxis Core only when the GPA is below 3.0. There is no 5001 in the picture, so 5001-specific prep materials cover only part of what Maryland asks. Learndiag's [free diagnostic](https://learndiag.com/diagnostic) and [question bank](https://learndiag.com/practice) exercise the same content domains Maryland's CKT subtests sample (reading/language arts, math, science, social studies) — a useful baseline, but pair them with CKT-specific practice before test day.
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
 ## Sources
 
 [1] ETS, "Maryland Required Tests." [https://praxis.ets.org/state-requirements/maryland-tests.html](https://praxis.ets.org/state-requirements/maryland-tests.html)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://trytriumph.de5.net/praxis-5001-vs-8000-series)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

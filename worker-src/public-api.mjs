@@ -21,7 +21,7 @@ async function v1Meta(env) {
   try {
     const stats = await loadStats(env);
     return json({
-      product: 'Triumph',
+      product: 'Learndiag',
       description: 'Free Praxis 5001 (Elementary Education: Multiple Subjects) readiness diagnostic and practice-question bank.',
       base_url: BASE,
       subtests: stats.subtests,

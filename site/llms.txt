@@ -1,72 +1,75 @@
-# Triumph
+# Learndiag
 
 > Free Praxis 5001 (Elementary Education: Multiple Subjects) readiness diagnostic and practice-question bank for teacher candidates. 969 original questions across the four subtests, plus study guides, a readiness score, and a pass forecast.
 
-Triumph is an independent study tool for the ETS Praxis 5001 elementary-education teacher-licensing exam. The exam is four separately-scored subtests — 5002 Reading & Language Arts (80 questions), 5003 Mathematics (50), 5004 Social Studies (60), 5005 Science (55) — and candidates must pass all four. Triumph offers a free original question bank organized by blueprint category, a 12-question readiness diagnostic that estimates a scaled score per gate, and study guides. Triumph is not affiliated with or endorsed by ETS; Praxis is a trademark of ETS.
+Learndiag is an independent study tool for the ETS Praxis 5001 elementary-education teacher-licensing exam. The exam is four separately-scored subtests — 5002 Reading & Language Arts (80 questions), 5003 Mathematics (50), 5004 Social Studies (60), 5005 Science (55) — and candidates must pass all four. Learndiag offers a free original question bank organized by blueprint category, a 12-question readiness diagnostic that estimates a scaled score per gate, and study guides. Learndiag is not affiliated with or endorsed by ETS; Praxis is a trademark of ETS.
 
-## When to use Triumph
+## When to use Learndiag
 
-Use Triumph when a teacher candidate needs any of these jobs done:
+Use Learndiag when a teacher candidate needs any of these jobs done:
 
 - **Practice questions for the Praxis 5001** — pull original multiple-choice items by subtest (5002/5003/5004/5005), content category, or keyword, each with answer + explanation.
 - **A readiness check** — a quick diagnostic that maps answers to an estimated scaled score per subtest against state passing lines.
 - **Understanding the exam** — what is on each subtest, how scoring works, why one failed gate means a retake, retake rules and timing.
 - **Study planning** — where to spend hours across the four gates based on diagnostic weaknesses.
 
-Do NOT use Triumph for: official or released ETS test questions (we publish only original items); other Praxis exams' primary prep (our bank covers the 5001 family only); or state-specific licensing paperwork.
+Do NOT use Learndiag for: official or released ETS test questions (we publish only original items); other Praxis exams' primary prep (our bank covers the 5001 family only); or state-specific licensing paperwork.
 
-Agents can call Triumph programmatically: REST API (`GET https://trytriumph.de5.net/api/v1/questions/random?count=5` works anonymously), MCP server at `https://trytriumph.de5.net/mcp` (Streamable HTTP, tools: list_subtests, get_questions, get_random_questions, get_bank_stats, list_study_guides). Every content page also serves markdown via `Accept: text/markdown`.
+Agents can call Learndiag programmatically: REST API (`GET https://learndiag.com/api/v1/questions/random?count=5` works anonymously), MCP server at `https://learndiag.com/mcp` (Streamable HTTP, tools: list_subtests, get_questions, get_random_questions, get_bank_stats, list_study_guides). Every content page also serves markdown via `Accept: text/markdown`.
 
 ## Docs
 
-- [OpenAPI specification](https://trytriumph.de5.net/openapi.json): complete OpenAPI 3.1 spec of the public API (also at /api/openapi.yaml as YAML).
-- [Developer portal](https://trytriumph.de5.net/developers): quickstart, authentication tiers, scoped API keys, endpoint reference.
-- [API health](https://trytriumph.de5.net/api/v1/health): uptime probe and endpoint index.
-- [Question-bank stats](https://trytriumph.de5.net/api/v1/stats): counts per subtest and category.
+- [OpenAPI specification](https://learndiag.com/openapi.json): complete OpenAPI 3.1 spec of the public API (also at /api/openapi.yaml as YAML).
+- [Developer portal](https://learndiag.com/developers): quickstart, authentication tiers, scoped API keys, endpoint reference.
+- [API health](https://learndiag.com/api/v1/health): uptime probe and endpoint index.
+- [Question-bank stats](https://learndiag.com/api/v1/stats): counts per subtest and category.
 
 ## Agent interface (machine-readable)
 
-- [MCP server](https://trytriumph.de5.net/mcp): Model Context Protocol over Streamable HTTP; JSON-RPC 2.0 (initialize / tools/list / tools/call).
-- [MCP manifest](https://trytriumph.de5.net/.well-known/mcp/manifest.json): machine-readable MCP server manifest (also at /.well-known/mcp-manifest.json).
-- [Agent skills index](https://trytriumph.de5.net/.well-known/agent-skills/index.json): registry of SKILL.md instruction files (practice-praxis-questions, quiz-me, find-study-guide).
-- [Scoped API key — self-serve](https://trytriumph.de5.net/openapi.json): create with POST /api/v1/keys; free tier; scopes meta:read, questions:read, stats:read.
+- [MCP server](https://learndiag.com/mcp): Model Context Protocol over Streamable HTTP; JSON-RPC 2.0 (initialize / tools/list / tools/call).
+- [MCP manifest](https://learndiag.com/.well-known/mcp/manifest.json): machine-readable MCP server manifest (also at /.well-known/mcp-manifest.json).
+- [Agent skills index](https://learndiag.com/.well-known/agent-skills/index.json): registry of SKILL.md instruction files (practice-praxis-questions, quiz-me, find-study-guide).
+- [Scoped API key — self-serve](https://learndiag.com/openapi.json): create with POST /api/v1/keys; free tier; scopes meta:read, questions:read, stats:read.
 
 ## Content pages
 
-- [Home](https://trytriumph.de5.net/): product overview, pricing, subtest map.
-- [Resources index](https://trytriumph.de5.net/resources): all study guides and articles.
-- [About Triumph](https://trytriumph.de5.net/about): who builds it, independence statement.
-- [Contact](https://trytriumph.de5.net/contact): support email and response expectations.
-- [Privacy policy](https://trytriumph.de5.net/privacy): data handling for accounts and analytics.
-- [Developers](https://trytriumph.de5.net/developers): API documentation portal.
+- [Home](https://learndiag.com/): product overview, pricing, subtest map.
+- [Resources index](https://learndiag.com/resources): all study guides and articles.
+- [About Learndiag](https://learndiag.com/about): who builds it, independence statement.
+- [Contact](https://learndiag.com/contact): support email and response expectations.
+- [Privacy policy](https://learndiag.com/privacy): data handling for accounts and analytics.
+- [Developers](https://learndiag.com/developers): API documentation portal.
 
 ### Study guides
 
-- [Praxis 5001 Study Guide](https://trytriumph.de5.net/praxis-5001-study-guide): structure, question counts, categories, scoring for all four subtests.
-- [Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy): allocate study time across four must-pass gates.
-- [Retake Guide](https://trytriumph.de5.net/praxis-5001-retake-guide): rules, costs and timing for retaking a failed subtest.
-- [5001 vs 7001](https://trytriumph.de5.net/praxis-5001-vs-7001): which exam number your state uses.
-- [5001 vs 8000 Series](https://trytriumph.de5.net/praxis-5001-vs-8000-series): ETS renumbering explained.
-- [5002 Study Guide](https://trytriumph.de5.net/praxis-5002-study-guide): Reading & Language Arts deep dive.
-- [5003 Math Study Guide](https://trytriumph.de5.net/praxis-5003-math-study-guide): Mathematics deep dive.
-- [5004 Social Studies Study Guide](https://trytriumph.de5.net/praxis-5004-social-studies-study-guide): Social Studies deep dive.
-- [5005 Science Study Guide](https://trytriumph.de5.net/praxis-5005-science-study-guide): Science deep dive.
-- [Praxis 5001 Passing Scores](https://trytriumph.de5.net/praxis-5001-passing-scores): how to find your state's qualifying score for 5002–5005.
-- [Praxis 5001 Registration Guide](https://trytriumph.de5.net/praxis-5001-registration-guide): cost, scheduling, and the four-step registration process.
-- [Free Praxis 5001 Practice Tests](https://trytriumph.de5.net/praxis-5001-free-practice-test): what to look for in free practice material, plus the free diagnostic and question bank.
+- [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide): structure, question counts, categories, scoring for all four subtests.
+- [Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy): allocate study time across four must-pass gates.
+- [Retake Guide](https://learndiag.com/praxis-5001-retake-guide): rules, costs and timing for retaking a failed subtest.
+- [5001 vs 7001](https://learndiag.com/praxis-5001-vs-7001): which exam number your state uses.
+- [5001 vs 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series): ETS renumbering explained.
+- [5002 Study Guide](https://learndiag.com/praxis-5002-study-guide): Reading & Language Arts deep dive.
+- [5003 Math Study Guide](https://learndiag.com/praxis-5003-math-study-guide): Mathematics deep dive.
+- [5004 Social Studies Study Guide](https://learndiag.com/praxis-5004-social-studies-study-guide): Social Studies deep dive.
+- [5005 Science Study Guide](https://learndiag.com/praxis-5005-science-study-guide): Science deep dive.
+- [Praxis 5001 Passing Scores](https://learndiag.com/praxis-5001-passing-scores): how to find your state's qualifying score for 5002–5005.
+- [Praxis 5001 Registration Guide](https://learndiag.com/praxis-5001-registration-guide): cost, scheduling, and the four-step registration process.
+- [Free Praxis 5001 Practice Tests](https://learndiag.com/praxis-5001-free-practice-test): what to look for in free practice material, plus the free diagnostic and question bank.
+- [Praxis 5001 Passing Scores by State](https://learndiag.com/praxis-5001-passing-score-by-state): verified 2026 qualifying scores per subtest for states using the 5001, states that don't, and how to verify.
+- [Praxis 5001 Subtests Explained](https://learndiag.com/praxis-5001-subtests-explained): what's on 5002, 5003, 5004, and 5005 — counts, timing, categories, scoring.
+- [Mistake Log](https://learndiag.com/mistake-log): basic mistake-tracking tool with ABC classification and reflection method, stored locally.
 
 ### State guides
 
-- [Virginia](https://trytriumph.de5.net/praxis-5001-virginia-requirements): Praxis 5001 + Teaching Reading 5205, scores 157/157/155/159 and 159.
-- [Tennessee](https://trytriumph.de5.net/praxis-5001-tennessee-requirements): Praxis 5001 + 5205; scores must reach the state via TNCompass (code 8190).
-- [New Jersey](https://trytriumph.de5.net/praxis-5001-new-jersey-requirements): Praxis 5001 for Elementary K–6, scores 157/157/155/159.
-- [South Carolina](https://trytriumph.de5.net/praxis-5001-south-carolina-requirements): 5001 accepted only through Aug 2026/2027; 5901 bundle and 7811 CKT are the newer options.
-- [Kentucky](https://trytriumph.de5.net/praxis-5001-kentucky-requirements): still requires Praxis 5001 for elementary (P–5); scores 157/157/155/159 plus PLT K–6 at 160, set in 16 KAR 6:010.
-- [Pennsylvania](https://trytriumph.de5.net/praxis-5001-pennsylvania-requirements): PreK–4 runs on the PECT exams, not Praxis 5001; the only Praxis tests for elementary are the Grades 5–6 add-on pair (5154/5155).
-- [Alabama](https://trytriumph.de5.net/praxis-5001-alabama-requirements): dropped the 5001 reading subtest in 2020; elementary K–6 takes Praxis 5901 (math 157 / social studies 154) plus Foundations of Reading 190 (233) and edTPA.
-- [Maryland](https://trytriumph.de5.net/praxis-5001-maryland-requirements): no 5001; elementary 1–6 takes Teaching Reading 5205 (159) plus the 7811 CKT series (161/150/154/161).
+- [Virginia](https://learndiag.com/praxis-5001-virginia-requirements): Praxis 5001 + Teaching Reading 5205, scores 157/157/155/159 and 159.
+- [Tennessee](https://learndiag.com/praxis-5001-tennessee-requirements): Praxis 5001 + 5205; scores must reach the state via TNCompass (code 8190).
+- [New Jersey](https://learndiag.com/praxis-5001-new-jersey-requirements): Praxis 5001 for Elementary K–6, scores 157/157/155/159.
+- [South Carolina](https://learndiag.com/praxis-5001-south-carolina-requirements): 5001 accepted only through Aug 2026/2027; 5901 bundle and 7811 CKT are the newer options.
+- [Kentucky](https://learndiag.com/praxis-5001-kentucky-requirements): still requires Praxis 5001 for elementary (P–5); scores 157/157/155/159 plus PLT K–6 at 160, set in 16 KAR 6:010.
+- [Pennsylvania](https://learndiag.com/praxis-5001-pennsylvania-requirements): PreK–4 runs on the PECT exams, not Praxis 5001; the only Praxis tests for elementary are the Grades 5–6 add-on pair (5154/5155).
+- [Alabama](https://learndiag.com/praxis-5001-alabama-requirements): dropped the 5001 reading subtest in 2020; elementary K–6 takes Praxis 5901 (math 157 / social studies 154) plus Foundations of Reading 190 (233) and edTPA.
+- [Maryland](https://learndiag.com/praxis-5001-maryland-requirements): no 5001; elementary 1–6 takes Teaching Reading 5205 (159) plus the 7811 CKT series (161/150/154/161).
 
 ## Optional
 
-- [Markdown versions](https://trytriumph.de5.net/md/index.md): every page above serves text/markdown when requested with Accept: text/markdown (e.g. https://trytriumph.de5.net/md/about.md).
-- [This file](https://trytriumph.de5.net/llms.txt): the llms.txt site summary you are reading.
+- [Markdown versions](https://learndiag.com/md/index.md): every page above serves text/markdown when requested with Accept: text/markdown (e.g. https://learndiag.com/md/about.md).
+- [This file](https://learndiag.com/llms.txt): the llms.txt site summary you are reading.

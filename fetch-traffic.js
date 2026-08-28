@@ -4,7 +4,7 @@ const token = process.argv[2];
 const days = Number(process.argv[3] || 14);
 if (!token) { console.error('用法: node fetch-traffic.js <CF_TOKEN> [天数]'); process.exit(1); }
 
-const ZONE = 'e4ad15e985fd2d72ba6b415ad88812e2'; // trytriumph.de5.net
+const ZONE = 'e4ad15e985fd2d72ba6b415ad88812e2'; // learndiag.com
 const since = new Date(Date.now() - days * 86400000).toISOString().slice(0, 10); // YYYY-MM-DD
 
 async function gql(query, variables) {

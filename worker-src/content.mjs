@@ -4,7 +4,7 @@
 // Paths that have a text/markdown representation under /md/.
 export const MD_ROUTES = (() => {
   const pages = [
-    '/', '/index', '/about', '/contact', '/privacy', '/developers', '/resources',
+    '/', '/index', '/about', '/contact', '/privacy', '/terms', '/developers', '/resources',
     '/praxis-5001-study-guide', '/praxis-5001-four-gate-strategy', '/praxis-5001-retake-guide',
     '/praxis-5001-vs-7001', '/praxis-5001-vs-8000-series',
     '/praxis-5002-study-guide', '/praxis-5003-math-study-guide',

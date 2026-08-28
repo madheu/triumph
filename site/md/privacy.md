@@ -1,12 +1,12 @@
-<!-- Markdown variant of https://trytriumph.de5.net/privacy — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/privacy — request any page with Accept: text/markdown -->
 
-*Legal · Triumph*
+*Legal · Learndiag*
 
 # Privacy policy.
 
 Last updated: August 22, 2026
 
-This policy explains what **Triumph** ("we", "the service", operated at trytriumph.de5.net) collects, why, how long it is kept, and how you can have it removed. The short version: we collect as little as possible, we don't sell anything, and deletion requests are honored within 30 days.
+This policy explains what **Learndiag** ("we", "the service", operated at learndiag.com) collects, why, how long it is kept, and how you can have it removed. The short version: we collect as little as possible, we don't sell anything, and deletion requests are honored within 30 days.
 
 ## What we collect
 
@@ -37,4 +37,4 @@ The service runs on Cloudflare Pages, Cloudflare Workers KV, and third-party ema
 
 ## Contact
 
-Questions about this policy: **abc15531888397@gmail.com**, or via the [contact page](https://trytriumph.de5.net/contact). Material changes will be announced on this page with an updated date above.
+Questions about this policy: **abc15531888397@gmail.com**, or via the [contact page](https://learndiag.com/contact). Material changes will be announced on this page with an updated date above.

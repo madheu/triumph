@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Triumph API — Developer Docs for the Praxis 5001 Question Bank | Triumph</title>
-  <meta name="description" content="Developer portal for Triumph: free REST API for 969 original Praxis 5001 practice questions, OpenAPI spec, MCP server, scoped API keys, and agent skills. Quickstart in one curl.">
+  <title>Learndiag API — Developer Docs for the Praxis 5001 Question Bank | Learndiag</title>
+  <meta name="description" content="Developer portal for Learndiag: free REST API for 969 original Praxis 5001 questions, OpenAPI spec, MCP server, and scoped API keys. Quickstart in one curl.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://trytriumph.de5.net/developers">
-  <meta property="og:title" content="Triumph API — Developer Documentation">
+  <link rel="canonical" href="https://learndiag.com/developers">
+  <meta property="og:title" content="Learndiag API — Developer Documentation">
   <meta property="og:description" content="Free REST API for the Praxis 5001 question bank: OpenAPI spec, MCP server (Streamable HTTP), scoped API keys, quickstart in one curl.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://trytriumph.de5.net/developers">
-  <meta property="og:image" content="https://trytriumph.de5.net/og-image.png">
+  <meta property="og:url" content="https://learndiag.com/developers">
+  <meta property="og:image" content="https://learndiag.com/og-image.png">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
@@ -28,11 +28,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Triumph API Developer Portal",
-    "url": "https://trytriumph.de5.net/developers",
-    "isPartOf": { "@type": "WebSite", "name": "Triumph", "url": "https://trytriumph.de5.net/" },
-    "publisher": { "@id": "https://trytriumph.de5.net/#organization" },
-    "about": { "@type": "SoftwareApplication", "name": "Triumph API", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web" }
+    "name": "Learndiag API Developer Portal",
+    "url": "https://learndiag.com/developers",
+    "isPartOf": { "@type": "WebSite", "name": "Learndiag", "url": "https://learndiag.com/" },
+    "publisher": { "@id": "https://learndiag.com/#organization" },
+    "about": { "@type": "SoftwareApplication", "name": "Learndiag API", "applicationCategory": "DeveloperApplication", "operatingSystem": "Web" }
   }
   </script>
 
@@ -90,7 +90,7 @@
 </head>
 <body>
   <header class="nav wrap">
-    <a class="wordmark" href="/" aria-label="Triumph home">Triumph<span style="color:var(--accent)">.</span></a>
+    <a class="wordmark" href="/" aria-label="Learndiag home">Learndiag<span style="color:var(--accent)">.</span></a>
     <div class="nav-links">
       <span class="nav-note">Praxis 5001 · unofficial</span>
       <a class="nav-cta" href="/">Home</a>
@@ -100,21 +100,21 @@
   </header>
 
   <article class="wrap">
-    <span class="eyebrow">Developers · Triumph API v1</span>
+    <span class="eyebrow">Developers · Learndiag API v1</span>
     <h1>The Praxis 5001 question bank, as an API.</h1>
     <p style="font-size:18px;max-width:34em">969 original practice questions across four subtests, bank statistics, and study-guide metadata — free, documented, and machine-readable. No account needed to start.</p>
 
     <h2>Quickstart</h2>
     <p>Every read endpoint works anonymously. Try it:</p>
-<pre><code>curl "https://trytriumph.de5.net/api/v1/questions/random?count=3&amp;subtest=5003"</code></pre>
+<pre><code>curl "https://learndiag.com/api/v1/questions/random?count=3&amp;subtest=5003"</code></pre>
     <p>That returns three random original math questions with options, correct answers, and explanations as JSON. Health check: <code>GET /api/v1/health</code>. Full reference: <a href="/openapi.json"><strong>/openapi.json</strong></a> (OpenAPI 3.1) or <a href="/api/openapi.yaml">/api/openapi.yaml</a>.</p>
 
     <h2>Sandbox &amp; base URL</h2>
-    <p><strong>Base URL:</strong> <code>https://trytriumph.de5.net</code>. The public read API doubles as a sandbox: it is live data with anonymous access, so you can prototype without provisioning anything. There is no separate staging host.</p>
+    <p><strong>Base URL:</strong> <code>https://learndiag.com</code>. The public read API doubles as a sandbox: it is live data with anonymous access, so you can prototype without provisioning anything. There is no separate staging host.</p>
 
     <h2>Authentication &amp; scoped permissions</h2>
     <p>All reads work anonymously (public tier). For attribution and higher limits, create a <strong>free scoped API key</strong> — self-serve, no signup:</p>
-<pre><code>curl -X POST https://trytriumph.de5.net/api/v1/keys \
+<pre><code>curl -X POST https://learndiag.com/api/v1/keys \
   -H "Content-Type: application/json" \
   -d '{"email":"you@example.com","scopes":["questions:read","stats:read"]}'</code></pre>
     <p>The key (<code>tri_live_…</code>) is shown once; send it as <code>X-API-Key</code>. Scope enforcement is real: a key without <code>stats:read</code> receives a structured <code>forbidden_scope</code> error from <code>/api/v1/stats</code>. Verify any key with <code>GET /api/v1/keys/verify</code>.</p>
@@ -150,8 +150,8 @@
 }</code></pre>
 
     <h2>MCP server (Model Context Protocol)</h2>
-    <p>Agents can call Triumph natively over MCP Streamable HTTP:</p>
-<pre><code>POST https://trytriumph.de5.net/mcp
+    <p>Agents can call Learndiag natively over MCP Streamable HTTP:</p>
+<pre><code>POST https://learndiag.com/mcp
 Content-Type: application/json
 
 {"jsonrpc":"2.0","id":1,"method":"tools/list"}</code></pre>
@@ -166,12 +166,12 @@ Content-Type: application/json
     </ul>
 
     <h2>Status &amp; support</h2>
-    <p>Uptime probe: <a href="/api/v1/health">/api/v1/health</a>. Questions, bug reports, or rate-limit increases: email <strong>abc15531888397@gmail.com</strong> with subject "API" — see <a href="/contact">contact page</a>. Content licensing: all questions are original and free to surface with attribution to trytriumph.de5.net.</p>
+    <p>Uptime probe: <a href="/api/v1/health">/api/v1/health</a>. Questions, bug reports, or rate-limit increases: email <strong>abc15531888397@gmail.com</strong> with subject "API" — see <a href="/contact">contact page</a>. Content licensing: all questions are original and free to surface with attribution to learndiag.com.</p>
   </article>
 
   <footer class="footer">
-    <p>Triumph is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. All practice questions are original and aligned to the published test blueprint; no official test items are reproduced.</p>
-    <p><a href="/">Home</a> · <a href="/resources">Resources</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/developers">Developers</a></p>
+    <p>Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. All practice questions are original and aligned to the published test blueprint; no official test items are reproduced.</p>
+    <p><a href="/">Home</a> · <a href="/resources">Resources</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/developers">Developers</a></p>
   </footer>
 </body>
 </html>

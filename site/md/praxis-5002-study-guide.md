@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5002-study-guide — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5002-study-guide — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5002*
 
@@ -10,7 +10,7 @@ date: "2026-08-20"
 
 The Praxis 5002 Reading and Language Arts subtest asks more than whether you can define literacy terms. You need to recognize how children learn to read and write, interpret evidence in classroom scenarios, and choose instruction that fits a student’s need.
 
-The most efficient approach is to connect **skill → student evidence → appropriate next step**. This Praxis 5002 study guide covers the major concepts and gives you a practical preparation plan. If you are taking the full Elementary Education: Multiple Subjects test, start with our [free Praxis 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic) to see where reading and language arts fit into your priorities.
+The most efficient approach is to connect **skill → student evidence → appropriate next step**. This Praxis 5002 study guide covers the major concepts and gives you a practical preparation plan. If you are taking the full Elementary Education: Multiple Subjects test, start with our [free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic) to see where reading and language arts fit into your priorities.
 
 ## Praxis 5002 Test at a Glance
 
@@ -139,7 +139,7 @@ Responsive teaching may use explicit modeling, guided practice, gradual release,
 
 ### 1. Diagnose Before You Review
 
-Take Triumph’s [free Praxis readiness diagnostic](https://trytriumph.de5.net/diagnostic), then sort missed questions by skill and cause. Record the topic, why you missed it, and your next practice action.
+Take Learndiag’s [free Praxis readiness diagnostic](https://learndiag.com/diagnostic), then sort missed questions by skill and cause. Record the topic, why you missed it, and your next practice action.
 
 ### 2. Study Common Contrasts
 
@@ -170,12 +170,12 @@ Before test day, make sure you can:
 - connect assessment evidence to targeted teaching
 - maintain pace across 80 selected-response questions
 
-You do not need to study every topic equally. You need a clear picture of what you know, what you confuse, and what to practice next. [Take the free Praxis 5001 readiness diagnostic](https://trytriumph.de5.net/diagnostic) to turn that picture into a focused study plan.
+You do not need to study every topic equally. You need a clear picture of what you know, what you confuse, and what to practice next. [Take the free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic) to turn that picture into a focused study plan.
 
 ## Sources
 
 [3] ETS, “Elementary Education: Reading and Language Arts Subtest (5002).” [https://praxis.ets.org/test/elementary-education-reading-and-language-arts-subtest-5002.html](https://praxis.ets.org/test/elementary-education-reading-and-language-arts-subtest-5002.html)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-alabama-requirements — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-alabama-requirements — request any page with Accept: text/markdown -->
 
 *State guide · Praxis Alabama*
 
@@ -64,9 +64,9 @@ Alabama's manual in effect **at application receipt** decides whether a test tak
 
 ## The Bottom Line
 
-Alabama elementary (K–6) candidates take **Praxis 5901** (math 157, social studies 154, science — verify) or the 5003/5004/5005 single subtests, the **Foundations of Reading 190** (233), and **edTPA**. Praxis 5001 is not part of the current path, and prep materials aimed at the 5001 reading subtest will not satisfy Alabama's reading requirement. Triumph's [free diagnostic](https://trytriumph.de5.net/diagnostic) and [question bank](https://trytriumph.de5.net/practice) still map the math/social studies/science content domains if you are on the 5003–5005 option — but confirm your exact code set with ALSDE first.
+Alabama elementary (K–6) candidates take **Praxis 5901** (math 157, social studies 154, science — verify) or the 5003/5004/5005 single subtests, the **Foundations of Reading 190** (233), and **edTPA**. Praxis 5001 is not part of the current path, and prep materials aimed at the 5001 reading subtest will not satisfy Alabama's reading requirement. Learndiag's [free diagnostic](https://learndiag.com/diagnostic) and [question bank](https://learndiag.com/practice) still map the math/social studies/science content domains if you are on the 5003–5005 option — but confirm your exact code set with ALSDE first.
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
 ## Sources
 
@@ -74,4 +74,4 @@ Alabama elementary (K–6) candidates take **Praxis 5901** (math 157, social stu
 
 [2] ETS, "Alabama Overview / Required Tests." [https://praxis.ets.org/state-requirements/alabama-overview.html](https://praxis.ets.org/state-requirements/alabama-overview.html)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://trytriumph.de5.net/praxis-5001-vs-8000-series)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

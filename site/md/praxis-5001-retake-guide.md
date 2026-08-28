@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-retake-guide — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-retake-guide — request any page with Accept: text/markdown -->
 
 # Failed a Praxis 5001 Subtest? Retake Rules, Costs, and What to Do Next
 
@@ -124,6 +124,6 @@ You have a path forward. It is well-defined, well-traveled, and open to you.
 
 Not sure which subtest needs the most attention, or how to prioritize your study time during the 28-day window? Take our **free 12-question diagnostic**. It estimates your current level across all four subject areas, identifies your weakest content categories, and generates a personalized retake strategy.
 
-**[Take the free diagnostic and build your retake plan →](https://trytriumph.de5.net/diagnostic)**
+**[Take the free diagnostic and build your retake plan →](https://learndiag.com/diagnostic)**
 
 *Note: Praxis fees, passing scores, and retake policies are subject to change. Always confirm current requirements and costs directly through your state's Department of Education and the official ETS Praxis website before registering.*

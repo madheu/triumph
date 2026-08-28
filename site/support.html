@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support — Triumph</title>
+  <title>Support — Learndiag</title>
   <meta name="robots" content="noindex, nofollow" />
   <style>
     :root { --brand: #C09D9B; --brand-dark: #A67D7A; --ink: #3A3532; --ink-soft: #6E6760; }
@@ -51,12 +51,12 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="wordmark" href="/">Triumph<span style="color:#C09D9B">.</span></a>
+      <a class="wordmark" href="/">Learndiag<span style="color:#C09D9B">.</span></a>
       <a class="nav-link" href="/dashboard.html">Dashboard</a>
     </header>
 
     <h1>Support</h1>
-    <p class="sub">Questions about your account, billing, or a refund — we reply right here. You'll see our answer on this page.</p>
+    <p class="sub">Questions about your account, billing, or a refund — we reply right here. You'll see our answer on this page. Refunds are handled under our <a href="/terms.html">Terms of Service</a>; see also the <a href="/privacy.html">Privacy Policy</a>.</p>
 
     <div id="login-note" class="card login-note" style="display:none">
       <p class="sub" style="margin-bottom:16px">Please log in first so we can find your account.</p>
@@ -88,7 +88,7 @@
     </div>
   </div>
 
-  <script src="/js/auth.js"></script>
+  <script src="/js/auth.js?v=2"></script>
   <script>
     (function () {
       var $err = document.getElementById('err');
@@ -135,7 +135,7 @@
               '<span class="badge ' + esc(t.status) + '">' + esc(t.status) + (t.refund_requested ? ' · refund' : '') + '</span></div>' +
               '<span class="muted">' + new Date(t.created_at).toLocaleString() + '</span>' +
               t.messages.map(function (m) {
-                return '<div class="msg ' + esc(m.author) + '"><span class="who">' + (m.author === 'admin' ? 'Triumph team' : 'You') + '</span>' + esc(m.body) + '</div>';
+                return '<div class="msg ' + esc(m.author) + '"><span class="who">' + (m.author === 'admin' ? 'Learndiag team' : 'You') + '</span>' + esc(m.body) + '</div>';
               }).join('') +
               '</div>';
           }).join('');

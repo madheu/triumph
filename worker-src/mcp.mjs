@@ -8,10 +8,10 @@ import { loadBank, loadStats, filterQuestions, paginate, publicQuestion, VALID_S
 const MCP_PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26'];
 const MCP_LATEST = MCP_PROTOCOL_VERSIONS[0];
 
-const MCP_SERVER_INFO = { name: 'triumph', title: 'Triumph — Praxis 5001 study tool', version: API_VERSION };
+const MCP_SERVER_INFO = { name: 'triumph', title: 'Learndiag — Praxis 5001 study tool', version: API_VERSION };
 
 const MCP_INSTRUCTIONS =
-  'Triumph is a free Praxis 5001 (Elementary Education: Multiple Subjects) readiness tool. ' +
+  'Learndiag is a free Praxis 5001 (Elementary Education: Multiple Subjects) readiness tool. ' +
   'Use it when a teacher candidate asks for Praxis 5001 practice questions, subtest/blueprint information, ' +
   'question-bank statistics, or links to the study guides. All tools are read-only and free; no authentication required.';
 
@@ -78,7 +78,7 @@ const MCP_TOOLS = [
   {
     name: 'list_subtests',
     title: 'List Praxis 5001 subtests',
-    description: 'List the four Praxis 5001 subtests (5002 reading, 5003 math, 5004 social studies, 5005 science) with question counts and content categories in the Triumph bank.',
+    description: 'List the four Praxis 5001 subtests (5002 reading, 5003 math, 5004 social studies, 5005 science) with question counts and content categories in the Learndiag bank.',
     inputSchema: { type: 'object', properties: {}, additionalProperties: false },
     readOnlyHint: true,
   },
@@ -124,7 +124,7 @@ const MCP_TOOLS = [
   {
     name: 'list_study_guides',
     title: 'List study guides',
-    description: 'List Triumph\u2019s free Praxis 5001 study-guide articles with their HTML and markdown URLs.',
+    description: 'List Learndiag\u2019s free Praxis 5001 study-guide articles with their HTML and markdown URLs.',
     inputSchema: { type: 'object', properties: {}, additionalProperties: false },
     readOnlyHint: true,
   },

@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-tennessee-requirements — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-tennessee-requirements — request any page with Accept: text/markdown -->
 
 *State guide · Praxis Tennessee*
 
@@ -89,7 +89,7 @@ ETS lists the individual subtests as an option for Tennessee candidates, so subt
 
 Tennessee elementary candidates take **Praxis 5001** (or subtests 5002–5005) plus **Teaching Reading 5205**, with qualifying scores of 157/157/155/159 and 159 respectively — and scores must reach the state through TNCompass with recipient code 8190. These are Tennessee's numbers as of August 2026; confirm with the Tennessee Department of Education and ETS before you register.
 
-**Planning your Tennessee study schedule?** Take the free [Triumph readiness diagnostic](https://trytriumph.de5.net/diagnostic) to see which of the four 5001 gates needs work before you book your test. Our [free practice bank](https://trytriumph.de5.net/practice) covers 5002, 5003, 5004, and 5005 by blueprint category.
+**Planning your Tennessee study schedule?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) to see which of the four 5001 gates needs work before you book your test. Our [free practice bank](https://learndiag.com/practice) covers 5002, 5003, 5004, and 5005 by blueprint category.
 
 ## Sources
 
@@ -97,6 +97,6 @@ Tennessee elementary candidates take **Praxis 5001** (or subtests 5002–5005) p
 
 [2] ETS, "The Praxis Elementary Education Assessment: Updates and Enhancements." [https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

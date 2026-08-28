@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-virginia-requirements — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-virginia-requirements — request any page with Accept: text/markdown -->
 
 *State guide · Praxis Virginia*
 
@@ -51,7 +51,7 @@ Your preparation program is a second source of truth: programs often impose inte
 
 Virginia currently lists the 5001 family and 5205, and nothing on the ETS page suggests an immediate switch. But ETS launched the new **8000-series Elementary Education Fundamentals tests** in spring 2026, and states adopt new series at their own pace.[2] Before you register, check whether Virginia has updated its requirement — especially if you are planning to test more than a few months out.
 
-If Virginia's requirement ever changes to the 8000 series, the blueprints differ (more questions in math, social studies, and science), so prep built for the 5001 will not align. See our [Praxis 5001 vs. the 8000 Series](https://trytriumph.de5.net/praxis-5001-vs-8000-series) guide for the differences.
+If Virginia's requirement ever changes to the 8000 series, the blueprints differ (more questions in math, social studies, and science), so prep built for the 5001 will not align. See our [Praxis 5001 vs. the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series) guide for the differences.
 
 ## How to Confirm Your Requirement (Do This Before Registering)
 
@@ -87,7 +87,7 @@ Score validity and reciprocity rules are set by Virginia. Check the Virginia Dep
 
 Virginia elementary candidates take **Praxis 5001** (or subtests 5002–5005) plus **Teaching Reading 5205**, with qualifying scores of 157/157/155/159 for the four subtests and 159 for 5205. These are Virginia's numbers as of August 2026 — confirm them with the Virginia Department of Education and ETS before you register, and re-check if you are planning to test after a new test series is adopted.
 
-**Planning your Virginia study schedule?** Take the free [Triumph readiness diagnostic](https://trytriumph.de5.net/diagnostic) to see which of the four 5001 gates needs work before you book your test. Our [free practice bank](https://trytriumph.de5.net/practice) covers 5002, 5003, 5004, and 5005 by blueprint category.
+**Planning your Virginia study schedule?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) to see which of the four 5001 gates needs work before you book your test. Our [free practice bank](https://learndiag.com/practice) covers 5002, 5003, 5004, and 5005 by blueprint category.
 
 ## Sources
 
@@ -95,6 +95,6 @@ Virginia elementary candidates take **Praxis 5001** (or subtests 5002–5005) pl
 
 [2] ETS, "The Praxis Elementary Education Assessment: Updates and Enhancements." [https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

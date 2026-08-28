@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-passing-scores — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-passing-scores — request any page with Accept: text/markdown -->
 
 *Study guide · Praxis 5001*
 
@@ -62,11 +62,11 @@ Do not assume "no score listed" means "no test required." Verify with the agency
 
 For a deeper look at five states where elementary candidates still use the Praxis 5001 family (or are navigating its transition), see our state guides:
 
-- [Praxis 5001 Requirements in Virginia](https://trytriumph.de5.net/praxis-5001-virginia-requirements) — 5001 plus Teaching Reading 5205
-- [Praxis 5001 Requirements in Tennessee](https://trytriumph.de5.net/praxis-5001-tennessee-requirements) — 5001 plus 5205, scores via TNCompass
-- [Praxis 5001 Requirements in New Jersey](https://trytriumph.de5.net/praxis-5001-new-jersey-requirements) — 5001 for Elementary K–6
-- [Praxis 5001 Requirements in South Carolina](https://trytriumph.de5.net/praxis-5001-south-carolina-requirements) — the 2026 transition to the 5901 bundle and CKT
-- [Praxis 5001 Requirements in Kentucky](https://trytriumph.de5.net/praxis-5001-kentucky-requirements) — scores set by regulation 16 KAR 6:010
+- [Praxis 5001 Requirements in Virginia](https://learndiag.com/praxis-5001-virginia-requirements) — 5001 plus Teaching Reading 5205
+- [Praxis 5001 Requirements in Tennessee](https://learndiag.com/praxis-5001-tennessee-requirements) — 5001 plus 5205, scores via TNCompass
+- [Praxis 5001 Requirements in New Jersey](https://learndiag.com/praxis-5001-new-jersey-requirements) — 5001 for Elementary K–6
+- [Praxis 5001 Requirements in South Carolina](https://learndiag.com/praxis-5001-south-carolina-requirements) — the 2026 transition to the 5901 bundle and CKT
+- [Praxis 5001 Requirements in Kentucky](https://learndiag.com/praxis-5001-kentucky-requirements) — scores set by regulation 16 KAR 6:010
 
 ## Passing Scores Change — Especially Right Now
 
@@ -98,13 +98,13 @@ It depends on your state. Some states accept scores indefinitely; others impose 
 
 ### My state uses the new 8000 series. Does any of this still apply?
 
-The 5001 subtests no longer match the new 8002–8005 blueprints, which have different question counts and content weights.[7] If your state requires the 8000 series, build your prep around those codes — see our [Praxis 5001 vs. the 8000 Series guide](https://trytriumph.de5.net/praxis-5001-vs-8000-series) for the differences.
+The 5001 subtests no longer match the new 8002–8005 blueprints, which have different question counts and content weights.[7] If your state requires the 8000 series, build your prep around those codes — see our [Praxis 5001 vs. the 8000 Series guide](https://learndiag.com/praxis-5001-vs-8000-series) for the differences.
 
 ## The Bottom Line
 
 Your Praxis 5001 passing score is a state-specific number, not a national constant. Find your state's qualifying scores on the ETS score-requirements page, confirm them with your licensing agency, and re-check before you register. Then study for a target comfortably above the line — not right at it.
 
-**Want to know where you stand against your state's passing line before you register?** Take the free [Triumph readiness diagnostic](https://trytriumph.de5.net/diagnostic) — 12 original questions across all four subtests, with an estimated scaled score per gate.
+**Want to know where you stand against your state's passing line before you register?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) — 12 original questions across all four subtests, with an estimated scaled score per gate.
 
 ## Sources
 
@@ -124,6 +124,6 @@ Your Praxis 5001 passing score is a state-specific number, not a national consta
 
 [8] Kentucky Administrative Regulation 16 KAR 6:010, "Selection of Assessment for Educator Preparation and Certification." [https://apps.legislature.ky.gov/law/kar/titles/016/006/010/](https://apps.legislature.ky.gov/law/kar/titles/016/006/010/)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

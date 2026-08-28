@@ -1,4 +1,4 @@
-<!-- Markdown variant of https://trytriumph.de5.net/praxis-5001-south-carolina-requirements — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/praxis-5001-south-carolina-requirements — request any page with Accept: text/markdown -->
 
 *State guide · Praxis South Carolina*
 
@@ -84,12 +84,12 @@ The 5901 bundle covers math, social studies, and science only — reading is not
 
 South Carolina is mid-transition: Praxis 5001 is accepted only through August 2026 (5002) and August 2027 (5003–5005), with the 5901 bundle and 7811 CKT as the newer alternatives. On top of the content test, elementary candidates typically need PLT K–6 (160) and, depending on endorsement, Teaching Reading 5205 (159). Confirm your exact code, deadline, and full test list with the [South Carolina Department of Education](https://ed.sc.gov/) before you register.
 
-**Preparing for a South Carolina elementary test?** Our [free readiness diagnostic](https://trytriumph.de5.net/diagnostic) covers the four 5001-style content areas — reading, math, social studies, science — and shows which gate needs work first. The [practice bank](https://trytriumph.de5.net/practice) covers the same categories with original questions and explanations.
+**Preparing for a South Carolina elementary test?** Our [free readiness diagnostic](https://learndiag.com/diagnostic) covers the four 5001-style content areas — reading, math, social studies, science — and shows which gate needs work first. The [practice bank](https://learndiag.com/practice) covers the same categories with original questions and explanations.
 
 ## Sources
 
 [1] ETS, "South Carolina Required Tests." [https://praxis.ets.org/state-requirements/southcarolina-tests.html](https://praxis.ets.org/state-requirements/southcarolina-tests.html)
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Triumph readiness check](https://trytriumph.de5.net/diagnostic)
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://trytriumph.de5.net/praxis-5001-study-guide) · [The Four-Gate Strategy](https://trytriumph.de5.net/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

@@ -1,12 +1,12 @@
-<!-- Markdown variant of https://trytriumph.de5.net/ — request any page with Accept: text/markdown -->
+<!-- Markdown variant of https://learndiag.com/ — request any page with Accept: text/markdown -->
 
-# Triumph — Free Praxis 5001 Readiness Diagnostic for Teacher Candidates
+# Learndiag — Free Praxis 5001 Readiness Diagnostic for Teacher Candidates
 
 You've studied. You've practiced. **But do you know if you'll pass?**
 
-The Praxis 5001 is **four separate tests** — and it passes you on all of them or none. Most people study them like one exam and find out too late which one was the weakest. Triumph turns free practice into **an honest readiness score**, a plan for your actual weak spots, and a forecast of how close you are to the pass.
+The Praxis 5001 is **four separate tests** — and it passes you on all of them or none. Most people study them like one exam and find out too late which one was the weakest. Learndiag turns free practice into **an honest readiness score**, a plan for your actual weak spots, and a forecast of how close you are to the pass.
 
-**Start free:** [Run the free diagnostic](https://trytriumph.de5.net/diagnostic.html) · [Try sample questions now](https://trytriumph.de5.net/practice.html)
+**Start free:** [Run the free diagnostic](https://learndiag.com/diagnostic.html) · [Try sample questions now](https://learndiag.com/practice.html)
 
 ## The four subtests
 
@@ -32,30 +32,30 @@ This is not a niche fear. A **majority of first-time elementary teacher candidat
 ## How it works
 
 1. **Practice free, on the real blueprint.** A free question bank organized by the four subtests — same categories, same weights as the official Study Companion. No paywall on the questions themselves.
-2. **Get a readiness score, not a vague percentage.** Your answers map to each subtest's categories. Triumph converts them to an estimated scaled score and tells you where you sit against your state's passing line.
+2. **Get a readiness score, not a vague percentage.** Your answers map to each subtest's categories. Learndiag converts them to an estimated scaled score and tells you where you sit against your state's passing line.
 3. **A plan built for your weakest gate.** Study time goes where the gap is — 60% on the subtest most likely to fail you, not equal effort across all four.
 4. **Track it like a training program.** Progress, retake-readiness, and a study schedule that updates as you improve. No more guessing in the last two weeks.
 
 ## Pricing
 
-**Practice — $0.** Free question bank across all four subtests, category-level practice tracking, unlimited attempts. [Start free](https://trytriumph.de5.net/diagnostic.html)
+**Practice — $0.** Free question bank across all four subtests, category-level practice tracking, unlimited attempts. [Start free](https://learndiag.com/diagnostic.html)
 
-**Triumph — $15/mo.** Readiness score and pass-probability forecast, personalized study plan by weak subtest, progress tracking and retake-readiness. [Get the forecast](https://trytriumph.de5.net/diagnostic.html)
+**Learndiag — $15/mo.** Readiness score and pass-probability forecast, personalized study plan by weak subtest, progress tracking and retake-readiness. [Get the forecast](https://learndiag.com/diagnostic.html)
 
 A retake costs about $130 and 28 days. The plan costs $15.
 
 ## For developers and AI agents
 
-- REST API: `https://trytriumph.de5.net/api/v1/questions/random?count=5` (anonymous access, no key needed)
-- OpenAPI 3.1 spec: <https://trytriumph.de5.net/openapi.json>
-- MCP server (Streamable HTTP): <https://trytriumph.de5.net/mcp>
-- Developer portal: <https://trytriumph.de5.net/developers>
-- llms.txt: <https://trytriumph.de5.net/llms.txt>
+- REST API: `https://learndiag.com/api/v1/questions/random?count=5` (anonymous access, no key needed)
+- OpenAPI 3.1 spec: <https://learndiag.com/openapi.json>
+- MCP server (Streamable HTTP): <https://learndiag.com/mcp>
+- Developer portal: <https://learndiag.com/developers>
+- llms.txt: <https://learndiag.com/llms.txt>
 
 ## About / legal
 
-Triumph is an independent study tool. It is not affiliated with, endorsed by, or sponsored by ETS, and is not approved by ETS. Praxis is a trademark of ETS. All practice questions are original and aligned to the published test blueprint; no official test items are reproduced.
+Learndiag is an independent study tool. It is not affiliated with, endorsed by, or sponsored by ETS, and is not approved by ETS. Praxis is a trademark of ETS. All practice questions are original and aligned to the published test blueprint; no official test items are reproduced.
 
 Built by an independent developer. Questions, feedback, or partnership ideas — [abc15531888397@gmail.com](mailto:abc15531888397@gmail.com) or [@madehu on X](https://x.com/madehu).
 
-- [About](https://trytriumph.de5.net/about) · [Contact](https://trytriumph.de5.net/contact) · [Privacy](https://trytriumph.de5.net/privacy) · [Developers](https://trytriumph.de5.net/developers) · [Resources](https://trytriumph.de5.net/resources)
+- [About](https://learndiag.com/about) · [Contact](https://learndiag.com/contact) · [Privacy](https://learndiag.com/privacy) · [Developers](https://learndiag.com/developers) · [Resources](https://learndiag.com/resources)

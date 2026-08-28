@@ -3,7 +3,6 @@
 name = "triumph"
 pages_build_output_dir = "site"
 compatibility_date = "2026-08-20"
-
 # KV namespace：用户数据 + 学习状态（id 来自 wrangler kv namespace create）
 [[kv_namespaces]]
 binding = "TRIUMPH_KV"
@@ -23,4 +22,4 @@ database_id = "5d04a307-4dc9-4236-9492-817f17f3a351"
 # 发件地址（验证码邮件）
 # vars 在 Pages 控制台或此处配置
 [vars]
-EMAIL_FROM = "Triumph <verify@trytriumph.de5.net>"
+EMAIL_FROM = "Learndiag <verify@learndiag.com>"

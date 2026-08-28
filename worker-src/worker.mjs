@@ -1,4 +1,4 @@
-// worker-src/worker.mjs — Triumph Cloudflare Pages worker entry point.
+// worker-src/worker.mjs — Learndiag Cloudflare Pages worker entry point.
 //
 // This is the composition root of the modularized worker. It mounts the main
 // router and re-exports the named symbols that the test suite and tooling
@@ -22,6 +22,7 @@
 
 import { CORS_HEADERS, corsPreflight, withCors, json, apiError, ERROR_CATALOG } from './http.mjs';
 import { ACCOUNT_ROUTES } from './accounts.mjs';
+import { GOOGLE_AUTH_ROUTES } from './google-auth.mjs';
 import { PASSWORD_ROUTES } from './password.mjs';
 import { BILLING_ROUTES } from './billing.mjs';
 import { V1_ROUTES } from './public-api.mjs';
@@ -60,20 +61,20 @@ export default {
       // Mirror hosts such as triumph-6eq.pages.dev serve identical content with
       // a 200, which splits indexing signals across hosts in search engines.
       // Redirect GET/HEAD page requests on any non-canonical host to the
-      // production domain so every mirror 301s to trytriumph.de5.net.
+      // production domain so every mirror 301s to learndiag.com.
       // Exempt: local dev hosts, API/MCP/well-known endpoints (programmatic
       // clients must keep working), and non-main preview deployments.
       {
         const host = url.hostname.toLowerCase();
         const isLocalDev = host === 'localhost' || host === '127.0.0.1' || host === '[::1]';
-        const isCanonical = host === 'trytriumph.de5.net';
+        const isCanonical = host === 'learndiag.com';
         const isProgrammatic =
           path.startsWith('/api/') || path === '/mcp' || path.startsWith('/.well-known/');
         const isPreviewBranch =
           typeof env?.CF_PAGES_BRANCH === 'string' && env.CF_PAGES_BRANCH !== 'main';
         const isPageRequest = request.method === 'GET' || request.method === 'HEAD';
         if (isPageRequest && !isLocalDev && !isCanonical && !isProgrammatic && !isPreviewBranch) {
-          return Response.redirect(`https://trytriumph.de5.net${url.pathname}${url.search}`, 301);
+          return Response.redirect(`https://learndiag.com${url.pathname}${url.search}`, 301);
         }
       }
 
@@ -97,6 +98,15 @@ export default {
           const handler = account[request.method];
           if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(account) }));
           return withCors(await handler(request, env));
+        }
+        const google = GOOGLE_AUTH_ROUTES[path];
+        if (google) {
+          const handler = google[request.method];
+          if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(google) }));
+          // OAuth callback must NOT get CORS/Access-Control-Allow-Origin:* (the
+          // redirect chain is browser-navigated, not XHR); return the raw handler
+          // result (a 302 redirect or an error Response).
+          return handler(request, env);
         }
         const pw = PASSWORD_ROUTES[path];
         if (pw) {
