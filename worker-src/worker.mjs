@@ -83,13 +83,13 @@ export default {
         }
       }
 
-      /* ---------- clean-URL aliases for static app pages (SEO) ---------- */
-      // The static app pages live at /diagnostic.html and /practice.html (canonical
-      // form, used in the sitemap). Content pages link to the extension-less
-      // /diagnostic and /practice; alias those to the .html canonical so both work
-      // without duplicate URLs. No SPA fallback exists (404.html disables it).
-      if (path === '/diagnostic' || path === '/practice') {
-        return Response.redirect(`${url.origin}${path}.html${url.search}`, 301);
+      /* ---------- canonical pretty URLs for static app pages (SEO) ---------- */
+      // Cloudflare Pages asset routing 308s /foo.html to /foo, so the pretty
+      // forms are canonical — same convention as every other page (/about,
+      // /resources, /mistake-log). 301 the .html forms to the pretty URL so
+      // each page has one URL and the two redirects can never loop.
+      if (path === '/diagnostic.html' || path === '/practice.html') {
+        return Response.redirect(`${url.origin}${path.replace(/\.html$/, '')}${url.search}`, 301);
       }
 
       /* ---------- machine routes ---------- */

@@ -6,7 +6,7 @@ You've studied. You've practiced. **But do you know if you'll pass?**
 
 The Praxis 5001 is **four separate tests** — and it passes you on all of them or none. Most people study them like one exam and find out too late which one was the weakest. Learndiag turns free practice into **an honest readiness score**, a plan for your actual weak spots, and a forecast of how close you are to the pass.
 
-**Start free:** [Run the free diagnostic](https://learndiag.com/diagnostic.html) · [Try sample questions now](https://learndiag.com/practice.html)
+**Start free:** [Run the free diagnostic](https://learndiag.com/diagnostic) · [Try sample questions now](https://learndiag.com/practice)
 
 ## The four subtests
 
@@ -38,9 +38,9 @@ This is not a niche fear. A **majority of first-time elementary teacher candidat
 
 ## Pricing
 
-**Practice — $0.** Free question bank across all four subtests, category-level practice tracking, unlimited attempts. [Start free](https://learndiag.com/diagnostic.html)
+**Practice — $0.** Free question bank across all four subtests, category-level practice tracking, unlimited attempts. [Start free](https://learndiag.com/diagnostic)
 
-**Learndiag — $15/mo.** Readiness score and pass-probability forecast, personalized study plan by weak subtest, progress tracking and retake-readiness. [Get the forecast](https://learndiag.com/diagnostic.html)
+**Learndiag — $15/mo.** Readiness score and pass-probability forecast, personalized study plan by weak subtest, progress tracking and retake-readiness. [Get the forecast](https://learndiag.com/diagnostic)
 
 A retake costs about $130 and 28 days. The plan costs $15.
 

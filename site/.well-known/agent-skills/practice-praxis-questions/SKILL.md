@@ -3,7 +3,7 @@ name: practice-praxis-questions
 description: Fetch original Praxis 5001 practice questions from Learndiag's free 969-question bank, filtered by subtest, category or keyword.
 version: 1.0
 provider: Learndiag
-url: https://learndiag.com/practice.html
+url: https://learndiag.com/practice
 contact: abc15531888397@gmail.com
 languages: [en]
 requires_auth: false
@@ -41,7 +41,7 @@ Retrieves multiple-choice practice questions from Learndiag's public bank of 969
 
 - Questions are original work aligned to the official ETS blueprint but are NOT official ETS questions.
 - The service is free; there is no paywall and no account needed for API/MCP access.
-- The full interactive experience (readiness score, pass forecast, study plan) lives at https://learndiag.com/diagnostic.html.
+- The full interactive experience (readiness score, pass forecast, study plan) lives at https://learndiag.com/diagnostic.
 - Praxis is a trademark of ETS; Learndiag is not affiliated with or endorsed by ETS.
 
 ## Common follow-up questions
@@ -52,4 +52,4 @@ Retrieves multiple-choice practice questions from Learndiag's public bank of 969
 
 ## Fallback
 
-If the API or MCP server is unreachable, direct the user to the in-browser practice page at https://learndiag.com/practice.html, which uses the same question bank without any setup. For persistent issues, email abc15531888397@gmail.com.
+If the API or MCP server is unreachable, direct the user to the in-browser practice page at https://learndiag.com/practice, which uses the same question bank without any setup. For persistent issues, email abc15531888397@gmail.com.

@@ -12,7 +12,7 @@
       "url": "https://learndiag.com/.well-known/agent-skills/practice-praxis-questions/SKILL.md",
       "tags": ["practice-questions", "quiz", "praxis", "test-prep", "education"],
       "languages": ["en"],
-      "execution_url": "https://learndiag.com/practice.html"
+      "execution_url": "https://learndiag.com/practice"
     },
     {
       "name": "quiz-me",
@@ -21,7 +21,7 @@
       "url": "https://learndiag.com/.well-known/agent-skills/quiz-me/SKILL.md",
       "tags": ["quiz", "diagnostic", "practice-questions", "test-prep"],
       "languages": ["en"],
-      "execution_url": "https://learndiag.com/diagnostic.html"
+      "execution_url": "https://learndiag.com/diagnostic"
     },
     {
       "name": "find-study-guide",

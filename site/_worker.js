@@ -2730,8 +2730,8 @@ var worker_default = {
           return Response.redirect(`https://learndiag.com${url.pathname}${url.search}`, 301);
         }
       }
-      if (path === "/diagnostic" || path === "/practice") {
-        return Response.redirect(`${url.origin}${path}.html${url.search}`, 301);
+      if (path === "/diagnostic.html" || path === "/practice.html") {
+        return Response.redirect(`${url.origin}${path.replace(/\.html$/, "")}${url.search}`, 301);
       }
       if (path === "/mcp") return handleMcp(request, env);
       const authDoc = AUTH_DISCOVERY_ROUTES[path];

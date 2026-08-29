@@ -3,7 +3,7 @@ name: quiz-me
 description: Run an interactive Praxis 5001 mini quiz — draw random questions, score the answers, and explain what was missed.
 version: 1.0
 provider: Learndiag
-url: https://learndiag.com/diagnostic.html
+url: https://learndiag.com/diagnostic
 contact: abc15531888397@gmail.com
 languages: [en]
 requires_auth: false
@@ -34,7 +34,7 @@ Draws a small randomized set of questions from Learndiag's free bank, administer
 3. Ask question 1 with options A–D; wait for the answer. Record it.
 4. After each answer, immediately confirm correct/incorrect and give the `explanation`.
 5. When all questions are answered, output a short scorecard: correct count, percentage, per-category breakdown, and the single weakest category.
-6. Recommend next steps: more practice via the same skill, the subtest study guide (see find-study-guide skill), or Learndiag's full readiness diagnostic at https://learndiag.com/diagnostic.html.
+6. Recommend next steps: more practice via the same skill, the subtest study guide (see find-study-guide skill), or Learndiag's full readiness diagnostic at https://learndiag.com/diagnostic.
 
 ## Information the assistant should provide to the user
 
@@ -49,4 +49,4 @@ Draws a small randomized set of questions from Learndiag's free bank, administer
 
 ## Fallback
 
-If the API is unreachable, ask questions from your own knowledge but say clearly they are not from Learndiag's bank. Point the user to https://learndiag.com/practice.html for the always-available browser experience.
+If the API is unreachable, ask questions from your own knowledge but say clearly they are not from Learndiag's bank. Point the user to https://learndiag.com/practice for the always-available browser experience.

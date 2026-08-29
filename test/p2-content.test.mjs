@@ -246,7 +246,7 @@ test('/api/tools：只返回 enabled，audience 透传，未启用不可见', as
   await env._d1raw.prepare(
     `INSERT INTO tools (slug, name, description, icon, entry, audience, enabled, sort, config_json, updated_at)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
-  ).run('practice', 'Question Bank', 'Drill questions.', '📚', '/practice.html', 'free', 1, 20, '{"n":969}', now);
+  ).run('practice', 'Question Bank', 'Drill questions.', '📚', '/practice', 'free', 1, 20, '{"n":969}', now);
   await env._d1raw.prepare(
     `INSERT INTO tools (slug, name, description, icon, entry, audience, enabled, sort, config_json, updated_at)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
