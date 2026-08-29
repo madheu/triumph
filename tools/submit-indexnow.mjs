@@ -9,7 +9,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const HOST = 'trytriumph.de5.net';
+const HOST = 'learndiag.com';
 const KEY = '5c78f3e393bb49578d6348ab14eeff91';
 const ENDPOINT = 'https://api.indexnow.org/indexnow';
 

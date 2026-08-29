@@ -21,8 +21,8 @@ for (let i = 0; i < order.length; i++) {
   const prev = i > 0 ? order[i - 1] : null;
   const next = i < order.length - 1 ? order[i + 1] : null;
   let tags = '';
-  if (prev) tags += `\n  <link rel="prev" href="https://trytriumph.de5.net/${prev}">`;
-  if (next) tags += `\n  <link rel="next" href="https://trytriumph.de5.net/${next}">`;
+  if (prev) tags += `\n  <link rel="prev" href="https://learndiag.com/${prev}">`;
+  if (next) tags += `\n  <link rel="next" href="https://learndiag.com/${next}">`;
   const canonRe = /(<link rel="canonical" href="[^"]*">)/;
   if (!canonRe.test(src)) { console.log(order[i], ': NO CANONICAL — skipped'); continue; }
   src = src.replace(canonRe, '$1' + tags);

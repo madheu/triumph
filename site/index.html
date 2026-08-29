@@ -17,6 +17,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Learndiag — free Praxis 5001 readiness diagnostic">
   <link rel="canonical" href="https://learndiag.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="mcp-manifest" type="application/json" href="/.well-known/mcp-manifest.json">
   <link rel="alternate" type="text/markdown" href="/md/index.md" title="Markdown version">
 
@@ -92,6 +93,39 @@
     "publisher": { "@id": "https://learndiag.com/#organization" }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the Praxis 5001 practice test free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The full question bank and the 12-question readiness diagnostic are free with no signup required. Logging in at the end of the diagnostic is optional and unlocks your full report and study plan." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is on the Praxis 5001?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The Praxis 5001 (Elementary Education: Multiple Subjects) is four separately scored subtests: 5002 Reading & Language Arts, 5003 Mathematics, 5004 Social Studies, and 5005 Science. You must pass all four." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the Praxis 5001 diagnostic take?",
+        "acceptedAnswer": { "@type": "Answer", "text": "About eight minutes. The diagnostic draws 12 original questions at random — 3 from each of the four subtests." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the diagnostic tell me my weakest subtest?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. It estimates a scaled score for each subtest, compares it to state passing lines, and identifies the gate most likely to fail you so you know where to study." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Learndiag affiliated with ETS?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Learndiag is an independent study tool, not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS." }
+      }
+    ]
+  }
+  </script>
 
   <!--
     ============================================================
@@ -136,6 +170,10 @@
       --accent: #C09D9B;
       --accent-deep: #A67D7A;
       --on-accent: #332E2B;
+      --correct: #94A98F;
+      --correct-deep: #7D9378;
+      --wrong: #CC9D99;
+      --wrong-deep: #B46F6A;
       --serif: "Instrument Serif", Georgia, serif;
       --sans: "Instrument Sans", system-ui, sans-serif;
       --mono: "JetBrains Mono", ui-monospace, monospace;
@@ -216,6 +254,60 @@
       cursor: pointer; transition: border-color 0.18s ease;
     }
     .btn-secondary:hover { border-color: var(--ink); }
+
+    /* ---------- Hero 双栏 + 微诊断卡片 ---------- */
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,0.85fr); gap: 56px; align-items: start; }
+    .hero-copy { min-width: 0; }
+    .hero-widget { min-width: 0; }
+    .diag-card {
+      position: sticky; top: 36px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 28px 26px 24px;
+    }
+    .diag-card .eyebrow { display: block; margin-bottom: 10px; color: var(--accent-deep); }
+    .diag-card h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 24px; line-height: 1.25; margin-bottom: 18px;
+    }
+    .diag-q { font-size: 16px; line-height: 1.6; margin-bottom: 14px; }
+    .diag-q .q-meta {
+      display: block; font-family: var(--mono); font-size: 11px;
+      letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+    .diag-opt {
+      display: block; width: 100%; text-align: left;
+      background: none; border: 1px solid var(--line);
+      padding: 11px 14px; margin: 8px 0;
+      font-family: var(--sans); font-size: 14px; line-height: 1.45; color: var(--ink);
+      cursor: pointer; transition: border-color .15s, background .15s;
+    }
+    .diag-opt:hover:not(:disabled) { border-color: var(--ink); }
+    .diag-opt:disabled { cursor: default; }
+    .diag-opt.correct { border-color: var(--correct-deep); background: #EFF2EA; }
+    .diag-opt.wrong { border-color: var(--wrong-deep); background: #F6EAE8; }
+    .diag-explain { font-size: 13px; line-height: 1.6; color: var(--ink-soft); margin-top: 10px; min-height: 2.4em; }
+    .diag-explain strong { color: var(--ink); }
+    .diag-progress { display: flex; gap: 8px; align-items: center; margin: 14px 0 8px; }
+    .diag-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+    .diag-dot.on { background: var(--accent); }
+    .diag-dot.done { background: var(--correct-deep); }
+    .diag-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 4px; }
+    .diag-next {
+      background: var(--ink); color: var(--bg); border: none;
+      padding: 10px 18px; font-family: var(--sans); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: background .15s;
+    }
+    .diag-next:hover { background: #2B2724; }
+    .diag-count { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+    .diag-result { text-align: center; padding: 6px 0 2px; }
+    .diag-result .eyebrow { display: block; margin-bottom: 6px; }
+    .diag-result .score { font-family: var(--serif); font-size: 36px; color: var(--accent-deep); display: block; margin: 8px 0 6px; }
+    .diag-result p { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+    .diag-result .btn-primary { width: 100%; margin-top: 16px; text-align: center; }
+    .diag-err { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+    .diag-err a { color: var(--accent-deep); }
 
     /* hero 底部：四科标注（编辑式，线条分隔） */
     .hero-subtests { margin-top: 72px; border-top: 1px solid var(--line); }
@@ -301,6 +393,8 @@
       .hero .lede { font-size: 17px; line-height: 1.6; }
       .hero-cta-row { flex-direction: column; align-items: stretch; gap: 14px; }
       .hero-cta-row .btn-primary, .hero-cta-row .btn-secondary { width: 100%; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .diag-card { position: static; }
       .hero-subtests { margin-top: 48px; }
       .subtest-row { grid-template-columns: 60px 1fr; gap: 12px; padding: 14px 0; }
       .subtest-desc { grid-column: 2; font-size: 13px; line-height: 1.5; }
@@ -334,17 +428,30 @@
     </header>
     <main>
       <section class="hero wrap">
-        <span class="eyebrow">A diagnostic study system for the Praxis 5001</span>
-        <h1>Free Praxis 5001 Practice Test — <em>Find Your Weak Subtest</em></h1>
-        <p class="lede">
-          The Praxis 5001 is <strong>four separate tests</strong> — and it passes you on all of them or none.
-          Most people study them like one exam and find out too late which one was the weakest.
-          Learndiag turns free practice into <strong>an honest readiness score</strong>, a plan for your
-          actual weak spots, and a forecast of how close you are to the pass.
-        </p>
-        <div class="hero-cta-row">
-          <a class="btn-primary" href="/diagnostic.html" style="text-decoration:none;display:inline-block">Run the free diagnostic</a>
-          <a class="btn-secondary" href="/practice.html" style="text-decoration:none;display:inline-block">Try sample questions now</a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">A diagnostic study system for the Praxis 5001</span>
+            <h1>Free Praxis 5001 Practice Test — <em>Find Your Weak Subtest</em></h1>
+            <p class="lede">
+              The Praxis 5001 is <strong>four separate tests</strong> — and it passes you on all of them or none.
+              Most people study them like one exam and find out too late which one was the weakest.
+              Learndiag turns free practice into <strong>an honest readiness score</strong>, a plan for your
+              actual weak spots, and a forecast of how close you are to the pass.
+            </p>
+            <div class="hero-cta-row">
+              <a class="btn-primary" href="/diagnostic.html" style="text-decoration:none;display:inline-block">Run the free diagnostic</a>
+              <a class="btn-secondary" href="/practice.html" style="text-decoration:none;display:inline-block">Try sample questions now</a>
+            </div>
+          </div>
+          <div class="hero-widget">
+            <div class="diag-card" id="diag-widget">
+              <span class="eyebrow">Diagnose your level</span>
+              <h2>Three questions. One honest signal.</h2>
+              <div id="diag-body">
+                <p class="diag-err">Not sure where you stand? <a href="/diagnostic.html">Run the free 12-question diagnostic</a> for an estimated scaled score and your weakest gate.</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="hero-subtests">
           <div class="subtest-row">
@@ -487,9 +594,89 @@
         <a href="mailto:abc15531888397@gmail.com">abc15531888397@gmail.com</a> or follow
         <a href="https://x.com/madehu" target="_blank" rel="noopener noreferrer">@madehu</a> on X.
       </p>
-      <p style="margin-top:18px"><a href="/">Home</a> · <a href="/resources.html">Resources</a> · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/developers.html">Developers / API</a></p>
+      <p style="margin-top:18px"><a href="/">Home</a> · <a href="/resources.html">Resources</a> · <a href="/tools">Study tools</a> · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/developers.html">Developers / API</a> · <a href="/mistake-log.html">Mistake log</a></p>
     </footer>
   </div>
-  
+
+  <!-- Embedded 3-question micro diagnostic (progressive enhancement; static fallback above is crawlable) -->
+  <script>
+  (function(){
+    var body = document.getElementById('diag-body');
+    if (!body) return;
+    var qs = null, idx = 0, correct = 0, locked = false, weakest = {};
+    function esc(s){ var d = document.createElement('div'); d.textContent = String(s); return d.innerHTML; }
+    function render(){
+      if (idx >= qs.length) { renderResult(); return; }
+      var q = qs[idx];
+      body.innerHTML = '';
+      var stem = document.createElement('div'); stem.className = 'diag-q';
+      var meta = document.createElement('span'); meta.className = 'q-meta';
+      meta.textContent = q.subtest_code + ' · ' + q.subtest;
+      stem.appendChild(meta);
+      stem.appendChild(document.createTextNode(q.question));
+      body.appendChild(stem);
+      q.options.forEach(function(opt, i){
+        var b = document.createElement('button'); b.className = 'diag-opt'; b.textContent = opt;
+        b.addEventListener('click', function(){ if (locked) return; locked = true; answer(i, q); });
+        body.appendChild(b);
+      });
+      var exp = document.createElement('div'); exp.className = 'diag-explain'; exp.id = 'diag-explain'; body.appendChild(exp);
+      var prog = document.createElement('div'); prog.className = 'diag-progress';
+      qs.forEach(function(_, i){ var d = document.createElement('span'); d.className = 'diag-dot' + (i < idx ? ' done' : (i === idx ? ' on' : '')); prog.appendChild(d); });
+      body.appendChild(prog);
+      var foot = document.createElement('div'); foot.className = 'diag-foot';
+      var cnt = document.createElement('span'); cnt.className = 'diag-count'; cnt.textContent = (idx + 1) + ' / ' + qs.length;
+      foot.appendChild(cnt);
+      var nxt = document.createElement('button'); nxt.className = 'diag-next'; nxt.style.display = 'none';
+      nxt.textContent = idx === qs.length - 1 ? 'See my result' : 'Next question';
+      nxt.addEventListener('click', function(){ idx++; locked = false; render(); });
+      foot.appendChild(nxt);
+      body.appendChild(foot);
+    }
+    function answer(i, q){
+      var btns = body.querySelectorAll('.diag-opt');
+      btns.forEach(function(b, k){
+        b.disabled = true;
+        if (k === q.answer_index) b.classList.add('correct');
+        else if (k === i) b.classList.add('wrong');
+      });
+      if (i === q.answer_index) { correct++; }
+      else { weakest[q.subtest_code] = (weakest[q.subtest_code] || 0) + 1; }
+      var exp = document.getElementById('diag-explain');
+      if (exp) exp.innerHTML = (i === q.answer_index ? '<strong>Correct.</strong> ' : '<strong>Not quite.</strong> ') + esc(q.explanation);
+      var nxt = body.querySelector('.diag-next'); if (nxt) nxt.style.display = 'inline-block';
+    }
+    function renderResult(){
+      var worst = null, worstN = 0;
+      Object.keys(weakest).forEach(function(k){ if (weakest[k] > worstN) { worstN = weakest[k]; worst = k; } });
+      body.innerHTML = '';
+      var res = document.createElement('div'); res.className = 'diag-result';
+      var lbl = document.createElement('span'); lbl.className = 'eyebrow'; lbl.textContent = 'Your quick check';
+      var score = document.createElement('span'); score.className = 'score'; score.textContent = correct + ' / ' + qs.length;
+      var p = document.createElement('p');
+      p.textContent = worst
+        ? 'Subtest ' + worst + ' was your weakest here. The full diagnostic tells you exactly where you stand against the passing line.'
+        : 'Solid start. The full diagnostic estimates your scaled score per subtest.';
+      var a = document.createElement('a'); a.className = 'btn-primary'; a.href = '/diagnostic.html';
+      a.style.textDecoration = 'none'; a.style.display = 'block'; a.style.textAlign = 'center';
+      a.textContent = 'Run the full 12-question diagnostic \u2192';
+      res.appendChild(lbl); res.appendChild(score); res.appendChild(p); res.appendChild(a);
+      body.appendChild(res);
+    }
+    function fail(){
+      body.innerHTML = '<p class="diag-err">Not sure where you stand? <a href="/diagnostic.html">Run the free 12-question diagnostic</a> for an estimated scaled score and your weakest gate.</p>';
+    }
+    function load(){
+      try {
+        fetch('/api/v1/questions/random?count=3').then(function(r){ if (!r.ok) throw 0; return r.json(); }).then(function(data){
+          if (!data || !Array.isArray(data.items) || data.items.length < 3) { fail(); return; }
+          qs = data.items; idx = 0; correct = 0; locked = false; weakest = {};
+          render();
+        }).catch(fail);
+      } catch (e) { fail(); }
+    }
+    load();
+  })();
+  </script>
 </body>
 </html>

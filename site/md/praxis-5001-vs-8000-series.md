@@ -129,4 +129,4 @@ The Praxis 8000 series is a significant elementary education redesign, not a uni
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 vs 7001: What&rsquo;s Changing](https://learndiag.com/praxis-5001-vs-7001)

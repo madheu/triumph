@@ -10,7 +10,7 @@
 // 参考：https://docs.creem.io（REST base https://api.creem.io/v1，测试 https://test-api.creem.io/v1）
 // 环境变量：CREEM_API_KEY（生产）、CREEM_TEST_API_KEY（测试，可选）、CREEM_WEBHOOK_SECRET、CREEM_PRODUCT_ID、CREEM_MODE=test|live
 
-import { json, apiError } from './http.mjs';
+import { json, apiError, safeFetch } from './http.mjs';
 import { verifyJwt, bearerToken } from './crypto.mjs';
 
 const CREEM_BASE = env => (env.CREEM_MODE === 'test' ? 'https://test-api.creem.io/v1' : 'https://api.creem.io/v1');
@@ -50,7 +50,7 @@ export async function hBillingCheckout(request, env) {
 
   // 创建 checkout（Creem REST 用 snake_case 字段；customer.email 直接传无需预建）
   const successUrl = (env.SITE_URL || 'https://learndiag.com') + '/upgrade.html';
-  const chkRes = await fetch(CREEM_BASE(env) + '/checkouts', {
+  const chkRes = await safeFetch(CREEM_BASE(env) + '/checkouts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-api-key': key },
     body: JSON.stringify({
@@ -203,7 +203,7 @@ export async function hBillingPortal(request, env) {
   }
   if (!customerId) return apiError('not_found', { hint: 'No billing profile yet.' });
 
-  const res = await fetch(CREEM_BASE(env) + '/customers/billing', {
+  const res = await safeFetch(CREEM_BASE(env) + '/customers/billing', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-api-key': key },
     body: JSON.stringify({ customer_id: customerId }),

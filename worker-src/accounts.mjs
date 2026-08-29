@@ -5,7 +5,7 @@
 // only error responses are upgraded to the structured
 // { error: { code, message, hint } } envelope (auth.js understands both).
 
-import { json, apiError, ok, readJsonBody } from './http.mjs';
+import { json, apiError, ok, readJsonBody, safeFetch } from './http.mjs';
 import { hashPassword, timingSafeEqual, signJwt, verifyJwt, bearerToken } from './crypto.mjs';
 
 export const USER_KEY = email => `users:${email.toLowerCase().trim()}`;
@@ -23,7 +23,7 @@ async function sendVerificationEmail(env, email, code) {
   const from = env.EMAIL_FROM || '';
   if (!from) throw new Error('EMAIL_FROM not configured');
   if (env.RESEND_API_KEY) {
-    const res = await fetch('https://api.resend.com/emails', {
+    const res = await safeFetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + env.RESEND_API_KEY },
       body: JSON.stringify({
@@ -48,7 +48,7 @@ async function sendVerificationEmail(env, email, code) {
     form.set('to', email);
     form.set('subject', 'Your Learndiag verification code');
     form.set('html', `<p>Your Learndiag verification code is:</p><p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p><p>Expires in 15 minutes.</p>`);
-    const res = await fetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
+    const res = await safeFetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
       method: 'POST',
       headers: { 'Authorization': 'Basic ' + btoa('api:' + env.MAILGUN_API_KEY) },
       body: form,

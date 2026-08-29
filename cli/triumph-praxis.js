@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-// triumph-praxis — official CLI for the Triumph Praxis 5001 API.
-// Docs: https://trytriumph.de5.net/developers · Spec: https://trytriumph.de5.net/openapi.json
+// triumph-praxis — official CLI for the Learndiag (Praxis 5001) API.
+// Docs: https://learndiag.com/developers · Spec: https://learndiag.com/openapi.json
 
 import { pathToFileURL } from 'node:url';
 
 const VERSION = '1.0.0';
-const DEFAULT_API = 'https://trytriumph.de5.net';
+const DEFAULT_API = 'https://learndiag.com';
 
 /* ---------------- pure helpers (exported for tests) ---------------- */
 
@@ -111,7 +111,7 @@ Options:
   --api URL          Override API base (default ${DEFAULT_API})
   --json             Raw JSON output
 
-Docs: https://trytriumph.de5.net/developers`);
+Docs: https://learndiag.com/developers`);
   process.exit(code);
 }
 

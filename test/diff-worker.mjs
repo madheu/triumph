@@ -47,7 +47,7 @@ const cases = [
 
 async function snap(w, c) {
   const [m, p, b, h, raw] = c;
-  const req = new Request('https://trytriumph.de5.net' + p, {
+  const req = new Request('https://learndiag.com' + p, {
     method: m,
     headers: { ...(b ? { 'Content-Type': 'application/json' } : {}), ...(h || {}) },
     body: raw || (b ? JSON.stringify(b) : undefined),

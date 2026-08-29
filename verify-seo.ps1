@@ -1,6 +1,6 @@
 # verify-seo.ps1 - pre-publish local SEO verification (pure ASCII on purpose; PS 5.1 safe)
 $ErrorActionPreference = 'Stop'
-$site = 'E:\Learndiag\praxis-5001\site'
+$site = 'E:\Triumph\praxis-5001\site'
 $script:fail = 0
 
 function Check($name, $ok, $detail) {
@@ -12,12 +12,13 @@ $EN  = [char]0x2013  # en dash
 $EM  = [char]0x2014  # em dash
 
 # ---------- 1. new pages: canonical / title / H1 ----------
-$t1 = "Praxis 5001 Passing Scores by State (2026): Qualifying Scores for 5002$EN""5005".Replace('""','"')
-$t1 = "Praxis 5001 Passing Scores by State (2026): Qualifying Scores for 5002" + $EN + "5005"
-$t2 = "Praxis 5001 Subtests Explained: What's on 5002, 5003, 5004, and 5005"
+$t1 = "Praxis 5001 Passing Scores by State (2026)"
+$h1_1 = "Praxis 5001 Passing Scores by State (2026): Qualifying Scores for 5002" + $EN + "5005"
+$t2 = "Praxis 5001 Subtests Explained (5002-5005)"
+$h1_2 = "Praxis 5001 Subtests Explained: What's on 5002, 5003, 5004, and 5005"
 $pages = @(
-  @{ f = 'praxis-5001-passing-score-by-state.html'; slug = 'praxis-5001-passing-score-by-state'; title = $t1 },
-  @{ f = 'praxis-5001-subtests-explained.html';     slug = 'praxis-5001-subtests-explained';     title = $t2 }
+  @{ f = 'praxis-5001-passing-score-by-state.html'; slug = 'praxis-5001-passing-score-by-state'; title = $t1; h1 = $h1_1 },
+  @{ f = 'praxis-5001-subtests-explained.html';     slug = 'praxis-5001-subtests-explained';     title = $t2; h1 = $h1_2 }
 )
 foreach ($p in $pages) {
   $raw = Get-Content -LiteralPath (Join-Path $site $p.f) -Raw -Encoding UTF8
@@ -27,7 +28,7 @@ foreach ($p in $pages) {
   Check "$($p.slug): <title>" ($raw.Contains($tExpected)) $tExpected
   $h1s = [regex]::Matches($raw, '<h1>(.*?)</h1>', 'Singleline')
   $h1Ok = ($h1s.Count -ge 1)
-  foreach ($h in $h1s) { if ($h.Groups[1].Value -ne $p.title) { $h1Ok = $false } }
+  foreach ($h in $h1s) { if ($h.Groups[1].Value -ne $p.h1) { $h1Ok = $false } }
   Check "$($p.slug): single matching H1" $h1Ok ($(if ($h1s.Count -gt 0) { ($h1s | ForEach-Object { $_.Groups[1].Value }) -join ' || ' } else { 'no H1' }))
 }
 
@@ -94,6 +95,24 @@ $l1 = "- [Praxis 5001 Passing Scores by State](https://learndiag.com/praxis-5001
 $l2 = "- [Praxis 5001 Subtests Explained](https://learndiag.com/praxis-5001-subtests-explained): what's on 5002, 5003, 5004, and 5005 " + $EM + " counts, timing, categories, scoring."
 Check 'llms.txt entry: passing-score-by-state' ($ltx.Contains($l1))
 Check 'llms.txt entry: subtests-explained' ($ltx.Contains($l2))
+
+# ---------- 5. robots.txt hygiene ----------
+$rbPath = Join-Path $site 'robots.txt'
+if (Test-Path -LiteralPath $rbPath) {
+  $rbBytes = [System.IO.File]::ReadAllBytes($rbPath)
+  $bom = ($rbBytes.Length -ge 3 -and $rbBytes[0] -eq 0xEF -and $rbBytes[1] -eq 0xBB -and $rbBytes[2] -eq 0xBF)
+  Check 'robots.txt: no UTF-8 BOM' (-not $bom) 'BOM breaks live directives'
+  $rb = Get-Content -LiteralPath $rbPath -Raw -Encoding UTF8
+  Check 'robots.txt: Sitemap line points to learndiag.com' ($rb.Contains('Sitemap: https://learndiag.com/sitemap.xml')) 'missing or wrong sitemap line'
+  $disallows = [regex]::Matches($rb, '(?im)^\s*Disallow\s*:')
+  Check 'robots.txt: no Disallow rules blocking indexable pages' ($disallows.Count -eq 0) (($disallows | ForEach-Object { $_.Value.Trim() }) -join ' | ')
+  $smpOk = $smpRaw.Contains('<loc>https://learndiag.com/tools</loc>')
+  Check 'sitemap.xml lists /tools (indexable, no longer orphan)' $smpOk '<loc>https://learndiag.com/tools</loc>'
+  $toolsRaw = Get-Content -LiteralPath (Join-Path $site 'tools.html') -Raw -Encoding UTF8
+  Check 'tools.html: index,follow + canonical /tools' (($toolsRaw.Contains('<meta name="robots" content="index, follow"')) -and ($toolsRaw.Contains('<link rel="canonical" href="https://learndiag.com/tools"'))) 'missing robots meta or canonical'
+} else {
+  Check 'robots.txt exists' $false $rbPath
+}
 
 Write-Host ''
 if ($script:fail -eq 0) { Write-Host '=== ALL CHECKS PASSED ===' -ForegroundColor Green; exit 0 }

@@ -55,7 +55,7 @@ function makeEnv(kvStore = new Map()) {
 }
 
 const call = (env, path, method = 'GET', body, headers = {}) =>
-  worker.fetch(new Request('https://trytriumph.de5.net' + path, {
+  worker.fetch(new Request('https://learndiag.com' + path, {
     method,
     headers: { ...(body ? { 'Content-Type': 'application/json' } : {}), ...headers },
     body: body ? JSON.stringify(body) : undefined,
@@ -292,7 +292,7 @@ test('MCP: tools/call works for data tools; unknown tool → -32602', async () =
 });
 
 test('MCP: protocol errors — -32700/-32601/-32600, notifications → 202, GET → 405', async () => {
-  let r = await worker.fetch(new Request('https://trytriumph.de5.net/mcp', {
+  let r = await worker.fetch(new Request('https://learndiag.com/mcp', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: '{not json',
@@ -304,7 +304,7 @@ test('MCP: protocol errors — -32700/-32601/-32600, notifications → 202, GET 
   d = await r.json();
   assert.equal(d.error.code, -32601);
 
-  r = await worker.fetch(new Request('https://trytriumph.de5.net/mcp', {
+  r = await worker.fetch(new Request('https://learndiag.com/mcp', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ id: 1, method: 'ping' }), // missing jsonrpc
@@ -380,9 +380,9 @@ for (const manifestPath of ['.well-known/mcp/manifest.json', '.well-known/mcp-ma
     assert.equal(m.server.name, 'triumph');
     assert.ok(m.server.description.length > 20);
     assert.equal(m.transport, 'streamable-http');
-    assert.equal(m.url, 'https://trytriumph.de5.net/mcp');
+    assert.equal(m.url, 'https://learndiag.com/mcp');
     assert.ok(Array.isArray(m.tools) && m.tools.length >= 4);
-    assert.equal(m.endpoints.mcp, 'https://trytriumph.de5.net/mcp');
+    assert.equal(m.endpoints.mcp, 'https://learndiag.com/mcp');
   });
 }
 
@@ -393,7 +393,7 @@ test('agent-skills index.json matches the DualNova draft-v0.1 field set', () => 
   for (const s of idx.skills) {
     assert.ok(/^[a-z0-9-]+$/.test(s.name), 'kebab-case name');
     assert.ok(s.title && s.description);
-    assert.ok(s.url.startsWith('https://trytriumph.de5.net/.well-known/agent-skills/'));
+    assert.ok(s.url.startsWith('https://learndiag.com/.well-known/agent-skills/'));
   }
 });
 
@@ -418,12 +418,100 @@ test('every SKILL.md: frontmatter required fields + when-to-use + fallback secti
 
 test('llms.txt follows llmstxt.org shape and includes when-to-use guidance (fix #25)', () => {
   const t = readFileSync(SITE + 'llms.txt', 'utf8');
-  assert.match(t, /^# Triumph\n/);
+  assert.match(t, /^# Learndiag\n/);
   assert.match(t, /^> /m); // blockquote summary
-  assert.ok(t.includes('## When to use Triumph'), 'explicit when-to-use section');
-  for (const link of ['/openapi.json', '/mcp', '/.well-known/agent-skills/index.json', '/developers', '/llms.txt']) {
+  assert.ok(t.includes('## When to use Learndiag'), 'explicit when-to-use section');
+  for (const link of ['/openapi.json', '/mcp', '/.well-known/agent-skills/index.json', '/developers', '/llms.txt', '/auth.md']) {
     assert.ok(t.includes(link), `references ${link}`);
   }
+});
+
+/* ================= 6b. Auth.md agent registration discovery ================= */
+
+test('/auth.md: markdown, H1 names auth.md, self-contained, no credential literals', async () => {
+  const r = await call(makeEnv(), '/auth.md');
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('content-type'), /text\/markdown/);
+  assert.equal(r.headers.get('access-control-allow-origin'), '*');
+  const md = await r.text();
+  assert.match(md, /^#\s+.*auth\.md/m, 'H1 contains auth.md');
+  for (const marker of [
+    '/.well-known/oauth-protected-resource',
+    '/.well-known/oauth-authorization-server',
+    'POST https://learndiag.com/api/v1/keys',
+    'X-API-Key',
+    'Authorization: Bearer',
+    'meta:read', 'questions:read', 'stats:read',
+    '/api/register', '/api/verify', '/api/login', '/api/resend',
+  ]) {
+    assert.ok(md.includes(marker), `mentions ${marker}`);
+  }
+  assert.ok(md.length > 1500, `substantial doc (${md.length} chars)`);
+  // examples must not contain usable-looking credential literals
+  assert.doesNotMatch(md, /tri_live_[0-9a-f]{40}/);
+});
+
+test('/auth.md: HEAD served, POST → structured 405, mirror host exempt from canonical redirect', async () => {
+  const env = makeEnv();
+  const head = await call(env, '/auth.md', 'HEAD');
+  assert.equal(head.status, 200);
+  assert.match(head.headers.get('content-type'), /text\/markdown/);
+
+  const post = await call(env, '/auth.md', 'POST', { nope: true });
+  assert.equal(post.status, 405);
+  assert.equal((await post.json()).error.code, 'method_not_allowed');
+
+  // programmatic clients on mirror hosts (e.g. triumph-6eq.pages.dev) must get
+  // the discovery document directly, not a 301 to the canonical host
+  const mirror = await worker.fetch(new Request('https://triumph-6eq.pages.dev/auth.md'), env, {});
+  assert.equal(mirror.status, 200);
+  assert.match(await mirror.text(), /auth\.md/);
+});
+
+test('Protected Resource Metadata: RFC 9728 required fields, scopes match enforcement', async () => {
+  const r = await call(makeEnv(), '/.well-known/oauth-protected-resource');
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('content-type'), /application\/json/);
+  const prm = await r.json();
+  assert.equal(prm.resource, 'https://learndiag.com');
+  assert.ok(Array.isArray(prm.authorization_servers) && prm.authorization_servers.length >= 1);
+  assert.deepEqual([...prm.scopes_supported].sort(), ['meta:read', 'questions:read', 'stats:read']);
+  assert.ok(prm.bearer_methods_supported.includes('header'));
+});
+
+test('Authorization Server Metadata: valid issuer matching PRM; complete agent_auth block', async () => {
+  const env = makeEnv();
+  const prm = await (await call(env, '/.well-known/oauth-protected-resource')).json();
+  const r = await call(env, '/.well-known/oauth-authorization-server');
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get('content-type'), /application\/json/);
+  const asm = await r.json();
+
+  // valid issuer, identical to the AS advertised in PRM
+  assert.equal(asm.issuer, 'https://learndiag.com');
+  assert.ok(prm.authorization_servers.includes(asm.issuer));
+
+  const aa = asm.agent_auth;
+  assert.ok(typeof aa.skill === 'string' && aa.skill.length > 0, 'agent_auth.skill');
+  assert.match(aa.register_uri, /^https:\/\/learndiag\.com\//, 'agent_auth.register_uri');
+  assert.ok(Array.isArray(aa.registration_methods) && aa.registration_methods.length >= 1);
+
+  // anonymous method: identity type, credential types, claim_uri
+  const anon = aa.registration_methods.find(m => (m.identity_types_supported || []).includes('anonymous'));
+  assert.ok(anon, 'anonymous registration method present');
+  assert.ok(anon.anonymous.credential_types_supported.includes('api_key'));
+  assert.match(anon.claim_uri, /^https:\/\/learndiag\.com\/api\/v1\/keys$/);
+
+  // verified-email method: assertion type, credential types, claim_uri
+  const verified = aa.registration_methods.find(m =>
+    (m.identity_assertion?.assertion_types_supported || []).includes('verified_email'));
+  assert.ok(verified, 'verified_email registration method present');
+  assert.ok(verified.identity_assertion.credential_types_supported.length >= 1);
+  assert.match(verified.identity_assertion.claim_uri, /^https:\/\/learndiag\.com\/api\/verify$/);
+
+  // unsupported flows must not be advertised
+  assert.ok(!JSON.stringify(aa.registration_methods).includes('id-jag'), 'no ID-JAG claims');
+  assert.equal(asm.token_endpoint, undefined, 'no OAuth token endpoint advertised');
 });
 
 /* ================= 7. robots.txt & sitemap.xml (fixes #2, #3, #16) ================= */
@@ -436,7 +524,7 @@ test('robots.txt: no BOM (live directive breakage), AI agents allowed, sitemap l
     'Applebot-Extended', 'PerplexityBot', 'DeepSeekBot', 'ora-agent']) {
     assert.ok(t.includes(`User-agent: ${ua}`), `allows ${ua}`);
   }
-  assert.match(t, /^Sitemap: https:\/\/trytriumph\.de5\.net\/sitemap\.xml$/m);
+  assert.match(t, /^Sitemap: https:\/\/learndiag\.com\/sitemap\.xml$/m);
 });
 
 test('sitemap.xml: parses, every url has lastmod, urls unique + canonical host', () => {
@@ -448,7 +536,7 @@ test('sitemap.xml: parses, every url has lastmod, urls unique + canonical host',
   for (const u of urls) {
     const loc = /<loc>(.*?)<\/loc>/.exec(u);
     assert.ok(loc, 'each url has loc');
-    assert.ok(loc[1].startsWith('https://trytriumph.de5.net'), loc[1]);
+    assert.ok(loc[1].startsWith('https://learndiag.com'), loc[1]);
     locs.add(loc[1]);
     assert.match(u, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/, `lastmod for ${loc[1]}`);
   }
@@ -459,7 +547,7 @@ test('sitemap.xml: parses, every url has lastmod, urls unique + canonical host',
 
 test('homepage raw HTML: H1 + substantial readable text inside #root (no JS needed)', () => {
   const html = readFileSync(SITE + 'index.html', 'utf8');
-  const rootInner = /<div id="root">([\s\S]*?)\n  <\/div>\n\n?\s*<script/.exec(html);
+  const rootInner = /<div id="root">([\s\S]*?)\n  <\/div>(?:\s|<!--[\s\S]*?-->)*<script/.exec(html);
   assert.ok(rootInner, '#root contains static content');
   const visible = rootInner[1]
     .replace(/<style[\s\S]*?<\/style>/g, '')
@@ -475,8 +563,8 @@ test('homepage raw HTML: H1 + substantial readable text inside #root (no JS need
 test('homepage metadata completeness: canonical, lang, og:image, og:type', () => {
   const html = readFileSync(SITE + 'index.html', 'utf8');
   assert.match(html, /<html lang="en">/);
-  assert.match(html, /<link rel="canonical" href="https:\/\/trytriumph\.de5\.net\/">/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/trytriumph\.de5\.net\/og-image\.png">/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/learndiag\.com\/">/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/learndiag\.com\/og-image\.png">/);
   assert.match(html, /<meta property="og:type" content="website">/);
   assert.ok(existsSync(SITE + 'og-image.png'), 'og-image.png exists');
 });
@@ -499,7 +587,7 @@ test('homepage JSON-LD: parses; Organization has contactPoint; SoftwareApplicati
   assert.equal(app.operatingSystem, 'Web');
   // content efficiency proxy: readable share of total bytes
   const totalBytes = Buffer.byteLength(html);
-  const rootInner = /<div id="root">([\s\S]*?)\n  <\/div>\n\n?\s*<script/.exec(html)[1];
+  const rootInner = /<div id="root">([\s\S]*?)\n  <\/div>(?:\s|<!--[\s\S]*?-->)*<script/.exec(html)[1];
   const textChars = rootInner.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length;
   assert.ok(textChars / totalBytes >= 0.05, `readable ratio ${(textChars / totalBytes).toFixed(3)} >= 0.05`);
 });
@@ -543,9 +631,9 @@ test('guide series forms a consistent rel next/prev chain', () => {
     const html = readFileSync(SITE + page + '.html', 'utf8');
     const prev = i > 0 ? SERIES[i - 1] : null;
     const next = i < SERIES.length - 1 ? SERIES[i + 1] : null;
-    if (prev) assert.ok(html.includes(`<link rel="prev" href="https://trytriumph.de5.net/${prev}">`), `${page} prev→${prev}`);
+    if (prev) assert.ok(html.includes(`<link rel="prev" href="https://learndiag.com/${prev}">`), `${page} prev→${prev}`);
     else assert.ok(!/<link rel="prev"/.test(html), `${page} no prev`);
-    if (next) assert.ok(html.includes(`<link rel="next" href="https://trytriumph.de5.net/${next}">`), `${page} next→${next}`);
+    if (next) assert.ok(html.includes(`<link rel="next" href="https://learndiag.com/${next}">`), `${page} next→${next}`);
     else assert.ok(!/<link rel="next"/.test(html), `${page} no next`);
     assert.match(html, /<link rel="canonical"/, `${page} canonical`);
   });
@@ -563,7 +651,7 @@ test('leaked AI-draft scaffolding removed from live article pages', () => {
 for (const page of ['about', 'contact', 'privacy', 'developers']) {
   test(`${page}.html: canonical, og tags, >=500 chars of article text`, () => {
     const html = readFileSync(SITE + page + '.html', 'utf8');
-    assert.match(html, /<link rel="canonical" href="https:\/\/trytriumph\.de5\.net\//);
+    assert.match(html, /<link rel="canonical" href="https:\/\/learndiag\.com\//);
     assert.match(html, /<meta property="og:image"/);
     assert.match(html, /<article[\s\S]*<\/article>/);
     const article = /<article[\s\S]*?<\/article>/.exec(html)[0];

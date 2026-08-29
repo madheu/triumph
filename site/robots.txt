@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /diagnostic.html
-Disallow: /login.html
 
 # AI agents and crawlers are welcome. Learndiag is a free, public study tool:
 # serve the Praxis 5001 practice-question bank and guides to anyone who asks.

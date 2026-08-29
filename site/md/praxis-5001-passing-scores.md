@@ -4,9 +4,7 @@
 
 # Praxis 5001 Passing Scores: What Your State Requires and How to Look It Up
 
-*2026-08-24 · Reading time: about 6 min*
-
-date: "2026-08-24"
+*2026-08-24 · Reading time: about 7 min*
 
 There is no single "Praxis 5001 passing score." Each state and licensing organization sets its own qualifying score for the Elementary Education: Multiple Subjects exam, and ETS explicitly does not set pass/fail standards.[1] If someone tells you "you need a 160 on Praxis 5001," they may be describing their state's rule — not yours.
 
@@ -35,6 +33,8 @@ To give you a sense of the range — not as your official requirement — severa
 | Kentucky | 157 | 157 | 155 | 159 | Kentucky regulation 16 KAR 6:010[8] |
 
 South Carolina is in transition: it currently lists 5001 subtests at 157/157/155/159 but has been moving elementary candidates toward the 5901 Three Subject Bundle and the 7811 CKT series, with deadlines tied to August 2026 and August 2027.[5]
+
+For the full data-first breakdown — including states that no longer use the 5001 at all — see [Praxis 5001 passing scores by state](https://learndiag.com/praxis-5001-passing-score-by-state).
 
 Notice a pattern? Many states set identical or near-identical lines — but not all do, and scores change over time. North Carolina, for example, has moved its elementary requirement to the Elementary Education: Mathematics CKT (7813) instead of 5003.[6] You must check the requirement that applies to **your** certificate, in **your** state, in **your** application window.
 
@@ -126,4 +126,4 @@ Your Praxis 5001 passing score is a state-specific number, not a national consta
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)
+Related: [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Praxis 5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

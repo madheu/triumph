@@ -67,6 +67,159 @@ async function readJsonBody(request) {
     return { err: apiError("invalid_json") };
   }
 }
+function isReservedIPv4(h) {
+  const m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(h);
+  if (!m) return false;
+  const a = +m[1], b = +m[2];
+  return a === 0 || a === 10 || a === 127 || a === 169 && b === 254 || a === 172 && b >= 16 && b <= 31 || a === 192 && b === 168 || a >= 224;
+}
+function isReservedHost(hostname) {
+  const h = hostname.toLowerCase().replace(/^\[|\]$/g, "");
+  if (h === "localhost" || /\.(local|localdomain|internal)$/.test(h)) return true;
+  if (h === "::" || h === "::1") return true;
+  if (/^f[cd][0-9a-f]{2}:/.test(h) || /^fe[89ab][0-9a-f]{2}:/.test(h)) return true;
+  const v4 = h.includes(":") ? h.split(":").pop() : h;
+  return isReservedIPv4(v4);
+}
+async function safeFetch(url, init) {
+  const u = new URL(String(url));
+  if (u.protocol !== "https:") throw new Error(`safeFetch: scheme ${u.protocol} is not allowed; use https`);
+  if (isReservedHost(u.hostname)) throw new Error(`safeFetch: host ${u.hostname} is reserved/private`);
+  return fetch(u, init);
+}
+
+// worker-src/constants.mjs
+var BASE = "https://learndiag.com";
+var API_VERSION = "1.0.0";
+
+// worker-src/keys.mjs
+var KNOWN_SCOPES = ["meta:read", "questions:read", "stats:read"];
+var FREE_SCOPES = ["meta:read", "questions:read", "stats:read"];
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map((x) => x.toString(16).padStart(2, "0")).join("");
+}
+function generateApiKey() {
+  const bytes = crypto.getRandomValues(new Uint8Array(20));
+  const hex = [...bytes].map((x) => x.toString(16).padStart(2, "0")).join("");
+  return "tri_live_" + hex;
+}
+async function resolveApiKey(request, env, requiredScope) {
+  const presented = request.headers.get("X-API-Key");
+  if (!presented) return { anon: true };
+  const recJson = await env.TRIUMPH_KV.get("apikey:" + await sha256Hex(presented));
+  if (!recJson) throw apiError("invalid_api_key");
+  const rec = JSON.parse(recJson);
+  if (!rec.scopes || !rec.scopes.includes(requiredScope)) {
+    throw apiError("forbidden_scope", { required_scope: requiredScope, key_scopes: rec.scopes });
+  }
+  return { key: rec };
+}
+
+// worker-src/authmd.mjs
+var PRM_URL = `${BASE}/.well-known/oauth-protected-resource`;
+var ASM_URL = `${BASE}/.well-known/oauth-authorization-server`;
+var protectedResourceMetadata = {
+  resource: BASE,
+  authorization_servers: [BASE],
+  scopes_supported: [...KNOWN_SCOPES],
+  bearer_methods_supported: ["header"],
+  resource_documentation: `${BASE}/openapi.json`,
+  resource_policy_uri: `${BASE}/privacy`,
+  resource_tos_uri: `${BASE}/terms`
+};
+var API_KEY_CREDENTIAL_USE = { in: "header", name: "X-API-Key" };
+var BEARER_CREDENTIAL_USE = { in: "header", name: "Authorization", scheme: "Bearer" };
+var authorizationServerMetadata = {
+  issuer: BASE,
+  description: "Learndiag issues free, self-serve credentials for its read-only Praxis 5001 API. This issuer does not operate OAuth 2.0 authorization or token endpoints; agents must use the registration methods in agent_auth.",
+  service_documentation: `${BASE}/openapi.json`,
+  scopes_supported: [...KNOWN_SCOPES],
+  agent_auth: {
+    skill: "practice-praxis-questions",
+    skills_index: `${BASE}/.well-known/agent-skills/index.json`,
+    register_uri: `${BASE}/api/v1/keys`,
+    docs: `${BASE}/openapi.json`,
+    registration_methods: [
+      {
+        id: "anonymous-self-serve-api-key",
+        description: "Recommended for agents. No identity required; a free API key is returned immediately.",
+        identity_types_supported: ["anonymous"],
+        anonymous: { credential_types_supported: ["api_key"] },
+        credential_types_supported: ["api_key"],
+        claim_uri: `${BASE}/api/v1/keys`,
+        claim_method: "POST",
+        credential_use: API_KEY_CREDENTIAL_USE,
+        scopes_supported: [...FREE_SCOPES],
+        verify_uri: `${BASE}/api/v1/keys/verify`,
+        rate_limit: "10 key creations per IP per hour"
+      },
+      {
+        id: "verified-email-account",
+        description: "Email-verified account for user-scoped study-state endpoints. Not required for the public read API or MCP.",
+        identity_types_supported: ["identity_assertion"],
+        identity_assertion: {
+          assertion_types_supported: ["verified_email"],
+          credential_types_supported: ["jwt"],
+          claim_uri: `${BASE}/api/verify`,
+          verification: {
+            code_delivery: "email",
+            code_length: 6,
+            ttl_minutes: 15,
+            register_uri: `${BASE}/api/register`,
+            resend_uri: `${BASE}/api/resend`
+          }
+        },
+        credential_types_supported: ["jwt"],
+        claim_uri: `${BASE}/api/verify`,
+        claim_method: "POST",
+        register_uri: `${BASE}/api/register`,
+        login_uri: `${BASE}/api/login`,
+        credential_use: BEARER_CREDENTIAL_USE,
+        token_ttl_days: 30
+      }
+    ]
+  }
+};
+function headVariant(res) {
+  return new Response(null, { status: res.status, headers: res.headers });
+}
+async function hAuthMd(request, env) {
+  const origin = new URL(request.url).origin;
+  const asset = await env.ASSETS.fetch(new Request(`${origin}/auth.md`, { method: "GET" }));
+  if (!asset.ok) return apiError("not_found");
+  const res = new Response(asset.body, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Cache-Control": "public, max-age=300"
+    }
+  });
+  return request.method === "HEAD" ? headVariant(withCors(res)) : withCors(res);
+}
+function hJsonDoc(data) {
+  return (request) => {
+    const res = json(data, 200, { "Cache-Control": "public, max-age=3600" });
+    return request.method === "HEAD" ? headVariant(res) : res;
+  };
+}
+var AUTH_DISCOVERY_ROUTES = {
+  "/auth.md": {
+    GET: hAuthMd,
+    HEAD: hAuthMd,
+    OPTIONS: () => corsPreflight()
+  },
+  "/.well-known/oauth-protected-resource": {
+    GET: hJsonDoc(protectedResourceMetadata),
+    HEAD: hJsonDoc(protectedResourceMetadata),
+    OPTIONS: () => corsPreflight()
+  },
+  "/.well-known/oauth-authorization-server": {
+    GET: hJsonDoc(authorizationServerMetadata),
+    HEAD: hJsonDoc(authorizationServerMetadata),
+    OPTIONS: () => corsPreflight()
+  }
+};
 
 // worker-src/crypto.mjs
 var enc = new TextEncoder();
@@ -144,7 +297,7 @@ async function sendVerificationEmail(env, email, code) {
   const from = env.EMAIL_FROM || "";
   if (!from) throw new Error("EMAIL_FROM not configured");
   if (env.RESEND_API_KEY) {
-    const res = await fetch("https://api.resend.com/emails", {
+    const res = await safeFetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": "Bearer " + env.RESEND_API_KEY },
       body: JSON.stringify({
@@ -169,7 +322,7 @@ async function sendVerificationEmail(env, email, code) {
     form.set("to", email);
     form.set("subject", "Your Learndiag verification code");
     form.set("html", `<p>Your Learndiag verification code is:</p><p style="font-size:28px;letter-spacing:4px;font-weight:bold;color:#A67D7A">${code}</p><p>Expires in 15 minutes.</p>`);
-    const res = await fetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
+    const res = await safeFetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
       method: "POST",
       headers: { "Authorization": "Basic " + btoa("api:" + env.MAILGUN_API_KEY) },
       body: form
@@ -351,7 +504,7 @@ async function sha256Base64url(data) {
 async function getGoogleJwk(kid) {
   const now = Date.now();
   if (!jwksCache || now - jwksCache.fetchedAt > 3600 * 1e3 || kid && !jwksCache.keys[kid]) {
-    const res = await fetch(GOOGLE_KEYS_URL);
+    const res = await safeFetch(GOOGLE_KEYS_URL);
     if (!res.ok) throw new Error("google_keys_fetch_failed:" + res.status);
     const { keys } = await res.json();
     const map = {};
@@ -434,7 +587,7 @@ async function hGoogleCallback(request, env) {
   if (!clientId || !clientSecret) return fail("Sign-in is not configured yet. Please try again later.");
   let tokenData;
   try {
-    const res = await fetch(GOOGLE_TOKEN_URL, {
+    const res = await safeFetch(GOOGLE_TOKEN_URL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
@@ -504,13 +657,13 @@ function genToken() {
   const bytes = crypto.getRandomValues(new Uint8Array(32));
   return [...bytes].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
-async function sha256Hex(text) {
+async function sha256Hex2(text) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
   return [...new Uint8Array(buf)].map((x) => x.toString(16).padStart(2, "0")).join("");
 }
 async function storeResetToken(env, email) {
   const token = genToken();
-  const tokenHash = await sha256Hex(token);
+  const tokenHash = await sha256Hex2(token);
   await env.TRIUMPH_KV.put(RESET_KEY(email), JSON.stringify({ tokenHash, exp: Date.now() + RESET_TTL * 1e3, email }), { expirationTtl: RESET_TTL });
   return token;
 }
@@ -525,7 +678,7 @@ async function sendResetEmail(env, email, token) {
     <p style="color:#6E6760;font-size:12px">Learndiag \xB7 independent Praxis 5001 study tool \xB7 not affiliated with ETS</p>`;
   const body = { from, to: [email], subject: "Reset your Learndiag password", html };
   if (env.RESEND_API_KEY) {
-    const res = await fetch("https://api.resend.com/emails", {
+    const res = await safeFetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": "Bearer " + env.RESEND_API_KEY },
       body: JSON.stringify(body)
@@ -539,7 +692,7 @@ async function sendResetEmail(env, email, token) {
     form.set("to", email);
     form.set("subject", body.subject);
     form.set("html", html);
-    const res = await fetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
+    const res = await safeFetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
       method: "POST",
       headers: { "Authorization": "Basic " + btoa("api:" + env.MAILGUN_API_KEY) },
       body: form
@@ -576,7 +729,7 @@ async function hPasswordReset(request, env) {
   const storedJson = await env.TRIUMPH_KV.get(RESET_KEY(email));
   if (!storedJson) return apiError("bad_request", { field: "token", hint: "This reset link is invalid or expired." });
   const stored = JSON.parse(storedJson);
-  const tokenHash = await sha256Hex(token);
+  const tokenHash = await sha256Hex2(token);
   if (stored.tokenHash !== tokenHash || stored.exp < Date.now()) {
     return apiError("bad_request", { field: "token", hint: "This reset link is invalid or expired." });
   }
@@ -630,7 +783,7 @@ async function hBillingCheckout(request, env) {
   const productId = env.CREEM_MODE === "test" ? env.CREEM_TEST_PRODUCT_ID || env.CREEM_PRODUCT_ID : env.CREEM_PRODUCT_ID;
   if (!productId) return apiError("internal_error", { hint: "CREEM_PRODUCT_ID not configured." });
   const successUrl = (env.SITE_URL || "https://learndiag.com") + "/upgrade.html";
-  const chkRes = await fetch(CREEM_BASE(env) + "/checkouts", {
+  const chkRes = await safeFetch(CREEM_BASE(env) + "/checkouts", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-api-key": key },
     body: JSON.stringify({
@@ -767,7 +920,7 @@ async function hBillingPortal(request, env) {
     customerId = rec.creemCustomerId || null;
   }
   if (!customerId) return apiError("not_found", { hint: "No billing profile yet." });
-  const res = await fetch(CREEM_BASE(env) + "/customers/billing", {
+  const res = await safeFetch(CREEM_BASE(env) + "/customers/billing", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-api-key": key },
     body: JSON.stringify({ customer_id: customerId })
@@ -795,10 +948,6 @@ var BILLING_ROUTES = {
   "/api/billing/webhook": { POST: hBillingWebhook },
   "/api/billing/portal": { POST: hBillingPortal }
 };
-
-// worker-src/constants.mjs
-var BASE = "https://learndiag.com";
-var API_VERSION = "1.0.0";
 
 // worker-src/bank.mjs
 var _bankPromise = null;
@@ -868,30 +1017,6 @@ function paginate(items, params) {
     offset,
     items: items.slice(offset, offset + limit).map(publicQuestion)
   };
-}
-
-// worker-src/keys.mjs
-var KNOWN_SCOPES = ["meta:read", "questions:read", "stats:read"];
-var FREE_SCOPES = ["meta:read", "questions:read", "stats:read"];
-async function sha256Hex2(text) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-  return [...new Uint8Array(buf)].map((x) => x.toString(16).padStart(2, "0")).join("");
-}
-function generateApiKey() {
-  const bytes = crypto.getRandomValues(new Uint8Array(20));
-  const hex = [...bytes].map((x) => x.toString(16).padStart(2, "0")).join("");
-  return "tri_live_" + hex;
-}
-async function resolveApiKey(request, env, requiredScope) {
-  const presented = request.headers.get("X-API-Key");
-  if (!presented) return { anon: true };
-  const recJson = await env.TRIUMPH_KV.get("apikey:" + await sha256Hex2(presented));
-  if (!recJson) throw apiError("invalid_api_key");
-  const rec = JSON.parse(recJson);
-  if (!rec.scopes || !rec.scopes.includes(requiredScope)) {
-    throw apiError("forbidden_scope", { required_scope: requiredScope, key_scopes: rec.scopes });
-  }
-  return { key: rec };
 }
 
 // worker-src/public-api.mjs
@@ -989,12 +1114,12 @@ async function v1CreateKey(request, env) {
   const key = generateApiKey();
   const record = {
     id: crypto.randomUUID(),
-    email_hash: email ? (await sha256Hex2(email)).slice(0, 16) : null,
+    email_hash: email ? (await sha256Hex(email)).slice(0, 16) : null,
     scopes,
     tier: "free",
     createdAt: (/* @__PURE__ */ new Date()).toISOString()
   };
-  await env.TRIUMPH_KV.put("apikey:" + await sha256Hex2(key), JSON.stringify(record));
+  await env.TRIUMPH_KV.put("apikey:" + await sha256Hex(key), JSON.stringify(record));
   return json({
     ok: true,
     key,
@@ -1007,7 +1132,7 @@ async function v1CreateKey(request, env) {
 async function v1VerifyKey(request, env) {
   const presented = request.headers.get("X-API-Key");
   if (!presented) return apiError("unauthorized");
-  const recJson = await env.TRIUMPH_KV.get("apikey:" + await sha256Hex2(presented));
+  const recJson = await env.TRIUMPH_KV.get("apikey:" + await sha256Hex(presented));
   if (!recJson) return apiError("invalid_api_key");
   const rec = JSON.parse(recJson);
   return json({ ok: true, valid: true, scopes: rec.scopes, tier: rec.tier, created_at: rec.createdAt }, 200, { "Cache-Control": "no-store" });
@@ -2598,14 +2723,23 @@ var worker_default = {
         const host = url.hostname.toLowerCase();
         const isLocalDev = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
         const isCanonical = host === "learndiag.com";
-        const isProgrammatic = path.startsWith("/api/") || path === "/mcp" || path.startsWith("/.well-known/");
+        const isProgrammatic = path.startsWith("/api/") || path === "/mcp" || path.startsWith("/.well-known/") || path === "/auth.md";
         const isPreviewBranch = typeof env?.CF_PAGES_BRANCH === "string" && env.CF_PAGES_BRANCH !== "main";
         const isPageRequest = request.method === "GET" || request.method === "HEAD";
         if (isPageRequest && !isLocalDev && !isCanonical && !isProgrammatic && !isPreviewBranch) {
           return Response.redirect(`https://learndiag.com${url.pathname}${url.search}`, 301);
         }
       }
+      if (path === "/diagnostic" || path === "/practice") {
+        return Response.redirect(`${url.origin}${path}.html${url.search}`, 301);
+      }
       if (path === "/mcp") return handleMcp(request, env);
+      const authDoc = AUTH_DISCOVERY_ROUTES[path];
+      if (authDoc) {
+        const handler = authDoc[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(authDoc) }));
+        return handler(request, env);
+      }
       if (path.startsWith("/api/")) {
         if (request.method === "OPTIONS") return corsPreflight();
         if (path === "/api/openapi.yaml") {

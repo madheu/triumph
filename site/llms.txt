@@ -26,6 +26,7 @@ Agents can call Learndiag programmatically: REST API (`GET https://learndiag.com
 
 ## Agent interface (machine-readable)
 
+- [Auth.md — agent authentication](https://learndiag.com/auth.md): how agents authenticate; self-serve API keys (POST /api/v1/keys), protected-resource metadata and authorization-server metadata with the agent_auth block.
 - [MCP server](https://learndiag.com/mcp): Model Context Protocol over Streamable HTTP; JSON-RPC 2.0 (initialize / tools/list / tools/call).
 - [MCP manifest](https://learndiag.com/.well-known/mcp/manifest.json): machine-readable MCP server manifest (also at /.well-known/mcp-manifest.json).
 - [Agent skills index](https://learndiag.com/.well-known/agent-skills/index.json): registry of SKILL.md instruction files (practice-praxis-questions, quiz-me, find-study-guide).

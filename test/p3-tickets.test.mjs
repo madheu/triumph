@@ -35,7 +35,7 @@ function makeD1() {
 function makeEnv(kvStore = new Map()) {
   const env = {
     JWT_SECRET: 'test-secret',
-    SITE_URL: 'https://trytriumph.de5.net',
+    SITE_URL: 'https://learndiag.com',
     ADMIN_EMAILS: 'admin@triumph.com',
     TRIUMPH_KV: {
       get: async (k, ty) => { const v = kvStore.get(k); return v == null ? null : (ty === 'json' ? JSON.parse(v) : v); },
@@ -54,7 +54,7 @@ function makeEnv(kvStore = new Map()) {
 }
 
 const call = (env, path, method = 'GET', body, headers = {}) =>
-  worker.fetch(new Request('https://trytriumph.de5.net' + path, {
+  worker.fetch(new Request('https://learndiag.com' + path, {
     method,
     headers: { ...(body ? { 'Content-Type': 'application/json' } : {}), ...headers },
     body: body ? JSON.stringify(body) : undefined,

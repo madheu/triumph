@@ -16,7 +16,7 @@
 // unchanged. Google users are stored in the SAME `users:<email>` records, so a
 // user can sign in with either Google or email+password and see the same data.
 
-import { json, apiError } from './http.mjs';
+import { json, apiError, safeFetch } from './http.mjs';
 import { signJwt } from './crypto.mjs';
 import { USER_KEY, STATE_KEY } from './accounts.mjs';
 
@@ -62,7 +62,7 @@ async function sha256Base64url(data) {
 async function getGoogleJwk(kid) {
   const now = Date.now();
   if (!jwksCache || now - jwksCache.fetchedAt > 3600 * 1000 || (kid && !jwksCache.keys[kid])) {
-    const res = await fetch(GOOGLE_KEYS_URL);
+    const res = await safeFetch(GOOGLE_KEYS_URL);
     if (!res.ok) throw new Error('google_keys_fetch_failed:' + res.status);
     const { keys } = await res.json();
     const map = {};
@@ -165,7 +165,7 @@ async function hGoogleCallback(request, env) {
   // 2. Exchange the auth code for tokens (PKCE verifier proves possession)
   let tokenData;
   try {
-    const res = await fetch(GOOGLE_TOKEN_URL, {
+    const res = await safeFetch(GOOGLE_TOKEN_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({

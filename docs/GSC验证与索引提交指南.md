@@ -1,4 +1,7 @@
-# GSC 验证与索引提交操作指南（trytriumph.de5.net）
+# GSC 验证与索引提交操作指南（旧域名 trytriumph.de5.net，已迁移）
+
+> ⚠️ **本文档记录的是旧域名 `trytriumph.de5.net` 时期的 GSC 操作**。2026-08-28 起主域名已切换为 **`https://learndiag.com`**（GSC 新 Domain 属性、DNS TXT 验证已完成），旧域名已 301。
+> 现在的收录收尾清单见 `HANDOFF.md` 第 9 节（提交 `https://learndiag.com/sitemap.xml`、对 `/resources` 请求编入索引）。下方步骤仅作历史参考，请勿再按旧域名执行。
 
 > 适用场景：首页 Title 已改为 **Free Praxis 5001 Practice Test & Diagnostic | Triumph**，
 > 新增两个页面 `praxis-5001-passing-score-by-state` 和 `praxis-5001-subtests-explained`，
@@ -8,7 +11,7 @@
 > - ✅ `site/index.html` 的 `<title>` 已是 `Free Praxis 5001 Practice Test & Diagnostic | Triumph`
 > - ✅ `site/praxis-5001-passing-score-by-state.html`、`site/praxis-5001-subtests-explained.html` 已生成
 > - ✅ `site/sitemap.xml` 已包含首页、两个新页面（lastmod 2026-08-25），共 28 条 URL
-> - ✅ `site/robots.txt` 已声明 `Sitemap: https://trytriumph.de5.net/sitemap.xml`
+> - ✅ `site/robots.txt` 已声明 `Sitemap: https://trytriumph.de5.net/sitemap.xml`（旧域名，已过时）
 
 ---
 

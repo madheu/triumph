@@ -1,6 +1,10 @@
 <!-- Markdown variant of https://learndiag.com/praxis-5001-four-gate-strategy — request any page with Accept: text/markdown -->
 
+*Resource · Praxis 5001*
+
 # How to Pass the Praxis 5001: The Four-Gate Strategy
+
+*2026-08-16 · Reading time: about 3 min*
 
 Most people fail the Praxis 5001 not because they are bad at math, weak in reading, or incapable of learning science. They fail because they treat a four-part exam as one monolithic test. The Elementary Education: Multiple Subjects exam is actually four separately scored subtests: Reading and Language Arts (5002), Mathematics (5003), Social Studies (5004), and Science (5005). You do not pass the 5001 as a single whole. You pass or fail each subtest according to your state’s cut score.
 
@@ -116,3 +120,7 @@ Diagnose first. Take a diagnostic that estimates your scaled score and identifie
 If you do not know which of the four subtests is your weakest, start there. Take the free 12-question Praxis 5001 diagnostic to get an estimated scaled score and a clear weak-gate ranking. It takes less than 15 minutes and will make the rest of your prep far more efficient.
 
 [Take the free Praxis 5001 diagnostic](https://learndiag.com/diagnostic)
+
+**Not sure which gate is weakest?** Take the free 12-question diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
+
+Related: [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Retake Guide](https://learndiag.com/praxis-5001-retake-guide)

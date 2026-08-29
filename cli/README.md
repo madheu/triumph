@@ -1,6 +1,6 @@
 # triumph-praxis
 
-Official CLI for the [Triumph API](https://trytriumph.de5.net/developers) — the free Praxis 5001
+Official CLI for the [Learndiag API](https://learndiag.com/developers) — the free Praxis 5001
 (Elementary Education: Multiple Subjects) practice-question bank.
 
 ```bash
@@ -39,10 +39,10 @@ Global flags: `--json` (raw output), `--api URL` (base override), `--key KEY` (`
 
 The same surface is available without a CLI:
 
-- REST: `GET https://trytriumph.de5.net/api/v1/questions/random?count=5` (anonymous)
-- MCP server (Streamable HTTP): `https://trytriumph.de5.net/mcp`
-- OpenAPI 3.1: <https://trytriumph.de5.net/openapi.json>
-- Agent skills: <https://trytriumph.de5.net/.well-known/agent-skills/index.json>
+- REST: `GET https://learndiag.com/api/v1/questions/random?count=5` (anonymous)
+- MCP server (Streamable HTTP): `https://learndiag.com/mcp`
+- OpenAPI 3.1: <https://learndiag.com/openapi.json>
+- Agent skills: <https://learndiag.com/.well-known/agent-skills/index.json>
 - Every content page serves `text/markdown` on `Accept: text/markdown`
 
 ## Legal

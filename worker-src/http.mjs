@@ -80,3 +80,35 @@ export async function readJsonBody(request) {
     return { err: apiError('invalid_json') };
   }
 }
+
+/* ---------- outbound fetch guard (SSRF) ---------- */
+
+function isReservedIPv4(h) {
+  const m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(h);
+  if (!m) return false;
+  const a = +m[1], b = +m[2];
+  return a === 0 || a === 10 || a === 127 || (a === 169 && b === 254) ||
+    (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168) || a >= 224;
+}
+
+function isReservedHost(hostname) {
+  const h = hostname.toLowerCase().replace(/^\[|\]$/g, '');
+  if (h === 'localhost' || /\.(local|localdomain|internal)$/.test(h)) return true;
+  if (h === '::' || h === '::1') return true;
+  if (/^f[cd][0-9a-f]{2}:/.test(h) || /^fe[89ab][0-9a-f]{2}:/.test(h)) return true;
+  const v4 = h.includes(':') ? h.split(':').pop() : h; // IPv4-mapped IPv6 tail
+  return isReservedIPv4(v4);
+}
+
+/**
+ * Outbound fetch guard: every upstream call must be https and must not target
+ * localhost, loopback, private, link-local or otherwise reserved addresses.
+ * All production upstreams (Resend, Mailgun, Creem, Google) are fixed https
+ * hosts, so this never rejects a legitimate call.
+ */
+export async function safeFetch(url, init) {
+  const u = new URL(String(url));
+  if (u.protocol !== 'https:') throw new Error(`safeFetch: scheme ${u.protocol} is not allowed; use https`);
+  if (isReservedHost(u.hostname)) throw new Error(`safeFetch: host ${u.hostname} is reserved/private`);
+  return fetch(u, init);
+}

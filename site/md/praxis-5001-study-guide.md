@@ -87,7 +87,9 @@ Each subtest produces its own scaled score, typically reported on a 100–200 sc
 
 Go deeper on each gate with our single-subject guides:
 
-- [Praxis 5002 Study Guide](https://learndiag.com/praxis-5002-study-guide.html) — reading foundations, writing, and literacy pedagogy
-- [Praxis 5003 Math Study Guide](https://learndiag.com/praxis-5003-math-study-guide.html) — what to study and how to use the calculator
-- [Praxis 5004 Social Studies Study Guide](https://learndiag.com/praxis-5004-social-studies-study-guide.html) — a high-yield review plan
-- [Praxis 5005 Science Study Guide](https://learndiag.com/praxis-5005-science-study-guide.html) — earth, life, physical science, and inquiry
+- [Praxis 5002 Study Guide](https://learndiag.com/praxis-5002-study-guide) — reading foundations, writing, and literacy pedagogy
+- [Praxis 5003 Math Study Guide](https://learndiag.com/praxis-5003-math-study-guide) — what to study and how to use the calculator
+- [Praxis 5004 Social Studies Study Guide](https://learndiag.com/praxis-5004-social-studies-study-guide) — a high-yield review plan
+- [Praxis 5005 Science Study Guide](https://learndiag.com/praxis-5005-science-study-guide) — earth, life, physical science, and inquiry
+
+Related: [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [Subtests Explained](https://learndiag.com/praxis-5001-subtests-explained)

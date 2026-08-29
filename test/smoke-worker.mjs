@@ -34,7 +34,7 @@ const env = {
 };
 
 const call = (path, method = 'GET', body, headers = {}) =>
-  worker.fetch(new Request('https://trytriumph.de5.net' + path, {
+  worker.fetch(new Request('https://learndiag.com' + path, {
     method,
     headers: { ...(body ? { 'Content-Type': 'application/json' } : {}), ...headers },
     body: body ? JSON.stringify(body) : undefined,

@@ -13,8 +13,8 @@ const worker = (await import(pathToFileURL(ROOT + 'site/_worker.js').href)).defa
 function makeEnv(kvStore = new Map()) {
   return {
     JWT_SECRET: 'test-secret',
-    EMAIL_FROM: 'Triumph <verify@trytriumph.de5.net>',
-    SITE_URL: 'https://trytriumph.de5.net',
+    EMAIL_FROM: 'Learndiag <verify@learndiag.com>',
+    SITE_URL: 'https://learndiag.com',
     ADMIN_EMAILS: 'admin@triumph.com',
     CREEM_WEBHOOK_SECRET: 'whsec_test',
     CREEM_MODE: 'test',
@@ -35,7 +35,7 @@ function makeEnv(kvStore = new Map()) {
 }
 
 const call = (env, path, method = 'GET', body, headers = {}) =>
-  worker.fetch(new Request('https://trytriumph.de5.net' + path, {
+  worker.fetch(new Request('https://learndiag.com' + path, {
     method,
     headers: { ...(body ? { 'Content-Type': 'application/json' } : {}), ...headers },
     body: body ? JSON.stringify(body) : undefined,
@@ -154,7 +154,7 @@ test('checkout: 请求体字段为 snake_case（Creem REST 约定）', async () 
   const req = sent.find(s => s.url.endsWith('/checkouts'));
   assert.ok(req, 'creem checkout called');
   assert.equal(req.body.product_id, 'prod_test');
-  assert.equal(req.body.success_url, 'https://trytriumph.de5.net/upgrade.html');
+  assert.equal(req.body.success_url, 'https://learndiag.com/upgrade.html');
   assert.ok(req.body.customer && req.body.customer.email === 'buyer@test.com', 'customer email passed');
   assert.ok(!('productId' in req.body), 'no camelCase field');
   assert.ok(!('cancel_url' in req.body), 'no unsupported cancel_url');
@@ -168,7 +168,7 @@ test('webhook: 签名错误 → 401', async () => {
     'creem-signature': '00'.repeat(32),
   }, payload);
   // call 工具会 JSON.stringify body —— 这里需要 raw body，改用直接构造
-  const rawRes = await worker.fetch(new Request('https://trytriumph.de5.net/api/billing/webhook', {
+  const rawRes = await worker.fetch(new Request('https://learndiag.com/api/billing/webhook', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'creem-signature': '00'.repeat(32) },
     body: payload,
@@ -195,7 +195,7 @@ test('webhook: 正确签名 → 处理成功并写 KV 权益（真实 payload �
     },
   });
   const sig = createHmac('sha256', 'whsec_test').update(payload).digest('hex');
-  const r = await worker.fetch(new Request('https://trytriumph.de5.net/api/billing/webhook', {
+  const r = await worker.fetch(new Request('https://learndiag.com/api/billing/webhook', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'creem-signature': sig },
     body: payload,
@@ -219,7 +219,7 @@ test('webhook: 重复事件幂等（同一 id 只处理一次）', async () => {
     object: { id: 'sub_dup', status: 'active', customer: { email }, metadata: {} },
   });
   const sig = createHmac('sha256', 'whsec_test').update(payload).digest('hex');
-  const req = () => worker.fetch(new Request('https://trytriumph.de5.net/api/billing/webhook', {
+  const req = () => worker.fetch(new Request('https://learndiag.com/api/billing/webhook', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'creem-signature': sig },
     body: payload,

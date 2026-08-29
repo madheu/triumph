@@ -19,8 +19,13 @@
 //                          406 only when nothing acceptable can be produced
 //   5. /api/openapi.yaml — OpenAPI 3.1 spec serialized from the same object as
 //                          the static /openapi.json (single source of truth)
+//   6. /auth.md + Auth.md discovery — /auth.md (Markdown), PRM at
+//                          /.well-known/oauth-protected-resource and
+//                          authorization server metadata with the agent_auth
+//                          block at /.well-known/oauth-authorization-server
 
 import { CORS_HEADERS, corsPreflight, withCors, json, apiError, ERROR_CATALOG } from './http.mjs';
+import { AUTH_DISCOVERY_ROUTES } from './authmd.mjs';
 import { ACCOUNT_ROUTES } from './accounts.mjs';
 import { GOOGLE_AUTH_ROUTES } from './google-auth.mjs';
 import { PASSWORD_ROUTES } from './password.mjs';
@@ -69,7 +74,7 @@ export default {
         const isLocalDev = host === 'localhost' || host === '127.0.0.1' || host === '[::1]';
         const isCanonical = host === 'learndiag.com';
         const isProgrammatic =
-          path.startsWith('/api/') || path === '/mcp' || path.startsWith('/.well-known/');
+          path.startsWith('/api/') || path === '/mcp' || path.startsWith('/.well-known/') || path === '/auth.md';
         const isPreviewBranch =
           typeof env?.CF_PAGES_BRANCH === 'string' && env.CF_PAGES_BRANCH !== 'main';
         const isPageRequest = request.method === 'GET' || request.method === 'HEAD';
@@ -78,9 +83,25 @@ export default {
         }
       }
 
+      /* ---------- clean-URL aliases for static app pages (SEO) ---------- */
+      // The static app pages live at /diagnostic.html and /practice.html (canonical
+      // form, used in the sitemap). Content pages link to the extension-less
+      // /diagnostic and /practice; alias those to the .html canonical so both work
+      // without duplicate URLs. No SPA fallback exists (404.html disables it).
+      if (path === '/diagnostic' || path === '/practice') {
+        return Response.redirect(`${url.origin}${path}.html${url.search}`, 301);
+      }
+
       /* ---------- machine routes ---------- */
 
       if (path === '/mcp') return handleMcp(request, env);
+
+      const authDoc = AUTH_DISCOVERY_ROUTES[path];
+      if (authDoc) {
+        const handler = authDoc[request.method];
+        if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(authDoc) }));
+        return handler(request, env);
+      }
 
       if (path.startsWith('/api/')) {
         if (request.method === 'OPTIONS') return corsPreflight();

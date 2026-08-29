@@ -148,8 +148,8 @@ export function inlineNodes(nodes) {
 
 function absolute(href) {
   if (/^(https?:)?\/\//.test(href)) return href;
-  if (href.startsWith('/')) return 'https://trytriumph.de5.net' + href;
-  return 'https://trytriumph.de5.net/' + href.replace(/^\.\//, '');
+  if (href.startsWith('/')) return 'https://learndiag.com' + href;
+  return 'https://learndiag.com/' + href.replace(/^\.\//, '');
 }
 
 function emitList(node, indent) {
@@ -335,7 +335,7 @@ if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1].rep
   fs.mkdirSync(mdDir, { recursive: true });
   for (const page of PAGES) {
     const { title, md } = convertGuideFile(path.join(SITE, page + '.html'));
-    const front = `<!-- Markdown variant of https://trytriumph.de5.net/${page} — request any page with Accept: text/markdown -->\n\n`;
+    const front = `<!-- Markdown variant of https://learndiag.com/${page} — request any page with Accept: text/markdown -->\n\n`;
     fs.writeFileSync(path.join(mdDir, page + '.md'), front + md);
     console.log(page.padEnd(45), `${md.length} chars`, '|', title.slice(0, 60));
   }

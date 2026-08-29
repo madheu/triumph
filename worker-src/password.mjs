@@ -14,7 +14,7 @@
 // - 重置成功后删除 token（用后即焚）
 // - 不暴露"邮箱是否存在"（统一 200）
 
-import { json, apiError } from './http.mjs';
+import { json, apiError, safeFetch } from './http.mjs';
 import { hashPassword } from './crypto.mjs';
 import { USER_KEY } from './accounts.mjs';
 
@@ -53,7 +53,7 @@ async function sendResetEmail(env, email, token) {
     <p style="color:#6E6760;font-size:12px">Learndiag · independent Praxis 5001 study tool · not affiliated with ETS</p>`;
   const body = { from, to: [email], subject: 'Reset your Learndiag password', html };
   if (env.RESEND_API_KEY) {
-    const res = await fetch('https://api.resend.com/emails', {
+    const res = await safeFetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + env.RESEND_API_KEY },
       body: JSON.stringify(body),
@@ -64,7 +64,7 @@ async function sendResetEmail(env, email, token) {
   if (env.MAILGUN_API_KEY && env.MAILGUN_DOMAIN) {
     const form = new URLSearchParams();
     form.set('from', from); form.set('to', email); form.set('subject', body.subject); form.set('html', html);
-    const res = await fetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
+    const res = await safeFetch(`https://api.mailgun.net/v3/${env.MAILGUN_DOMAIN}/messages`, {
       method: 'POST',
       headers: { 'Authorization': 'Basic ' + btoa('api:' + env.MAILGUN_API_KEY) },
       body: form,

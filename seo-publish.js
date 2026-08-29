@@ -357,6 +357,7 @@ for (const f of files) {
   const md = fs.readFileSync(path.join(SRC_DIR, f), 'utf8');
   const { data, body } = parseFrontMatter(md);
   if (!data.slug) { console.log(`跳过（无 slug）: ${f}`); continue; }
+  if (!/^[\w-]+$/.test(data.slug)) throw new Error(`Unsafe slug in ${f}: ${data.slug}`); // 只允许字母数字下划线连字符，防止路径逃逸
   const words = body.split(/\s+/).length;
   const html = mdToHtml(body);
   // 表格包一层横向滚动容器（移动端防溢出）

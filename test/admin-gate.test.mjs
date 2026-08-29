@@ -16,7 +16,7 @@ function makeEnv(adminEmails) {
 }
 
 const call = (env, token) =>
-  worker.fetch(new Request('https://trytriumph.de5.net/api/admin/me', {
+  worker.fetch(new Request('https://learndiag.com/api/admin/me', {
     headers: token ? { Authorization: 'Bearer ' + token } : {},
   }), env, {});
 
