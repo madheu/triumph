@@ -1,0 +1,99 @@
+{
+  "_file": "item-schema-v1.5000-branch.json",
+  "_purpose": "schema v1 的 5000 系列（Praxis 5001 / subtests 5002-5005）枚举分支与字段绑定定义。本文件不重新定 schema，只补 5000 系列分支。",
+  "_authority_note": "T0（看板事项 rAQmza）已定稿 schema v1 并声明产出 content-infra/item-schema-v1.md + item-schema-v1.example.json。截至 2026-09-03，这两个文件在本仓库磁盘上不存在（全盘搜索 E:\\Triumph 无结果）。本分支文件依据 T0 事项描述中列出的字段名清单与三条硬约束重建，用于 D2 存量映射与校验。item-schema-v1.md 一旦落盘，本文件需与其复核对齐。",
+  "_open_question_1": "T0 描述自称 20 字段，但实际列出 21 个字段名（多出的一个是 created_at 与 updated_at 并存）。本文件以字段名清单为准，按 21 字段实现。计数与清单不一致，需 T0 负责人确认。",
+  "_open_question_2": "correct_answer 取选项文本而非索引。理由：duplicate_hash 规则要求选项排序后哈希，索引在排序后会失效，故 schema 的 correct_answer 只能是与顺序无关的值。需与 8000 系列口径确认一致。",
+  "_open_question_3": "5000 系列与 8000 系列共用 id 命名空间时可能冲突（本批 id 形如 5002-001）。本批保留原 id 以保证可追溯，跨系列查重一律以 duplicate_hash 为准，不要以 id 为准。",
+
+  "field_order": [
+    "id", "series", "test_code", "subject", "content_domain", "skill",
+    "difficulty", "question_type", "stimulus", "stem", "choices",
+    "correct_answer", "explanation", "distractor_explanations",
+    "source_basis", "review_status", "reviewer", "version",
+    "duplicate_hash", "created_at", "updated_at"
+  ],
+  "field_count": 21,
+
+  "fields": {
+    "id":            { "type": "string", "required": true,  "note": "沿用存量 id，形如 5002-001；批次内唯一，已验证零重复" },
+    "series":        { "type": "string", "required": true,  "enum": ["5000"] },
+    "test_code":     { "type": "integer", "required": true, "enum": [5002, 5003, 5004, 5005] },
+    "subject":       { "type": "string", "required": true,  "enum_source": "见 subjects" },
+    "content_domain": { "type": "string", "required": true, "enum_source": "见 content_domains，按 test_code 分支" },
+    "skill":         { "type": ["string", "null"], "required": true, "nullable": true, "note": "存量无此数据，置 null；不得由 type 字段推导（type 是认知层级，不是 skill）" },
+    "difficulty":    { "type": "string", "required": true,  "enum": ["easy", "medium", "hard"] },
+    "question_type": { "type": "string", "required": true,  "enum": ["single-select"], "default": "single-select", "note": "存量 969 题全部为 4 选 1，无 numeric-entry / multi-select / constructed-response" },
+    "stimulus":      { "type": ["string", "null"], "required": true, "nullable": true, "note": "存量未拆分 stimulus，一律置 null；题干内嵌 passage 的题见报告统计，需人工拆分后才能回填" },
+    "stem":          { "type": "string", "required": true,  "min_length": 1 },
+    "choices":       { "type": "array", "required": true,  "items": { "type": "string" }, "min_items": 2, "note": "存量全部为 4 项" },
+    "correct_answer": { "type": "string", "required": true, "note": "取 choices 中的选项文本（非索引），且必须存在于 choices 中" },
+    "explanation":   { "type": "string", "required": true,  "min_length": 1 },
+    "distractor_explanations": { "type": ["object", "null"], "required": true, "nullable": true, "note": "schema 硬约束 2 要求逐项写；存量只有 1 条 explanation，无干扰项解释，故置 null 并计入完整性缺口（不视为结构校验失败）" },
+    "source_basis":  { "type": "string", "required": true,  "enum": ["legacy-unknown", "expert-judgment", "official-source"], "legacy_value": "legacy-unknown" },
+    "review_status": { "type": "string", "required": true,  "enum": ["human-reviewed"], "legacy_value": "human-reviewed" },
+    "reviewer":      { "type": "string", "required": true,  "legacy_value": "legacy-import", "note": "存量无法回溯到具体审题人，统一填 legacy-import" },
+    "version":       { "type": "integer", "required": true, "minimum": 1, "legacy_value": 1 },
+    "duplicate_hash": { "type": "string", "required": true, "pattern": "^[0-9a-f]{64}$" },
+    "created_at":    { "type": "string", "required": true, "format": "ISO-8601 UTC (…Z)" },
+    "updated_at":    { "type": "string", "required": true, "format": "ISO-8601 UTC (…Z)" }
+  },
+
+  "subjects": {
+    "5002": "Reading and Language Arts",
+    "5003": "Mathematics",
+    "5004": "Social Studies",
+    "5005": "Science"
+  },
+
+  "content_domains": {
+    "_note": "11 个领域名取自存量题库 category 字段的实际取值（provenance: legacy-bank），与 subtest 严格一一对应，无跨 subtest 复用。2026-09-03 已取得 ETS 官方宣传册原文逐一比对，11 个名称与官方口径逐字一致（含 5003 的长名写法），故 verification_status 由 triangulated 升为 confirmed。",
+    "5002": ["Reading", "Writing, Speaking, and Listening"],
+    "5003": ["Numbers and Operations", "Algebraic Thinking", "Geometry and Measurement, Data, Statistics, and Probability"],
+    "5004": ["United States History, Government, and Citizenship", "World History and Economics", "Geography, Anthropology, and Sociology"],
+    "5005": ["Earth Science", "Life Science", "Physical Science"]
+  },
+
+  "content_domain_provenance": {
+    "provenance": "legacy-bank + ets-official",
+    "verification_status": "confirmed",
+    "last_verified": "2026-09-03",
+    "official_source_url": "https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf",
+    "official_source_url_note": "2026-09-03 晚更正：官方 Praxis Steps Hub 页（praxis.ets.org/praxis-steps.html）直链此 PDF，文件名与归档件一致。此前『无公开 URL』的判断作废。",
+    "official_source_file": "praxis-5001/docs/sources/ets-elementary-education-fundamentals-brochure-V5-2025.pdf",
+    "official_source_description": "ETS 官方宣传册《The new Praxis Elementary Education Fundamentals tests》，Copyright © 2025 by ETS，4 页。第 2-4 页的 Tests Comparison At A Glance 表格逐项列出 5002/5003/5004/5005 的 Category 与 Approx. % of Test / Approx. # of Questions。",
+    "official_source_availability": "公开可下载（官方 Hub 页直链）；本地另存归档副本于 docs/sources/ 以防官方下架。",
+    "verification_result": "11 个领域名与官方表格逐字一致，包含 5003 的长名 'Geometry and Measurement, Data, Statistics, and Probability'（官方表格因排版换行，连起来即此写法）。权重亦与官方一致：5002 = 47/53，5003 = 40/30/30，5004 = 45/30/25，5005 = 33/33/33。",
+    "cross_checked_sources": [
+      "https://www.teacherpreps.com/courses/praxis-science-5005",
+      "https://teachercertification.com/praxis/elementary-education-5001",
+      "https://www.examedge.com/teaching/praxis/elemedmultiscience/praxis-elementary-education-multiple-subjects-science-5005-practice-tests.cfm",
+      "https://teachercertification.com/praxis/maine-praxis-requirements/"
+    ],
+    "cross_check_result": "四个第三方源的口径彼此一致，且与本次取得的 ETS 官方表格吻合。官方源到手后第三方仅作旁证，不作为依据。",
+    "usage_note": "这 11 个名称是 5000 系列（5002-5005）的官方分类。8000 系列分类名与之不同（见 docs/official-source-ets-fundamentals-brochure.md 的差异对照表），不得跨系列套用。"
+  },
+
+  "duplicate_hash_algorithm": {
+    "_spec_from": "D2 事项描述：归一化（小写、去标点空白、选项排序后取 SHA-256）",
+    "_implementation_note": "D2 原文对拼接分隔符未作规定，本实现显式定义如下，映射脚本与校验脚本必须共用同一实现，否则跨批次查重失效",
+    "steps": [
+      "normalize(t) = t.toLowerCase() 后移除非 [a-z0-9] 的全部字符（标点、空白、连字符、引号一律删除）",
+      "parts = [normalize(stem)] + normalize(choices[i]) for each i，然后对 choices 部分按字符串升序排序",
+      "payload = parts.join('|')（stem 归一化结果在前，选项归一化结果排序后以 | 连接在后）",
+      "duplicate_hash = sha256(payload, utf8) 的 64 位小写十六进制"
+    ],
+    "scope": "跨批次、跨系列全局唯一候选键；同一道题改了 id / 选项顺序 / 大小写标点，哈希不变"
+  },
+
+  "hard_constraints_from_t0": [
+    "content_domain 只取枚举值，不得自造",
+    "distractor_explanations 必须逐项写，缺一条即退回 —— 本批存量全部缺失，按完整性缺口登记，不作为结构校验失败（详见 D2 报告）",
+    "无官方依据的写 expert-judgment，不得伪装成官方依据 —— 本批无法回溯来源，统一写 legacy-unknown（比 expert-judgment 更保守，明示未知）"
+  ],
+
+  "validation_tiers": {
+    "blocking": "结构校验：21 字段齐全、类型正确、枚举合法、choices 非空、correct_answer 在 choices 内、duplicate_hash 为 64 位 hex。任一失败即该条不通过。",
+    "non_blocking": "完整性缺口（记 warning，不阻断）：distractor_explanations 为 null、skill 为 null、stimulus 为 null。原因：存量数据结构本就没有这三类信息，属遗留缺口，需人工补齐，不是映射错误。"
+  }
+}

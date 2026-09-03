@@ -1,0 +1,28 @@
+{
+  "id": "5002-001",
+  "series": "5000",
+  "test_code": 5002,
+  "subject": "Reading and Language Arts",
+  "content_domain": "Reading",
+  "skill": null,
+  "difficulty": "easy",
+  "question_type": "single-select",
+  "stimulus": null,
+  "stem": "Which text structure organizes information by listing reasons and supporting details about a single topic?",
+  "choices": [
+    "Description",
+    "Cause and effect",
+    "Problem and solution",
+    "Sequence"
+  ],
+  "correct_answer": "Description",
+  "explanation": "A descriptive structure presents a topic and then lists characteristics, features, or supporting details. Cause and effect shows relationships between events, while sequence organizes events in time order.",
+  "distractor_explanations": null,
+  "source_basis": "legacy-unknown",
+  "review_status": "human-reviewed",
+  "reviewer": "legacy-import",
+  "version": 1,
+  "duplicate_hash": "b03e96bd18a11c20ea02284b4a7d560b77be5cf55b1a3c37d4d9f223c1b6adac",
+  "created_at": "2026-08-23T14:46:51.965Z",
+  "updated_at": "2026-08-23T14:46:51.965Z"
+}

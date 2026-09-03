@@ -1,0 +1,1072 @@
+{
+ "5002-001": {
+  "Cause and effect": "Reads 'reasons' as causal links; cause and effect explains why events happen, not a topic's supporting details.",
+  "Problem and solution": "Equates supporting details with solutions; this structure centers on a problem and its fixes, not a topic's attributes.",
+  "Sequence": "Assumes listing means ordering; sequence arranges events or steps in time, which the stem never mentions."
+ },
+ "5002-002": {
+  "Simile": "Looks for 'like' or 'as' and finds none; the passage never makes an explicit comparison between unlike things.",
+  "Onomatopoeia": "Assumes the imagery is sound-based; no word imitates a sound, and the device at work is attributing human traits.",
+  "Hyperbole": "Treats 'scar of consumption' as pure exaggeration; the phrasing grants the caterpillar deliberate, persistent intent instead."
+ },
+ "5002-003": {
+  "Provide worksheets with multiple-choice questions only": "Relies on practice alone with no modeling; worksheets assess the skill but never demonstrate how to find a main idea.",
+  "Have students memorize the definition of main idea": "Treats knowing a definition as having the skill; students can recite the term yet still fail to identify one in text.",
+  "Assign students to underline every sentence in each paragraph": "Mistakes marking everything for analysis; underlining every sentence gives no criteria for judging which point matters most."
+ },
+ "5002-004": {
+  "To summarize the entire chapter": "Overstates a caption's scope; captions explain one visual, not the whole chapter's content.",
+  "To list the bibliography sources": "Confuses text features; source lists belong in a bibliography or references section, not beneath a photograph.",
+  "To provide the table of contents": "Confuses front-matter with captions; a table of contents maps chapters, while a caption sits with its image."
+ },
+ "5002-005": {
+  "It is a dependent clause that modifies the verb": "Calls the phrase a clause; it contains no subject and verb, so it cannot be a dependent clause modifying anything.",
+  "It is a prepositional phrase indicating location": "Overlooks that no preposition opens the phrase; 'a treasure trove of scrolls' renames the library as a noun phrase.",
+  "It is a compound predicate describing actions": "Assumes a second action; the phrase names a thing rather than describing actions, so no predicate exists."
+ },
+ "5002-006": {
+  "Appeal to emotion through vivid imagery": "Labels the sentence emotional imagery; no vivid sensory detail appears, and the point is the intention-outcome gap.",
+  "Direct argument with supporting evidence": "Sees persuasion where none exists; the sentence presents no claims or evidence, only an ironic reversal.",
+  "Simple chronological narration": "Reads the sentence as a timeline; it reports no sequence of events but a contrast between intention and result."
+ },
+ "5002-007": {
+  "Drill sight words repeatedly until automatic": "Targets decoding, which is already accurate; the student's gaps are in prosody and comprehension, not word recognition.",
+  "Assign more challenging independent reading texts": "Raises difficulty when the student cannot yet read accessible text expressively; harder passages deepen the gap.",
+  "Have the student read silently for longer periods each day": "Extends the same unexpressive silent habits; without modeling and oral practice, fluency and recall do not improve."
+ },
+ "5002-008": {
+  "Comma": "Creates a comma splice; a comma alone cannot join two independent clauses without a coordinating conjunction.",
+  "Colon": "Misapplies a colon; colons introduce lists or explanations rather than linking two related statements as equals.",
+  "Apostrophe": "Confuses possession with clause joining; an apostrophe marks ownership or contraction, never separates clauses."
+ },
+ "5002-009": {
+  "Entertain with stories of ancient forests": "Mistakes informational content for amusement; the passage presents knowledge about controlled burning, not a story.",
+  "Persuade readers to move to rural areas": "Reads a call to action into description; the passage shares information and does not urge readers to relocate.",
+  "Argue that all modern fire prevention policies are wrong": "Overstates the author's stance; presenting traditional practices is not the same as attacking every modern policy."
+ },
+ "5002-010": {
+  "The project succeeded despite committee hesitation": "Reads the sentence as fact; the inverted conditional signals the opposite, since the success never happened.",
+  "The committee acted on time and the project succeeded": "Reverses the implication; 'Had ... acted sooner' concedes that the action did not come early enough.",
+  "The committee was unsure about the project timeline": "Finds doubt in the wrong place; the sentence implies regret about inaction, not uncertainty about scheduling."
+ },
+ "5002-011": {
+  "Provide only simplified texts at their reading level": "Lowers the text instead of scaffolding access; simplified texts block grade-level content and language growth.",
+  "Require students to read silently without assistance": "Removes every support; silent reading alone leaves unknown vocabulary and structures unexplained.",
+  "Have students listen to the text without reading along": "Substitutes listening for reading; without seeing the text, students miss word-level exposure and decoding practice."
+ },
+ "5002-012": {
+  "Opinions appear in textbooks; facts appear in editorials": "Matches genre to factuality incorrectly; both facts and opinions can appear in textbooks or in editorials.",
+  "Facts are always longer than opinions": "Ties the difference to length; fact versus opinion is about verifiability, not sentence size.",
+  "There is no meaningful difference between them": "Denies the distinction entirely; the core test is whether a statement can be verified or expresses a judgment."
+ },
+ "5002-013": {
+  "Therefore": "Confuses contrast with result; 'therefore' signals a conclusion that follows from a previous idea.",
+  "Additionally": "Chooses an additive transition; 'additionally' stacks ideas rather than setting them against each other.",
+  "Consequently": "Confuses contrast with consequence; 'consequently' shows a cause-and-effect link, not an opposing one."
+ },
+ "5002-014": {
+  "\"Don't worry about it; poems are supposed to be hard.\"": "Dismisses the confusion instead of modeling strategy use; calling poems hard offers no move toward understanding.",
+  "\"The poem is difficult; just memorize the main idea.\"": "Substitutes rote recall for thinking aloud; memorizing an idea bypasses the rereading and questioning that matter.",
+  "\"Ask your parents for help with homework.\"": "Defers help outside the lesson; the teachable moment for modeling comprehension strategies is in the classroom."
+ },
+ "5002-015": {
+  "un (root) + happy (affix) + ness (root)": "Swaps the labels; 'un' is the prefix and 'happy' is the root, with only '-ness' functioning as a suffix.",
+  "unh (root) + a (prefix) + piness (suffix)": "Cuts the word at non-morpheme boundaries; 'unh,' 'a,' and 'piness' are not meaningful English units.",
+  "una (prefix) + happy (root) + ness (suffix)": "Attaches the wrong letters to the prefix; 'una' is not a morpheme, while 'un-' alone is."
+ },
+ "5002-016": {
+  "There going to the park after their done with homework.": "Swaps both homophones; 'There' cannot act as the subject's contraction, and 'their done' misuses the possessive.",
+  "Theyre going to the park after there done with homework.": "Drops the apostrophe in 'Theyre' and then misuses 'there' where the contraction 'they're' is required.",
+  "Their going to the park after theyre done with homework.": "Uses the possessive 'Their' where the contraction is needed and omits the apostrophe in 'theyre'."
+ },
+ "5002-017": {
+  "The experiment failed, the students tried again.": "Keeps a comma splice; a comma alone still leaves two independent clauses improperly joined.",
+  "The experiment failed the students, tried again.": "Mangles the meaning by making 'the students' a direct object; the comma placement separates nothing correctly.",
+  "The experiment, failed the students tried again.": "Inserts a comma inside the first clause; a comma never belongs between a subject and its verb."
+ },
+ "5002-018": {
+  "Circle 'was when' and write 'fix this' in the margin": "Gives a verdict without direction; circling errors shows what is wrong but not how to build a specific claim.",
+  "Rewrite the thesis for the student and have them copy it": "Removes the student's ownership; copying a teacher-written thesis skips the thinking that revision requires.",
+  "Tell the student the thesis is acceptable as is": "Accepts a vague thesis; 'many things happened' names no specific claim and gives the essay nothing to prove."
+ },
+ "5002-019": {
+  "Form refers to meaning; function refers to spelling": "Reverses the two definitions; form describes a word's structure, while function describes its role, not its spelling.",
+  "Form applies only to verbs; function applies only to nouns": "Limits both terms to single parts of speech; every word class has both a form and a role in a sentence.",
+  "Form and function are identical concepts in grammar": "Collapses two distinct concepts; a word's structure can differ from its role, as when a noun functions adjectivally."
+ },
+ "5002-020": {
+  "To copy vocabulary words into sentences": "Confuses outlining with vocabulary work; outlines map essay ideas, not word lists.",
+  "To ensure perfect grammar in every sentence": "Expects grammar polishing at the planning stage; outlines arrange ideas before any sentences are drafted.",
+  "To replace the need for drafting": "Treats the outline as the finished process; it is a planning tool that precedes, not replaces, drafting."
+ },
+ "5002-021": {
+  "Have students only compliment each other's work": "Limits feedback to praise; compliments feel safe but give the writer nothing specific to revise.",
+  "Allow students to review without any guidelines": "Removes structure entirely; without criteria, students default to vague or purely personal reactions.",
+  "Tell students to find and circle all errors": "Turns review into proofreading; hunting surface errors ignores the content and organization feedback that matters."
+ },
+ "5002-022": {
+  "'Although the data seemed accurate, several discrepancies were found upon further review by the team.'": "Keeps the passive construction; 'several discrepancies were found' still names no agent performing the review.",
+  "'Upon further review, several discrepancies were found although the data seemed accurate.'": "Reorders the clauses without adding a subject; 'several discrepancies' still cannot perform the reviewing.",
+  "The original sentence is already correct": "Overlooks the faulty modifier; with no subject acting, 'upon further review' attaches to nothing in the sentence."
+ },
+ "5002-023": {
+  "At least ten sentences": "Confuses length with structure; paragraph quality depends on unity and development, not a sentence count.",
+  "Direct quotes from at least three sources": "Applies research-paper rules to every paragraph; quotes may support evidence but are not required in each one.",
+  "Complex vocabulary throughout": "Equates fancy diction with quality; clear, appropriate word choice serves a paragraph better than complexity."
+ },
+ "5002-024": {
+  "A comma splice contains three or more clauses": "Invents a clause-count rule; the distinction rests on punctuation, not on how many clauses appear.",
+  "There is no difference between them": "Treats the terms as interchangeable; a comma splice is a specific run-on type that joins clauses with a comma.",
+  "A run-on is always longer than a comma splice": "Judges by length; a short sentence with two unpunctuated clauses is still a run-on."
+ },
+ "5002-025": {
+  "Tell the student articles do not matter for communication": "Dismisses a real pattern; articles affect meaning, and these systematic errors deserve targeted attention.",
+  "Assign extra grammar worksheets on all English rules simultaneously": "Overloads the writer with every rule at once; focusing on one pattern makes practice manageable and transferable.",
+  "Correct every article error with red pen before reading the content": "Buries the message under corrections; marking every error before responding to ideas discourages the writer."
+ },
+ "5002-026": {
+  "The team are winning its games.": "Mixes conventions; the British-style plural verb 'are' clashes with the singular possessive 'its.'",
+  "The team are winning their games.": "Applies British plural agreement; American usage treats 'team' as singular, taking 'is' and 'its.'",
+  "The team is winning their games.": "Pairs a singular verb with a plural pronoun; if 'team' is singular, the pronoun must be 'its.'"
+ },
+ "5002-027": {
+  "To summarize the entire paper in one sentence": "Confuses the introduction with an abstract; one sentence cannot hook readers, give background, and state a thesis.",
+  "To repeat the conclusion verbatim": "Reverses the essay's order; conclusions echo introductions, but introductions are written to lead in.",
+  "To list all sources used in the paper": "Confuses the introduction with a works-cited page; sources belong at the end in formal citations."
+ },
+ "5002-028": {
+  "A new topic to consider is whether schools should require students to recycle at home.": "Opens a fresh topic at the end; conclusions synthesize the essay's argument rather than raise new questions.",
+  "In conclusion, I discussed pollution, recycling, and conservation. That is all.": "Merely lists topics and stops; 'That is all' adds no synthesis, insight, or sense of closure.",
+  "Recycling is important because it helps the environment and saves resources.": "Restates a body-point claim without wrapping up; a strong conclusion looks back on the whole argument."
+ },
+ "5002-029": {
+  "'The coach told the players running fast, dodging opponents, and shooting accurately.'": "Switches to gerunds without keeping the infinitive frame; 'told the players to ...' requires matching 'to' phrases.",
+  "'The coach told the players: run fast, dodge opponents, shoot accurately.'": "Replaces the infinitive series with bare commands, changing the sentence's grammar instead of fixing parallelism.",
+  "The original sentence already has correct parallel structure": "Misses the broken parallelism; 'they should shoot' shifts from infinitive phrases to a full clause mid-series."
+ },
+ "5002-030": {
+  "To replace the need for topic sentences": "Overstates transitions' role; they connect ideas but cannot state a paragraph's controlling point.",
+  "To make sentences longer": "Judges transitions by word count; they exist to show logic, not to pad length.",
+  "To add decorative language": "Treats transitions as ornament; each one carries a precise logical relationship such as contrast or cause."
+ },
+ "5002-031": {
+  "The title only": "Reduces the main idea to the title; titles hint at the topic but rarely capture the author's full point.",
+  "The first sentence": "Assumes the main idea is always stated first; it may appear anywhere or be implied across the passage.",
+  "A detailed supporting fact": "Confuses a supporting detail with the central point; details back up the main idea rather than define it."
+ },
+ "5002-032": {
+  "Making exaggerated claims": "Undermines credibility; overstatement invites skepticism instead of trust.",
+  "Ignoring opposing viewpoints": "Weakens persuasion; acknowledging and refuting counterarguments signals fairness and strengthens ethos.",
+  "Using emotional language exclusively": "Relies only on pathos; emotion without evidence or expertise fails to establish the writer as trustworthy."
+ },
+ "5002-033": {
+  "Have them read silently without help": "Removes all scaffolds; silent independent reading leaves vocabulary and structure gaps unaddressed.",
+  "Skip reading instruction for English learners": "Denies access to grade-level reading entirely; English learners need targeted support, not exclusion.",
+  "Use only simplified texts": "Substitutes easier texts for scaffolding; simplification lowers rigor instead of supporting access to content."
+ },
+ "5002-034": {
+  "To end a paragraph": "Confuses the topic sentence with a concluding sentence; its role is to open the paragraph's line of thought.",
+  "To list sources": "Confuses paragraph structure with documentation; sources belong in citations, not in the topic sentence.",
+  "To describe the setting": "Applies narrative conventions to all paragraphs; a topic sentence states a point, not scenery."
+ },
+ "5002-035": {
+  "Problem and solution": "Confuses structure with a narrative arc; this pattern centers on an issue and its fixes, not on time order.",
+  "Compare and contrast": "Mistakes similarity analysis for sequencing; this structure examines likeness and difference between subjects.",
+  "Cause and effect": "Confuses causal explanation with time order; this structure explains why events happen, not when."
+ },
+ "5002-036": {
+  "It makes the factories seem friendly": "Misreads the tone; 'dominated' and the sentinel imagery suggest imposing watchfulness, not warmth.",
+  "It describes the color blue": "Focuses on 'gray' as the point; the color word is detail, while the device is the comparison to watchful guards.",
+  "It compares factories to soldiers literally": "Takes the comparison as literal description; the phrase is figurative, suggesting vigilance rather than soldiers."
+ },
+ "5002-037": {
+  "Write everything in fewer words": "Merely shortens the text; a summary selects the most important ideas rather than compressing every detail.",
+  "Copy the first sentence of each paragraph": "Mistakes topic sentences for a summary; stitching first sentences misses ideas the author implies across paragraphs.",
+  "Make it as short as possible regardless of content": "Makes brevity the only goal; an over-short summary can omit the essential ideas that define the passage."
+ },
+ "5002-038": {
+  "Fiction is longer; nonfiction is shorter": "Ties genre to length; both fiction and nonfiction come in every length from brief piece to book.",
+  "Fiction has pictures; nonfiction does not": "Judges by illustration; both genres may include pictures, so artwork cannot define the category.",
+  "There is no difference": "Erases the defining line; fiction is invented while nonfiction reports verifiable facts about the real world."
+ },
+ "5002-039": {
+  "Memorize the dictionary definition without context": "Skips the in-text skill; looking up definitions without using context fails to build independent word-solving.",
+  "Ask someone to tell them the answer": "Defers to an outside source; asking others solves this word once but teaches no transferable strategy.",
+  "Skip the word and continue reading": "Abandons the word entirely; skipping leaves a key science term unknown, creating a gap in comprehension."
+ },
+ "5002-040": {
+  "Group work with no accountability": "Drops the expectation to ground claims; without accountability, students offer opinions without citing the text.",
+  "Open discussion with no structure": "Mistakes structurelessness for rigor; unstructured talk rarely requires students to quote specific passages.",
+  "Teacher-led lecture about the text": "Puts the teacher between students and text; lecturing models citation but never requires students to produce it."
+ },
+ "5002-041": {
+  "Repetition of sounds": "Defines alliteration, not metaphor; sound repetition is a phonological device unrelated to comparison.",
+  "An exaggeration": "Defines hyperbole; metaphor compares two unlike things rather than overstating a fact.",
+  "A question asked for effect": "Defines a rhetorical question; metaphor states that one thing is another to draw an implicit comparison."
+ },
+ "5002-042": {
+  "To confuse readers intentionally": "Mistakes effect for purpose; irony asks readers to notice a contrast, not to lose the thread of the story.",
+  "To avoid stating themes directly": "Confuses subtlety with irony; irony depends on a gap between expectation and outcome, not on withholding themes.",
+  "To make the story longer": "Treats irony as padding; it is a meaning-making device, not a device for extending length."
+ },
+ "5002-043": {
+  "Tell the student to slow down": "Treats speed as the cause; the error is a phonics gap in the 'ough' pattern, not carelessness.",
+  "Have the student copy the word twenty times": "Relies on repetition without instruction; copying one word builds familiarity but teaches nothing about the pattern.",
+  "Remove the word from future readings": "Avoids the teaching point; the word will recur, and dodging it leaves the underlying phonics gap unaddressed."
+ },
+ "5002-044": {
+  "To repeat the introduction word for word": "Confuses closure with copying; conclusions restate key points in fresh language, not verbatim repetition.",
+  "To introduce new information": "Breaks closure; new content belongs in the body, where it can be developed and supported.",
+  "To list unrelated facts": "Scatters unrelated details; a conclusion synthesizes the text's key points into one cohesive close."
+ },
+ "5002-045": {
+  "Comma": "Confuses two small marks; commas separate elements, while apostrophes signal ownership or contraction.",
+  "Period": "Chooses an end-stop; periods end sentences and have no possessive function.",
+  "Semicolon": "Confuses clause punctuation with possession; semicolons join related independent clauses."
+ },
+ "5002-046": {
+  "A teacher's opinion that uniforms are nice": "Offers opinion, not evidence; 'uniforms are nice' is a preference that cannot be verified or measured.",
+  "A photo of students in uniforms": "Shows compliance, not impact; a photo proves students wear uniforms, not that distractions decreased.",
+  "A statement that uniforms cost money": "Raises an unrelated objection; cost concerns the budget and never addresses distraction in the claim."
+ },
+ "5002-047": {
+  "Asking students to spell vocabulary words": "Tests encoding, not comprehension; spelling measures neither inference nor understanding of a text.",
+  "Asking students to identify the author": "Checks surface recognition; naming the author requires no reading between the lines.",
+  "Asking students to recall a fact stated directly in the text": "Tests literal memory; a directly stated fact requires retrieval, not inference beyond the text."
+ },
+ "5002-048": {
+  "To list facts about the setting": "Confuses dialogue with exposition; setting details belong in narration.",
+  "To replace narration entirely": "Overstates dialogue's role; it works alongside narration, not in place of it.",
+  "To confuse the reader": "Mistakes a device for a flaw; well-crafted dialogue clarifies character and moves the plot forward."
+ },
+ "5002-049": {
+  "For example": "Signals illustration, not causation; 'for example' introduces a supporting instance.",
+  "However": "Signals contrast, not cause; 'however' sets one idea against another.",
+  "Similarly": "Signals comparison; 'similarly' links like ideas without making any causal claim."
+ },
+ "5002-050": {
+  "Equal length stanzas": "Confuses enjambment with stanza form; line runs have no effect on stanza size or symmetry.",
+  "A rhyming pattern at line ends": "Attributes rhyme to enjambment; rhyme concerns end sounds, while enjambment concerns syntax crossing line breaks.",
+  "Clear pauses at the end of every line": "Describes the opposite effect; enjambed lines carry meaning past the line break instead of stopping at it."
+ },
+ "5002-051": {
+  "A KWL chart": "Chooses a before-and-after learning tool; KWL charts track prior knowledge and questions, not character traits.",
+  "A word search": "Offers a puzzle with no analytic value; word searches build word recognition, not character comparison.",
+  "A timeline of events": "Tracks plot rather than character; a timeline orders events without mapping traits or similarities."
+ },
+ "5002-052": {
+  "The rhyme scheme": "Confuses poetic structure with word meaning; rhyme scheme describes verse patterns.",
+  "The author's biography": "Pulls in the writer's life; denotation concerns the word itself, not its origin or author.",
+  "The emotional association": "Defines connotation; denotation is the neutral dictionary meaning, separate from feelings a word carries."
+ },
+ "5002-053": {
+  "It determines the book's price": "Confuses literary craft with commerce; point of view has nothing to do with cost.",
+  "It changes the genre": "Overstates the effect; genre is set by content and form, while point of view shapes perspective within a genre.",
+  "It affects the font size": "Confuses narrative perspective with page design; typography is a layout choice, not a storytelling one."
+ },
+ "5002-054": {
+  "Assign longer texts immediately": "Increases load without teaching skill; longer passages give more chances to lose the thread, not tools to track it.",
+  "Have them read faster": "Mistakes pace for support; reading faster typically widens cohesion gaps instead of closing them.",
+  "Skip cohesive devices": "Ignores the exact problem; without tracking transitions and referents, readers lose connections between sentences."
+ },
+ "5002-055": {
+  "To replace the text entirely": "Overstates the role; diagrams supplement prose, and key information usually appears in both.",
+  "To decorate the page": "Dismisses function as ornament; diagrams carry information, such as labeled parts or processes.",
+  "To waste space": "Treats a text feature as filler; publishers use diagrams to clarify content that words alone convey poorly."
+ },
+ "5002-056": {
+  "To list all sources": "Confuses the thesis with a bibliography; sources belong in citations or references.",
+  "To entertain the reader": "Misassigns purpose; entertaining may flavor a thesis, but its job is to stake the essay's claim.",
+  "To describe the format": "Confuses content with structure; a thesis states an argument, not the essay's layout."
+ },
+ "5002-057": {
+  "The teacher graded the papers.": "Sees an active sentence; the subject 'teacher' performs the action, which is the active voice.",
+  "The teacher is grading papers.": "Confuses present progressive with passive; no auxiliary-plus-past-participle structure appears here.",
+  "The teacher will grade papers.": "Mistakes future tense for passive; the subject still performs the action actively."
+ },
+ "5002-058": {
+  "'Add more transitions' written in red": "Gives a verdict without teaching; the student must still determine where transitions belong and which logic they signal.",
+  "Ignore transitions and focus only on content": "Splits craft from meaning; ignoring transitions leaves the essay's logical flow unaddressed.",
+  "Rewrite the essay for the student": "Removes the student from the revision; a teacher-rewritten essay models nothing the student can transfer."
+ },
+ "5002-059": {
+  "'We did the research and the results were good.'": "Fixes the passive but keeps vague wording; 'were good' remains imprecise and wordy next to 'yielded positive results.'",
+  "The original is already correct": "Misses both problems; the passive construction is wordy and 'good' is too vague for formal research writing.",
+  "'The research that we did produced good results.'": "Still buries the actor in a relative clause; 'that we did' adds words without removing the wordiness."
+ },
+ "5002-060": {
+  "A fragment": "Confuses completeness with complexity; a fragment lacks a subject or verb, while a compound sentence has two full clauses.",
+  "A sentence with one independent clause": "Defines a simple sentence; one clause alone, however complete, is not compound.",
+  "A sentence with a dependent clause": "Defines a complex sentence; a dependent clause cannot stand alone and does not make a sentence compound."
+ },
+ "5002-061": {
+  "Show several examples and have students copy them": "Mistakes imitation for understanding; copying models shows the product but hides the reasoning that produces it.",
+  "Give students a fill-in-the-blank template only": "Relies on a frame without thinking; fill-in-the-blanks produce sentences without teaching how to choose content.",
+  "Assign a topic sentence worksheet": "Assigns practice before instruction; a worksheet drills or assesses but does not demonstrate the drafting process."
+ },
+ "5002-062": {
+  "She likes hiking, swim, and bike.": "Mixes gerunds with bare verbs; 'swim' and 'bike' break the '-ing' series established by 'hiking.'",
+  "She likes hiking, to swim, and biking.": "Alternates gerunds with an infinitive; 'to swim' breaks the consistent '-ing' form of the series.",
+  "She likes to hike, swimming, and to bike.": "Alternates infinitives with a gerund; 'swimming' interrupts the 'to + verb' pattern."
+ },
+ "5002-063": {
+  "A clause cannot stand alone": "Overgeneralizes from dependent clauses; many clauses are independent and fully able to stand alone as sentences.",
+  "A phrase is longer than a clause": "Judges by length; the distinction is grammatical, since a clause has a subject and verb regardless of word count.",
+  "They are the same thing": "Collapses distinct units; a phrase lacks the subject-verb core that defines every clause."
+ },
+ "5002-064": {
+  "Peace!": "Reads as slangy and casual; exclamation-point closings suit friends, not a formal note to a teacher.",
+  "XOXO": "Borrows affectionate letter slang; hugs-and-kisses closings are inappropriate for a teacher relationship.",
+  "Later gator!": "Uses playful slang; informal sign-offs undermine the respectful, professional tone a formal email requires."
+ },
+ "5002-065": {
+  "Rewrite the opposing view for the student": "Does the intellectual work for the student; a teacher-written counterargument teaches nothing about addressing views.",
+  "Tell the student the essay is incomplete and cannot be graded": "Replaces teaching with penalty; refusing credit offers no path toward strengthening the argument.",
+  "Praise the writing and ignore the missing counterargument": "Skips the teachable moment; without a counterargument, the persuasion stays one-sided and less credible."
+ },
+ "5002-066": {
+  "To separate items in a list": "Confuses the semicolon's roles; commas separate simple list items, while semicolons join related independent clauses.",
+  "To replace a period": "Overstates interchangeability; a semicolon links two related clauses, while a period ends any sentence, related or not.",
+  "To begin a sentence": "Misplaces the mark; semicolons sit between clauses within a sentence and never open one."
+ },
+ "5002-067": {
+  "Quickly": "Picks an adverb; the '-ly' ending modifies verbs, adjectives, or other adverbs, not nouns.",
+  "Run": "Chooses a verb; 'run' names an action rather than describing a noun.",
+  "Happyful": "Trusts a noun-plus-suffix guess; 'happyful' is not a standard word, while 'beautiful' directly describes nouns."
+ },
+ "5002-068": {
+  "Tom told Mike that Tom made a mistake.": "Shifts the blame to the wrong person; naming 'Tom' as the one who erred contradicts the intended meaning that Mike made the mistake.",
+  "Tom told Mike that he had made a mistake.": "Keeps the ambiguous 'he'; shifting to past perfect does not resolve who made the mistake.",
+  "Tom said that a mistake had been made.": "Dodges the pronoun with passive voice; the revision erases ambiguity by also erasing who made the mistake."
+ },
+ "5002-069": {
+  "Students only compliment each other": "Removes critique from review; praise-only feedback is pleasant but never tells writers what to improve.",
+  "Students read each other's papers silently": "Mutes the exchange; silent reading may familiarize peers with drafts but produces no feedback at all.",
+  "Students swap papers and circle errors": "Reduces review to proofreading; circling errors targets conventions while ignoring content and organization."
+ },
+ "5002-070": {
+  "A noun that can be touched": "Defines concrete nouns; abstract nouns name intangibles like 'freedom' or 'courage.'",
+  "A noun that is always capitalized": "Confuses abstractness with proper nouns; capitalization marks names and titles, not ideas.",
+  "A noun that has no plural form": "Overstates a pattern; many abstract nouns pluralize fine, as in 'opinions' or 'ideas.'"
+ },
+ "5002-071": {
+  "Exclamation point": "Reserves the exclamation point for strong emotion; declaratives state information and end with periods.",
+  "Comma": "Chooses a mid-sentence pause mark; commas separate elements and cannot end a sentence.",
+  "Question mark": "Confuses sentence types; question marks end interrogatives, which ask rather than state."
+ },
+ "5002-072": {
+  "If I was rich, I would travel.": "Uses indicative 'was' for a hypothetical; counterfactual conditionals take the subjunctive 'were.'",
+  "If I am rich, I traveled.": "Mixes tenses incoherently; present 'am' with past 'traveled' fits neither a real nor a hypothetical conditional.",
+  "If I be rich, I will travel.": "Overapplies the subjunctive; 'be' fits mandative constructions like 'suggest that he be,' not this conditional."
+ },
+ "5002-073": {
+  "Memorizing sentence types": "Treats sentence variety as memorized facts; without rewriting practice, the patterns never transfer to students' actual sentence openings.",
+  "Writing only simple sentences": "Confines students to one pattern, guaranteeing monotony; variety requires practicing multiple structures, not fewer.",
+  "Counting words in each sentence": "Focuses on length rather than structure; varying openings depends on how sentences begin, not how many words they contain."
+ },
+ "5002-074": {
+  "A type of verb": "Confuses antecedent with a verb category; an antecedent is a noun, not an action word.",
+  "A word that comes after another": "Assumes position defines the term; an antecedent is whatever noun a pronoun refers to, regardless of where it sits.",
+  "A punctuation mark": "Confuses a grammatical term with a mechanical mark; antecedents are words, not symbols."
+ },
+ "5002-075": {
+  "After finishing the race, she collapsed.": "Attaches the modifier to 'she,' who actually finished the race; the subject matches, so no dangler exists.",
+  "She opened the door carefully.": "Places the adverb next to the verb it modifies; a correctly attached modifier, not a dangler.",
+  "The dog wagged its tail happily.": "Modifies 'wagged' with a properly placed adverb; both modifier and subject are logical."
+ },
+ "5002-076": {
+  "Praise it without any feedback": "Withholds all guidance; praising without feedback leaves the student unable to adjust register for different audiences.",
+  "Correct every sentence to sound more casual": "Treats the writer's formal register as an error to erase; feedback should build audience awareness, not strip linguistic identity.",
+  "Reject the paper for being too formal": "Devalues the writer's linguistic background; formality is a feature to discuss, not grounds for rejection."
+ },
+ "5002-077": {
+  "To start a new paragraph": "Confuses a within-sentence insertion with a paragraph-level move; interrupters add comments inside a single sentence.",
+  "To replace the subject": "Mistakes an interrupter for a substitution; interrupters supplement the sentence rather than stand in for any element.",
+  "To end a sentence": "Confuses interruption with closure; interrupters appear mid-sentence, set off by commas, dashes, or parentheses."
+ },
+ "5002-078": {
+  "i love mathematics": "Fails to capitalize the pronoun 'I,' which is always capitalized in English.",
+  "I Love Mathematics": "Capitalizes every word as if the phrase were a title; 'love' and 'mathematics' are not proper nouns in a normal sentence.",
+  "I love Mathematics": "Capitalizes a school subject name; 'mathematics' is not a proper noun and stays lowercase."
+ },
+ "5002-079": {
+  "The class enjoyed read, write, and paint.": "Uses bare base forms after 'enjoyed,' which takes gerunds; the series is parallel but grammatically wrong.",
+  "The class enjoyed to read, to write, and to paint.": "Is parallel in form but uses infinitives, which do not follow 'enjoyed' idiomatically; 'enjoy' takes gerunds.",
+  "The class enjoyed reading, writing, and to paint.": "Mixes gerunds with an infinitive, keeping the original faulty parallelism in the final item."
+ },
+ "5002-080": {
+  "Tell them to check tenses": "Offers a vague directive with no procedure; students need a concrete method for spotting and evaluating tense shifts.",
+  "Ignore tense consistency": "Leaves unintended shifts unaddressed; inconsistent tenses confuse readers about when events occur.",
+  "Use spell check only": "Relies on a tool that flags spelling, not tense; spell check cannot judge whether a shift is intentional."
+ },
+ "5002-081": {
+  "A preposition": "Mislabels the part of speech; prepositions show relationships between words, while interjections express emotion.",
+  "A type of noun": "Assigns the wrong category; interjections like 'Wow!' stand apart from the sentence rather than naming anything.",
+  "A linking verb": "Confuses an emotional exclamation with a verb connecting subject and complement; interjections fill no grammatical slot."
+ },
+ "5002-082": {
+  "It is always grammatically correct": "Assumes voice determines grammaticality; both active and passive constructions can be fully grammatical.",
+  "It uses fewer words always": "Overstates a side benefit; active voice is preferred for clarity, not guaranteed brevity.",
+  "Passive voice is never acceptable": "Turns a preference into an absolute ban; passive voice suits cases where the actor is unknown or unimportant."
+ },
+ "5002-083": {
+  "Tell the student to write shorter": "Gives a goal without a method; the student needs modeled practice in spotting and cutting redundancy.",
+  "Underline every word and make the student delete half": "Makes deletion arbitrary; cutting half the words by rule can remove necessary content rather than true redundancy.",
+  "Ignore wordiness": "Allows the habit to persist; wordiness weakens clarity and rarely improves on its own."
+ },
+ "5002-084": {
+  "A type of paragraph": "Guesses at a structural category; a colophon is not prose organization but a publication note.",
+  "A character in a novel": "Confuses a publishing term with narrative content; colophons belong to the book's production, not its story.",
+  "A method of citation": "Confuses the colophon with citation formats; it records production details such as printer, date, and place."
+ },
+ "5002-085": {
+  "Happy and joyful": "Picks a synonym pair; homophones must sound identical, not merely share a meaning.",
+  "Fast and quick": "Treats synonyms as homophones; both words mean rapid, but they are pronounced differently.",
+  "Big and large": "Mistakes meaning overlap for identical sound; homophones sound alike but differ in spelling and meaning."
+ },
+ "5002-086": {
+  "ABAB": "Alternates the rhymes instead of pairing them; cat/hat rhyme as a couplet, then dog/log form the second couplet.",
+  "AAAA": "Marks all four lines as one rhyme; dog and log do not rhyme with cat and hat.",
+  "ABBA": "Encloses the second rhyme inside the first; the poem pairs lines 1-2 and 3-4, not an envelope pattern."
+ },
+ "5002-087": {
+  "They are the same": "Collapses two distinct concepts; denotation is the literal definition while connotation adds emotional association.",
+  "Connotation is literal; denotation is emotional": "Swaps the two terms; the dictionary meaning is denotation, and the emotional layer is connotation.",
+  "Neither has anything to do with meaning": "Dismisses both as irrelevant; both terms describe layers of a word's meaning."
+ },
+ "5002-088": {
+  "It confuses the reader": "Mistakes structural complexity for confusion; the past-present contrast is purposeful, guiding readers toward change over time.",
+  "It has no literary purpose": "Denies the author intent; juxtaposing memories with reality is a deliberate structural choice.",
+  "It makes the passage longer": "Reduces structure to word count; the juxtaposition creates meaning, not merely length."
+ },
+ "5002-089": {
+  "Assigning the same text daily": "Confuses repetition with endurance building; stamina grows through sustained reading of varied texts.",
+  "Reading only short passages": "Keeps reading sessions brief, so students never practice sustaining attention over longer texts.",
+  "Avoiding difficult texts": "Shields students from productive struggle; stamina requires working through challenging material."
+ },
+ "5002-090": {
+  "A chapter heading": "Confuses a structural label with an epigraph's thematic function; epigraphs quote other texts, headings merely title.",
+  "A type of paragraph": "Mislabels the term as prose structure; an epigraph is a borrowed quotation, not a paragraph form.",
+  "A character's thoughts": "Confuses narration with front matter; an epigraph sits at the work's opening, outside the story."
+ },
+ "5002-091": {
+  "To confuse readers": "Assumes the effect is random puzzlement; the point is productive irony, where readers see what the narrator cannot.",
+  "It is required by the genre": "Invents a genre rule; no genre mandates unreliable narration, which is an authorial choice.",
+  "Because they cannot write well": "Mistakes a deliberate technique for a skill deficit; unreliable narration requires careful authorial control."
+ },
+ "5002-092": {
+  "Read faster": "Speeds up without building comprehension; summarizing depends on identifying key ideas, not pace.",
+  "More decoding practice": "Targets a skill the student already has; the gap lies in distinguishing main ideas from minor details.",
+  "Skip summarizing": "Removes the skill instead of teaching it; summarization is essential and can be scaffolded."
+ },
+ "5002-093": {
+  "To introduce characters randomly": "Mistakes deliberate hints for arbitrary placement; foreshadowing is planned, not random.",
+  "To summarize the plot": "Confuses a forward-pointing hint with a recap; foreshadowing suggests the future rather than restating what happened.",
+  "To describe settings": "Confuses foreshadowing with description; its function is anticipation, not scene painting."
+ },
+ "5002-094": {
+  "The wind moved through the trees.": "Describes motion without imitating sound; onomatopoeia requires words that echo the noise itself.",
+  "The bell was large.": "States a physical attribute; no sound is reproduced in language.",
+  "The cold felt bitter.": "Uses a figurative adjective for temperature; 'bitter' describes sensation, not a sound."
+ },
+ "5002-095": {
+  "Creative writing": "Targets composition rather than analysis; the needed skill is evaluating the account's bias and gaps.",
+  "Memorization": "Reinforces the one-sided version instead of questioning it; retention is not the issue.",
+  "Speed reading": "Increases pace without adding evaluation; faster reading of a biased source still accepts its framing."
+ },
+ "5002-096": {
+  "Reading without attention": "Undermines visualization, which depends on attending closely to descriptive language.",
+  "Reading quickly": "Prioritizes pace over imagery; visualization requires pausing to form mental pictures.",
+  "Skipping descriptions": "Discards the very passages that supply images; descriptions are the raw material for visualization."
+ },
+ "5002-097": {
+  "A punctuation mark": "Confuses a wordplay term with mechanical symbols; palindromes are words or phrases, not marks.",
+  "A type of poem": "Overcategorizes; the term covers any word or phrase reading the same both ways, not just poems.",
+  "A character type": "Confuses wordplay with narrative roles; palindromes concern spelling, not characterization."
+ },
+ "5002-098": {
+  "It makes reading easier": "Reverses the effect; non-linear structure demands more active reconstruction from readers, not less.",
+  "It has no effect": "Denies the structural choice any function; fragmented timelines deliberately create suspense and engagement.",
+  "It is always confusing": "Overgeneralizes from difficulty to confusion; skilled writers use non-linearity purposefully and readers can follow it."
+ },
+ "5002-099": {
+  "Skip abstract texts": "Avoids the challenge instead of scaffolding it; students still need to handle abstract ideas.",
+  "Define terms only": "Provides vocabulary without understanding; definitions alone leave concepts disconnected from experience.",
+  "More abstract texts": "Increases difficulty without support; more exposure to abstraction does not build access to it."
+ },
+ "5002-100": {
+  "A character name": "Confuses a literary device with an element of the cast; motifs are recurring images or ideas, not labels.",
+  "A plot twist": "Mistakes a one-time event for a repeated pattern; motifs recur throughout the work.",
+  "A single symbol": "Drops the recurrence requirement; a motif is a symbol whose repetition across the text builds significance."
+ },
+ "5002-101": {
+  "A connecting word": "Describes a conjunction instead; adverbs modify verbs and adjectives rather than joining elements.",
+  "A naming word": "Defines a noun; adverbs describe actions and qualities instead of naming things.",
+  "An action word": "Defines a verb; adverbs tell how, when, or to what extent about the action rather than being the action."
+ },
+ "5002-102": {
+  "He kicked the bucket yesterday.": "Contains an idiom, but 'kick the bucket' means to die, not to identify an issue precisely.",
+  "The carpenter struck a nail with a hammer.": "Reads the idiom's words literally; an actual hammering event is not the figurative expression.",
+  "It is raining heavily outside.": "States weather literally; it contains no idiom about pinpointing a problem."
+ },
+ "5002-103": {
+  "'Write more personally'": "Offers vague advice without a method; the student needs to hear and diagnose the mechanical sound firsthand.",
+  "Rewrite it for them": "Removes ownership; the student never learns to hear or fix the flatness in their own prose.",
+  "Tell them to use bigger words": "Mistakes a diction upgrade for voice; longer words often increase the mechanical, stilted effect."
+ },
+ "5002-104": {
+  "A very long sentence": "Equates length with error; a long, properly punctuated sentence is correct, and short run-ons exist.",
+  "A fragment": "Reverses the problem; fragments are incomplete, while run-ons contain too many complete clauses.",
+  "A sentence with many adjectives": "Confuses heavy modification with clause fusion; descriptive density is a style issue, not a run-on."
+ },
+ "5002-105": {
+  "Removing the comma": "Produces a fused sentence, which is still a run-on; the clauses still need a conjunction, semicolon, or separation.",
+  "Adding an adjective": "Adds description without addressing the clause boundary; the splice remains.",
+  "Adding a period only": "Offers one valid fix but treats it as the only one; a comma plus conjunction or a semicolon also works."
+ },
+ "5002-106": {
+  "'Utilizing apparatus was student-performed.'": "Keeps the awkward nominal style and odd hyphenation; clarity still suffers.",
+  "'The apparatus was utilized by the student in a performed manner.'": "Retains passive voice and adds wordiness instead of streamlining.",
+  "Original is best": "Accepts the nominalization and passive construction that cause the opacity."
+ },
+ "5002-107": {
+  "Copying from examples": "Produces imitation without understanding; students can replicate models without grasping why they work.",
+  "Writing intros last": "Describes a drafting order, not instruction; sequencing alone does not teach hook, background, and thesis.",
+  "Memorizing intro formulas": "Substitutes rote patterns for analysis; formulas yield formulaic intros and do not transfer to varied tasks."
+ },
+ "5002-108": {
+  "A punctuation error": "Misclassifies the problem as mechanical; dangling participles are grammatical-attachment errors.",
+  "A type of noun": "Assigns the wrong category; a participle is a verb form, and the issue is what it modifies.",
+  "A correct sentence": "Denies the error exists; a dangling participle is by definition a faulty modification."
+ },
+ "5002-109": {
+  "If I be you, I would go": "Overcorrects into an archaic form; the subjunctive for hypotheticals uses 'were,' not 'be.'",
+  "If I was you, I would go": "Uses indicative 'was' for a contrary-to-fact condition; formal correctness requires subjunctive 'were.'",
+  "If I am you, I will go": "Treats the hypothetical as a real possibility, using present and future tense instead of subjunctive mood."
+ },
+ "5002-110": {
+  "'That is wrong, fix it'": "Corrects without teaching and risks shaming; recasting models the target form naturally.",
+  "Circle it in red": "Flags the error publicly without instruction; red-ink correction does not build the subject-pronoun rule.",
+  "Ignore it": "Forfeits the teaching moment; the nonstandard form goes unaddressed and unmodeled."
+ },
+ "5002-111": {
+  "To summarize the paper": "Confuses the appendix with an abstract or conclusion; it holds supplementary material, not summary.",
+  "To list references": "Confuses the appendix with a bibliography; references credit sources, appendices hold supporting data.",
+  "To state the thesis": "Mistakes the appendix for the introduction; the thesis appears up front, not in the back matter."
+ },
+ "5002-112": {
+  "But": "Names a coordinating conjunction (FANBOYS); it joins equal elements rather than introducing a dependent clause.",
+  "Or": "Is also coordinating; it presents alternatives between equals, not subordination.",
+  "And": "Coordinates equal elements; it cannot introduce a dependent clause the way 'because' does."
+ },
+ "5002-113": {
+  "They are the same": "Merges two distinct stages; revision rethinks content while editing polishes mechanics.",
+  "Revision is optional": "Downgrades a core stage; strong writing depends on reworking content, not just cleaning errors.",
+  "Editing comes first": "Reverses the order; polishing mechanics before restructuring wastes effort on text that may be rewritten."
+ },
+ "5002-114": {
+  "Give them lists of fancy words": "Swaps vagueness for pretension; decontextualized word lists do not teach precision in context.",
+  "Tell them to be specific": "Gives a goal without a procedure; students need practice replacing vague words within actual sentences.",
+  "Ignore vague language": "Lets the habit stand; vague diction like 'stuff' and 'things' weakens meaning and persists without intervention."
+ },
+ "5002-115": {
+  "A sentence starter only": "Narrows the function to placement; transitions work within and between sentences to show logical relationships.",
+  "A type of noun": "Assigns the wrong part of speech; transitions are typically adverbs or conjunctive phrases.",
+  "A punctuation mark": "Confuses words with symbols; transitions are lexical signals like 'however' and 'therefore.'"
+ },
+ "5002-116": {
+  "To define difficult words": "Describes the glossary; a table of contents maps a work's structure, not its vocabulary.",
+  "To list references": "Describes a bibliography; a table of contents lists the work's own chapters and sections.",
+  "To entertain readers": "Mistakes a navigational tool for content; the table of contents helps readers locate sections."
+ },
+ "5002-117": {
+  "To create distance from the story": "Reverses the effect; first person draws readers closer through a single character's perspective.",
+  "Because it is required": "Invents a rule; no genre mandates first person, which is a deliberate perspective choice.",
+  "To confuse readers": "Assumes confusion is the goal; the intended effect is intimacy and subjective access."
+ },
+ "5002-118": {
+  "Read faster": "Increases pace without adding engagement; speed over the text does not improve retention.",
+  "Read silently without stopping": "Removes the checkpoints where summarizing and questioning consolidate memory.",
+  "Skip difficult parts": "Creates gaps in understanding that further weaken recall of the whole."
+ },
+ "5002-119": {
+  "A plot twist": "Confuses an event with an idea; a twist is a plot development, while theme is the underlying message.",
+  "The setting": "Mistakes backdrop for meaning; setting is where and when, not what the work says about life.",
+  "A character's name": "Confuses surface details with central ideas; themes are expressed through characters, not named by them."
+ },
+ "5002-120": {
+  "A social media post": "Lacks editorial review or authorial accountability; posts circulate unverified claims.",
+  "A personal blog": "Reflects one individual's unreviewed opinion rather than expert evaluation.",
+  "An anonymous website": "Hides its authorship, so claims cannot be checked against any accountable source."
+ },
+ "5002-121": {
+  "Confuses readers": "Mistakes richness for clutter; concrete sensory language aids rather than hinders comprehension.",
+  "Has no effect": "Denies the craft choice any function; sensory details are added precisely to engage the imagination.",
+  "Makes text longer": "Reduces the technique to word count; the purpose is vividness, not padding."
+ },
+ "5002-122": {
+  "Memorizing text": "Builds recall without evaluation; critical reading requires questioning, not retention.",
+  "Accepting text at face value": "Suspends exactly the judgment critical reading demands; face-value acceptance ignores bias and evidence quality.",
+  "Reading quickly for plot": "Prioritizes speed and surface events over analysis of perspective and evidence."
+ },
+ "5002-123": {
+  "A type of poem": "Restricts allegory to one form; allegories can be prose, drama, or verse, with extended symbolic meaning as the defining trait.",
+  "A biography": "Confuses factual life-writing with symbolic narrative; allegories invent events to represent ideas.",
+  "A joke": "Mistakes brief humor for sustained symbolism; allegory develops its hidden meaning across the whole work."
+ },
+ "5002-124": {
+  "Listing characters": "Confuses the glossary with a cast list; glossaries define vocabulary, not people.",
+  "Summarizing chapters": "Describes chapter summaries or an outline; glossaries handle word definitions.",
+  "Describing settings": "Mistakes the glossary for narrative content; it is a reference section of definitions."
+ },
+ "5002-125": {
+  "Context only helps with poetry": "Limits a general strategy to one genre; context clues work across all text types.",
+  "Context doesn't matter": "Denies the primary resource readers use; surrounding text is often the fastest route to meaning.",
+  "Dictionaries are unnecessary": "Overstates context's role; context complements dictionaries rather than replacing them."
+ },
+ "5002-126": {
+  "To summarize chapters": "Confuses footnotes with chapter summaries; notes supply citations and asides, not recaps.",
+  "To decorate pages": "Mistakes a scholarly convention for ornament; footnotes carry information, not design.",
+  "To list characters": "Confuses footnotes with cast lists; notes hold citations and clarifications."
+ },
+ "5002-127": {
+  "Because it is required": "Invents a mandate; no rule requires stream of consciousness, which is a deliberate stylistic choice.",
+  "To make the story shorter": "Reverses the effect; interior monologue typically expands text with unfiltered thought.",
+  "To confuse readers": "Mistakes density for confusion; the technique invites readers into a character's mind."
+ },
+ "5002-128": {
+  "Memorize definitions": "Builds vocabulary about metaphor without metaphorical thinking; students still cannot interpret actual comparisons.",
+  "Read faster": "Speeds past the comparisons; comprehension requires slowing down to unpack literal and figurative layers.",
+  "Skip metaphors": "Removes the challenge instead of scaffolding it; figurative language is central to literary comprehension."
+ },
+ "5002-129": {
+  "They are the same": "Erases the real distinction of scope; novels develop plot and characters at far greater length.",
+  "Short stories have no plot": "Overcorrects; short stories have plots, just compressed into a single focus or effect.",
+  "Novels are always nonfiction": "Confuses form with genre; both novels and short stories are typically fiction."
+ },
+ "5002-130": {
+  "A character type": "Confuses reference with characterization; allusions point outside the text, not to a role within it.",
+  "A type of rhyme": "Mislabels a sound device; allusion works through reference to other works, events, or people.",
+  "A punctuation mark": "Confuses a literary device with a symbol; allusions are verbal references."
+ },
+ "5002-131": {
+  "It only affects length": "Reduces perspective to word count; point of view governs what readers know and feel.",
+  "It doesn't matter": "Dismisses a foundational element; who tells the story controls information and sympathy.",
+  "It determines the genre": "Confuses narrative voice with genre classification; POV shapes access to the story, not its category."
+ },
+ "5002-132": {
+  "Reading silently": "Changes the mode without changing the task; silent reading alone does not prompt evidence-based conclusions.",
+  "Asking only literal questions": "Keeps thinking at surface recall; inference requires questions whose answers are not stated directly.",
+  "Memorizing plots": "Builds recall of events without connecting clues; inference combines text evidence with prior knowledge."
+ },
+ "5002-133": {
+  "A news report": "Confuses reporting with critique; satire exaggerates to expose flaws, while news aims to inform factually.",
+  "A love poem": "Assigns an unrelated genre; satire targets folly through humor, not romantic expression.",
+  "A serious essay": "Mistakes the satiric mask for earnest prose; satire's humor is its critical instrument."
+ },
+ "5002-134": {
+  "They are the same": "Merges two distinct story elements; one locates events, the other sequences them.",
+  "Neither matters": "Dismisses foundational elements; both setting and plot shape how readers understand a story.",
+  "Plot is where; setting is when": "Swaps the definitions; plot is the sequence of events, and setting covers both time and place."
+ },
+ "5002-135": {
+  "Because authors write badly": "Blames text quality for interpretive variety; even skillful writing supports multiple readings.",
+  "Because texts are unclear": "Confuses ambiguity with reader variation; interpretations differ even when texts are precise.",
+  "Interpretations should be identical": "Assumes one fixed meaning; readers' backgrounds legitimately shape how they construct meaning."
+ },
+ "5002-136": {
+  "It doesn't matter": "Ignores the reader entirely; effective writing adjusts tone and explanation to who will read it.",
+  "It changes the spelling": "Confuses audience with orthography; spelling rules stay constant regardless of readers.",
+  "It only affects length": "Narrows the effect to word count; audience governs tone, register, and assumed knowledge."
+ },
+ "5002-137": {
+  "Skip paragraph structure": "Avoids the deficit instead of teaching it; structure is exactly what rambling paragraphs lack.",
+  "Tell them to write longer": "Adds bulk without organization; more text in the same disorder deepens the problem.",
+  "Let them write freely": "Confuses freedom of topic with structure; unguided drafting perpetuates the rambling."
+ },
+ "5002-138": {
+  "Informal is always wrong": "Treats register as error; informal writing is appropriate for conversational contexts.",
+  "Formal has no rules": "Reverses reality; formal writing is defined by its adherence to standard conventions.",
+  "They are the same": "Erases a real distinction; formality governs grammar, tone, and sentence conventions."
+ },
+ "5002-139": {
+  "Writing without feedback": "Removes the guidance that improves reasoning; unreviewed arguments repeat the same weaknesses.",
+  "Reading sample essays": "Builds awareness of models without practice; students still must construct and defend claims themselves.",
+  "Memorizing essay formats": "Substitutes templates for thinking; argumentation requires reasoning through claims and counterclaims."
+ },
+ "5002-140": {
+  "The conclusion": "Confuses paragraph-level focus with the essay's ending; a topic sentence opens a paragraph's development.",
+  "The title of an essay": "Mistakes the essay's label for paragraph structure; titles sit outside the body paragraphs.",
+  "A question": "Misidentifies the sentence type; topic sentences assert the main idea rather than pose questions."
+ },
+ "5002-141": {
+  "Writing in columns": "Confuses visual layout with grammar; parallelism is about grammatical form, not page arrangement.",
+  "Starting every sentence the same way": "Confuses parallelism with monotony; identical openings are a stylistic weakness, not parallel structure.",
+  "Repeating the same word": "Mistakes lexical repetition for grammatical balance; parallelism repeats forms, not necessarily words."
+ },
+ "5002-142": {
+  "Longer is always better": "Equates variety with length; variety mixes long and short sentences for rhythm and emphasis.",
+  "It isn't": "Denies the stylistic principle; monotonous sentence patterns disengage readers.",
+  "Short sentences are preferred": "Substitutes one uniform pattern for another; variety means mixing lengths and structures."
+ },
+ "5002-143": {
+  "To list sources": "Confuses the conclusion with a bibliography; sources belong in references, not the closing paragraph.",
+  "To introduce new ideas": "Violates the closing convention; conclusions synthesize what was argued, not new claims.",
+  "To ask questions": "Mistakes an optional flourish for the purpose; the core job is reinforcing the thesis."
+ },
+ "5002-144": {
+  "It is optional": "Treats support as decoration; unsupported claims rarely persuade an audience.",
+  "It confuses readers": "Mistakes substantiation for clutter; evidence clarifies why a claim should be believed.",
+  "It makes writing longer": "Reduces evidence to padding; its function is credibility, not added bulk."
+ },
+ "5002-145": {
+  "Multi-tasking while listening": "Assumes divided attention builds skill; splitting focus prevents the sustained attention real listening requires.",
+  "Passive listening": "Treats hearing as listening; skill grows through deliberate engagement, not passive exposure to sound.",
+  "Ignoring speakers": "Describes the absence of listening entirely; no skill develops when the speaker's message is never attended to."
+ },
+ "5002-146": {
+  "A type of grammar": "Confuses citation with a grammar category; citations document sources rather than govern sentence structure.",
+  "A title": "Mistakes the citation for a document feature; a title names a work, while a citation credits its source.",
+  "A conclusion": "Confuses citation with a section of an essay; citations appear wherever sources are used, not only at the end."
+ },
+ "5002-147": {
+  "A quotation": "Copies the author's exact words instead of restating ideas in the reader's own language.",
+  "A detailed analysis": "Confuses summarizing with analyzing; a summary condenses main ideas rather than examining them in depth.",
+  "A personal opinion": "Injects the reader's own judgments; a summary should faithfully reflect the text's ideas without evaluation."
+ },
+ "5002-148": {
+  "It doesn't matter": "Dismisses voice entirely; how a writer sounds shapes whether readers trust and engage with the argument.",
+  "Voice is only for creative writing": "Limits voice to fiction; persuasive writing also relies on tone and personality to connect with readers.",
+  "Formal voice is always better": "Assumes one voice fits all audiences; effective writers adjust formality to purpose and reader."
+ },
+ "5002-149": {
+  "Memorize dictionaries": "Proposes an impossible task; memorizing dictionary entries in isolation builds no usable word knowledge.",
+  "Avoid complex words": "Lowers expectations instead of building vocabulary; students grow by encountering and using richer words.",
+  "Use thesaurus blindly": "Swaps words without checking meaning or fit; synonyms carry different connotations and contexts."
+ },
+ "5002-150": {
+  "They are the same": "Erases the distinction entirely; verifiability is exactly what separates facts from opinions.",
+  "Opinions are always wrong": "Equates subjective with false; opinions can be reasonable, they simply cannot be proven or disproven.",
+  "Facts are subjective": "Reverses the definitions; facts are precisely the statements that hold independent of personal feeling."
+ },
+ "5002-151": {
+  "A movie": "Assumes any media qualifies; a film is primary only if it originates from the period being studied.",
+  "A textbook": "Mistakes a compiled, later account for a firsthand record; textbooks summarize events after the fact.",
+  "A secondary summary": "Names the opposite category; secondary sources interpret events, while primary sources record them firsthand."
+ },
+ "5002-152": {
+  "It is not important": "Dismisses context entirely; meaning shifts with the historical and cultural conditions surrounding a text.",
+  "Context only matters for old books": "Limits context to the distant past; contemporary works also carry cultural and biographical framing.",
+  "Texts are self-contained": "Assumes meaning lives on the page alone; readers' interpretations are informed by circumstances outside the text."
+ },
+ "5002-153": {
+  "Skipping difficult texts": "Removes the very practice students need; growth in comprehension comes from supported work with challenging material.",
+  "Reading faster": "Treats speed as the remedy; racing through text worsens comprehension when the real gap is understanding.",
+  "More decoding practice": "Targets a skill students already have; decoding is intact, so instruction should build meaning-making instead."
+ },
+ "5002-154": {
+  "Character development": "Confuses plot technique with characterization; foreshadowing concerns events to come, not how characters grow.",
+  "Setting description": "Mistakes the technique for scene-building; descriptive passages may hint, but foreshadowing is the hinting itself.",
+  "A type of rhyme": "Misfiles the term under sound devices; foreshadowing is a plot device, not a feature of verse."
+ },
+ "5002-155": {
+  "The hero": "Describes the protagonist; the antagonist stands in the lead character's way rather than driving the story.",
+  "A narrator": "Confuses role in telling the story with role in it; narrators recount events, antagonists oppose the lead.",
+  "A setting": "Names a story element that places the action; opposition comes from a character or force, not a location."
+ },
+ "5002-156": {
+  "Because it is required": "Treats imagery as a rule to obey; authors choose it for its effect on readers, not from obligation.",
+  "To confuse readers": "Misreads sensory language as obstruction; imagery clarifies experience by making it vivid, not murky.",
+  "To make writing longer": "Reduces imagery to padding; its sensory details serve engagement and meaning, not word count."
+ },
+ "5002-157": {
+  "Reading argumentative essays only": "Mistakes exposure for instruction; reading without analyzing claims and evidence builds no analytic skill.",
+  "Memorizing fallacies": "Focuses on labeling errors before students can identify claims and reasoning; analysis starts with structure.",
+  "Ignoring logic": "Removes the very content of argument analysis; claims, evidence, and reasoning are logical connections."
+ },
+ "5002-158": {
+  "A type of poem": "Misfiles the term under genre; narrative structure describes how plot unfolds, not a form of verse.",
+  "Random event ordering": "Assumes events appear unordered; narrative structure is the deliberate arrangement of plot stages.",
+  "Character names": "Confuses story elements with story shape; structure concerns event organization, not who appears."
+ },
+ "5002-159": {
+  "Exaggeration": "Defines hyperbole instead; similes compare using 'like' or 'as' rather than overstating.",
+  "Personification": "Names a different device; personification grants human traits, while a simile compares two things explicitly.",
+  "Direct comparison without 'like' or 'as'": "Defines metaphor; similes signal the comparison explicitly with 'like' or 'as'."
+ },
+ "5002-160": {
+  "Cultures don't affect reading": "Denies the reader's role in meaning-making; what readers notice and value is shaped by their backgrounds.",
+  "Because texts are unclear": "Blames the text rather than the reader; varied readings arise from different perspectives, not vagueness.",
+  "Because one interpretation is always right": "Contradicts the premise; if one reading were fixed, cultural variation in interpretation would not occur."
+ },
+ "5002-161": {
+  "A theme": "Confuses the message with the events; plot is what happens, theme is what it means.",
+  "The setting": "Names where and when the story occurs; plot concerns the sequence of events themselves.",
+  "A character's name": "Points to a single story element; plot is the connected chain of events, not a person in it."
+ },
+ "5002-162": {
+  "All texts are the same": "Erases the conventions that differ across genres; readers adjust expectations between poems and manuals.",
+  "Genre doesn't matter": "Dismisses the organizing role of genre; genre signals structure and purpose that guide interpretation.",
+  "Genre only affects length": "Reduces genre to size; genres differ in conventions and expectations, not merely in how long they run."
+ },
+ "5002-163": {
+  "More reading time": "Adds quantity without changing quality; passive habits persist no matter how long students read.",
+  "Reading silently": "Confuses quiet reading with engaged reading; silence alone does not produce interaction with the text.",
+  "Reading faster": "Speeds up disengagement; comprehension grows from marking and questioning text, not from pace."
+ },
+ "5002-164": {
+  "A character trait": "Confuses who someone is with what happens; conflict is the struggle between forces, not a personality feature.",
+  "A setting detail": "Points to description of place; conflict may arise in a setting but is not itself a detail of it.",
+  "A type of poem": "Misfiles the term under genre; conflict is a narrative element found across all forms of literature."
+ },
+ "5002-165": {
+  "A setting": "Names the story's place rather than its central character; protagonists act within the setting.",
+  "A narrator": "Confuses who tells the story with whom it is about; the narrator may or may not be the main character.",
+  "The villain": "Equates importance with opposition; the protagonist leads the story, and the villain may oppose them."
+ },
+ "5002-166": {
+  "Neither matters": "Dismisses both concepts; authorial attitude and reader feeling are central to interpreting a text.",
+  "They are the same": "Collapses the distinction; tone belongs to the author's stance, mood to the atmosphere readers feel.",
+  "Mood is author's; tone is reader's": "Reverses the two terms; tone is the author's attitude, and mood is the feeling evoked in the reader."
+ },
+ "5002-167": {
+  "Memorizing word lists": "Builds isolated knowledge; words learned through context clues attach to meaningful use and endure.",
+  "Ignoring vocabulary": "Skips the skill entirely; readers grow by working out unfamiliar words from surrounding clues.",
+  "Looking up every unknown word": "Interrupts reading and breeds dependence; inferring meaning from context builds independent word-solving."
+ },
+ "5002-168": {
+  "A punctuation mark": "Confuses symbols with marks on the page; symbolism is a meaning-making device, not a mechanical convention.",
+  "A type of rhyme": "Misfiles the term under sound devices; symbolism operates through representation, not repetition of sound.",
+  "A character name": "Points to a single story element; symbolism is the practice of objects or events standing for abstract ideas."
+ },
+ "5002-169": {
+  "To confuse readers": "Mistakes puzzle for purpose; the uncertainty invites readers to question and judge, not to feel lost.",
+  "It is required by convention": "Assumes a rule exists; unreliable narration is a deliberate choice for effect, not a formal obligation.",
+  "Because they don't know how to write": "Attributes to incompetence what is craft; skewed narration is engineered to create dramatic irony."
+ },
+ "5002-170": {
+  "A type of poetry": "Misfiles the term under genre; imagery is descriptive language found in prose and verse alike.",
+  "A photograph": "Takes the term literally; literary imagery creates pictures in the mind through words, not camera images.",
+  "A character trait": "Points to characterization; imagery describes sensory experience rather than who a character is."
+ },
+ "5002-171": {
+  "All authors have the same purpose": "Erases the differences; whether a text informs, persuades, or entertains changes how it should be read.",
+  "It only affects title": "Shrinks purpose to naming; purpose shapes content, structure, and the strategy a reader should adopt.",
+  "It doesn't matter": "Dismisses purpose entirely; identifying intent is what tells readers how to weigh and approach a text."
+ },
+ "5002-172": {
+  "They don't understand vocabulary": "Targets word knowledge when the gap is abstraction; the student already follows the events but cannot generalize from them to universal ideas.",
+  "They read too much": "Treats practice as the problem; more reading without abstraction work will not produce theme analysis.",
+  "They need more practice reading": "Repeats the same kind of practice; moving from events to universal ideas needs explicit instruction."
+ },
+ "5002-173": {
+  "Showing through actions only": "Defines indirect characterization; direct means the author states the trait outright.",
+  "Character describes themselves": "Confuses narrator statement with self-report; direct characterization is the author's explicit telling.",
+  "Reader infers from dialogue": "Describes indirect methods; inference is what direct characterization lets readers skip."
+ },
+ "5002-174": {
+  "Only dialogue matters": "Excludes description altogether; dialogue conveys mood alongside, not instead of, atmospheric detail.",
+  "Mood is unrelated to setting": "Denies the connection the question asks about; weather, time, and place are classic mood-builders.",
+  "Setting has no effect": "Setting alone cannot build mood; the same place reads as ominous or serene only through the atmospheric details an author supplies."
+ },
+ "5002-175": {
+  "Ignoring the distinction": "Abandons the very skill to be taught; students must learn to test claims, not overlook them.",
+  "Reading more texts": "Adds volume without a method; exposure alone does not teach students how to verify or judge statements.",
+  "Memorizing definitions": "Stops at recall; the skill lies in applying the test, provable or subjective, to actual sentences."
+ },
+ "5002-176": {
+  "The story's ending": "Confuses narrative position with resolution; point of view governs who tells the story throughout.",
+  "A character's opinion": "Mixes up stance in the story with stance on it; point of view is a technical vantage, not a belief.",
+  "The physical location of characters": "Takes 'point' literally as place; point of view is narrative perspective: first, second, or third person."
+ },
+ "5002-177": {
+  "Because the text is badly written": "Blames the writing rather than the reading; disagreement stems from differing reader backgrounds.",
+  "Because one reader is wrong": "Assumes meaning must be single; readers legitimately construct different meanings from the same text.",
+  "Meaning is always objective": "Denies the reader's role; interpretation draws on personal experience, so meaning is co-constructed."
+ },
+ "5002-178": {
+  "Publishing": "Names the final stage; publishing shares finished work and comes after drafting, revising, and editing.",
+  "Proofreading": "Names a late, mechanics-focused stage; it checks errors only after ideas are drafted and revised.",
+  "Editing": "Jumps to polishing; editing refines existing drafts, which cannot exist before ideas are generated."
+ },
+ "5002-179": {
+  "It wastes class time": "Dismisses the activity entirely; evaluating peers' drafts is itself practice in critical reading.",
+  "Teachers should do all reviewing": "Concentrates feedback in one source; peers provide an authentic audience teachers cannot replicate.",
+  "Students cannot give useful feedback": "Underestimates peer capability; even imperfect feedback sharpens both reviewer's and writer's thinking."
+ },
+ "5002-180": {
+  "Sentence length": "Targets a surface feature; varying length cannot supply the missing logical links between ideas.",
+  "Grammar": "Targets correctness within sentences; the problem is between sentences, where connections are missing.",
+  "Spelling": "Addresses mechanics at word level; coherence fails at the level of ideas and their relationships."
+ },
+ "5002-181": {
+  "Counting words": "Reduces revision to a quota; checklists guide judgments about content and organization, not length.",
+  "Grading peer work": "Confuses self-monitoring with evaluation; the checklist guides the writer's own review, not others' grades.",
+  "Decorating papers": "Mistakes a working tool for presentation; checklists operate during revision, before submission."
+ },
+ "5002-182": {
+  "To decorate an essay": "Treats planning as ornament; the outline exists to arrange ideas before drafting begins.",
+  "To replace writing": "Overstates the outline's role; it organizes the plan but is not a substitute for the essay itself.",
+  "To count words": "Reduces planning to measurement; outlines arrange ideas hierarchically, not by quantity."
+ },
+ "5002-183": {
+  "Because editing comes first": "Reverses the sequence; generating ideas precedes polishing, while recursion comes from writers looping back to earlier stages.",
+  "Because there is no process": "Confuses recursion with absence of structure; writers cycle through identifiable stages.",
+  "Because it follows strict steps": "Asserts the opposite of recursion; a strict one-way sequence is exactly what writers abandon when they loop back."
+ },
+ "5002-184": {
+  "Allowing phone reading": "Lowers engagement rather than building skill; reading from a screen does not teach structured delivery.",
+  "Having them read from paper": "Substitutes recitation for speaking; reading verbatim keeps eyes on text instead of on the audience.",
+  "Skipping presentations": "Removes the practice entirely; speaking skill develops through structured, supported performance."
+ },
+ "5002-185": {
+  "An introduction": "Confuses opening moves with closing purpose; a call to action typically ends by urging readers to act.",
+  "A bibliography entry": "Points to citation apparatus; a call to action is a persuasive move, not a reference.",
+  "A question": "Mistakes a rhetorical device for a directive; the call to action tells readers what specifically to do."
+ },
+ "5002-186": {
+  "Waiting to speak": "Describes conversational politeness, not listening; attention is on one's own turn, not the message.",
+  "Listening while doing other tasks": "Describes divided attention, the opposite of the concentration active listening requires.",
+  "Hearing without responding": "Stops at reception; active listening includes responding and confirming understanding."
+ },
+ "5002-187": {
+  "Only English teachers need it": "Limits writing to one class; every subject asks students to plan, draft, and revise their thinking.",
+  "Writing is only for language arts": "Applies the same narrowing; science labs and history essays also demand organized written communication.",
+  "Process doesn't matter": "Dismisses instruction entirely; unplanned writing produces unorganized communication in any field."
+ },
+ "5002-188": {
+  "A plot summary": "Retells what happened; a theme statement says what the events mean about life or human nature.",
+  "A setting description": "Describes where the story unfolds; theme concerns the message, not the place.",
+  "A character name": "Names a single element; a theme statement expresses the work's central idea as a full sentence."
+ },
+ "5002-189": {
+  "Structure doesn't matter": "Dismisses organization entirely; readers depend on structure to follow an argument's progression.",
+  "Structure is decorative": "Treats organization as ornament; in expository writing, structure is functional, locating and sequencing ideas.",
+  "It makes text longer": "Confuses organization with expansion; structure arranges content, it does not add to it."
+ },
+ "5002-190": {
+  "Reading speed": "Speed is not the gap; the student already reads accurately, so pacing will not build inferencing.",
+  "Decoding": "The stem states decoding is accurate; the breakdown lies in strategy use, not word recognition.",
+  "Letter recognition": "A far earlier skill than this student shows; identifying letters is not where meaning fails."
+ },
+ "5002-191": {
+  "Situational comedy": "Confuses irony with humor; dramatic irony may be serious and concerns knowledge asymmetry.",
+  "Verbal sarcasm": "Names verbal irony spoken by a character; dramatic irony lies in what the audience knows.",
+  "Irony in poetry": "Limits the device to one genre; dramatic irony appears in drama and narrative whenever the audience knows more."
+ },
+ "5002-192": {
+  "A factual history": "Overstates accuracy; legends grow from historical events but become embellished in retelling.",
+  "A scientific report": "Confuses folklore with empirical documentation; legends are traditional narratives, not studies.",
+  "A poem": "Names a form rather than a story type; legends are defined by content and origin, not verse structure."
+ },
+ "5002-193": {
+  "All words are interchangeable": "Assumes synonyms are equivalent; connotation and formality make each word carry a distinct effect.",
+  "Word choice doesn't matter": "Dismisses diction entirely; the specific word chosen shapes tone and precision of meaning.",
+  "Only syntax matters": "Credits arrangement alone; individual word meanings and associations carry meaning independently of order."
+ },
+ "5002-194": {
+  "Memorizing passages": "Builds recall, not inference; remembering text verbatim does not teach reading between the lines.",
+  "Reading faster": "Increases pace without deepening processing; inference requires slowing to consider what is suggested.",
+  "Literal questioning only": "Keeps students at surface facts; inference practice must move beyond what the text states directly."
+ },
+ "5002-195": {
+  "A biography": "Names a factual account of a life; allegory is a fictional narrative carrying symbolic meaning.",
+  "A joke": "Confuses allegory with humor; the sustained symbolic narrative is the defining feature.",
+  "A type of rhyme": "Misfiles the term under sound devices; allegory operates through symbolic representation, not sound."
+ },
+ "5002-196": {
+  "A character type": "Confuses plot device with characterization; a cliffhanger is a situation, not a person.",
+  "A setting": "Names where the story happens; the cliffhanger is an unresolved moment, not a place.",
+  "A type of poem": "Misfiles the term under genre; cliffhangers appear in chapters and episodes across forms."
+ },
+ "5002-197": {
+  "Exaggeration": "Defines hyperbole; an oxymoron joins contradictory terms rather than overstating.",
+  "Comparison with like/as": "Defines simile; oxymorons pair opposites such as 'bittersweet' instead of comparing two things.",
+  "Repetition": "Names sound devices like anaphora; oxymorons rely on contradiction, not repeated wording."
+ },
+ "5002-198": {
+  "It is decorative": "Treats the thesis as ornament; it is the claim every paragraph of the essay supports.",
+  "Only needed for fiction": "Reverses the context; argumentative writing centers on the thesis, while fiction needs none.",
+  "Thesis doesn't matter": "Dismisses the controlling idea; without a central claim, the argument has no direction to follow."
+ },
+ "5002-199": {
+  "Reading faster": "Accelerates a process that is already breaking down at the meaning stage; speed cannot fix comprehension.",
+  "More decoding practice": "Repeats what the student has mastered; word recognition is intact, comprehension strategies are not.",
+  "Skipping comprehension": "Removes the exact skill being taught; avoiding the difficulty leaves the gap unaddressed."
+ },
+ "5002-200": {
+  "Sound repetition": "Names alliteration; personification grants human qualities rather than repeating sounds.",
+  "Exaggeration": "Defines hyperbole; personification attributes human traits, it does not inflate scale.",
+  "Comparison using like/as": "Defines simile; no comparison is being drawn when non-human things take on human qualities."
+ },
+ "5002-201": {
+  "Conflict is unnecessary": "Removes the engine of story; without opposing forces there is no tension to resolve.",
+  "Only action matters": "Reduces narrative to events; conflict is what makes those events matter to characters and readers.",
+  "Conflict confuses readers": "Misreads tension as disorder; conflict organizes the plot toward its resolution."
+ },
+ "5002-202": {
+  "Skipping unknown words": "Trains avoidance; struggling readers most need supported encounters with unfamiliar words.",
+  "Memorizing word lists": "Builds isolated recall; words learned out of context rarely transfer to actual reading.",
+  "Ignoring vocabulary": "Abandons instruction precisely where students struggle; vocabulary gaps compound comprehension failure."
+ },
+ "5002-203": {
+  "Understatement": "Names the opposite device; hyperbole inflates for effect while understatement minimizes.",
+  "Sound repetition": "Names alliteration; hyperbole operates through exaggerated claims, not repeated sounds.",
+  "Comparison with like/as": "Defines simile; hyperbole states an impossible magnitude instead of drawing a comparison."
+ },
+ "5002-204": {
+  "Because they forgot chronological order": "Attributes to error what is design; flashbacks deliberately step back from the present timeline.",
+  "Flashbacks are never useful": "Rejects the device outright; flashbacks supply background that the present-moment plot cannot.",
+  "To confuse readers": "Mistakes complexity for obfuscation; the shift in time exists to explain current motivations."
+ },
+ "5002-205": {
+  "To fill space": "Reduces transitions to padding; each transition encodes a specific logical relationship.",
+  "Decoration": "Treats transitions as ornament; they do the work of connecting ideas for the reader.",
+  "Transitions are optional": "Dismisses the connective tissue; without transitions, relationships between ideas go unstated."
+ },
+ "5002-206": {
+  "All audiences are the same": "Assumes one-size-fits-all writing; audiences differ in background knowledge and expectations.",
+  "Only teachers read student writing": "Narrows writing to a school exercise; real writing reaches varied audiences needing adjustment.",
+  "Audience doesn't matter": "Dismisses the reader entirely; tone, evidence, and organization all shift with who is reading."
+ },
+ "5002-207": {
+  "Grammar": "Targets sentence-level correctness; the sentences are fine individually, the problem is their fit.",
+  "Spelling": "Addresses word-level mechanics; unrelated sentences fail at the level of topic and relevance.",
+  "Sentence length": "Adjusts a surface feature; length control cannot create relevance to a central topic."
+ },
+ "5002-208": {
+  "A grammatical error": "Treats 'hook' as a fault; in writing instruction it names an intentional opening move.",
+  "A conclusion": "Reverses the position; the hook opens the essay, while conclusions wrap it up.",
+  "A bibliography entry": "Points to citation apparatus; a hook is a rhetorical device for capturing reader interest."
+ },
+ "5002-209": {
+  "An introduction": "Names the whole opening section; the thesis is a single claim that typically appears within it.",
+  "A conclusion": "Points to the essay's end; the thesis comes early and drives everything after it.",
+  "A question": "Confuses posing an issue with taking a stance; a thesis asserts a claim, it does not ask."
+ },
+ "5002-210": {
+  "Proofreading comes first": "Reverses the order; mechanics are checked last, after content and structure are settled.",
+  "Editing is optional": "Removes a necessary stage; content-level revision cannot be skipped in favor of error-checking.",
+  "They are the same": "Collapses two distinct stages; one addresses ideas and organization, the other surface errors."
+ },
+ "5002-211": {
+  "Memorizing definitions": "Stops at terminology; appeals are learned by spotting how real speakers deploy them.",
+  "Reading about rhetoric": "Substitutes secondhand description for analysis; students must examine actual texts.",
+  "Ignoring appeals": "Abandons the target skill; identifying ethos, pathos, and logos requires attention, not avoidance."
+ },
+ "5002-212": {
+  "Passive construction": "Names the opposite; active voice puts the subject in the acting role.",
+  "Object performs the action": "Describes passive voice; in active voice, the subject acts rather than receives the action.",
+  "No subject needed": "Removes the agent entirely; active voice requires a subject performing the verb's action."
+ },
+ "5002-213": {
+  "Define terms": "Names an early-essay move; definitions belong in the introduction, where readers need them.",
+  "Introduce new ideas": "Violates the closing convention; new arguments belong in the body, not the final paragraph.",
+  "List sources": "Confuses the essay's end with its bibliography; sources appear in citations, not the conclusion."
+ },
+ "5002-214": {
+  "Revision is unnecessary": "Contradicts the premise; if revision happened at all, the question of cycling back would arise.",
+  "First draft is always final": "Assumes one-pass writing; drafts almost always expose issues that send writers back a stage.",
+  "Writing has no process": "Confuses non-linearity with absence of process; revision follows recognizable, revisitable stages."
+ }
+}
