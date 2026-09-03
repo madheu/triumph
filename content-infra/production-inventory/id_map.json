@@ -1,0 +1,1202 @@
+[
+  {
+    "old_id": "8006-CWE-0001",
+    "new_id": "8006-comprehension-001",
+    "src_file": "8006-items.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-CWE-0002",
+    "new_id": "8006-comprehension-002",
+    "src_file": "8006-items.json",
+    "objective": "11"
+  },
+  {
+    "old_id": "8006-CWE-0003",
+    "new_id": "8006-comprehension-003",
+    "src_file": "8006-items.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-CWE-0004",
+    "new_id": "8006-comprehension-004",
+    "src_file": "8006-items.json",
+    "objective": "10"
+  },
+  {
+    "old_id": "8006-CWE-0005",
+    "new_id": "8006-comprehension-005",
+    "src_file": "8006-items.json",
+    "objective": "12"
+  },
+  {
+    "old_id": "8006-CWE-0006",
+    "new_id": "8006-comprehension-006",
+    "src_file": "8006-items.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-CWE-0007",
+    "new_id": "8006-comprehension-007",
+    "src_file": "batch-08.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-CWE-0008",
+    "new_id": "8006-comprehension-008",
+    "src_file": "batch-08.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-CWE-0009",
+    "new_id": "8006-comprehension-009",
+    "src_file": "batch-08.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-CWE-0010",
+    "new_id": "8006-comprehension-010",
+    "src_file": "batch-08.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-CWE-0011",
+    "new_id": "8006-comprehension-011",
+    "src_file": "batch-08.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-CWE-0012",
+    "new_id": "8006-comprehension-012",
+    "src_file": "batch-08.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-CWE-0013",
+    "new_id": "8006-comprehension-013",
+    "src_file": "batch-08.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-CWE-0014",
+    "new_id": "8006-comprehension-014",
+    "src_file": "batch-08.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-CWE-0015",
+    "new_id": "8006-comprehension-015",
+    "src_file": "batch-08.json",
+    "objective": "9"
+  },
+  {
+    "old_id": "8006-CWE-0016",
+    "new_id": "8006-comprehension-016",
+    "src_file": "batch-08.json",
+    "objective": "13"
+  },
+  {
+    "old_id": "8006-CWE-0017",
+    "new_id": "8006-comprehension-017",
+    "src_file": "batch-08.json",
+    "objective": "10"
+  },
+  {
+    "old_id": "8006-CWE-0018",
+    "new_id": "8006-comprehension-018",
+    "src_file": "batch-08.json",
+    "objective": "11"
+  },
+  {
+    "old_id": "8006-CWE-0019",
+    "new_id": "8006-comprehension-019",
+    "src_file": "batch-08.json",
+    "objective": "12"
+  },
+  {
+    "old_id": "8006-CWE-0020",
+    "new_id": "8006-comprehension-020",
+    "src_file": "batch-08.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-CWE-0021",
+    "new_id": "8006-comprehension-021",
+    "src_file": "batch-08.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-CWE-0022",
+    "new_id": "8006-comprehension-022",
+    "src_file": "batch-08.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-CWE-0023",
+    "new_id": "8006-comprehension-023",
+    "src_file": "batch-08.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-CWE-0024",
+    "new_id": "8006-comprehension-024",
+    "src_file": "batch-08.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-CWE-0025",
+    "new_id": "8006-comprehension-025",
+    "src_file": "batch-09.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-CWE-0026",
+    "new_id": "8006-comprehension-026",
+    "src_file": "batch-09.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-CWE-0027",
+    "new_id": "8006-comprehension-027",
+    "src_file": "batch-09.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-CWE-0028",
+    "new_id": "8006-comprehension-028",
+    "src_file": "batch-09.json",
+    "objective": "9"
+  },
+  {
+    "old_id": "8006-CWE-0029",
+    "new_id": "8006-comprehension-029",
+    "src_file": "batch-09.json",
+    "objective": "13"
+  },
+  {
+    "old_id": "8006-CWE-0030",
+    "new_id": "8006-comprehension-030",
+    "src_file": "batch-09.json",
+    "objective": "10"
+  },
+  {
+    "old_id": "8006-CWE-0031",
+    "new_id": "8006-comprehension-031",
+    "src_file": "batch-09.json",
+    "objective": "11"
+  },
+  {
+    "old_id": "8006-CWE-0032",
+    "new_id": "8006-comprehension-032",
+    "src_file": "batch-09.json",
+    "objective": "12"
+  },
+  {
+    "old_id": "8006-CWE-0033",
+    "new_id": "8006-comprehension-033",
+    "src_file": "batch-09.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-CWE-0034",
+    "new_id": "8006-comprehension-034",
+    "src_file": "batch-09.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-CWE-0035",
+    "new_id": "8006-comprehension-035",
+    "src_file": "batch-09.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-CWE-0036",
+    "new_id": "8006-comprehension-036",
+    "src_file": "batch-09.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-CWE-0037",
+    "new_id": "8006-comprehension-037",
+    "src_file": "batch-09.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-CWE-0038",
+    "new_id": "8006-comprehension-038",
+    "src_file": "batch-09.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-CWE-0039",
+    "new_id": "8006-comprehension-039",
+    "src_file": "batch-09.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-CWE-0040",
+    "new_id": "8006-comprehension-040",
+    "src_file": "batch-09.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-CWE-0041",
+    "new_id": "8006-comprehension-041",
+    "src_file": "batch-09.json",
+    "objective": "9"
+  },
+  {
+    "old_id": "8006-CWE-0042",
+    "new_id": "8006-comprehension-042",
+    "src_file": "batch-09.json",
+    "objective": "13"
+  },
+  {
+    "old_id": "8006-CWE-0043",
+    "new_id": "8006-comprehension-043",
+    "src_file": "batch-10.json",
+    "objective": "10"
+  },
+  {
+    "old_id": "8006-CWE-0044",
+    "new_id": "8006-comprehension-044",
+    "src_file": "batch-10.json",
+    "objective": "11"
+  },
+  {
+    "old_id": "8006-CWE-0045",
+    "new_id": "8006-comprehension-045",
+    "src_file": "batch-10.json",
+    "objective": "12"
+  },
+  {
+    "old_id": "8006-CWE-0046",
+    "new_id": "8006-comprehension-046",
+    "src_file": "batch-10.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-CWE-0047",
+    "new_id": "8006-comprehension-047",
+    "src_file": "batch-10.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-CWE-0048",
+    "new_id": "8006-comprehension-048",
+    "src_file": "batch-10.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-CWE-0049",
+    "new_id": "8006-comprehension-049",
+    "src_file": "batch-10.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-CWE-0050",
+    "new_id": "8006-comprehension-050",
+    "src_file": "batch-10.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-CWE-0051",
+    "new_id": "8006-comprehension-051",
+    "src_file": "batch-10.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-CWE-0052",
+    "new_id": "8006-comprehension-052",
+    "src_file": "batch-10.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-CWE-0053",
+    "new_id": "8006-comprehension-053",
+    "src_file": "batch-10.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-CWE-0054",
+    "new_id": "8006-comprehension-054",
+    "src_file": "batch-10.json",
+    "objective": "9"
+  },
+  {
+    "old_id": "8006-CWE-0055",
+    "new_id": "8006-comprehension-055",
+    "src_file": "batch-10.json",
+    "objective": "13"
+  },
+  {
+    "old_id": "8006-CWE-0056",
+    "new_id": "8006-comprehension-056",
+    "src_file": "batch-10.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-CWE-0057",
+    "new_id": "8006-comprehension-057",
+    "src_file": "batch-10.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-CWE-0058",
+    "new_id": "8006-comprehension-058",
+    "src_file": "batch-10.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-CWE-0059",
+    "new_id": "8006-comprehension-059",
+    "src_file": "batch-10.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-CWE-0060",
+    "new_id": "8006-comprehension-060",
+    "src_file": "batch-10.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-FV-0001",
+    "new_id": "8006-fluency-001",
+    "src_file": "8006-items.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0002",
+    "new_id": "8006-fluency-002",
+    "src_file": "8006-items.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0003",
+    "new_id": "8006-fluency-003",
+    "src_file": "8006-items.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-FV-0004",
+    "new_id": "8006-fluency-004",
+    "src_file": "8006-items.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0005",
+    "new_id": "8006-fluency-005",
+    "src_file": "8006-items.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0006",
+    "new_id": "8006-fluency-006",
+    "src_file": "8006-items.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0007",
+    "new_id": "8006-fluency-007",
+    "src_file": "batch-05.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0008",
+    "new_id": "8006-fluency-008",
+    "src_file": "batch-05.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0009",
+    "new_id": "8006-fluency-009",
+    "src_file": "batch-05.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0010",
+    "new_id": "8006-fluency-010",
+    "src_file": "batch-05.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-FV-0011",
+    "new_id": "8006-fluency-011",
+    "src_file": "batch-05.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-FV-0012",
+    "new_id": "8006-fluency-012",
+    "src_file": "batch-05.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-FV-0013",
+    "new_id": "8006-fluency-013",
+    "src_file": "batch-05.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0014",
+    "new_id": "8006-fluency-014",
+    "src_file": "batch-05.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-FV-0015",
+    "new_id": "8006-fluency-015",
+    "src_file": "batch-05.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0016",
+    "new_id": "8006-fluency-016",
+    "src_file": "batch-05.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0017",
+    "new_id": "8006-fluency-017",
+    "src_file": "batch-05.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0018",
+    "new_id": "8006-fluency-018",
+    "src_file": "batch-05.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-FV-0019",
+    "new_id": "8006-fluency-019",
+    "src_file": "batch-05.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-FV-0020",
+    "new_id": "8006-fluency-020",
+    "src_file": "batch-05.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-FV-0021",
+    "new_id": "8006-fluency-021",
+    "src_file": "batch-05.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0022",
+    "new_id": "8006-fluency-022",
+    "src_file": "batch-05.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-FV-0023",
+    "new_id": "8006-fluency-023",
+    "src_file": "batch-05.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0024",
+    "new_id": "8006-fluency-024",
+    "src_file": "batch-05.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0025",
+    "new_id": "8006-fluency-025",
+    "src_file": "batch-06.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0026",
+    "new_id": "8006-fluency-026",
+    "src_file": "batch-06.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-FV-0027",
+    "new_id": "8006-fluency-027",
+    "src_file": "batch-06.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-FV-0028",
+    "new_id": "8006-fluency-028",
+    "src_file": "batch-06.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-FV-0029",
+    "new_id": "8006-fluency-029",
+    "src_file": "batch-06.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0030",
+    "new_id": "8006-fluency-030",
+    "src_file": "batch-06.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-FV-0031",
+    "new_id": "8006-fluency-031",
+    "src_file": "batch-06.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0032",
+    "new_id": "8006-fluency-032",
+    "src_file": "batch-06.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0033",
+    "new_id": "8006-fluency-033",
+    "src_file": "batch-06.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0034",
+    "new_id": "8006-fluency-034",
+    "src_file": "batch-06.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-FV-0035",
+    "new_id": "8006-fluency-035",
+    "src_file": "batch-06.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-FV-0036",
+    "new_id": "8006-fluency-036",
+    "src_file": "batch-06.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-FV-0037",
+    "new_id": "8006-fluency-037",
+    "src_file": "batch-06.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0038",
+    "new_id": "8006-fluency-038",
+    "src_file": "batch-06.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-FV-0039",
+    "new_id": "8006-fluency-039",
+    "src_file": "batch-06.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0040",
+    "new_id": "8006-fluency-040",
+    "src_file": "batch-06.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0041",
+    "new_id": "8006-fluency-041",
+    "src_file": "batch-06.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0042",
+    "new_id": "8006-fluency-042",
+    "src_file": "batch-06.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-FV-0043",
+    "new_id": "8006-fluency-043",
+    "src_file": "batch-07.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-FV-0044",
+    "new_id": "8006-fluency-044",
+    "src_file": "batch-07.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-FV-0045",
+    "new_id": "8006-fluency-045",
+    "src_file": "batch-07.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0046",
+    "new_id": "8006-fluency-046",
+    "src_file": "batch-07.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-FV-0047",
+    "new_id": "8006-fluency-047",
+    "src_file": "batch-07.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0048",
+    "new_id": "8006-fluency-048",
+    "src_file": "batch-07.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0049",
+    "new_id": "8006-fluency-049",
+    "src_file": "batch-07.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0050",
+    "new_id": "8006-fluency-050",
+    "src_file": "batch-07.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-FV-0051",
+    "new_id": "8006-fluency-051",
+    "src_file": "batch-07.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-FV-0052",
+    "new_id": "8006-fluency-052",
+    "src_file": "batch-07.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-FV-0053",
+    "new_id": "8006-fluency-053",
+    "src_file": "batch-07.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-FV-0054",
+    "new_id": "8006-fluency-054",
+    "src_file": "batch-07.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-FV-0055",
+    "new_id": "8006-fluency-055",
+    "src_file": "batch-07.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-FV-0056",
+    "new_id": "8006-fluency-056",
+    "src_file": "batch-07.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-FV-0057",
+    "new_id": "8006-fluency-057",
+    "src_file": "batch-07.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-FV-0058",
+    "new_id": "8006-fluency-058",
+    "src_file": "batch-07.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-FV-0059",
+    "new_id": "8006-fluency-059",
+    "src_file": "batch-07.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-FV-0060",
+    "new_id": "8006-fluency-060",
+    "src_file": "batch-07.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-PD-0001",
+    "new_id": "8006-foundational-001",
+    "src_file": "8006-items.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PD-0002",
+    "new_id": "8006-foundational-002",
+    "src_file": "8006-items.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PD-0003",
+    "new_id": "8006-foundational-003",
+    "src_file": "8006-items.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PD-0004",
+    "new_id": "8006-foundational-004",
+    "src_file": "8006-items.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PD-0005",
+    "new_id": "8006-foundational-005",
+    "src_file": "batch-03.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PD-0006",
+    "new_id": "8006-foundational-006",
+    "src_file": "batch-03.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PD-0007",
+    "new_id": "8006-foundational-007",
+    "src_file": "batch-03.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PD-0008",
+    "new_id": "8006-foundational-008",
+    "src_file": "batch-03.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PD-0009",
+    "new_id": "8006-foundational-009",
+    "src_file": "batch-03.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-PD-0010",
+    "new_id": "8006-foundational-010",
+    "src_file": "batch-03.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PD-0011",
+    "new_id": "8006-foundational-011",
+    "src_file": "batch-03.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PD-0012",
+    "new_id": "8006-foundational-012",
+    "src_file": "batch-03.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PD-0013",
+    "new_id": "8006-foundational-013",
+    "src_file": "batch-03.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PD-0014",
+    "new_id": "8006-foundational-014",
+    "src_file": "batch-03.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PD-0015",
+    "new_id": "8006-foundational-015",
+    "src_file": "batch-03.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PD-0016",
+    "new_id": "8006-foundational-016",
+    "src_file": "batch-03.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PD-0017",
+    "new_id": "8006-foundational-017",
+    "src_file": "batch-03.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-PD-0018",
+    "new_id": "8006-foundational-018",
+    "src_file": "batch-03.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PD-0019",
+    "new_id": "8006-foundational-019",
+    "src_file": "batch-03.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PD-0020",
+    "new_id": "8006-foundational-020",
+    "src_file": "batch-03.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PD-0021",
+    "new_id": "8006-foundational-021",
+    "src_file": "batch-03.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PD-0022",
+    "new_id": "8006-foundational-022",
+    "src_file": "batch-03.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PD-0023",
+    "new_id": "8006-foundational-023",
+    "src_file": "batch-04.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PD-0024",
+    "new_id": "8006-foundational-024",
+    "src_file": "batch-04.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PD-0025",
+    "new_id": "8006-foundational-025",
+    "src_file": "batch-04.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-PD-0026",
+    "new_id": "8006-foundational-026",
+    "src_file": "batch-04.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PD-0027",
+    "new_id": "8006-foundational-027",
+    "src_file": "batch-04.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PD-0028",
+    "new_id": "8006-foundational-028",
+    "src_file": "batch-04.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PD-0029",
+    "new_id": "8006-foundational-029",
+    "src_file": "batch-04.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PD-0030",
+    "new_id": "8006-foundational-030",
+    "src_file": "batch-04.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PD-0031",
+    "new_id": "8006-foundational-031",
+    "src_file": "batch-04.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PD-0032",
+    "new_id": "8006-foundational-032",
+    "src_file": "batch-04.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PD-0033",
+    "new_id": "8006-foundational-033",
+    "src_file": "batch-04.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-PD-0034",
+    "new_id": "8006-foundational-034",
+    "src_file": "batch-04.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PD-0035",
+    "new_id": "8006-foundational-035",
+    "src_file": "batch-04.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PD-0036",
+    "new_id": "8006-foundational-036",
+    "src_file": "batch-04.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PD-0037",
+    "new_id": "8006-foundational-037",
+    "src_file": "batch-04.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PD-0038",
+    "new_id": "8006-foundational-038",
+    "src_file": "batch-04.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PD-0039",
+    "new_id": "8006-foundational-039",
+    "src_file": "batch-04.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PD-0040",
+    "new_id": "8006-foundational-040",
+    "src_file": "batch-04.json",
+    "objective": "8"
+  },
+  {
+    "old_id": "8006-PPA-0002",
+    "new_id": "8006-foundational-041",
+    "src_file": "8006-items.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PPA-0003",
+    "new_id": "8006-foundational-042",
+    "src_file": "8006-items.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PPA-0004",
+    "new_id": "8006-foundational-043",
+    "src_file": "8006-items.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PPA-0005",
+    "new_id": "8006-foundational-044",
+    "src_file": "8006-items.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PPA-0006",
+    "new_id": "8006-foundational-045",
+    "src_file": "batch-01.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PPA-0007",
+    "new_id": "8006-foundational-046",
+    "src_file": "batch-01.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PPA-0008",
+    "new_id": "8006-foundational-047",
+    "src_file": "batch-01.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PPA-0009",
+    "new_id": "8006-foundational-048",
+    "src_file": "batch-01.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PPA-0010",
+    "new_id": "8006-foundational-049",
+    "src_file": "batch-01.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PPA-0011",
+    "new_id": "8006-foundational-050",
+    "src_file": "batch-01.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PPA-0012",
+    "new_id": "8006-foundational-051",
+    "src_file": "batch-01.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PPA-0013",
+    "new_id": "8006-foundational-052",
+    "src_file": "batch-01.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PPA-0014",
+    "new_id": "8006-foundational-053",
+    "src_file": "batch-01.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PPA-0015",
+    "new_id": "8006-foundational-054",
+    "src_file": "batch-01.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PPA-0016",
+    "new_id": "8006-foundational-055",
+    "src_file": "batch-01.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PPA-0017",
+    "new_id": "8006-foundational-056",
+    "src_file": "batch-01.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PPA-0018",
+    "new_id": "8006-foundational-057",
+    "src_file": "batch-01.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PPA-0019",
+    "new_id": "8006-foundational-058",
+    "src_file": "batch-01.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PPA-0020",
+    "new_id": "8006-foundational-059",
+    "src_file": "batch-01.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PPA-0021",
+    "new_id": "8006-foundational-060",
+    "src_file": "batch-01.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PPA-0022",
+    "new_id": "8006-foundational-061",
+    "src_file": "batch-01.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PPA-0023",
+    "new_id": "8006-foundational-062",
+    "src_file": "batch-01.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PPA-0024",
+    "new_id": "8006-foundational-063",
+    "src_file": "batch-02.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PPA-0025",
+    "new_id": "8006-foundational-064",
+    "src_file": "batch-02.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PPA-0026",
+    "new_id": "8006-foundational-065",
+    "src_file": "batch-02.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PPA-0027",
+    "new_id": "8006-foundational-066",
+    "src_file": "batch-02.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PPA-0028",
+    "new_id": "8006-foundational-067",
+    "src_file": "batch-02.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PPA-0029",
+    "new_id": "8006-foundational-068",
+    "src_file": "batch-02.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PPA-0030",
+    "new_id": "8006-foundational-069",
+    "src_file": "batch-02.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PPA-0031",
+    "new_id": "8006-foundational-070",
+    "src_file": "batch-02.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PPA-0032",
+    "new_id": "8006-foundational-071",
+    "src_file": "batch-02.json",
+    "objective": "2"
+  },
+  {
+    "old_id": "8006-PPA-0033",
+    "new_id": "8006-foundational-072",
+    "src_file": "batch-02.json",
+    "objective": "7"
+  },
+  {
+    "old_id": "8006-PPA-0034",
+    "new_id": "8006-foundational-073",
+    "src_file": "batch-02.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PPA-0035",
+    "new_id": "8006-foundational-074",
+    "src_file": "batch-02.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PPA-0036",
+    "new_id": "8006-foundational-075",
+    "src_file": "batch-02.json",
+    "objective": "5"
+  },
+  {
+    "old_id": "8006-PPA-0037",
+    "new_id": "8006-foundational-076",
+    "src_file": "batch-02.json",
+    "objective": "1"
+  },
+  {
+    "old_id": "8006-PPA-0038",
+    "new_id": "8006-foundational-077",
+    "src_file": "batch-02.json",
+    "objective": "6"
+  },
+  {
+    "old_id": "8006-PPA-0039",
+    "new_id": "8006-foundational-078",
+    "src_file": "batch-02.json",
+    "objective": "3"
+  },
+  {
+    "old_id": "8006-PPA-0040",
+    "new_id": "8006-foundational-079",
+    "src_file": "batch-02.json",
+    "objective": "4"
+  },
+  {
+    "old_id": "8006-PPA-0041",
+    "new_id": "8006-foundational-080",
+    "src_file": "batch-02.json",
+    "objective": "5"
+  }
+]

@@ -1,0 +1,1203 @@
+{
+  "verdict": "FAIL",
+  "source_file": "E:\\Triumph\\praxis-5001\\content-infra\\production-inventory\\8006-multiselect-quarantine.json",
+  "item_count": 27,
+  "errors": [
+    {
+      "item": "8006-comprehension-002",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-002",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 11. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-002",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-002",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 8. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 10. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 7. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 10. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 8. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 5. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 13. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 1. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Comprehension & Written Expression — objective 2. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Comprehension & Written Expression' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Fluency & Vocabulary — objective 1. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Fluency & Vocabulary' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Fluency & Vocabulary — objective 8. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Fluency & Vocabulary' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Fluency & Vocabulary — objective 8. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Fluency & Vocabulary' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Fluency & Vocabulary — objective 4. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Fluency & Vocabulary' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Fluency & Vocabulary — objective 8. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Fluency & Vocabulary' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Fluency & Vocabulary — objective 1. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Fluency & Vocabulary' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Fluency & Vocabulary — objective 6. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "schema",
+      "code": "bad_content_domain",
+      "detail": "'Fluency & Vocabulary' not an official 8006 domain（注意：官方写法是 'and' 不是 '&'，例如 Fluency and Vocabulary）"
+    },
+    {
+      "item": "8006-foundational-013",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-013",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 1. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-013",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-019",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-019",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 3. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-019",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-022",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-022",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-022",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-033",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-033",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 8. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-033",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-037",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-037",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-037",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-054",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-054",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-054",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-059",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-059",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 3. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-059",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-072",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-072",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 7. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-072",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-075",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-075",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-075",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "item": "8006-foundational-078",
+      "check": "schema",
+      "code": "wrong_test_code",
+      "detail": "expected 8006, got '8006'"
+    },
+    {
+      "item": "8006-foundational-078",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "source_basis='ETS 8006 content domain: Foundational Literacy Skills — objective 3. Item authored by Learndiag (original), not an official ETS release.', allowed=['expert-judgment', 'legacy-unknown', 'official-source']"
+    },
+    {
+      "item": "8006-foundational-078",
+      "check": "schema",
+      "code": "bad_enum",
+      "detail": "review_status='ai-reviewed', allowed=['draft', 'human-reviewed', 'rejected']"
+    },
+    {
+      "check": "distribution",
+      "code": "unknown_domain_present",
+      "detail": {
+        "Comprehension & Written Expression": 10,
+        "Fluency & Vocabulary": 7
+      }
+    },
+    {
+      "check": "distribution",
+      "code": "domain_off_target",
+      "detail": "Fluency and Vocabulary: 0 题，预期 9（容差 ±2）"
+    },
+    {
+      "check": "distribution",
+      "code": "domain_off_target",
+      "detail": "Comprehension and Written Expression: 0 题，预期 9（容差 ±2）"
+    }
+  ],
+  "warnings": [
+    {
+      "item": "8006-comprehension-002",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-002",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-013",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-013",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-019",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-019",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-022",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-022",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-033",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-033",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-037",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-037",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-054",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-054",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-059",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-059",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-072",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-072",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-075",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-075",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-078",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-078",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "check": "dedupe",
+      "code": "hash_mismatch",
+      "count": 27,
+      "samples": [
+        {
+          "item": "8006-comprehension-002",
+          "declared": "sha256:PENDING_ON_INGEST",
+          "recomputed": "bc2db0c692d33cfabb9df972ff8ee9cbc5e2c141d23d5919be5bba486da880ed",
+          "note": "输入文件自带的 hash 与独立复算不一致 —— 以复算值为准"
+        },
+        {
+          "item": "8006-comprehension-011",
+          "declared": "sha256:PENDING_ON_INGEST",
+          "recomputed": "2fd9c918ba97a52f3ea97b7865c387c8cfcb25728355147b58bdfd57a0eee869",
+          "note": "输入文件自带的 hash 与独立复算不一致 —— 以复算值为准"
+        },
+        {
+          "item": "8006-comprehension-017",
+          "declared": "sha256:PENDING_ON_INGEST",
+          "recomputed": "bf4bc3daf22451da41ba5cff804974358f7a7bbbaf9c9d1d8935868ba3cb45ed",
+          "note": "输入文件自带的 hash 与独立复算不一致 —— 以复算值为准"
+        },
+        {
+          "item": "8006-comprehension-023",
+          "declared": "sha256:PENDING_ON_INGEST",
+          "recomputed": "507823389a54e8021cf043860786e7244c8275e0ad81a0fe377ba22f4b828a34",
+          "note": "输入文件自带的 hash 与独立复算不一致 —— 以复算值为准"
+        },
+        {
+          "item": "8006-comprehension-030",
+          "declared": "sha256:PENDING_ON_INGEST",
+          "recomputed": "f21df43c988312bf490b9e542c0ac917319efae4596edf11b8734d0067816d21",
+          "note": "输入文件自带的 hash 与独立复算不一致 —— 以复算值为准"
+        }
+      ]
+    },
+    {
+      "check": "distribution",
+      "code": "unexpected_total",
+      "detail": "有效题数 10，预期 30。分布按实际总数复核"
+    }
+  ],
+  "human_review_queue": [
+    {
+      "item": "(全批)",
+      "reason": "教学情境题（Tasks of Teaching）占比需人工确认",
+      "action": "通读全部 10 题，人工判定哪些属于教学情境题，确认占比落在官方 10–15% 区间。正则给出 18 个候选（['8006-comprehension-002', '8006-comprehension-011', '8006-comprehension-017', '8006-comprehension-023', '8006-comprehension-030', '8006-comprehension-040']…），但召回率低，仅作起点，不得当作结论"
+    },
+    {
+      "item": "8006-comprehension-002",
+      "reason": "multiple-select，标注答案 A,B,E",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-015",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-020",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-028",
+      "reason": "multiple-select，标注答案 B,C,E",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-033",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-052",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-055",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-058",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-013",
+      "reason": "multiple-select，标注答案 A,B,D",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-019",
+      "reason": "multiple-select，标注答案 A,C,D",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-022",
+      "reason": "multiple-select，标注答案 A,C,E",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-033",
+      "reason": "multiple-select，标注答案 A,B,C",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-037",
+      "reason": "multiple-select，标注答案 A,B,E",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-054",
+      "reason": "multiple-select，标注答案 A,C,E",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-059",
+      "reason": "multiple-select，标注答案 A,D,E",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-072",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-075",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-078",
+      "reason": "multiple-select，标注答案 A,B",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    }
+  ],
+  "info": {
+    "source_file": "E:\\Triumph\\praxis-5001\\content-infra\\production-inventory\\8006-multiselect-quarantine.json",
+    "item_count": 27,
+    "schema_field_count": 21,
+    "schema_field_count_note": "D5 事项描述写 20 字段，schema v1 field_order 实际为 21。以 field_order 为准，出入待 T0 确认",
+    "intra_batch_duplicates": 0,
+    "hash_mismatch_count": 27,
+    "legacy_items_loaded": 969,
+    "cross_series_duplicates": 0,
+    "near_duplicates": 0,
+    "domain_counts": {
+      "Comprehension & Written Expression": 10,
+      "Fluency & Vocabulary": 7,
+      "Foundational Literacy Skills": 10
+    },
+    "domain_total": 10,
+    "difficulty_counts": {
+      "medium": 14,
+      "hard": 12,
+      "easy": 1
+    },
+    "source_basis_counts": {
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 11. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 8. Item authored by Learndiag (original), not an official ETS release.": 2,
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 10. Item authored by Learndiag (original), not an official ETS release.": 2,
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 7. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 5. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 13. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 1. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Comprehension & Written Expression — objective 2. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Fluency & Vocabulary — objective 1. Item authored by Learndiag (original), not an official ETS release.": 2,
+      "ETS 8006 content domain: Fluency & Vocabulary — objective 8. Item authored by Learndiag (original), not an official ETS release.": 3,
+      "ETS 8006 content domain: Fluency & Vocabulary — objective 4. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Fluency & Vocabulary — objective 6. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Foundational Literacy Skills — objective 1. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Foundational Literacy Skills — objective 3. Item authored by Learndiag (original), not an official ETS release.": 3,
+      "ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.": 4,
+      "ETS 8006 content domain: Foundational Literacy Skills — objective 8. Item authored by Learndiag (original), not an official ETS release.": 1,
+      "ETS 8006 content domain: Foundational Literacy Skills — objective 7. Item authored by Learndiag (original), not an official ETS release.": 1
+    },
+    "teaching_scenario_candidates": {
+      "count": 18,
+      "ids": [
+        "8006-comprehension-002",
+        "8006-comprehension-011",
+        "8006-comprehension-017",
+        "8006-comprehension-023",
+        "8006-comprehension-030",
+        "8006-comprehension-040",
+        "8006-comprehension-042",
+        "8006-comprehension-056",
+        "8006-comprehension-057",
+        "8006-fluency-015",
+        "8006-fluency-020",
+        "8006-fluency-052",
+        "8006-foundational-013",
+        "8006-foundational-033",
+        "8006-foundational-059",
+        "8006-foundational-072",
+        "8006-foundational-075",
+        "8006-foundational-078"
+      ],
+      "official_target": "10–15%（ETS 官方口径）",
+      "usage": "候选列表，非统计结果。正则召回率低（实测会漏掉题干中仅出现 'students' 的题），不得据此计算占比或判定达标"
+    },
+    "teaching_scenario_candidate_count": 18,
+    "answer_review_queue_size": 28,
+    "answer_auto_flags": 27,
+    "stimulus_reference_hits": 0,
+    "dangling_reference_hits": 0,
+    "numeric_entry_misuse": 0,
+    "redline_hits": {
+      "bias": 0,
+      "copyright": 0,
+      "score_claim": 0,
+      "official_claim": 0
+    },
+    "redline_bias_items": [],
+    "redline_official_claim_items": []
+  }
+}

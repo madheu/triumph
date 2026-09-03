@@ -1,0 +1,1358 @@
+{
+  "_note": "27 道 multiple-select 封存：D5 校验器（validate-8006-items.py）的 ENUMS 只认 single-select，multiple-select 会报 bad_enum。官方口径 8006 全部 selected-response，主会话将其实现为 single-select。多选题待与主会话确认口径后再改造或转正。",
+  "count": 27,
+  "items": [
+    {
+      "id": "8006-comprehension-002",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A teacher is planning a unit on opinion writing for third-grade students. Which of the following instructional components should be included in the unit? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Teaching students to state a clear opinion about a topic"
+        },
+        {
+          "key": "B",
+          "text": "Teaching students to support the opinion with reasons"
+        },
+        {
+          "key": "C",
+          "text": "Teaching students to organize the piece as a chronological retelling of personal events"
+        },
+        {
+          "key": "D",
+          "text": "Teaching students to describe a setting using sensory details"
+        },
+        {
+          "key": "E",
+          "text": "Teaching students to link reasons to the opinion using words such as \"because\""
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "explanation": "[A] A clear, stated position is the defining feature of opinion writing. Without an identifiable opinion, a piece cannot function as opinion writing regardless of how well the rest is executed, so teaching students to state one explicitly is a core component of the unit.  [B] The question requires an understanding of how to teach the common writing genres. Reasons are what distinguish opinion writing from a bare statement of preference, because a claim without support gives the reader no basis for accepting it. Instruction in generating and selecting reasons that actually connect to the stated opinion is therefore central to the genre, not an optional embellishment.  [E] Linking words such as \"because\" and \"for example\" make the relationship between the opinion and its reasons visible to the reader. Teaching students to use them is a standard component of opinion writing instruction.",
+      "distractor_explanations": {
+        "C": "Confusing the time-order structure of narrative with the claim-and-support structure of opinion writing. Each genre is held together by its own organizing principle. A chronological retelling of personal events is the structure of narrative writing. Its organizing principle is time sequence rather than claim and support, so it belongs to a different genre and would not serve the purposes of an opinion unit.",
+        "D": "Confusing the aim of description, which is to let a reader picture a scene, with the aim of opinion writing, which is to win agreement. Strong writing elements do not transfer across genres unchanged. Describing a setting with sensory details is characteristic of descriptive writing. Its purpose is to help a reader imagine a scene, not to persuade a reader of a position, so it does not belong in a unit on opinion writing."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 11. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-011",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fourth-grade class will read a demanding informational article about the water cycle. Which of the following practices would best support the students' comprehension of that text? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Preteaching a small set of academic terms such as condensation and evaporation before students read"
+        },
+        {
+          "key": "B",
+          "text": "Leading a brief discussion of the key concept that water changes state but is not lost"
+        },
+        {
+          "key": "C",
+          "text": "Having students turn each heading into a question and check it as they read"
+        },
+        {
+          "key": "D",
+          "text": "Assigning the article as homework so students can work at their own pace without time pressure"
+        },
+        {
+          "key": "E",
+          "text": "Giving students a simpler article on a related topic in place of the assigned text"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of how to support students with complex text. Preteaching a small, carefully chosen set of academic terms removes word-level obstacles before they arise, so students can spend their attention on the ideas the text builds rather than stalling on unfamiliar labels. The key word is small: preteaching everything would leave no strategy for the words that were not covered.  [B] The question requires an understanding of how to support students with complex text. Establishing the key concept beforehand gives students a framework to attach details to as they read, which is what allows them to hold the text together. Without that framework, accurate facts about evaporation and condensation remain unconnected.  [C] The question requires an understanding of how to support students with complex text. Converting headings into questions gives students a purpose for reading each section and a self-check when it ends, which sustains attention across a text longer than they could hold in one pass. It also makes the text's own structure do some of the work.",
+      "distractor_explanations": {
+        "D": "Blames the difficulty on time pressure and answers with pace and setting instead, leaving the technical vocabulary and unfamiliar concepts untouched. Removing time pressure does nothing about the sources of difficulty in this text, which are technical vocabulary and an unfamiliar conceptual framework. A student reading alone at home has less support, not more, and any confusion goes unnoticed until the next day.",
+        "E": "Confuses swapping in an easier text with scaffolding one; substitution removes the demanding text rather than supporting students through grade-level content. Substituting an easier text avoids the difficulty rather than scaffolding it, and students never gain access to the grade-level ideas and vocabulary the assignment was chosen to teach. Scaffolding keeps the demanding text and adds support; substitution removes the text."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 8. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-017",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "easy",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A third-grade teacher wants students to treat writing as a recursive process rather than as a single draft. Which of the following classroom practices would best support that goal? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Conferring with students between drafts and asking each to make one meaningful change based on the conference"
+        },
+        {
+          "key": "B",
+          "text": "Having students use a simple checklist to evaluate their own writing against the criteria before turning it in"
+        },
+        {
+          "key": "C",
+          "text": "Assigning a different writing topic each day so that students get practice across many genres"
+        },
+        {
+          "key": "D",
+          "text": "Collecting papers at the end of the period and returning them the following week with a grade"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of how to teach writing as a recursive process. A conference held between drafts puts feedback where it can still be used, and asking for one meaningful change keeps the revision substantive rather than cosmetic. The student then experiences drafting, response, and revision as one continuous activity instead of as three separate events.  [B] The question requires an understanding of how to teach writing as a recursive process. A criteria-based checklist hands the evaluative move to the student, who checks the draft against the target and decides what to fix before anyone else responds. That self-evaluation is what makes revision something a writer initiates rather than something a teacher requests.",
+      "distractor_explanations": {
+        "C": "Mistakes volume and genre variety for process writing, when recursion means returning to the same draft instead of always starting the next one. Moving to a new topic each day increases the volume of writing but guarantees that no piece is ever revisited. Recursion means returning to the same draft, so a schedule that always moves forward teaches the opposite habit.",
+        "D": "Counts delayed grading as evidence of a process approach, missing that feedback arriving after the piece is closed leaves no room to revise. A grade returned a week later closes the piece before any revision can happen, and by then the student has moved on. What makes a process recursive is feedback arriving while the draft is still open to change, which delayed grading removes."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 10. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-023",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fourth-grade teacher reads a poem aloud and then asks students why the poet broke a line in the middle of a phrase. Which aspects of poetry does this question address? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "How line breaks control pacing and emphasis for the reader"
+        },
+        {
+          "key": "B",
+          "text": "How the physical arrangement of words on the page contributes to meaning"
+        },
+        {
+          "key": "C",
+          "text": "How the rhyme scheme identifies which genre a poem belongs to"
+        },
+        {
+          "key": "D",
+          "text": "How the number of stanzas determines the difficulty level of a poem"
+        },
+        {
+          "key": "E",
+          "text": "How the poet's biography explains the theme of the poem"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of how structural elements of poetry contribute to meaning. A line break tells the reader where to pause, and a break placed inside a phrase withholds the completion of a thought, which creates emphasis and suspense. Asking why the break falls where it does directs attention to that control of pacing.  [B] The question requires an understanding of how structural elements of poetry contribute to meaning. Where a line ends is a visual and spatial decision, not merely a matter of reaching the right margin, and noticing the arrangement is what lets students see poetry's structure as meaningful rather than decorative.",
+      "distractor_explanations": {
+        "C": "Promotes rhyme scheme into a genre label, demoting a structural feature from something that serves meaning to something that sorts poems. Rhyme scheme is a separate feature from line breaks and is not what the question asks about. Moreover, rhyme pattern does not determine genre; poems in many forms share rhyme schemes, and much contemporary poetry does not rhyme at all.",
+        "D": "Converts a structural feature into a countable difficulty index, as though stanza totals measured what makes a poem hard. Stanza count is a quantitative feature and says nothing reliable about how hard a poem is to understand. Difficulty comes from language, imagery, and the ideas at stake, none of which is measured by counting blocks of lines.",
+        "E": "Looks to the poet's biography for meaning, substituting outside context for the textual and structural evidence in the poem itself. Biographical context can enrich a reading but it cannot explain a specific textual choice such as where a line breaks. The question asks students to reason from evidence in the poem itself, which is the habit poetry instruction should build."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 7. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-030",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fourth-grade teacher wants students to treat their writing folders as a record of decisions they can return to rather than as a place where finished papers are kept. Which of the following practices would best support that goal? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Having students choose a piece they wrote several weeks earlier, revise it, and attach a note explaining what they changed and why"
+        },
+        {
+          "key": "B",
+          "text": "Having students keep drafts with dates on them and compare an early draft with a later one to describe how their writing has changed"
+        },
+        {
+          "key": "C",
+          "text": "Having students rewrite a finished piece for a different audience, deciding which details to keep and which to leave out"
+        },
+        {
+          "key": "D",
+          "text": "Having students trade papers and make every change a partner suggests before turning the piece in"
+        },
+        {
+          "key": "E",
+          "text": "Having the teacher mark every error on a draft and having students correct the marked errors before filing the piece"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of how to teach writing as a recursive process. Reaching back to a piece written weeks earlier shows students that a text is never finally finished, and the attached note makes the reason behind each change explicit. Revisiting old work is what turns a folder into a record of thinking rather than a stack of completed assignments.  [B] This option is also correct because dated drafts let students see their own development instead of being told about it. Comparing an early draft with a later one makes change over time visible, and describing that change pushes students to name the decisions behind it, which is the self-evaluation a recursive process depends on.  [C] This option is also correct because changing the audience forces writers to reopen decisions they had already settled: which details serve this reader, which ones distract, and what needs reordering. That is substantive revision applied to a piece thought to be complete, exactly the habit of returning to a text the teacher wants to build.",
+      "distractor_explanations": {
+        "D": "Treating a partner's suggestions as changes the writer must accept, so revision becomes compliance instead of a decision the author owns Letting a partner's suggestions dictate the changes removes the one thing recursion requires, which is the writer's own judgment about what the text needs. Students who apply every suggestion are following directions rather than revising. This option reflects the common misconception that peer response arrives as authoritative feedback.",
+        "E": "Equating editing for surface conventions with revision of meaning, and treating a teacher-supplied list of fixes as the writer's own rethinking Correcting errors someone else has located is editing, a one-directional cleanup performed on the surface of a finished text. It does not send students back to reconsider meaning, and because the teacher supplies the list, it leaves no decision for the writer to make. This option reflects the common misconception that error correction is revision."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 10. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-037",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "Mr. Reyes confers with Jalen, a fifth grader reading a complex article about coral reefs. Jalen reads the page fluently but says, 'I read the whole thing and I do not remember anything.' Which two conference moves would best develop Jalen's thinking? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Asking Jalen to say what each section was mostly about and to point to the sentences that support his statement"
+        },
+        {
+          "key": "B",
+          "text": "Discussing three or four key concept words such as reef, algae, and bleaching before Jalen rereads the section"
+        },
+        {
+          "key": "C",
+          "text": "Moving Jalen to an easier text so that he can read without frustration"
+        },
+        {
+          "key": "D",
+          "text": "Having Jalen copy the boldfaced vocabulary words and their definitions into a notebook"
+        },
+        {
+          "key": "E",
+          "text": "Telling Jalen the main idea of the section so that he can move on to the next one"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of how to use conversation to develop a student's thinking about reading content. Requiring a statement plus the sentences that support it gives Jalen a concrete way to hold meaning while he reads, and talking it through lets Mr. Reyes hear exactly where the construction of meaning fails and respond in the moment.  [B] Preteaching a small set of concept words and discussing what they mean before rereading supplies the knowledge Jalen needs to connect sentences to one another. Complex text often defeats readers through the density of unfamiliar concepts rather than through the words themselves, and a short oral discussion restores his ability to build meaning.",
+      "distractor_explanations": {
+        "C": "Treating a lower text level as the default support for comprehension difficulty, rather than teaching strategies for handling complex text Fluent reading with poor recall is not a text-level problem, so an easier article would not address it. This option reflects the common misconception that the remedy for comprehension difficulty is always a lower text. Jalen can read these words; what he lacks is a way to hold and connect ideas, which instruction should supply.",
+        "D": "Equating copying definitions with prereaching vocabulary, so recording words replaces the talk that builds concepts Copying definitions produces a list of words without the conceptual understanding that makes a dense article cohere. This option reflects the common misconception that vocabulary instruction means recording definitions. Discussing a few concept words and using them in talk is what builds the knowledge that supports comprehension.",
+        "E": "Treating the teacher's supplying of an answer as scaffolding, when scaffolding leaves the thinking with the student Supplying the main idea closes the conversation instead of opening it and leaves Jalen dependent on the teacher for meaning. This option reflects the common misconception that giving an answer is a form of scaffolding. Scaffolding keeps the thinking with the student while making it possible; handing over the conclusion removes the thinking entirely."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 8. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-040",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A third-grade teacher teaches students to listen for clunks, places where the text stops making sense, and to respond by rereading the sentence, reading on two more sentences, or breaking a long word apart. Which two outcomes does this instruction primarily target? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Students' awareness of whether they are understanding what they read"
+        },
+        {
+          "key": "B",
+          "text": "Students' ability to choose and apply a repair strategy when comprehension breaks down"
+        },
+        {
+          "key": "C",
+          "text": "Students' automatic recognition of high-frequency words"
+        },
+        {
+          "key": "D",
+          "text": "Students' ability to read grade-level text at an appropriate rate"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of how to guide students in metacognitively monitoring their comprehension. Naming the feeling of lost meaning as a clunk gives students a label for an internal state, which turns vague confusion into something they can notice and report, and noticing is the prerequisite for doing anything about it.  [B] Teaching a short list of repair moves and when each one fits gives students something to do at the moment of breakdown. Awareness on its own leaves a reader stuck; pairing the clunk with specific strategies is what makes monitoring useful rather than merely diagnostic.",
+      "distractor_explanations": {
+        "C": "Generalizing one fix-up move, breaking a word apart, into the lesson's main target, so monitoring becomes word-recognition practice Word recognition is a foundational skill taught through phonics and high-frequency word practice, not through comprehension monitoring. This option reflects the common misconception that because one fix-up move involves breaking a word apart, the lesson targets word recognition. Breaking a word apart is a rescue tactic used after meaning is already lost.",
+        "D": "Conflating comprehension monitoring with fluency, as though reading at an appropriate rate guaranteed that meaning was intact Rate is a fluency outcome, and nothing in the routine asks students to read faster or more smoothly. This option reflects the common misconception that monitoring and fluency are the same component. A student can read at an appropriate rate and still not notice that the text has stopped making sense."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 5. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-042",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fifth-grade teacher uses weekly one-minute oral reading probes, monthly written retells, and daily exit tickets. Which two purposes do these assessments serve that a single end-of-unit test cannot? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Showing whether students are making progress over time so the teacher can judge whether instruction is working"
+        },
+        {
+          "key": "B",
+          "text": "Allowing the teacher to regroup students and adjust instruction in response to what students show this week"
+        },
+        {
+          "key": "C",
+          "text": "Assigning students a final grade for the grading period"
+        },
+        {
+          "key": "D",
+          "text": "Ranking students so that reading groups can be fixed for the entire year"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of how assessment guides differentiated instruction and monitors progress. Repeated measures taken the same way across weeks produce a trend, and a trend tells the teacher whether a student's response to current instruction is adequate, which is information a single end-of-unit score cannot supply.  [B] This option is also correct because frequent, brief measures give the teacher current information about what students can do now, so groups can be formed around today's needs and reformed as those needs change. This is the instructional use of assessment: the results change what happens next.",
+      "distractor_explanations": {
+        "C": "Using frequent formative measures as the source of a report-card grade, which confuses informing teaching with certifying achievement Grading is exactly what an end-of-unit test does well, so it cannot be the distinguishing purpose. This option reflects the common misconception that accumulating formative scores is the best way to produce a grade. Frequent low-stakes measures are designed to inform teaching, and averaging them for a report card misuses them.",
+        "D": "Treating reading groups as a fixed ranking of ability for the year, when progress monitoring assumes groups change as students change Fixed year-long ranking contradicts the point of progress monitoring, which assumes that students change and that instruction should follow. This option reflects the common misconception that assessment places students into stable ability categories. Groups formed from current data are meant to be temporary and responsive."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 13. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-056",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fifth-grade teacher wants to strengthen students' listening comprehension as a route to stronger reading comprehension. Which of the following practices are supported by evidence? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Reading texts aloud that are more complex than what students can read themselves, and leading structured discussion of their meaning"
+        },
+        {
+          "key": "B",
+          "text": "Teaching students to build a mental representation of what they hear by retelling, visualizing, and asking questions as they listen"
+        },
+        {
+          "key": "C",
+          "text": "Explicitly teaching the academic words and complex sentence structures that appear in the read-aloud texts"
+        },
+        {
+          "key": "D",
+          "text": "Relying on silent independent reading as the main way to build listening comprehension"
+        },
+        {
+          "key": "E",
+          "text": "Replacing teacher read-alouds with audio recordings so that students hear fluent reading without needing teacher interaction"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of how listening comprehension is developed through evidence-based practice. Reading aloud texts beyond students' independent reading level lets them encounter vocabulary, syntax, and ideas they could not access on their own. Structured discussion then requires them to construct and defend meaning, which is the activity that builds comprehension.  [B] The question requires an understanding of how listening comprehension is developed through evidence-based practice. Retelling, visualizing, and questioning while listening are practices that build and check a mental model of the text. These are the same meaning-construction processes used in reading, which is why practicing them with spoken language transfers.  [C] The question requires an understanding of how listening comprehension is developed through evidence-based practice. Word meanings and sentence structures encountered in listening become resources for reading, because comprehension is limited by the same vocabulary and syntax in both modalities. Explicit teaching of these forms is more reliable than hoping students infer them from context.",
+      "distractor_explanations": {
+        "D": "Assuming that any reading activity builds listening comprehension; listening comprehension requires comprehension of language presented to the ear, and develops ahead of reading comprehension through spoken input. Silent reading gives no auditory input, so it cannot develop listening comprehension. It is valuable for fluency and for practicing reading, but it exercises a different route to meaning.",
+        "E": "Equating exposure to fluent reading with comprehension instruction; the benefit of read-alouds comes from the interaction around the text, not from hearing the words. A recording supplies fluent speech but removes the interactive talk that makes read-alouds effective. Without discussion, students are not required to construct, check, or revise meaning, and the teacher loses the chance to scaffold."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 1. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-comprehension-057",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Comprehension & Written Expression",
+      "skill": "Comprehension and Written Expression",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A second-grade teacher wants to help students make inferences during read-alouds. Which of the following instructional moves would best support that goal? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Asking students what the text says and what they already know, then helping them combine the two"
+        },
+        {
+          "key": "B",
+          "text": "Using picture clues and a character's actions to figure out a feeling the author does not state"
+        },
+        {
+          "key": "C",
+          "text": "Having students chorally reread the passage to improve their accuracy"
+        },
+        {
+          "key": "D",
+          "text": "Having students copy the sentences that contain the answer to the teacher's question"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of instructional strategies that improve comprehension. Naming what the text says and what the student already knows, then combining them, is the structure of an inference made visible. Young students need this routine made explicit because they otherwise treat story events as unrelated to their own knowledge.  [B] The question requires an understanding of instructional strategies that improve comprehension. Feelings are rarely stated directly in texts for this age group, so students must read them from pictures and from what characters do. Working from those clues to an unstated feeling is exactly the text-plus-background-knowledge combination that defines inference.",
+      "distractor_explanations": {
+        "C": "Substituting a fluency routine for a comprehension strategy; accurate reading of the words does not produce the unstated meaning. Choral rereading builds accuracy and confidence with print. It asks students to reproduce the words, not to go beyond them, so it does not require the combination of evidence and knowledge that inference demands.",
+        "D": "Confusing locating and copying information with constructing meaning; inference requires generating an idea the text does not state. Copying sentences is a transcription task that can be completed without understanding what the sentences imply. Locating a stated answer is the opposite of inferring something that is not stated."
+      },
+      "source_basis": "ETS 8006 content domain: Comprehension & Written Expression — objective 2. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-fluency-015",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Fluency & Vocabulary",
+      "skill": "Fluency and Vocabulary",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fourth-grade teacher explains to colleagues why fluent reading matters for comprehension. Which statements accurately describe how fluency and vocabulary support comprehension? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Automatic word recognition frees attention that can then be used to construct meaning."
+        },
+        {
+          "key": "B",
+          "text": "Phrasing and pausing during oral reading show whether a reader is grouping words into meaningful units."
+        },
+        {
+          "key": "C",
+          "text": "A reader's rate, measured in words correct per minute, is the single strongest predictor of how well that reader will comprehend a passage."
+        },
+        {
+          "key": "D",
+          "text": "Fluency and comprehension develop independently of each other, so instruction in one has no effect on the other."
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of how fluency supports comprehension. When words are recognized without effort, the attention that would have gone to identifying them becomes available for holding ideas and connecting them across sentences, which is where comprehension actually happens.  [B] The question requires an understanding of how fluency supports comprehension. A reader who pauses at clause boundaries and varies pitch is demonstrating that the print has been parsed into syntactic units, and that same parsing is what turns a string of words into a meaningful sentence.",
+      "distractor_explanations": {
+        "C": "Treating a correlation with comprehension as making rate its cause and its best single indicator Option (C) is incorrect. Rate correlates with comprehension, but a fast reader who skips words or ignores meaning can comprehend poorly, while a deliberate reader can comprehend well. This option reflects the common misconception that a correlation makes rate the cause of comprehension and the best single indicator of it.",
+        "D": "Assuming fluency and comprehension develop on separate tracks with no reciprocal influence Option (D) is incorrect. The two develop in a reciprocal relationship: easier word recognition leaves more capacity for meaning, and stronger comprehension supports phrasing and word solving. This option reflects the common misconception that the strands of reading development run on separate tracks."
+      },
+      "source_basis": "ETS 8006 content domain: Fluency & Vocabulary — objective 1. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-fluency-020",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Fluency & Vocabulary",
+      "skill": "Fluency and Vocabulary",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A third-grade teacher wants a complete picture of each student's fluency development, including students with disabilities and students who are learning English. Which assessment practices best serve that purpose? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Administering curriculum-based oral reading fluency probes several times during the year and graphing each student's growth"
+        },
+        {
+          "key": "B",
+          "text": "Taking running records during small-group instruction to note accuracy, self-correction, and phrasing"
+        },
+        {
+          "key": "C",
+          "text": "Using one standardized end-of-year reading score as the sole measure of each student's fluency"
+        },
+        {
+          "key": "D",
+          "text": "Collecting a single words-correct-per-minute score in September and using it to set instructional groups for the rest of the year"
+        },
+        {
+          "key": "E",
+          "text": "Asking students to rate their own reading confidence weekly and using those ratings in place of reading data"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of formal fluency assessment used for progress monitoring. Repeated probes on comparable passages show growth over time rather than a single snapshot, and graphing each student's own trend lets a teacher see whether instruction is working for that student, which matters when students enter with very different starting points.  [B] The question requires an understanding of informal fluency assessment gathered during instruction. A running record captures what a timed score cannot: which cues the student uses, whether errors are self-corrected, and how the text is phrased. This qualitative evidence is especially useful for students whose scores may be depressed by language load or by a disability that affects rate but not comprehension.",
+      "distractor_explanations": {
+        "C": "Treating a single broad standardized score as a fuller picture of an individual student's fluency Option (C) is incorrect. One global score cannot distinguish weak word recognition from weak language comprehension, and it arrives too late to change instruction for that student. This option reflects the common misconception that a broader, more standardized score is a fuller picture of an individual's fluency.",
+        "D": "Treating fluency as a fixed attribute that one measurement can establish Option (D) is incorrect. A single early score reflects one passage on one day and says nothing about how quickly a student is progressing, so groups set from it quickly become inaccurate. This option reflects the common misconception that fluency is a fixed attribute that can be measured once and filed.",
+        "E": "Treating learner self-perception as interchangeable with measured reading performance Option (E) is incorrect. Self-ratings describe how students feel about reading; they do not show how accurately or fluently students actually read, and substituting them for reading data removes the evidence instruction depends on. This option reflects the common misconception that learner perception is interchangeable with measured performance."
+      },
+      "source_basis": "ETS 8006 content domain: Fluency & Vocabulary — objective 8. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-fluency-028",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Fluency & Vocabulary",
+      "skill": "Fluency and Vocabulary",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A comprehensive picture of students' reading fluency requires which of the following assessment practices? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Using the same timed oral reading probe three times a year as the only source of fluency data"
+        },
+        {
+          "key": "B",
+          "text": "Collecting running records that capture accuracy, self-corrections, and phrasing during oral reading"
+        },
+        {
+          "key": "C",
+          "text": "Pairing fluency data with a brief retell or a few comprehension questions about the passage the student read"
+        },
+        {
+          "key": "D",
+          "text": "Comparing each student's reading rate with a single grade-level benchmark without considering the difficulty of the text used"
+        },
+        {
+          "key": "E",
+          "text": "Gathering vocabulary evidence from both a formal measure and observations of students' word use in discussion and writing"
+        }
+      ],
+      "correct_answer": [
+        "B",
+        "C",
+        "E"
+      ],
+      "explanation": "[B] The question requires an understanding of how fluency is assessed comprehensively. Running records document not simply whether a word was read correctly but how the student handled difficulty, whether the error preserved meaning, and whether the student self-corrected. That detail separates a student who is monitoring for meaning from one who is calling words without comprehension.  [C] Fluency matters because it serves comprehension, so a rate figure cannot be interpreted until it is read alongside what the student took from the text. A student can produce a respectable rate on a passage and still recall almost nothing of it, which changes entirely what the data mean.  [E] The question requires an understanding of why vocabulary evidence should be drawn from more than one source. Vocabulary is unevenly distributed across students' experiences, so one formal measure captures only part of it. Combining a structured measure with evidence of how students actually use words when they speak and write shows whether a word is merely recognized or is genuinely available for the student's own purposes.",
+      "distractor_explanations": {
+        "A": "Treating occasional testing as progress monitoring; three annual data points cannot show change, and rate alone omits prosody and comprehension Three data points a year are too sparse to guide instruction, and a rate-only probe says nothing about phrasing or about understanding. Progress monitoring depends on frequent, short measurements, not on occasional snapshots taken months apart.",
+        "D": "Applying a benchmark without reference to text difficulty; rate is interpretable only alongside text level and accuracy Rate is interpretable only in relation to the difficulty of the text and to the accuracy the student achieved on it. A benchmark applied without reference to text level will mark a student who reads an instructional-level passage well as behind, and a student who struggles through a frustration-level passage as average."
+      },
+      "source_basis": "ETS 8006 content domain: Fluency & Vocabulary — objective 8. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-fluency-033",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Fluency & Vocabulary",
+      "skill": "Fluency and Vocabulary",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "Which of the following practices belong in instruction that helps students derive word meanings from morphology and from surrounding text? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Teaching students to identify the part of speech an unfamiliar word occupies and the role it plays in the sentence before considering possible meanings"
+        },
+        {
+          "key": "B",
+          "text": "Teaching students to look for appositives, restatements, and signal words such as but or unlike that structure the surrounding text"
+        },
+        {
+          "key": "C",
+          "text": "Teaching students to separate a word into a base and its affixes, combine the parts, and then check the result against the sentence"
+        },
+        {
+          "key": "D",
+          "text": "Teaching students to substitute any word or phrase that makes the sentence sound acceptable to them"
+        },
+        {
+          "key": "E",
+          "text": "Teaching students to skip unfamiliar words and rely on what they already know about the topic to fill in the gaps"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of the sources of information available for word learning. Syntax tells the reader what kind of word this is and what job it is doing in the sentence, which rules out most candidate meanings before any guessing begins. This narrows the search to meanings of the right grammatical type.  [B] Texts regularly supply meaning information through appositives, restatements, examples, and contrast signals. Teaching students to recognize these structures gives them a specific place to look, rather than leaving them to infer from a general impression of the passage.  [C] The question requires an understanding of how morphological analysis and context are used together. Morphology yields a candidate meaning from the word's own parts, and the sentence then serves as a check on that candidate. Teaching the two steps together shows students that word parts propose a meaning while context confirms, narrows, or corrects it.",
+      "distractor_explanations": {
+        "D": "Using whether a substitute sounds acceptable as the test of its meaning; acceptability checks syntax and rough sense, not the specific definition Acceptability in the sentence is a very weak test. Many unrelated meanings fit a sentence's grammar and its general sense, so a substitute that sounds perfectly fine can be entirely wrong. Students need evidence from the text or from the word's parts, not a feeling about how the sentence reads.",
+        "E": "Treating background knowledge as a substitute for determining a word's meaning; skipping the word leaves a gap exactly where meaning is needed Background knowledge helps a reader make sense of a text, but it cannot supply the meaning of a particular unfamiliar word, and skipping words leaves the sentence incomplete at exactly the point where the unknown meaning matters. Direct vocabulary instruction is needed in addition to wide reading."
+      },
+      "source_basis": "ETS 8006 content domain: Fluency & Vocabulary — objective 4. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-fluency-052",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Fluency & Vocabulary",
+      "skill": "Fluency and Vocabulary",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fourth-grade teacher is assembling fluency data for a class that includes several multilingual learners and several students receiving reading intervention. Which practices together give the most complete picture of each student's fluency? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Recording words correct per minute on a one-minute cold read of a grade-level passage"
+        },
+        {
+          "key": "B",
+          "text": "Rating phrasing and expression with a prosody rubric during oral reading"
+        },
+        {
+          "key": "C",
+          "text": "Checking whether the student can retell the passage or answer questions about it"
+        },
+        {
+          "key": "D",
+          "text": "Ranking students against one another to identify the strongest readers in the class"
+        },
+        {
+          "key": "E",
+          "text": "Using a single timed reading taken in the fall as the only fluency measure of the year"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of how formal and informal measures combine to describe fluency. Options (A), (B), and (C) are correct. Words correct per minute on a cold read gives a comparable index of accuracy and rate that can be tracked over time.  [B] A prosody rubric captures phrasing and expression, which a rate score misses entirely; two students can earn the same words correct per minute while one reads in meaningful phrases and the other reads word by word.  [C] A retell or a set of questions shows whether the accurate, well-phrased reading is actually producing meaning. Used together, the three separate the student who reads smoothly without understanding from the student who reads slowly but comprehends well.",
+      "distractor_explanations": {
+        "D": "Treating assessment as a sorting device that ranks students against each other, rather than as a source of information about what each student needs. Option (D) is incorrect. Ranking students orders them against one another but describes no individual's instructional needs, and it says nothing about what to teach next. This option reflects the common misconception that the purpose of fluency assessment is to sort students. Within-class comparisons do not tell a teacher how to plan instruction.",
+        "E": "Treating one administration of a formal measure as complete documentation of a student's fluency, when growth requires repeated measures. Option (E) is incorrect. One timed reading in the fall is a single snapshot that is sensitive to the passage chosen and to how the student happened to read that day, and it cannot show growth. This option reflects the common misconception that a single administration of a formal measure is sufficient documentation. Progress monitoring requires repeated measures collected over time."
+      },
+      "source_basis": "ETS 8006 content domain: Fluency & Vocabulary — objective 8. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-fluency-055",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Fluency & Vocabulary",
+      "skill": "Fluency and Vocabulary",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "Ms. Ortiz is choosing a short informational text about how seeds travel for her second graders to read and reread. She wants the text and its features to support both fluency development and vocabulary development. Which features should she look for when evaluating the text? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Sentence structures with punctuation and phrasing cues that invite expressive reading"
+        },
+        {
+          "key": "B",
+          "text": "Repeated use of a few important academic and domain-specific words across the text"
+        },
+        {
+          "key": "C",
+          "text": "Illustrations and labels that reinforce the meanings of key words"
+        },
+        {
+          "key": "D",
+          "text": "Long, embedded sentences with few visual supports so that students rely on print alone"
+        },
+        {
+          "key": "E",
+          "text": "Many unfamiliar words in every paragraph to maximize the number of new words encountered"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of how the features of a text support particular instructional goals. Options (A), (B), and (C) are correct. Sentences that cue natural phrasing give students something concrete to imitate during rereading, and rereading with a model is where prosody is built.  [B] Repeating a small set of academic and domain-specific words gives students several encounters with the same words in varied contexts, which is how word meanings deepen, and it keeps the vocabulary load small enough that attention can go to meaning.  [C] Labels and illustrations tied to the key words give students a second route to meaning while their reading is still slow, so vocabulary can grow at the same time that fluency practice is happening.",
+      "distractor_explanations": {
+        "D": "Equating text difficulty with instructional value, so that removing supports is mistaken for raising rigor. Option (D) is incorrect. Long embedded sentences with little support consume the attention a developing reader needs for recognizing words, leaving nothing for phrasing or for meaning. This option reflects the common misconception that more difficult text produces more growth. Texts chosen for fluency practice should be readable enough that students can work on how they read, not only on what the words are.",
+        "E": "Counting unfamiliar words on the page as vocabulary learned, when high density prevents both decoding and comprehension. Option (E) is incorrect. A heavy load of unfamiliar words breaks down decoding and meaning construction at the same time, so students finish the passage having learned few words and understood little. This option reflects the common misconception that the number of new words on the page equals the amount of vocabulary learned. Density of unfamiliar words works against the learning it is supposed to produce."
+      },
+      "source_basis": "ETS 8006 content domain: Fluency & Vocabulary — objective 1. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-fluency-058",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Fluency & Vocabulary",
+      "skill": "Fluency and Vocabulary",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A second grader reads grade-level text slowly and word by word, with flat phrasing. Which instructional strategies are appropriate for supporting this student's fluency? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Repeated reading of a short passage until it can be read accurately and with phrasing"
+        },
+        {
+          "key": "B",
+          "text": "Teacher modeling of phrased reading followed by the student's echo reading"
+        },
+        {
+          "key": "C",
+          "text": "Practice with high-frequency words and common word parts to build automatic recognition"
+        },
+        {
+          "key": "D",
+          "text": "Moving the student to more difficult text so the student meets a wider range of words"
+        },
+        {
+          "key": "E",
+          "text": "Having the student read silently for longer stretches instead of reading aloud with feedback"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of how fluency is taught at the phoneme, word, and passage levels. Options (A), (B), and (C) are correct. Repeated reading builds the automatized recognition and phrasing that word-by-word reading lacks, and using a short passage keeps the task within reach.  [B] A model followed by echo reading gives the student a concrete target for phrasing at the passage level, which is the level where flat, word-by-word reading shows up most clearly.  [C] Practice with high-frequency words and common word parts attacks the word-level recognition problem that is producing the stops in the first place, so it addresses the cause rather than the symptom.",
+      "distractor_explanations": {
+        "D": "Assuming that harder text speeds fluency growth, when unreadable text reinforces the very habits being treated. Option (D) is incorrect. Harder text increases the number of words the student must work out, which slows reading further and reinforces word-by-word habits. This option reflects the common misconception that challenging text accelerates fluency growth. Fluency develops on text the student can read with support, not on text that defeats the strategies being taught.",
+        "E": "Treating accumulated independent silent reading time as the engine of fluency growth, when feedback on oral reading is what makes change possible. Option (E) is incorrect. Silent reading removes the model, the feedback, and the chance to hear and adjust phrasing, and it leaves the teacher with no information about how the student is reading. This option reflects the common misconception that fluency is built by accumulating independent reading time alone. Oral reading with a model and feedback is what makes fluency visible and therefore teachable."
+      },
+      "source_basis": "ETS 8006 content domain: Fluency & Vocabulary — objective 6. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-013",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonics and Decoding",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A fourth-grade teacher notices that several students read multisyllabic words accurately on a word list but stall on the same words when they meet them in their science text. Which instructional moves would best address this? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Modeling how to break a multisyllabic word into syllables and then reread the whole word inside the sentence"
+        },
+        {
+          "key": "B",
+          "text": "Providing repeated oral reading practice with content-area sentences that contain the same words"
+        },
+        {
+          "key": "C",
+          "text": "Encouraging students to skip unknown words and rely on pictures and topic knowledge to keep meaning going"
+        },
+        {
+          "key": "D",
+          "text": "Teaching students to check a decoded word against meaning by asking whether it makes sense in the sentence"
+        },
+        {
+          "key": "E",
+          "text": "Replacing the science text with a decodable text at a lower level for all students"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "[A] The question requires an understanding of how word-analysis skills transfer from word lists to connected text. The gap between list reading and text reading is an application gap. Modeling the syllable analysis inside an actual sentence, then rereading the whole word, shows students how to transfer a skill they already own into the context where it is needed.  [B] The question requires an understanding of how repeated encounters in meaningful context build recognition of words students can already decode. Repeated oral reading of content-area sentences gives students several encounters with the same words in meaningful context. Each successful retrieval in context strengthens the word's representation and reduces the hesitation the next time.  [D] The question requires an understanding of how self-monitoring supports word analysis while reading connected text. Checking a decoded attempt against sentence meaning closes the loop. Students who can produce an accurate word on a list often fail to monitor themselves in text, and this habit makes them catch a misread word instead of reading past it.",
+      "distractor_explanations": {
+        "C": "Relying on pictures and topic knowledge as a substitute for analyzing the word itself Skipping and guessing from pictures leaves the word unidentified and gives students no way to handle the next one. It manages the surface of the reading while leaving the underlying word-analysis weakness in place, and content-area texts carry few picture supports to rely on.",
+        "E": "Assuming that lowering text difficulty removes the need to teach word analysis Swapping in easier material lowers the immediate demand but removes the very words students need to learn to handle. Grade-level content vocabulary is part of the task, and the fix is to teach the analysis, not to withdraw the text."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 1. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-019",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonics and Decoding",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A teacher is choosing example words for a first lesson on closed syllables. Which words are appropriate examples? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "\"picnic\""
+        },
+        {
+          "key": "B",
+          "text": "\"paper\""
+        },
+        {
+          "key": "C",
+          "text": "\"magnet\""
+        },
+        {
+          "key": "D",
+          "text": "\"winter\""
+        },
+        {
+          "key": "E",
+          "text": "\"make\""
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "[A] The question requires an understanding of how to identify a closed syllable in a two-syllable word. \"Picnic\" divides as pic-nic, and both syllables end in a consonant that closes in a short vowel sound. It is a clean two-syllable example of the pattern repeated twice in one word.  [C] The question requires an understanding of what makes a syllable closed when selecting examples for instruction. \"Magnet\" divides as mag-net. Each syllable ends in a consonant, so the vowel in each is short, giving two consistent instances of the same syllable type in a single word.  [D] The question requires an understanding of how an example of a closed syllable should read once the word is divided. \"Winter\" divides as win-ter. Both syllables are closed by a consonant, so both vowels take the short or reduced sound students are being taught to expect.",
+      "distractor_explanations": {
+        "B": "Classifying a word as a closed syllable from its syllable count alone, without checking whether the syllable ends in a consonant \"Paper\" divides as pa-per. The first syllable ends in a vowel and takes the long sound, which makes it an open syllable, the contrast case rather than an example of the target. Using it in the first lesson would blur the distinction students are just beginning to build.",
+        "E": "Treating a one-syllable vowel-consonant-e word as an example of a closed syllable \"Make\" is a single syllable with a vowel-consonant-e pattern, so its vowel is long. It belongs in a lesson on the magic e pattern, and it cannot illustrate what happens when a syllable is closed."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 3. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-022",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonics and Decoding",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A kindergarten teacher is planning instruction to help students recognize high-frequency words automatically. Which practices best support that goal? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Introducing a small number of new words at a time and providing many chances to read them in sentences"
+        },
+        {
+          "key": "B",
+          "text": "Having students copy each new word ten times before they read it in text"
+        },
+        {
+          "key": "C",
+          "text": "Revisiting previously taught words through brief cumulative review routines"
+        },
+        {
+          "key": "D",
+          "text": "Delaying high-frequency word instruction until students have mastered all major phonics patterns"
+        },
+        {
+          "key": "E",
+          "text": "Pointing out the part of an irregular word that does not follow the expected sound-spelling pattern"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "explanation": "[A] The question requires an understanding of the practice conditions that make recognition of high-frequency words automatic. Automatic recognition comes from many successful retrievals under time pressure. Introducing a few words at a time keeps the load manageable, and reading them in sentences supplies the repeated in-context encounters that build speed.  [C] The question requires an understanding of how distributed review maintains recognition of words already taught. Words that are taught once and then dropped fade back into effortful decoding. Short cumulative reviews spread retrieval practice over time, which is what turns a newly taught word into a word recognized at a glance.  [E] The question requires an understanding of how an irregular high-frequency word is stored efficiently in memory. Naming the irregular part lets students store the word efficiently: they apply what they know to the regular letters and hold only the odd part in memory. This is more effective than treating the whole word as an unanalyzable shape to be memorized.",
+      "distractor_explanations": {
+        "B": "Equating repeated copying with practice in automatic word recognition Copying directs attention to forming letters rather than to retrieving the word as a whole, and doing it before reading means the first encounter with the word is not a reading encounter. Repeated writing does not produce the rapid recognition required in text.",
+        "D": "Assuming high-frequency word instruction should wait until phonics patterns are mastered High-frequency words appear throughout the earliest texts students read, so waiting means students cannot read those texts at all. Phonics and high-frequency word instruction run in parallel from the start."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-033",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonics and Decoding",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A first-grade teacher wants a complete picture of each student's foundational literacy development. Which assessments would provide that information? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "A phonological awareness screener that asks students to blend and segment phonemes"
+        },
+        {
+          "key": "B",
+          "text": "A pseudoword reading measure that asks students to read pronounceable nonsense words"
+        },
+        {
+          "key": "C",
+          "text": "Weekly curriculum-based measures of oral reading fluency on connected text"
+        },
+        {
+          "key": "D",
+          "text": "A listening comprehension assessment in which students answer questions about a passage read aloud"
+        },
+        {
+          "key": "E",
+          "text": "A single end-of-unit spelling test"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "[A] The question requires an understanding of which tools assess foundational reading development. Phonemic blending and segmentation sit beneath decoding, and a screener shows whether a student is ready to benefit from phonics instruction. Without it, weak phonemic awareness is easily mistaken for carelessness.  [B] A pseudoword measure isolates the alphabetic principle: the words cannot be memorized or guessed from context, so the score reflects grapheme-phoneme mapping and blending. It is the clearest available index of whether phonics instruction is taking hold.  [C] The question requires an understanding of which tools assess foundational reading development. Repeated measures on connected text show how decoding and recognition are growing over time and whether students transfer word-level skills into reading. Their weekly rhythm makes them useful for adjusting instruction, not only for reporting.",
+      "distractor_explanations": {
+        "D": "Treating a measure of language comprehension as an assessment of foundational word-level skills Listening comprehension measures language comprehension, a strand separate from word recognition. The information is valuable, but it says nothing about a student's phonemic awareness, phonics knowledge, or decoding.",
+        "E": "Treating a single summative quiz as a developmental assessment, when one snapshot shows no growth over time One unit test gives a snapshot at a single moment, mixes memorized words with untaught ones, and yields no trend data. Profiling development requires measures that are repeated and that isolate specific skills."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 8. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-037",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonics and Decoding",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "Which instructional practices support students' development of automatic recognition of high-frequency words? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Guiding students to notice the regular letter-sound parts of the words that are decodable"
+        },
+        {
+          "key": "B",
+          "text": "Providing brief, frequent opportunities to read and write the words in phrases and sentences"
+        },
+        {
+          "key": "C",
+          "text": "Requiring students to sound out every high-frequency word letter by letter each time it appears"
+        },
+        {
+          "key": "D",
+          "text": "Introducing large sets of new words at once so that students see many of them early"
+        },
+        {
+          "key": "E",
+          "text": "Using cumulative review so that previously taught words keep appearing in later lessons"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B",
+        "E"
+      ],
+      "explanation": "[A] The question requires an understanding of how high-frequency word instruction connects to phonics. Many frequent words are regular, and pointing out the parts that follow the patterns gives students a way to hold on to the spelling while reinforcing the phonics lesson itself.  [B] The question requires an understanding of how practice schedules build automatic recognition. Short, frequent practice reading and writing the words in phrases and sentences supplies the repeated exposures that automatic recognition requires. Brief and frequent works better than one long session, and embedding the word in a phrase supports fluent reading as well as recognition.  [E] The question requires an understanding of how review schedules affect retention of high-frequency words. Cumulative review keeps earlier words in circulation so they do not fade once their week of instruction ends. Automatic recognition is built through distributed encounters over time, not through a single concentrated exposure.",
+      "distractor_explanations": {
+        "C": "Assuming every high-frequency word should be sounded out letter by letter each time, which blocks automaticity and fails on irregular words Sounding a word out each time prevents the automaticity that is the entire point of high-frequency word instruction, and it fails outright with the irregular words that cannot be sounded out.",
+        "D": "Assuming a massed introduction of many new words speeds progress rather than overloading memory Introducing many words together gives students more than they can hold at once and leaves little time for the repeated encounters that build memory. A steady pace with review produces stronger retention than a massed introduction."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-054",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonological and Phonemic Awareness",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "Ms. Hale is setting up a center where kindergarten students will work on phonological and phonemic awareness. Which of the following materials would best support that goal? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Sets of picture cards that students sort by rhyming word and by beginning sound"
+        },
+        {
+          "key": "B",
+          "text": "Short decodable passages containing only the letter-sound patterns taught so far"
+        },
+        {
+          "key": "C",
+          "text": "Elkonin boxes with counters that students push forward for each sound they hear"
+        },
+        {
+          "key": "D",
+          "text": "An alphabet chart that students trace to practice forming each letter"
+        },
+        {
+          "key": "E",
+          "text": "Hand mirrors that students use to notice how their mouths produce a sound"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "explanation": "[A] The question requires an understanding of how materials support particular instructional goals. Sorting picture cards by rhyme and by beginning sound asks students to compare the sound structure of spoken words with no print involved, which is exactly the work of phonological and phonemic awareness. The sort also lets the teacher see which contrasts a student has not yet mastered.  [C] Elkonin boxes give each phoneme a visible slot, so the abstract act of segmenting becomes something students can see, touch, and count. The counters are a temporary support; the goal is for students to internalize the count and eventually do the work mentally.  [E] Mirrors make fine distinctions between similar phonemes visible, such as where the tongue sits or whether the lips close. Articulatory feedback helps students both hear and produce contrasts they would otherwise miss, which strengthens phonemic awareness.",
+      "distractor_explanations": {
+        "B": "Files decodable passages under phonological awareness when they serve decoding and fluency; awareness work is oral and needs no print at all. Decodable passages are valuable, but they serve decoding and fluency practice. Students who cannot yet hear and manipulate the sounds have little to apply to the print, so the passages belong at a different center.",
+        "D": "Counts tracing letters as awareness practice, though knowing letter names and shapes does not mean a student can hear and manipulate phonemes. Tracing an alphabet chart practices letter formation and may build letter-name knowledge. It does not require students to attend to the sound structure of spoken words, so it does not develop phonological awareness."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-059",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonological and Phonemic Awareness",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A second-grade teacher wants students to use the parts of a book purposefully when they read nonfiction. Which of the following activities would best develop that understanding? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Using the table of contents to identify the page on which a specific chapter begins"
+        },
+        {
+          "key": "B",
+          "text": "Reading the chapter titles aloud to practice fluent oral reading of nonfiction text"
+        },
+        {
+          "key": "C",
+          "text": "Copying the title, author, and copyright year from the title page onto a worksheet"
+        },
+        {
+          "key": "D",
+          "text": "Using the index to find the pages on which a particular animal is mentioned"
+        },
+        {
+          "key": "E",
+          "text": "Using the glossary to confirm the meaning of a term printed in bold in the text"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "D",
+        "E"
+      ],
+      "explanation": "[A] The question requires an understanding of how concepts of print extend to the parts of a book and their functions. Consulting the table of contents to locate a chapter teaches students what that section is for and how it is organized by page number, which is knowledge they can reuse with any nonfiction book.  [D] The index is an alphabetical guide to where topics appear, so using it to find a specific animal shows students how the section differs from the table of contents and when each one is the better tool. The activity pairs the part with its function.  [E] Turning to the glossary to check a bold term links a typographic signal in the body of the text to the section that explains it. Students learn both what the symbol means and where to go for help, which is the functional understanding the teacher wants.",
+      "distractor_explanations": {
+        "B": "Assumes that reading from a part of a book teaches what the part is for, as though fluent reading of titles were the same as using them to locate information. Reading chapter titles aloud may build fluency with nonfiction vocabulary, but the student is using the words as text to read rather than as a navigation tool. Awareness of the part's function is not required.",
+        "C": "Counts transcribing bibliographic details as understanding, though the task never asks when or why a reader would turn to that page. Transcribing bibliographic information is a clerical task. It can be completed without any understanding of what a title page is for or how a reader uses it."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 3. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-072",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonological and Phonemic Awareness",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "A kindergarten teacher wants an informal screening measure that will show whether students from varied language backgrounds are developing awareness of individual phonemes. Which two tasks should the teacher include? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Moving one block for each sound a student hears in the word ship"
+        },
+        {
+          "key": "B",
+          "text": "Telling what is left after the teacher says moon without the /m/"
+        },
+        {
+          "key": "C",
+          "text": "Clapping once for each part a student hears in the word banana"
+        },
+        {
+          "key": "D",
+          "text": "Naming as many letters of the alphabet as possible in one minute"
+        },
+        {
+          "key": "E",
+          "text": "Identifying which of two pictures rhymes with boat"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of which assessment tasks operate at the phoneme level. Pushing one block per sound requires the student to isolate each phoneme in sequence, and because the task is oral and uses concrete objects, it works as well for students whose English vocabularies are still small as it does for native speakers.  [B] The question requires an understanding of how manipulation tasks index phonemic awareness. Deleting an initial phoneme and reporting what remains is one of the strongest indicators that a student can hold a word's sound structure in mind and act on it, and it is a well-established predictor of later decoding growth.",
+      "distractor_explanations": {
+        "C": "Treating syllable tapping as evidence that phoneme-level awareness has developed Option (C) is incorrect. Clapping the parts of banana measures syllable awareness. A student can tap three beats correctly while hearing no individual phonemes, so this task cannot answer whether phonemic awareness is developing.",
+        "D": "Using a print-based letter-naming fluency task to screen an oral phonemic skill Option (D) is incorrect. Rapid letter naming is a measure of alphabet knowledge and retrieval speed. It involves print and says nothing about a student's awareness of the sounds inside spoken words.",
+        "E": "Assuming that success with rhyme identification implies phoneme-level awareness Option (E) is incorrect. Rhyme identification is phonological awareness at the whole-word level and develops earlier than phonemic awareness. A student who succeeds here may still be unable to isolate a single phoneme."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 7. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-075",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonological and Phonemic Awareness",
+      "difficulty": "hard",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "Ms. Dube is reviewing the posters in her first-grade room before the new term. She wants the displays to reflect how the English sound system actually works rather than how it happens to be spelled. Which two decisions would accomplish this? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Organizing the sound wall by phoneme and grouping together the different spellings that can represent each sound"
+        },
+        {
+          "key": "B",
+          "text": "Adding a card for each phoneme that shows a mouth picture of how that sound is produced"
+        },
+        {
+          "key": "C",
+          "text": "Organizing the word wall alphabetically by first letter"
+        },
+        {
+          "key": "D",
+          "text": "Labeling a poster with the twenty-six letters and one keyword picture for each letter"
+        },
+        {
+          "key": "E",
+          "text": "Posting the week's spelling words in the order in which they appear in the story"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of how the phonological system differs from the orthographic system. English has considerably more phonemes than letters and many ways to spell each one, so a wall arranged by sound with its spelling variants grouped beneath it represents the sound system faithfully, whereas a letter-based arrangement quietly teaches that each letter owns exactly one sound.  [B] The question requires an understanding of how articulation defines a phoneme. A mouth picture shows the placement and manner of production, which is what actually distinguishes one sound from its neighbor. That keeps students' attention on the speech signal itself rather than on the letters used to record it.",
+      "distractor_explanations": {
+        "C": "Presenting alphabetical order as though it described the organization of the sound system Option (C) is incorrect. Alphabetical order is a convention of the writing system imposed for the sake of easy lookup. It sorts by grapheme and conveys nothing about how many sounds a word contains or how those sounds are made.",
+        "D": "Assuming the twenty-six letters of the alphabet correspond one to one with the sounds of English Option (D) is incorrect. Twenty-six letters with one keyword apiece implies a one-to-one match between letters and sounds. English phonemes outnumber letters, and most vowels are spelled several ways, so the poster misrepresents the system.",
+        "E": "Treating a weekly spelling list as a visual map of how sounds relate to their spellings Option (E) is incorrect. A weekly spelling list in story order is a memory aid for specific word forms. It presents no analysis of how sounds relate to the letters that spell them."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 5. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    {
+      "id": "8006-foundational-078",
+      "series": "8000",
+      "test_code": "8006",
+      "subject": "Teaching Reading",
+      "content_domain": "Foundational Literacy Skills",
+      "skill": "Phonological and Phonemic Awareness",
+      "difficulty": "medium",
+      "question_type": "multiple-select",
+      "stimulus": null,
+      "stem": "During the first weeks of kindergarten, a teacher records which print-awareness behaviors each student can perform. Which two behaviors are concepts of print that the teacher should document? Select all that apply.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Pointing to the front cover when asked where reading begins"
+        },
+        {
+          "key": "B",
+          "text": "Moving a finger under the words from left to right and returning to the left margin at the next line"
+        },
+        {
+          "key": "C",
+          "text": "Naming the sound that each letter of the alphabet makes"
+        },
+        {
+          "key": "D",
+          "text": "Blending three spoken sounds into a word"
+        },
+        {
+          "key": "E",
+          "text": "Retelling a story that was read aloud"
+        }
+      ],
+      "correct_answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "[A] The question requires an understanding of what concepts of print cover. Knowing where a book begins is book-orientation knowledge, one of the earliest understandings children construct about how print works, and it can be observed directly during shared reading.  [B] The question requires an understanding of directionality and return sweep. Tracking print the right way and sweeping back to the left margin shows a child has internalized the spatial conventions of English print, which must be in place before spoken words can be matched to written ones.",
+      "distractor_explanations": {
+        "C": "Classifying letter-sound knowledge as a concept about print Option (C) is incorrect. Producing letter sounds is alphabet knowledge, a separate strand. A child can supply a sound for every letter and still not know which end of a book to start with.",
+        "D": "Mistaking phonemic blending for an understanding of how books and pages work Option (D) is incorrect. Blending spoken sounds is phonemic awareness, an oral skill that is deliberately assessed without any print at hand. It says nothing about a child's understanding of books or pages.",
+        "E": "Treating listening comprehension and retelling as print awareness Option (E) is incorrect. Retelling a read-aloud measures listening comprehension and narrative recall. The student is responding to meaning, not to how print is arranged or how a book is handled."
+      },
+      "source_basis": "ETS 8006 content domain: Foundational Literacy Skills — objective 3. Item authored by Learndiag (original), not an official ETS release.",
+      "review_status": "ai-reviewed",
+      "reviewer": "item-session-2026-08-30",
+      "version": 1,
+      "duplicate_hash": "sha256:PENDING_ON_INGEST",
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    }
+  ]
+}

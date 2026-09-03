@@ -1,0 +1,543 @@
+{
+  "verdict": "PASS",
+  "source_file": "E:\\Triumph\\praxis-5001\\content-infra\\production-inventory\\8006-multiselect-normalized.json",
+  "item_count": 27,
+  "errors": [],
+  "warnings": [
+    {
+      "item": "8006-comprehension-002",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-002",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-015",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 3 条"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-020",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-028",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-033",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-052",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-055",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-058",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-013",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-013",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-019",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-019",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-022",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-022",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-033",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-033",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-037",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-037",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-054",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-054",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-059",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-059",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "2 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-072",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-072",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-075",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-075",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "item": "8006-foundational-078",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-078",
+      "check": "completeness",
+      "code": "incomplete_distractor_explanations",
+      "detail": "3 条干扰项解释，应为 4 条"
+    },
+    {
+      "check": "distribution",
+      "code": "unexpected_total",
+      "detail": "有效题数 27，预期 30。分布按实际总数复核"
+    }
+  ],
+  "human_review_queue": [
+    {
+      "item": "(全批)",
+      "reason": "教学情境题（Tasks of Teaching）占比需人工确认",
+      "action": "通读全部 27 题，人工判定哪些属于教学情境题，确认占比落在官方 10–15% 区间。正则给出 18 个候选（['8006-comprehension-002', '8006-comprehension-011', '8006-comprehension-017', '8006-comprehension-023', '8006-comprehension-030', '8006-comprehension-040']…），但召回率低，仅作起点，不得当作结论"
+    },
+    {
+      "item": "8006-comprehension-002",
+      "reason": "multiple-select，标注答案 Teaching students to state a clear opinion about a topic,Teaching students to support the opinion with reasons,Teaching students to link reasons to the opinion using words such as \"because\"",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-011",
+      "reason": "multiple-select，标注答案 Preteaching a small set of academic terms such as condensation and evaporation before students read,Leading a brief discussion of the key concept that water changes state but is not lost,Having students turn each heading into a question and check it as they read",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-017",
+      "reason": "multiple-select，标注答案 Conferring with students between drafts and asking each to make one meaningful change based on the conference,Having students use a simple checklist to evaluate their own writing against the criteria before turning it in",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-023",
+      "reason": "multiple-select，标注答案 How line breaks control pacing and emphasis for the reader,How the physical arrangement of words on the page contributes to meaning",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-030",
+      "reason": "multiple-select，标注答案 Having students choose a piece they wrote several weeks earlier, revise it, and attach a note explaining what they changed and why,Having students keep drafts with dates on them and compare an early draft with a later one to describe how their writing has changed,Having students rewrite a finished piece for a different audience, deciding which details to keep and which to leave out",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-037",
+      "reason": "multiple-select，标注答案 Asking Jalen to say what each section was mostly about and to point to the sentences that support his statement,Discussing three or four key concept words such as reef, algae, and bleaching before Jalen rereads the section",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-040",
+      "reason": "multiple-select，标注答案 Students' awareness of whether they are understanding what they read,Students' ability to choose and apply a repair strategy when comprehension breaks down",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-042",
+      "reason": "multiple-select，标注答案 Showing whether students are making progress over time so the teacher can judge whether instruction is working,Allowing the teacher to regroup students and adjust instruction in response to what students show this week",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-056",
+      "reason": "multiple-select，标注答案 Reading texts aloud that are more complex than what students can read themselves, and leading structured discussion of their meaning,Teaching students to build a mental representation of what they hear by retelling, visualizing, and asking questions as they listen,Explicitly teaching the academic words and complex sentence structures that appear in the read-aloud texts",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-comprehension-057",
+      "reason": "multiple-select，标注答案 Asking students what the text says and what they already know, then helping them combine the two,Using picture clues and a character's actions to figure out a feeling the author does not state",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-015",
+      "reason": "multiple-select，标注答案 Automatic word recognition frees attention that can then be used to construct meaning.,Phrasing and pausing during oral reading show whether a reader is grouping words into meaningful units.",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-020",
+      "reason": "multiple-select，标注答案 Administering curriculum-based oral reading fluency probes several times during the year and graphing each student's growth,Taking running records during small-group instruction to note accuracy, self-correction, and phrasing",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-028",
+      "reason": "multiple-select，标注答案 Collecting running records that capture accuracy, self-corrections, and phrasing during oral reading,Pairing fluency data with a brief retell or a few comprehension questions about the passage the student read",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-033",
+      "reason": "multiple-select，标注答案 Teaching students to identify the part of speech an unfamiliar word occupies and the role it plays in the sentence before considering possible meanings,Teaching students to look for appositives, restatements, and signal words such as but or unlike that structure the surrounding text,Teaching students to separate a word into a base and its affixes, combine the parts, and then check the result against the sentence",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-052",
+      "reason": "multiple-select，标注答案 Recording words correct per minute on a one-minute cold read of a grade-level passage,Rating phrasing and expression with a prosody rubric during oral reading,Checking whether the student can retell the passage or answer questions about it",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-055",
+      "reason": "multiple-select，标注答案 Sentence structures with punctuation and phrasing cues that invite expressive reading,Repeated use of a few important academic and domain-specific words across the text,Illustrations and labels that reinforce the meanings of key words",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-fluency-058",
+      "reason": "multiple-select，标注答案 Repeated reading of a short passage until it can be read accurately and with phrasing,Teacher modeling of phrased reading followed by the student's echo reading,Practice with high-frequency words and common word parts to build automatic recognition",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-013",
+      "reason": "multiple-select，标注答案 Modeling how to break a multisyllabic word into syllables and then reread the whole word inside the sentence,Providing repeated oral reading practice with content-area sentences that contain the same words,Teaching students to check a decoded word against meaning by asking whether it makes sense in the sentence",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-019",
+      "reason": "multiple-select，标注答案 \"picnic\",\"magnet\",\"winter\"",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-022",
+      "reason": "multiple-select，标注答案 Introducing a small number of new words at a time and providing many chances to read them in sentences,Revisiting previously taught words through brief cumulative review routines,Pointing out the part of an irregular word that does not follow the expected sound-spelling pattern",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-033",
+      "reason": "multiple-select，标注答案 A phonological awareness screener that asks students to blend and segment phonemes,A pseudoword reading measure that asks students to read pronounceable nonsense words,Weekly curriculum-based measures of oral reading fluency on connected text",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-037",
+      "reason": "multiple-select，标注答案 Guiding students to notice the regular letter-sound parts of the words that are decodable,Providing brief, frequent opportunities to read and write the words in phrases and sentences,Using cumulative review so that previously taught words keep appearing in later lessons",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-054",
+      "reason": "multiple-select，标注答案 Sets of picture cards that students sort by rhyming word and by beginning sound,Elkonin boxes with counters that students push forward for each sound they hear,Hand mirrors that students use to notice how their mouths produce a sound",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-059",
+      "reason": "multiple-select，标注答案 Using the table of contents to identify the page on which a specific chapter begins,Using the index to find the pages on which a particular animal is mentioned,Using the glossary to confirm the meaning of a term printed in bold in the text",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-072",
+      "reason": "multiple-select，标注答案 Moving one block for each sound a student hears in the word ship,Telling what is left after the teacher says moon without the /m/",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-075",
+      "reason": "multiple-select，标注答案 Organizing the sound wall by phoneme and grouping together the different spellings that can represent each sound,Adding a card for each phoneme that shows a mouth picture of how that sound is produced",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    },
+    {
+      "item": "8006-foundational-078",
+      "reason": "multiple-select，标注答案 Pointing to the front cover when asked where reading begins,Moving a finger under the words from left to right and returning to the left margin at the next line",
+      "action": "人工独立重做：每一项都成立，且没有漏掉任何成立的选项"
+    }
+  ],
+  "info": {
+    "source_file": "E:\\Triumph\\praxis-5001\\content-infra\\production-inventory\\8006-multiselect-normalized.json",
+    "item_count": 27,
+    "schema_field_count": 21,
+    "schema_field_count_note": "D5 事项描述写 20 字段，schema v1 field_order 实际为 21。以 field_order 为准，出入待 T0 确认",
+    "intra_batch_duplicates": 0,
+    "hash_mismatch_count": 0,
+    "legacy_items_loaded": 969,
+    "cross_series_duplicates": 0,
+    "near_duplicates": 0,
+    "domain_counts": {
+      "Comprehension and Written Expression": 10,
+      "Fluency and Vocabulary": 7,
+      "Foundational Literacy Skills": 10
+    },
+    "domain_total": 27,
+    "difficulty_counts": {
+      "medium": 14,
+      "hard": 12,
+      "easy": 1
+    },
+    "source_basis_counts": {
+      "expert-judgment": 27
+    },
+    "teaching_scenario_candidates": {
+      "count": 18,
+      "ids": [
+        "8006-comprehension-002",
+        "8006-comprehension-011",
+        "8006-comprehension-017",
+        "8006-comprehension-023",
+        "8006-comprehension-030",
+        "8006-comprehension-040",
+        "8006-comprehension-042",
+        "8006-comprehension-056",
+        "8006-comprehension-057",
+        "8006-fluency-015",
+        "8006-fluency-020",
+        "8006-fluency-052",
+        "8006-foundational-013",
+        "8006-foundational-033",
+        "8006-foundational-059",
+        "8006-foundational-072",
+        "8006-foundational-075",
+        "8006-foundational-078"
+      ],
+      "official_target": "10–15%（ETS 官方口径）",
+      "usage": "候选列表，非统计结果。正则召回率低（实测会漏掉题干中仅出现 'students' 的题），不得据此计算占比或判定达标"
+    },
+    "teaching_scenario_candidate_count": 18,
+    "answer_review_queue_size": 28,
+    "answer_auto_flags": 27,
+    "stimulus_reference_hits": 0,
+    "dangling_reference_hits": 0,
+    "numeric_entry_misuse": 0,
+    "redline_hits": {
+      "bias": 0,
+      "copyright": 0,
+      "score_claim": 0,
+      "official_claim": 0
+    },
+    "redline_bias_items": [],
+    "redline_official_claim_items": []
+  }
+}

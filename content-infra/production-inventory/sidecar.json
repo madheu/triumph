@@ -1,0 +1,122 @@
+[
+  {
+    "new_id": "8006-comprehension-005",
+    "old_id": "8006-CWE-0005",
+    "tasks_of_teaching": "A.8 Evaluates instructional strategies and activities to elicit, develop, or assess students' thinking about particular Reading content or to develop or assess their facility with particular Reading processes"
+  },
+  {
+    "new_id": "8006-comprehension-013",
+    "old_id": "8006-CWE-0013",
+    "tasks_of_teaching": "A.3 Creates and modifies texts, examples, and graphic representations to support Reading instructional goals, including differentiation for particular learners"
+  },
+  {
+    "new_id": "8006-comprehension-019",
+    "old_id": "8006-CWE-0019",
+    "tasks_of_teaching": "A.4 Analyzes language and language systems"
+  },
+  {
+    "new_id": "8006-comprehension-031",
+    "old_id": "8006-CWE-0031",
+    "tasks_of_teaching": "A.5 Explains, defines, and demonstrates Reading processes and concepts for students"
+  },
+  {
+    "new_id": "8006-comprehension-037",
+    "old_id": "8006-CWE-0037",
+    "tasks_of_teaching": "A.6 Facilitates class discussions and conversations with individual students to elicit or develop their thinking about particular Reading content"
+  },
+  {
+    "new_id": "8006-comprehension-049",
+    "old_id": "8006-CWE-0049",
+    "tasks_of_teaching": "A.7 Promotes vocabulary development through direct instruction to enhance reading comprehension"
+  },
+  {
+    "new_id": "8006-comprehension-055",
+    "old_id": "8006-CWE-0055",
+    "tasks_of_teaching": "A.8 Evaluates instructional strategies and activities to elicit, develop, or assess students' thinking about particular Reading content or to develop or assess their facility with particular Reading processes"
+  },
+  {
+    "new_id": "8006-fluency-005",
+    "old_id": "8006-FV-0005",
+    "tasks_of_teaching": "A.7 Promotes vocabulary development through direct instruction to enhance reading comprehension"
+  },
+  {
+    "new_id": "8006-fluency-013",
+    "old_id": "8006-FV-0013",
+    "tasks_of_teaching": "B.1 Evaluates student reading, writing, speaking, and listening to identify specific strengths and/or areas for improvement or instructional focus"
+  },
+  {
+    "new_id": "8006-fluency-019",
+    "old_id": "8006-FV-0019",
+    "tasks_of_teaching": "B.2 Evaluates student reading, writing, speaking, or listening to classify students' level of literacy development"
+  },
+  {
+    "new_id": "8006-fluency-031",
+    "old_id": "8006-FV-0031",
+    "tasks_of_teaching": "B.3 Analyzes student reading, writing, speaking, or listening to identify patterns of thinking, misconceptions, and partial conceptions"
+  },
+  {
+    "new_id": "8006-fluency-037",
+    "old_id": "8006-FV-0037",
+    "tasks_of_teaching": "B.4 Responds to student reading, writing, speaking, or listening to target the particular Reading concept in need of attention"
+  },
+  {
+    "new_id": "8006-fluency-049",
+    "old_id": "8006-FV-0049",
+    "tasks_of_teaching": "A.1 Incorporates systematic and explicit instruction to support students' reading abilities"
+  },
+  {
+    "new_id": "8006-fluency-055",
+    "old_id": "8006-FV-0055",
+    "tasks_of_teaching": "A.2 Evaluates texts, examples, and graphic representations for their support of particular Reading instructional goals"
+  },
+  {
+    "new_id": "8006-foundational-002",
+    "old_id": "8006-PD-0002",
+    "tasks_of_teaching": "B.3 Analyzes student reading, writing, speaking, or listening to identify patterns of thinking, misconceptions, and partial conceptions"
+  },
+  {
+    "new_id": "8006-foundational-011",
+    "old_id": "8006-PD-0011",
+    "tasks_of_teaching": "A.5 Explains, defines, and demonstrates Reading processes and concepts for students"
+  },
+  {
+    "new_id": "8006-foundational-017",
+    "old_id": "8006-PD-0017",
+    "tasks_of_teaching": "A.6 Facilitates class discussions and conversations with individual students to elicit or develop their thinking about particular Reading content"
+  },
+  {
+    "new_id": "8006-foundational-029",
+    "old_id": "8006-PD-0029",
+    "tasks_of_teaching": "A.7 Promotes vocabulary development through direct instruction to enhance reading comprehension"
+  },
+  {
+    "new_id": "8006-foundational-035",
+    "old_id": "8006-PD-0035",
+    "tasks_of_teaching": "A.8 Evaluates instructional strategies and activities to elicit, develop, or assess students' thinking about particular Reading content or to develop or assess their facility with particular Reading processes"
+  },
+  {
+    "new_id": "8006-foundational-044",
+    "old_id": "8006-PPA-0005",
+    "tasks_of_teaching": "B.3 Analyzes student reading, writing, speaking, or listening to identify patterns of thinking, misconceptions, and partial conceptions"
+  },
+  {
+    "new_id": "8006-foundational-051",
+    "old_id": "8006-PPA-0012",
+    "tasks_of_teaching": "A.1 Incorporates systematic and explicit instruction to support students' reading abilities"
+  },
+  {
+    "new_id": "8006-foundational-057",
+    "old_id": "8006-PPA-0018",
+    "tasks_of_teaching": "A.2 Evaluates texts, examples, and graphic representations for their support of particular Reading instructional goals"
+  },
+  {
+    "new_id": "8006-foundational-069",
+    "old_id": "8006-PPA-0030",
+    "tasks_of_teaching": "A.3 Creates and modifies texts, examples, and graphic representations to support Reading instructional goals, including differentiation for particular learners"
+  },
+  {
+    "new_id": "8006-foundational-075",
+    "old_id": "8006-PPA-0036",
+    "tasks_of_teaching": "A.4 Analyzes language and language systems"
+  }
+]

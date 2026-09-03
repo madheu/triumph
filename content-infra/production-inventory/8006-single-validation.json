@@ -1,0 +1,1270 @@
+{
+  "verdict": "FAIL",
+  "source_file": "E:\\Triumph\\praxis-5001\\content-infra\\production-inventory\\8006-single.json",
+  "item_count": 173,
+  "errors": [
+    {
+      "check": "distribution",
+      "code": "domain_off_target",
+      "detail": "Foundational Literacy Skills: 70 题，预期 12（容差 ±2）"
+    },
+    {
+      "check": "distribution",
+      "code": "domain_off_target",
+      "detail": "Fluency and Vocabulary: 53 题，预期 9（容差 ±2）"
+    },
+    {
+      "check": "distribution",
+      "code": "domain_off_target",
+      "detail": "Comprehension and Written Expression: 50 题，预期 9（容差 ±2）"
+    }
+  ],
+  "warnings": [
+    {
+      "item": "8006-comprehension-001",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-003",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-004",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-005",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-006",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-007",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-008",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-009",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-010",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-012",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-013",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-014",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-015",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-016",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-018",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-019",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-020",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-021",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-022",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-024",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-025",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-026",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-027",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-028",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-029",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-031",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-032",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-033",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-034",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-035",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-036",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-038",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-039",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-041",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-043",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-044",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-045",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-046",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-047",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-049",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-050",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-051",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-052",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-053",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-054",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-055",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-059",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-comprehension-060",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-001",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-002",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-003",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-004",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-005",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-006",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-007",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-008",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-010",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-011",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-012",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-013",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-014",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-016",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-018",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-021",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-022",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-023",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-024",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-025",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-026",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-027",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-029",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-030",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-031",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-032",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-034",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-035",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-036",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-037",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-038",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-039",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-040",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-041",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-042",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-043",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-044",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-045",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-046",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-047",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-048",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-049",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-050",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-051",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-053",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-054",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-056",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-057",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-059",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-fluency-060",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-001",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-002",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-003",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-004",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-005",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-006",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-007",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-008",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-009",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-010",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-011",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-012",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-014",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-015",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-016",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-017",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-018",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-020",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-021",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-023",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-024",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-025",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-026",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-027",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-028",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-029",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-030",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-031",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-032",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-034",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-035",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-036",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-038",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-039",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-040",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-041",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-042",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-043",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-044",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-045",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-046",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-047",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-048",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-049",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-050",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-051",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-052",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-053",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-055",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-056",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-057",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-058",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-060",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-061",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-062",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-063",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-064",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-065",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-066",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-067",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-068",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-069",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-070",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-071",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-073",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-074",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-076",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-077",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-079",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "item": "8006-foundational-080",
+      "check": "completeness",
+      "code": "stimulus_null",
+      "detail": "schema 要求但为 null —— 8006 新题不应沿用存量缺口，建议补齐"
+    },
+    {
+      "check": "distribution",
+      "code": "unexpected_total",
+      "detail": "有效题数 173，预期 30。分布按实际总数复核"
+    },
+    {
+      "check": "stem_completeness",
+      "code": "dangling_reference_suspect",
+      "count": 5,
+      "samples": [
+        {
+          "item": "8006-fluency-023",
+          "matched": "the passage"
+        },
+        {
+          "item": "8006-fluency-031",
+          "matched": "the passage"
+        },
+        {
+          "item": "8006-fluency-046",
+          "matched": "the passage"
+        },
+        {
+          "item": "8006-fluency-048",
+          "matched": "the passage"
+        },
+        {
+          "item": "8006-fluency-050",
+          "matched": "the passage"
+        }
+      ],
+      "note": "启发式命中，需抽查原文（如 'a table's area' 指桌子面积而非表格，属误报）"
+    }
+  ],
+  "human_review_queue": [
+    {
+      "item": "(全批)",
+      "reason": "教学情境题（Tasks of Teaching）占比需人工确认",
+      "action": "通读全部 173 题，人工判定哪些属于教学情境题，确认占比落在官方 10–15% 区间。正则给出 92 个候选（['8006-comprehension-001', '8006-comprehension-008', '8006-comprehension-009', '8006-comprehension-012', '8006-comprehension-013', '8006-comprehension-014']…），但召回率低，仅作起点，不得当作结论"
+    },
+    {
+      "item": "8006-comprehension-034",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-comprehension-036",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-fluency-021",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-fluency-049",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-007",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-008",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-011",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-018",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-031",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-038",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-062",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    },
+    {
+      "item": "8006-foundational-066",
+      "reason": "正确选项长度显著超过其他选项（>2 倍均值）",
+      "action": "人工确认是否因长度泄露答案"
+    }
+  ],
+  "info": {
+    "source_file": "E:\\Triumph\\praxis-5001\\content-infra\\production-inventory\\8006-single.json",
+    "item_count": 173,
+    "schema_field_count": 21,
+    "schema_field_count_note": "D5 事项描述写 20 字段，schema v1 field_order 实际为 21。以 field_order 为准，出入待 T0 确认",
+    "intra_batch_duplicates": 0,
+    "hash_mismatch_count": 0,
+    "legacy_items_loaded": 969,
+    "cross_series_duplicates": 0,
+    "near_duplicates": 0,
+    "domain_counts": {
+      "Comprehension and Written Expression": 50,
+      "Fluency and Vocabulary": 53,
+      "Foundational Literacy Skills": 70
+    },
+    "domain_total": 173,
+    "difficulty_counts": {
+      "medium": 61,
+      "hard": 55,
+      "easy": 57
+    },
+    "source_basis_counts": {
+      "expert-judgment": 173
+    },
+    "teaching_scenario_candidates": {
+      "count": 92,
+      "ids": [
+        "8006-comprehension-001",
+        "8006-comprehension-008",
+        "8006-comprehension-009",
+        "8006-comprehension-012",
+        "8006-comprehension-013",
+        "8006-comprehension-014",
+        "8006-comprehension-018",
+        "8006-comprehension-020",
+        "8006-comprehension-021",
+        "8006-comprehension-022",
+        "8006-comprehension-025",
+        "8006-comprehension-026",
+        "8006-comprehension-027",
+        "8006-comprehension-032",
+        "8006-comprehension-033",
+        "8006-comprehension-034",
+        "8006-comprehension-035",
+        "8006-comprehension-036",
+        "8006-comprehension-039",
+        "8006-comprehension-041",
+        "8006-comprehension-044",
+        "8006-comprehension-045",
+        "8006-comprehension-046",
+        "8006-comprehension-047",
+        "8006-comprehension-049",
+        "8006-comprehension-051",
+        "8006-comprehension-052",
+        "8006-comprehension-053",
+        "8006-comprehension-059",
+        "8006-comprehension-060",
+        "8006-fluency-001",
+        "8006-fluency-002",
+        "8006-fluency-008",
+        "8006-fluency-009",
+        "8006-fluency-011",
+        "8006-fluency-012",
+        "8006-fluency-014",
+        "8006-fluency-017",
+        "8006-fluency-021",
+        "8006-fluency-022",
+        "8006-fluency-024",
+        "8006-fluency-031",
+        "8006-fluency-037",
+        "8006-fluency-043",
+        "8006-fluency-044",
+        "8006-fluency-045",
+        "8006-fluency-050",
+        "8006-fluency-051",
+        "8006-fluency-053",
+        "8006-fluency-059",
+        "8006-foundational-001",
+        "8006-foundational-002",
+        "8006-foundational-003",
+        "8006-foundational-005",
+        "8006-foundational-008",
+        "8006-foundational-009",
+        "8006-foundational-010",
+        "8006-foundational-011",
+        "8006-foundational-012",
+        "8006-foundational-014",
+        "8006-foundational-015",
+        "8006-foundational-016",
+        "8006-foundational-017",
+        "8006-foundational-018",
+        "8006-foundational-020",
+        "8006-foundational-021",
+        "8006-foundational-023",
+        "8006-foundational-024",
+        "8006-foundational-025",
+        "8006-foundational-026",
+        "8006-foundational-027",
+        "8006-foundational-028",
+        "8006-foundational-029",
+        "8006-foundational-031",
+        "8006-foundational-032",
+        "8006-foundational-034",
+        "8006-foundational-036",
+        "8006-foundational-039",
+        "8006-foundational-040",
+        "8006-foundational-043",
+        "8006-foundational-049",
+        "8006-foundational-050",
+        "8006-foundational-055",
+        "8006-foundational-056",
+        "8006-foundational-064",
+        "8006-foundational-066",
+        "8006-foundational-067",
+        "8006-foundational-068",
+        "8006-foundational-070",
+        "8006-foundational-071",
+        "8006-foundational-073",
+        "8006-foundational-077"
+      ],
+      "official_target": "10–15%（ETS 官方口径）",
+      "usage": "候选列表，非统计结果。正则召回率低（实测会漏掉题干中仅出现 'students' 的题），不得据此计算占比或判定达标"
+    },
+    "teaching_scenario_candidate_count": 92,
+    "answer_review_queue_size": 13,
+    "answer_auto_flags": 12,
+    "stimulus_reference_hits": 0,
+    "dangling_reference_hits": 5,
+    "numeric_entry_misuse": 0,
+    "redline_hits": {
+      "bias": 0,
+      "copyright": 0,
+      "score_claim": 0,
+      "official_claim": 0
+    },
+    "redline_bias_items": [],
+    "redline_official_claim_items": []
+  }
+}
