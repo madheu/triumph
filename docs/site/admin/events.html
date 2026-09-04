@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/js/theme.js?v=1"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Product Funnel — Learndiag Admin</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/theme.css?v=1">
+  <style>
+    :root{--ink:#3A3532;--soft:#6E6760;--line:#E5E0DB;--brand:#A67D7A;--bg:#faf9f7}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);padding:28px 20px;line-height:1.5}
+    .wrap{max-width:920px;margin:0 auto}
+    h1{font-size:22px;font-weight:600;margin-bottom:4px}
+    .sub{color:var(--soft);font-size:13px;margin-bottom:22px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:18px}
+    h2{font-size:15px;font-weight:600;margin-bottom:14px}
+    .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+    select,button{padding:8px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:#fff;color:var(--ink);font-family:inherit}
+    button{cursor:pointer;background:var(--brand);color:#fff;border-color:var(--brand)}
+    button:hover{background:#956b68}
+    .stage{margin-bottom:16px}
+    .stage:last-child{margin-bottom:0}
+    .stage-head{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+    .stage-name{font-weight:500}
+    .stage-num{color:var(--soft)}
+    .bar{height:26px;background:#F2EEEA;border-radius:6px;overflow:hidden;position:relative}
+    .bar-fill{height:100%;background:var(--brand);border-radius:6px;transition:width .3s}
+    .rate{position:absolute;right:10px;top:4px;font-size:12px;font-weight:600;color:var(--ink)}
+    .rate.weak{color:#b33a3a}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+    th{color:var(--soft);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+    td.num{text-align:right;font-variant-numeric:tabular-nums}
+    .empty{color:var(--soft);font-size:13px;padding:14px 0}
+    .err{background:#fdebeb;color:#b33a3a;border-radius:8px;padding:12px 16px;font-size:13px;margin-bottom:16px;display:none}
+    a{color:var(--brand)}
+    .note{font-size:12px;color:var(--soft);margin-top:10px;line-height:1.6}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Product funnel</h1>
+    <p class="sub">Anonymous-first event data from <code>product_events</code> (D1). Independent of GA4 and GSC.</p>
+
+    <div class="err" id="err"></div>
+
+    <div class="controls">
+      <label for="days">Window</label>
+      <select id="days">
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+      </select>
+      <label for="tc">Test code</label>
+      <select id="tc">
+        <option value="">All</option>
+        <option value="5001">5001</option>
+        <option value="8006">8006</option>
+      </select>
+      <button id="refresh">Refresh</button>
+    </div>
+
+    <div class="card">
+      <h2>Five-stage funnel</h2>
+      <div id="funnel"><div class="empty">Loading…</div></div>
+      <p class="note" id="funnel-note"></p>
+    </div>
+
+    <div class="card">
+      <h2>By traffic source</h2>
+      <div id="sources"><div class="empty">Loading…</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Most common weakest domain</h2>
+      <div id="weak"><div class="empty">Loading…</div></div>
+      <p class="note">Counts <code>test_complete</code> events. Feeds the October decision on which subject to expand.</p>
+    </div>
+
+    <p class="note"><a href="/admin">← Back to admin</a></p>
+  </div>
+
+  <script>
+  (function () {
+    var API = window.TRIUMPH_API || '';
+    var errBox = document.getElementById('err');
+    var funnelBox = document.getElementById('funnel');
+    var srcBox = document.getElementById('sources');
+    var weakBox = document.getElementById('weak');
+    var noteBox = document.getElementById('funnel-note');
+
+    function token() {
+      try { return localStorage.getItem('triumph_token') || ''; } catch (e) { return ''; }
+    }
+
+    function pct(r) {
+      return r === null || r === undefined ? '—' : Math.round(r * 100) + '%';
+    }
+
+    function load() {
+      var days = document.getElementById('days').value;
+      var tc = document.getElementById('tc').value;
+      var q = '/api/admin/funnel?days=' + encodeURIComponent(days);
+      if (tc) q += '&test_code=' + encodeURIComponent(tc);
+
+      errBox.style.display = 'none';
+      funnelBox.innerHTML = '<div class="empty">Loading…</div>';
+
+      fetch(API + q, { headers: { Authorization: 'Bearer ' + token() } })
+        .then(function (r) {
+          if (r.status === 401 || r.status === 403) throw new Error('Not signed in as admin.');
+          return r.json();
+        })
+        .then(render)
+        .catch(function (e) {
+          errBox.textContent = e && e.message ? e.message : 'Failed to load funnel data.';
+          errBox.style.display = 'block';
+          funnelBox.innerHTML = '';
+          srcBox.innerHTML = '';
+          weakBox.innerHTML = '';
+        });
+    }
+
+    function renderStage(s, max) {
+      var w = max > 0 ? Math.round((s.to_visitors / max) * 100) : 0;
+      // 掉得最狠的一段标红 —— 那是要修的地方
+      var weak = s.rate !== null && s.rate < 0.5 ? ' weak' : '';
+      return '<div class="stage">'
+        + '<div class="stage-head"><span class="stage-name">' + s.stage + '</span>'
+        + '<span class="stage-num">' + s.from_visitors + ' → ' + s.to_visitors + '</span></div>'
+        + '<div class="bar"><div class="bar-fill" style="width:' + w + '%"></div>'
+        + '<span class="rate' + weak + '">' + pct(s.rate) + '</span></div>'
+        + '</div>';
+    }
+
+    function render(d) {
+      if (!d || !d.ok) throw new Error('Unexpected response.');
+
+      var funnel = d.funnel || [];
+      var max = 0;
+      funnel.forEach(function (s) { if (s.from_visitors > max) max = s.from_visitors; });
+      if (!max) {
+        funnelBox.innerHTML = '<div class="empty">No events in this window yet.</div>';
+      } else {
+        funnelBox.innerHTML = funnel.map(function (s) { return renderStage(s, max); }).join('');
+      }
+      noteBox.textContent = 'Unique visitors per stage (COUNT DISTINCT visitor_id), last '
+        + d.window_days + ' days'
+        + (d.filter && d.filter.test_code ? ' · test_code=' + d.filter.test_code : '')
+        + '. Stages are counted independently, not as one strict chain — with this traffic '
+        + 'volume a strict chain breaks whenever a single event is missed.';
+
+      // 按来源拆分
+      var srcs = d.by_traffic_source || {};
+      var keys = Object.keys(srcs).sort(function (a, b) {
+        return (srcs[b].top || 0) - (srcs[a].top || 0);
+      });
+      if (!keys.length) {
+        srcBox.innerHTML = '<div class="empty">No traffic-source data yet.</div>';
+      } else {
+        var rows = keys.map(function (k) {
+          var s = srcs[k];
+          var conv = s.top > 0 ? pct(Math.round((s.registered / s.top) * 1000) / 1000) : '—';
+          return '<tr><td>' + k + '</td><td class="num">' + s.top + '</td>'
+            + '<td class="num">' + s.registered + '</td><td class="num">' + conv + '</td></tr>';
+        }).join('');
+        srcBox.innerHTML = '<table><thead><tr><th>Source</th><th class="num">Visits</th>'
+          + '<th class="num">Registered</th><th class="num">Visit → registered</th></tr></thead>'
+          + '<tbody>' + rows + '</tbody></table>';
+      }
+
+      // 最弱领域
+      var w = d.weakest_domains || [];
+      if (!w.length) {
+        weakBox.innerHTML = '<div class="empty">No completed tests yet in this window.</div>';
+      } else {
+        var wmax = w[0].count || 1;
+        weakBox.innerHTML = '<table><thead><tr><th>Domain</th><th class="num">Times weakest</th>'
+          + '</tr></thead><tbody>' + w.map(function (r) {
+            return '<tr><td>' + r.domain + '</td><td class="num">' + r.count + '</td></tr>';
+          }).join('') + '</tbody></table>';
+      }
+    }
+
+    document.getElementById('refresh').addEventListener('click', load);
+    document.getElementById('days').addEventListener('change', load);
+    document.getElementById('tc').addEventListener('change', load);
+    load();
+  })();
+  </script>
+</body>
+</html>

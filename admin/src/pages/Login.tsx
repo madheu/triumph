@@ -27,7 +27,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <div className="text-2xl font-serif tracking-tight text-brand-dark">Triumph.</div>
+          <div className="text-2xl font-serif tracking-tight text-brand-dark">Learndiag.</div>
           <div className="text-xs uppercase tracking-widest text-neutral-400 mt-1">Admin Console</div>
         </div>
         <form onSubmit={submit} className="bg-white rounded-xl border border-neutral-200 shadow-sm p-6 space-y-4">

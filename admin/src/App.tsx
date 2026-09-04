@@ -3,11 +3,13 @@ import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
+import UserDetail from './pages/UserDetail';
 import Questions from './pages/Questions';
 import Content from './pages/Content';
 import Analytics from './pages/Analytics';
 import Orders from './pages/Orders';
 import Tickets from './pages/Tickets';
+import Tools from './pages/Tools';
 import Layout from './components/Layout';
 import { adminMe, getStoredUser, adminLogout } from './lib/api';
 
@@ -58,8 +60,10 @@ export default function App() {
       >
         <Route index element={<Dashboard />} />
         <Route path="users" element={<Users />} />
+        <Route path="users/detail" element={<UserDetail />} />
         <Route path="questions" element={<Questions />} />
         <Route path="content" element={<Content />} />
+        <Route path="tools" element={<Tools />} />
         <Route path="analytics" element={<Analytics />} />
         <Route path="orders" element={<Orders />} />
         <Route path="tickets" element={<Tickets />} />

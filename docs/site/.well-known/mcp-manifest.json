@@ -1,0 +1,49 @@
+{
+  "$schema": "https://mcp-manifest.dev/schema/v0.1.json",
+  "version": "0.1",
+  "server": {
+    "name": "triumph",
+    "displayName": "Learndiag — Praxis 5001 Study Tool",
+    "description": "Free Praxis 5001 (Elementary Education: Multiple Subjects) study tool: 969 original practice questions across four subtests, bank statistics, and study-guide articles. Read-only; no account required.",
+    "version": "1.0.0",
+    "homepage": "https://learndiag.com/",
+    "provider": {
+      "name": "Learndiag",
+      "url": "https://learndiag.com/about",
+      "contact": "abc15531888397@gmail.com"
+    }
+  },
+  "install": [
+    {
+      "method": "streamable-http",
+      "url": "https://learndiag.com/mcp",
+      "priority": 0,
+      "label": "Connect directly (Streamable HTTP)"
+    }
+  ],
+  "transport": "streamable-http",
+  "transports": ["streamable-http"],
+  "url": "https://learndiag.com/mcp",
+  "protocolVersions": ["2025-06-18", "2025-03-26"],
+  "auth": {
+    "type": "none",
+    "description": "All MCP tools are public and read-only. A scoped API key (X-API-Key) is optional for the REST API."
+  },
+  "config": [],
+  "tools": [
+    "list_subtests",
+    "get_questions",
+    "get_random_questions",
+    "get_bank_stats",
+    "list_study_guides"
+  ],
+  "endpoints": {
+    "mcp": "https://learndiag.com/mcp",
+    "openapi": "https://learndiag.com/openapi.json",
+    "openapi_yaml": "https://learndiag.com/api/openapi.yaml",
+    "rest_base": "https://learndiag.com/api/v1/",
+    "agent_skills_index": "https://learndiag.com/.well-known/agent-skills/index.json",
+    "llms_txt": "https://learndiag.com/llms.txt"
+  },
+  "keywords": ["praxis", "praxis-5001", "teacher-certification", "education", "practice-questions", "study-guide", "test-prep"]
+}

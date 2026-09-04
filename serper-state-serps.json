@@ -1,0 +1,486 @@
+{
+  "virginia": {
+    "kw": "praxis 5001 virginia requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/virginia-tests.html",
+        "title": "Virginia Required Tests - ETS Praxis"
+      },
+      {
+        "pos": 2,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements - ETS Praxis"
+      },
+      {
+        "pos": 3,
+        "domain": "praxis.ets.org",
+        "path": "/test/elementary-education-multiple-subjects-subtests-5001.html",
+        "title": "Multiple Subjects (5001; subtests 5002, 5003, 5004, 5005) - ETS Praxis"
+      },
+      {
+        "pos": 4,
+        "domain": "education.umw.edu",
+        "path": "/current-students/admissions/testing-requirements-2/licensure-testing-requirements/",
+        "title": "Licensure Testing Requirements - College of Education"
+      },
+      {
+        "pos": 5,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/virginia-overview.html",
+        "title": "Virginia Overview - ETS Praxis"
+      },
+      {
+        "pos": 6,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/2481704548848895/",
+        "title": "Good morning! I'm trying to determine which Praxis test is needed to teach ..."
+      },
+      {
+        "pos": 7,
+        "domain": "teacherstestprep.com",
+        "path": "/Praxis-Virginia",
+        "title": "Virginia Praxis Test Info | 2026 Dates, Testing Locations & Prep Resources"
+      },
+      {
+        "pos": 8,
+        "domain": "townhall.virginia.gov",
+        "path": "/l/GetFile.cfm",
+        "title": "[PDF] ASSESSMENT REQUIREMENTS FOR VIRGINIA LICENSURE"
+      },
+      {
+        "pos": 9,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements.html",
+        "title": "Praxis Teacher Certification Requirements by State"
+      },
+      {
+        "pos": 10,
+        "domain": "240tutoring.com",
+        "path": "/praxis/elementary-education-multiple-subjects-5001/scoring/",
+        "title": "Praxis Elementary Education: Multiple Subjects (5001) Scoring Guide"
+      }
+    ]
+  },
+  "tennessee": {
+    "kw": "praxis 5001 tennessee requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/tennessee-tests.html",
+        "title": "Tennessee Required Tests - ETS Praxis"
+      },
+      {
+        "pos": 2,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements - ETS Praxis"
+      },
+      {
+        "pos": 3,
+        "domain": "teachinglicense.study.com",
+        "path": "/praxis/praxis-tests-in-tennessee.html",
+        "title": "Praxis Tests in Tennessee: Core Exams, Passing Scores & Testing ..."
+      },
+      {
+        "pos": 4,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements.html",
+        "title": "Praxis Teacher Certification Requirements by State"
+      },
+      {
+        "pos": 5,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/2230056007347085/",
+        "title": "What Praxis tests are required for Elementary Education in Tennessee?"
+      },
+      {
+        "pos": 6,
+        "domain": "tn.gov",
+        "path": "/education/educators/licensing/educator-licensure/praxis-requirements.html",
+        "title": "Candidate Assessment - TN.gov"
+      },
+      {
+        "pos": 7,
+        "domain": "teacherstestprep.com",
+        "path": "/Praxis-Tennessee",
+        "title": "Tennessee Praxis Test Info | 2026 Dates, Testing Locations & Prep ..."
+      },
+      {
+        "pos": 8,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/tennessee-overview.html",
+        "title": "Tennessee Praxis Test Requirements for Teachers | ETS"
+      },
+      {
+        "pos": 9,
+        "domain": "prepsaret.com",
+        "path": "/praxis/praxis-requirements-in-tennessee",
+        "title": "Praxis Requirements in Tennessee: Test & Score - Prepsaret"
+      },
+      {
+        "pos": 10,
+        "domain": "memphis.edu",
+        "path": "/tep/praxis/uginfo.php",
+        "title": "Undergraduate Praxis Information - The University of Memphis"
+      }
+    ]
+  },
+  "new jersey": {
+    "kw": "praxis 5001 new jersey requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "nj.gov",
+        "path": "/education/certification/testing/req/",
+        "title": "Testing Requirements for Certification in New Jersey"
+      },
+      {
+        "pos": 2,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/newjersey-tests.html",
+        "title": "New Jersey Praxis Test Requirements for Teachers"
+      },
+      {
+        "pos": 3,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements"
+      },
+      {
+        "pos": 4,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements.html",
+        "title": "Praxis Teacher Certification Requirements by State"
+      },
+      {
+        "pos": 5,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/2442984746054209/",
+        "title": "Do New Jersey teachers need to take Praxis Core for ..."
+      },
+      {
+        "pos": 6,
+        "domain": "240tutoring.com",
+        "path": "/praxis/elementary-education-multiple-subjects-5001/scoring/",
+        "title": "Praxis Elementary Education (5001) Scoring Guide"
+      },
+      {
+        "pos": 7,
+        "domain": "nj.gov",
+        "path": "/education/certification/testing/flex/",
+        "title": "Grade Point Average (GPA) and Praxis Flexibility"
+      },
+      {
+        "pos": 8,
+        "domain": "teacherstestprep.com",
+        "path": "/Praxis-New-Jersey",
+        "title": "New Jersey Praxis Test Info | 2026 Dates ..."
+      },
+      {
+        "pos": 9,
+        "domain": "urbanedcertification.newark.rutgers.edu",
+        "path": "/nj-required-praxis-tests/",
+        "title": "NJ Required Praxis Tests - Applying For Teacher Certification"
+      }
+    ]
+  },
+  "south carolina": {
+    "kw": "praxis 5001 south carolina requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/southcarolina-tests.html",
+        "title": "South Carolina Required Tests"
+      },
+      {
+        "pos": 2,
+        "domain": "ed.sc.gov",
+        "path": "/educators/certification/required-examinations/25-26/",
+        "title": "South Carolina Required Certification Assessments 2025-26"
+      },
+      {
+        "pos": 3,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements"
+      },
+      {
+        "pos": 4,
+        "domain": "ed.sc.gov",
+        "path": "/educators/certification/provisionalinitial/assessment-score-options/",
+        "title": "South Carolina Certification Assessment Program Score ..."
+      },
+      {
+        "pos": 5,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/southcarolina-overview.html",
+        "title": "Overview of South Carolina Testing Requirements"
+      },
+      {
+        "pos": 6,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/1477768939242466/",
+        "title": "South Carolina Elementary Education Praxis requirements"
+      },
+      {
+        "pos": 7,
+        "domain": "uscb.edu",
+        "path": "/academics/education/praxis/index.html",
+        "title": "Praxis Test Information"
+      },
+      {
+        "pos": 8,
+        "domain": "teacherstestprep.com",
+        "path": "/Praxis-South-Carolina",
+        "title": "South Carolina Praxis Test Info"
+      },
+      {
+        "pos": 9,
+        "domain": "thescea.org",
+        "path": "/professional-excellence/student-engagement/tools-tips/resources-praxis-support",
+        "title": "Resources for Praxis Support | The SCEA"
+      }
+    ]
+  },
+  "kentucky": {
+    "kw": "praxis 5001 kentucky requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/kentucky-tests.html",
+        "title": "Kentucky RequiredTest"
+      },
+      {
+        "pos": 2,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements"
+      },
+      {
+        "pos": 3,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements.html",
+        "title": "Praxis Teacher Certification Requirements by State"
+      },
+      {
+        "pos": 4,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/2598531963832819/",
+        "title": "Which Praxis tests for elementary education in Kentucky?"
+      },
+      {
+        "pos": 5,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/kentucky-overview.html",
+        "title": "Kentucky Overview"
+      },
+      {
+        "pos": 6,
+        "domain": "teacherstestprep.com",
+        "path": "/Praxis-Kentucky",
+        "title": "Kentucky Praxis Test Info | 2026 Dates, Testing Locations & ..."
+      },
+      {
+        "pos": 7,
+        "domain": "education.uky.edu",
+        "path": "/accreditation/praxis-resources",
+        "title": "Educational Testing Service & Praxis Testing"
+      },
+      {
+        "pos": 8,
+        "domain": "240tutoring.com",
+        "path": "/resources/passing-praxis-scores-by-state/",
+        "title": "Passing Praxis Scores by State"
+      },
+      {
+        "pos": 9,
+        "domain": "mathhelp.com",
+        "path": "/praxis-math-test-prep/kentucky",
+        "title": "Kentucky Praxis Math Test Prep"
+      }
+    ]
+  },
+  "pennsylvania": {
+    "kw": "praxis 5001 pennsylvania requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements"
+      },
+      {
+        "pos": 2,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/2237059173313435/",
+        "title": "What Praxis test is needed to add elementary certification ..."
+      },
+      {
+        "pos": 3,
+        "domain": "praxis.ets.org",
+        "path": "/test/elementary-education-multiple-subjects-subtests-5001.html",
+        "title": "Multiple Subjects (5001; subtests 5002, 5003, 5004, 5005)"
+      },
+      {
+        "pos": 4,
+        "domain": "teachinglicense.study.com",
+        "path": "/praxis/praxis-tests-in-pennsylvania.html",
+        "title": "Pennsylvania Praxis Tests: Requirements, Passing Scores ..."
+      },
+      {
+        "pos": 5,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/pennsylvania-tests.html",
+        "title": "Pennsylvania Required Tests"
+      },
+      {
+        "pos": 6,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/pennsylvania-overview.html",
+        "title": "Pennsylvania Overview"
+      },
+      {
+        "pos": 7,
+        "domain": "teacherstestprep.com",
+        "path": "/praxis-elementary-education-multiple-subjects",
+        "title": "Praxis Elementary Education: Multiple Subjects"
+      },
+      {
+        "pos": 8,
+        "domain": "prepsaret.com",
+        "path": "/praxis/praxis-test-pennsylvania",
+        "title": "Praxis Test Pennsylvania: Requirements, Dates & How to ..."
+      },
+      {
+        "pos": 9,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements.html",
+        "title": "Praxis Teacher Certification Requirements by State"
+      }
+    ]
+  },
+  "alabama": {
+    "kw": "praxis 5001 alabama requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements"
+      },
+      {
+        "pos": 2,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/alabama-tests.html",
+        "title": "Alabama Required Tests"
+      },
+      {
+        "pos": 3,
+        "domain": "teachinglicense.study.com",
+        "path": "/praxis/praxis-tests-in-alabama.html",
+        "title": "Praxis Tests in Alabama: Requirements, Passing Scores ..."
+      },
+      {
+        "pos": 4,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/2710447799307901/",
+        "title": "Which Praxis test is required in Huntsville, AL?"
+      },
+      {
+        "pos": 5,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/alabama-overview.html",
+        "title": "Alabama Overview"
+      },
+      {
+        "pos": 6,
+        "domain": "teacherstestprep.com",
+        "path": "/Praxis-Alabama",
+        "title": "Alabama Praxis Test Info | 2026 Dates, Testing Locations & ..."
+      },
+      {
+        "pos": 7,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements.html",
+        "title": "Praxis Teacher Certification Requirements by State"
+      },
+      {
+        "pos": 8,
+        "domain": "una.edu",
+        "path": "/education/educator-preparation/praxis-testing.html",
+        "title": "Assessment Requirements"
+      },
+      {
+        "pos": 9,
+        "domain": "prepsaret.com",
+        "path": "/praxis/praxis-requirements-in-alabama",
+        "title": "Praxis Requirements in Alabama"
+      }
+    ]
+  },
+  "maryland": {
+    "kw": "praxis 5001 maryland requirements",
+    "org": [
+      {
+        "pos": 1,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/maryland-tests.html",
+        "title": "Maryland Required Tests"
+      },
+      {
+        "pos": 2,
+        "domain": "praxis.ets.org",
+        "path": "/scores",
+        "title": "Passing Score Requirements"
+      },
+      {
+        "pos": 3,
+        "domain": "facebook.com",
+        "path": "/groups/1008853332800698/posts/2729235624095785/",
+        "title": "Hi …. I am in the state of Maryland and I want to apply for a ..."
+      },
+      {
+        "pos": 4,
+        "domain": "teacherstestprep.com",
+        "path": "/Praxis-Maryland",
+        "title": "Maryland Praxis Test Info | 2026 Dates, Testing Locations ..."
+      },
+      {
+        "pos": 5,
+        "domain": "prepsaret.com",
+        "path": "/praxis/maryland-praxis-requirements",
+        "title": "Maryland Praxis Requirements: Tests & Scores Guide"
+      },
+      {
+        "pos": 6,
+        "domain": "teachinglicense.study.com",
+        "path": "/praxis/praxis-tests-in-maryland.html",
+        "title": "Praxis Exams in Maryland: Requirements, Passing Scores ..."
+      },
+      {
+        "pos": 7,
+        "domain": "praxis.ets.org",
+        "path": "/state-requirements/maryland-overview.html",
+        "title": "Maryland Overview"
+      },
+      {
+        "pos": 8,
+        "domain": "teachercertification.com",
+        "path": "/praxis/maryland-praxis-requirements/",
+        "title": "Maryland Praxis Test Requirements"
+      },
+      {
+        "pos": 9,
+        "domain": "mathhelp.com",
+        "path": "/praxis-math-test-prep/maryland",
+        "title": "Maryland Praxis Math Test Prep"
+      }
+    ]
+  }
+}

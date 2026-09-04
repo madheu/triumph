@@ -48,6 +48,8 @@ E:\Learndiag\praxis-5001\
 | `/api/register·login·verify·resend·logout·me·state` | 原 Pages Functions 移植版；错误统一为 `{error:{code,message,hint},status}` |
 | `/api/v1/*` | 公共只读 API（health/meta/stats/questions/random）+ 自助范围 API key |
 | `/mcp` | MCP Streamable HTTP（JSON-RPC：initialize/tools/list/tools/call），无鉴权只读 |
+| `/.well-known/api-catalog` | RFC 9727 API 目录（RFC 9264 Linkset 格式 + profile）；GET/HEAD 均带 Link 头 |
+| 首页 `/` | RFC 8288 Link 发现头：api-catalog / service-desc（openapi.json）/ service-doc（/developers）/ describedby（llms.txt） |
 | `Accept: text/markdown` | 内容页协商出 `md\*.md`，带 `Vary: Accept, Accept-Encoding`；无法满足才 406 |
 | 其余 | 原样走 `env.ASSETS.fetch`（静态行为、缓存头与之前完全一致） |
 

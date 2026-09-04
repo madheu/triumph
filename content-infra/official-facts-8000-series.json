@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "title": "Praxis 8000 Series · Official Facts",
+    "created": "2026-09-03",
+    "last_verified": "2026-09-03",
+    "revision": "F1 · 来源 URL 回填 + 8005 复核",
+    "human_readable": "../docs/official-facts-8000-series.md",
+    "url_patterns": {
+      "test_detail": "https://praxis.ets.org/test/<code>.html",
+      "state_requirements": "https://praxis.ets.org/state-requirements/<state>-tests.html",
+      "warning": "州名连写无连字符（westvirginia），写成 west-virginia 会 404"
+    },
+    "scale": "100-200",
+    "scale_note": "第三方宣称的 100-300 / 合格分 240 与官方州页矛盾，属错误信息，不得采信"
+  },
+  "tests": [
+    {
+      "series": "8000",
+      "test_code": "8002",
+      "official_name": "Elementary Education Fundamentals: Reading and Language Arts",
+      "subject": "Reading and Language Arts",
+      "launch_date": "2026-03-09",
+      "content_domains": [
+        { "name": "Reading", "items": 42, "verification_status": "confirmed" },
+        { "name": "Writing, Speaking and Listening", "items": 38, "verification_status": "confirmed" }
+      ],
+      "content_domains_source": "ETS Elementary Education V5 PDF",
+      "test_length": "100 min",
+      "question_count": 80,
+      "question_type": ["selected-response"],
+      "calculator_policy": null,
+      "tasks_of_teaching": "10-15%",
+      "price_usd": 79.0,
+      "passing_score": null,
+      "state": null,
+      "effective_date": null,
+      "official_source_url": "https://praxis.ets.org/test/8002.html",
+      "source_title": "ETS 官方考试页（内容类别题量另见 Elementary-Education-V5.pdf）",
+      "last_verified": "2026-09-03",
+      "verification_status": "confirmed",
+      "notes": null
+    },
+    {
+      "series": "8000",
+      "test_code": "8003",
+      "official_name": "Elementary Education Fundamentals: Mathematics",
+      "subject": "Mathematics",
+      "launch_date": "2026-03-09",
+      "content_domains": [
+        { "name": "Numbers and Operations", "items": 28, "verification_status": "confirmed" },
+        { "name": "Algebraic Thinking", "items": 20, "verification_status": "confirmed" },
+        { "name": "Geometry, Measurement and Data", "items": 20, "verification_status": "confirmed" }
+      ],
+      "content_domains_source": "ETS Elementary Education V5 PDF",
+      "test_length": "100 min",
+      "question_count": 68,
+      "question_type": ["selected-response", "numeric-entry"],
+      "calculator_policy": "on-screen scientific calculator provided",
+      "tasks_of_teaching": "10-15%",
+      "price_usd": 79.0,
+      "passing_score": null,
+      "state": null,
+      "effective_date": null,
+      "official_source_url": "https://praxis.ets.org/test/8003.html",
+      "source_title": "ETS 官方考试页（内容类别题量另见 Elementary-Education-V5.pdf）",
+      "last_verified": "2026-09-03",
+      "verification_status": "confirmed",
+      "notes": "ETS 建议考前先熟悉计算器功能"
+    },
+    {
+      "series": "8000",
+      "test_code": "8004",
+      "official_name": "Elementary Education Fundamentals: Social Studies",
+      "subject": "Social Studies",
+      "launch_date": "2026-03-09",
+      "content_domains": [
+        { "name": "United States History, Government and Citizenship", "items": 33, "verification_status": "confirmed" },
+        { "name": "Geography, Anthropology and Sociology", "items": 23, "verification_status": "confirmed" },
+        { "name": "World History and Economics", "items": 21, "verification_status": "confirmed" }
+      ],
+      "content_domains_source": "ETS Elementary Education V5 PDF",
+      "test_length": "100 min",
+      "question_count": 77,
+      "question_type": ["selected-response"],
+      "calculator_policy": null,
+      "tasks_of_teaching": "10-15%",
+      "price_usd": 79.0,
+      "passing_score": null,
+      "state": null,
+      "effective_date": null,
+      "official_source_url": "https://praxis.ets.org/test/8004.html",
+      "source_title": "ETS 官方考试页（内容类别题量另见 Elementary-Education-V5.pdf）",
+      "last_verified": "2026-09-03",
+      "verification_status": "confirmed",
+      "notes": "官方注明使用 B.C.E. / C.E. 纪年表述"
+    },
+    {
+      "series": "8000",
+      "test_code": "8005",
+      "official_name": "Elementary Education Fundamentals: Science",
+      "subject": "Science",
+      "launch_date": "2026-03-09",
+      "content_domains": [
+        { "name": "Earth and Space Science", "items": 24, "verification_status": "triangulated" },
+        { "name": "Life Science", "items": 25, "verification_status": "triangulated" },
+        { "name": "Physical Science", "items": 25, "verification_status": "triangulated" }
+      ],
+      "content_domains_source": "Mometrix 与 Study.com 交叉一致（官方考试页未列、官方 PDF 该段截断）",
+      "test_length": "90 min",
+      "question_count": 74,
+      "question_type": ["selected-response"],
+      "calculator_policy": "on-screen scientific calculator provided",
+      "tasks_of_teaching": "10-15%",
+      "sep_integration": "另有 10-15% 融合科学与工程实践（SEP）",
+      "price_usd": 79.0,
+      "passing_score": null,
+      "state": null,
+      "effective_date": null,
+      "official_source_url": "https://praxis.ets.org/test/8005.html",
+      "source_title": "ETS 官方考试页（时长/题量/计算器为官方直证）",
+      "last_verified": "2026-09-03",
+      "verification_status": "confirmed",
+      "field_level_note": "test_length / question_count / calculator_policy = confirmed；content_domains 题量分布 = triangulated",
+      "notes": "全库唯一仍未官方直证的字段是 content_domains 分布"
+    },
+    {
+      "series": "8000",
+      "test_code": "8006",
+      "official_name": "Elementary Education Fundamentals: Teaching Reading",
+      "subject": "Teaching Reading",
+      "launch_date": "2026-03-09",
+      "content_domains": [
+        { "name": "Foundational Literacy Skills", "items": 32, "verification_status": "confirmed" },
+        { "name": "Fluency and Vocabulary", "items": 24, "verification_status": "confirmed" },
+        { "name": "Comprehension and Written Expression", "items": 24, "verification_status": "confirmed" }
+      ],
+      "content_domains_source": "ETS Elementary Education V5 PDF",
+      "test_length": "100 min",
+      "question_count": 80,
+      "question_type": ["selected-response"],
+      "calculator_policy": null,
+      "tasks_of_teaching": "10-15%",
+      "price_usd": 79.0,
+      "passing_score": null,
+      "state": null,
+      "effective_date": null,
+      "official_source_url": "https://praxis.ets.org/test/8006.html",
+      "source_title": "ETS 官方考试页（内容类别题量另见 Elementary-Education-V5.pdf）",
+      "last_verified": "2026-09-03",
+      "verification_status": "confirmed",
+      "notes": "基于 Science of Reading，覆盖 National Reading Panel 五大阅读教学组件"
+    }
+  ],
+  "praxis_steps": {
+    "price_usd_per_step": 39.5,
+    "source": "https://praxis.ets.org/state-requirements/westvirginia-tests.html",
+    "last_verified": "2026-09-03",
+    "steps": [
+      { "code": "8201", "name": "Reading", "parent": "8002" },
+      { "code": "8202", "name": "Writing, Speaking, and Listening", "parent": "8002" },
+      { "code": "8301", "name": "Numbers and Operations", "parent": "8003" },
+      { "code": "8302", "name": "Algebraic Thinking", "parent": "8003" },
+      { "code": "8303", "name": "Geometry, Measurement, and Data", "parent": "8003" },
+      { "code": "8401", "name": "United States History, Government, Citizenship", "parent": "8004" },
+      { "code": "8402", "name": "Geography, Anthropology, Sociology", "parent": "8004" },
+      { "code": "8403", "name": "World History and Economics", "parent": "8004" },
+      { "code": "8501", "name": "Earth and Space Sciences", "parent": "8005" },
+      { "code": "8502", "name": "Life Sciences", "parent": "8005" },
+      { "code": "8503", "name": "Physical Sciences", "parent": "8005" }
+    ],
+    "missing": "8006 的 Steps 代码未在任何官方页列出"
+  },
+  "states": {
+    "West Virginia": {
+      "status": "confirmed",
+      "source": "ETS 官方州要求页",
+      "source_url": "https://praxis.ets.org/state-requirements/westvirginia-tests.html",
+      "scores": { "8002": 152, "8003": 152, "8004": 147, "8005": 143, "8006": null },
+      "last_verified": "2026-09-03",
+      "notes": "WV 的 Teaching Reading 采用 Praxis 5205（$156，合格分 159），不是 8006。写 WV 页面时不要写「8006 待定」"
+    },
+    "Arkansas": {
+      "status": "confirmed",
+      "source": "ETS 官方州要求页（F1 已由机构级升级为官方）",
+      "source_url": "https://praxis.ets.org/state-requirements/arkansas-tests.html",
+      "corroborating_source": "https://uca.edu/ocs/testing-information",
+      "scores": { "8002": 137, "8003": 136, "8004": 130, "8005": 126, "8006": null },
+      "last_verified": "2026-09-03",
+      "notes": "8006 未采用。5000 系列可考至 2027-08-31（ETS 州页表述为 Accepted through September 1, 2027），成绩认可至 2031-08-31；2027-08-31 前 5000 与 8000 成绩可混用（需四个领域各至少一科达标）"
+    },
+    "_other_48_states": {
+      "status": "unverified",
+      "scores": null,
+      "notes": "一律 Not verified，不得写入任何页面。URL 格式 https://praxis.ets.org/state-requirements/<state>-tests.html"
+    }
+  },
+  "key_dates": [
+    { "event": "registration_opens", "date": "2026-02-late", "status": "confirmed" },
+    { "event": "first_full_test", "date": "2026-03-09", "status": "confirmed" },
+    { "event": "score_reporting_begins", "date": "2026-04-17", "status": "confirmed" },
+    { "event": "praxis_steps_launch_8002_8005", "date": "2026-09", "status": "conflict", "note": "ETS 三种口径：Spring 2026（官方 PDF）/ Summer 2026（长 URL 考试页）/ September 2026（短 URL 考试页）。站内统一 September 2026 并注明口径出入" },
+    { "event": "praxis_steps_launch_8006", "date": "2027", "status": "confirmed" },
+    { "event": "legacy_series_retire_5001_7001_5901_7811", "date": "2028-08", "status": "confirmed" }
+  ],
+  "pricing": [
+    { "item": "per_test", "price_usd": 79.0, "effective_date": "2026-06-01", "source": "各科官方考试页" },
+    { "item": "per_step", "price_usd": 39.5, "source": "WV 州要求页" },
+    { "item": "bundle_3_subjects", "price_usd": 149.49, "savings_usd": 87, "source": "WV / AR 州要求页", "corrected": "F1 修正：原记 149.50" },
+    { "item": "bundle_4_subjects", "price_usd": 199.52, "savings_usd": 116, "source": "WV / AR 州要求页", "corrected": "F1 修正：原记 199.50" },
+    { "item": "early_bird_per_test", "price_usd": 19.75, "window": "至 2026-05-31", "status": "conflict", "note": "UCA 官方页佐证（$79 的 25%）；但 8006 考试页显示 2026-10-31 前仍可享 75% off → 逐页核对" }
+  ],
+  "known_conflicts": [
+    "Steps 启用时间：Spring 2026（官方 PDF）/ Summer 2026（长 URL 考试页 + tomorrows-teacher 页）/ September 2026（短 URL 考试页）—— ETS 自家三种口径",
+    "同一考试存在两个 URL 版本，内容口径不同；引用优先用短 URL /test/<code>.html",
+    "早鸟折扣窗口：2026-05-31（UCA 佐证）vs 8006 页 2026-10-31",
+    "8005 内容类别题量：官方考试页未列、官方 PDF 截断，依赖第三方交叉验证"
+  ],
+  "discredited_claims": [
+    {
+      "claim": "8000 系列采用 100-300 分尺度，合格分 240",
+      "source": "Prepsaret 等第三方站点",
+      "verdict": "错误，与 ETS 官方州要求页直接矛盾",
+      "official_fact": "100-200 尺度；WV 126-152、AR 126-137 区间",
+      "action": "全站检索残留并修正"
+    },
+    {
+      "claim": "8002 为 55 题 / 1 小时 15 分 / $130 / 合格分 157",
+      "source": "apexteachersprep.com",
+      "verdict": "错误，与官方考试页和州要求页均矛盾",
+      "official_fact": "80 题 / 100 分钟 / $79 / 州定（WV 152、AR 137）",
+      "action": "该类站点包装成「官方蓝图」，数据错误严重，一律只当线索"
+    }
+  ],
+  "open_questions": [
+    { "id": 1, "priority": "P1", "issue": "8005 内容类别题量（24/25/25）无官方直证，官方 PDF 该段截断" },
+    { "id": 2, "priority": "P2", "issue": "8006 的 Steps 代码未在任何官方页列出" },
+    { "id": 3, "priority": "P1", "issue": "其余 48 州合格分未核实" },
+    { "id": 4, "priority": "P1", "issue": "全站检索第三方错误信息残留（100-300 尺度 / 240 分 / 55 题等）" }
+  ],
+  "resolved_in_f1": [
+    "五科 official_source_url 全部回填并逐条点开确认",
+    "8005 的时长/题量/计算器从 triangulated 升为 confirmed",
+    "WV / AR 州要求页 URL 回填，AR 来源等级从机构级升级为 ETS 官方",
+    "修正打包价 149.50 → 149.49、199.50 → 199.52",
+    "补录 Steps 代码表、WV 采用 5205 而非 8006、早鸟折算 $19.75/科"
+  ]
+}

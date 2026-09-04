@@ -239,10 +239,16 @@ function page({ title, slug, desc, body, words, data = {} }) {
   <meta name="description" content="${esc(desc)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="${SITE}/${slug}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   ${seriesLinks ? `${seriesLinks}\n  ` : ''}<meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${SITE}/${slug}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(title)}">
+  <meta name="twitter:description" content="${esc(desc)}">
+  <meta name="twitter:image" content="${SITE}/images/${slug}.png">
 ${stateHeadExtra(data)}<!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
   <script>

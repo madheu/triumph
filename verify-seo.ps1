@@ -82,9 +82,10 @@ try {
   $a1 = $map['https://learndiag.com/praxis-5001-passing-score-by-state']
   $a2 = $map['https://learndiag.com/praxis-5001-subtests-explained']
   Write-Host ("INFO  home lastmod=$homeLm resources lastmod=$resLm article1=$a1 article2=$a2")
-  Check 'homepage lastmod = 2026-08-25' ($homeLm -eq '2026-08-25') $homeLm
-  Check 'resources lastmod = 2026-08-25' ($resLm -eq '2026-08-25') $resLm
-  Check 'both new URLs lastmod = 2026-08-25, monthly, 0.7' (($a1 -eq '2026-08-25') -and ($a2 -eq '2026-08-25')) "$a1 / $a2"
+  Check 'homepage lastmod = 2026-08-30' ($homeLm -eq '2026-08-30') $homeLm
+  Check 'resources lastmod = 2026-08-30' ($resLm -eq '2026-08-30') $resLm
+  Check 'passing-score-by-state lastmod = 2026-08-30' ($a1 -eq '2026-08-30') $a1
+  Check 'subtests-explained lastmod = 2026-08-25' ($a2 -eq '2026-08-25') $a2
 } catch {
   Check 'sitemap.xml is well-formed XML' $false $_.Exception.Message
 }

@@ -34,6 +34,7 @@ E:\Triumph\praxis-5001\
 │   ├── google-auth.mjs    Google OAuth（PKCE）
 │   ├── billing.mjs        Creem 支付
 │   ├── admin.mjs          后台管理
+│   ├── apicatalog.mjs     RFC 9727 api-catalog 文档 + 首页 RFC 8288 Link 发现头
 │   └── ...                （其余模块）
 ├── build-worker.mjs       esbuild 打包 worker-src → site/_worker.js
 ├── deploy.ps1             一键部署
@@ -64,6 +65,14 @@ E:\Triumph\praxis-5001\
 - ✅ Creem 品牌/域名/邮箱已改（用户手动）
 - ✅ GSC 验证记录在 DNS
 - ✅ Google 已收录首页（品牌词 "learndiag" 排第一）
+- ✅ Agent discovery Link 头（2026-08-29）：首页响应带 RFC 8288 Link 头
+  （`api-catalog`/`service-desc`/`service-doc`/`describedby` 四个关系），
+  新增 `/.well-known/api-catalog`（RFC 9264 Linkset + RFC 9727 profile），
+  isitagentready.com 扫描 `checks.discoverability.linkHeaders` = pass
+- ✅ Content Signals（2026-08-29）：robots.txt 每个 User-agent 组都声明
+  `Content-Signal: ai-train=yes, search=yes, ai-input=yes`（全允许，与站点
+  公开/欢迎 AI 的定位一致；值是发布者偏好，改语义只需改这一行），
+  isitagentready.com 扫描 `checks.botAccessControl.contentSignals` = pass
 
 **进行中 / 待办**：
 - ⏳ GSC：resources 页报"noindex"是旧快照，需「请求编入索引」重抓

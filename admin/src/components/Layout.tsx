@@ -8,6 +8,7 @@ const nav = [
   { to: '/tickets', label: '工单' },
   { to: '/questions', label: '题库管理' },
   { to: '/content', label: '内容管理' },
+  { to: '/tools', label: '工具注册表' },
   { to: '/analytics', label: '行为分析' },
 ];
 
@@ -20,7 +21,7 @@ export default function Layout() {
       {/* 侧边栏 */}
       <aside className="w-52 shrink-0 bg-white border-r border-neutral-200 flex flex-col">
         <div className="px-5 py-5 border-b border-neutral-100">
-          <div className="text-lg font-serif text-brand-dark">Triumph.</div>
+          <div className="text-lg font-serif text-brand-dark">Learndiag.</div>
           <div className="text-[10px] uppercase tracking-widest text-neutral-400 mt-0.5">Admin</div>
         </div>
         <nav className="flex-1 py-3">

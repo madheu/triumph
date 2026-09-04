@@ -5,7 +5,7 @@
   "description": "Learndiag (learndiag.com) deployment directory + tooling. Deploy with .\\deploy.ps1. NOTE: sync-site.ps1 must NOT be run (it would regress newer files in site/).",
   "type": "module",
   "scripts": {
-    "test": "node --test test/agentic.test.mjs test/smoke-worker.mjs test/admin-gate.test.mjs test/p1-billing.test.mjs test/p2-content.test.mjs test/p3-tickets.test.mjs",
+    "test": "node --test test/agentic.test.mjs test/smoke-worker.mjs test/admin-gate.test.mjs test/p1-billing.test.mjs test/p2-content.test.mjs test/p3-tickets.test.mjs test/admin-orders-users-tools.test.mjs test/ai-analyst.test.mjs",
     "test:parity": "node test/diff-worker.mjs",
     "build:worker": "node build-worker.mjs",
     "build:md": "node tools/html-to-md.mjs",

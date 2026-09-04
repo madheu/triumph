@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script src="/js/theme.js?v=1"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account & Data — Learndiag</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="/css/theme.css?v=1">
+  <style>:root{--brand: #C09D9B;--brand-dark: #A67D7A;--ink: #3A3532;--ink-soft: #6E6760;--danger: #b33a3a;--danger-dark: #952c2c}*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#faf9f7;color:var(--ink);min-height:100vh}.wrap{max-width:520px;margin:0 auto;padding:24px}header{padding:28px 0 12px}.wordmark{font-family:Georgia,Times New Roman,serif;font-size:26px;color:var(--brand-dark)}.card{background:#fff;border:1px solid #E5E0DB;border-radius:12px;padding:32px;margin-top:20px}h1{font-size:22px;font-weight:600;margin-bottom:8px}.sub{color:var(--ink-soft);font-size:14px;margin-bottom:24px;line-height:1.6}label{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:6px}input[type=email]{width:100%;padding:12px 14px;border:1px solid #E5E0DB;border-radius:10px;font-size:15px;margin-bottom:16px;background:#fdfcfa;color:var(--ink)}input:focus{outline:2px solid var(--brand);border-color:transparent}.btn{display:inline-block;width:100%;text-align:center;padding:14px;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}.btn-danger{background:var(--danger);color:#fff}.btn-danger:hover{background:var(--danger-dark)}.btn-danger:disabled{opacity:.6;cursor:not-allowed}.err{background:#fdebeb;color:var(--danger);border-radius:10px;padding:12px 16px;font-size:14px;margin-bottom:16px;display:none;line-height:1.5}.ok-box{background:#eff7ee;border:1px solid #D8EAD6;color:#3e6b3a;border-radius:10px;padding:16px;font-size:14px;line-height:1.6;display:none}.note{font-size:12px;color:var(--ink-soft);margin-top:16px;line-height:1.6}a{color:var(--brand-dark)}ul.clean{margin:12px 0 0 18px;font-size:14px;line-height:1.8;color:var(--ink-soft)}
+</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MSR1Q1G7W9");
+</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="content-signal" content="ai-train=yes, search=yes, ai-input=yes">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="wordmark">Learndiag<span style="color:#C09D9B">.</span></div>
+    </header>
+
+    <div class="card" id="guest" style="display:none">
+      <h1>Account &amp; data</h1>
+      <p class="sub">You are not signed in. Sign in to manage your account and saved results.</p>
+      <a class="btn btn-danger" href="/login" style="background:var(--brand-dark);text-decoration:none">Sign in</a>
+    </div>
+
+    <div class="card" id="member" style="display:none">
+      <h1>Delete my account</h1>
+      <p class="sub">
+        Signed in as <strong id="who"></strong>. Deleting removes everything tied to this
+        account, permanently:
+      </p>
+      <ul class="clean">
+        <li>Your account and sign-in credentials</li>
+        <li>Saved diagnostic results, study plan, and progress</li>
+        <li>Usage events recorded under this account</li>
+      </ul>
+      <p class="sub" style="margin-top:20px">
+        You can register again later with the same email address. Type your email below to confirm.
+      </p>
+
+      <div class="err" id="err"></div>
+
+      <label for="confirm">Account email</label>
+      <input type="email" id="confirm" placeholder="you@example.com" autocomplete="email" />
+
+      <button class="btn btn-danger" id="go">Delete my account</button>
+
+      <p class="note">
+        Questions about your data? See our <a href="/privacy">privacy policy</a> or
+        <a href="/contact">contact us</a>.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="ok-box" id="ok" style="display:none"></div>
+    </div>
+  </div>
+
+  <script src="/js/auth.js?v=1"></script>
+  <script>
+  (function () {
+    var API = window.TRIUMPH_API || '';
+    var T = window.TriumphAuth;
+    var guest = document.getElementById('guest');
+    var member = document.getElementById('member');
+    var who = document.getElementById('who');
+    var input = document.getElementById('confirm');
+    var go = document.getElementById('go');
+    var errBox = document.getElementById('err');
+    var okBox = document.getElementById('ok');
+
+    if (!T || !T.token) { guest.style.display = 'block'; return; }
+    member.style.display = 'block';
+    who.textContent = T.user || 'your account';
+
+    function fail(msg) {
+      errBox.textContent = msg;
+      errBox.style.display = 'block';
+      okBox.style.display = 'none';
+    }
+
+    go.addEventListener('click', function () {
+      var typed = (input.value || '').trim().toLowerCase();
+      if (!typed) { fail('Enter your account email to confirm.'); return; }
+      if (typed !== String(T.user || '').toLowerCase()) {
+        fail('That does not match the signed-in account email.');
+        return;
+      }
+      errBox.style.display = 'none';
+      go.disabled = true;
+      go.textContent = 'Deleting\u2026';
+
+      fetch(API + '/api/account/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + T.token },
+        body: JSON.stringify({ confirm: typed })
+      })
+        .then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (d) {
+          if (!d || !d.ok) {
+            var e = d && d.error;
+            fail((e && (e.message || e.hint)) || 'Deletion failed. Please try again.');
+            go.disabled = false;
+            go.textContent = 'Delete my account';
+            return;
+          }
+          // 清本地账号镜像。ld_* 埋点键是设备级匿名标识，与账号无关，保留 ——
+          // 清掉会让回访判定和漏斗串联失真。
+          try {
+            ['triumph_token', 'triumph_user', 'triumph_answers', 'triumph_mastery',
+             'triumph_plan', 'triumph_srs', 'triumph_tasks', 'triumph_exam_date',
+             'triumph_unlocked_at', 'triumph_last_pass', 'triumph_last_score',
+             'triumph_today'].forEach(function (k) { localStorage.removeItem(k); });
+          } catch (e) { /* storage unavailable — server-side deletion already done */ }
+
+          member.style.display = 'none';
+          okBox.textContent = 'Account deleted. This browser has been signed out, and the email '
+            + typed + ' can be used to register again.';
+          okBox.style.display = 'block';
+        })
+        .catch(function () {
+          fail('Network error. Nothing was deleted \u2014 please try again.');
+          go.disabled = false;
+          go.textContent = 'Delete my account';
+        });
+    });
+
+    input.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') go.click(); });
+  })();
+  </script>
+</body>
+</html>

@@ -514,6 +514,76 @@ test('Authorization Server Metadata: valid issuer matching PRM; complete agent_a
   assert.equal(asm.token_endpoint, undefined, 'no OAuth token endpoint advertised');
 });
 
+/* ================= 6c. api-catalog discovery (RFC 9727 / RFC 8288) ================= */
+
+test('/.well-known/api-catalog: RFC 9264 linkset with RFC 9727 profile, lists REST API + MCP', async () => {
+  const r = await call(makeEnv(), '/.well-known/api-catalog');
+  assert.equal(r.status, 200);
+  const ct = r.headers.get('content-type');
+  assert.match(ct, /application\/linkset\+json/, 'linkset media type');
+  assert.match(ct, /profile="https:\/\/www\.rfc-editor\.org\/info\/rfc9727"/, 'RFC 9727 profile parameter');
+  assert.equal(r.headers.get('access-control-allow-origin'), '*');
+
+  const doc = await r.json();
+  assert.ok(Array.isArray(doc.linkset) && doc.linkset.length >= 2, 'linkset array with one element per API');
+
+  const rest = doc.linkset.find(e => e.anchor === 'https://learndiag.com/api/v1/');
+  assert.ok(rest, 'REST API element');
+  assert.ok(rest['service-desc'].some(l => l.href === 'https://learndiag.com/openapi.json'), 'REST service-desc → openapi.json');
+  assert.ok(rest['service-doc'].some(l => l.href === 'https://learndiag.com/developers'), 'REST service-doc → /developers (pretty URL, no redirect hop)');
+  assert.ok(rest.status.some(l => l.href === 'https://learndiag.com/api/v1/health'), 'status → health probe');
+
+  const mcp = doc.linkset.find(e => e.anchor === 'https://learndiag.com/mcp');
+  assert.ok(mcp, 'MCP element');
+  assert.ok(mcp['service-desc'].some(l => l.href === 'https://learndiag.com/.well-known/mcp/manifest.json'), 'MCP service-desc → manifest');
+});
+
+test('/.well-known/api-catalog: HEAD carries Link header (RFC 9727 §2), POST → 405, mirror exempt', async () => {
+  const env = makeEnv();
+  const head = await call(env, '/.well-known/api-catalog', 'HEAD');
+  assert.equal(head.status, 200);
+  assert.equal(await head.text(), '', 'HEAD must not carry a body');
+  assert.match(head.headers.get('link') || '', /rel="api-catalog"/);
+
+  const post = await call(env, '/.well-known/api-catalog', 'POST', { nope: true });
+  assert.equal(post.status, 405);
+  assert.equal((await post.json()).error.code, 'method_not_allowed');
+
+  // programmatic clients on mirror hosts get the catalog directly, no 301
+  const mirror = await worker.fetch(new Request('https://triumph-6eq.pages.dev/.well-known/api-catalog'), env, {});
+  assert.equal(mirror.status, 200);
+  assert.ok((await mirror.json()).linkset.length >= 2);
+});
+
+test('homepage Link header: api-catalog/service-desc/service-doc/describedby on both representations; targets resolve', async () => {
+  const env = makeEnv();
+  const requiredRels = ['api-catalog', 'service-desc', 'service-doc', 'describedby'];
+  for (const accept of [undefined, 'text/html', 'text/markdown']) {
+    const r = await call(env, '/', 'GET', null, accept ? { Accept: accept } : {});
+    assert.equal(r.status, 200);
+    assert.match(r.headers.get('content-type'), accept === 'text/markdown' ? /text\/markdown/ : /text\/html/);
+    const link = r.headers.get('link');
+    assert.ok(link, `Link header on homepage (${accept || 'default'} Accept)`);
+    for (const rel of requiredRels) {
+      assert.match(link, new RegExp(`rel="${rel}"`), `rel=${rel} present (${accept || 'default'} Accept)`);
+    }
+  }
+
+  // every advertised relation target must actually resolve on the site
+  const r = await call(env, '/');
+  for (const m of (r.headers.get('link') || '').matchAll(/<([^>]+)>/g)) {
+    const path = new URL(m[1], 'https://learndiag.com').pathname;
+    const target = await call(env, path);
+    assert.equal(target.status, 200, `${path} must exist`);
+  }
+});
+
+test('other content pages do not carry the discovery Link header (homepage-scoped)', async () => {
+  const r = await call(makeEnv(), '/about');
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get('link'), null);
+});
+
 /* ================= 7. robots.txt & sitemap.xml (fixes #2, #3, #16) ================= */
 
 test('robots.txt: no BOM (live directive breakage), AI agents allowed, sitemap linked', () => {
@@ -525,6 +595,31 @@ test('robots.txt: no BOM (live directive breakage), AI agents allowed, sitemap l
     assert.ok(t.includes(`User-agent: ${ua}`), `allows ${ua}`);
   }
   assert.match(t, /^Sitemap: https:\/\/learndiag\.com\/sitemap\.xml$/m);
+});
+
+test('robots.txt: Content-Signal declared in every User-agent group (contentsignals.org)', () => {
+  const t = readFileSync(SITE + 'robots.txt', 'utf8');
+  // canonical all-allow signal matching the site's public/agent-welcome posture
+  assert.ok(t.includes('Content-Signal: ai-train=yes, search=yes, ai-input=yes'), 'canonical signal present');
+  // split into groups: every group carries a syntactically valid Content-Signal
+  // with all three categories (a crawler matching a specific group ignores the
+  // wildcard group, so per-group repetition is required)
+  const groups = t.split(/^User-agent:/m).slice(1);
+  assert.ok(groups.length >= 10, `parsed ${groups.length} user-agent groups`);
+  for (const g of groups) {
+    const body = g.split('\n').filter(l => l.trim() && !l.trim().startsWith('#')).join('\n');
+    const sig = /Content-Signal:([^\n]*)/.exec(body);
+    assert.ok(sig, `group "${body.split('\n')[0].trim()}" carries a Content-Signal`);
+    const pairs = sig[1].split(',').map(s => s.trim()).filter(Boolean);
+    const labels = pairs.map(p => p.split('=')[0].trim());
+    for (const cat of ['ai-train', 'search', 'ai-input']) {
+      assert.ok(labels.includes(cat), `group declares ${cat}`);
+    }
+    for (const p of pairs) {
+      const value = p.split('=')[1];
+      assert.ok(['yes', 'no'].includes(value), `signal value must be yes|no: "${p}"`);
+    }
+  }
 });
 
 test('sitemap.xml: parses, every url has lastmod, urls unique + canonical host', () => {
@@ -594,7 +689,9 @@ test('homepage JSON-LD: parses; Organization has contactPoint; SoftwareApplicati
 
 test('homepage links trust + developer pages from footer', () => {
   const html = readFileSync(SITE + 'index.html', 'utf8');
-  for (const p of ['/about.html', '/contact.html', '/privacy.html', '/developers.html']) {
+  // pretty canonical URLs (SEO migration, e9f4fed); worker resolves them to the
+  // .html assets — verified live 200 for all four on 2026-09-03
+  for (const p of ['/about', '/contact', '/privacy', '/developers']) {
     assert.ok(html.includes(`href="${p}"`), `footer links ${p}`);
   }
 });

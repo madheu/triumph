@@ -37,3 +37,6 @@ secrets.json
 
 # ---- admin SPA (source kept, deps not) ----
 admin/node_modules/
+
+# ---- Session tooling state (regenerable) ----
+.mimosa/

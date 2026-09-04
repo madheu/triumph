@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "provider": "Learndiag",
+  "provider_url": "https://learndiag.com/",
+  "contact": "abc15531888397@gmail.com",
+  "description": "Agent skills published by Learndiag, a free Praxis 5001 (Elementary Education: Multiple Subjects) readiness tool for teacher candidates.",
+  "skills": [
+    {
+      "name": "practice-praxis-questions",
+      "title": "Fetch original Praxis 5001 practice questions",
+      "description": "Pull practice questions from the free 969-question bank, filtered by subtest (5002 reading, 5003 math, 5004 social studies, 5005 science), category or keyword.",
+      "url": "https://learndiag.com/.well-known/agent-skills/practice-praxis-questions/SKILL.md",
+      "tags": ["practice-questions", "quiz", "praxis", "test-prep", "education"],
+      "languages": ["en"],
+      "execution_url": "https://learndiag.com/practice"
+    },
+    {
+      "name": "quiz-me",
+      "title": "Run a timed Praxis 5001 mini quiz",
+      "description": "Draw a small random set of Praxis 5001 questions, present them one at a time, score the answers and explain what was missed.",
+      "url": "https://learndiag.com/.well-known/agent-skills/quiz-me/SKILL.md",
+      "tags": ["quiz", "diagnostic", "practice-questions", "test-prep"],
+      "languages": ["en"],
+      "execution_url": "https://learndiag.com/diagnostic"
+    },
+    {
+      "name": "find-study-guide",
+      "title": "Find the right Praxis 5001 study guide",
+      "description": "Point the user at the relevant Learndiag study-guide article — subtest guides, the four-gate strategy, retake planning, and 5001-vs-other-exam comparisons — available in HTML or markdown.",
+      "url": "https://learndiag.com/.well-known/agent-skills/find-study-guide/SKILL.md",
+      "tags": ["study-guide", "documentation", "praxis"],
+      "languages": ["en"],
+      "execution_url": "https://learndiag.com/resources.html"
+    }
+  ]
+}

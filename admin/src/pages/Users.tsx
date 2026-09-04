@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getToken, getStoredUser } from '../lib/api';
 
 interface UserRow {
   id: string;
   email: string;
   verified: boolean;
+  authProvider: string;
+  googleLinked: boolean;
+  googleName: string | null;
   plan: string;
   subscriptionStatus: string | null;
   currentPeriodEnd: number | null;
@@ -17,6 +21,7 @@ export default function Users() {
   const [error, setError] = useState('');
   const [resetMsg, setResetMsg] = useState<{ email: string; link: string } | null>(null);
   const me = getStoredUser();
+  const navigate = useNavigate();
 
   const load = async () => {
     setLoading(true);
@@ -61,7 +66,7 @@ export default function Users() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-xl font-semibold text-neutral-800">用户管理</h1>
-          <p className="text-sm text-neutral-500">共 {users.length} 个账号 · 密码重置 / 订阅状态一览</p>
+          <p className="text-sm text-neutral-500">共 {users.length} 个账号 · 登录方式 / 密码重置 / 订阅状态一览</p>
         </div>
         <button onClick={load} className="text-sm text-brand-dark hover:underline">刷新</button>
       </div>
@@ -83,6 +88,7 @@ export default function Users() {
             <thead>
               <tr className="text-left text-xs text-neutral-400 border-b border-neutral-100">
                 <th className="px-4 py-3">邮箱</th>
+                <th className="px-4 py-3">登录方式</th>
                 <th className="px-4 py-3">验证</th>
                 <th className="px-4 py-3">权益</th>
                 <th className="px-4 py-3">注册时间</th>
@@ -95,6 +101,15 @@ export default function Users() {
                   <td className="px-4 py-3">
                     <div className="font-medium text-neutral-800">{u.email}</div>
                     {u.email === me?.email && <span className="text-[10px] text-brand-dark">（你）</span>}
+                  </td>
+                  <td className="px-4 py-3">
+                    {u.authProvider === 'google'
+                      ? <span className="text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">Google</span>
+                      : <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-500">邮箱</span>}
+                    {u.googleLinked && u.authProvider !== 'google' && (
+                      <span className="text-[11px] text-neutral-400 ml-1">已绑 Google</span>
+                    )}
+                    {u.googleName && <div className="text-[11px] text-neutral-400 mt-0.5">{u.googleName}</div>}
                   </td>
                   <td className="px-4 py-3">
                     {u.verified
@@ -114,6 +129,12 @@ export default function Users() {
                   </td>
                   <td className="px-4 py-3 text-xs text-neutral-500">{fmtTime(u.createdAt)}</td>
                   <td className="px-4 py-3 text-right">
+                    <button
+                      onClick={() => navigate('/users/detail?email=' + encodeURIComponent(u.email))}
+                      className="text-xs text-brand-dark hover:underline mr-3"
+                    >
+                      详情
+                    </button>
                     <button
                       onClick={() => genResetLink(u.email)}
                       className="text-xs text-brand-dark hover:underline"

@@ -1,0 +1,74 @@
+{
+  "total": 969,
+  "subtests": {
+    "5002": {
+      "name": "Reading and Language Arts",
+      "questionCount": 214,
+      "categories": [
+        {
+          "name": "Reading",
+          "questionCount": 119
+        },
+        {
+          "name": "Writing, Speaking, and Listening",
+          "questionCount": 95
+        }
+      ]
+    },
+    "5003": {
+      "name": "Mathematics",
+      "questionCount": 172,
+      "categories": [
+        {
+          "name": "Numbers and Operations",
+          "questionCount": 73
+        },
+        {
+          "name": "Algebraic Thinking",
+          "questionCount": 55
+        },
+        {
+          "name": "Geometry and Measurement, Data, Statistics, and Probability",
+          "questionCount": 44
+        }
+      ]
+    },
+    "5004": {
+      "name": "Social Studies",
+      "questionCount": 240,
+      "categories": [
+        {
+          "name": "United States History, Government, and Citizenship",
+          "questionCount": 90
+        },
+        {
+          "name": "Geography, Anthropology, and Sociology",
+          "questionCount": 73
+        },
+        {
+          "name": "World History and Economics",
+          "questionCount": 77
+        }
+      ]
+    },
+    "5005": {
+      "name": "Science",
+      "questionCount": 343,
+      "categories": [
+        {
+          "name": "Earth Science",
+          "questionCount": 107
+        },
+        {
+          "name": "Life Science",
+          "questionCount": 120
+        },
+        {
+          "name": "Physical Science",
+          "questionCount": 116
+        }
+      ]
+    }
+  },
+  "generatedAt": "2026-08-22"
+}
