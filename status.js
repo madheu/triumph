@@ -9,11 +9,32 @@ const ACC = 'ea1585383ab36bf04cbe995b49285ffc';
 const DB = '5d04a307-4dc9-4236-9492-817f17f3a351';
 const KV = '07ad9fc5b16b4bccb31cc92080a29e88';
 
-function getToken() {
+// Cloudflare 的 access token 只有 1 小时寿命，refresh token 每次用完会轮换，
+// 所以每次都重新换一个并写回配置，脚本就能长期免维护地跑。
+async function getToken() {
   const s = fs.readFileSync(CFG, 'utf8');
-  const m = s.match(/oauth_token\s*=\s*"([^"]+)"/);
-  if (!m) throw new Error('未找到 oauth_token，先登录 wrangler');
-  return m[1];
+  const rt = s.match(/refresh_token\s*=\s*"([^"]+)"/)?.[1];
+  if (!rt) throw new Error('配置里没有 refresh_token，先运行 wrangler login');
+  const res = await fetch('https://dash.cloudflare.com/oauth2/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      grant_type: 'refresh_token',
+      refresh_token: rt,
+      client_id: '54d11594-84e4-41aa-b438-e81b8fa78ee7',
+    }),
+  });
+  const j = await res.json();
+  if (!j.access_token) throw new Error('刷新失败: ' + JSON.stringify(j).slice(0, 200));
+  const exp = new Date(Date.now() + (j.expires_in || 3600) * 1000).toISOString();
+  fs.writeFileSync(
+    CFG,
+    s
+      .replace(/oauth_token\s*=\s*"[^"]*"/, `oauth_token = "${j.access_token}"`)
+      .replace(/expiration_time\s*=\s*"[^"]*"/, `expiration_time = "${exp}"`)
+      .replace(/refresh_token\s*=\s*"[^"]*"/, `refresh_token = "${j.refresh_token}"`)
+  );
+  return j.access_token;
 }
 
 async function gql(token, query, variables) {
@@ -39,7 +60,7 @@ async function cf(token, path, body) {
 const iso = (daysAgo) => new Date(Date.now() - daysAgo * 86400000).toISOString().slice(0, 10);
 
 (async () => {
-  const token = getToken();
+  const token = await getToken();
 
   // 1. 近 7 天按天
   const daily = await gql(token, `query($zone: String!, $since: String!) {

@@ -12,7 +12,7 @@ Every read endpoint works anonymously. Try it:
 
 `curl "https://learndiag.com/api/v1/questions/random?count=3&subtest=5003"`
 
-That returns three random original math questions with options, correct answers, and explanations as JSON. Health check: `GET /api/v1/health`. Full reference: [**/openapi.json**](https://learndiag.com/openapi.json) (OpenAPI 3.1) or [/api/openapi.yaml](https://learndiag.com/api/openapi.yaml).
+That returns three random original math questions with options, correct answers, and explanations as JSON. Health check: `GET /api/v1/health`. Full reference: `/openapi.json` (OpenAPI 3.1) or `/api/openapi.yaml`.
 
 ## Sandbox & base URL
 
@@ -58,13 +58,13 @@ Agents can call Learndiag natively over MCP Streamable HTTP:
 
 `POST https://learndiag.com/mcp Content-Type: application/json {"jsonrpc":"2.0","id":1,"method":"tools/list"}`
 
-Tools: `list_subtests`, `get_questions`, `get_random_questions`, `get_bank_stats`, `list_study_guides` — all read-only, no auth. Manifests: [/.well-known/mcp/manifest.json](https://learndiag.com/.well-known/mcp/manifest.json) and [/.well-known/mcp-manifest.json](https://learndiag.com/.well-known/mcp-manifest.json).
+Tools: `list_subtests`, `get_questions`, `get_random_questions`, `get_bank_stats`, `list_study_guides` — all read-only, no auth. Manifests: `/.well-known/mcp/manifest.json` and `/.well-known/mcp-manifest.json`.
 
 ## Agent integration extras
 
 - **Markdown negotiation:** send `Accept: text/markdown` on any content page (e.g. this one or any study guide) and you get clean markdown with `Vary: Accept` handled. Direct links: `/md/<page>.md`.
-- **llms.txt:**[/llms.txt](https://learndiag.com/llms.txt) — site map for LLMs including a when-to-use guide.
-- **Agent skills:**[/.well-known/agent-skills/index.json](https://learndiag.com/.well-known/agent-skills/index.json) — SKILL.md instruction files for fetching questions, quizzing, and finding guides.
+- **llms.txt:**`/llms.txt` — site map for LLMs including a when-to-use guide.
+- **Agent skills:**`/.well-known/agent-skills/index.json` — SKILL.md instruction files for fetching questions, quizzing, and finding guides.
 - **CLI (npm):**`triumph-praxis` — `npx triumph-praxis random --subtest 5004 --count 5`. Package source ships in the repository under `cli/`.
 
 ## Status & support

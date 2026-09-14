@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Praxis 8006 Practice Test — 200 Original Questions</title>
+  <meta name="description" content="Practice for Praxis 8006 Teaching Reading with 200 free original questions across all three content categories. Single- and multiple-select, with explanations for every answer.">
+  <link rel="canonical" href="https://learndiag.com/praxis-8006-practice">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="/css/theme.css?v=2">
+  <style>*{box-sizing:border-box;margin:0;padding:0}*,*:before,*:after{min-width:0}:root{--bg: #F2EFE9;--bg-soft: #E8E3D8;--surface:#FFFCF8;--ink: #3C3733;--ink-soft: #6E6760;--line: #D8D1C5;--accent: #C09D9B;--accent-deep: #A67D7A;--correct:#3E6B3A;--correct-soft:#EFF7EE;--correct-line:#C3DCC0;--wrong:#B33A3A;--wrong-soft:#FDEBEB;--wrong-line:#E8B4B4;--accent-soft:#F2EBE8;--serif: "Instrument Serif", Georgia, serif;--sans: "Instrument Sans", system-ui, sans-serif;--mono: "JetBrains Mono", ui-monospace, monospace}html,body{height:100%;width:100%;overflow-x:hidden}body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.75}h1,h2,h3{text-wrap:balance}p,li{overflow-wrap:break-word}a{color:var(--accent-deep)}.wrap{max-width:860px;margin:0 auto;padding:0 40px}@media(max-width:760px){.wrap{padding:0 50px}}.nav{display:flex;align-items:baseline;justify-content:space-between;padding:28px 0 24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px 18px}.wordmark{font-family:var(--serif);font-style:italic;font-size:26px;display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-decoration:none}.nav-note{font-size:13px;color:var(--ink-soft)}.nav-cta{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}@media(max-width:760px){.nav-note{display:none}}article{padding:56px 0 24px}.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:20px}article h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.5vw,44px);line-height:1.12;margin-bottom:8px}.meta-line{font-family:var(--mono);font-size:13px;color:var(--ink-soft);margin:14px 0 36px}article h2{font-family:var(--serif);font-weight:400;font-size:27px;line-height:1.25;margin:44px 0 14px}article p{margin-bottom:16px}.footer{padding:48px 0 64px;border-top:1px solid var(--line)}.footer p{font-size:12px;color:var(--ink-soft);line-height:1.7;max-width:60em}.btn-primary{background:var(--accent);color:#fff;border:none;padding:14px 28px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;transition:background .18s ease}.btn-primary:hover{background:var(--accent-deep)}
+/* ---- practice engine (classes mirror site conventions: .opt from practice page) ---- */
+.opt{display:block;width:100%;text-align:left;background:transparent;border:1px solid var(--line);padding:14px 16px;margin-bottom:12px;font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink);cursor:pointer;transition:border-color .15s ease,background .15s ease;overflow-wrap:break-word}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:disabled{cursor:default}
+.opt.selected{border-color:var(--accent);background:var(--accent-soft)}
+.opt.correct{border-color:var(--correct);background:var(--correct-soft)}
+.opt.wrong{border-color:var(--wrong);background:var(--wrong-soft)}
+.opt .opt-key{font-family:var(--mono);color:var(--accent-deep);margin-right:10px;font-size:13px}
+#full-test{border:1px solid var(--line);background:var(--surface);padding:26px;margin:16px 0 8px}
+.pt-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.pt-tag{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+.pt-tag-multi{color:var(--accent-deep);font-weight:600}
+.pt-count{font-family:var(--mono);font-size:13px;color:var(--ink-soft)}
+.pt-bar{height:4px;background:var(--line);margin-bottom:22px}
+.pt-bar-fill{height:4px;background:var(--accent);transition:width .2s ease}
+.pt-q{font-size:16px;line-height:1.7;margin-bottom:20px;white-space:pre-wrap}
+.pt-feedback{margin-top:16px}
+.pt-verdict{font-weight:600;margin-bottom:8px}
+.pt-ok{color:var(--correct)}
+.pt-no{color:var(--wrong)}
+.pt-explain{font-size:14px;color:var(--ink-soft);line-height:1.65;margin-bottom:8px;overflow-wrap:break-word}
+.pt-nav{display:flex;align-items:center;gap:14px;margin-top:20px}
+.pt-ghost{background:none;border:1px solid var(--line);color:var(--ink);padding:12px 20px;font-family:var(--sans);font-size:14px;cursor:pointer}
+.pt-ghost:hover{border-color:var(--accent)}
+.pt-domain-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:22px 0}
+.pt-domain-btn{background:transparent;border:1px solid var(--line);color:var(--ink);padding:12px 14px;font-family:var(--sans);font-size:13.5px;text-align:left;cursor:pointer;transition:border-color .15s ease,background .15s ease}
+.pt-domain-btn:hover{border-color:var(--accent)}
+.pt-domain-btn.active{border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.pt-perdomain{margin:18px 0}
+.pt-pd-row{display:grid;grid-template-columns:180px 1fr 60px;gap:12px;align-items:center;padding:6px 0}
+@media(max-width:620px){.pt-pd-row{grid-template-columns:1fr;gap:4px}}
+.pt-pd-name{font-size:13.5px}
+.pt-pd-num{font-family:var(--mono);font-size:12.5px;color:var(--accent-deep);text-align:right}
+@media(max-width:620px){.pt-pd-num{text-align:left}}
+.pt-pd-bar{height:5px;background:var(--line)}
+.pt-weakest{border-left:3px solid var(--accent-deep);background:var(--bg-soft);padding:14px 18px;font-size:14px}
+.pt-quota{border-left:3px solid var(--accent);background:var(--bg-soft);padding:12px 16px;font-size:13.5px;color:var(--ink-soft);margin:0 0 4px}
+.pt-gate{border:1px solid var(--accent);background:var(--accent-soft);padding:24px;margin:24px 0 6px}
+.pt-gate h3{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.3;margin:6px 0 10px;color:var(--ink)}
+.pt-gate p{font-size:14px;color:var(--ink-soft)}
+.pt-gate .btn-primary{margin-top:16px}</style>
+</head>
+<body>
+  <header class="nav wrap">
+    <a class="wordmark" href="/" aria-label="Learndiag home">Learndiag<span style="color:var(--accent)">.</span></a>
+    <div style="display:flex; gap:24px; align-items:baseline;">
+      <span class="nav-note">Praxis 8006 · unofficial</span>
+      <a class="nav-cta" href="/praxis-8006-teaching-reading">8006 guide</a>
+      <a class="nav-cta" href="/resources">Resources</a>
+      <a class="nav-cta" href="/diagnostic">Free diagnostic &rarr;</a>
+    </div>
+  </header>
+
+<article class="wrap">
+  <span class="eyebrow">Practice · Praxis 8000 Series</span>
+  <h1>Free Praxis 8006 Teaching Reading Practice Test</h1>
+  <div class="meta-line">200 original questions · Foundational Literacy 80 · Fluency &amp; Vocabulary 60 · Comprehension &amp; Written Expression 60</div>
+
+  <div id="full-test"></div>
+
+  <h2>About this practice test</h2>
+  <p>Every question is original, written to the official Praxis 8006 content category definitions published by
+  ETS — none are recycled official test items. Single-answer questions are graded the moment you pick an option;
+  "select all that apply" questions are graded as a set when you press Check. Every question comes with a full
+  explanation, and incorrect picks include a note on why the tempting wrong answer is wrong.</p>
+  <p>Practice by content category — guests preview 5 questions per visit, free accounts get 30 per
+  session, and Pro unlocks the full bank. A percentage is a percentage — ETS publishes no
+  raw-to-scaled conversion for 8006, so treat your result as a readiness signal, not a score prediction.</p>
+
+  <p class="meta-line">Learndiag is an independent study tool, not affiliated with or endorsed by ETS.</p>
+</article>
+
+  <footer class="footer wrap">
+    <p style="margin:0 0 18px"><strong>Learndiag.</strong> <em>Know where you stand.</em></p>
+    <p>Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a
+    trademark of ETS. All practice questions are original and aligned to the published test blueprint.</p>
+    <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  </footer>
+  <script src="/js/auth.js?v=3"></script>
+  <script src="/js/logout-btn.js?v=1"></script>
+  <script src="/js/tracking.js?v=1"></script>
+  <script>window.LDTrack&&LDTrack.init({testCode:"8006",page:"praxis-8006-practice"});</script>
+  <script src="/questions-8006-full.js"></script>
+  <script src="/js/practice-8006.js?v=2"></script>
+  <script src="/js/magic-landing.js?v=1"></script>
+</body>
+</html>

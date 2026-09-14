@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script src="/js/theme.js?v=1"></script>
+  <script src="/js/theme.js?v=2"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Study Tools — Learndiag</title>
   <meta name="description" content="Learning tools for Praxis 5001 prep: diagnostics, question bank drills, and spaced-repetition memory cards." />
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://learndiag.com/tools" />
   <meta property="og:image" content="https://learndiag.com/og-image.png" />
-  <link rel="stylesheet" href="/css/theme.css?v=1">
+  <link rel="stylesheet" href="/css/theme.css?v=2">
   <style>:root{--brand: #C09D9B;--brand-dark: #A67D7A;--ink: #3A3532;--ink-soft: #6E6760}*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#faf9f7;color:var(--ink);min-height:100vh}.wrap{max-width:960px;margin:0 auto;padding:24px}header{padding:28px 0 12px;display:flex;justify-content:space-between;align-items:baseline}.wordmark{font-family:Georgia,Times New Roman,serif;font-size:26px;color:var(--brand-dark);text-decoration:none}.nav-link{font-size:14px;color:var(--ink-soft);text-decoration:none;margin-left:20px}.nav-link:hover{color:var(--brand-dark)}h1{font-size:30px;font-weight:700;margin-top:24px}.sub{color:var(--ink-soft);font-size:15px;margin:8px 0 32px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}.tool-card{background:#fff;border:1px solid #EDEAE6;border-radius:16px;padding:26px;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .15s ease,box-shadow .15s ease;position:relative}.tool-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px #3a353214}.tool-icon{font-size:34px;margin-bottom:14px}.tool-name{font-size:17px;font-weight:600;margin-bottom:6px}.tool-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.65;flex:1}.tool-go{margin-top:18px;font-size:14px;font-weight:600;color:var(--brand-dark)}.lock{position:absolute;top:16px;right:16px;background:#e5d5d2;color:#8a5f5c;font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:999px}.empty{text-align:center;color:var(--ink-soft);padding:60px 0;font-size:14px;grid-column:1/-1}footer{margin-top:56px;padding:24px 0;border-top:1px solid #EDEAE6;font-size:12px;color:var(--ink-soft);line-height:1.7}
 </style>
   <!-- Google tag (gtag.js) -->
@@ -114,5 +114,6 @@
   <script>(function(){var r=!1;try{var c=window.TriumphAuth&&window.TriumphAuth.token;c&&fetch("/api/me",{headers:{Authorization:"Bearer "+c}}).then(function(n){return n.json()}).then(function(n){n&&n.entitlements&&n.entitlements.plan==="pro"&&(r=!0,a(window.__TOOLS__||[]))}).catch(function(){})}catch(n){}function i(n){return String(n||"").replace(/[&<>"']/g,function(e){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[e]})}function a(n){var e=document.getElementById("tools-grid");if(!n.length){e.innerHTML='<div class="empty">Tools coming soon.</div>';return}e.innerHTML=n.map(function(t){var o=t.audience==="pro"&&!r,s=o?"/upgrade":(t.entry||"#").replace(/\.html$/,"");return'<a class="tool-card" href="'+i(s)+'">'+(o?'<span class="lock">PRO</span>':"")+'<div class="tool-icon">'+i(t.icon||"\u{1F9F0}")+'</div><div class="tool-name">'+i(t.name)+'</div><div class="tool-desc">'+i(t.description)+'</div><div class="tool-go">'+(o?"Unlock with Pro \u2192":"Open \u2192")+"</div></a>"}).join("")}fetch("/api/tools").then(function(n){return n.json()}).then(function(n){var e=n&&n.items||[];window.__TOOLS__=e,a(e)}).catch(function(){document.getElementById("tools-grid").innerHTML='<div class="empty">Tools temporarily unavailable \u2014 refresh to retry.</div>'})})();
 </script>
   <script src="/js/auth.js?v=3"></script>
+  <script src="/js/logout-btn.js?v=1"></script>
 </body>
 </html>

@@ -23,6 +23,6 @@ Learndiag is built and funded by a single independent developer. It is **not aff
 
 ## For developers and AI agents
 
-The entire question bank and site content are available programmatically: a documented REST API ([developer portal](https://learndiag.com/developers)), an OpenAPI specification ([openapi.json](https://learndiag.com/openapi.json)), an MCP server at [/mcp](https://learndiag.com/mcp), markdown versions of every page via `Accept: text/markdown`, and an agent-skills registry under [/.well-known/agent-skills/](https://learndiag.com/.well-known/agent-skills/index.json).
+The entire question bank and site content are available programmatically: a documented REST API ([developer portal](https://learndiag.com/developers)), an OpenAPI specification (`/openapi.json`), an MCP server at `/mcp`, markdown versions of every page via `Accept: text/markdown`, and an agent-skills registry under `/.well-known/agent-skills/index.json`.
 
 Questions, corrections, or partnership ideas? Reach us through the [contact page](https://learndiag.com/contact).

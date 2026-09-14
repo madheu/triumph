@@ -6,8 +6,6 @@
 
 *2026-08-24 · Reading time: about 6 min*
 
-date: "2026-08-24"
-
 Registering for the Praxis 5001 is a four-step online process through your ETS Praxis account: find your tests, schedule a date and location, review your cart, and pay.[1] Before you start, there is one step that saves more money and time than anything else: **confirm your state still requires the 5001** — and which subtests you need to pass. With the new 8000-series Elementary Education Fundamentals tests rolling out, registering for the wrong code is the most expensive mistake a candidate can make.[2]
 
 ## Before You Register: Confirm Your Test Code
@@ -89,7 +87,7 @@ After selecting your test in the ETS store, the scheduling step shows available 
 
 ### What ID do I need for test day?
 
-You need valid, unexpired government-issued photo ID matching your registration name exactly. Review the [ID requirements](https://praxis.ets.org/test-takers/test-day-id-requirements.html) page before test day.
+You need valid, unexpired government-issued photo ID matching your registration name exactly. Review the [test-day expectations](https://praxis.ets.org/test-takers/test-day-test-center.html) page before test day.
 
 ### What happens if I need to reschedule?
 

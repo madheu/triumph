@@ -27,9 +27,9 @@
   }
 
   function resolve(pref) {
-    if (pref === 'dark' || pref === 'light') return pref;
+    // 暗色模式暂时下线：所有 'dark' / 系统偏好都强制回落 'light'，避免页面 CSS 变量对不上导致黑底黑字。
     var m = mq();
-    return m && m.matches ? 'dark' : 'light';
+    return 'light';
   }
 
   function apply() {

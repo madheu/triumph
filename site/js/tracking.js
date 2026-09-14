@@ -190,8 +190,10 @@
     var rest = pending.slice(MAX_BATCH);
 
     var body = JSON.stringify({ events: batch });
-    var apiBase = (global.TRIUMPH_API || '');   // 沿用既有全局变量，不新增配置源
-    if (!apiBase) { saveQueue(rest.concat(batch)); return; }
+    var apiBase = (global.TRIUMPH_API || '');   // 空 = 同域相对路径 /api/*，与 auth.js 等模块口径一致
+                                                // （2026-09-06 修复：原先在 apiBase 为空时直接放弃发送，
+                                                //  而线上从不设置 window.TRIUMPH_API，导致埋点全哑、
+                                                //  product_events 表永远 0 行）
 
     var ok = false;
     try {

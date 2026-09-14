@@ -23,7 +23,7 @@
 
 /* 暗色色板。整体保持暖调，不跟到纯黑 —— 站点是米纸质感的品牌，
    冷黑会把这个调性打散。表面分层靠明度差，不靠边框。 */
-[data-theme="dark"]{
+/* DISABLED [data-theme="dark"]{ */
   --bg:#1B1917;--bg-soft:#242120;--surface:#282422;--surface-2:#332E2B;
   --ink:#EDE7E0;--ink-soft:#A69D94;--line:#3B3531;
   --accent:#CBA9A6;--accent-deep:#E2C6C2;--accent-soft:#3A2C2A;--accent-line:#5A403D;
@@ -35,59 +35,59 @@
 }
 
 /* 图片和插画在暗色下压一点亮度，否则会像贴上去的亮片 */
-[data-theme="dark"] img:not([src*=".svg"]){filter:brightness(.88)}
+/* DISABLED [data-theme="dark"] img:not([src*=".svg"]){filter:brightness(.88)} */
 
 /* 原生控件跟随：日期选择器、下拉、滚动条 */
-[data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea{
+/* DISABLED [data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea{ */
   background:var(--surface);color:var(--ink);border-color:var(--line);
 }
-[data-theme="dark"] ::placeholder{color:var(--ink-soft)}
+/* DISABLED [data-theme="dark"] ::placeholder{color:var(--ink-soft)} */
 
 /* ---- 以下为扫描 46 个页面内联 CSS 生成的硬编码覆盖 ---- */
-[data-theme="dark"] a.btn{color:var(--ink)}
-[data-theme="dark"] body{background:var(--bg)}
-[data-theme="dark"] .card{background:var(--surface);border:var(--line)}
-[data-theme="dark"] input[type=email]{border:var(--line);background:var(--surface)}
-[data-theme="dark"] .btn-danger{color:var(--on-accent)}
-[data-theme="dark"] .err{background:var(--wrong-soft);color:var(--wrong)}
-[data-theme="dark"] .ok-box{background:var(--correct-soft);border:var(--correct-line);color:var(--correct)}
-[data-theme="dark"] .tool-card .t-lock{color:var(--accent);background:var(--accent-soft);border:var(--accent-line)}
-[data-theme="dark"] pre{background:var(--bg-soft);color:var(--ink)}
-[data-theme="dark"] .seo-about{border-top:var(--line);background:var(--bg-soft)}
-[data-theme="dark"] .seo-about h1{color:var(--ink)}
-[data-theme="dark"] .seo-about h2{color:var(--ink)}
-[data-theme="dark"] .seo-about p,[data-theme="dark"] .seo-about li{color:var(--ink-soft)}
-[data-theme="dark"] .seo-about a{color:var(--accent)}
-[data-theme="dark"] .diag-opt.correct{background:var(--correct-soft)}
-[data-theme="dark"] .diag-opt.wrong{background:var(--wrong-soft)}
-[data-theme="dark"] .diag-next:hover{background:var(--surface-2)}
-[data-theme="dark"] .google-btn:hover{background:var(--surface)}
-[data-theme="dark"] input[type=email],[data-theme="dark"] input[type=password]{border:var(--line);background:var(--surface)}
-[data-theme="dark"] .btn-primary{color:var(--on-accent)}
-[data-theme="dark"] .btn-primary:hover{background:var(--accent-deep)}
-[data-theme="dark"] .tool{background:var(--surface)}
-[data-theme="dark"] .result .verdict.pass{color:var(--correct)}
-[data-theme="dark"] .opt.correct{border-color:var(--correct-line);background:var(--correct-soft)}
-[data-theme="dark"] .opt.wrong{border-color:var(--wrong-line);background:var(--wrong-soft)}
-[data-theme="dark"] .btn-easy:hover{background:var(--accent-deep)}
-[data-theme="dark"] input[type=text],[data-theme="dark"] textarea{border:var(--line);background:var(--surface)}
-[data-theme="dark"] .ok-msg{background:var(--correct-soft);border:var(--correct-line);color:var(--correct)}
-[data-theme="dark"] .ticket{border:var(--line)}
-[data-theme="dark"] .badge.open{background:var(--wrong-soft);color:var(--wrong)}
-[data-theme="dark"] .badge.pending{background:var(--warn-soft);color:var(--warn)}
-[data-theme="dark"] .badge.resolved{background:var(--correct-soft);color:var(--correct)}
-[data-theme="dark"] .msg.user{background:var(--surface)}
-[data-theme="dark"] .msg.admin{background:var(--accent-soft)}
-[data-theme="dark"] .tool-card{background:var(--surface);border:var(--line)}
-[data-theme="dark"] .lock{background:var(--accent-soft);color:var(--accent-deep)}
-[data-theme="dark"] footer{border-top:var(--line)}
-[data-theme="dark"] .seo-more{border-top:var(--line)}
-[data-theme="dark"] .benefits li{border-bottom:var(--line)}
-[data-theme="dark"] .btn-secondary{background:var(--surface)}
-[data-theme="dark"] .status-box{background:var(--surface)}
-[data-theme="dark"] .status-box.pro{background:var(--accent-soft)}
-[data-theme="dark"] .badge.pro{background:var(--accent-soft);color:var(--accent-deep)}
-[data-theme="dark"] .badge.free{background:var(--bg-soft);color:var(--ink-soft)}
+/* DISABLED [data-theme="dark"] a.btn{color:var(--ink)} */
+/* DISABLED [data-theme="dark"] body{background:var(--bg)} */
+/* DISABLED [data-theme="dark"] .card{background:var(--surface);border:var(--line)} */
+/* DISABLED [data-theme="dark"] input[type=email]{border:var(--line);background:var(--surface)} */
+/* DISABLED [data-theme="dark"] .btn-danger{color:var(--on-accent)} */
+/* DISABLED [data-theme="dark"] .err{background:var(--wrong-soft);color:var(--wrong)} */
+/* DISABLED [data-theme="dark"] .ok-box{background:var(--correct-soft);border:var(--correct-line);color:var(--correct)} */
+/* DISABLED [data-theme="dark"] .tool-card .t-lock{color:var(--accent);background:var(--accent-soft);border:var(--accent-line)} */
+/* DISABLED [data-theme="dark"] pre{background:var(--bg-soft);color:var(--ink)} */
+/* DISABLED [data-theme="dark"] .seo-about{border-top:var(--line);background:var(--bg-soft)} */
+/* DISABLED [data-theme="dark"] .seo-about h1{color:var(--ink)} */
+/* DISABLED [data-theme="dark"] .seo-about h2{color:var(--ink)} */
+/* DISABLED [data-theme="dark"] .seo-about p,[data-theme="dark"] .seo-about li{color:var(--ink-soft)} */
+/* DISABLED [data-theme="dark"] .seo-about a{color:var(--accent)} */
+/* DISABLED [data-theme="dark"] .diag-opt.correct{background:var(--correct-soft)} */
+/* DISABLED [data-theme="dark"] .diag-opt.wrong{background:var(--wrong-soft)} */
+/* DISABLED [data-theme="dark"] .diag-next:hover{background:var(--surface-2)} */
+/* DISABLED [data-theme="dark"] .google-btn:hover{background:var(--surface)} */
+/* DISABLED [data-theme="dark"] input[type=email],[data-theme="dark"] input[type=password]{border:var(--line);background:var(--surface)} */
+/* DISABLED [data-theme="dark"] .btn-primary{color:var(--on-accent)} */
+/* DISABLED [data-theme="dark"] .btn-primary:hover{background:var(--accent-deep)} */
+/* DISABLED [data-theme="dark"] .tool{background:var(--surface)} */
+/* DISABLED [data-theme="dark"] .result .verdict.pass{color:var(--correct)} */
+/* DISABLED [data-theme="dark"] .opt.correct{border-color:var(--correct-line);background:var(--correct-soft)} */
+/* DISABLED [data-theme="dark"] .opt.wrong{border-color:var(--wrong-line);background:var(--wrong-soft)} */
+/* DISABLED [data-theme="dark"] .btn-easy:hover{background:var(--accent-deep)} */
+/* DISABLED [data-theme="dark"] input[type=text],[data-theme="dark"] textarea{border:var(--line);background:var(--surface)} */
+/* DISABLED [data-theme="dark"] .ok-msg{background:var(--correct-soft);border:var(--correct-line);color:var(--correct)} */
+/* DISABLED [data-theme="dark"] .ticket{border:var(--line)} */
+/* DISABLED [data-theme="dark"] .badge.open{background:var(--wrong-soft);color:var(--wrong)} */
+/* DISABLED [data-theme="dark"] .badge.pending{background:var(--warn-soft);color:var(--warn)} */
+/* DISABLED [data-theme="dark"] .badge.resolved{background:var(--correct-soft);color:var(--correct)} */
+/* DISABLED [data-theme="dark"] .msg.user{background:var(--surface)} */
+/* DISABLED [data-theme="dark"] .msg.admin{background:var(--accent-soft)} */
+/* DISABLED [data-theme="dark"] .tool-card{background:var(--surface);border:var(--line)} */
+/* DISABLED [data-theme="dark"] .lock{background:var(--accent-soft);color:var(--accent-deep)} */
+/* DISABLED [data-theme="dark"] footer{border-top:var(--line)} */
+/* DISABLED [data-theme="dark"] .seo-more{border-top:var(--line)} */
+/* DISABLED [data-theme="dark"] .benefits li{border-bottom:var(--line)} */
+/* DISABLED [data-theme="dark"] .btn-secondary{background:var(--surface)} */
+/* DISABLED [data-theme="dark"] .status-box{background:var(--surface)} */
+/* DISABLED [data-theme="dark"] .status-box.pro{background:var(--accent-soft)} */
+/* DISABLED [data-theme="dark"] .badge.pro{background:var(--accent-soft);color:var(--accent-deep)} */
+/* DISABLED [data-theme="dark"] .badge.free{background:var(--bg-soft);color:var(--ink-soft)} */
 
 /* 兜底：任何页面只要 body 没吃到变量，这里强制落地 */
-[data-theme="dark"] body{background:var(--bg);color:var(--ink)}
+/* DISABLED [data-theme="dark"] body{background:var(--bg);color:var(--ink)} */

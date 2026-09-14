@@ -16,6 +16,9 @@ function decodeEntities(s) {
     .replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, ' ')
     .replace(/&rarr;/g, '\u2192').replace(/&larr;/g, '\u2190').replace(/&middot;/g, '\u00b7')
     .replace(/&mdash;/g, '\u2014').replace(/&ndash;/g, '\u2013').replace(/&hellip;/g, '\u2026')
+    .replace(/&ldquo;/g, '\u201C').replace(/&rdquo;/g, '\u201D')
+    .replace(/&lsquo;/g, '\u2018').replace(/&rsquo;/g, '\u2019')
+    .replace(/&trade;/g, '\u2122').replace(/&reg;/g, '\u00AE').replace(/&copy;/g, '\u00A9')
     .replace(/&amp;/g, '&');
 }
 
