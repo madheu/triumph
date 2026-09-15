@@ -62,6 +62,81 @@
       hasScaledScore: false,
       hasBank: true,
     },
+
+    // ------------------------------------------------------------------
+    // 8000 系列（ETS 2026-03-09 上线的新五科）
+    //
+    // 口径说明（2026-09-15 核）：
+    //   - domains[].name 必须与**运行时题库**的字段取值逐字一致，否则设施页按
+    //     领域统计会静默全 0。四科并不统一：8002/8005 的题库字段是 subtest，
+    //     8003/8004 是 content_domain（它们直接把 schema v1 当运行时视图用）。
+    //   - 四科 ETS 均未公布 raw->scaled 换算表，hasScaledScore 一律 false。
+    //   - bankGlobal 指向各科 mini test 的运行时题库（30 题）。四科目前都只有
+    //     这一版题库；将来补 FULL 练习题库时，按 8006 的做法改指 FULL 并加别名。
+    // ------------------------------------------------------------------
+    '8002': {
+      code: '8002',
+      label: 'Praxis 8002 Elementary Education Fundamentals: Reading and Language Arts',
+      shortLabel: '8002 Reading & Language Arts',
+      bankGlobal: 'DM_BANK_8002',
+      // 官方占比 42/38（Reading : Writing, Speaking and Listening），近似等权。
+      // 由 Reading 先行破并列。
+      domains: [
+        { code: 'RD', name: 'Reading', weight: 4 },
+        { code: 'WSL', name: 'Writing, Speaking and Listening', weight: 4 },
+      ],
+      hasScaledScore: false,
+      hasBank: true,
+    },
+
+    '8003': {
+      code: '8003',
+      label: 'Praxis 8003 Elementary Education Fundamentals: Mathematics',
+      shortLabel: '8003 Mathematics',
+      // 运行时题库为 schema v1 形态，领域字段是 content_domain。
+      bankGlobal: 'DM_BANK_8003',
+      // 官方占比 28/20/20。
+      domains: [
+        { code: 'NO', name: 'Numbers and Operations', weight: 3 },
+        { code: 'AT', name: 'Algebraic Thinking', weight: 2 },
+        { code: 'GMD', name: 'Geometry, Measurement and Data', weight: 2 },
+      ],
+      hasScaledScore: false,
+      hasBank: true,
+    },
+
+    '8004': {
+      code: '8004',
+      label: 'Praxis 8004 Elementary Education Fundamentals: Social Studies',
+      shortLabel: '8004 Social Studies',
+      // 同上：运行时题库为 schema v1 形态，领域字段是 content_domain。
+      bankGlobal: 'DM_BANK_8004',
+      // 官方占比 33/23/21。
+      domains: [
+        { code: 'USG', name: 'United States History, Government and Citizenship', weight: 3 },
+        { code: 'GAS', name: 'Geography, Anthropology and Sociology', weight: 2 },
+        { code: 'WHE', name: 'World History and Economics', weight: 2 },
+      ],
+      hasScaledScore: false,
+      hasBank: true,
+    },
+
+    '8005': {
+      code: '8005',
+      label: 'Praxis 8005 Elementary Education Fundamentals: Science',
+      shortLabel: '8005 Science',
+      bankGlobal: 'DM_BANK_8005',
+      // 注意：8005 的官方题量分布未公开发布（官方 PDF 该段被截断，流传的
+      // 24/25/25 属第三方三角验证）。因此三领域一律等权，不做先后排序，
+      // 页面与结果页也不得宣称某个领域占比更高。
+      domains: [
+        { code: 'ESS', name: 'Earth and Space Science', weight: 1 },
+        { code: 'LS', name: 'Life Science', weight: 1 },
+        { code: 'PS', name: 'Physical Science', weight: 1 },
+      ],
+      hasScaledScore: false,
+      hasBank: true,
+    },
   };
 
   var DEFAULT_CODE = '5001';
@@ -106,13 +181,21 @@
 
   // 从题库对象数组里按领域统计题量。用于页面显示"该领域有多少题"。
   // 返回 { name: count }，题库为空时返回空对象。
+  //
+  // 领域字段并不统一：8002/8005/8006 的运行时题库用 subtest，
+  // 8003/8004 直接把 schema v1 当运行时视图，字段是 content_domain。
+  // 两个都认，否则这几科的统计会静默返回全 0 —— 页面不报错，只是数字全是 0。
   function questionCounts(code, bank) {
     var t = get(code);
     if (!t || !Array.isArray(bank)) return {};
     var out = {};
     t.domains.forEach(function (d) { out[d.name] = 0; });
     bank.forEach(function (q) {
-      if (q && Object.prototype.hasOwnProperty.call(out, q.subtest)) out[q.subtest]++;
+      if (!q) return;
+      var key = Object.prototype.hasOwnProperty.call(out, q.subtest)
+        ? q.subtest
+        : q.content_domain;
+      if (Object.prototype.hasOwnProperty.call(out, key)) out[key]++;
     });
     return out;
   }

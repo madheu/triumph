@@ -16,6 +16,7 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import vm from 'node:vm';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(here, '..');
@@ -45,9 +46,33 @@ const BANK_8006 = loadBank('questions-8006.js');
 // 它的子集关系与领域覆盖也必须成立，否则设施页按 bankGlobal 取题会与 mini test 不一致。
 const BANK_8006_FULL = loadBank('questions-8006-full.js');
 
+/** 8000 系列用 vm 取全局变量：这几个文件用 window.XXX = [...] 挂载，且可能有多个数组。 */
+function loadBankVm(file, globalName) {
+  const src = readFileSync(join(ROOT, 'site', file), 'utf8');
+  const sb = {};
+  sb.window = sb;
+  vm.createContext(sb);
+  vm.runInContext(src, sb, { filename: file });
+  return sb[globalName];
+}
+
+// 四科运行时题库的领域字段并不统一（事实，非设计）：
+//   8002 / 8005 → subtest（旧运行时格式）
+//   8003 / 8004 → content_domain（直接是 schema v1）
+const NEW4 = [
+  ['8002', 'subtest'],
+  ['8003', 'content_domain'],
+  ['8004', 'content_domain'],
+  ['8005', 'subtest'],
+];
+const BANK_NEW4 = {};
+NEW4.forEach(([code]) => {
+  BANK_NEW4[code] = loadBankVm('questions-' + code + '.js', R.get(code).bankGlobal);
+});
+
 console.log('== 1. 注册表结构 ==');
 t('注册表已导出', !!R);
-t('有两门考试', R.codes().length === 2, R.codes());
+t('已登记全部六门考试', ['5001', '8006', '8002', '8003', '8004', '8005'].every(c => R.exists(c)), R.codes());
 t('DEFAULT_CODE 是 5001', R.DEFAULT_CODE === '5001');
 R.codes().forEach(code => {
   const x = R.get(code);
@@ -71,6 +96,22 @@ console.log('== 2. 领域名与题库 subtest 逐字一致（关键契约）==')
   // 反向：题库里的领域必须都在注册表中，否则统计会漏题
   s5001.forEach(n => t('题库 5001 的「' + n + '」已登记', R.domainNames('5001').includes(n)));
   s8006.forEach(n => t('题库 8006 的「' + n + '」已登记', R.domainNames('8006').includes(n)));
+
+  // 8000 系列四科：领域字段逐科不同，必须按各自字段比对
+  NEW4.forEach(([code, field]) => {
+    const bank = BANK_NEW4[code];
+    t(code + ' 题库已加载', Array.isArray(bank) && bank.length > 0, bank && bank.length);
+    const set = new Set(bank.map(q => q[field]));
+    R.domainNames(code).forEach(n =>
+      t(code + ' 领域「' + n + '」在题库中存在', set.has(n), [...set]),
+    );
+    set.forEach(n => t('题库 ' + code + ' 的「' + n + '」已登记', R.domainNames(code).includes(n)));
+
+    const counts = R.questionCounts(code, bank);
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    t(code + ' 统计总数等于题库题数', total === bank.length, { total, bank: bank.length });
+    t(code + ' 各领域统计非零', Object.values(counts).every(v => v > 0), counts);
+  });
 }
 
 console.log('== 3. 通过率资格（红线）==');
