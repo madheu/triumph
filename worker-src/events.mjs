@@ -20,6 +20,9 @@ const ALLOWED_EVENTS = new Set([
   'test_view', 'test_start', 'question_answer', 'test_complete',
   'result_view', 'signup_prompt_view', 'signup_start', 'signup_success',
   'study_plan_unlock', 'return_visit', 'retest_start', 'share_click',
+  // v1.1 付费漏斗。与 site/js/tracking.js 的 EVENTS、
+  // D1 product_events 的 CHECK 约束三处必须同步，漏一处事件就被静默丢弃。
+  'upgrade_view', 'checkout_start', 'purchase_success',
 ]);
 
 const MAX_BATCH = 25;
@@ -67,9 +70,15 @@ export async function hEvents(request, env) {
     }
     let ts = Number(e.ts);
     if (!Number.isFinite(ts) || ts <= 0 || ts > now + 60000) ts = now;
-    let elapsed = Number(e.elapsed_ms);
-    if (!Number.isFinite(elapsed) || elapsed < 0) elapsed = null;
-    else if (elapsed > 3600000) elapsed = 3600000;
+    // Number(null) === 0 —— 直接 Number() 会把「调用方没提供耗时」写成 0，
+    // 于是「未知」和「0ms 秒答」在数据里变成同一个值，秒答识别直接失效。
+    // 先挡掉缺失值，再只对真正的数字做范围校验。
+    let elapsed = null;
+    if (e.elapsed_ms !== null && e.elapsed_ms !== undefined && e.elapsed_ms !== '') {
+      elapsed = Number(e.elapsed_ms);
+      if (!Number.isFinite(elapsed) || elapsed < 0) elapsed = null;
+      else if (elapsed > 3600000) elapsed = 3600000;
+    }
     stmts.push(env.TRIUMPH_D1.prepare(sql).bind(
       e.event_uuid.slice(0, 64),
       e.event,

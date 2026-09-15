@@ -13,7 +13,7 @@ const checks = {
   'subtest table static': inner.includes('5002') && inner.includes('5005'),
   'pricing static': inner.includes('$15'),
   'JSON-LD blocks (3)': (html.match(/application\/ld\+json/g) || []).length === 3,
-  'og:image': html.includes('og:image" content="https://learndiag.com/og-image.png'),
+  'og:image': html.includes('og:image" content="https://learndiag.com/og-image-learndiag-v1.png'),
   'og:type': html.includes('og:type" content="website"'),
   'canonical': html.includes('rel="canonical" href="https://learndiag.com/"'),
   'lang=en': html.includes('<html lang="en">'),

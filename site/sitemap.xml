@@ -133,12 +133,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://learndiag.com/praxis-5001-passing-scores</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://learndiag.com/praxis-5001-free-practice-test</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -200,7 +194,7 @@
   </url>
   <url>
     <loc>https://learndiag.com/score-calculator</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -219,6 +213,12 @@
   <url>
     <loc>https://learndiag.com/praxis-8006-practice</loc>
     <lastmod>2026-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://learndiag.com/praxis-steps</loc>
+    <lastmod>2026-09-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

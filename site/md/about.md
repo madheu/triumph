@@ -4,7 +4,7 @@
 
 # An independent study tool for the four-gate exam.
 
-**Learndiag is a free, independent study tool for the Praxis 5001 — Elementary Education: Multiple Subjects.** It exists for one reason: the 5001 is really four separately scored exams (reading, math, social studies, science), and most candidates study it like one exam. They discover which gate was weakest only after the score report arrives — at retake prices of about $130 and 28-day waits per attempt.
+**Learndiag is a free, independent study tool for the Praxis 5001 — Elementary Education: Multiple Subjects.** It exists for one reason: the 5001 is really four separately scored exams (reading, math, social studies, science), and most candidates study it like one exam. They discover which gate was weakest only after the score report arrives — at retake prices of $180 for the full 5001 (or $64 per subtest) and 28-day waits per attempt.
 
 ## What Learndiag does
 
@@ -19,7 +19,7 @@ Learndiag turns practice into diagnosis. Every question is tagged to an official
 
 ## Independence statement
 
-Learndiag is built and funded by a single independent developer. It is **not affiliated with, endorsed by, or sponsored by ETS**, and no licensing agency is involved in its operation. Praxis is a trademark of ETS. There are no investors shaping recommendations and no data sales funding the product; the planned subscription ($15/mo) covers forecasting and planning features while the question bank stays free.
+Learndiag is built and funded by a single independent developer. It is **not affiliated with, endorsed by, or sponsored by ETS**, and no licensing agency is involved in its operation. Praxis is a trademark of ETS. There are no investors shaping recommendations and no data sales funding the product; the planned subscription ($19.99/mo) covers forecasting and planning features while the question bank stays free.
 
 ## For developers and AI agents
 

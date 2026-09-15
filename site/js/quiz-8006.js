@@ -69,7 +69,13 @@
   function buildOrder() {
     var g = byDomain();
     order = [];
-    DOMAINS.forEach(function (d) { order = order.concat(shuffle(g[d] || [])); });
+    // order holds question IDS (see declaration at the top) — renderQuestion
+    // looks them up with `x.id === order[pos]`. Pushing the question objects
+    // themselves made that comparison always false, so q came back undefined
+    // and the first click threw on q.subtest, leaving a blank box.
+    DOMAINS.forEach(function (d) {
+      order = order.concat(shuffle(g[d] || []).map(function (q) { return q.id; }));
+    });
   }
 
   function summary() {
@@ -146,6 +152,16 @@
   function renderQuestion() {
     var q = BANK.filter(function (x) { return x.id === order[pos]; })[0];
     root.innerHTML = '';
+    // Defensive: a resolver miss used to throw on q.subtest below and leave an
+    // empty box with no explanation. Fail loudly-but-visibly instead: the error
+    // still reaches the console, but the visitor sees what happened.
+    if (!q) {
+      console.error('[quiz-8006] no question resolved for order[' + pos + '] =', order[pos]);
+      var err = el('p', null, 'This question could not be loaded. Please reload the page.');
+      err.style.cssText = 'font-size:15px;color:var(--ink-soft);background:var(--bg-soft);border-left:2px solid #B46F6A;padding:14px 16px';
+      root.appendChild(err);
+      return;
+    }
     var box = el('div', 'ld8-quiz');
 
     var top = el('div');
@@ -445,16 +461,23 @@
       } catch (e) { /* best effort */ }
       if (L) { L.identify(uid || pending.email, pending.method); L.flushNow(); }
 
-      // Authoritative reconcile: GET account state, attach THIS attempt (newer
-      // wins over any stored attempt_8006), PUT back. Retakers keep their
-      // latest run; the pending_state merge server-side is the fallback, not
-      // the primary path.
+      // Authoritative reconcile: GET account state, attach THIS attempt under
+      // the 8006 test bucket (newer wins over any stored attempt), PUT back.
+      // Retakers keep their latest run; the pending_state merge server-side is
+      // the fallback, not the primary path.
+      //
+      // D14: attempts now live at state.tests["8006"], not at the top level.
+      // The server normalizes and merges per test, so this write can no longer
+      // disturb the 5001 bucket. Tolerate a legacy flat response too, in case
+      // the request lands before the server has been deployed.
       var headers = { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token };
       fetch(API + '/api/state', { headers: { Authorization: 'Bearer ' + token } })
         .then(function (r) { return r.json(); })
         .then(function (d) {
           var st = (d && d.state) || {};
-          st.attempt_8006 = attemptPayload;
+          if (!st.tests || typeof st.tests !== 'object') st = { v: 2, tests: { '5001': st } };
+          st.tests['8006'] = st.tests['8006'] || {};
+          st.tests['8006'].attempt_8006 = attemptPayload;
           return fetch(API + '/api/state', { method: 'PUT', headers: headers, body: JSON.stringify({ state: st }) });
         })
         .catch(function () { /* reconcile is best-effort; local result unaffected */ })
@@ -472,7 +495,10 @@
       if (L) L.track('signup_start', { signup_method: 'magic_code' });
       api('/api/magic/request', {
         email: v,
-        pending_state: { attempt_8006: attemptPayload },
+        // D14: send the v2 shape so the server files this under tests["8006"].
+        // A bare { attempt_8006 } would be normalized into the 5001 bucket,
+        // because the server treats an unrecognised flat payload as legacy 5001.
+        pending_state: { v: 2, tests: { '8006': { attempt_8006: attemptPayload } } },
         // 从邮箱点链接时回 8006 页，而不是默认的诊断页
         next: window.location.pathname,
       })
@@ -529,7 +555,11 @@
     fetch(API + '/api/state', { headers: { Authorization: 'Bearer ' + T.token } })
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        var a = d && d.state && d.state.attempt_8006;
+        var st = (d && d.state) || {};
+        // D14: read from the 8006 bucket; fall back to the legacy top-level
+        // field so results saved before the partition still show up.
+        var bucket = (st.tests && st.tests['8006']) || {};
+        var a = bucket.attempt_8006 || st.attempt_8006;
         if (a && a.total_pct && !finished) {
           var note = el('p', null, 'Saved result from ' + a.completed_at + ': ' + a.total_pct + '% of the mini test' +
             (a.weakest_domain ? ' \u2014 weakest category: ' + a.weakest_domain : '') + '. Re-take below to compare.');

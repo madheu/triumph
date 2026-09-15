@@ -45,6 +45,7 @@ import { TICKET_ROUTES, ADMIN_TICKET_ROUTES } from './tickets.mjs';
 import { ATTEMPT_ROUTES, ADMIN_STATS_ROUTES } from './analytics.mjs';
 import { FEEDBACK_ROUTES } from './feedback.mjs';
 import { AI_ROUTES } from './ai-analyst.mjs';
+import { REPORT_ROUTES } from './diagnostic-report.mjs';
 import { MD_ROUTES, PRODUCIBLE_PAGE_TYPES, negotiatePageVariant, varyWithAccept } from './content.mjs';
 import { handleMcp } from './mcp.mjs';
 import { openApiSpec, specToYaml } from './openapi.mjs';
@@ -141,6 +142,12 @@ export default {
       // each page has one URL and the two redirects can never loop.
       if (path === '/diagnostic.html' || path === '/practice.html') {
         return Response.redirect(`${url.origin}${path.replace(/\.html$/, '')}${url.search}`, 301);
+      }
+
+      // 301 merge: passing-scores → score-calculator (content consolidated into the calculator
+      // tool page so all passing-score rank weight lands on one URL, no cannibalization).
+      if (path === '/praxis-5001-passing-scores' || path === '/praxis-5001-passing-scores.html') {
+        return Response.redirect('https://learndiag.com/score-calculator', 301);
       }
 
       /* ---------- machine routes ---------- */
@@ -261,6 +268,13 @@ export default {
         if (ai) {
           const handler = ai[request.method];
           if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(ai) }));
+          return withCors(await handler(request, env));
+        }
+        // 诊断报告：付费内容，未获权益返回 402 且不下发任何报告数据
+        const report = REPORT_ROUTES[path];
+        if (report) {
+          const handler = report[request.method];
+          if (!handler) return withCors(apiError('method_not_allowed', { allowed: Object.keys(report) }));
           return withCors(await handler(request, env));
         }
         const v1 = V1_ROUTES[path];

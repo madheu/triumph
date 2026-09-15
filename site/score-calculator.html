@@ -1,128 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en" data-page-node-id="Be8N25ysJ0pJgMu94ykEb4">
+<head data-page-node-id="VYtmZBSU3wNKeFIljPgfUG">
+  <meta charset="UTF-8" data-page-node-id="CpBzSYaBLQmVUbcKoJ8UCY">
   <script src="/js/theme.js?v=2"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Free Praxis 5001 Score Calculator — Raw to Scaled Score | Learndiag</title>
-  <meta name="description" content="Convert your Praxis 5001 raw score to an estimated scaled score (100–200) for each subtest, check it against a 160 passing line, and see what to do next. Free.">
-  <link rel="canonical" href="https://learndiag.com/score-calculator">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Free Praxis 5001 Score Calculator — Raw to Scaled">
-  <meta property="og:description" content="Estimate your Praxis 5001 scaled score per subtest and check it against the passing line. Free tool.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="QlueN4yfzCSw7ogTUvUFSZ">
+  <title>Praxis Raw Score Calculator: 5001 Scaled + Lines</title>
+  <meta name="description" content="Free Praxis raw score calculator: convert correct answers to an estimated scaled score for 5002, 5003, 5004, and 5005, check your state's passing line, and see the gap." data-page-node-id="ouF9aNU81xLmrPtaxh1DPJ">
+  <link rel="canonical" href="https://learndiag.com/score-calculator" data-page-node-id="85P5ujbO2hdzFJeIkah76f">
+  <meta name="robots" content="index, follow" data-page-node-id="oObEb2JvNEu9zdwdskHAiq">
+  <meta property="og:title" content="Praxis Raw Score Calculator: 5001 Scaled + Pass Lines | Learndiag" data-page-node-id="e6pZr9hKNQujf2FOzrHcQz">
+  <meta property="og:description" content="Free Praxis raw score calculator: convert correct answers to an estimated scaled score for 5002, 5003, 5004, and 5005, check your state's passing line, and see the gap." data-page-node-id="xs3NQrEqwvj4D4c5fGgj0Q">
+  <meta property="og:type" content="website" data-page-node-id="QdMcEXAflhp20UEXzpvDsn">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" data-page-node-id="MFOC3Ry4LwHYE5iPlU5ZZF">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Praxis Raw Score Calculator",
+    "url": "https://learndiag.com/score-calculator",
+    "description": "Estimates a Praxis 5001 scaled score (100–200) from raw correct answers for subtests 5002, 5003, 5004, and 5005, and compares it against a state passing line.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "Learndiag", "url": "https://learndiag.com/" },
+    "publisher": { "@type": "Organization", "name": "Learndiag", "url": "https://learndiag.com/" },
+    "dateModified": "2026-09-07"
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "How is the Praxis 5001 scored?", "acceptedAnswer": { "@type": "Answer", "text": "Each of the four 5001 subtests (5002, 5003, 5004, 5005) receives its own scaled score from 100 to 200. Your raw score (number of correct answers) is converted to the scaled score through a statistical process called equating, which adjusts slightly for difficulty differences between test forms." } },
-      { "@type": "Question", "name": "What is a passing Praxis 5001 score?", "acceptedAnswer": { "@type": "Answer", "text": "Most states set the passing line between 150 and 162 per subtest, and you must pass all four subtests to earn the license. A commonly used benchmark is 160. Check your state's exact requirement — passing scores differ by state." } },
-      { "@type": "Question", "name": "How accurate is this raw-to-scaled conversion?", "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses a linear estimate: scaled ≈ 100 + (raw ÷ total) × 100. The official conversion is ETS-equated and varies slightly by test form, so treat the result as an estimate — typically accurate within a few points." } },
-      { "@type": "Question", "name": "How many questions do I need to answer correctly to pass?", "acceptedAnswer": { "@type": "Answer", "text": "With a 160 passing line and a 100–200 scale, you need roughly 60% of questions correct in a subtest. Because the exact conversion is equated, aim for 65% or higher on practice to leave a safety margin." } }
+      {
+        "@type": "Question",
+        "name": "Is 157 a passing score on Praxis 5002?",
+        "acceptedAnswer": { "@type": "Answer", "text": "157 is the qualifying score several states currently list for 5002, including Virginia, Tennessee, and New Jersey. It is not universal, so look up the exact number for your state and certificate." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do wrong answers lower my Praxis score?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. There is no guessing penalty on Praxis. An unanswered question is a guaranteed miss, so you should always answer every question." }
+      },
+      {
+        "@type": "Question",
+        "name": "If I fail one subtest, do I retake the whole 5001?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most states let you retake only the subtest you failed rather than the whole 5001, because each subtest is scored separately. A strong math score does not offset a failed reading score, and a few states have their own retake rules, so confirm yours." }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is this raw-to-scaled conversion?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It is a linear estimate: scaled ≈ 100 + (raw ÷ total) × 100. ETS converts raw scores with equating, which shifts slightly by test form, so treat the result as a guide that is usually within a few points, not an official score." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Praxis scores expire?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It depends on your state. ETS reports a score for some years after testing, but each state decides how long it will accept. Some accept indefinitely and others set a window, so check your state's reciprocity or score-validity guidance for your certificate." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does any of this apply if my state uses the 8000 series?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Only partly. The 8002–8005 subtests have different question counts and content weights from the 5001, so prep for those codes instead if your state has moved to the 8000 series." }
+      }
     ]
   }
   </script>
 
-  <link rel="stylesheet" href="/css/theme.css?v=2">
-  <style>*{box-sizing:border-box;margin:0;padding:0}:root{--bg: #F2EFE9;--bg-soft: #E8E3D8;--ink: #3C3733;--ink-soft: #6E6760;--line: #D8D1C5;--accent: #C09D9B;--accent-deep: #A67D7A;--on-accent: #332E2B;--serif: "Instrument Serif", Georgia, serif;--sans: "Instrument Sans", system-ui, sans-serif;--mono: "JetBrains Mono", ui-monospace, monospace}body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}a{color:var(--accent-deep)}.wrap{max-width:720px;margin:0 auto;padding:0 28px}.nav{display:flex;align-items:baseline;justify-content:space-between;padding:26px 0 22px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px 18px}.wordmark{font-family:var(--serif);font-style:italic;font-size:25px;color:inherit;text-decoration:none}h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:26px 0 14px}h1 em{font-style:italic;color:var(--accent)}h2{font-family:var(--serif);font-weight:400;font-size:26px;margin:44px 0 12px}h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:26px 0 8px}p{margin-bottom:12px;color:var(--ink)}.lede{color:var(--ink-soft);font-size:17px;max-width:36em}.tool{border:1px solid var(--line);background:#fbfaf7;padding:24px;margin:26px 0}.row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}label{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:5px;font-weight:500}select,input[type=number]{padding:10px 12px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);outline:none;border-radius:4px}input[type=number]{width:110px}.result{border-left:3px solid var(--accent);background:var(--bg-soft);padding:16px 20px;margin-top:6px;display:none}.result .score{font-family:var(--mono);font-size:42px;color:var(--accent-deep);line-height:1}.result .verdict{font-weight:600}.result .verdict.pass{color:#5a7d5a}.result .verdict.fail{color:var(--accent-deep)}.disclaimer{font-size:12.5px;color:var(--ink-soft);margin-top:12px}.cta{border:1px solid var(--line);background:var(--bg-soft);padding:22px 24px;margin:34px 0}.cta strong{font-family:var(--serif);font-size:20px;font-weight:400}.btn{display:inline-block;background:var(--accent);color:var(--on-accent);padding:12px 24px;text-decoration:none;font-weight:600;font-size:15px;margin-top:10px}.btn:hover{background:var(--accent-deep)}ul{margin:0 0 12px 20px}li{margin-bottom:6px}.footer{padding:36px 0 56px;border-top:1px solid var(--line);margin-top:44px;font-size:12.5px;color:var(--ink-soft)}table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0 16px}td,th{border:1px solid var(--line);padding:8px 12px;text-align:left}th{background:var(--bg-soft)}
-</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Praxis 5001 Raw Score Calculator: Estimate Your Scaled Score (Free)",
+    "description": "Step-by-step walkthrough of the Learndiag Praxis Raw Score Calculator: choose a 5001 subtest, enter your raw score, set your state's passing line, and read the estimated scaled score. Also explains why the result is an estimate — ETS converts raw scores through equating, which shifts results a point or two depending on the test form.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Sgw_1i4WS2Q/maxresdefault.jpg",
+    "uploadDate": "2026-09-14T00:00:00-04:00",
+    "duration": "PT1M41S",
+    "url": "https://www.youtube.com/watch?v=Sgw_1i4WS2Q",
+    "embedUrl": "https://www.youtube.com/embed/Sgw_1i4WS2Q",
+    "publisher": { "@type": "Organization", "name": "Learndiag", "url": "https://learndiag.com/" },
+    "isFamilyFriendly": true,
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/theme.css?v=2" data-page-node-id="pX6g8peTiGbhipjzIIcB35">
+  <style>*{box-sizing:border-box;margin:0;padding:0}:root{--bg: #F2EFE9;--bg-soft: #E8E3D8;--ink: #3C3733;--ink-soft: #6E6760;--line: #D8D1C5;--accent: #C09D9B;--accent-deep: #A67D7A;--on-accent: #332E2B;--serif: "Instrument Serif", Georgia, serif;--sans: "Instrument Sans", system-ui, sans-serif;--mono: "JetBrains Mono", ui-monospace, monospace}body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}a{color:var(--accent-deep)}.wrap{max-width:720px;margin:0 auto;padding:0 28px}.nav{display:flex;align-items:baseline;justify-content:space-between;padding:26px 0 22px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px 18px}.wordmark{font-family:var(--serif);font-style:italic;font-size:25px;color:inherit;text-decoration:none}h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5vw,46px);line-height:1.15;margin:26px 0 14px}h1 em{font-style:italic;color:var(--accent)}h2{font-family:var(--serif);font-weight:400;font-size:26px;margin:44px 0 12px}h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:26px 0 8px}p{margin-bottom:12px;color:var(--ink)}.lede{color:var(--ink-soft);font-size:17px;max-width:36em}.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);display:block;margin:22px 0 0}.meta-line{font-family:var(--mono);font-size:13px;color:var(--ink-soft);margin:10px 0 0}.tool{border:1px solid var(--line);background:#fbfaf7;padding:24px;margin:26px 0}.row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}label{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:5px;font-weight:500}select,input[type=number]{padding:10px 12px;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);outline:none;border-radius:4px}input[type=number]{width:110px}.result{border-left:3px solid var(--accent);background:var(--bg-soft);padding:16px 20px;margin-top:6px;display:none}.result .score{font-family:var(--mono);font-size:42px;color:var(--accent-deep);line-height:1}.result .verdict{font-weight:600;margin-top:4px}.result .verdict.pass{color:#5a7d5a}.result .verdict.fail{color:var(--accent-deep)}.disclaimer{font-size:13px;color:var(--ink-soft);margin-top:12px}.table-scroll{overflow-x:auto;margin:0 0 16px}.table-scroll table{width:100%;border-collapse:collapse;font-size:15px;min-width:480px}.table-scroll th,.table-scroll td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left}.table-scroll th{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em}.sources{font-size:14px;color:var(--ink-soft)}.sources p{margin-bottom:8px}.sources a{overflow-wrap:anywhere}.cta{border:1px solid var(--line);background:#fbfaf7;padding:24px;margin:32px 0}.btn{display:inline-block;margin-top:12px;padding:11px 20px;background:var(--accent);color:var(--on-accent);text-decoration:none;border-radius:4px;font-weight:600;font-size:15px}.related{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-soft)}.footer{margin:44px 0 0;padding:22px 0 40px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-soft)}ol,ul{margin:0 0 16px 1.4em}li{margin-bottom:8px}</style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MSR1Q1G7W9");
 </script>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Free Praxis 5001 Score Calculator — Raw to Scaled">
-  <meta name="twitter:description" content="Estimate your Praxis 5001 scaled score per subtest and check it against the passing line. Free tool.">
-  <meta name="twitter:image" content="https://learndiag.com/og-image.png">
-  <meta name="content-signal" content="ai-train=yes, search=yes, ai-input=yes">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" data-page-node-id="bYlxbU19CvsVamHpIUMjMe">
+  <meta name="twitter:card" content="summary_large_image" data-page-node-id="8NGpDs2I1sHiIwnPX7a0pn">
+  <meta name="twitter:title" content="Praxis Raw Score Calculator: 5001 Scaled + Pass Lines" data-page-node-id="T63l7gZNuXVMwZHv437TiI">
+  <meta name="twitter:description" content="Convert correct answers to an estimated Praxis scaled score for 5002, 5003, 5004, and 5005, and check your state's line. Free." data-page-node-id="wlVsjHzwvSq5oGalAsvf7x">
+  <meta name="twitter:image" content="https://learndiag.com/og-image-learndiag-v1.png" data-page-node-id="cgMaJS8uKj9gtqlNpQd0Ko">
+  <meta property="og:image" content="https://learndiag.com/og-image-learndiag-v1.png" data-page-node-id="78rnrNOX5NJuti1QrG94Ed">
+  <meta property="og:image:width" content="1200" data-page-node-id="gsH0cJQfNinQDlqJ3Z9Do0">
+  <meta property="og:image:height" content="630" data-page-node-id="vRF3I6yhC8Vdoz630UzkvU">
+  <meta property="og:image:alt" content="Learndiag — free Praxis prep. Know where to start." data-page-node-id="GJKSKT2TFCdHVpNrg9l2V4">
+  <meta name="twitter:image:alt" content="Learndiag — free Praxis prep. Know where to start." data-page-node-id="Q4EF68dqVibnEydduKNsgE">
+  <meta name="content-signal" content="ai-train=yes, search=yes, ai-input=yes" data-page-node-id="HDkxwrPEJux8Awf40fd6Dg">
 </head>
-<body>
-  <div class="wrap">
-    <nav class="nav"><a class="wordmark" href="/">Learndiag<span style="color:var(--accent)">.</span></a><a href="/diagnostic" style="font-size:13.5px;color:var(--ink-soft);text-decoration:none;">Free Diagnostic</a></nav>
+<body data-page-node-id="qq5WchhgWQp16H9SnKLhDZ">
+  <div class="wrap" data-page-node-id="IsoFOpOMsjAhY1uPx6EhML">
+    <nav class="nav" data-page-node-id="Ybnx0lgAyGxgp9lG7qZTmv"><a class="wordmark" href="/" data-page-node-id="dHVASqBCtk5AwHCxYYdQ7m">Learndiag<span style="color:var(--accent)" data-page-node-id="5wVLFrR41SbYWtzmhbDlGy">.</span></a><a href="/diagnostic" style="font-size:13.5px;color:var(--ink-soft);text-decoration:none;" data-page-node-id="uavtk2phWTIFgVgoAq6iXN">Free Diagnostic</a></nav>
 
-    <h1>Praxis 5001 Score Calculator — <em>raw to scaled, in seconds</em></h1>
-    <p class="lede">Enter how many questions you answered correctly in a subtest, and get an estimated scaled score
-      on the 100–200 scale — plus an instant pass/fail read against the common 160 line. Free, no signup.</p>
+    <span class="eyebrow" data-page-node-id="EGo4BjA4P8pwTGzc8TfPKd">Free tool</span>
+    <h1 data-page-node-id="Y0UsnfkymmwFZ8HMOJ3LCB">Praxis Raw Score Calculator</h1>
+    <p class="lede" data-page-node-id="STs7bW6wy1f5NTaXT1cFGq">Enter how many questions you answered correctly on a 5001 subtest, get an estimated scaled score
+      on the 100–200 scale, and see how far you are from your state's passing line. Free, no signup.</p>
 
-    <div class="tool">
-      <div class="row">
-        <div>
-          <label for="sub">Subtest</label>
-          <select id="sub">
-            <option value="5002">5002 — Reading &amp; Language Arts</option>
-            <option value="5003">5003 — Mathematics</option>
-            <option value="5004">5004 — Social Studies</option>
-            <option value="5005">5005 — Science</option>
+    <div class="tool" data-page-node-id="mNIF2xyHxYawiSHuRJVIsJ">
+      <div class="row" data-page-node-id="6AbC1jCznvaxplr3E6pPiI">
+        <div data-page-node-id="7wEY1Kwa0SR1Kj0m0H2XbT">
+          <label for="sub" data-page-node-id="33G91rYNAUv8f4qpd0txvs">Subtest</label>
+          <select id="sub" data-page-node-id="rRy3FDL8C5lsO3nAig55lL">
+            <option value="5002" data-page-node-id="qwswFRd7Hp4GTXpoWjsupy">5002 — Reading &amp; Language Arts (80 q)</option>
+            <option value="5003" data-page-node-id="WyArW3OYr2mem6VvtQWWDV">5003 — Mathematics (50 q)</option>
+            <option value="5004" data-page-node-id="fnYfhnvtc1oweD8KkqhS40">5004 — Social Studies (60 q)</option>
+            <option value="5005" data-page-node-id="pTaCKmJLG2vgcxnx3KMtkE">5005 — Science (55 q)</option>
           </select>
         </div>
-        <div>
-          <label for="raw">Raw score (correct answers)</label>
-          <input type="number" id="raw" min="0" max="200" value="45">
+        <div data-page-node-id="7fbO7QD4XWniPU7jZ7Shtp">
+          <label for="raw" data-page-node-id="57Ba5kHHVO8HthJHdyTxdZ">Raw score (correct answers)</label>
+          <input type="number" id="raw" min="0" max="200" value="50" data-page-node-id="qinLDzUD6XwnbyDZoF5485">
         </div>
-        <div>
-          <label for="total">Total questions</label>
-          <input type="number" id="total" min="10" max="200" value="70">
+        <div data-page-node-id="O6uc5crCw4PAuypE8JRltG">
+          <label for="total" data-page-node-id="OYFYUPAgTtm34ChmHnhgpM">Total questions</label>
+          <input type="number" id="total" min="10" max="200" value="80" data-page-node-id="lmoWddhaWjLriSPg8dHmRn">
         </div>
-        <div>
-          <label for="line">Your state's passing line</label>
-          <input type="number" id="line" min="100" max="200" value="160">
+        <div data-page-node-id="iAfIY2ngyaZVwVgZlznuQS">
+          <label for="line" data-page-node-id="XRXBTiwO8iotu5nnkf7ZE1">Your state's passing line</label>
+          <input type="number" id="line" min="100" max="200" value="160" data-page-node-id="Sljgu7hEonn8YmhoGzsHxk">
         </div>
       </div>
-      <div class="result" id="result">
-        <div class="score" id="scaled">—</div>
-        <div>estimated scaled score (<span id="pct">—</span>% raw)</div>
-        <div class="verdict" id="verdict">—</div>
+      <div class="result" id="result" data-page-node-id="XlM7X08IfoybJYf5VzSuEN">
+        <div class="score" id="scaled" data-page-node-id="kK2OuC90EtZVAXnK0rMB5C">—</div>
+        <div data-page-node-id="ZEMMnZL52owSaxPR13aJU4">estimated scaled score (<span id="pct" data-page-node-id="vEqZxT4fs3ADEtRDMbm3E0">—</span>% raw)</div>
+        <div class="verdict" id="verdict" data-page-node-id="i2slFF1BDABxx0ZCH9ztcn">—</div>
       </div>
-      <p class="disclaimer">Estimate only: scaled ≈ 100 + (raw ÷ total) × 100. The official conversion is ETS-equated and varies slightly
-        by form. Always confirm your state's passing score with your licensing agency.</p>
+      <p class="disclaimer" data-page-node-id="AwZeoyNhyylm5DChMSQmCl">Estimate only: scaled ≈ 100 + (raw ÷ total) × 100. ETS converts raw scores with equating,
+        which shifts a few points by test form, so treat the number as a guide, not an official score. Always confirm
+        your state's passing line with your licensing agency.</p>
+
+      <!-- P1-4 付费点：贴着「差 X 分」出现，仅在低于所填线时显示（gap-cta 脚本控制） -->
+      <div class="cta" id="gap-cta" hidden style="margin:20px 0 0">
+        <strong id="gap-head">You're below your target line.</strong>
+        <p style="margin:6px 0 0">A shortfall like that is usually one weak subtest, not four. The free 12-question diagnostic
+          tells you which of the four is pulling you under; Pro then drills that one gate for <strong>$19.99/mo</strong> — against the
+          <strong>$180</strong> and 28 days a full 5001 retake costs.</p>
+        <a class="btn" href="/diagnostic">Find my weakest gate — free &rarr;</a>
+        <p class="disclaimer" style="margin-top:10px">Both the diagnostic and the practice bank are free to try.
+          Pro is $19.99/month, cancel anytime; refunds are reviewed within 14 days of a charge.</p>
+      </div>
     </div>
 
-    <h2>How the Praxis 5001 is scored</h2>
-    <p>The Praxis 5001 (Elementary Education: Multiple Subjects) is not one score — it's four. Each subtest
-      (5002 Reading &amp; Language Arts, 5003 Mathematics, 5004 Social Studies, 5005 Science) gets its own
-      <strong>scaled score from 100 to 200</strong>, and you must pass <strong>all four</strong> to earn the license.</p>
-    <p>Your <strong>raw score</strong> is simply the number of questions you answered correctly. ETS converts it to the
-      scaled score through <em>equating</em> — a statistical adjustment that keeps scores comparable across different
-      test forms. That's why there is no single official raw-to-scaled table: it shifts a few points by form.</p>
+    <!-- 视频：Praxis 5001 Raw Score Calculator 讲解（YouTube Sgw_1i4WS2Q，1:41）
+         facade 模式 —— 首屏只加载一张缩略图，点击后才注入 YouTube iframe，不拖慢 LCP。 -->
+    <div style="margin:26px 0">
+      <a href="https://www.youtube.com/watch?v=Sgw_1i4WS2Q" data-yt-facade="Sgw_1i4WS2Q"
+         aria-label="Play: How to use the Praxis Raw Score Calculator"
+         style="position:relative;display:block;border:1px solid var(--line);background:var(--bg-soft);text-decoration:none">
+        <img src="https://i.ytimg.com/vi/Sgw_1i4WS2Q/maxresdefault.jpg"
+             alt="Praxis 5001 raw score calculator showing an estimated scaled score of 148"
+             width="1280" height="720" loading="lazy" decoding="async"
+             style="width:100%;height:auto;display:block">
+        <span aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.18)">
+          <svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><path d="M0 0v22l20-11z" fill="#332E2B"/></svg>
+        </span>
+      </a>
+      <p class="disclaimer" style="margin-top:10px">Watch: how the calculator turns your correct answers into an estimated scaled score, and why that number is an estimate. 1:41.</p>
 
-    <h2>Roughly how many do I need to pass?</h2>
-    <p>Most states set the bar between <strong>150 and 162 per subtest</strong> — a 160 line is the most common benchmark.
-      On a 100–200 scale, that works out to roughly <strong>60% correct</strong>; practicing to 65%+ gives you a safety margin.</p>
-    <table>
-      <tr><th>Typical state line</th><th>≈ Raw % needed</th><th>Out of 70 questions</th></tr>
-      <tr><td>150</td><td>50%</td><td>35 correct</td></tr>
-      <tr><td>157</td><td>57%</td><td>40 correct</td></tr>
-      <tr><td>160</td><td>60%</td><td>42 correct</td></tr>
-      <tr><td>162</td><td>62%</td><td>44 correct</td></tr>
-    </table>
-    <p>See exact lines on our <a href="/praxis-5001-passing-score-by-state">Praxis 5001 passing scores by state</a> page.</p>
-
-    <h2>Frequently asked</h2>
-    <h3>Is the scaled score the same for all four subtests?</h3>
-    <p>The scale is the same (100–200), but you receive four separate scores — and each must clear your state's line.</p>
-    <h3>Do wrong answers hurt more than skipped ones?</h3>
-    <p>No. On Praxis there is no penalty for guessing — every unanswered question is a guaranteed miss, so always guess.</p>
-    <h3>Can I combine strong subtests across attempts?</h3>
-    <p>No — you must pass all four subtests within a single attempt to count as passing the 5001.</p>
-
-    <div class="cta">
-      <strong>A number is useless without a plan.</strong>
-      <p style="margin:6px 0 0">Take the free 12-question diagnostic to find your weakest gate, then drill it with an AI tutor
-        breaking down every mistake. Pass all four on your first attempt — a real retake costs ~$130 and 28 days.</p>
-      <a class="btn" href="/diagnostic">Take the free diagnostic →</a>
+      <details style="margin-top:6px">
+        <summary style="cursor:pointer;font-size:13px;color:var(--ink-soft)">Read the transcript</summary>
+        <div style="margin-top:10px">
+          <p>Praxis 5001 reports four scaled scores, one per subtest. This calculator estimates yours, and shows how far you are from your state's passing line.</p>
+          <p>Three inputs. Pick your subtest up top — the four have different question counts: 80, 50, 60, and 55. Then your raw score, then your state's passing line.</p>
+          <p>Raw score is simply how many questions you answered correctly. There's no guessing penalty on Praxis — every question counts. Say 38 of 80 on Reading and Language Arts. The estimate updates instantly, so try your own number.</p>
+          <p>The passing line is what your state requires. 160 is a common benchmark, not an official number. Your state sets the real one. At 160, this score falls 12 points short.</p>
+          <p>Drop it to 157 and you're still nine short. It shows the gap, not just the number.</p>
+          <p>The math is a straight line: 100 plus your raw percentage. That simplicity is also its limit. ETS converts real scores through equating, a statistical adjustment that shifts results a point or two by test form.</p>
+          <p>There is no national passing score. ETS writes the test, but each state sets its own pass line. Use your own state's official number — the table below lists what several states currently require.</p>
+          <p>A raw score estimate tells you where you stand. The diagnostic tells you what to fix. Twelve free questions find your weakest gate. A full 5001 retake costs $180 and 28 days — go in ready.</p>
+        </div>
+      </details>
     </div>
 
-    <footer class="footer">
+    <h2 data-page-node-id="1XTqDg4qwWYZzIaLZGlSjF">How the Praxis 5001 is scored</h2>
+    <p data-page-node-id="8qHXAV4hxpTRpBg9OKZRIE">The 5001 (Elementary Education: Multiple Subjects) is not one score, it's four. Each subtest gets its own
+      <strong data-page-node-id="bMlQqLNojJwkaFWPGAopJU">scaled score from 100 to 200</strong>:</p>
+    <ul data-page-node-id="1UaOWkJSTRsLdGmw7C2ubR">
+      <li data-page-node-id="Rk8a0LSY8ZX3coO0174kBH">5002 Reading &amp; Language Arts — 80 selected-response questions, 90 minutes</li>
+      <li data-page-node-id="qUxIrpKHpZvzY2go86qqnk">5003 Mathematics — 50 questions, 65 minutes</li>
+      <li data-page-node-id="cU8oWt4GhWXq9x4LgYAf9I">5004 Social Studies — 60 questions, 60 minutes</li>
+      <li data-page-node-id="CtoFNOadxuDMCORH1uImZ7">5005 Science — 55 questions, 60 minutes</li>
+    </ul>
+    <p data-page-node-id="7Vub7oKYzNr1vlP8MtSNDY">In most states you must pass <strong data-page-node-id="vJU6VsGqK63dBWo247aCQz">all four</strong>, not the exam as a whole. Your target is four separate
+      numbers, and a strong math score does not rescue a failed reading score. Your <strong data-page-node-id="GjDlNTh34DODfzBOPEEdyb">raw score</strong> is simply
+      the number of questions you answered correctly. ETS converts it to a scaled score through <em data-page-node-id="RnpxscagEFJetiTaS38clD">equating</em>, a
+      statistical adjustment meant to keep scores comparable across test forms of slightly different difficulty.</p>
+
+    <h2 data-page-node-id="RCeaKNDooH11ZDsYuORH6s">Why there is no single raw-to-scaled table</h2>
+    <p data-page-node-id="EvycQ1ZKOYdUGAKHjE4HDz">Because equating shifts with every form, ETS never publishes one fixed conversion table for the 5001. The same
+      raw count on two different test dates can land a point or two apart on the 100–200 scale. That means any
+      converter you find, including this one, is an estimate. The honest way to use it: get a rough number, then aim
+      comfortably above your state's line instead of right at it.</p>
+
+    <h2 data-page-node-id="MrZaKFstRYiJ1sdaYeI3dJ">What a scaled score means (and what it doesn't)</h2>
+    <p data-page-node-id="FCjkQYXTH5bunsJNACyjja">A 157 is not "57 percent correct." The scaled score is a calibrated measurement, not a percentage, and the
+      raw-to-scaled relationship differs by subtest. Two scores that look alike across subtests are not the same
+      measurement: a 157 on 5003 and a 157 on 5004 both clear their lines, but the underlying raw requirements are
+      not equal.</p>
+    <p data-page-node-id="dcDnPCCdJprGB0FtdxiCgK">Your score report also shows raw points earned vs. available for each content category within a subtest. That
+      breakdown is the best study signal on the page. Find the categories where your earned-to-available ratio is
+      lowest, study those first, and recheck the same categories before you rebook. The national picture is covered
+      on the <a href="/praxis-5001-subtests-explained" data-page-node-id="rluybdAPGDeHLIWvZVLxkJ">subtests explained</a> page.</p>
+
+    <h2 data-page-node-id="wDiZAGhEFlNn5IatUEMPcD">Passing scores vary by state</h2>
+    <p data-page-node-id="nmxDgJwNyKeEx7vopVEwHA">There is no national Praxis passing score. ETS administers the tests but explicitly does not set pass/fail
+      standards, each state's licensing agency does. The 160 line in the calculator above is a common benchmark, not an
+      official number. Several large states currently use these qualifying scores for the four 5001 subtests:</p>
+    <div class="table-scroll" data-page-node-id="c5M80dQCACN9f1jKmzL3a2"><table data-page-node-id="HrACBrp67EhqLCujVXiI3e">
+      <thead data-page-node-id="VlhCbyPr8z21GD8r7zEg86"><tr data-page-node-id="DYZtganHWhQLM8EatBNw29"><th data-page-node-id="rU8VuEX1ZzhEr9JpsErdS5">State</th><th data-page-node-id="c3OBZFhM9NCHRhdPJNHC2W">5002 Reading</th><th data-page-node-id="xLEmwPql0zXtg2VxAOe4qM">5003 Math</th><th data-page-node-id="xh3VK38DoAPBBY0U7ulZQg">5004 Social Studies</th><th data-page-node-id="TKElsAnZK2wGXnjjeHfEJm">5005 Science</th></tr></thead>
+      <tbody data-page-node-id="2RL1jsIpLqxcq6i4koiq4R">
+        <tr data-page-node-id="2Be0AyFCmixJwELPuATuf1"><td data-page-node-id="ZHJv8z4trtMHsDz7R1KYSe">Virginia</td><td data-page-node-id="K3Dl5Dolk7mVF2jzUa3kJB">157</td><td data-page-node-id="lwIPmIgDHsBpkWhYETnsfu">157</td><td data-page-node-id="4nRSQpOL7L7u8tNmR3xUV8">155</td><td data-page-node-id="yR1NtwoRAocy4DzCirBTuy">159</td></tr>
+        <tr data-page-node-id="el379R5axETvoEc58jBR7q"><td data-page-node-id="2gHYIF1sLA57dZBDndPXry">Tennessee</td><td data-page-node-id="te8j1KCNvGFeiogVjVmPDr">157</td><td data-page-node-id="lrtuW55QNLfnyJKTedlXd9">157</td><td data-page-node-id="sBENChX8BxonHBXbFbkYaS">155</td><td data-page-node-id="FtrSBXg77Rm0yl8oFYY4zW">159</td></tr>
+        <tr data-page-node-id="Mm2u3CMaIHNDWCpzwyda9O"><td data-page-node-id="bYnEfUrMGMCQ6LFHYSZTyz">New Jersey</td><td data-page-node-id="m9o13LDUtau3q821y3HBPn">157</td><td data-page-node-id="im3kkisEO3gOF5aZ93OIEm">157</td><td data-page-node-id="7kt6E6l95XUJ8zGjdy924k">155</td><td data-page-node-id="etVheJfGribuTSLMhoOlOm">159</td></tr>
+        <tr data-page-node-id="6lFp2PIhCBCSRXNgPsmqBU"><td data-page-node-id="JPW1QFPtaIGueMZmWT5Rsk">Kentucky</td><td data-page-node-id="tF5mMANgcZxngtcA423VqE">157</td><td data-page-node-id="OM7LzgneMM3RZI9rXCIrwX">157</td><td data-page-node-id="lsS44UaugQZWa9IS9PKWGX">155</td><td data-page-node-id="zwKXpMBRNJf2Ywm6fNJMNv">159</td></tr>
+      </tbody>
+    </table></div>
+    <p data-page-node-id="1SqAI8Cw0MXXbLI9aUP4OA">These are examples to calibrate your target, not your official requirement. South Carolina moved to the 5901
+      bundle and CKT series in 2026, and Pennsylvania, Maryland, and Alabama route elementary candidates to other
+      exams, so don't assume the 5001 applies to every state. For the complete, maintained table with each row's
+      official source, see <a href="/praxis-5001-passing-score-by-state" data-page-node-id="p4i5JFPLGcboYjIWlSwXUi">Praxis 5001 passing scores by state</a>.</p>
+
+    <h2 data-page-node-id="98Rxa0mb5wyxmmKaQAhAJL">How many correct answers do you need?</h2>
+    <p data-page-node-id="ArPi4b4lTBcGBoXgYTFlN9">Roughly, a passing line at 157 on the 100–200 scale maps to about 57% correct in a subtest, and 160 maps to
+      60%. Applied to each subtest's question count, that looks like this, before equating shifts things a point or
+      two:</p>
+    <div class="table-scroll" data-page-node-id="JG9A1DbWESKR9ArBhUp7wr"><table data-page-node-id="5vS1YOp10mvVgfDH42raNo">
+      <thead data-page-node-id="ewgagqsptECPwtrAE7VLFN"><tr data-page-node-id="527hHg9m6FgKD7NZKZeDqK"><th data-page-node-id="djauWqBdHCFVE4Krihx1uk">State line</th><th data-page-node-id="RSpHVHTGS8TYBTG4GnmMgP">5002 (80 q)</th><th data-page-node-id="eA3NacmIq8lYFVCMb1ErvU">5003 (50 q)</th><th data-page-node-id="p4zpWI0GBKnH1q2PEszWCn">5004 (60 q)</th><th data-page-node-id="AAVVHhniC5CEbDMjQcWZy8">5005 (55 q)</th></tr></thead>
+      <tbody data-page-node-id="pDot1XigZeNSKWrYj2DrNt">
+        <tr data-page-node-id="VARDC1ImWk81KAVhNXwmah"><td data-page-node-id="2oCJrJhUsmFFnS4BwcIUf1">155</td><td data-page-node-id="k9sWLTwq02nsLc7RDf6m2F">44 correct</td><td data-page-node-id="VDKhZuYMPlZeV5koxF1pmL">28 correct</td><td data-page-node-id="mmbrX2LXvtxG6tn5TgHMKD">33 correct</td><td data-page-node-id="dHpLq8n1ar13yoxGBkL2C3">30 correct</td></tr>
+        <tr data-page-node-id="3QpT4TvqBDHhCigRmWOdHn"><td data-page-node-id="ZlGuq1cSPoW6CqEMAe374p">157</td><td data-page-node-id="DCtpxLoUNEl2dZLMOYpeOh">46 correct</td><td data-page-node-id="1zuNdqdWiYOTnUg5fCq5cm">29 correct</td><td data-page-node-id="srZu79sLLfBqNvELYyWMiG">34 correct</td><td data-page-node-id="XBlciv96ywdDATVnT7f1zG">31 correct</td></tr>
+        <tr data-page-node-id="bsxpOXmX9A1ZbhiLAYEFXG"><td data-page-node-id="XVLQ1t7lMOLLTxtbUYRiTN">160</td><td data-page-node-id="X8hVXM1t2EfEu6ny4BnMyx">48 correct</td><td data-page-node-id="G7AH88Us19dUrkCjcr5x9Q">30 correct</td><td data-page-node-id="scu2JkzYp2hllrmG3rQx2X">36 correct</td><td data-page-node-id="Z0GhBS6ce3GoxbolyM9bw0">33 correct</td></tr>
+        <tr data-page-node-id="0bMO5Y1Cjj1RAjtFcfmz1J"><td data-page-node-id="fKTrQqAnYZI0D9dVORFxI5">162</td><td data-page-node-id="vUAVKp1WgOtwxk93KGjnhj">50 correct</td><td data-page-node-id="QBo7M4riuL0U67hvVJgZSA">31 correct</td><td data-page-node-id="s2QHRKhgUWtsQNroJ1zNAA">37 correct</td><td data-page-node-id="YM6nZ3v30wL3XaCLrjTEdj">34 correct</td></tr>
+      </tbody>
+    </table></div>
+    <p data-page-node-id="5yn04EYIelJPPG0PNJbjnU">These are estimates from the same linear conversion the calculator uses. Because the real conversion is equated
+      per form, practice to a few points above the line. Getting 48 right on 5002 counts as "around 160" only on an
+      average form, so a safety margin is the whole point of the exercise.</p>
+
+    <h2 data-page-node-id="2AQJHARRd8LynoDlvESwwN">How to find your state's qualifying score</h2>
+    <ol data-page-node-id="JwbexjSoiLFdfEF5nhak35">
+      <li data-page-node-id="kT3DarQjkPAfPYzOxOvv7I"><strong data-page-node-id="BQEIJ2VNoUUMJJ8UhhZn5y">Start at the ETS score-requirements page.</strong> Open <a href="https://praxis.ets.org/scores" data-page-node-id="DyaMIg3GlXHZDqGIV8HHc0">praxis.ets.org/scores</a>,
+      select your state, and search for "Elementary Education: Multiple Subjects (5001)" or the subtest codes 5002–5005.
+      Record every number shown.</li>
+      <li data-page-node-id="WThFxk4YOA6HhEsasX4PKa"><strong data-page-node-id="fWkorW1G7pfGHmHge2tyWk">Open your state's required-tests page on ETS.</strong> The
+      <a href="https://praxis.ets.org/state-requirements.html" data-page-node-id="1LUwN2YI9NGV2sG67LtZTC">state requirements directory</a> links each state's
+      official list of accepted tests and qualifying scores.</li>
+      <li data-page-node-id="jsfFHCLG026bd7yhHtkQ0t"><strong data-page-node-id="bXQNDiUAOMQg4TBQlIjSAt">Cross-check with your state licensing agency.</strong> State education departments publish their own
+      certification handbooks. Search "[State] Department of Education teacher certification Praxis requirements" and
+      confirm a .gov source, since agency rules can lag behind or differ from what ETS displays.</li>
+      <li data-page-node-id="bcxnWAD60GcbvwobGAZIst"><strong data-page-node-id="FFI79j4PA9kAGUDaLHq0pl">Ask your educator preparation program.</strong> Many programs impose internal score floors stricter
+      than the state minimum.</li>
+      <li data-page-node-id="7sDsbA8YsIVX2IjZqBWojN"><strong data-page-node-id="cTW3EtBIhQjcTphzuxHCFF">Save the page and the date.</strong> Requirements change. Keep the official page you relied on and
+      re-check before you register.</li>
+    </ol>
+    <p data-page-node-id="1vL6Vji1ikyl38mQxqqjWc">If your state's ETS page shows no score for the 5001, it usually means the state moved to a different elementary
+      test, for example the 7001 series, the 7811 CKT series, or the new 8000-series Elementary Education Fundamentals
+      tests. "No score listed" does not mean "no test required." Verify with the agency.</p>
+
+    <h2 data-page-node-id="hQO2qc65bysTXxoZVn5DBP">Do Praxis scores expire?</h2>
+    <p data-page-node-id="VPAOVSAXVm7bWZrm3bdIuS">Keep two things apart: how long ETS will report a score, and how long your state will accept it. ETS reports a
+      score for some years after testing, and each state decides its own acceptance window. Some accept indefinitely,
+      others set one (Kentucky's five-year rule applies to certification on its own terms, not as a national standard).
+      Read your state's reciprocity or score-validity guidance and whether it applies to your certificate and route
+      before planning around an old score.</p>
+
+    <h2 data-page-node-id="1gpShBw0QRCVZpP4tu6m5O">The 8000 series changes the blueprint</h2>
+    <p data-page-node-id="AqRiHrOaupHmA9Jn1CjVmX">If your state requires the new 8000 series, the 5001 subtests no longer match: 8002–8005 have different question
+      counts and content weights. Prep around those codes instead, and see <a href="/praxis-5001-vs-8000-series" data-page-node-id="E5gQw0qov7qh1m9mOk5bLh">Praxis
+      5001 vs. the 8000 series</a> for the differences.</p>
+
+    <h2 data-page-node-id="5m7jASymgF0hQJgqFnTdmH">Frequently asked questions</h2>
+    <h3 data-page-node-id="yoyr23FIjLuvTKleuqkd4l">Is 157 a passing score on Praxis 5002?</h3>
+    <p data-page-node-id="ngLn2B2Tygji5rjGliugW3">157 is the qualifying score several states, including Virginia, Tennessee, and New Jersey, currently list for
+      5002. It is not universal, so look up the exact number for your state and certificate.</p>
+    <h3 data-page-node-id="wDOJBUeOpIjHjdWXMRKwyc">Do wrong answers lower my score?</h3>
+    <p data-page-node-id="zSV98k1L75G9kk47iWbHcH">No. There is no guessing penalty on Praxis. An unanswered question is a guaranteed miss, so always answer every
+      question, even if you're guessing.</p>
+    <h3 data-page-node-id="GRRVb2pYILVbcq1A2eFYGt">If I fail one subtest, do I retake the whole 5001?</h3>
+    <p data-page-node-id="nnjGyRcEFljeYCUVJ0G0Ql">Usually not. Because each subtest is scored separately, most states let you retake just the one you failed. A
+      high math score does not offset a failed reading score, and a few states run their own retake rules, so confirm
+      yours before rebooking.</p>
+    <h3 data-page-node-id="6iDzabrgy5aRqQdK4L2TUs">How accurate is this calculator?</h3>
+    <p data-page-node-id="vg0FRQTgBXjgi4QI0q4Z6s">It uses a linear estimate, scaled ≈ 100 + (raw ÷ total) × 100, and ETS's equated conversion usually lands within
+      a few points of it. Treat it as a guide for targeting, not an official prediction.</p>
+    <h3 data-page-node-id="SrCLRILVf8CFvXIZbKWDFn">Do Praxis scores expire?</h3>
+    <p data-page-node-id="5Mqm3M8j06bfS6o0q7SHWD">It depends on your state. ETS reports a score for some years, then each state decides how long to accept it, and
+      some accept it indefinitely. Check your state's reciprocity or score-validity guidance for your certificate.</p>
+    <h3 data-page-node-id="sUZkhUXB8UIiRISBqIFL6H">Does any of this apply if my state uses the 8000 series?</h3>
+    <p data-page-node-id="hC5ZYd5MASnJhW5loDvgBK">Only partly. The 8002–8005 subtests have different question counts and content weights, so build your prep
+      around the new codes. The same "state sets the line, not ETS" rule still holds.</p>
+
+    <div class="cta" data-page-node-id="Nn4CoZB6VdQ7TSp3D96ohG">
+      <strong data-page-node-id="JlWK7HEZQZ7l97PHFiqFCj">A raw score estimate tells you where you stand. The diagnostic tells you what to fix.</strong>
+      <p style="margin:6px 0 0" data-page-node-id="UWQygD5UYCQzYfwzES7QLB">Take the free 12-question readiness diagnostic to find your weakest gate, then drill it
+        with an AI tutor that breaks down every mistake. A full 5001 retake costs $180 and takes 28 days, so it pays
+        to go in ready.</p>
+      <a class="btn" href="/diagnostic" data-page-node-id="egmvNzUtgMDwUey0PHRJFU">Take the free diagnostic →</a>
+    </div>
+
+    <div class="sources" data-page-node-id="neUbS46SDyBRPYyr0XtGYN">
+      <p data-page-node-id="AhoPcjjZGmIAwjxQPDgHsr">[1] ETS, "Passing Score Requirements." <a href="https://praxis.ets.org/scores" data-page-node-id="U1l9SqZAl20vA6B80KcETS">https://praxis.ets.org/scores</a></p>
+      <p data-page-node-id="MfPS2Fwm1HFoUXTSxdpYg6">[2] ETS, "Virginia Required Tests." <a href="https://praxis.ets.org/state-requirements/virginia-tests.html" data-page-node-id="APADNSib5BwrLTox3ef6lN">https://praxis.ets.org/state-requirements/virginia-tests.html</a></p>
+      <p data-page-node-id="yHA3yicNHVQ9esNsrsYZVV">[3] ETS, "Tennessee Required Tests." <a href="https://praxis.ets.org/state-requirements/tennessee-tests.html" data-page-node-id="TYUFb9wWhCBHmcoMZmN6WV">https://praxis.ets.org/state-requirements/tennessee-tests.html</a></p>
+      <p data-page-node-id="e0fCze5DD3s3Cww9MCjSRa">[4] ETS, "New Jersey Required Tests." <a href="https://praxis.ets.org/state-requirements/newjersey-tests.html" data-page-node-id="p3aFaUkugv96qp1QDjTxcW">https://praxis.ets.org/state-requirements/newjersey-tests.html</a></p>
+      <p data-page-node-id="bKO9XQ1WHiZBp5pSubTxCq">[5] Kentucky Administrative Regulation 16 KAR 6:010, "Selection of Assessment for Educator Preparation and Certification." <a href="https://apps.legislature.ky.gov/law/kar/titles/016/006/010/" data-page-node-id="cS4yvdBc96HGcc7mkHgQPP">https://apps.legislature.ky.gov/law/kar/titles/016/006/010/</a></p>
+      <p data-page-node-id="nZhXoFlgtwLACAoHxDgMBO">[6] ETS, "Praxis Elementary Education V5 Updates." <a href="https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf" data-page-node-id="ExB8SsKGDubJJMv81DOE1l">Elementary-Education-V5.pdf</a></p>
+      <p style="margin-top:12px" data-page-node-id="E9zoUFuCp6N5AAHWUFtILk">Subtest question counts and timing reflect ETS product pages as of 2026-09-07.</p>
+    </div>
+
+    <div class="related" data-page-node-id="zkpGaYBu6NAuQSosUtBLEC"><p data-page-node-id="PLbeS9KYCwApsfswGeCfAR">Related: <a href="/praxis-5001-passing-score-by-state" data-page-node-id="Y0JwHn0ppV2y5GsKPcTuWY">Passing scores by state</a> &middot; <a href="/praxis-5001-subtests-explained" data-page-node-id="J7biUWjtALW2F3ABIuzX99">5001 subtests explained</a> &middot; <a href="/praxis-5001-study-guide" data-page-node-id="CHCbwMkPA1dhZIKVeOteeg">Praxis 5001 study guide</a></p></div>
+
+    <footer class="footer" data-page-node-id="A0kd0OWvR5TyKCv3tCwoPw">
       Learndiag is an independent study tool, not affiliated with or endorsed by ETS. Praxis is a trademark of ETS.
-      Score estimates are informational and not official. · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
+      Score estimates here are informational and not official. Exam facts (question counts, timing) reflect ETS pages
+      as of 2026-09-07 and can change. · <a href="/privacy" data-page-node-id="ZskXTRFqYj1fHa0GahGmXc">Privacy</a> · <a href="/terms" data-page-node-id="Of7Va0In7m6wOBSwKjr3v3">Terms</a>
     </footer>
   </div>
 
-  <script>(function(){var s=document.getElementById("sub"),a=document.getElementById("raw"),m=document.getElementById("total"),u=document.getElementById("line"),i=document.getElementById("result"),r=document.getElementById("scaled"),v=document.getElementById("pct"),c=document.getElementById("verdict");function d(){var e=Math.max(0,Number(a.value)||0),t=Math.max(1,Number(m.value)||1);e>t&&(e=t,a.value=t);var o=e/t,l=Math.round(100+o*100),n=Math.max(100,Math.min(200,Number(u.value)||160));i.style.display="block",r.textContent=l,v.textContent=Math.round(o*100),c.textContent=l>=n?"\u2713 Above the "+n+" passing line \u2014 estimated pass.":"\u2717 Below the "+n+" passing line \u2014 estimated not yet passing.",c.className="verdict "+(l>=n?"pass":"fail")}[s,a,m,u].forEach(function(e){e.addEventListener("input",d),e.addEventListener("change",d)}),d()})();
+  <script>(function(){var s=document.getElementById("sub"),a=document.getElementById("raw"),m=document.getElementById("total"),u=document.getElementById("line"),i=document.getElementById("result"),r=document.getElementById("scaled"),p=document.getElementById("pct"),v=document.getElementById("verdict");function t(code){return code==="5002"?80:code==="5003"?50:code==="5004"?60:code==="5005"?55:70}function d(){var e=Math.max(0,Number(a.value)||0),q=Math.max(1,Number(m.value)||1);e>q&&(e=q,a.value=q);var o=e/q,n=Math.round(100+o*100),z=Math.max(100,Math.min(200,Number(u.value)||160));i.style.display="block",r.textContent=n,p.textContent=Math.round(o*100),n>=z?(v.textContent="\u2713 Estimated pass \u2014 "+n+" is "+(n-z)+" points above the "+z+" line.",v.className="verdict pass"):(v.textContent="\u2717 Estimated below the "+z+" line by "+(z-n)+" points. Focus the content categories you missed before rebooking.",v.className="verdict fail")}s.addEventListener("change",function(){m.value=t(s.value),d()}),[a,m,u].forEach(function(e){e.addEventListener("input",d),e.addEventListener("change",d)}),m.value=t(s.value),d()})();
 </script>
+  <!-- P1-4：把「差 X 分」这个瞬间接成付费点。只在低于所填线时露出，用真实的差距数字做钩子。 -->
+  <script>(function(){var v=document.getElementById("verdict"),cta=document.getElementById("gap-cta"),head=document.getElementById("gap-head"),scaled=document.getElementById("scaled"),line=document.getElementById("line");if(!v||!cta||!head)return;function upd(){var fail=v.className.indexOf("fail")!==-1,n=parseInt(scaled.textContent,10),z=parseInt(line.value,10)||160;if(!fail||isNaN(n)){cta.hidden=true;return}var gap=z-n;head.textContent="You're "+gap+(gap===1?" point":" points")+" short of your "+z+" line.";cta.hidden=false}new MutationObserver(upd).observe(v,{childList:true,characterData:true,subtree:true});line.addEventListener("input",upd);upd()})();</script>
+  <!-- 视频 facade：只有点击缩略图才注入 YouTube iframe，首屏不为第三方播放器付代价 -->
+  <script>(function(){var n=document.querySelectorAll("[data-yt-facade]");function play(el){var fr=document.createElement("iframe");fr.src="https://www.youtube.com/embed/"+el.getAttribute("data-yt-facade")+"?autoplay=1&rel=0";fr.title=el.getAttribute("aria-label")||"Video player";fr.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share");fr.setAttribute("allowfullscreen","");fr.style.cssText="width:100%;aspect-ratio:16/9;border:1px solid var(--line);display:block";el.parentNode.replaceChild(fr,el)}for(var i=0;i<n.length;i++){n[i].addEventListener("click",function(e){e.preventDefault();play(this)})}})();</script>
 </body>
 </html>

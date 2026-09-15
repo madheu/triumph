@@ -10,7 +10,8 @@ import { DatabaseSync } from 'node:sqlite';
 if (!globalThis.crypto) globalThis.crypto = webcrypto;
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const worker = (await import(pathToFileURL(ROOT + 'site/_worker.js').href)).default;
+// 读 **worker-src 源码**而不是 site/_worker.js 产物 —— 读产物时"改了源码忘了 build"会假绿。
+const worker = (await import(pathToFileURL(ROOT + 'worker-src/worker.mjs').href)).default;
 const { signJwt } = await import(pathToFileURL(ROOT + 'worker-src/crypto.mjs').href);
 
 /** 内存 SQLite 包装成 D1 接口（prepare→bind→run/all） */

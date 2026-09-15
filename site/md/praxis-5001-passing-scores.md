@@ -2,13 +2,15 @@
 
 *Study guide · Praxis 5001*
 
-# Praxis 5001 Passing Scores: What Your State Requires and How to Look It Up
+# Praxis 5001 Passing Scores: How to Read Your Score Report
 
-*2026-08-24 · Reading time: about 7 min*
+*2026-09-07 · Reading time: about 6 min · Score-report reference*
 
 There is no single "Praxis 5001 passing score." Each state and licensing organization sets its own qualifying score for the Elementary Education: Multiple Subjects exam, and ETS explicitly does not set pass/fail standards.[1] If someone tells you "you need a 160 on Praxis 5001," they may be describing their state's rule — not yours.
 
 The exam is four separately scored subtests: **5002** Reading and Language Arts, **5003** Mathematics, **5004** Social Studies, and **5005** Science. In most states you must pass every subtest, not the exam as a whole. Your target is therefore four separate scores, and each one can differ from the next.
+
+This page explains how to read a Praxis score report: what raw and scaled scores mean, what the per-subtest and content-category breakdown shows, and how to decide what to study next. For the actual state-by-state qualifying-score lines, use the [verified passing scores by state](https://learndiag.com/praxis-5001-passing-score-by-state) page, which is the primary table.
 
 ## Why Passing Scores Vary by State
 
@@ -21,9 +23,19 @@ Licensing is a state function. ETS administers the tests, but each state's board
 
 ETS's own score-requirements page says it plainly: "Passing scores vary by state or agency; they are not set by ETS."[1] That is why a study plan built around a generic "national passing score" is unreliable.
 
-## Common 5001 Subtest Scores (as of August 2026)
+## Raw Score vs. Scaled Score: What the Report Shows
 
-To give you a sense of the range — not as your official requirement — several large states currently use these qualifying scores for the four 5001 subtests:
+Your score report shows a **scaled score** for each subtest on the Praxis 100–200 scale, not a percentage. ETS converts your raw points (questions answered correctly) into a scaled score so that scores are comparable across different test forms of the same difficulty.[9] That conversion matters for three reasons:
+
+- **A scaled score is not a percentage correct.** 157 scaled does not mean "157% of questions right," and the raw-to-scaled relationship can differ by subtest and exam form. Do not infer a raw count from a scaled score.
+- **The report also shows raw points earned vs. available per content category.** This is the diagnostic gold: it tells you which category pulled you down, independent of the overall scaled line.
+- **Compare only same-subtest scaled scores.** A 157 on 5003 and a 157 on 5004 both clear their lines, but the underlying raw requirements are not the same; treat each subtest as its own measurement.
+
+How to use it to decide what to study: find the content categories where your earned-to-available ratio is lowest, prioritize those in your next study session, and retest the same categories before rebooking. The state lines themselves live on the [by-state table](https://learndiag.com/praxis-5001-passing-score-by-state).
+
+## Common 5001 Subtest Scores (as of September 2026)
+
+To give you a sense of the range — not as your official requirement — several large states use these qualifying scores for the four 5001 subtests:
 
 | State | 5002 Reading | 5003 Math | 5004 Social Studies | 5005 Science | Source |
 | --- | --- | --- | --- | --- | --- |
@@ -32,11 +44,7 @@ To give you a sense of the range — not as your official requirement — severa
 | New Jersey | 157 | 157 | 155 | 159 | ETS New Jersey page[4] |
 | Kentucky | 157 | 157 | 155 | 159 | Kentucky regulation 16 KAR 6:010[8] |
 
-South Carolina is in transition: it currently lists 5001 subtests at 157/157/155/159 but has been moving elementary candidates toward the 5901 Three Subject Bundle and the 7811 CKT series, with deadlines tied to August 2026 and August 2027.[5]
-
-For the full data-first breakdown — including states that no longer use the 5001 at all — see [Praxis 5001 passing scores by state](https://learndiag.com/praxis-5001-passing-score-by-state).
-
-Notice a pattern? Many states set identical or near-identical lines — but not all do, and scores change over time. North Carolina, for example, has moved its elementary requirement to the Elementary Education: Mathematics CKT (7813) instead of 5003.[6] You must check the requirement that applies to **your** certificate, in **your** state, in **your** application window.
+**For the complete, maintained table** — including South Carolina's moved lines, states that no longer use the 5001, and each row's official source — see [Praxis 5001 passing scores by state](https://learndiag.com/praxis-5001-passing-score-by-state). The short sample above is context for reading reports, not a policy table.
 
 ## How to Find Your State's Qualifying Score
 
@@ -71,15 +79,19 @@ For a deeper look at eight states where elementary candidates still use the Prax
 - [Praxis 5001 Requirements in Alabama](https://learndiag.com/praxis-5001-alabama-requirements) — the 2025–26 transition and which test your cohort needs
 - [Praxis 5001 Requirements in Maryland](https://learndiag.com/praxis-5001-maryland-requirements) — Teaching Reading plus the CKT path for Elementary (1–6)
 
-## Passing Scores Change — Especially Right Now
+## Do Praxis Scores Expire? (Report vs. Acceptance)
 
-ETS is replacing the 5001 family with the 8000-series Elementary Education Fundamentals tests, which launched in spring 2026.[7] States are adopting the new series at different speeds, and several states are also mid-transition between the 5001, 7001, and CKT series. That means:
+Keep ETS's reporting availability and each state's acceptance rule apart. ETS may report a score for a test for some years, and *each state decides how long it will accept* — some accept indefinitely, others set a validity window with certification-specific conditions (Kentucky's five-year rule, for example, applies to certification on its own terms rather than being a national rule). Check your state's reciprocity or score-validity guidance, and read whether the rule applies to your certificate and application route. There is no single answer for the whole country.
 
-- a score from 2025 may no longer satisfy a 2026 requirement,
-- a test code accepted today may be replaced next year, and
-- qualifying scores can be adjusted when a new version of a test is adopted.
+### My state uses the new 8000 series. Does any of this still apply?
 
-The safe move: **confirm your exact test code and qualifying score no more than a few weeks before registering**, and again before test day.
+The 5001 subtests no longer match the new 8002–8005 blueprints, which have different question counts and content weights.[7] If your state requires the 8000 series, build your prep around those codes — see our [Praxis 5001 vs. the 8000 Series guide](https://learndiag.com/praxis-5001-vs-8000-series) for the differences.
+
+## The Bottom Line
+
+Your Praxis 5001 passing score is a state-specific number, not a national constant. Find your state's qualifying scores on the [verified by-state table](https://learndiag.com/praxis-5001-passing-score-by-state), confirm them with your licensing agency, and re-check before you register. When the score report arrives, read the content-category breakdown to decide what to study — and study for a target comfortably above the line, not right at it.
+
+**Want a quick read on where to focus?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) — a short quiz that helps identify topics worth reviewing. It is not a full-length Praxis test and does not establish an ETS scaled score or a pass probability.
 
 ## Frequently Asked Questions
 
@@ -97,7 +109,7 @@ In most states, yes. The 5001 is scored per subtest, and most licensing agencies
 
 ### Do Praxis passing scores expire?
 
-It depends on your state. Some states accept scores indefinitely; others impose a validity window (often 5–10 years). Check your state's reciprocity or score-validity rules.
+It depends on your state, and you have to separate ETS reporting from state acceptance. ETS will report a score for some years after testing; each state sets its own acceptance window, and some accept scores indefinitely. Read your state's reciprocity or score-validity guidance — and whether it applies to your certificate and route — rather than relying on a general rule.
 
 ### My state uses the new 8000 series. Does any of this still apply?
 
@@ -107,7 +119,7 @@ The 5001 subtests no longer match the new 8002–8005 blueprints, which have dif
 
 Your Praxis 5001 passing score is a state-specific number, not a national constant. Find your state's qualifying scores on the ETS score-requirements page, confirm them with your licensing agency, and re-check before you register. Then study for a target comfortably above the line — not right at it.
 
-**Want to know where you stand against your state's passing line before you register?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) — 12 original questions across all four subtests, with an estimated scaled score per gate.
+**Want a quick read on where to focus?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) — a short quiz that helps identify topics worth reviewing. It is not a full-length Praxis test and does not establish an ETS scaled score or a pass probability.
 
 ## Sources
 

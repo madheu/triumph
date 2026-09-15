@@ -40,9 +40,9 @@ This is not a niche fear. A **majority of first-time elementary teacher candidat
 
 **Practice — $0.** Free question bank across all four subtests, category-level practice tracking, unlimited attempts. [Start free](https://learndiag.com/diagnostic)
 
-**Learndiag — $15/mo.** Readiness score and pass-probability forecast, personalized study plan by weak subtest, progress tracking and retake-readiness. [Get the forecast](https://learndiag.com/diagnostic)
+**Learndiag — $19.99/mo.** Readiness score and pass-probability forecast, personalized study plan by weak subtest, progress tracking and retake-readiness. [Get the forecast](https://learndiag.com/diagnostic)
 
-A retake costs about $130 and 28 days. The plan costs $15.
+A retake costs about $180 and 28 days. The plan costs $19.99.
 
 ## For developers and AI agents
 

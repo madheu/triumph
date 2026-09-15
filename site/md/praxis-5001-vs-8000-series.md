@@ -75,11 +75,11 @@ These differences matter for study planning. A prep resource built only around t
 
 ## What Praxis Steps Changes
 
-The new tests are designed to work with **Praxis Steps**, a modular testing approach. ETS says Steps will allow candidates to take or retake one content category at a time, receive more targeted diagnostic feedback, and avoid repeating an entire test when only one step remains.[1]
+The new tests are designed to work with **Praxis Steps**, a modular testing approach. ETS says Steps lets candidates take or retake one content category at a time, receive more targeted diagnostic feedback, and avoid repeating an entire test when only one step remains.[1]
 
 You do not have to wait for Steps to get category-level feedback. A [12-question readiness diagnostic](https://learndiag.com/diagnostic) answers the same question Steps is built around: which content categories are weakest right now.
 
-That does not mean every 8000-series appointment is automatically broken into small categories from day one. ETS's product pages now show a concrete rollout: category-level testing through Praxis Steps launches for the **8002–8005 tests in September 2026**, with the 8006 Teaching Reading following in **2027**.[1][8] ETS's own wording also matters: the modular option applies "if your state accepts" the redesigned tests — so far, states have not announced adoption dates. Check the live registration details for your test date rather than assuming a specific Steps option is already available.
+That does not mean every 8000-series appointment is automatically broken into small categories from day one. ETS's product pages date the start of category-level testing through Praxis Steps to **September 2026 for the 8002–8005 tests**, with 8006 Teaching Reading following in **2027** — and ETS's Steps hub now describes the capability itself as available.[1][8] But the modular option still applies only "if your state accepts" the redesigned tests, and **adoption is uneven**: at least one state has already published separate Steps registrations, while most have announced nothing. We keep a sourced record of every adoption we have been able to verify in [Praxis Steps explained: what changes, and which states have adopted it](https://learndiag.com/praxis-steps). Check the live registration details for your test date rather than assuming a specific Steps option is available to you.
 
 Praxis Steps also does not override licensing rules. A state or program still decides which tests count and what qualifying results candidates must earn.[7]
 
@@ -146,4 +146,4 @@ The Praxis 8000 series is a significant elementary education redesign, not a uni
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 vs 7001: What’s Changing](https://learndiag.com/praxis-5001-vs-7001) · [Praxis 5001 study guide](https://learndiag.com/praxis-5001-study-guide) · [5001 subtests explained](https://learndiag.com/praxis-5001-subtests-explained) · [Praxis 8006 Teaching Reading](https://learndiag.com/praxis-8006-teaching-reading) · [Free 5001 practice test](https://learndiag.com/praxis-5001-free-practice-test)
+Related: [Praxis 5001 vs 7001: What’s Changing](https://learndiag.com/praxis-5001-vs-7001) · [Praxis 5001 study guide](https://learndiag.com/praxis-5001-study-guide) · [5001 subtests explained](https://learndiag.com/praxis-5001-subtests-explained) · [Praxis 8006 Teaching Reading](https://learndiag.com/praxis-8006-teaching-reading) · [Praxis Steps explained](https://learndiag.com/praxis-steps) · [Free 5001 practice test](https://learndiag.com/praxis-5001-free-practice-test)

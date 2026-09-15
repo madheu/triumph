@@ -9,7 +9,9 @@ import { DatabaseSync } from 'node:sqlite';
 if (!globalThis.crypto) globalThis.crypto = webcrypto;
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const worker = (await import(pathToFileURL(ROOT + 'site/_worker.js').href)).default;
+// 读 **worker-src 源码**而不是 site/_worker.js 构建产物：
+// 读产物时"源码改了但忘了 build"会让测试继续对着旧产物通过（假绿）。
+const worker = (await import(pathToFileURL(ROOT + 'worker-src/worker.mjs').href)).default;
 const { signJwt } = await import(pathToFileURL(ROOT + 'worker-src/crypto.mjs').href);
 
 function makeD1() {

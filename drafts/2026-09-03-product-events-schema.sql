@@ -1,8 +1,10 @@
 -- product_events · 产品事件流表（D4）
 --
 -- 状态：**已于 2026-09-03 23:30 对生产库 triumph_db 执行**（老户批准"现在跑"）。
--- product_events 表 + 7 个索引已验证落库。埋点接入代码（D3/D4 合并改动窗口）尚未实施。
--- 执行方式：wrangler d1 execute triumph_db --file=drafts/2026-09-03-product-events-schema.sql
+-- 2026-09-10 更新至 v1.1：CHECK 约束加入 3 个付费漏斗事件。
+--   增量迁移脚本：db/migrations/2026-09-10-product-events-v1.1.sql
+--   迁移前备份：db/backup-product_events-20260910.{json,sql}
+--   本文件的 CHECK 列表与迁移后的线上结构一致，新建库可直接用。
 --
 -- 设计取舍：
 --   · 宽表而非 EAV。事件属性固定，宽表查询简单，D1 是 SQLite，列多不构成问题。
@@ -45,11 +47,15 @@ CREATE TABLE IF NOT EXISTS product_events (
   -- 扩展位（不在枚举里的属性放这里，避免频繁加列）
   extra_json     TEXT,
 
-  -- 事件名硬约束：12 个事件，写错直接拒绝，防止脏数据污染漏斗
+  -- 事件名硬约束：写错直接拒绝，防止脏数据污染漏斗。
+  -- v1.1：12 个原有事件 + 3 个付费漏斗事件（upgrade_view / checkout_start /
+  -- purchase_success）。三处必须同步：本文件、site/js/tracking.js 的 EVENTS、
+  -- worker-src/events.mjs 的 ALLOWED_EVENTS —— 漏一处事件就被静默丢弃。
   CHECK (event IN (
     'test_view', 'test_start', 'question_answer', 'test_complete',
     'result_view', 'signup_prompt_view', 'signup_start', 'signup_success',
-    'study_plan_unlock', 'return_visit', 'retest_start', 'share_click'
+    'study_plan_unlock', 'return_visit', 'retest_start', 'share_click',
+    'upgrade_view', 'checkout_start', 'purchase_success'
   ))
 );
 

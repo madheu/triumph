@@ -20,7 +20,7 @@ Equal time assumes you start equal. Most candidates do not. You may be strong in
 
 The exam does not average your scores. A high reading score does not rescue a failing math score. In most states, you need a passing scaled score on every subtest. That means the Praxis 5001 is not one gate; it is four gates. If one gate stays closed, the result is not a partial pass. It is a retake.
 
-The cost of that mistake is real. A retake fee is about $130, and ETS typically requires a 28-day waiting period between attempts. That is money and time you cannot get back. A diagnostic-first Praxis 5001 study strategy is not a luxury. It is the cheapest way to avoid walking into the wrong test-day weakness.
+The cost of that mistake is real. A retake of the full 5001 is $180 (or $64 for a single subtest), and ETS typically requires a 28-day waiting period between attempts. That is money and time you cannot get back. A diagnostic-first Praxis 5001 study strategy is not a luxury. It is the cheapest way to avoid walking into the wrong test-day weakness.
 
 ## What Four Independently Scored Subtests Actually Mean
 
@@ -95,7 +95,7 @@ Do not study for a vague “pass.” Study for your state’s specific number, p
 
 A typical serious preparation period is four to ten weeks. If you are working full-time, lean toward the longer end. If your diagnostic score is far from the cut, you may need to adjust your test date or your weekly study hours.
 
-Also plan for the possibility of a retake. The retake fee is about $130, and there is a 28-day waiting period. That means you cannot simply retake the exam the following week. If you think you are at risk, leave enough time before your hiring deadline or licensure window.
+Also plan for the possibility of a retake. The full-5001 retake fee is $180, and there is a 28-day waiting period. That means you cannot simply retake the exam the following week. If you think you are at risk, leave enough time before your hiring deadline or licensure window.
 
 ## Common Mistakes That Keep Candidates Stuck
 

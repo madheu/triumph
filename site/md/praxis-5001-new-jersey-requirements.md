@@ -2,73 +2,79 @@
 
 *State guide · Praxis New Jersey*
 
-# Praxis 5001 Requirements in New Jersey: Tests, Scores, and How to Get Certified
+# New Jersey Praxis 5001 Requirements: Standard Scores and GPA Flexibility
 
-*2026-08-24 · Reading time: about 4 min*
+*2026-09-07 · Reading time: about 5 min · Verified against NJDOE testing requirement*
 
-New Jersey's Elementary (K–6) certificate requires the **Praxis 5001** — Elementary Education: Multiple Subjects — which ETS lists as the combined exam or as four individual subtests.[1] Unlike some states, New Jersey's elementary path does not add a separate Teaching Reading test on the ETS page; the 5001 family is the content-test requirement for K–6. As always, the numbers below are a snapshot as of August 2026 — confirm your requirement with the [New Jersey Department of Education](https://www.nj.gov/education/) before registering.
+New Jersey's Elementary (K–6) certificate requires the **Praxis 5001** — Elementary Education: Multiple Subjects — which ETS lists as the combined exam or as four individual subtests.[1] The numbers below are New Jersey's **standard qualifying scores**. They are not the only possible passage path: the New Jersey Department of Education (NJDOE) allows **GPA flexibility** for eligible applicants, which adjusts the required scores based on your undergraduate GPA.[2] This page gives you both the standard lines and the flexibility tiers, then shows you how to confirm which one applies to you.
 
 ## New Jersey's Elementary Education Tests at a Glance
 
 According to ETS's New Jersey requirements page (as of August 2026), Elementary K–6 candidates need:[1]
 
-| Test | Code | Fee | Qualifying score (New Jersey) |
+| Subtest | Standard | Official +10% tier | Official −5% tier |
 | --- | --- | --- | --- |
-| Elementary Education: Multiple Subjects | 5001 | $180 | Combined: see subtests |
-| Reading and Language Arts Subtest | 5002 | $64 | 157 |
-| Mathematics Subtest | 5003 | $64 | 157 |
-| Social Studies Subtest | 5004 | $64 | 155 |
-| Science Subtest | 5005 | $64 | 159 |
+| 5002 Reading and Language Arts | 157 | 173 | 149 |
+| 5003 Mathematics | 157 | 173 | 149 |
+| 5004 Social Studies | 155 | 171 | 147 |
+| 5005 Science | 159 | 175 | 151 |
 
-You can register for the combined 5001 (all four subtests in one session) or the individual subtests.[1] New Jersey's testing requirements are published by the [state certification office](https://www.nj.gov/education/certification/testing/req/), which lists the same 157/157/155/159 subtest lines.[2]
+These three columns come from the NJDOE's own testing requirements page: the standard qualifying score is what a candidate with no GPA flexibility needs; the +10% and −5% tiers are the state's published adjustment bands.[2][3] You do not choose among them like menu items — which band applies depends on your GPA and certification situation (below). The 5001 family is the content requirement for K–6; there is no separate Teaching Reading line on the elementary ETS page.[1][4]
 
-## How Scoring Works in New Jersey
+## How Scoring and GPA Flexibility Work in New Jersey
 
-The 5001 is scored per subtest, and New Jersey lists a qualifying score for each:[1][2]
+The 5001 is scored per subtest, and New Jersey publishes a standard qualifying score for each:[1][2][4]
 
-- **5002 Reading and Language Arts:** 157
-- **5003 Mathematics:** 157
-- **5004 Social Studies:** 155
-- **5005 Science:** 159
+- **5002 Reading and Language Arts:** 157 (standard)
+- **5003 Mathematics:** 157 (standard)
+- **5004 Social Studies:** 155 (standard)
+- **5005 Science:** 159 (standard)
 
-Each subtest is its own gate — a strong math score does not offset a below-157 reading score. Treat these numbers as a reference point, not a permanent rule: qualifying scores are set by New Jersey and can be updated.
+Each subtest is its own gate — a strong math score does not offset a below-157 reading score. The state's **GPA flexibility** rules adjust which qualifying score applies to you:[2][3]
+
+- **GPA ≥ 3.50:** candidates may qualify for the higher +10% tier (173/173/171/175), meaning a score below the standard can still satisfy the requirement.
+- **2.75 ≤ GPA < 3.00:** with the additional conditions NJDOE attaches to this band (degree date and certification requirements), the −5% tier (149/149/147/151) may apply.
+- **GPA outside both bands:** the standard scores apply unless your program or route has its own flexibility agreement.
+
+Do not try to do the percentage math yourself — the bands above are the state's published numbers, and the exact condition set (which GPA, which certification, which application window) lives on the official pages. Confirm your eligibility with NJDOE before you register for a retake or count on a lower line.
 
 ## What Else Goes Into a New Jersey Elementary License
 
-Praxis scores are one part of New Jersey licensure. The full path typically includes:
+Praxis scores are one part of New Jersey licensure. The full path depends on which route you take, and the routes are not interchangeable:
 
-1. Completing an approved educator preparation program (or an approved alternative route such as the CE/CEAS pathways).
-2. Meeting New Jersey's testing requirements — the 5001 family for K–6, and Praxis Core (or an approved basic-skills alternative) where applicable.[1]
-3. Passing the required Praxis tests.
-4. Applying through the [New Jersey Department of Education](https://www.nj.gov/education/) certification process.
+1. **Certificate of Eligibility (CE)** and **Certificate of Eligibility with Advanced Standing (CEAS)**: two different entry routes with different academic requirements.
+2. **Limited CE/CEAS**: a separate, time-limited certificate with its own testing conditions. It is not the same as a full CE/CEAS, and the flexibility bands above may not apply the same way.
+3. **Testing requirements**: the 5001 family is the **content test** requirement for K–6. Basic-skills testing (Praxis Core or an approved alternative) is a **different requirement** with its own rules — a passing content test does not satisfy it, and vice versa.
+4. **Apply through the [New Jersey Department of Education](https://www.nj.gov/education/)** using the application path that matches your CE/CEAS or limited route.
 
-The [New Jersey testing requirements page](https://www.nj.gov/education/certification/testing/req/) is the state's own statement of what is accepted — cross-check it with your program's guidance.
+The [New Jersey testing requirements page](https://www.nj.gov/education/certification/testing/req/) is the state's own statement of what is accepted; the [basic-skills page](https://www.nj.gov/education/certification/testing/basicskills) covers that separate requirement. Cross-check both with your program's guidance.
 
 ## Is New Jersey Switching to a Newer Test?
 
-New Jersey currently lists the 5001 family for Elementary K–6, with no immediate switch noted on the ETS page. But the **8000-series Elementary Education Fundamentals tests** launched in spring 2026, and states adopt them at their own pace.[3] If you plan to test several months out, re-check whether New Jersey has updated its accepted codes — the 8000-series blueprints differ from the 5001 in question counts and category weights.
+As of **September 7, 2026**, the NJDOE and ETS elementary K–6 tables we checked still list the **5001** family as the accepted content exam — neither agency shows a switch to the 7001 or 8000 series for this certificate on those pages.[1][2] States adopt new test series at their own pace, so if your test date is several months out, re-check the current tables before registering; the 8000-series blueprints differ from the 5001 in question counts and category weights, and New Jersey's adoption would be announced through its own testing requirements page, not through ETS alone.
 
 ## How to Confirm Your Requirement (Do This Before Registering)
 
 1. **Open the [ETS New Jersey requirements page](https://praxis.ets.org/state-requirements/newjersey-tests.html)** and find your certificate area (Elementary K–6).
-2. **Note the exact test codes and qualifying scores** — 5001 and its subtests.
-3. **Cross-check with the [New Jersey certification testing page](https://www.nj.gov/education/certification/testing/req/)** — the state's own list.
-4. **Ask your educator preparation program** about internal deadlines and score requirements.
-5. **Re-check before you register** — accepted codes and scores can change.
+2. **Note the exact test codes and standard qualifying scores** — 5001 and its subtests.
+3. **Cross-check with the [New Jersey certification testing page](https://www.nj.gov/education/certification/testing/req/)** and read the [GPA flexibility page](https://www.nj.gov/education/certification/testing/flex) to see whether your GPA places you in a different tier.
+4. **Check the [basic-skills page](https://www.nj.gov/education/certification/testing/basicskills) separately** if your route requires it — it is not part of the 5001 score, but it is part of your overall testing checklist.
+5. **Ask your educator preparation program** about internal deadlines and score requirements, and confirm your CE/CEAS (or limited) route.
+6. **Re-check before you register** — accepted codes and scores can change.
 
 ## Frequently Asked Questions
 
 ### What Praxis test do I need to be an elementary teacher in New Jersey?
 
-Per ETS's New Jersey page, Elementary K–6 candidates need **Elementary Education: Multiple Subjects (5001)** or its subtests (5002–5005).[1]
+Per ETS's and NJDOE's New Jersey pages, Elementary K–6 candidates need **Elementary Education: Multiple Subjects (5001)** or its subtests (5002–5005), with the standard qualifying scores above unless GPA flexibility applies.[1][2]
 
 ### What is the passing score for Praxis 5001 in New Jersey?
 
-New Jersey lists 157 for 5002, 157 for 5003, 155 for 5004, and 159 for 5005.[1][2] Confirm current numbers with the [New Jersey Department of Education](https://www.nj.gov/education/) before registering.
+New Jersey lists 157 for 5002, 157 for 5003, 155 for 5004, and 159 for 5005 as the **standard** lines. The GPA flexibility tiers adjust these for eligible applicants, so also read the flexibility page and confirm your situation with the [New Jersey Department of Education](https://www.nj.gov/education/) before registering.[1][2][3]
 
 ### Is Teaching Reading (5205) required for elementary in New Jersey?
 
-The ETS New Jersey page does not list 5205 for Elementary K–6 — the 5001 family is the listed content requirement. Confirm with the [New Jersey Department of Education](https://www.nj.gov/education/) and your program, since requirements can change.
+As of the K–6 testing tables we checked, the 5001 family is the listed content requirement and 5205 is not listed additional for this certificate.[1][2] Confirm with the [New Jersey Department of Education](https://www.nj.gov/education/) and your program, since requirements can change.
 
 ### Can I take the 5001 subtests separately in New Jersey?
 
@@ -78,9 +84,16 @@ ETS lists the individual subtests as an option for New Jersey candidates, so sub
 
 Score validity and reciprocity rules are set by New Jersey. Check the New Jersey Department of Education's certification guidance for score validity and out-of-state reciprocity details.
 
+## Direct Links for Your Situation
+
+- [NJDOE — GPA Flexibility page](https://www.nj.gov/education/certification/testing/flex) (the official tiers and conditions)
+- [NJDOE — Elementary School Teacher endorsement (1001)](https://www.nj.gov/education/certification/teachers/endorsementsinstr/1001.shtml) (what the certificate covers)
+- [NJDOE — Testing Requirements for Certification](https://www.nj.gov/education/certification/testing/req/) (the state's full table)
+- [ETS — New Jersey Required Tests](https://praxis.ets.org/state-requirements/newjersey-tests.html) (the test-page view of the same requirement)
+
 ## The Bottom Line
 
-New Jersey elementary (K–6) candidates take **Praxis 5001** — or subtests 5002–5005 — with qualifying scores of 157/157/155/159. These are New Jersey's numbers as of August 2026; confirm with the New Jersey Department of Education and ETS before you register, and re-check if you plan to test after a new test series is adopted.
+New Jersey elementary (K–6) candidates take **Praxis 5001** — or subtests 5002–5005 — with **standard** qualifying scores of 157/157/155/159. If your GPA qualifies you for NJDOE's flexibility program, the applicable tier may be higher (+10%: 173/173/171/175) or lower (−5%: 149/149/147/151). Confirm the tier and the route that applies to you with the New Jersey Department of Education and ETS before you register, and re-check if you plan to test after a new test series is adopted.
 
 **Planning your New Jersey study schedule?** Take the free [Learndiag readiness diagnostic](https://learndiag.com/diagnostic) to see which of the four 5001 gates needs work before you book your test. Our [free practice bank](https://learndiag.com/practice) covers 5002, 5003, 5004, and 5005 by blueprint category.
 
@@ -90,7 +103,11 @@ New Jersey elementary (K–6) candidates take **Praxis 5001** — or subtests 50
 
 [2] New Jersey Department of Education, "Testing Requirements for Certification in New Jersey." [https://www.nj.gov/education/certification/testing/req/](https://www.nj.gov/education/certification/testing/req/)
 
-[3] ETS, "The Praxis Elementary Education Assessment: Updates and Enhancements." [https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf)
+[3] New Jersey Department of Education, "GPA Flexibility." [https://www.nj.gov/education/certification/testing/flex](https://www.nj.gov/education/certification/testing/flex)
+
+[4] New Jersey Department of Education, "Basic Skills Requirement." [https://www.nj.gov/education/certification/testing/basicskills](https://www.nj.gov/education/certification/testing/basicskills)
+
+[5] NJDOE, "Endorsement 1001 (Elementary School Teacher)." [https://www.nj.gov/education/certification/teachers/endorsementsinstr/1001.shtml](https://www.nj.gov/education/certification/teachers/endorsementsinstr/1001.shtml)
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 

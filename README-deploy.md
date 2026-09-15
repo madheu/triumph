@@ -66,6 +66,18 @@ curl.exe -s -o NUL -w "%{http_code}" https://learndiag.com/no-page # 应为 404
 node tools\verify-live-home.mjs                                          # 先 curl 首页存 %TEMP%\live-home.html
 ```
 
+**支付相关（2026-09-11 起，每次部署后必跑）**：
+
+```powershell
+npm run live-check                                                       # ★ 一条命令：Creem 五变量配对没有，应 11/11 全绿
+curl.exe -s -o NUL -w "%{http_code}" -X POST https://learndiag.com/api/billing/report-checkout ^
+  -H "Content-Type: application/json" -d "{}"                            # 400 = 路由在；404 = 新 worker 没部署上去
+curl.exe -s -o NUL -w "%{http_code}" -X POST https://learndiag.com/api/billing/webhook -d "{}"   # 恒 401（验签在跑）
+```
+
+> 判读口诀：**变量改了不部署 = 完全不生效**（`live-check` 会 A 层绿、B 层红，症状极像"支付坏了"）。
+> `/api/diagnostic/report` 未部署 = **404**、已部署 = **400**。详见 `docs/维护手册.md` §7。
+
 ## ⚠️ de5.net 区域级 AI 封锁（仓库外，需要 Cloudflare 控制台）
 
 de5.net zone 开着 **Cloudflare 托管 robots.txt + AI bot 封拦**（AI Audit / Bot Fight Mode）。

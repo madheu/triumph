@@ -32,6 +32,13 @@ secrets.json
 # ---- Local dev secrets ----
 .dev.vars
 
+# ---- Creem live 凭据（key0910/ 位于仓库外，此处为防御性兜底）----
+# 若将来仓库根上移或目录被搬进仓库，下面两条挡住误提交。
+key0910/
+**/key0910/
+*CreemKey*.txt
+*produnct-link*.txt
+
 # ---- Local D1 test database ----
 .d1-test/
 
@@ -40,3 +47,5 @@ admin/node_modules/
 
 # ---- Session tooling state (regenerable) ----
 .mimosa/
+.qa-tmp/
+deploy-out.txt

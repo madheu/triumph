@@ -17,8 +17,14 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Upgrade — Learndiag Pro">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="https://learndiag.com/og-image.png">
+  <meta name="description" content="Explore Learndiag Pro for your Praxis preparation. Review plan benefits, upgrade your account, or manage an existing subscription through the billing portal.">
+  <meta name="twitter:description" content="Explore Learndiag Pro for your Praxis preparation. Review plan benefits, upgrade your account, or manage an existing subscription through the billing portal.">
+  <meta property="og:image" content="https://learndiag.com/og-image-learndiag-v1.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Learndiag — free Praxis prep. Know where to start.">
+  <meta name="twitter:image" content="https://learndiag.com/og-image-learndiag-v1.png">
+  <meta name="twitter:image:alt" content="Learndiag — free Praxis prep. Know where to start.">
   <meta name="content-signal" content="ai-train=yes, search=yes, ai-input=yes">
 </head>
 <body>
@@ -36,9 +42,23 @@
       <div id="err" class="err"></div>
 
       <div class="price-row">
-        <span class="price">$15<small>/month</small></span>
+        <span class="price">$19.99<small>/month</small></span>
+        <!-- P1-5 价格锚点：重考价取自 ETS 官方州要求页（合并 5001 = $180，单科 = $64） -->
+        <span class="muted" style="margin-left:4px">vs <strong>$180</strong> to retake the full 5001</span>
       </div>
+
+      <!-- P2-6：14 天退款保障以前只写在页面最底部 12px 灰字里，等于藏起来。
+           政策本来就存在（terms.html §5），这里把它摆到价格旁边。 -->
+      <div class="status-box" style="display:flex;gap:12px;align-items:flex-start;margin-bottom:20px">
+        <span class="badge pro" style="margin:0;flex-shrink:0">14-DAY REFUND</span>
+        <span style="font-size:13.5px;line-height:1.6">
+          If Pro isn&rsquo;t for you, ask for a refund within <strong>14 days</strong> of the charge and we&rsquo;ll
+          return it &mdash; no questions, no forms. <a href="/terms">Terms &sect;5</a>.
+        </span>
+      </div>
+
       <ul class="benefits">
+        <li>Unlimited diagnostics and unlimited full reports</li>
         <li>Adaptive daily tasks generated from your weakest areas</li>
         <li>Pass-probability tracking week over week</li>
         <li>SRS memory cards for every missed concept</li>
@@ -55,11 +75,39 @@
       <p class="note">
         Secure checkout by <strong>Creem</strong> (Merchant of Record) — handles tax &amp; payments worldwide.
         After checkout you'll be redirected back automatically. Cancel anytime from your billing portal.
+        Keep Pro until the end of the period you paid for — cancelling never cuts you off mid-month.
+      </p>
+      <p class="note">
+        <strong>Not the right fit?</strong> The diagnostic and most of the question bank are free, so you can judge
+        the service before paying — and if Pro isn't for you, we review refunds requested within
+        <strong>14 days</strong> of the charge (see <a href="/terms">the terms</a>). No pass guarantee: we won't
+        promise an exam result no prep tool can control, but we will not keep money for a month you didn't use.
+      </p>
+    </div>
+
+    <!-- 一次性报告：诊断页付费墙的第二档。放在订阅卡下面而不是上面 ——
+         订阅是主推（LTV），单次报告是给"只想要这一份"的人一个不流失的出口。 -->
+    <div class="card" style="margin-top:20px">
+      <h1 style="font-size:18px">Or just one report &mdash; $9.99, no account</h1>
+      <p class="sub" style="margin-bottom:16px">
+        Finish the free 12-question diagnostic, then pay once to unlock and download that single report:
+        the nine-dimension readiness radar, timing analysis, every knowledge point behind your misses,
+        and the AI trend write-up. No subscription, no account required.
+      </p>
+      <div class="status-box" style="display:flex;gap:12px;align-items:flex-start;margin-bottom:18px">
+        <span class="badge pro" style="margin:0;flex-shrink:0">14-DAY REFUND</span>
+        <span style="font-size:13.5px;line-height:1.6">Same 14-day refund applies to this one-off purchase.</span>
+      </div>
+      <button id="report-btn" class="btn btn-secondary" style="margin-top:0">Buy one report &mdash; $9.99</button>
+      <p id="report-err" class="err" style="margin-top:12px"></p>
+      <p class="note">
+        You can buy it without signing in. If you do create a free account first, the report is also
+        saved to it &mdash; and you keep every explanation in your review.
       </p>
     </div>
 
     <div class="card" style="margin-top:20px">
-      <h1 style="font-size:18px">What would make this worth $15/mo?</h1>
+      <h1 style="font-size:18px">What would make this worth $19.99/mo?</h1>
       <p class="sub" style="margin-bottom:12px">One sentence is enough — we build what users ask for.</p>
       <textarea id="fb-text" maxlength="1000" placeholder="e.g. full-length timed mock exams with real state passing lines…"
         style="width:100%;min-height:72px;padding:12px 14px;border:1px solid #EDEAE6;border-radius:10px;font-size:14px;font-family:inherit;color:var(--ink);background:#FAF9F7;outline:none;resize:vertical"></textarea>
@@ -74,11 +122,72 @@
     </p>
   </div>
 
+  <script src="/js/tracking.js?v=1"></script>
+  <script>window.LDTrack&&LDTrack.init({page:"upgrade"});</script>
   <script src="js/auth.js?v=3"></script>
   <script src="/js/logout-btn.js?v=1"></script>
+  <script src="js/upgrade-tracking.js?v=1"></script>
   <script>(function(){const e=document.getElementById("fb-send"),t=document.getElementById("fb-text"),o=document.getElementById("fb-honey"),d=document.getElementById("fb-done");e.addEventListener("click",async function(){const n=t.value.trim();if(!n){t.focus();return}e.disabled=!0,e.textContent="Sending\u2026";try{await fetch("/api/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({source:"upgrade",comment:n,honey:o.value})})}catch(c){}t.style.display="none",e.style.display="none",d.style.display="block"})})();
 </script>
   <script>(function(){const e=window.TriumphAuth,a=document.getElementById("err"),r=document.getElementById("status-box"),s=document.getElementById("upgrade-btn"),i=document.getElementById("portal-btn");function c(o){a.textContent=o,a.style.display="block"}function l(){a.style.display="none"}async function u(){if(!(!e||!e.token))try{const t=(await(await fetch("/api/me",{headers:{Authorization:"Bearer "+e.token}})).json()).entitlements||{},d=t.plan==="pro";if(r.style.display="block",r.className="status-box"+(d?" pro":""),d){const h=t.currentPeriodEnd?new Date(t.currentPeriodEnd).toLocaleDateString():"\u2014";r.innerHTML='<span class="badge pro">PRO</span><br/>You have Learndiag Pro. Renews on '+h+'.<br/><span class="muted">Manage billing from the button below.</span>',s.textContent="Upgrade again",i.style.display="block"}else r.innerHTML='<span class="badge free">FREE</span><br/>You are on the free plan.'}catch(o){}}s.addEventListener("click",async function(){var o;if(l(),!e||!e.token){location.href="/login.html?next=/upgrade.html";return}this.disabled=!0,this.textContent="Redirecting to secure checkout\u2026";try{const n=await fetch("/api/billing/checkout",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+e.token}}),t=await n.json().catch(()=>({}));if(!n.ok||!t.checkout_url)throw new Error(((o=t==null?void 0:t.error)==null?void 0:o.hint)||"Could not start checkout.");location.href=t.checkout_url}catch(n){this.disabled=!1,this.textContent="Upgrade to Pro",c(n.message)}}),i.addEventListener("click",async function(){var o;if(l(),!(!e||!e.token)){this.disabled=!0;try{const n=await fetch("/api/billing/portal",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+e.token}}),t=await n.json().catch(()=>({}));if(!n.ok||!t.portal_url)throw new Error(((o=t==null?void 0:t.error)==null?void 0:o.hint)||"Could not open billing portal.");location.href=t.portal_url}catch(n){this.disabled=!1,c(n.message)}}}),e&&e.init&&e.init(),u()})();
 </script>
+  <!-- 结账回来时，webhook 可能还没落权（Creem → 我们 worker 有网络延迟）。
+       这里轮询 /api/me，等 Pro 生效再刷新一次，避免"钱付了页面还显示 FREE"被当成掉单。 -->
+  <script>(function(){
+    if(new URLSearchParams(location.search).get("checkout")!=="done") return;
+    var A=window.TriumphAuth, box=document.getElementById("status-box");
+    if(!A||!A.token) return;
+    var tries=0, MAX=10, mark="ld_checkout_done";
+    if(box){ box.style.display="block"; box.innerHTML='<span class="badge free">CHECKING</span><br/>Confirming your payment with our payment provider\u2026'; }
+    function poll(){
+      tries++;
+      fetch("/api/me",{headers:{Authorization:"Bearer "+A.token}})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var plan=d&&d.entitlements&&d.entitlements.plan;
+          if(plan==="pro"){
+            try{ if(sessionStorage.getItem(mark)!=="1"){ sessionStorage.setItem(mark,"1"); location.replace("/upgrade.html?pro=1"); return; } }catch(e){}
+            return;
+          }
+          if(tries<MAX) return setTimeout(poll,2000);
+          if(box) box.innerHTML='<span class="badge free">PENDING</span><br/>We haven\u2019t received the payment confirmation yet. If you were charged, it will land within a few minutes \u2014 refresh this page, or <a href="/contact">contact us</a> and we\u2019ll sort it the same day.';
+        })
+        .catch(function(){ if(tries<MAX) setTimeout(poll,2000); });
+    }
+    setTimeout(poll,1500);
+  })();</script>
+  <!-- 一次性诊断报告结账（$9.99，不要求登录）。
+       visitor_id 是凭证的归属键 —— 服务端在 checkout metadata 里收下它，
+       webhook 落成 report_credit:<visitor_id>，回来就能取报告。 -->
+  <script>(function(){
+    var btn=document.getElementById("report-btn"), err=document.getElementById("report-err");
+    if(!btn) return;
+    function visitor(){
+      try{ if(window.LDTrack&&LDTrack.visitor) return LDTrack.visitor(); }catch(e){}
+      try{ return localStorage.getItem("ld_visitor")||null; }catch(e){ return null; }
+    }
+    function show(m){ if(err){ err.textContent=m; err.style.display="block"; } }
+    btn.addEventListener("click", function(){
+      var vid=visitor();
+      if(!vid){ show("We could not identify this browser. Open the diagnostic page first, then come back."); return; }
+      var A=window.TriumphAuth, tok=A&&A.token?A.token:"";
+      btn.disabled=true; btn.textContent="Opening secure checkout\u2026";
+      fetch("/api/billing/report-checkout",{
+        method:"POST",
+        headers:{"Content-Type":"application/json",Authorization:"Bearer "+tok},
+        body:JSON.stringify({visitor_id:vid})
+      }).then(function(r){ return r.json().catch(function(){return{}}).then(function(j){ return {ok:r.ok,j:j}; }); })
+        .then(function(x){
+          if(x.ok&&x.j.checkout_url){ location.href=x.j.checkout_url; return; }
+          btn.disabled=false; btn.textContent="Buy one report \u2014 $9.99";
+          show((x.j&&x.j.error&&x.j.error.hint)||"Checkout is not available right now \u2014 try again in a moment, or contact us.");
+        })
+        .catch(function(){
+          btn.disabled=false; btn.textContent="Buy one report \u2014 $9.99";
+          show("Network error. Check your connection and try again.");
+        });
+    });
+  })();</script>
+
 </body>
 </html>

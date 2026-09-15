@@ -8,7 +8,9 @@ import { pathToFileURL } from 'node:url';
 if (!globalThis.crypto) globalThis.crypto = webcrypto;
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
-const worker = (await import(pathToFileURL(ROOT + 'site/_worker.js').href)).default;
+// 读 **worker-src 源码**而不是 site/_worker.js 产物。2026-09-11 之前这里读的是产物，
+// 于是"源码加了 ?checkout=done、但产物没重建"导致断言长期假绿 —— 重建产物后才暴露。
+const worker = (await import(pathToFileURL(ROOT + 'worker-src/worker.mjs').href)).default;
 
 function makeEnv(kvStore = new Map()) {
   return {
@@ -154,7 +156,10 @@ test('checkout: 请求体字段为 snake_case（Creem REST 约定）', async () 
   const req = sent.find(s => s.url.endsWith('/checkouts'));
   assert.ok(req, 'creem checkout called');
   assert.equal(req.body.product_id, 'prod_test');
-  assert.equal(req.body.success_url, 'https://learndiag.com/upgrade.html');
+  // 回跳必须带 ?checkout=done —— upgrade.html:137 靠这个 query 启动"付款确认中"的轮询
+  // （`if(new URLSearchParams(location.search).get("checkout")!=="done") return;`）。
+  // 少了它，用户付完钱会落在升级页却看不出任何状态。改这里前先确认前端那段轮询还在。
+  assert.equal(req.body.success_url, 'https://learndiag.com/upgrade.html?checkout=done');
   assert.ok(req.body.customer && req.body.customer.email === 'buyer@test.com', 'customer email passed');
   assert.ok(!('productId' in req.body), 'no camelCase field');
   assert.ok(!('cancel_url' in req.body), 'no unsupported cancel_url');
@@ -255,4 +260,60 @@ test('admin users: 管理员可列出用户且脱敏（无 saltHex/hashHex）', 
     assert.ok(!('saltHex' in it) && !('hashHex' in it), 'no password material');
     assert.ok(it.email, 'has email');
   }
+});
+
+/* ================= 支付回跳地址守卫（2026-09-10 加） =================
+ *
+ * 起因：hReportCheckout 的 success_url 曾写成 '/report.html?purchase=done'，
+ * 而 site/report.html 根本不存在（线上 404）。用户付完 $9.90 会落到 404，
+ * 报告拿不到 —— 跟历史上那次「钱付了显示 FREE」是同一类事故，而且更糟，
+ * 因为连页面都没有。这个 bug 靠"设计意图"看不出来，只有 curl 才验得出来。
+ *
+ * 这条测试把「回跳地址必须指向真实存在的页面」变成机械约束：
+ * 从 worker-src/billing.mjs 里抽出所有 success_url 的字面量路径，
+ * 逐个映射到 site/ 下的静态文件，不存在就红。
+ *
+ * 注意：这里读的是 **worker-src 源码**而不是 site/_worker.js 产物。
+ * 产物由 esbuild 打包、且经常与其他会话不同步（见 test/diff-worker.mjs），
+ * 守卫必须盯源码，才不会因为产物没重建而漏掉。
+ */
+test('billing success_url targets must exist as real pages in site/', async () => {
+  const { readFileSync, existsSync } = await import('node:fs');
+  const raw = readFileSync(ROOT + 'worker-src/billing.mjs', 'utf8');
+
+  // 先剥掉注释再判 —— 否则源码里那句「曾错写成 '/report.html'」的说明
+  // 会把下面那条反例守卫自己打成红的。（`[^:]` 是为了不误伤 https://）
+  const src = raw
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/(^|[^:])\/\/[^\n]*/g, '$1');
+
+  // 匹配：(env.SITE_URL || 'https://learndiag.com') + '/some/path?...'
+  const re = new RegExp("\\(env\\.SITE_URL \\|\\| 'https:\\/\\/learndiag\\.com'\\)\\s*\\+\\s*'([^']+)'", 'g');
+  const targets = [...src.matchAll(re)].map((m) => m[1]);
+
+  assert.ok(targets.length >= 2, `至少应找到 2 个回跳地址（Pro + 一次性报告），实际 ${targets.length}`);
+
+  for (const t of targets) {
+    // 去掉 query / hash，只留路径
+    const path = t.split('?')[0].split('#')[0];
+    assert.ok(path.startsWith('/'), `${t} 应以 / 开头`);
+
+    // Cloudflare Pages：/diagnostic 由 site/diagnostic.html 提供
+    const candidates = path.endsWith('.html')
+      ? [ROOT + 'site' + path]
+      : [ROOT + 'site' + path + '.html', ROOT + 'site' + path + '/index.html'];
+
+    const hit = candidates.find((c) => existsSync(c));
+    assert.ok(
+      hit,
+      `回跳地址 '${t}' 指向 ${path}，但 site/ 下没有对应页面（找过：${candidates.join(' | ')}）。` +
+      `付完钱会落到 404。`
+    );
+  }
+
+  // 反例守卫：曾经错过的那个具体值，别再回来
+  assert.ok(
+    !src.includes("'/report.html"),
+    "回跳地址又写回了 '/report.html' —— 该文件不存在，会导致付款后 404"
+  );
 });

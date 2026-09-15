@@ -334,18 +334,77 @@ function bearerToken(request) {
 var USER_KEY = (email) => `users:${email.toLowerCase().trim()}`;
 var STATE_KEY = (id) => `state:${id}`;
 var CODE_KEY = (email) => `verify:${email.toLowerCase().trim()}`;
+var DEFAULT_TEST = "5001";
+var GLOBAL_FIELDS = ["prefs", "v", "createdAt", "updatedAt"];
+function emptyBucket() {
+  return { answers: [], mastery: {}, plan: null, srs: {}, tasks: {} };
+}
+function isPlainObject(x) {
+  return !!x && typeof x === "object" && !Array.isArray(x);
+}
+function answerCount(bucket) {
+  if (!isPlainObject(bucket)) return 0;
+  if (Array.isArray(bucket.answers)) return bucket.answers.length;
+  return Object.keys(bucket.answers || {}).length;
+}
+function splitState(state) {
+  const global = {};
+  if (!isPlainObject(state)) return { global, perTest: {} };
+  if (isPlainObject(state.tests)) {
+    for (const k of GLOBAL_FIELDS) if (state[k] !== void 0) global[k] = state[k];
+    const perTest2 = {};
+    for (const code of Object.keys(state.tests)) {
+      const bucket = state.tests[code];
+      if (isPlainObject(bucket)) perTest2[code] = { ...emptyBucket(), ...bucket };
+    }
+    return { global, perTest: perTest2 };
+  }
+  const legacy = {};
+  for (const k of Object.keys(state)) {
+    if (GLOBAL_FIELDS.includes(k)) {
+      global[k] = state[k];
+      continue;
+    }
+    legacy[k] = state[k];
+  }
+  const perTest = {};
+  if (Object.keys(legacy).length) perTest[DEFAULT_TEST] = { ...emptyBucket(), ...legacy };
+  return { global, perTest };
+}
+function normalizeState(state) {
+  const { global, perTest } = splitState(state);
+  const out = {
+    v: 2,
+    createdAt: global.createdAt || Date.now(),
+    prefs: isPlainObject(global.prefs) ? global.prefs : {},
+    tests: perTest
+  };
+  if (global.updatedAt) out.updatedAt = global.updatedAt;
+  return out;
+}
+function mergeBuckets(a, b) {
+  if (!isPlainObject(a)) return { ...emptyBucket(), ...isPlainObject(b) ? b : {} };
+  if (!isPlainObject(b)) return { ...emptyBucket(), ...a };
+  const rich = answerCount(b) > answerCount(a) ? b : a;
+  const poor = rich === a ? b : a;
+  return { ...emptyBucket(), ...poor, ...rich };
+}
 function mergeStates(a, b) {
-  const base = { createdAt: Date.now(), answers: [], mastery: {}, plan: null, srs: {}, tasks: {} };
-  const A = a && typeof a === "object" && !Array.isArray(a) ? a : null;
-  const B = b && typeof b === "object" && !Array.isArray(b) ? b : null;
-  if (!A && !B) return base;
-  if (!A) return { ...base, ...B };
-  if (!B) return { ...base, ...A };
-  const aAns = Array.isArray(A.answers) ? A.answers.length : Object.keys(A.answers || {}).length;
-  const bAns = Array.isArray(B.answers) ? B.answers.length : Object.keys(B.answers || {}).length;
-  const rich = bAns > aAns ? B : A;
-  const poor = rich === A ? B : A;
-  return { ...base, ...poor, ...rich };
+  const NA = normalizeState(a);
+  const NB = normalizeState(b);
+  const createdAt = Math.min(NA.createdAt || Infinity, NB.createdAt || Infinity);
+  const tests = {};
+  for (const code of /* @__PURE__ */ new Set([...Object.keys(NA.tests), ...Object.keys(NB.tests)])) {
+    tests[code] = mergeBuckets(NA.tests[code], NB.tests[code]);
+  }
+  const prefs = { ...NA.prefs, ...NB.prefs };
+  return {
+    v: 2,
+    createdAt: Number.isFinite(createdAt) ? createdAt : Date.now(),
+    updatedAt: Date.now(),
+    prefs,
+    tests
+  };
 }
 function genCode() {
   let code = "";
@@ -514,7 +573,7 @@ async function hStateGet(request, env) {
   const user = await verifyJwt(bearerToken(request), env.JWT_SECRET);
   if (!user) return apiError("unauthorized");
   const state = await env.TRIUMPH_KV.get(STATE_KEY(user.sub), "json");
-  return json({ state });
+  return json({ state: state ? normalizeState(state) : null });
 }
 async function hStatePut(request, env) {
   const user = await verifyJwt(bearerToken(request), env.JWT_SECRET);
@@ -523,8 +582,9 @@ async function hStatePut(request, env) {
   if (parsed.err) return parsed.err;
   const state = parsed.body.state || {};
   if (typeof state !== "object" || Array.isArray(state)) return apiError("bad_request", { field: "state", expected: "object" });
-  state.updatedAt = Date.now();
-  await env.TRIUMPH_KV.put(STATE_KEY(user.sub), JSON.stringify(state));
+  const stored = await env.TRIUMPH_KV.get(STATE_KEY(user.sub), "json").catch(() => null);
+  const merged = mergeStates(stored, state);
+  await env.TRIUMPH_KV.put(STATE_KEY(user.sub), JSON.stringify(merged));
   return ok({});
 }
 var ACCOUNT_ROUTES = {
@@ -730,7 +790,12 @@ var ALLOWED_EVENTS = /* @__PURE__ */ new Set([
   "study_plan_unlock",
   "return_visit",
   "retest_start",
-  "share_click"
+  "share_click",
+  // v1.1 付费漏斗。与 site/js/tracking.js 的 EVENTS、
+  // D1 product_events 的 CHECK 约束三处必须同步，漏一处事件就被静默丢弃。
+  "upgrade_view",
+  "checkout_start",
+  "purchase_success"
 ]);
 var MAX_BATCH = 25;
 var MAX_TEXT = 128;
@@ -768,9 +833,12 @@ async function hEvents(request, env) {
     }
     let ts = Number(e.ts);
     if (!Number.isFinite(ts) || ts <= 0 || ts > now + 6e4) ts = now;
-    let elapsed = Number(e.elapsed_ms);
-    if (!Number.isFinite(elapsed) || elapsed < 0) elapsed = null;
-    else if (elapsed > 36e5) elapsed = 36e5;
+    let elapsed = null;
+    if (e.elapsed_ms !== null && e.elapsed_ms !== void 0 && e.elapsed_ms !== "") {
+      elapsed = Number(e.elapsed_ms);
+      if (!Number.isFinite(elapsed) || elapsed < 0) elapsed = null;
+      else if (elapsed > 36e5) elapsed = 36e5;
+    }
     stmts.push(env.TRIUMPH_D1.prepare(sql).bind(
       e.event_uuid.slice(0, 64),
       e.event,
@@ -1194,6 +1262,8 @@ var PASSWORD_ROUTES = {
 // worker-src/billing.mjs
 var CREEM_BASE = (env) => env.CREEM_MODE === "test" ? "https://test-api.creem.io/v1" : "https://api.creem.io/v1";
 var CREEM_KEY = (env) => env.CREEM_MODE === "test" ? env.CREEM_TEST_API_KEY : env.CREEM_API_KEY;
+var REPORT_PRODUCT = (env) => env.CREEM_MODE === "test" ? env.CREEM_TEST_REPORT_PRODUCT_ID || env.CREEM_REPORT_PRODUCT_ID : env.CREEM_REPORT_PRODUCT_ID;
+var creditKey = (visitorId) => "report_credit:" + String(visitorId);
 var uuid = () => crypto.randomUUID();
 async function d1Exec(env, sql, params = []) {
   if (!env.TRIUMPH_D1) return null;
@@ -1209,6 +1279,57 @@ async function d1Exec(env, sql, params = []) {
 async function ensureUserMirror(env, userId, email) {
   await d1Exec(env, `INSERT OR IGNORE INTO users (id, email, created_at) VALUES (?, ?, ?)`, [userId, email, Date.now()]);
 }
+async function hReportCheckout(request, env) {
+  const key = CREEM_KEY(env);
+  if (!key) return apiError("internal_error", { hint: "Creem not configured yet." });
+  const productId = REPORT_PRODUCT(env);
+  if (!productId) return apiError("internal_error", { hint: "CREEM_REPORT_PRODUCT_ID not configured." });
+  const body = await readJsonBody(request);
+  if (body.err) return body.err;
+  const visitorId = String(body.body && body.body.visitor_id || "").slice(0, 64);
+  if (!visitorId) return apiError("bad_request", { field: "visitor_id" });
+  const user = await resolveUser(request, env).catch(() => null);
+  const successUrl = (env.SITE_URL || "https://learndiag.com") + "/diagnostic?purchase=done";
+  const chkRes = await safeFetch(CREEM_BASE(env) + "/checkouts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-api-key": key },
+    body: JSON.stringify({
+      product_id: productId,
+      ...user ? { customer: { email: user.email } } : {},
+      success_url: successUrl,
+      metadata: { kind: "report", visitor_id: visitorId, ...user ? { user_id: user.id, email: user.email } : {} }
+    })
+  });
+  if (!chkRes.ok) {
+    const t = await chkRes.text().catch(() => "");
+    console.error("creem report checkout err:", chkRes.status, t.slice(0, 300));
+    return apiError("internal_error", { hint: "Could not create checkout." });
+  }
+  const chk = await chkRes.json();
+  return json({ ok: true, checkout_url: chk.checkout_url || chk.checkoutUrl, checkout_id: chk.id });
+}
+async function grantReportCredit(env, visitorId, obj, orderId) {
+  if (!visitorId) {
+    console.error("report credit skipped \u2014 checkout.completed has no visitor_id in metadata");
+    return { report_credit: "skipped_no_visitor_id" };
+  }
+  const k = creditKey(visitorId);
+  let cur = null;
+  try {
+    cur = await env.TRIUMPH_KV.get(k, "json");
+  } catch (e) {
+    cur = null;
+  }
+  if (cur && cur.order_id === orderId) return { report_credit: "already_granted" };
+  const next = {
+    report_product: true,
+    order_id: orderId || null,
+    issued_at: Date.now(),
+    used_attempts: cur && Array.isArray(cur.used_attempts) ? cur.used_attempts : []
+  };
+  await env.TRIUMPH_KV.put(k, JSON.stringify(next), { expirationTtl: 60 * 60 * 24 * 180 });
+  return { report_credit: "granted", visitor_id: visitorId };
+}
 async function hBillingCheckout(request, env) {
   const user = await resolveUser(request, env);
   if (!user) return apiError("unauthorized");
@@ -1216,7 +1337,7 @@ async function hBillingCheckout(request, env) {
   if (!key) return apiError("internal_error", { hint: "Creem not configured yet." });
   const productId = env.CREEM_MODE === "test" ? env.CREEM_TEST_PRODUCT_ID || env.CREEM_PRODUCT_ID : env.CREEM_PRODUCT_ID;
   if (!productId) return apiError("internal_error", { hint: "CREEM_PRODUCT_ID not configured." });
-  const successUrl = (env.SITE_URL || "https://learndiag.com") + "/upgrade.html";
+  const successUrl = (env.SITE_URL || "https://learndiag.com") + "/upgrade.html?checkout=done";
   const chkRes = await safeFetch(CREEM_BASE(env) + "/checkouts", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-api-key": key },
@@ -1239,13 +1360,15 @@ async function hBillingWebhook(request, env) {
   const secret = env.CREEM_MODE === "test" ? env.CREEM_TEST_WEBHOOK_SECRET || env.CREEM_WEBHOOK_SECRET : env.CREEM_WEBHOOK_SECRET;
   const raw = await request.text();
   const signature = request.headers.get("creem-signature") || "";
-  if (secret) {
-    const enc2 = new TextEncoder();
-    const key = await crypto.subtle.importKey("raw", enc2.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["verify"]);
-    const sigBytes = hexToBytes2(signature);
-    const ok2 = sigBytes.length === 32 && await crypto.subtle.verify("HMAC", key, sigBytes, enc2.encode(raw));
-    if (!ok2) return json({ ok: false, error: "bad signature" }, 401);
+  if (!secret) {
+    console.error("creem webhook: no webhook secret configured for mode=" + (env.CREEM_MODE || "live") + " \u2014 rejected");
+    return json({ ok: false, error: "webhook_secret_not_configured" }, 503);
   }
+  const enc2 = new TextEncoder();
+  const key = await crypto.subtle.importKey("raw", enc2.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["verify"]);
+  const sigBytes = hexToBytes2(signature);
+  const ok2 = sigBytes.length === 32 && await crypto.subtle.verify("HMAC", key, sigBytes, enc2.encode(raw));
+  if (!ok2) return json({ ok: false, error: "bad signature" }, 401);
   let evt;
   try {
     evt = JSON.parse(raw);
@@ -1259,88 +1382,149 @@ async function hBillingWebhook(request, env) {
   if (processed && processed.meta && processed.meta.changes === 0) {
     return json({ ok: true, duplicate: true });
   }
+  let result;
   try {
-    await handleCreemEvent(env, eventType, obj);
+    result = await handleCreemEvent(env, eventType, obj);
   } catch (e) {
-    console.error("webhook handle err:", String(e && e.message || e));
+    console.error("webhook handle err:", eventType, String(e && e.message || e));
     return json({ ok: false, error: "handler failed" }, 500);
   }
   await d1Exec(env, `UPDATE webhook_events SET processed_at = ? WHERE id = ?`, [Date.now(), eventId]);
-  return json({ ok: true });
+  return json({ ok: true, ...result || {} });
+}
+async function grantEntitlement(env, email, patch) {
+  if (!email) throw new Error("cannot grant entitlement: payload has no customer.email");
+  const k = "users:" + String(email).toLowerCase();
+  const recJson = await env.TRIUMPH_KV.get(k);
+  if (!recJson) {
+    console.error("entitlement skipped \u2014 no local user record for", email);
+    return { entitlement: "skipped_no_user", email };
+  }
+  const rec = JSON.parse(recJson);
+  Object.assign(rec, patch);
+  await env.TRIUMPH_KV.put(k, JSON.stringify(rec));
+  return { entitlement: "granted", email };
+}
+async function patchEntitlement(env, email, patch) {
+  if (!email) return { entitlement: "skipped_no_email" };
+  const k = "users:" + String(email).toLowerCase();
+  const recJson = await env.TRIUMPH_KV.get(k);
+  if (!recJson) {
+    console.error("entitlement patch skipped \u2014 no local user record for", email);
+    return { entitlement: "skipped_no_user", email };
+  }
+  const rec = JSON.parse(recJson);
+  Object.assign(rec, patch);
+  await env.TRIUMPH_KV.put(k, JSON.stringify(rec));
+  return { entitlement: "patched", email };
 }
 async function handleCreemEvent(env, eventType, obj) {
   const order = obj.order || {};
   const customer = obj.customer || {};
-  const sub = obj.subscription || {};
+  const checkout = obj.checkout || {};
+  const sub = (obj.object === "subscription" ? obj : obj.subscription) || {};
   const metadata = obj.metadata || {};
-  const email = customer.email || metadata.email || "";
-  const userId = metadata.user_id || sub.metadata?.user_id || null;
+  const email = customer.email || checkout.customer && checkout.customer.email || metadata.email || checkout.metadata && checkout.metadata.email || "";
+  const userId = metadata.user_id || sub.metadata && sub.metadata.user_id || null;
   const subId = sub.id || null;
   const status = sub.status || order.status || null;
   const plan = "pro";
-  const periodEnd = sub.current_period_end || null;
+  const periodEnd = sub.current_period_end_date || sub.current_period_end || null;
   const amountCents = order.amount ?? null;
   const currency = order.currency || "usd";
   const orderId = order.id || null;
-  if (eventType === "checkout.completed" || eventType === "subscription.paid" || eventType === "subscription.active") {
+  const out = {};
+  const kind = metadata.kind || checkout.metadata && checkout.metadata.kind || null;
+  const visitorId = metadata.visitor_id || checkout.metadata && checkout.metadata.visitor_id || null;
+  if (kind === "report") {
+    if (eventType === "checkout.completed" || eventType === "subscription.paid") {
+      Object.assign(out, await grantReportCredit(env, visitorId, obj, orderId));
+      if (orderId) {
+        const r = await d1Exec(
+          env,
+          `INSERT OR REPLACE INTO orders (id, user_id, creem_order_id, amount_cents, currency, type, status, raw_json, created_at)
+          VALUES (?, ?, ?, ?, ?, 'report', 'succeeded', ?, ?)`,
+          ["order:" + orderId, userId, orderId, amountCents, currency, JSON.stringify(obj), Date.now()]
+        );
+        if (!r) out.d1_degraded = true;
+      }
+    }
+    return out;
+  }
+  const GRANT = ["checkout.completed", "subscription.paid", "subscription.active"];
+  if (GRANT.includes(eventType)) {
     if (orderId) {
       const oid = "order:" + orderId;
-      await d1Exec(
+      const r = await d1Exec(
         env,
         `INSERT OR REPLACE INTO orders (id, user_id, creem_order_id, amount_cents, currency, type, status, raw_json, created_at)
         VALUES (?, ?, ?, ?, ?, 'payment', 'succeeded', ?, ?)`,
         [oid, userId, orderId, amountCents, currency, JSON.stringify(obj), Date.now()]
       );
+      if (!r) out.d1_degraded = true;
+    } else if (order && order.status) {
+      console.warn("creem webhook: order present but no id", eventType);
     }
     if (subId) {
-      await d1Exec(
+      const r = await d1Exec(
         env,
         `INSERT OR REPLACE INTO subscriptions (id, user_id, creem_subscription_id, status, plan, current_period_end, created_at)
         VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [subId, userId, subId, status || "active", plan, periodEnd, Date.now()]
       );
+      if (!r) out.d1_degraded = true;
     }
-    if (email) {
-      const recJson = await env.TRIUMPH_KV.get("users:" + email.toLowerCase());
-      if (recJson) {
-        const rec = JSON.parse(recJson);
-        rec.plan = "pro";
-        rec.subscriptionStatus = status || "active";
-        rec.currentPeriodEnd = periodEnd || null;
-        rec.creemCustomerId = customer.id || rec.creemCustomerId || null;
-        await env.TRIUMPH_KV.put("users:" + email.toLowerCase(), JSON.stringify(rec));
-      }
-    }
+    Object.assign(out, await grantEntitlement(env, email, {
+      plan: "pro",
+      subscriptionStatus: status || "active",
+      currentPeriodEnd: periodEnd || null,
+      creemCustomerId: customer.id || null
+    }));
     await ensureUserMirror(env, userId, email);
-  } else if (eventType === "subscription.canceled" || eventType === "subscription.expired" || eventType === "subscription.past_due") {
+    if (!userId) out.mirror_skipped = "no userId in payload metadata";
+  } else if (eventType === "subscription.scheduled_cancel") {
+    Object.assign(out, await patchEntitlement(env, email, { subscriptionStatus: "scheduled_cancel" }));
+  } else if (eventType === "subscription.canceled" || eventType === "subscription.expired" || eventType === "subscription.past_due" || eventType === "subscription.unpaid") {
     if (subId) {
-      await d1Exec(env, `UPDATE subscriptions SET status = ?, canceled_at = COALESCE(canceled_at, ?) WHERE creem_subscription_id = ?`, [status || eventType.replace("subscription.", ""), Date.now(), subId]);
+      const r = await d1Exec(
+        env,
+        `UPDATE subscriptions SET status = ?, canceled_at = COALESCE(canceled_at, ?) WHERE creem_subscription_id = ?`,
+        [status || eventType.replace("subscription.", ""), Date.now(), subId]
+      );
+      if (!r) out.d1_degraded = true;
     }
-    if (email) {
-      const recJson = await env.TRIUMPH_KV.get("users:" + email.toLowerCase());
-      if (recJson) {
-        const rec = JSON.parse(recJson);
-        if (eventType === "subscription.expired" || eventType === "subscription.canceled" && status === "canceled") {
-          rec.plan = "free";
-          rec.subscriptionStatus = status || eventType.replace("subscription.", "");
-        } else {
-          rec.subscriptionStatus = status || eventType.replace("subscription.", "");
-        }
-        await env.TRIUMPH_KV.put("users:" + email.toLowerCase(), JSON.stringify(rec));
-      }
-    }
+    const periodEndMs = periodEnd ? Date.parse(periodEnd) : NaN;
+    const periodOver = !Number.isFinite(periodEndMs) || periodEndMs <= Date.now();
+    const shouldDowngrade = eventType === "subscription.expired" || periodOver;
+    Object.assign(out, await patchEntitlement(env, email, shouldDowngrade ? { plan: "free", subscriptionStatus: status || eventType.replace("subscription.", "") } : { subscriptionStatus: status || eventType.replace("subscription.", ""), currentPeriodEnd: periodEnd || null }));
   } else if (eventType === "refund.created") {
     const refundId = obj.id || uuid();
-    await d1Exec(
+    const r = await d1Exec(
       env,
       `INSERT OR REPLACE INTO refunds (id, order_id, creem_refund_id, reason, status, created_at)
       VALUES (?, ?, ?, ?, 'processed', ?)`,
       [refundId, orderId, refundId, (obj.reason || "").slice(0, 500), Date.now()]
     );
+    if (!r) out.d1_degraded = true;
     if (orderId) {
       await d1Exec(env, `UPDATE orders SET status = 'refunded' WHERE creem_order_id = ?`, [orderId]);
     }
+    Object.assign(out, await patchEntitlement(env, email, { plan: "free", subscriptionStatus: "refunded" }));
+  } else if (eventType === "dispute.created") {
+    const disputeId = obj.id || uuid();
+    const r = await d1Exec(
+      env,
+      `INSERT OR REPLACE INTO orders (id, user_id, creem_order_id, amount_cents, currency, type, status, raw_json, created_at)
+      VALUES (?, ?, ?, ?, ?, 'dispute', 'disputed', ?, ?)`,
+      ["dispute:" + disputeId, userId, orderId, amountCents, currency, JSON.stringify(obj), Date.now()]
+    );
+    if (!r) out.d1_degraded = true;
+    Object.assign(out, await patchEntitlement(env, email, { plan: "free", subscriptionStatus: "disputed" }));
+    console.error("creem dispute.created \u2014", email, disputeId);
+  } else {
+    console.log("creem webhook: unhandled event", eventType);
   }
+  return out;
 }
 async function hBillingPortal(request, env) {
   const user = await resolveUser(request, env);
@@ -1379,6 +1563,7 @@ async function resolveUser(request, env) {
 }
 var BILLING_ROUTES = {
   "/api/billing/checkout": { POST: hBillingCheckout },
+  "/api/billing/report-checkout": { POST: hReportCheckout },
   "/api/billing/webhook": { POST: hBillingWebhook },
   "/api/billing/portal": { POST: hBillingPortal }
 };
@@ -2799,6 +2984,493 @@ var AI_ROUTES = {
   "/api/ai/analyze": { POST: hAiAnalyze }
 };
 
+// worker-src/diagnostic-report.mjs
+var FREE_REVIEW_LIMIT = 6;
+var CREDIT_PREFIX = "report_credit:";
+var REPORT_PREFIX = "report_cache:";
+var HIST_PREFIX = "diaghist:";
+var REPORT_TTL = 60 * 60 * 24 * 180;
+var MODELS2 = [
+  "minimax/minimax-m3:free",
+  "z-ai/glm-5.2:free",
+  "nvidia/nemotron-3-ultra-550b-a55b:free"
+];
+var SUBTEST_NAMES = {
+  "5002": "Reading & Language Arts",
+  "5003": "Mathematics",
+  "5004": "Social Studies",
+  "5005": "Science"
+};
+var DIMENSIONS = [
+  { id: "accuracy", label: "Answer accuracy", hint: "Share of questions answered correctly." },
+  { id: "pace", label: "Answering pace", hint: "Median seconds per question vs a healthy band.", needsPace: true },
+  { id: "knowledge", label: "Knowledge-point response", hint: "Average accuracy across knowledge points touched." },
+  { id: "miss_load", label: "Error load", hint: "How much of the set you got wrong, weighted by subtest size." },
+  { id: "concentration", label: "Weak-spot concentration", hint: "High when misses cluster in one topic instead of scattering." },
+  { id: "consistency", label: "Subtest consistency", hint: "How evenly you perform across the four subtests." },
+  { id: "guessing", label: "Guess control", hint: "Penalised by very fast wrong answers (under 15s).", needsPace: true },
+  { id: "uplift", label: "Uplift headroom", hint: "Score you gain by bringing the weakest subtest to full marks." },
+  { id: "momentum", label: "Momentum", hint: "Movement against your own previous diagnostics.", needsHistory: true }
+];
+async function resolveEntitlement(request, env, visitorId) {
+  const payload = await verifyJwt(bearerToken(request), env.JWT_SECRET).catch(() => null);
+  const email = payload && payload.email ? String(payload.email).toLowerCase() : null;
+  const scope = email ? "u:" + email : visitorId ? "v:" + visitorId : null;
+  let plan = "free";
+  if (email) {
+    try {
+      const rec = await env.TRIUMPH_KV.get(USER_KEY(email), "json");
+      if (rec && rec.plan) plan = rec.plan;
+    } catch (e) {
+    }
+  }
+  if (plan === "pro") return { tier: "pro", email, scope, credit: null };
+  if (visitorId) {
+    let credit = null;
+    try {
+      credit = await env.TRIUMPH_KV.get(CREDIT_PREFIX + visitorId, "json");
+    } catch (e) {
+      credit = null;
+    }
+    if (credit && credit.report_product) return { tier: "credit", email, scope, credit };
+  }
+  return { tier: "free", email, scope, credit: null };
+}
+function lockedResponse(ent, extra = {}) {
+  return json({
+    error: {
+      code: "report_locked",
+      message: "The full diagnostic report is not unlocked for this visitor yet.",
+      hint: "Log in for the free tier, or buy the one-time report \u2014 no account needed."
+    },
+    status: 402,
+    // 前端据此决定显示哪几个按钮，不含任何付费内容
+    options: ["login", "purchase"],
+    free_review_limit: FREE_REVIEW_LIMIT,
+    tier: ent ? ent.tier : "free",
+    ...extra
+  }, 402);
+}
+var mean = (a) => a.length ? a.reduce((x, y) => x + y, 0) / a.length : 0;
+var round1 = (n) => Math.round(n * 10) / 10;
+var clamp01 = (v) => Math.max(0, Math.min(1, v));
+var toScore = (ratio) => Math.round(clamp01(ratio) * 100);
+function median(arr) {
+  if (!arr.length) return null;
+  const s = arr.slice().sort((a, b) => a - b);
+  const m = Math.floor(s.length / 2);
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+}
+function computeReport(bank, answers, history = []) {
+  const byId = new Map(bank.map((q) => [q.id, q]));
+  const rows = [];
+  for (const a of answers) {
+    const q = byId.get(String(a.question_id || ""));
+    if (!q) continue;
+    const selected = Number(a.selected);
+    if (!Number.isInteger(selected) || selected < 0 || selected >= q.options.length) continue;
+    const rawElapsed = a.elapsed_ms;
+    const elapsed = rawElapsed === null || rawElapsed === void 0 || rawElapsed === "" ? NaN : Number(rawElapsed);
+    rows.push({
+      id: q.id,
+      code: q.code,
+      subtest: SUBTEST_NAMES[q.code] || q.subtest || q.code,
+      category: q.category || "General",
+      selected,
+      correct: selected === q.answer,
+      elapsed_ms: Number.isFinite(elapsed) && elapsed >= 0 ? Math.min(elapsed, 36e5) : null
+    });
+  }
+  if (!rows.length) return null;
+  const total = rows.length;
+  const correctCount = rows.filter((r) => r.correct).length;
+  const perSubtest = {};
+  for (const r of rows) {
+    const s = perSubtest[r.code] = perSubtest[r.code] || {
+      code: r.code,
+      name: r.subtest,
+      attempted: 0,
+      correct: 0,
+      misses: 0,
+      elapsed: []
+    };
+    s.attempted++;
+    if (r.correct) s.correct++;
+    else s.misses++;
+    if (r.elapsed_ms !== null) s.elapsed.push(r.elapsed_ms);
+  }
+  const subtests = Object.values(perSubtest).sort((a, b) => a.code.localeCompare(b.code));
+  for (const s of subtests) {
+    s.accuracy = round1(s.correct / s.attempted * 100);
+    s.scaled = 140 + s.correct / s.attempted * 40;
+    s.median_ms = median(s.elapsed);
+  }
+  const perCategory = {};
+  for (const r of rows) {
+    const c = perCategory[r.category] = perCategory[r.category] || {
+      category: r.category,
+      code: r.code,
+      attempted: 0,
+      correct: 0,
+      misses: 0
+    };
+    c.attempted++;
+    if (r.correct) c.correct++;
+    else c.misses++;
+  }
+  const categories = Object.values(perCategory).map((c) => ({ ...c, accuracy: round1(c.correct / c.attempted * 100) })).sort((a, b) => a.accuracy - b.accuracy);
+  const scaledPer = subtests.map((s) => s.scaled);
+  const score = Math.round(mean(scaledPer));
+  const pass = Math.max(5, Math.min(95, Math.round(5 + (score - 140) * 2.25)));
+  const misses = rows.map((r, i) => ({ ...r, index: i })).filter((r) => !r.correct).map((r) => {
+    const q = byId.get(r.id);
+    return {
+      index: r.index,
+      question_id: r.id,
+      code: r.code,
+      subtest: r.subtest,
+      category: r.category,
+      question: q.q,
+      options: q.options,
+      answer_index: q.answer,
+      answer_text: q.options[q.answer],
+      selected_index: r.selected,
+      selected_text: q.options[r.selected],
+      explanation: q.explain || ""
+    };
+  });
+  const allElapsed = rows.map((r) => r.elapsed_ms).filter((v) => v !== null);
+  const paceAvailable = allElapsed.length >= Math.ceil(total * 0.5);
+  const medianMs = median(allElapsed);
+  const fastWrong = rows.filter((r) => !r.correct && r.elapsed_ms !== null && r.elapsed_ms < 15e3).length;
+  const pacePct = allElapsed.length ? {
+    median_s: Math.round(medianMs / 1e3),
+    fastest_s: Math.round(Math.min(...allElapsed) / 1e3),
+    slowest_s: Math.round(Math.max(...allElapsed) / 1e3),
+    under_15s: rows.filter((r) => r.elapsed_ms !== null && r.elapsed_ms < 15e3).length
+  } : null;
+  const accuracy = correctCount / total;
+  let paceRatio = 0;
+  if (paceAvailable && medianMs !== null) {
+    const sec = medianMs / 1e3;
+    if (sec >= 45 && sec <= 75) paceRatio = 1;
+    else if (sec < 45) paceRatio = clamp01(1 - (45 - sec) / 35);
+    else paceRatio = clamp01(1 - (sec - 75) / 120);
+  }
+  const knowledgeRatio = categories.length ? mean(categories.map((c) => c.accuracy / 100)) : 0;
+  const missLoadRatio = accuracy;
+  let concentrationRatio = 0;
+  if (misses.length) {
+    const counts = {};
+    for (const m of misses) counts[m.category] = (counts[m.category] || 0) + 1;
+    const top = Math.max(...Object.values(counts));
+    concentrationRatio = clamp01(1 - (top / misses.length - 1 / Object.keys(counts).length) / (1 - 1 / Math.max(2, Object.keys(counts).length)));
+  } else {
+    concentrationRatio = 1;
+  }
+  const subAccs = subtests.map((s) => s.accuracy / 100);
+  const consistencyRatio = subAccs.length > 1 ? clamp01(1 - Math.sqrt(mean(subAccs.map((v) => (v - mean(subAccs)) ** 2))) / 0.5) : 1;
+  const guessingRatio = paceAvailable ? clamp01(1 - fastWrong / Math.max(1, Math.ceil(total * 0.25))) : 0;
+  const weakest = subtests.reduce((a, b) => a.accuracy <= b.accuracy ? a : b, subtests[0]);
+  const upliftRatio = clamp01((100 - weakest.accuracy) / 100);
+  const prev = history.length ? history[history.length - 1] : null;
+  const momentumRatio = prev && Number.isFinite(prev.score) ? clamp01(0.5 + (score - prev.score) / 40) : 0.5;
+  const dimensions = DIMENSIONS.map((d) => {
+    let ratio;
+    let measured = true;
+    switch (d.id) {
+      case "accuracy":
+        ratio = accuracy;
+        break;
+      case "pace":
+        ratio = paceRatio;
+        measured = paceAvailable;
+        break;
+      case "knowledge":
+        ratio = knowledgeRatio;
+        break;
+      case "miss_load":
+        ratio = missLoadRatio;
+        break;
+      case "concentration":
+        ratio = concentrationRatio;
+        break;
+      case "consistency":
+        ratio = consistencyRatio;
+        break;
+      case "guessing":
+        ratio = guessingRatio;
+        measured = paceAvailable;
+        break;
+      case "uplift":
+        ratio = upliftRatio;
+        break;
+      case "momentum":
+        ratio = momentumRatio;
+        measured = !!prev;
+        break;
+      default:
+        ratio = 0;
+    }
+    return { id: d.id, label: d.label, hint: d.hint, value: toScore(ratio), measured };
+  });
+  return {
+    // 「真实反映做题数量」：这三个数一律由服务端实际匹配到的题数算出，
+    // 前端传什么都不影响。
+    question_count: total,
+    answered_count: rows.length,
+    correct_count: correctCount,
+    accuracy: round1(accuracy * 100),
+    score,
+    pass_probability: pass,
+    typical_line: 160,
+    subtests,
+    categories,
+    misses,
+    pace: pacePct,
+    weakest: weakest ? { code: weakest.code, name: weakest.name, accuracy: weakest.accuracy } : null,
+    strongest: (() => {
+      const s = subtests.reduce((a, b) => a.accuracy >= b.accuracy ? a : b, subtests[0]);
+      return s ? { code: s.code, name: s.name, accuracy: s.accuracy } : null;
+    })(),
+    dimensions,
+    history_used: history.length,
+    previous_score: prev ? prev.score : null
+  };
+}
+async function readHistory(env, scope) {
+  if (!scope) return [];
+  try {
+    const h = await env.TRIUMPH_KV.get(HIST_PREFIX + scope, "json");
+    return Array.isArray(h) ? h : [];
+  } catch (e) {
+    return [];
+  }
+}
+async function appendHistory(env, scope, summary) {
+  if (!scope) return;
+  try {
+    const h = await readHistory(env, scope);
+    const next = h.filter((x) => x.attempt_id !== summary.attempt_id).concat([summary]).slice(-12);
+    await env.TRIUMPH_KV.put(HIST_PREFIX + scope, JSON.stringify(next));
+  } catch (e) {
+  }
+}
+var AI_SYSTEM = 'You are a Praxis 5001 (Elementary Education) readiness analyst writing a diagnostic report for a teacher candidate. You receive pre-computed statistics \u2014 treat every number as fact and never recompute or contradict it. Write in direct, specific, non-promotional English addressed to "you". Never invent facts about the candidate beyond the statistics. Output STRICT JSON only, no markdown fences, with exactly these keys: {"headline": string, "trend": string, "pace_read": string, "knowledge_read": string, "miss_read": string, "risk": string, "weak_points": [{"topic": string, "why": string, "fix": string}], "next_actions": [string]}. headline <= 90 chars. trend/pace_read/knowledge_read/miss_read/risk: 2-3 sentences each. weak_points: 3-5 items. next_actions: 3-5 items.';
+function buildAiPayload(stats) {
+  return JSON.stringify({
+    question_count: stats.question_count,
+    correct_count: stats.correct_count,
+    accuracy_pct: stats.accuracy,
+    estimated_scaled_score: stats.score,
+    pass_probability_pct: stats.pass_probability,
+    previous_scaled_score: stats.previous_score,
+    subtests: stats.subtests.map((s) => ({ code: s.code, name: s.name, correct: s.correct, missed: s.misses, accuracy_pct: s.accuracy })),
+    knowledge_points: stats.categories.map((c) => ({ category: c.category, correct: c.correct, missed: c.misses, accuracy_pct: c.accuracy })),
+    weakest: stats.weakest,
+    strongest: stats.strongest,
+    pace: stats.pace,
+    dimensions: stats.dimensions.map((d) => ({ id: d.id, value: d.value, measured: d.measured })),
+    missed_topics: stats.misses.slice(0, 8).map((m) => ({ category: m.category, question: String(m.question).slice(0, 140) }))
+  });
+}
+async function callModel2(env, model, userPayload) {
+  try {
+    const res = await safeFetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: { Authorization: "Bearer " + env.OPENROUTER_API_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model,
+        messages: [{ role: "system", content: AI_SYSTEM }, { role: "user", content: userPayload }],
+        temperature: 0.3,
+        max_tokens: 1400
+      })
+    });
+    if (!res || !res.ok) return null;
+    const data = await res.json().catch(() => null);
+    const content = data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
+    if (typeof content !== "string" || !content.trim()) return null;
+    let clean = content.trim();
+    if (clean.startsWith("```")) clean = clean.replace(/^```[a-z]*\s*/i, "").replace(/```\s*$/, "").trim();
+    const s = clean.indexOf("{"), e = clean.lastIndexOf("}");
+    if (s === -1 || e <= s) return null;
+    const p = JSON.parse(clean.slice(s, e + 1));
+    if (typeof p.headline !== "string" || typeof p.trend !== "string") return null;
+    return {
+      headline: String(p.headline).slice(0, 160),
+      trend: String(p.trend),
+      pace_read: String(p.pace_read || ""),
+      knowledge_read: String(p.knowledge_read || ""),
+      miss_read: String(p.miss_read || ""),
+      risk: String(p.risk || ""),
+      weak_points: Array.isArray(p.weak_points) ? p.weak_points.slice(0, 5).map((w) => ({
+        topic: String(w && w.topic || ""),
+        why: String(w && w.why || ""),
+        fix: String(w && w.fix || "")
+      })) : [],
+      next_actions: Array.isArray(p.next_actions) ? p.next_actions.slice(0, 5).map(String) : []
+    };
+  } catch (e) {
+    return null;
+  }
+}
+function fallbackNarrative(stats) {
+  const w = stats.weakest;
+  const topMisses = {};
+  for (const m of stats.misses) topMisses[m.category] = (topMisses[m.category] || 0) + 1;
+  const worstTopics = Object.entries(topMisses).sort((a, b) => b[1] - a[1]).slice(0, 3);
+  return {
+    headline: `You scored about ${stats.score} with ${stats.correct_count} of ${stats.question_count} correct.`,
+    trend: stats.previous_score ? `Your previous diagnostic estimated ${stats.previous_score}; this one lands at ${stats.score}. ${stats.score >= stats.previous_score ? "That is movement in the right direction \u2014 keep the same weekly rhythm." : "Scores move down when a session is rushed; re-run when you are fresh before reading too much into it."}` : `This is your first recorded diagnostic, so it sets the baseline at about ${stats.score}.`,
+    pace_read: stats.pace ? `Your median question took ${stats.pace.median_s}s (fastest ${stats.pace.fastest_s}s, slowest ${stats.pace.slowest_s}s). ${stats.pace.under_15s} question(s) were answered in under 15 seconds \u2014 those are the ones most likely to be careless misses.` : "Timing data was incomplete for this session, so pace is not scored. Keep the tab open from the first question next time.",
+    knowledge_read: `You touched ${stats.categories.length} knowledge point(s). Strongest: ${stats.strongest ? stats.strongest.name : "n/a"}. Weakest: ${w ? w.name : "n/a"}.`,
+    miss_read: worstTopics.length ? `Most of your misses sit in ${worstTopics.map(([t, n]) => `${t} (${n})`).join(", ")}.` : "You missed nothing \u2014 move to a longer diagnostic to find the real ceiling.",
+    risk: w ? `${w.name} is the subtest most likely to decide your result; at ${w.accuracy}% it is the one to attack first.` : "No clear risk area in this session.",
+    weak_points: worstTopics.map(([t, n]) => ({
+      topic: t,
+      why: `${n} of your ${stats.misses.length} missed question(s) came from this knowledge point.`,
+      fix: `Review the underlying rule, then re-attempt ${n < 2 ? "two" : "three"} fresh questions from the same knowledge point before moving on.`
+    })),
+    next_actions: [
+      "Re-do every missed question in this report without looking at the explanation first.",
+      w ? `Spend your next two study sessions on ${w.name}.` : "Take a longer diagnostic to establish a real ceiling.",
+      "Come back in 7 days and re-run the diagnostic to measure movement."
+    ]
+  };
+}
+async function buildNarrative(env, stats) {
+  if (!env.OPENROUTER_API_KEY) return { narrative: fallbackNarrative(stats), ai: false, model: null };
+  const payload = buildAiPayload(stats);
+  for (const model of MODELS2) {
+    const n = await callModel2(env, model, payload);
+    if (n) return { narrative: n, ai: true, model };
+  }
+  return { narrative: fallbackNarrative(stats), ai: false, model: null };
+}
+async function hDiagnosticReport(request, env) {
+  const parsed = await readJsonBody(request);
+  if (parsed.err) return parsed.err;
+  const body = parsed.body;
+  const visitorId = String(body.visitor_id || "").slice(0, 64);
+  const attemptId = String(body.attempt_id || "").slice(0, 80);
+  const answers = Array.isArray(body.answers) ? body.answers.slice(0, 60) : null;
+  if (!answers || !answers.length) return apiError("bad_request", { field: "answers" });
+  if (!attemptId) return apiError("bad_request", { field: "attempt_id" });
+  const ent = await resolveEntitlement(request, env, visitorId);
+  if (ent.tier === "free") return lockedResponse(ent);
+  if (ent.tier === "credit") {
+    const used = Array.isArray(ent.credit.used_attempts) ? ent.credit.used_attempts : [];
+    if (used.length && used.indexOf(attemptId) === -1) {
+      return lockedResponse(ent, { reason: "credit_spent", spent_on: used.length });
+    }
+  }
+  const bank = await loadBank(env).catch(() => null);
+  if (!bank) return apiError("internal_error", { hint: "Question bank unavailable." });
+  const history = await readHistory(env, ent.scope);
+  const stats = computeReport(bank, answers, history);
+  if (!stats) return apiError("bad_request", { field: "answers", hint: "No answer matched the server question bank." });
+  const cacheKey2 = REPORT_PREFIX + attemptId;
+  let report = null;
+  if (ent.tier === "pro") {
+    try {
+      report = await env.TRIUMPH_KV.get(cacheKey2, "json");
+    } catch (e) {
+      report = null;
+    }
+  }
+  if (report && report.stats) {
+    return ok({ report, cached: true, tier: ent.tier, credit_remaining: creditRemaining(ent, attemptId) });
+  }
+  const { narrative, ai, model } = await buildNarrative(env, stats);
+  const weakTopics = {};
+  for (const m of stats.misses) weakTopics[m.category] = (weakTopics[m.category] || 0) + 1;
+  report = {
+    version: 1,
+    generated_at: Date.now(),
+    attempt_id: attemptId,
+    ai_generated: ai,
+    ai_model: model,
+    // 报告顶部的结论区
+    summary: {
+      question_count: stats.question_count,
+      correct_count: stats.correct_count,
+      accuracy: stats.accuracy,
+      score: stats.score,
+      pass_probability: stats.pass_probability,
+      typical_line: stats.typical_line,
+      weakest: stats.weakest,
+      strongest: stats.strongest,
+      previous_score: stats.previous_score
+    },
+    radar: stats.dimensions,
+    subtests: stats.subtests.map((s) => ({
+      code: s.code,
+      name: s.name,
+      attempted: s.attempted,
+      correct: s.correct,
+      misses: s.misses,
+      accuracy: s.accuracy,
+      scaled: Math.round(s.scaled * 10) / 10,
+      median_s: s.median_ms === null ? null : Math.round(s.median_ms / 1e3)
+    })),
+    knowledge_points: stats.categories,
+    miss_topics: Object.entries(weakTopics).map(([topic, n]) => ({ topic, misses: n })).sort((a, b) => b.misses - a.misses),
+    pace: stats.pace,
+    narrative,
+    // 错题明细：付费报告里给全 12 题（免费层只能看到前 6 题）
+    misses: stats.misses,
+    history: { used: stats.history_used, previous_score: stats.previous_score }
+  };
+  if (ent.tier === "credit") {
+    const used = Array.isArray(ent.credit.used_attempts) ? ent.credit.used_attempts.slice() : [];
+    if (used.indexOf(attemptId) === -1) {
+      used.push(attemptId);
+      const next = { ...ent.credit, used_attempts: used, last_used_at: Date.now() };
+      try {
+        await env.TRIUMPH_KV.put(CREDIT_PREFIX + visitorId, JSON.stringify(next), { expirationTtl: REPORT_TTL });
+      } catch (e) {
+        console.error("report credit write failed", visitorId, String(e && e.message || e));
+        return json({ error: { code: "internal_error", message: "Could not record the report credit.", hint: "Retry in a moment." }, status: 500 }, 500);
+      }
+    }
+  }
+  try {
+    await env.TRIUMPH_KV.put(cacheKey2, JSON.stringify(report), { expirationTtl: REPORT_TTL });
+  } catch (e) {
+  }
+  await appendHistory(env, ent.scope, {
+    attempt_id: attemptId,
+    ts: Date.now(),
+    score: stats.score,
+    pass: stats.pass_probability,
+    accuracy: stats.accuracy,
+    question_count: stats.question_count
+  });
+  return ok({ report, cached: false, tier: ent.tier, credit_remaining: creditRemaining(ent, attemptId) });
+}
+function creditRemaining(ent, attemptId) {
+  if (ent.tier !== "credit") return null;
+  const used = Array.isArray(ent.credit.used_attempts) ? ent.credit.used_attempts : [];
+  if (!used.length) return 1;
+  return used.indexOf(attemptId) === -1 ? 0 : 0;
+}
+async function hDiagnosticReportStatus(request, env) {
+  const url = new URL(request.url);
+  const visitorId = String(url.searchParams.get("visitor_id") || "").slice(0, 64);
+  const ent = await resolveEntitlement(request, env, visitorId);
+  return ok({
+    tier: ent.tier,
+    logged_in: !!ent.email,
+    free_review_limit: FREE_REVIEW_LIMIT,
+    can_view_report: ent.tier === "pro" || ent.tier === "credit",
+    purchase_available: ent.tier !== "pro"
+  });
+}
+var REPORT_ROUTES = {
+  "/api/diagnostic/report": { POST: hDiagnosticReport },
+  "/api/diagnostic/report/status": { GET: hDiagnosticReportStatus }
+};
+
 // worker-src/content.mjs
 var MD_ROUTES = (() => {
   const pages = [
@@ -2819,8 +3491,7 @@ var MD_ROUTES = (() => {
     "/praxis-5003-math-study-guide",
     "/praxis-5004-social-studies-study-guide",
     "/praxis-5005-science-study-guide",
-    // 2026-08-20 batch: keyword articles
-    "/praxis-5001-passing-scores",
+    // 2026-08-20 batch: keyword articles (passing-scores merged into /score-calculator via 301)
     "/praxis-5001-free-practice-test",
     "/praxis-5001-registration-guide",
     // 2026-08-20 batch: state landing pages
@@ -2834,7 +3505,9 @@ var MD_ROUTES = (() => {
     "/praxis-5001-alabama-requirements",
     "/praxis-5001-maryland-requirements",
     // 2026-09-04 batch: 8006 pillar page
-    "/praxis-8006-teaching-reading"
+    "/praxis-8006-teaching-reading",
+    // 2026-09-14 batch: Praxis Steps explainer
+    "/praxis-steps"
   ];
   const map = /* @__PURE__ */ new Map();
   const mdName = (p) => p === "/" || p === "/index" ? "/md/index.md" : `/md${p}.md`;
@@ -3703,6 +4376,9 @@ var worker_default = {
       if (path === "/diagnostic.html" || path === "/practice.html") {
         return Response.redirect(`${url.origin}${path.replace(/\.html$/, "")}${url.search}`, 301);
       }
+      if (path === "/praxis-5001-passing-scores" || path === "/praxis-5001-passing-scores.html") {
+        return Response.redirect("https://learndiag.com/score-calculator", 301);
+      }
       if (path === "/mcp") return handleMcp(request, env);
       const authDoc = AUTH_DISCOVERY_ROUTES[path];
       if (authDoc) {
@@ -3810,6 +4486,12 @@ var worker_default = {
         if (ai) {
           const handler = ai[request.method];
           if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(ai) }));
+          return withCors(await handler(request, env));
+        }
+        const report = REPORT_ROUTES[path];
+        if (report) {
+          const handler = report[request.method];
+          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(report) }));
           return withCors(await handler(request, env));
         }
         const v1 = V1_ROUTES[path];

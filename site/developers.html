@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<html lang="en" data-page-node-id="Vq7GSetjZcMrRWdpwSX7jQ">
+<head data-page-node-id="FiMBUaeBm5irgoIDJr3lAp">
+  <meta charset="UTF-8" data-page-node-id="rRXGkUPN7RM9ePEVjlkz1I">
   <script src="/js/theme.js?v=2"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Learndiag API Docs for the Praxis 5001 Bank | Learndiag</title>
-  <meta name="description" content="Developer portal for Learndiag: free REST API for 969 original Praxis 5001 questions, OpenAPI spec, MCP server, and scoped API keys. Quickstart in one curl.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://learndiag.com/developers">
-  <meta property="og:title" content="Learndiag API Docs for the Praxis 5001 Bank">
-  <meta property="og:description" content="Free REST API for the Praxis 5001 question bank: OpenAPI spec, MCP server (Streamable HTTP), scoped API keys, quickstart in one curl.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://learndiag.com/developers">
-  <meta property="og:image" content="https://learndiag.com/og-image.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="VLHXYCea56GTAMis32BPFK">
+  <title>Learndiag API Docs for the Praxis 5001 Question Bank | Learndiag</title>
+  <meta name="description" content="Developer portal for Learndiag: anonymous REST API for 969 original Praxis 5001 questions, response examples, scoped API keys, rate limits, MCP server, and the OpenAPI spec." data-page-node-id="uzyag92uCe7g9OCFH45kBN">
+  <meta name="robots" content="index, follow" data-page-node-id="FsEzQHsOk822uDDgIAxHe2">
+  <link rel="canonical" href="https://learndiag.com/developers" data-page-node-id="4sJxNCo7IHrMu7D8ZZwuGo">
+  <meta property="og:title" content="Learndiag API Docs for the Praxis 5001 Bank" data-page-node-id="sA3bhsKEWydXJ5sHoSXnEf">
+  <meta property="og:description" content="Anonymous REST API for the Praxis 5001 question bank: response examples, scoped API keys, rate limits, MCP server, and the OpenAPI spec." data-page-node-id="voh8JvuosPHAhrQkDkJ6Mv">
+  <meta property="og:type" content="website" data-page-node-id="ZCqfBJSPbhqPt805mj60ZH">
+  <meta property="og:url" content="https://learndiag.com/developers" data-page-node-id="Hym1BIwmUHhPH5J15XDmHH">
+  <meta property="og:image" content="https://learndiag.com/og-image-learndiag-v1.png" data-page-node-id="HpSyyJFN8VRo229GFUNeUB">
+  <meta property="og:image:width" content="1200" data-page-node-id="NRehm0rCiUl4nKUBDQBdWU">
+  <meta property="og:image:height" content="630" data-page-node-id="di1SDmt3KQGh4giu88H2fy">
+  <meta property="og:image:alt" content="Learndiag — free Praxis prep. Know where to start." data-page-node-id="lSftjQovGS3UYd1xI169SA">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSR1Q1G7W9"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-MSR1Q1G7W9");
 </script>
 
-  <link rel="mcp-manifest" type="application/json" href="/.well-known/mcp-manifest.json">
+  <link rel="mcp-manifest" type="application/json" href="/.well-known/mcp-manifest.json" data-page-node-id="eJQsaJ58JmwwifSMFwKzx2">
 
   <script type="application/ld+json">
   {
@@ -44,74 +47,125 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="ZAZ53mrZVQW1V4ixIgFd9H">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="NOGrE39t63eNzXiUUbMH75">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" data-page-node-id="aVOqr4DVOOSowO7qoffS9k">
 
-  <link rel="stylesheet" href="/css/theme.css?v=2">
-  <style>*{box-sizing:border-box;margin:0;padding:0}*,*:before,*:after{min-width:0}:root{--bg: #F2EFE9;--bg-soft: #E8E3D8;--ink: #3C3733;--ink-soft: #6E6760;--line: #D8D1C5;--accent: #C09D9B;--accent-deep: #A67D7A;--serif: "Instrument Serif", Georgia, serif;--sans: "Instrument Sans", system-ui, sans-serif;--mono: "JetBrains Mono", ui-monospace, monospace}html,body{height:100%;width:100%;overflow-x:hidden}body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.75}h1,h2,h3{text-wrap:balance}p,li,td{overflow-wrap:break-word}a{color:var(--accent-deep)}.wrap{max-width:760px;margin:0 auto;padding:0 40px}.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);display:block}article.wrap{padding-top:56px;padding-bottom:72px}h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,52px);line-height:1.12;margin:18px 0 20px;max-width:16em}h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,36px);line-height:1.2;margin:48px 0 14px;padding-top:12px;border-top:1px solid var(--line)}h3{font-size:17px;font-weight:600;margin:24px 0 8px}p{font-size:16px;color:var(--ink-soft);margin-bottom:14px}p strong{color:var(--ink);font-weight:600}ul{margin:0 0 16px 20px;color:var(--ink-soft);font-size:15px;line-height:1.85}li{margin-bottom:4px}code{font-family:var(--mono);font-size:13.5px;background:var(--bg-soft);padding:2px 6px}pre{font-family:var(--mono);font-size:13.5px;line-height:1.65;background:#3c3733;color:#ede7dc;padding:18px 20px;overflow-x:auto;margin:12px 0 20px;white-space:pre}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;margin:10px 0 22px;font-size:14.5px}th,td{border-top:1px solid var(--line);padding:9px 12px 9px 0;text-align:left;vertical-align:top;color:var(--ink-soft)}th{color:var(--ink);font-weight:600}tr:last-child td{border-bottom:1px solid var(--line)}td code,th code{white-space:nowrap}.nav{display:flex;align-items:baseline;justify-content:space-between;padding:28px 0 24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px 18px;max-width:1080px}.wordmark{font-family:var(--serif);font-style:italic;font-size:26px;color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}.nav-links{display:flex;gap:24px;align-items:baseline;flex-wrap:wrap}.nav-note{font-size:13px;color:var(--ink-soft)}.nav-cta{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}footer.footer{padding:40px 40px 64px;max-width:1080px;margin:24px auto 0;border-top:1px solid var(--line)}footer.footer p{font-size:12px;line-height:1.7;max-width:60em;margin-bottom:8px}@media(max-width:760px){.wrap{padding:0 50px}.nav{gap:8px 14px}.nav-note{display:none}article.wrap{padding-top:40px}pre{font-size:12px}}
+  <link rel="stylesheet" href="/css/theme.css?v=2" data-page-node-id="dd0BOGSimYB59eTvS35Ksl">
+  <style>*{box-sizing:border-box;margin:0;padding:0}*,*:before,*:after{min-width:0}:root{--bg: #F2EFE9;--bg-soft: #E8E3D8;--ink: #3C3733;--ink-soft: #6E6760;--line: #D8D1C5;--accent: #C09D9B;--accent-deep: #A67D7A;--serif: "Instrument Serif", Georgia, serif;--sans: "Instrument Sans", system-ui, sans-serif;--mono: "JetBrains Mono", ui-monospace, monospace}html,body{height:100%;width:100%;overflow-x:hidden}body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.75}h1,h2,h3{text-wrap:balance}p,li,td{overflow-wrap:break-word}a{color:var(--accent-deep)}.wrap{max-width:760px;margin:0 auto;padding:0 40px}.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);display:block}article.wrap{padding-top:56px;padding-bottom:72px}h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,52px);line-height:1.12;margin:18px 0 20px;max-width:16em}h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,36px);line-height:1.2;margin:48px 0 14px;padding-top:12px;border-top:1px solid var(--line)}h3{font-size:17px;font-weight:600;margin:24px 0 8px}p{font-size:16px;color:var(--ink-soft);margin-bottom:14px}p strong{color:var(--ink);font-weight:600}ul{margin:0 0 16px 20px;color:var(--ink-soft);font-size:15px;line-height:1.85}li{margin-bottom:4px}code{font-family:var(--mono);font-size:13.5px;background:var(--bg-soft);padding:2px 6px}pre{font-family:var(--mono);font-size:13.5px;line-height:1.65;background:#3c3733;color:#ede7dc;padding:18px 20px;overflow-x:auto;margin:12px 0 20px;white-space:pre}.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}pre code{background:none;padding:0;color:inherit}table{width:100%;border-collapse:collapse;margin:10px 0 22px;font-size:14.5px}th,td{border-top:1px solid var(--line);padding:9px 12px 9px 0;text-align:left;vertical-align:top;color:var(--ink-soft)}th{color:var(--ink);font-weight:600}tr:last-child td{border-bottom:1px solid var(--line)}td code,th code{white-space:nowrap}.nav{display:flex;align-items:baseline;justify-content:space-between;padding-top:28px;padding-bottom:24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px 18px;max-width:1080px}.wordmark{font-family:var(--serif);font-style:italic;font-size:26px;color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}.nav-links{display:flex;gap:24px;align-items:baseline;flex-wrap:wrap}.nav-note{font-size:13px;color:var(--ink-soft)}.nav-cta{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}footer.footer{padding:40px 40px 64px;max-width:1080px;margin:24px auto 0;border-top:1px solid var(--line)}footer.footer p{font-size:12px;line-height:1.7;max-width:60em;margin-bottom:8px}@media(max-width:760px){.wrap{padding:0 50px}.nav{gap:8px 14px}.nav-note{display:none}article.wrap{padding-top:40px}pre{font-size:12px}}
 </style>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Learndiag API Docs for the Praxis 5001 Bank">
-  <meta name="twitter:description" content="Free REST API for the Praxis 5001 question bank: OpenAPI spec, MCP server (Streamable HTTP), scoped API keys, quickstart in one curl.">
-  <meta name="twitter:image" content="https://learndiag.com/og-image.png">
-  <meta name="content-signal" content="ai-train=yes, search=yes, ai-input=yes">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" data-page-node-id="w5AaAybMsWUQxvJYgj1tmk">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" data-page-node-id="WfMy9t0D53OfBX3BS71k45">
+  <meta name="twitter:card" content="summary_large_image" data-page-node-id="B04yKNufcHCUOnKoHG37fw">
+  <meta name="twitter:title" content="Learndiag API Docs for the Praxis 5001 Bank" data-page-node-id="VumfDZetDk73oNzBfllVin">
+  <meta name="twitter:description" content="Anonymous REST API for the Praxis 5001 question bank: response examples, scoped API keys, rate limits, MCP server, and the OpenAPI spec." data-page-node-id="D5LSfDArAPGDAvPgKwpGEv">
+  <meta name="twitter:image" content="https://learndiag.com/og-image-learndiag-v1.png" data-page-node-id="ZEhvTppAN0onSK1IHcPYOH">
+  <meta name="twitter:image:alt" content="Learndiag — free Praxis prep. Know where to start." data-page-node-id="uGnosIoJLtv9432qCVscJk">
+  <meta name="content-signal" content="ai-train=yes, search=yes, ai-input=yes" data-page-node-id="2lUU6wCJnYGtWFABppyniD">
 </head>
-<body>
-  <header class="nav wrap">
-    <a class="wordmark" href="/" aria-label="Learndiag home">Learndiag<span style="color:var(--accent)">.</span></a>
-    <div class="nav-links">
-      <span class="nav-note">Praxis 5001 · unofficial</span>
-      <a class="nav-cta" href="/">Home</a>
-      <a class="nav-cta" href="/resources">Resources</a>
-      <a class="nav-cta" href="/diagnostic">Free diagnostic →</a>
+<body data-page-node-id="0E7Cq3EPO7Cz9T2TsOd6B0">
+  <header class="nav wrap" data-page-node-id="ADLMvV33cqxKk9VoZbtEbv">
+    <a class="wordmark" href="/" aria-label="Learndiag home" data-page-node-id="hYFJdUNTyO9UZCZEoSwvCg">Learndiag<span style="color:var(--accent)" data-page-node-id="WyF0GtqSy8JtkQA9Sd2WHM">.</span></a>
+    <div class="nav-links" data-page-node-id="jpDhMDJimqiclLz2hWV3V8">
+      <span class="nav-note" data-page-node-id="CddlvqehQfwwFb4E2WpaJH">Praxis 5001 · unofficial</span>
+      <a class="nav-cta" href="/" data-page-node-id="qOby7kSUV2toGrRFFL5F3H">Home</a>
+      <a class="nav-cta" href="/resources" data-page-node-id="UZ64hj8A0w5ZXaNOduFb1B">Resources</a>
+      <a class="nav-cta" href="/diagnostic" data-page-node-id="GksJq0HKVuVYzEkoyBMyqa">Free diagnostic →</a>
     </div>
   </header>
 
-  <article class="wrap">
-    <span class="eyebrow">Developers · Learndiag API v1</span>
-    <h1>The Praxis 5001 question bank, as an API.</h1>
-    <p style="font-size:18px;max-width:34em">969 original practice questions across four subtests, bank statistics, and study-guide metadata — free, documented, and machine-readable. No account needed to start.</p>
+  <article class="wrap" data-page-node-id="1ExqiSZVeseN9665fFWUMc">
+    <span class="eyebrow" data-page-node-id="byV411N4qeV3jsbTDyQLnt">Developers · Learndiag API v1</span>
+    <h1 data-page-node-id="AGfhGZVwpMm2nEQ1I1Xcku">The Praxis 5001 question bank, as an API.</h1>
+    <p style="font-size:18px;max-width:34em" data-page-node-id="IrwTbJwfsuV2P7tjx33NfR">969 original practice questions across four subtests, bank statistics, and study-guide metadata — free, documented, and machine-readable. All read endpoints work anonymously; no account or key is needed to start.</p>
 
-    <h2>Quickstart</h2>
-    <p>Every read endpoint works anonymously. Try it:</p>
-<pre><code>curl "https://learndiag.com/api/v1/questions/random?count=3&amp;subtest=5003"</code></pre>
-    <p>That returns three random original math questions with options, correct answers, and explanations as JSON. Health check: <code>GET /api/v1/health</code>. Full reference: <code>/openapi.json</code> (OpenAPI 3.1) or <code>/api/openapi.yaml</code>.</p>
+    <h2 data-page-node-id="gz64GQeAVSy5bolRCohnQF">Quickstart: anonymous GET in 60 seconds</h2>
+    <p data-page-node-id="jn2EFmw20Pmtn4WaKM3Gsp">One read endpoint with no credentials. Copy this into a terminal:</p>
+<pre data-page-node-id="V0QNvJBMNA3o17Y1gvVbif"><code data-page-node-id="ttBtDrB3D38tu9hV218vs9">curl "https://learndiag.com/api/v1/questions/random?count=3&amp;subtest=5003"</code></pre>
+    <p data-page-node-id="anbt9zzZibQk05d0wcLnjd">That returns three random original math questions as JSON. Health check: <code data-page-node-id="c7m8vlXIUON9LeAN0QSTYg">GET /api/v1/health</code>. Full reference: <code data-page-node-id="CfSW0G5JJ1KDWpe6O719hD">/openapi.json</code> (OpenAPI 3.1) or <code data-page-node-id="T6U2HG8halLWNtoOQZIi3O">/api/openapi.yaml</code>.</p>
 
-    <h2>Sandbox &amp; base URL</h2>
-    <p><strong>Base URL:</strong> <code>https://learndiag.com</code>. The public read API doubles as a sandbox: it is live data with anonymous access, so you can prototype without provisioning anything. There is no separate staging host.</p>
+    <h2 data-page-node-id="37Ef841B1QDtTVW1NarCDJ">What the response looks like</h2>
+    <p data-page-node-id="F7t9P05OrlwT3u3YEGi4GX">Here is the shape of the two question endpoints. Field-by-field notes follow.</p>
+<pre data-page-node-id="RJp4DEVgix9s77tBJgk10H"><code data-page-node-id="GEOlIvPCFVTwDBdRw5rEXu">{
+  "ok": true,
+  "count": 3,
+  "total_pool": 172,
+  "items": [
+    {
+      "id": "5003-099",
+      "subtest_code": "5003",
+      "subtest": "Mathematics",
+      "category": "Algebraic Thinking",
+      "question": "What is the difference between an expression and an equation?",
+      "options": [
+        "An expression is a combination of terms; an equation states two expressions are equal",
+        "Equations have variables; expressions don't",
+        "They are the same",
+        "Expressions have equals signs"
+      ],
+      "answer_index": 0,
+      "answer_text": "An expression is a combination of terms; an equation states two expressions are equal",
+      "explanation": "Expression: 3x + 2. Equation: 3x + 2 = 11. The equals sign distinguishes them."
+    }
+  ]
+}</code></pre>
+    <p data-page-node-id="bZioOj4J4TkfmjVkFzV3iH">Field notes:</p>
+    <ul data-page-node-id="GV1s7EK88EXGBlMl2LHB77">
+      <li data-page-node-id="qio0ifmYm36rLDbxxHIBst"><code data-page-node-id="rIDReD9huJnq3WXaUEzkvm">answer_index</code> is <strong data-page-node-id="5T5khA0CjNMSzupNA1eyyK">zero-based</strong>: <code data-page-node-id="QfWAhaYf4WZorbVRVAopPE">0</code> is the first option, <code data-page-node-id="lI3RnFq2YybTxYUzFesspg">3</code> the fourth.</li>
+      <li data-page-node-id="4krJCLavEjCX0mT6Z4jrQk"><code data-page-node-id="KfsgryboeTq044F9FeWvlc">answer_text</code> mirrors <code data-page-node-id="s4kTSgTaNclpwKQFsD8841">options[answer_index]</code> — a convenience field so you do not have to index into the array.</li>
+      <li data-page-node-id="htHJpqhNmjgpNBDN985AgK"><code data-page-node-id="MsbJEpIAXM8ntzNlqNeIZ6">subtest_code</code> is the numeric exam code (<code data-page-node-id="XQDooBLVpzU0RuOHFCWLLt">5002</code>…<code data-page-node-id="QxkGncpQeXPodbG9iAFt6E">5005</code>); <code data-page-node-id="btIC0atujgtv3PTV3eaHsQ">subtest</code> is the human-readable name.</li>
+      <li data-page-node-id="HJDHvdD9YAfUqL6HTcw5fD"><code data-page-node-id="UGb0WAWvFD5L1Bo97jkj0I">category</code> matches the official content category (e.g. <code data-page-node-id="r34knrqvVNMmZugENhlunK">Algebraic Thinking</code>).</li>
+      <li data-page-node-id="nQWpFIaRj9Pc8I0rG24Y20"><code data-page-node-id="sov4cHAAYWjFQERBmOO6Gs">total_pool</code> is the number of questions in the filtered pool from which the random draw was taken (after filters, before <code data-page-node-id="rKAgEjiQCodgts0FQD24R8">count</code>).</li>
+      <li data-page-node-id="g9g2RA1NxwktG0pGm30nO2"><code data-page-node-id="LuIMDTmB0VJxyyBUI086Bg">explanation</code> is written for the learner, not for a grader — it is safe to surface directly.</li>
+    </ul>
+    <p data-page-node-id="dSTRtYZyGSYrZBv0f936JQ"><code data-page-node-id="ofSUZwUFiY5wj2ipcds7tk">GET /api/v1/questions</code> returns the same item shape inside a <code data-page-node-id="YgtotmweQieGgVtPWe0utY">{"ok":true,"items":[...],"total":N}</code> envelope for the full bank (paginated, see below).</p>
 
-    <h2>Authentication &amp; scoped permissions</h2>
-    <p>All reads work anonymously (public tier). For attribution and higher limits, create a <strong>free scoped API key</strong> — self-serve, no signup:</p>
-<pre><code>curl -X POST https://learndiag.com/api/v1/keys \
+    <h2 data-page-node-id="tvqLv4EcoGAP2E0FLFs5d5">Filtering and pagination</h2>
+    <div class="table-scroll"><table data-page-node-id="lpVEVWPEncKEPWAGTXg44s">
+      <tr data-page-node-id="P4VDyb6w2w8rp7Ii46FpZ7"><th data-page-node-id="GI090RehKtH36zLlEH0VCR">Endpoint</th><th data-page-node-id="yTxRqv6OrfivyZMSdo7s74">Filters</th><th data-page-node-id="bDisYyNQVpfORIIg1A1JJp">Pagination</th></tr>
+      <tr data-page-node-id="8IerqgMTTX0ospmSihde9f"><td data-page-node-id="XgtopMoGJVBLUBKiARtIY4"><code data-page-node-id="aUpl5DPDCBaFAVyFnzKY2h">GET /api/v1/questions</code></td><td data-page-node-id="bZ6WAsKTrMZr8YYyviNWYv"><code data-page-node-id="IrzrTQWiZntgCmEKVD6DV1">subtest</code>, <code data-page-node-id="7YnAfN8F3EZ1DSdMlMoNzu">category</code>, <code data-page-node-id="YMVogNEEzlCS4x7q0BNsCD">search</code></td><td data-page-node-id="ThjrZu7WEw3SYngV4nklyK"><code data-page-node-id="W0BrVBC3ByMBeTn8axCIC3">limit</code> (1–100, default 20), <code data-page-node-id="EZ7hMx5XoihlBGamXdhE1b">offset</code></td></tr>
+      <tr data-page-node-id="vGnLUyRm9BKf9FRVFkgkWD"><td data-page-node-id="QEvL0cBhJssF4s9rmfvdCj"><code data-page-node-id="PNuSqDSdINvJiyehOIThC6">GET /api/v1/questions/random</code></td><td data-page-node-id="WwjhplA8XJXviWnplbdBK6"><code data-page-node-id="UjFOJjCvAEiyZ5SmWq3Kd9">count</code> (1–50, default 3), <code data-page-node-id="an6vXTD0W0U9k9xH70RXFb">subtest</code>, <code data-page-node-id="lx8NNyQsrcIY0jdJzpB6XD">category</code></td><td data-page-node-id="eEI3nGs8cFVyvDKbXMavIN">none — draw is random</td></tr>
+      <tr data-page-node-id="y10mAjYcBErNFDgjDaLgZC"><td data-page-node-id="twWiGwgrFlJiIDjdxUBXBT"><code data-page-node-id="TjwbCr3T23K5b9fdbBmCri">GET /api/v1/stats</code></td><td data-page-node-id="cefOfoqtxvRsSACRuHVHtG">none</td><td data-page-node-id="QC9Qzo4gxOVzQJBvphbHLd">none</td></tr>
+    </table></div>
+    <p data-page-node-id="mdoMJAksdynKV1oJpayStI">Examples:</p>
+<pre data-page-node-id="2itkhxwvpUZ8mKnUp6kpUM"><code data-page-node-id="bPTPF62s2UF9WUXHzR9Ywu"># first 20 science questions
+curl "https://learndiag.com/api/v1/questions?subtest=5005"
+
+# 10 reading questions from the "Reading" category
+curl "https://learndiag.com/api/v1/questions?subtest=5002&amp;category=Reading&amp;limit=10"
+
+# 5 random social-studies questions
+curl "https://learndiag.com/api/v1/questions/random?count=5&amp;subtest=5004"</code></pre>
+    <p data-page-node-id="g4B9aKzfg6yIeoiVG3h5Sk"><code data-page-node-id="ygOKrVhGoDqWRl86adl3Ac">search</code> matches a plain text substring across question text; it does not do fuzzy or stemming matching.</p>
+
+    <h2 data-page-node-id="iu3mw1D32PgoEec0uS45fS">Authentication and scoped API keys (optional)</h2>
+    <p data-page-node-id="E8fMGSKBJAqxTeYLDWcu3H"><strong data-page-node-id="UzxgbKkO1Cf5i1S1tObfHs">Anonymous access is allowed on all read endpoints.</strong> There is one catch in the documentation: the OpenAPI spec lists <code data-page-node-id="FoGv1jBHPG9XVTlnGkuGSf">ApiKeyAuth</code> as the security for the read operations even though the implementation also accepts anonymous requests. Both work; the spec is stricter than real behavior. We are aligning the spec to express "anonymous or key" explicitly — until that ships, treat the spec's <code data-page-node-id="pviefdrfngNLlYHuF5JBU0">security</code> as a description of what a key grants, not as a statement that anonymous is blocked.</p>
+    <p data-page-node-id="bkVT57vzHEWKi8iUZQbEd8">If you want attribution and higher limits later, create a free scoped key — self-serve, no signup:</p>
+<pre data-page-node-id="ZsD70B3MECj0SBzODnQlnY"><code data-page-node-id="3SNnio45V2DTNvOH3mJDXS">curl -X POST https://learndiag.com/api/v1/keys \
   -H "Content-Type: application/json" \
   -d '{"email":"you@example.com","scopes":["questions:read","stats:read"]}'</code></pre>
-    <p>The key (<code>tri_live_…</code>) is shown once; send it as <code>X-API-Key</code>. Scope enforcement is real: a key without <code>stats:read</code> receives a structured <code>forbidden_scope</code> error from <code>/api/v1/stats</code>. Verify any key with <code>GET /api/v1/keys/verify</code>.</p>
-    <table>
-      <tr><th>Scope</th><th>Grants access to</th></tr>
-      <tr><td><code>meta:read</code></td><td><code>GET /api/v1/meta</code> — subtest metadata and doc links</td></tr>
-      <tr><td><code>questions:read</code></td><td><code>GET /api/v1/questions</code>, <code>GET /api/v1/questions/random</code></td></tr>
-      <tr><td><code>stats:read</code></td><td><code>GET /api/v1/stats</code> — per-category counts</td></tr>
-    </table>
+    <p data-page-node-id="WvDPsTbPJ9Kh5bk0vZLgAD">The key (<code data-page-node-id="fv7RTyPVNTaRJYHaS15qzG">tri_live_…</code>) is returned once; store it. Send it as the <code data-page-node-id="HmVGpMdJRfpftzQfAFNjba">X-API-Key</code> header. Scope enforcement is real: a key without <code data-page-node-id="iNrZbbd1yY83TDKv0DpUQh">stats:read</code> gets a structured <code data-page-node-id="UORYb2dQ8NAXchz8CgSqPC">forbidden_scope</code> error from <code data-page-node-id="SErNWRaY3XcalJ3SasknrO">/api/v1/stats</code>. Validate a key with <code data-page-node-id="mjZIUzB8TCR9uWDy0LLVMg">GET /api/v1/keys/verify</code>.</p>
+    <div class="table-scroll"><table data-page-node-id="XkRGG1KFmeoSTLmdBNsMTk">
+      <tr data-page-node-id="71E2p2LEjBBbxQUJ9ONFSN"><th data-page-node-id="ZG6OIA33Lrv8VFZcgMNBaJ">Scope</th><th data-page-node-id="F8Y6kh843mNZrkbKsx75Jw">Grants access to</th></tr>
+      <tr data-page-node-id="gZ4oBLVfILZInei0gMetVR"><td data-page-node-id="mOGcNrE9MPfZTOAPAF0nOZ"><code data-page-node-id="k9RZ1dBm9mPUISBESY3bD9">meta:read</code></td><td data-page-node-id="RHcbrupKgPsyqPRx3xRmUE"><code data-page-node-id="hITAvJPQZVTwFcpc8eqej4">GET /api/v1/meta</code> — subtest metadata and doc links</td></tr>
+      <tr data-page-node-id="KcNIMbaMDWY2OYHFw5tfun"><td data-page-node-id="rMZqD0gZ1dK3GwMAFbZGq5"><code data-page-node-id="JjsCzf8N3cQ5E899HQJ7qG">questions:read</code></td><td data-page-node-id="TeOUbqHWoHECxM316GtiZI"><code data-page-node-id="8w7GzK7bbEOD8MFldSSPzz">GET /api/v1/questions</code>, <code data-page-node-id="piSMYnBWGhfiqkdn3AcIcR">GET /api/v1/questions/random</code></td></tr>
+      <tr data-page-node-id="HHIlklUOUdj4GmzIHQzIKj"><td data-page-node-id="V13FvudVhaavKo6eDzRncp"><code data-page-node-id="wp3b6GuITZrVEwx7qOHxH8">stats:read</code></td><td data-page-node-id="PzGqaip7SkiA6QOCzcHth2"><code data-page-node-id="wuJ3QSNJn7zhhgGbrwlXVF">GET /api/v1/stats</code> — per-category counts</td></tr>
+    </table></div>
+    <p data-page-node-id="CL08KVfCHlDBkK2Y2luvis"><strong data-page-node-id="YTH2txfzHbolhXIgzXdLgm">Keys are not a frontend secret.</strong> If you call the API from a browser, the key is visible to anyone who opens dev tools. Use a key only from a server, or rely on anonymous access from the browser. CORS is fully open (<code data-page-node-id="nqZsCoydvaei979lxkfULL">Access-Control-Allow-Origin: *</code>), so browser calls work anonymously today.</p>
 
-    <h2>Endpoints</h2>
-    <table>
-      <tr><th>Method &amp; path</th><th>Purpose</th></tr>
-      <tr><td><code>GET /api/v1/health</code></td><td>Uptime probe + endpoint index</td></tr>
-      <tr><td><code>GET /api/v1/meta</code></td><td>Subtest names, categories, counts, doc links</td></tr>
-      <tr><td><code>GET /api/v1/stats</code></td><td>Question counts per subtest/category</td></tr>
-      <tr><td><code>GET /api/v1/questions</code></td><td>Paginated bank — filters: <code>subtest</code>, <code>category</code>, <code>search</code>; <code>limit</code> ≤ 100, <code>offset</code></td></tr>
-      <tr><td><code>GET /api/v1/questions/random</code></td><td>Random draw — <code>count</code> ≤ 50</td></tr>
-      <tr><td><code>POST /api/v1/keys</code></td><td>Create scoped API key (rate limit: 10/hour/IP)</td></tr>
-      <tr><td><code>GET /api/v1/keys/verify</code></td><td>Validate a key, list its scopes</td></tr>
-    </table>
-    <p>Account endpoints used by the web app (<code>/api/register</code>, <code>/api/login</code>, <code>/api/verify</code>, <code>/api/state</code>…) are documented in the same OpenAPI file and use JWT bearer tokens.</p>
+    <h2 data-page-node-id="aNEylqSlmxZy8uxibIJWW6">Rate limits</h2>
+    <div class="table-scroll"><table data-page-node-id="eHAmoIF5wrbx7ieZZtKgXc">
+      <tr data-page-node-id="X7LJAk8GAfu3ZkVnO2sYkX"><th data-page-node-id="YWACDxPekR0NJhAcwYbpCi">Row</th><th data-page-node-id="jdTYYX9UFaBRm2oKwZaMTG">Anonymous</th><th data-page-node-id="b5n9U3kYdBBB7EpPiaij30">With API key</th></tr>
+      <tr data-page-node-id="qTPzqZILsysos2B3HHa05T"><td data-page-node-id="JSCDHkKqFZO010Z0RmfDzs">Key creation (<code data-page-node-id="WSUsbocPIhhZwlSGOs120A">POST /api/v1/keys</code>)</td><td data-page-node-id="sSBndZ07ZxDCBVVSSOngla">—</td><td data-page-node-id="wgftGEnJIJiptUUEuigUDu">10/hour per IP (enforced)</td></tr>
+      <tr data-page-node-id="KeSGzCXWVZ7uAXiB3gtAYu"><td data-page-node-id="gYAmFHQoXSmsADCt2QRJOz">Read endpoints</td><td data-page-node-id="DB7s7YSzaGOWiEgtRtX0bL">No fixed public number today — documented here once a number exists</td><td data-page-node-id="foFwjEbMJ9BaA47BE8DnIa">Higher than anonymous; exact numbers follow the same policy</td></tr>
+      <tr data-page-node-id="dgn9pdDo2xrmpVyPFJLTUr"><td data-page-node-id="XwzuYG2yXE9XkcCPP8eHVt">429 response</td><td colspan="2" data-page-node-id="pwKygaSV7TcmIZ7CgLNk5T"><code data-page-node-id="lvxuOxtu2PKGLfJtG2elVI">HTTP 429</code> with the standard error envelope; message says limits reset hourly</td></tr>
+      <tr data-page-node-id="8tDC9gFNMRTJIiKGYdIUlq"><td data-page-node-id="MFHDn17LiQHqfcH25MVGWe">Retry-After</td><td colspan="2" data-page-node-id="TmDlPWhhFAg72MoWPk5bGU">Not currently set on 429 responses — a gap we are closing</td></tr>
+    </table></div>
+    <p data-page-node-id="kn2uRYdOAGRPC7Z7LB8pfP">This table is intentionally conservative: the only number we can point to in the code today is the 10/hour/IP key-creation limit. Read-side limits exist at the edge but are not exposed as a number in the implementation, so we are not inventing one for the docs.</p>
 
-    <h2>Error format</h2>
-    <p>Every non-2xx response is structured JSON — never an HTML page:</p>
-<pre><code>{
+    <h2 data-page-node-id="QYu1gZjEl62lTCXorQpxjb">Error format</h2>
+    <p data-page-node-id="zLC5T9bUZBZxuiGBooei7M">Application-level API errors use one JSON envelope — never an HTML page:</p>
+<pre data-page-node-id="AmqbAPxA5qQ3F2orVTEjc4"><code data-page-node-id="OWW4t0zf2F0Hs45BA4LME3">{
   "error": {
     "code": "invalid_email",
     "message": "The email address is not valid.",
@@ -119,31 +173,71 @@
   },
   "status": 400
 }</code></pre>
+    <p data-page-node-id="VqxtBeAwKiAvWIrb8wNYD5">Errors you are likely to hit: <code data-page-node-id="KtxH1xEkMAqKHDdkWXboFa">invalid_api_key</code> (401), <code data-page-node-id="MG0o7EysLE6Tkrp2gtBeq8">forbidden_scope</code> (403, with <code data-page-node-id="G89DTKzSVpRnNNSF4iXzZ0">details</code> listing the required and present scopes), <code data-page-node-id="k5tFKqzhSEedODXzPQLKdL">invalid_email</code> (400), and <code data-page-node-id="FtwYt3VNxCvgNctdHNpddM">too_many_requests</code> (429). One caveat: this envelope covers application-layer errors. A CDN, proxy, or upstream failure can return a different body — treat "every error is this JSON" as true for the API code, not for the whole edge stack.</p>
 
-    <h2>MCP server (Model Context Protocol)</h2>
-    <p>Agents can call Learndiag natively over MCP Streamable HTTP:</p>
-<pre><code>POST https://learndiag.com/mcp
+    <h2 data-page-node-id="BRBLTwV8aBfOw4FPphRStZ">MCP server (Model Context Protocol)</h2>
+    <p data-page-node-id="UWaZnvx9r70b70yBawKsCn">Agents can call Learndiag over MCP Streamable HTTP at <code data-page-node-id="1c9As9s5ebatELtTPI2H9w">https://learndiag.com/mcp</code>. The server negotiates protocol versions <code data-page-node-id="0z3NFkgXRCz7NpBtdhSH5z">2025-06-18</code> (latest) and <code data-page-node-id="f9I7mbCadsPhpIXfa2pphR">2025-03-26</code>, and supports session IDs via the <code data-page-node-id="eqrWq3rYt1n2kAWbt0Xp2Y">Mcp-Session-Id</code> header.</p>
+    <p data-page-node-id="RjzjE9D2KqVxKOLKB20HD0">Minimal client handshake (HTTP):</p>
+<pre data-page-node-id="mXPDTqWFudDXC9urhSNJRq"><code data-page-node-id="rPFMJIOAzpo8e1J9dJ3DZv">POST https://learndiag.com/mcp
 Content-Type: application/json
+Mcp-Protocol-Version: 2025-06-18
 
-{"jsonrpc":"2.0","id":1,"method":"tools/list"}</code></pre>
-    <p>Tools: <code>list_subtests</code>, <code>get_questions</code>, <code>get_random_questions</code>, <code>get_bank_stats</code>, <code>list_study_guides</code> — all read-only, no auth. Manifests: <code>/.well-known/mcp/manifest.json</code> and <code>/.well-known/mcp-manifest.json</code>.</p>
+{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"demo","version":"1.0"}}}
 
-    <h2>Agent integration extras</h2>
-    <ul>
-      <li><strong>Markdown negotiation:</strong> send <code>Accept: text/markdown</code> on any content page (e.g. this one or any study guide) and you get clean markdown with <code>Vary: Accept</code> handled. Direct links: <code>/md/&lt;page&gt;.md</code>.</li>
-      <li><strong>llms.txt:</strong> <code>/llms.txt</code> — site map for LLMs including a when-to-use guide.</li>
-      <li><strong>Agent skills:</strong> <code>/.well-known/agent-skills/index.json</code> — SKILL.md instruction files for fetching questions, quizzing, and finding guides.</li>
-      <li><strong>CLI (npm):</strong> <code>triumph-praxis</code> — <code>npx triumph-praxis random --subtest 5004 --count 5</code>. Package source ships in the repository under <code>cli/</code>.</li>
+# then
+{"jsonrpc":"2.0","id":2,"method":"tools/list"}</code></pre>
+    <p data-page-node-id="FCB8m7fMwFflYl6GtUe3Zr">Tools: <code data-page-node-id="Sw9ZD7CG3IujRLy7oB7Wcg">list_subtests</code>, <code data-page-node-id="HyN9OZH4yJnZGh00j67Ql0">get_questions</code>, <code data-page-node-id="7MCPKHvj5m0POh7wB7aFBI">get_random_questions</code>, <code data-page-node-id="RAfgRNeYnjBsKo8TZ5AfhX">get_bank_stats</code>, <code data-page-node-id="38PiiOlJrcISRE3GzwR6hr">list_study_guides</code> — all read-only, anonymous. Client config examples: Claude Desktop uses <code data-page-node-id="zBLtUajIj6NF4FVlHe7Frz">{"mcpServers":{"learndiag":{"url":"https://learndiag.com/mcp"}}}</code>; curl-based tools typically send <code data-page-node-id="GmQbqoEiUCqFkHYlYNdnSt">Accept: application/json, text/event-stream</code> and handle SSE if the server streams. Manifests for agent discovery: <code data-page-node-id="gQwvX1krMqyoFwnpdQ62Gj">/.well-known/mcp/manifest.json</code> and <code data-page-node-id="h2mDfcdI1w57D5r8DmmVDM">/.well-known/mcp-manifest.json</code>.</p>
+
+    <h2 data-page-node-id="1urviMhIlDkI4YQHmLXNwq">Agent integration extras</h2>
+    <ul data-page-node-id="1WbFCdAc6zHDHQFTckZyNK">
+      <li data-page-node-id="BDKuJdIP6ePjDHeSssjy7y"><strong data-page-node-id="I41p5i4BEf9HPzwnIMPipB">Markdown negotiation:</strong> send <code data-page-node-id="o5SmoX2dXrO1HJAMayYvDJ">Accept: text/markdown</code> on a page in the MD route list and you get clean markdown with <code data-page-node-id="QwwlrNHzWMLySNSaRlaxM5">Vary: Accept</code>. The route list is explicit — it covers the main content and state pages but not every URL ending in <code data-page-node-id="iwg9SdxyhJYGx5gWuaQWFl">.html</code> (some paths return HTML-only). Direct links: <code data-page-node-id="0iSNZT5f30z9hUQWa9VJeK">/md/&lt;page&gt;.md</code>.</li>
+      <li data-page-node-id="YyBJCFoFPWoYaFjRIQGLWK"><strong data-page-node-id="AUbFjSku7FC3NkeVj86vEP">llms.txt:</strong> <code data-page-node-id="aYhgGduzXKdm7IvdpprJo4">/llms.txt</code> — site map for LLMs including a when-to-use guide.</li>
+      <li data-page-node-id="4jPL85Og6h0vFZEUjUSGKW"><strong data-page-node-id="iAPuDk6HDgNXNlmUQ1HMrO">Agent skills:</strong> <code data-page-node-id="H4MZGSq5aJ7sQowxlG2GOC">/.well-known/agent-skills/index.json</code> — SKILL.md instruction files for fetching questions, quizzing, and finding guides.</li>
+      <li data-page-node-id="CF8SUvkv6kJfF2MmqXBIXD"><strong data-page-node-id="b9vWNpwBQZbU46PxrrrVen">CLI (npm):</strong> <code data-page-node-id="dHEbryr3lMPXx9zX2SX9QY">triumph-praxis</code> — <code data-page-node-id="EZljTI3cV1O6DGNsWv7FPD">npx triumph-praxis random --subtest 5004 --count 5</code>. Package source ships in the repository under <code data-page-node-id="vuhcrl0FFYfszu1wkVbw1U">cli/</code>.</li>
     </ul>
 
-    <h2>Status &amp; support</h2>
-    <p>Uptime probe: <a href="/api/v1/health">/api/v1/health</a>. Questions, bug reports, or rate-limit increases: email <strong>abc15531888397@gmail.com</strong> with subject "API" — see <a href="/contact">contact page</a>. Content licensing: all questions are original and free to surface with attribution to learndiag.com.</p>
+    <h2 data-page-node-id="jMBSg38N1t1Ihimc1UGxzH">Endpoints</h2>
+    <div class="table-scroll"><table data-page-node-id="QmOTCnJA57Vi4I3wixcMMf">
+      <tr data-page-node-id="bKE8Q5Bn7JJLlAlRWM1BPU"><th data-page-node-id="R1LxDK8j6hyHB6jfmUg2p7">Method &amp; path</th><th data-page-node-id="6HZ72J8JGmYV6a8xfBC37k">Purpose</th><th data-page-node-id="nwgOEi6BypHJyrbjBbmTKg">Auth</th></tr>
+      <tr data-page-node-id="ga6ylQ8n7idAMnofSIAFVt"><td data-page-node-id="iz9js5FLqXt7YpfBKJPzay"><code data-page-node-id="D2QyEY7UNwkwDHjoG9siRz">GET /api/v1/health</code></td><td data-page-node-id="3LdJTuZ1TCzszKp2cafjao">Uptime probe + endpoint index</td><td data-page-node-id="YFn0aVfHlt4B0fl9CF07VL">Anonymous</td></tr>
+      <tr data-page-node-id="bzzbfTFbDghkhPkqqpkVHs"><td data-page-node-id="qFBpLjt93UUsnbjqlYmDHJ"><code data-page-node-id="Zr1Yw0IYFTMeeUz3McPSSh">GET /api/v1/meta</code></td><td data-page-node-id="Y8ENbCkN0M5JJFekZfjDH3">Subtest names, categories, counts, doc links</td><td data-page-node-id="Cv6gUDA7dEls9vvVlS4KmD">Anonymous or <code data-page-node-id="Rp2WaYmnaSPkZfWR8cjCTt">meta:read</code></td></tr>
+      <tr data-page-node-id="oPRqLKpgka9RfnVsCEkI6T"><td data-page-node-id="v90ZWaFT4LitduCvTYkv2q"><code data-page-node-id="HLpYFib2cOxEV2zAPEAjYV">GET /api/v1/stats</code></td><td data-page-node-id="DLFtZ4ECB6IXNMbWsoqI49">Question counts per subtest/category</td><td data-page-node-id="qtiVjgpRUEuri4jZzsYiPe">Anonymous or <code data-page-node-id="JAUS8M35Zeg5hR5xO85QVb">stats:read</code></td></tr>
+      <tr data-page-node-id="ZUNbkj33xfMXYXl4E3X5RG"><td data-page-node-id="Zck0iGQ4jsCQGw8K7b4bkr"><code data-page-node-id="Ku4RUUgq4DdvJSyZeGxWxQ">GET /api/v1/questions</code></td><td data-page-node-id="odHlv4RzLIeGsuRE7zhr9d">Paginated bank — filters: <code data-page-node-id="DKYHh2RgW6yhZg37gboEVC">subtest</code>, <code data-page-node-id="LsaeywK8CUFJ779QqO0cFm">category</code>, <code data-page-node-id="yyWKTPBCeHzsuAGWKkVWH4">search</code>; <code data-page-node-id="As7NlQ7RngPzRbnVdvFOAH">limit</code> ≤ 100, <code data-page-node-id="bzjhGXx6zUNYvCFBXljK6M">offset</code></td><td data-page-node-id="c3oPeNzxzvVh1XvOkZui4E">Anonymous or <code data-page-node-id="yz9p4KZjxKjHVPr14Fmkrs">questions:read</code></td></tr>
+      <tr data-page-node-id="bJFFvMpQADxkW7P4EeCrUk"><td data-page-node-id="dMswELN0a5yop0JWVE1p8R"><code data-page-node-id="6AFm7Qb6VYh778BuneZ5Rq">GET /api/v1/questions/random</code></td><td data-page-node-id="BD5JzivcJu4G0mt27cNF1v">Random draw — <code data-page-node-id="sgDoyaOxDrpAAMdm4A5Nww">count</code> ≤ 50</td><td data-page-node-id="jzK3F7Y3MJJi84Jp4EHOU6">Anonymous or <code data-page-node-id="rU6dw4UYB1fgXbSNV0lTLF">questions:read</code></td></tr>
+      <tr data-page-node-id="wRno4ZuXuLcUCOQV2gYyno"><td data-page-node-id="g0oFD2AzlKT61vpDUZlSpZ"><code data-page-node-id="sFny1lVH5D7iEsPIFtLnHg">POST /api/v1/keys</code></td><td data-page-node-id="LcBQXQm7yo5IicMuOgDBPQ">Create scoped API key (rate limit: 10/hour/IP)</td><td data-page-node-id="nSVq6B0lOpsbYQSCrn46qp">Anonymous</td></tr>
+      <tr data-page-node-id="Xi1gRvWVbRoCH4WBhwFQVP"><td data-page-node-id="o3AAL8KKtUv9mgmsNpYBTj"><code data-page-node-id="ck5CGx11aiBlHVNIdMAizU">GET /api/v1/keys/verify</code></td><td data-page-node-id="cxIQf7dI96nx2ICKOac3Gq">Validate a key, list its scopes</td><td data-page-node-id="84pWDht3BFIuZvGz4LXHRK">Key</td></tr>
+    </table></div>
+    <p data-page-node-id="D0oHUlJAHchIhWr4Xb5dsi">Account endpoints used by the web app (<code data-page-node-id="vxyWnv1I46XaRgoTMSMwDG">/api/register</code>, <code data-page-node-id="fAPKMfKgPVol31FEBYadGE">/api/login</code>, <code data-page-node-id="xW7xaIJ7LIB5XZvDKc026j">/api/verify</code>, <code data-page-node-id="rbwmt6EOkmhkA5J2I57pFI">/api/state</code>…) are documented in the same OpenAPI file and use JWT bearer tokens.</p>
+
+    <h2 data-page-node-id="JpcDclNmOeRnGQCKAJkUyY">Documentation links</h2>
+    <ul data-page-node-id="wM4BKtO2TOdlaLdVRI8fHD">
+      <li data-page-node-id="ckvKb1LDISAF9ANUZBF7s3"><strong data-page-node-id="vemUSowCVBfVa4CW5uFHoe">OpenAPI JSON:</strong> <a href="/openapi.json" data-page-node-id="ZtX5IbU8l6q6gqhWFqsE35">/openapi.json</a> (3.1, served from the same object as the YAML)</li>
+      <li data-page-node-id="5TRY2naFKGiGY6rc4ucX6M"><strong data-page-node-id="OsGCuja9fODFbd85DKTgzr">OpenAPI YAML:</strong> <a href="/api/openapi.yaml" data-page-node-id="f2uveTmAAftGOfuWhJfmMX">/api/openapi.yaml</a></li>
+      <li data-page-node-id="S77clsK89UHfogzEXdPYfX"><strong data-page-node-id="m4ZbpKrV8h23aGTSOMgAev">MCP manifest:</strong> <a href="/.well-known/mcp/manifest.json" data-page-node-id="yyeuucCHwQirhxFjcWX66K">/.well-known/mcp/manifest.json</a> and <a href="/.well-known/mcp-manifest.json" data-page-node-id="RotnehyiubhQ6JCXaSv3lj">/.well-known/mcp-manifest.json</a></li>
+      <li data-page-node-id="vikd2IoPpWNoD1XQ1fsfGC"><strong data-page-node-id="Ys2FiQwAzTUBDDD4z0DMR3">Site map for LLMs:</strong> <a href="/llms.txt" data-page-node-id="X6VgZFSMGpmtAjcQuhuCaj">/llms.txt</a></li>
+      <li data-page-node-id="CgRCJ7QEH6BF0iLpmpQdJ5"><strong data-page-node-id="TZEXMxEhAqh9zAz5u6x3CO">Agent skills:</strong> <a href="/.well-known/agent-skills/index.json" data-page-node-id="6Ptntm8GFqZ7j5jjRDYrzG">/.well-known/agent-skills/index.json</a></li>
+      <li data-page-node-id="RTslCFuv3EHjgDaNY8mCF3"><strong data-page-node-id="BIwJpS0ueHF0WKHGfVCuES">CLI package:</strong> <code data-page-node-id="PnOn7Mo1t7cScm7zZFAR5b">triumph-praxis</code> on npm; source in <code data-page-node-id="Rlm4ad5O4I9JsnYKJtasXo">cli/</code></li>
+    </ul>
+    <p data-page-node-id="nH0t9nFu5uDhhuP076A93a">Version and change tracking are separate from the docs above: the API version is emitted by <code data-page-node-id="5Yb5esgfglPGLGhKe1IovR">/api/v1/health</code>, the OpenAPI file carries its own <code data-page-node-id="QLf7ujWndNkpUHIsg1hFJT">info.version</code>, and substantive changes should be reflected in the changelog note on this page rather than a rolling date.</p>
+
+    <h2 data-page-node-id="OjoDv0GiSn5UptG3uHyx8R">Licensing and attribution</h2>
+    <p data-page-node-id="7HPF8Oo4POaDFdux0QZBwA">All questions and explanations are original to Learndiag (not recycled official ETS items) and are provided through this API for programmatic use. What that covers, concretely:</p>
+    <ul data-page-node-id="EYifNFUUMKsDCy9EgzdvpO">
+      <li data-page-node-id="7XQeXHGksTPRfO6qbgWVdn"><strong data-page-node-id="fFRJXadsiKxjEg5SRCdV9G">Allowed:</strong> fetching questions and explanations for study apps, practice tools, and internal use; displaying them with attribution.</li>
+      <li data-page-node-id="iy4wHhlMI7yMepgS6vrivX"><strong data-page-node-id="oAAnOjcgVjINTlhniTFYdx">Condition:</strong> include a credit line such as "Questions from Learndiag (learndiag.com)" where the content is displayed or redistributed.</li>
+      <li data-page-node-id="dFoRMB3fgVZM6Gb7Z9Z3vi"><strong data-page-node-id="VDCOnNvt7XSW1SKwoGytvB">Not allowed:</strong> republishing or reselling the question bank, or using it to build a competing test-prep product. Terms section 6 restricts redistribution that competes with the service; section 7 permits the API exception under its own terms; section 8 points back here for the specifics.</li>
+      <li data-page-node-id="71n1zJN7QHrmzkkB6LCJS2"><strong data-page-node-id="Qqw2CMOeEwV84U1FCwK254">Removal and corrections:</strong> if you find a wrong question or explanation, email <strong data-page-node-id="TkDioJOGNlfbUEu6hyU9fA">abc15531888397@gmail.com</strong> with subject "API" and the question ID — content corrections are handled directly, and a removal request is honored through the normal privacy process (see <a href="/privacy" data-page-node-id="0jVjdE0ke6ywcMWnPMacXo">privacy policy</a>).</li>
+    </ul>
+    <p data-page-node-id="EMLVfyVy1aynzFqOE0YMlP">"Free to surface" is not the whole license. The bullet list above is the readable version of the contractual language in the <a href="/terms" data-page-node-id="BDwx6WftsEfTAL4Sp9ATwm">terms of service</a>; if the two ever seem to conflict, the Terms govern.</p>
+
+    <h2 data-page-node-id="FW7sZMwtr7WIDP5h0ZL3FE">Status &amp; support</h2>
+    <p data-page-node-id="o9qOcKZDHZqiId6rvXhD5I">Uptime probe: <a href="/api/v1/health" data-page-node-id="o6p7DXjPc3orzvmj92C3Td">/api/v1/health</a>. Questions, bug reports, or rate-limit increases: email <strong data-page-node-id="HjDziWoMlhI2ffiiQHycNM">abc15531888397@gmail.com</strong> with subject "API" — see <a href="/contact" data-page-node-id="FcdmdH9F2zUKRbqjEuFoZV">contact page</a>. For integration questions that are not API-specific, the <a href="/contact" data-page-node-id="CVYcBWlkSgb9Uedfog6r7n">contact page</a> also routes to the right channel.</p>
   </article>
 
-  <footer class="footer">
-      <p style="margin:0 0 18px"><strong>Learndiag.</strong> <em>Know where you stand.</em></p>
-    <p>Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. All practice questions are original and aligned to the published test blueprint; no official test items are reproduced.</p>
-    <p><a href="/">Home</a> · <a href="/resources">Resources</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/developers">Developers</a></p>
+  <footer class="footer" data-page-node-id="JB56eqooqb57x2rBCCCy0W">
+      <p style="margin:0 0 18px" data-page-node-id="JWykEJEbP4VxLNGvqEN1dB"><strong data-page-node-id="N2fcJc5moExuAmARd7nr7s">Learndiag.</strong> <em data-page-node-id="8A6Qs2BjkPuqaAKYwcYHRW">Know where you stand.</em></p>
+    <p data-page-node-id="opYijFvZSdxCAzSDvlhQOe">Learndiag is an independent study tool. Not affiliated with, endorsed by, or sponsored by ETS. Praxis is a trademark of ETS. All practice questions are original and aligned to the published test blueprint; no official test items are reproduced.</p>
+    <p data-page-node-id="xOeyNhBAyuX7LcfBILTBBK"><a href="/" data-page-node-id="lmKgYJRgn3GELFkRfmHqKY">Home</a> · <a href="/resources" data-page-node-id="5QESP72LH1bmsc1Nl6GWFP">Resources</a> · <a href="/about" data-page-node-id="KZujQW0AqRXjXeBMia3PUb">About</a> · <a href="/contact" data-page-node-id="mnhPeQtJZn9P0xMdMppBLA">Contact</a> · <a href="/privacy" data-page-node-id="7SZf7rcIh3TQKs6YpcwfKR">Privacy</a> · <a href="/terms" data-page-node-id="XbVmapA9hxqj0JGhFngwIS">Terms</a> · <a href="/developers" data-page-node-id="PNn0AtoBOEvH4n2UK8kTmG">Developers</a></p>
   </footer>
 </body>
 </html>

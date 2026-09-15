@@ -9,8 +9,8 @@ export const MD_ROUTES = (() => {
     '/praxis-5001-vs-7001', '/praxis-5001-vs-8000-series',
     '/praxis-5002-study-guide', '/praxis-5003-math-study-guide',
     '/praxis-5004-social-studies-study-guide', '/praxis-5005-science-study-guide',
-    // 2026-08-20 batch: keyword articles
-    '/praxis-5001-passing-scores', '/praxis-5001-free-practice-test', '/praxis-5001-registration-guide',
+    // 2026-08-20 batch: keyword articles (passing-scores merged into /score-calculator via 301)
+    '/praxis-5001-free-practice-test', '/praxis-5001-registration-guide',
     // 2026-08-20 batch: state landing pages
     '/praxis-5001-virginia-requirements', '/praxis-5001-tennessee-requirements',
     '/praxis-5001-new-jersey-requirements', '/praxis-5001-south-carolina-requirements',
@@ -20,6 +20,8 @@ export const MD_ROUTES = (() => {
     '/praxis-5001-maryland-requirements',
     // 2026-09-04 batch: 8006 pillar page
     '/praxis-8006-teaching-reading',
+    // 2026-09-14 batch: Praxis Steps explainer
+    '/praxis-steps',
   ];
   const map = new Map();
   const mdName = p => (p === '/' || p === '/index' ? '/md/index.md' : `/md${p}.md`);

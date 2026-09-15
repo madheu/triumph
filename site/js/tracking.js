@@ -31,6 +31,8 @@
   var SESSION_KEY = 'ld_session';
 
   var SESSION_TTL_MS = 30 * 60 * 1000;      // 30 分钟无活动则轮换 session
+  var LAST_VISIT_KEY = 'ld_last_visit';      // 上次访问时间戳，return_visit 判定用
+  var RETURN_WINDOW_MS = 24 * 60 * 60 * 1000; // 字典 §2：> 24h 才算一次回访
   var MAX_BATCH = 20;                        // 单次批量上报上限
   var MAX_QUEUE = 200;                       // 本地队列上限，防止 localStorage 撑爆
   var FLUSH_INTERVAL_MS = 5000;
@@ -38,13 +40,21 @@
   var EVENTS = [
     'test_view', 'test_start', 'question_answer', 'test_complete',
     'result_view', 'signup_prompt_view', 'signup_start', 'signup_success',
-    'study_plan_unlock', 'return_visit', 'retest_start', 'share_click'
+    'study_plan_unlock', 'return_visit', 'retest_start', 'share_click',
+    // ↓ v1.1 新增：付费漏斗。原 12 个事件止于 signup_success，
+    //   注册之后的整段（看到升级页 → 发起结账 → 真的付了钱）零埋点，
+    //   转化优化里的付费点、价格锚点做完也没法判断有没有用。
+    'upgrade_view', 'checkout_start', 'purchase_success'
   ];
 
-  // GA4 事件名映射。绝大多数同名，只有 signup_success → sign_up
-  // （sign_up 是 GA4 推荐事件名/保留名，生态价值更高，见字典 §6）
+  // GA4 事件名映射。绝大多数同名，只有这几个例外：
+  //   自有表用自描述名，GA4 侧用推荐事件名（生态价值更高：可被 Ads 识别、
+  //   进默认报表）。两者一一对应，在查询侧做映射，不重复计数。
   var GA4_NAME_MAP = {
-    signup_success: 'sign_up'
+    signup_success: 'sign_up',
+    upgrade_view: 'view_promotion',
+    checkout_start: 'begin_checkout',
+    purchase_success: 'purchase'
   };
 
   var state = {
@@ -165,10 +175,13 @@
     var name = GA4_NAME_MAP[evt] || evt;
 
     // ⚠️ 绝不发 PII。这里只透传非身份类属性。
+    // value / currency / plan 是 GA4 电商语义所需 —— 没有 value 的 purchase
+    // 在 Ads 和默认报表里基本读不出东西。
     var GA4_PROPS = [
       'page', 'test_code', 'traffic_source', 'device',
       'score_band', 'weakest_domain', 'signup_method',
-      'content_domain', 'attempt_id', 'question_id', 'correct', 'elapsed_ms'
+      'content_domain', 'attempt_id', 'question_id', 'correct', 'elapsed_ms',
+      'plan', 'value', 'currency'
     ];
     var payload = {};
     for (var i = 0; i < GA4_PROPS.length; i++) {
@@ -238,6 +251,16 @@
       state.page = opts.page || normalisePage(global.location.pathname);
       state.device = detectDevice();
 
+      // D14: 把页面声明的 testCode 记成「当前考试」，供 TriumphAuth 的 state
+      // 同步层选择本地 key 前缀（8006 -> triumph_8006_*）。没有 testCode 的
+      // 页面保持不动，同步层会一律按 5001 处理 —— 存量页面因此无需改动。
+      // 写失败不影响埋点，所以整段吞掉异常。
+      try {
+        if (state.testCode && global.localStorage) {
+          global.localStorage.setItem('triumph_test_code', state.testCode);
+        }
+      } catch (e) { /* storage unavailable */ }
+
       var v = getOrCreateVisitor();
       state.visitorId = v.id;
       state.trafficSource = v.source;
@@ -245,12 +268,26 @@
       state.sessionId = sess.id;
       state.inited = true;
 
-      // return_visit：老访客 + 新 session。
-      // 首次访问（v.isNew）不能算回访，同一 session 内刷新也不能算 ——
-      // 否则每个 PV 都报一次回访，这个事件就失去区分度了。
-      if (!v.isNew && sess.isNew) {
-        LDTrack.track('return_visit', {});
+      // return_visit：字典 §2 的定义是「距上次访问 > 24h 且本地存在历史结果」。
+      // 原实现按 session 轮换（30 分钟）判定，同一访客 1 小时内能报两次回访 ——
+      // 生产数据已证实（span_hours 出现 0 和 1），口径与字典不符、数值虚高。
+      // 改为显式比较上次访问时间戳。首次访问（v.isNew）仍不作数。
+      var lastVisit = parseInt(lsGet(LAST_VISIT_KEY) || '', 10);
+      var nowMs = Date.now();
+      if (!v.isNew && lastVisit && (nowMs - lastVisit) > RETURN_WINDOW_MS) {
+        var hasResult = false;
+        try {
+          // 只读既有 auth 体系的结果标记，用于 has_saved_result 属性（字典 §3.1）
+          hasResult = !!lsGet('triumph_last_score');
+        } catch (e) { /* 读不到即视为无历史结果 */ }
+        LDTrack.track('return_visit', {
+          extra: {
+            days_since_last: Math.floor((nowMs - lastVisit) / 86400000),
+            has_saved_result: hasResult
+          }
+        });
       }
+      lsSet(LAST_VISIT_KEY, String(nowMs));
 
       // 从既有 auth 体系读登录态（只读，不改）
       try {
@@ -275,17 +312,28 @@
       return state.attemptId;
     },
 
+    /** 当前 attempt_id（未开始为 null）。诊断报告按 attempt 归档，重复打开不重复计数。 */
+    currentAttempt: function () { return state.attemptId || null; },
+
+    /**
+     * 匿名 visitor_id。免登录购买诊断报告时要拿它当凭证归属键
+     * —— 报告凭证挂在 visitor 上而不是邮箱上，因为产品允许不注册就买。
+     */
+    visitor: function () { return state.visitorId || null; },
+
     /**
      * 注册成功后调用，回填该匿名访客的全部历史事件。不做这步，注册转化率恒为 0。
      *
      * signup_method 必须与 signup_start 一致，否则漏斗第 4→5 段按 method 拆不开。
-     * 站上现有两种取值：'magic_code'（本标签页输 6 位码）、'magic_link'（从邮箱点链接）。
-     * 默认值取 'magic_code' —— 老注册方式 email_code 已下线，留着它会让每次
-     * 调用方漏传 method 时都落到一个不存在的值上。
+     * 站点现有三种取值（字典 §3.1）：
+     *   'email_code'  邮箱验证码 —— login.html 的 密码+验证码 注册，以及诊断页的卡片
+     *   'magic_link'  从邮件点链接直接落地
+     *   'google'      Google 登录回跳
+     * 默认取 'email_code'：它是当前注册量最大的路径。
      */
     identify: function (userId) {
       state.userId = userId;
-      this.track('signup_success', { signup_method: arguments[1] || 'magic_code', user_id: userId });
+      this.track('signup_success', { signup_method: arguments[1] || 'email_code', user_id: userId });
     },
 
     track: function (event, props) {
@@ -342,9 +390,19 @@
   // 视口可见性触发（signup_prompt_view / result_view 用）
   // 为什么不用「渲染即触发」：注册提示若在折叠下方，用户没滚到就是没看见，
   // 而这正是漏斗第三段要测的东西。渲染即触发会让这段恒为 100%，失去意义。
+  //
+  // threshold 必须按元素实际高度自适应：
+  // IntersectionObserver 的 ratio 是「可见面积 / 元素总面积」，元素一旦高于视口，
+  // ratio 上限就只有「视口高 / 元素高」。结果页 .report 轻松超过 2000px，
+  // 在写死的 0.5 阈值下永远达不到，事件等于没埋 ——
+  // 生产数据证实：test_complete 16 条，result_view 只有 2 条。
   LDTrack.observeOnce = function (el, event, props) {
     if (!el) return;
     if (!global.IntersectionObserver) { LDTrack.track(event, props); return; }
+    var vh = global.innerHeight || (global.document && global.document.documentElement.clientHeight) || 800;
+    var elH = el.getBoundingClientRect ? el.getBoundingClientRect().height : 0;
+    var threshold = 0.5;
+    if (elH > 0) threshold = Math.max(0.05, Math.min(0.5, vh / elH));
     var io = new global.IntersectionObserver(function (entries) {
       for (var i = 0; i < entries.length; i++) {
         if (entries[i].isIntersecting) {
@@ -353,7 +411,7 @@
           break;
         }
       }
-    }, { threshold: 0.5 });
+    }, { threshold: threshold });
     io.observe(el);
   };
 

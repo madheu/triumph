@@ -21,7 +21,7 @@ Learndiag is an independent study tool for the Praxis 5001 (Elementary Education
 
 ## 3. Free plan and Pro subscription
 
-The core question bank, diagnostic, and study guides are free. A paid **Pro subscription ($15/month)** adds forecasting and planning features, including pass-probability tracking and early access to new Pro study tools. We may add or remove features over time; features are not part of the price except as described on the pricing page at the time of purchase.
+The core question bank, diagnostic, and study guides are free. A paid **Pro subscription ($19.99/month)** adds forecasting and planning features, including pass-probability tracking and early access to new Pro study tools. We may add or remove features over time; features are not part of the price except as described on the pricing page at the time of purchase.
 
 Payments for the Pro subscription are processed by **Creem**, acting as Merchant of Record. That means Creem handles the payment card processing, applicable tax collection, and chargeback processing on our behalf. The secure checkout and the customer billing portal (where you can update your card or cancel) are hosted by Creem. We never see or store your full card details.
 

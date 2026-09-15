@@ -5,7 +5,8 @@ import { pathToFileURL } from 'node:url';
 
 if (!globalThis.crypto) globalThis.crypto = webcrypto;
 
-const workerUrl = pathToFileURL('E:/Triumph/praxis-5001/site/_worker.js').href;
+// 读 **worker-src 源码**而不是 site/_worker.js 产物 —— 读产物时"改了源码忘了 build"会假绿。
+const workerUrl = pathToFileURL('E:/Triumph/praxis-5001/worker-src/worker.mjs').href;
 const worker = (await import(workerUrl)).default;
 const { signJwt } = await import(pathToFileURL('E:/Triumph/praxis-5001/worker-src/crypto.mjs').href);
 

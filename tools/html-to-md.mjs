@@ -326,6 +326,8 @@ const PAGES = [
   'praxis-5001-new-jersey-requirements',
   'praxis-5001-south-carolina-requirements',
   'praxis-5001-kentucky-requirements',
+  // 2026-09-14 batch: Praxis Steps explainer
+  'praxis-steps',
   // static trust/developer pages — markdown generated from their <article> so it never drifts
   'about',
   'contact',

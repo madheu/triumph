@@ -6,6 +6,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { pathToFileURL } from 'node:url';
 import YAML from 'yaml';
+import { runInNewContext } from 'node:vm';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const SITE = ROOT + 'site/';
@@ -177,13 +178,56 @@ test('worker: account happy paths keep legacy success shapes', async () => {
   assert.ok(d.token && d.user.email === 'test@example.com' && d.verified === true);
 
   // state round-trip
+  // D14: PUT with the legacy flat shape must still work — the server
+  // normalizes it into tests["5001"], because a page that hasn't been updated
+  // yet (or a stale tab) still sends { answers, plan, ... } at the top level.
   r = await call(env, '/api/state', 'PUT', { state: { answers: [1, 2], plan: null } }, { Authorization: 'Bearer ' + d.token });
   assert.equal(r.status, 200);
   r = await call(env, '/api/state', 'GET', null, { Authorization: 'Bearer ' + d.token });
   d = await r.json();
   assert.equal(r.status, 200);
-  assert.equal(d.state.answers.length, 2);
+  assert.equal(d.state.v, 2);
+  assert.equal(d.state.tests['5001'].answers.length, 2);
   assert.ok(d.state.updatedAt > 0);
+});
+
+test('worker: D14 state is partitioned per test and exams do not clobber each other', async () => {
+  const store = new Map();
+  const env = makeEnv(store);
+  let r = await call(env, '/api/register', 'POST', { email: 'two@example.com', password: 'password123' });
+  let d = await r.json();
+  const rec = JSON.parse(store.get('users:two@example.com'));
+  rec.verified = true;
+  store.set('users:two@example.com', JSON.stringify(rec));
+  r = await call(env, '/api/login', 'POST', { email: 'two@example.com', password: 'password123' });
+  const token = (await r.json()).token;
+  const auth = { Authorization: 'Bearer ' + token };
+
+  // 5001 writes a lot of answers; 8006 writes few. Pre-D14 the 8006 write would
+  // lose the length comparison and be dropped entirely.
+  r = await call(env, '/api/state', 'PUT', {
+    state: { tests: { '5001': { answers: [1, 2, 3, 4, 5], mastery: { a: 1 } } } },
+  }, auth);
+  assert.equal(r.status, 200);
+
+  r = await call(env, '/api/state', 'PUT', {
+    state: { tests: { '8006': { answers: [9], attempt_8006: { total_pct: 62 } } } },
+  }, auth);
+  assert.equal(r.status, 200);
+
+  r = await call(env, '/api/state', 'GET', null, auth);
+  d = await r.json();
+  assert.equal(d.state.tests['5001'].answers.length, 5, '5001 answers must survive an 8006 write');
+  assert.equal(d.state.tests['8006'].answers.length, 1, '8006 answers must persist');
+  assert.equal(d.state.tests['8006'].attempt_8006.total_pct, 62);
+
+  // prefs are account-level and shared across tests.
+  r = await call(env, '/api/state', 'PUT', { state: { prefs: { theme: 'light' } } }, auth);
+  assert.equal(r.status, 200);
+  r = await call(env, '/api/state', 'GET', null, auth);
+  d = await r.json();
+  assert.equal(d.state.prefs.theme, 'light');
+  assert.equal(d.state.tests['5001'].answers.length, 5, 'prefs write must not disturb a test bucket');
 });
 
 /* ================= 3. Public API v1 (fixes #9, #14) ================= */
@@ -659,9 +703,132 @@ test('homepage metadata completeness: canonical, lang, og:image, og:type', () =>
   const html = readFileSync(SITE + 'index.html', 'utf8');
   assert.match(html, /<html lang="en">/);
   assert.match(html, /<link rel="canonical" href="https:\/\/learndiag\.com\/">/);
-  assert.match(html, /<meta property="og:image" content="https:\/\/learndiag\.com\/og-image\.png">/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/learndiag\.com\/og-image-learndiag-v1\.png">/);
   assert.match(html, /<meta property="og:type" content="website">/);
-  assert.ok(existsSync(SITE + 'og-image.png'), 'og-image.png exists');
+  assert.ok(existsSync(SITE + 'og-image-learndiag-v1.png'), 'og-image-learndiag-v1.png exists');
+});
+
+const SHARED_IMAGE_URL = 'https://learndiag.com/og-image-learndiag-v1.png';
+const SHARED_IMAGE_ALT = 'Learndiag — free Praxis prep. Know where to start.';
+
+function headTags(html, tagName) {
+  const head = /<head\b[^>]*>([\s\S]*?)<\/head>/i.exec(html)?.[1] || '';
+  return [...head.matchAll(new RegExp(`<${tagName}\\b[^>]*>`, 'gi'))].map(([tag]) =>
+    Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(["'])(.*?)\2/g)]
+      .map(([, key, , value]) => [key.toLowerCase(), value])));
+}
+
+function assertSharedImage(html, page) {
+  const tags = headTags(html, 'meta');
+  for (const [key, value] of Object.entries({
+    'og:image': SHARED_IMAGE_URL,
+    'twitter:image': SHARED_IMAGE_URL,
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:alt': SHARED_IMAGE_ALT,
+    'twitter:image:alt': SHARED_IMAGE_ALT,
+  })) {
+    assert.deepEqual(tags.filter(t => (t.property || t.name) === key).map(t => t.content),
+      [value], `${page}: exactly one consistent ${key}`);
+  }
+}
+
+for (const [page, canonical] of [['index', 'https://learndiag.com/'], ['diagnostic', 'https://learndiag.com/diagnostic']]) {
+  test(`${page}.html: index/follow, no conflicting crawler directives, canonical and shared image`, () => {
+    const html = readFileSync(SITE + page + '.html', 'utf8');
+    const directives = headTags(html, 'meta').filter(t => /^(robots|googlebot)$/i.test(t.name || ''));
+    assert.ok(directives.some(t => t.name.toLowerCase() === 'robots'), 'explicit robots directive');
+    const robots = directives.filter(t => t.name.toLowerCase() === 'robots')
+      .flatMap(t => t.content.toLowerCase().split(/[\s,]+/));
+    assert.ok(robots.includes('index') && robots.includes('follow'), 'index and follow are explicit');
+    for (const directive of directives) {
+      assert.doesNotMatch(directive.content, /\b(noindex|nofollow|none)\b/i, `${page}: ${directive.name}`);
+    }
+    assert.deepEqual(headTags(html, 'link').filter(t => t.rel === 'canonical').map(t => t.href), [canonical]);
+    assertSharedImage(html, page);
+  });
+}
+
+test('shared preview PNG: valid signature and 1200 x 630 IHDR dimensions', () => {
+  const png = readFileSync(SITE + 'og-image-learndiag-v1.png');
+  assert.ok(png.length >= 33, 'PNG includes complete IHDR');
+  assert.equal(png.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+  assert.equal(png.readUInt32BE(8), 13, 'IHDR length');
+  assert.equal(png.toString('ascii', 12, 16), 'IHDR');
+  assert.equal(png.readUInt32BE(16), 1200);
+  assert.equal(png.readUInt32BE(20), 630);
+});
+
+test('site META images: no old shared URL, consistent generic images, article images retained', () => {
+  let genericPages = 0;
+  let articlePages = 0;
+  for (const file of readdirSync(SITE).filter(f => f.endsWith('.html'))) {
+    const html = readFileSync(SITE + file, 'utf8');
+    // Deliberately exclude JSON-LD logos, which are not part of this migration.
+    for (const [tag] of html.matchAll(/<meta\b[^>]*>/gi)) {
+      assert.ok(!tag.includes('https://learndiag.com/og-image.png'), `${file}: no legacy META image`);
+    }
+    const tags = headTags(html, 'meta');
+    if (tags.some(t => t.content === SHARED_IMAGE_URL)) {
+      assertSharedImage(html, file);
+      genericPages++;
+    }
+    const articleImage = `https://learndiag.com/images/${file.replace(/\.html$/, '.png')}`;
+    if (existsSync(SITE + 'images/' + file.replace(/\.html$/, '.png'))) {
+      for (const key of ['og:image', 'twitter:image']) {
+        assert.deepEqual(tags.filter(t => (t.property || t.name) === key).map(t => t.content), [articleImage], `${file}: retain ${key}`);
+      }
+      articlePages++;
+    }
+  }
+  assert.ok(genericPages >= 22, `generic preview coverage: ${genericPages}`);
+  assert.ok(articlePages >= 21, `article preview coverage: ${articlePages}`);
+});
+
+test('worker: diagnostic.html redirect preserves query; /diagnostic serves once without noindex', async () => {
+  const query = '?utm_source=x&utm_campaign=brand&next=%2Fpractice%3Fsubtest%3D5003';
+  const env = makeEnv();
+  const assetCalls = [];
+  // The asset stub must contain an uninjected head for Clarity injection.
+  env.ASSETS.fetch = async request => {
+    assetCalls.push(request.url);
+    return new Response('<!doctype html><html><head><title>Diagnostic stub</title></head><body>Diagnostic asset</body></html>', {
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    });
+  };
+  for (const method of ['GET', 'HEAD']) {
+    const redirect = await call(env, '/diagnostic.html' + query, method);
+    assert.equal(redirect.status, 301);
+    assert.equal(redirect.headers.get('location'), 'https://learndiag.com/diagnostic' + query);
+    assert.doesNotMatch(redirect.headers.get('x-robots-tag') || '', /\b(noindex|none)\b/i);
+  }
+  assert.deepEqual(assetCalls, [], '.html redirects without fetching an asset');
+  const response = await call(env, '/diagnostic' + query, 'GET', null, { Accept: 'text/html' });
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('location'), null, 'pretty URL does not redirect back');
+  assert.doesNotMatch(response.headers.get('x-robots-tag') || '', /\b(noindex|none)\b/i);
+  assert.deepEqual(assetCalls, ['https://learndiag.com/diagnostic' + query], 'one unchanged asset request');
+  const body = await response.text();
+  assert.match(body, /Diagnostic asset/);
+  assert.match(body, /clarity\.ms/, 'existing Worker injection still runs');
+});
+
+test('SEO image enrichment: shared fallback, existing Twitter card, article preservation and idempotence', () => {
+  // Evaluate only the pure image helper, never the full site-writing patch loop.
+  const source = readFileSync(ROOT + 'tools/patch-seo-heads.mjs', 'utf8');
+  const helper = source.slice(source.indexOf('const SHARED_IMAGE ='), source.indexOf('let patched ='));
+  const enrich = runInNewContext(helper + '\nenrichSharedImage');
+  const head = '<head><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://learndiag.com/og-image.png">\n';
+  const enriched = enrich(head);
+  assertSharedImage(enriched + '</head>', 'future shared head');
+  assert.equal(enrich(enriched), enriched, 'image enrichment is idempotent');
+  const logo = '<script type="application/ld+json">{"logo":"https://learndiag.com/og-image.png"}</script>';
+  const ogOnly = '<head><meta property="og:image" content="https://learndiag.com/og-image.png"><meta property="og:image:width" content="600"><meta property="og:image:alt" content="Old brand">' + logo + '\n';
+  const ogEnriched = enrich(ogOnly);
+  assertSharedImage(ogEnriched + '</head>', 'future OG-only head');
+  assert.ok(ogEnriched.includes(logo), 'JSON-LD logo is unchanged');
+  const article = '<head><meta property="og:image" content="https://learndiag.com/images/article.png"><meta name="twitter:image" content="https://learndiag.com/images/article.png">\n';
+  assert.equal(enrich(article), article, 'article metadata remains untouched');
 });
 
 test('homepage JSON-LD: parses; Organization has contactPoint; SoftwareApplication has offers', () => {
@@ -724,13 +891,17 @@ const SERIES = [
 ];
 
 test('guide series forms a consistent rel next/prev chain', () => {
+  // 注意：ardot 标注流程会给每个标签注入 data-page-node-id="..."，
+  // 所以不能断言标签字符串完全相等，必须允许标签内出现额外属性。
+  const relLink = (rel, href) =>
+    new RegExp(`<link\\s[^>]*rel="${rel}"[^>]*href="${href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`);
   SERIES.forEach((page, i) => {
     const html = readFileSync(SITE + page + '.html', 'utf8');
     const prev = i > 0 ? SERIES[i - 1] : null;
     const next = i < SERIES.length - 1 ? SERIES[i + 1] : null;
-    if (prev) assert.ok(html.includes(`<link rel="prev" href="https://learndiag.com/${prev}">`), `${page} prev→${prev}`);
+    if (prev) assert.match(html, relLink('prev', `https://learndiag.com/${prev}`), `${page} prev→${prev}`);
     else assert.ok(!/<link rel="prev"/.test(html), `${page} no prev`);
-    if (next) assert.ok(html.includes(`<link rel="next" href="https://learndiag.com/${next}">`), `${page} next→${next}`);
+    if (next) assert.match(html, relLink('next', `https://learndiag.com/${next}`), `${page} next→${next}`);
     else assert.ok(!/<link rel="next"/.test(html), `${page} no next`);
     assert.match(html, /<link rel="canonical"/, `${page} canonical`);
   });
@@ -754,7 +925,8 @@ for (const page of ['about', 'contact', 'privacy', 'developers']) {
     const article = /<article[\s\S]*?<\/article>/.exec(html)[0];
     const text = article.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
     assert.ok(text.length >= 500, `${page} article text ${text.length}`);
-    assert.match(html, /<html lang="en">/);
+    // 允许 ardot 标注注入的额外属性（data-page-node-id）
+    assert.match(html, /<html lang="en"[\s>]/);
   });
 }
 
@@ -821,4 +993,45 @@ test('CLI: --help exits 0 and prints usage', async () => {
       } catch (e) { reject(e); }
     });
   });
+});
+
+/* ================= <script> 标签配平守卫（2026-09-10 加） =================
+ *
+ * 起因：往 site/index.html 尾部注入埋点脚本时，改动里删掉了一个 </script>
+ * 却没补回来（git diff 里是孤零零一行 `-</script>`，后面跟的是 HTML 注释
+ * 加两个新的 script 标签）。结果是首页最后一个内联脚本**没有闭合**。
+ *
+ * 为什么这种错特别危险：浏览器在 <script> 内部把内容当**原始文本**处理，
+ * 直到遇到第一个 </script> 才结束。所以丢一个闭合标签不会产生任何 HTML
+ * 层面的报错，而是让后续的 HTML 注释和 `<script src=...>` 标签被**当成 JS
+ * 代码吃进去**，整段脚本抛 SyntaxError 后静默失效 —— 页面看着正常，交互
+ * 全死，控制台之外没有任何提示。这正是「构建期不报错、上线才发现」那一类。
+ *
+ * tools/check-inline-js.py 能抓到它，但那个脚本不在 npm test 的执行列表里，
+ * 不会随 CI 自动跑。这条守卫把「开闭标签必须配平」变成每次跑测试都会过的
+ * 机械检查，成本近乎为零。
+ */
+test('every site HTML page has balanced <script> / </script> tags', () => {
+  const files = [];
+  const walk = (dir) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      if (e.isDirectory()) walk(dir + e.name + '/');
+      else if (e.name.endsWith('.html')) files.push(dir + e.name);
+    }
+  };
+  walk(SITE);
+
+  // 下限只用来兜「路径写错导致一个文件都没扫到」这种情况。
+  // site/ 下当前是 49 个 html（47 顶层 + 2 在子目录里），留一点余量。
+  assert.ok(files.length > 40, `扫描到的页面太少（${files.length}），路径可能写错了`);
+
+  const bad = [];
+  for (const f of files) {
+    const html = readFileSync(f, 'utf8');
+    const open = (html.match(/<script\b/g) || []).length;
+    const close = (html.match(/<\/script>/g) || []).length;
+    if (open !== close) bad.push(`${f.slice(SITE.length)}: 开 ${open} / 闭 ${close}`);
+  }
+
+  assert.deepEqual(bad, [], '<script> 标签不配平 —— 丢闭合标签会让整段内联 JS 静默失效');
 });
