@@ -479,7 +479,28 @@ for (const sub of SUBJECTS) {
       '题干必须来自真实题库，实际：' + JSON.stringify(text.slice(0, 80)),
     );
 
-    const opts = root.querySelectorAll('button.opt');
+    // 数字填空题（numeric-entry）没有选项按钮：随机排序下第一题可能是数字题，
+    // 直接断言 button.opt 会偶发挂。沿 playThrough 的动作链跳过数字题，
+    // 直到遇到选择题再断言（有界循环，bank 全是数字题才会触顶）。
+    let opts = root.querySelectorAll('button.opt');
+    let guard = 0;
+    while (opts.length === 0 && guard++ < bank.length) {
+      const input = root.all().find((e) => e.tagName === 'INPUT');
+      assert.ok(input, '既无选项按钮也无输入框，题目渲染异常');
+      input.value = '1';
+      const step1 =
+        findButton(root, '', 'See my results') ||
+        findButton(root, '', 'Next question') ||
+        findButton(root, '', 'Check');
+      assert.ok(step1, '数字题作答后应出现判分/前进按钮');
+      step1.click();
+      if (/Check/.test(String(step1.textContent))) {
+        const step2 = findButton(root, '', 'See my results') || findButton(root, '', 'Next question');
+        assert.ok(step2, '判分后应出现前进/结果按钮');
+        step2.click();
+      }
+      opts = root.querySelectorAll('button.opt');
+    }
     assert.ok(opts.length >= 2, '应渲染出至少 2 个选项按钮，实际 ' + opts.length);
     const bankOpts = bank.map((q) => q[sub.options]);
     // 部分引擎把选项字母（A/B/C…）和选项文本拼在同一个按钮里，断言两种形态都接受，
