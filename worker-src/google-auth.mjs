@@ -144,7 +144,7 @@ async function hGoogleCallback(request, env) {
   const errParam = url.searchParams.get('error');
 
   const fail = (msg) =>
-    Response.redirect(`${url.origin}/login.html?error=${encodeURIComponent(msg)}`, 302);
+    Response.redirect(`${url.origin}/login?error=${encodeURIComponent(msg)}`, 302);
 
   if (errParam) return fail('Google sign-in was cancelled or failed. Please try again or use email.');
   if (!code || !state) return fail('Missing OAuth parameters. Please try again.');
@@ -231,7 +231,7 @@ async function hGoogleCallback(request, env) {
   //    session, then forwards to `next`.
   const base = url.origin;
   const frag = `#triumph_token=${encodeURIComponent(jwt)}&triumph_email=${encodeURIComponent(email)}&created=${created ? 1 : 0}&next=${encodeURIComponent(next)}`;
-  return Response.redirect(`${base}/login.html${frag}`, 302);
+  return Response.redirect(`${base}/login${frag}`, 302);
 }
 
 // Support both mounted styles: worker.mjs dispatches on GOOGLE_AUTH_ROUTES[path].

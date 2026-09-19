@@ -1074,7 +1074,7 @@ async function hGoogleCallback(request, env) {
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
   const errParam = url.searchParams.get("error");
-  const fail = (msg) => Response.redirect(`${url.origin}/login.html?error=${encodeURIComponent(msg)}`, 302);
+  const fail = (msg) => Response.redirect(`${url.origin}/login?error=${encodeURIComponent(msg)}`, 302);
   if (errParam) return fail("Google sign-in was cancelled or failed. Please try again or use email.");
   if (!code || !state) return fail("Missing OAuth parameters. Please try again.");
   const storedJson = await env.TRIUMPH_KV.get(STATE_KEY_PREFIX + state);
@@ -1145,7 +1145,7 @@ async function hGoogleCallback(request, env) {
   const jwt = await signJwt({ sub: rec.id, email, iat: Date.now(), exp: Date.now() + 30 * 864e5 }, env.JWT_SECRET);
   const base = url.origin;
   const frag = `#triumph_token=${encodeURIComponent(jwt)}&triumph_email=${encodeURIComponent(email)}&created=${created ? 1 : 0}&next=${encodeURIComponent(next)}`;
-  return Response.redirect(`${base}/login.html${frag}`, 302);
+  return Response.redirect(`${base}/login${frag}`, 302);
 }
 var GOOGLE_AUTH_ROUTES = {
   "/api/auth/google": { GET: hGoogleStart },
