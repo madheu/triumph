@@ -633,7 +633,7 @@
     });
     s.appendChild(ul);
 
-    s.appendChild(ctaRow(status && status.logged_in ? '/upgrade.html' : '/login?next=' + encodeURIComponent(location.pathname),
+    s.appendChild(ctaRow(status && status.logged_in ? '/upgrade' : '/login?next=' + encodeURIComponent(location.pathname),
       status && status.logged_in ? 'Unlock with Pro' : 'Create a free account'));
 
     var err = el('p', 'demo-note');

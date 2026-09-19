@@ -156,10 +156,12 @@ test('checkout: 请求体字段为 snake_case（Creem REST 约定）', async () 
   const req = sent.find(s => s.url.endsWith('/checkouts'));
   assert.ok(req, 'creem checkout called');
   assert.equal(req.body.product_id, 'prod_test');
-  // 回跳必须带 ?checkout=done —— upgrade.html:137 靠这个 query 启动"付款确认中"的轮询
+  // 回跳必须带 ?checkout=done —— site/upgrade.html 靠这个 query 启动"付款确认中"的轮询
   // （`if(new URLSearchParams(location.search).get("checkout")!=="done") return;`）。
   // 少了它，用户付完钱会落在升级页却看不出任何状态。改这里前先确认前端那段轮询还在。
-  assert.equal(req.body.success_url, 'https://learndiag.com/upgrade.html?checkout=done');
+  // 2026-09-19：回跳由 /upgrade.html 改为 /upgrade —— Cloudflare Pages 会把 .html 308 到
+  // 无扩展名形式，站内不该再硬编码 .html，否则付费成功后要多吃一次跳转。
+  assert.equal(req.body.success_url, 'https://learndiag.com/upgrade?checkout=done');
   assert.ok(req.body.customer && req.body.customer.email === 'buyer@test.com', 'customer email passed');
   assert.ok(!('productId' in req.body), 'no camelCase field');
   assert.ok(!('cancel_url' in req.body), 'no unsupported cancel_url');

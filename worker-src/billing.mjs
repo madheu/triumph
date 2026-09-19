@@ -126,7 +126,7 @@ export async function hBillingCheckout(request, env) {
   // 创建 checkout（Creem REST 用 snake_case 字段；customer.email 直接传无需预建）
   // 回跳带 checkout=done：前端据此轮询 /api/me，等 webhook 落权后再显示状态，
   // 避免"钱付了但页面还显示 FREE"这个最容易被当成掉单的瞬间。
-  const successUrl = (env.SITE_URL || 'https://learndiag.com') + '/upgrade.html?checkout=done';
+  const successUrl = (env.SITE_URL || 'https://learndiag.com') + '/upgrade?checkout=done';
   const chkRes = await safeFetch(CREEM_BASE(env) + '/checkouts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-api-key': key },

@@ -1337,7 +1337,7 @@ async function hBillingCheckout(request, env) {
   if (!key) return apiError("internal_error", { hint: "Creem not configured yet." });
   const productId = env.CREEM_MODE === "test" ? env.CREEM_TEST_PRODUCT_ID || env.CREEM_PRODUCT_ID : env.CREEM_PRODUCT_ID;
   if (!productId) return apiError("internal_error", { hint: "CREEM_PRODUCT_ID not configured." });
-  const successUrl = (env.SITE_URL || "https://learndiag.com") + "/upgrade.html?checkout=done";
+  const successUrl = (env.SITE_URL || "https://learndiag.com") + "/upgrade?checkout=done";
   const chkRes = await safeFetch(CREEM_BASE(env) + "/checkouts", {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-api-key": key },

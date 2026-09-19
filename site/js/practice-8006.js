@@ -154,7 +154,7 @@
     if (tier === 'guest') {
       note.innerHTML = 'Guest preview — <strong>' + LIMITS.guest + ' questions per visit</strong>, drawn at random from the category you choose. <a href="/login?next=/praxis-8006-practice">Create a free account</a> for 30 per session.';
     } else if (tier === 'free') {
-      note.innerHTML = 'Free plan — <strong>' + LIMITS.free + ' questions per visit</strong>, drawn at random from the category you choose. <a href="/upgrade.html">Go Pro</a> for the full ' + BANK.length + '-question bank.';
+      note.innerHTML = 'Free plan — <strong>' + LIMITS.free + ' questions per visit</strong>, drawn at random from the category you choose. <a href="/upgrade">Go Pro</a> for the full ' + BANK.length + '-question bank.';
     } else {
       note.textContent = 'Pro access — the full ' + BANK.length + '-question bank, no session limit.';
     }
@@ -358,7 +358,7 @@
       g.appendChild(el('p', 'eyebrow', 'Free plan limit'));
       g.appendChild(el('h3', null, 'You\u2019ve used your ' + LIMITS.free + ' questions for this visit'));
       g.appendChild(el('p', null, 'Pro unlocks the full ' + BANK.length + '-question bank with unlimited sessions.'));
-      cta.href = '/upgrade.html';
+      cta.href = '/upgrade';
       cta.textContent = 'Unlock the full bank \u2192';
     }
     g.appendChild(cta);
