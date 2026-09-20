@@ -5,7 +5,7 @@
   "description": "Learndiag (learndiag.com) deployment directory + tooling. Deploy with .\\deploy.ps1. NOTE: sync-site.ps1 must NOT be run (it would regress newer files in site/).",
   "type": "module",
   "scripts": {
-    "test": "node --test test/build-sync.test.mjs test/agentic.test.mjs test/smoke-worker.mjs test/admin-gate.test.mjs test/p1-billing.test.mjs test/p1-billing-webhook-drop.test.mjs test/product-events.test.mjs test/diagnostic-report.test.mjs test/p2-content.test.mjs test/p3-tickets.test.mjs test/admin-orders-users-tools.test.mjs test/ai-analyst.test.mjs",
+    "test": "node --test test/build-sync.test.mjs test/md-sync.test.mjs test/agentic.test.mjs test/smoke-worker.mjs test/admin-gate.test.mjs test/p1-billing.test.mjs test/p1-billing-webhook-drop.test.mjs test/product-events.test.mjs test/diagnostic-report.test.mjs test/p2-content.test.mjs test/p3-tickets.test.mjs test/admin-orders-users-tools.test.mjs test/ai-analyst.test.mjs",
     "test:d14": "node tools/test-state-partition.mjs && node tools/test-auth-sync-d14.mjs && node tools/test-test-registry.mjs && node --test tools/test-dashboard-multitest.mjs",
     "test:quiz8006": "node --test tools/test-quiz-8006.mjs",
     "test:quiz8000": "node --test tools/test-quiz-8000-series.mjs",

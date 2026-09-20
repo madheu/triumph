@@ -6,8 +6,6 @@
 
 *2026-08-24 · Reading time: about 5 min*
 
-date: "2026-08-24"
-
 Pennsylvania is the state where "which Praxis do I take for elementary?" has the simplest answer: for the main elementary certificate you **don't take Praxis at all**. Pennsylvania's PreK–4 elementary certificate runs on the **Pennsylvania Educator Certification Tests (PECT)** — a separate exam series from Praxis. The ETS Praxis page for Pennsylvania contains **no 5001 requirement** (and no 7001, 8000, or CKT entries either). If you searched "Praxis 5001 Pennsylvania" because a prep site or your program mentioned it, the short version is: 5001 is not the test for Pennsylvania's PK–4 license.[1][2]
 
 ## Pennsylvania's Elementary Tests at a Glance
@@ -60,12 +58,12 @@ Not for elementary as of this page's snapshot: the ETS Pennsylvania page shows n
 
 Pennsylvania elementary candidates pass the **PECT PreK–4** modules, not Praxis 5001. The only Praxis tests relevant to elementary in Pennsylvania are the **5154 + 5155** pair for the Grades 5–6 add-on. If you are preparing for the 5001 content areas (reading, math, social studies, science) for a different state, Learndiag's [free diagnostic](https://learndiag.com/diagnostic) and [question bank](https://learndiag.com/practice) cover exactly those domains — but for a Pennsylvania PK–4 license, start with the PECT program materials.
 
-**Not sure which exam your state requires?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
-
 ## Sources
 
 [1] ETS, "Pennsylvania Required Tests." [https://praxis.ets.org/state-requirements/pennsylvania-tests.html](https://praxis.ets.org/state-requirements/pennsylvania-tests.html)
 
 [2] Pennsylvania Educator Certification Tests, "PreK–4." [https://www.pa.nesinc.com/TestView.aspx?f=HTML_FRAG/PA006_TestPage.html](https://www.pa.nesinc.com/TestView.aspx?f=HTML_FRAG/PA006_TestPage.html)
+
+**Not sure which exam your state requires?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

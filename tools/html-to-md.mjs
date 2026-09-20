@@ -267,17 +267,21 @@ export function blocksFrom(nodes) {
 /** Convert a full HTML document (or fragment) to markdown body text. */
 export function convertHtmlToMarkdown(html) {
   const tree = parseHtml(html);
-  // Prefer <article>; fall back to whole tree
-  const findArticle = (node) => {
+  // Collect EVERY <article>, not just the first one.
+  // Regression fixed 2026-09-20: hub pages carry many article cards (resources.html has 23),
+  // and the old "return the first match" version silently dropped 22 of them — the md
+  // variant then showed a single card while the page listed all 23.
+  const articles = [];
+  const collect = (node) => {
     for (const c of node.children) {
-      if (c.tag === 'article') return c;
-      const deep = findArticle(c);
-      if (deep) return deep;
+      if (c.tag === 'article') articles.push(c);
+      else collect(c); // don't descend into an <article> we already captured
     }
-    return null;
   };
-  const article = findArticle(tree) || tree;
-  return blocksFrom(article.children).replace(/\n{3,}/g, '\n\n').trim() + '\n';
+  collect(tree);
+  const roots = articles.length ? articles : [tree];
+  const body = roots.map(r => blocksFrom(r.children)).join('\n\n');
+  return body.replace(/\n{3,}/g, '\n\n').trim() + '\n';
 }
 
 /** Convert one of Triumph's guide files (plain HTML, babel-JSX const, or ART={body:"..."} JSON). */
@@ -340,6 +344,19 @@ const PAGES = [
   'contact',
   'privacy',
   'developers',
+  // 2026-09-20: the nine pages below already had md mirrors in site/md/ but were absent from
+  // this list, so a full `npm run build:md` never touched them and they silently drifted
+  // for weeks (see test/md-sync.test.mjs). Eight are added; `index` is deliberately NOT —
+  // html-to-md cannot parse the home page (it has no <article>), falls back to whole-document
+  // conversion and emits <head> GTM/GA script text as body. site/md/index.md is hand-maintained.
+  'praxis-5001-passing-score-by-state',
+  'praxis-5001-subtests-explained',
+  'praxis-5001-alabama-requirements',
+  'praxis-5001-maryland-requirements',
+  'praxis-5001-pennsylvania-requirements',
+  'praxis-8006-teaching-reading',
+  'resources',
+  'terms',
 ];
 
 if (process.argv[1] && import.meta.url === new URL(`file://${process.argv[1].replace(/\\/g, '/')}`).href) {

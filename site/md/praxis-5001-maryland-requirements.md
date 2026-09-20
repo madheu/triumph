@@ -6,8 +6,6 @@
 
 *2026-08-24 · Reading time: about 6 min*
 
-date: "2026-08-24"
-
 Maryland does not use the Praxis 5001 for elementary certification — it never appears on the ETS Maryland page. Instead, elementary (1–6) candidates take **Teaching Reading: Elementary (5205)** plus the **Elementary Education: Content Knowledge for Teaching (CKT) series (7811)**, a four-subtest exam scored separately per subtest. This page lays out the exact codes, fees, and qualifying scores from ETS's Maryland page, plus when the Praxis Core tests are required at all (only below a 3.0 GPA).[1]
 
 ## Maryland's Elementary (1–6) Tests at a Glance
@@ -68,10 +66,10 @@ No adoption is announced on the Maryland page; the current requirement is the 78
 
 Maryland elementary (1–6) candidates take **Praxis 5205 (159)** plus the **7811 CKT** four-subtest series (161/150/154/161), and Praxis Core only when the GPA is below 3.0. There is no 5001 in the picture, so 5001-specific prep materials cover only part of what Maryland asks. Learndiag's [free diagnostic](https://learndiag.com/diagnostic) and [question bank](https://learndiag.com/practice) exercise the same content domains Maryland's CKT subtests sample (reading/language arts, math, science, social studies) — a useful baseline, but pair them with CKT-specific practice before test day.
 
-**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
-
 ## Sources
 
 [1] ETS, "Maryland Required Tests." [https://praxis.ets.org/state-requirements/maryland-tests.html](https://praxis.ets.org/state-requirements/maryland-tests.html)
+
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

@@ -60,6 +60,20 @@ The first four codes map to the same broad academic areas covered by the 5001 fa
 
 Just as important, **there is no new “8001” combined all-in-one option listed in the redesign.** Candidates using the new series register for the required tests separately.[1]
 
+## The Five 8000-Series Tests: Content Area to Code
+
+If your requirement names the 8000 series, you register for specific codes, not for one product. The family is five separate tests, and each one has its own pages here.
+
+| Content area | 8000-series code | Older-series counterpart | Learndiag pages for that code |
+| --- | --- | --- | --- |
+| Reading and Language Arts | 8002 | 5002 | [Praxis 8002 guide](https://learndiag.com/praxis-8002-reading-and-language-arts) · [free 8002 practice test](https://learndiag.com/praxis-8002-practice) |
+| Mathematics | 8003 | 5003 | [Praxis 8003 guide](https://learndiag.com/praxis-8003-mathematics) · [free 8003 practice test](https://learndiag.com/praxis-8003-practice) |
+| Social Studies | 8004 | 5004 | [Praxis 8004 guide](https://learndiag.com/praxis-8004-social-studies) · [free 8004 practice test](https://learndiag.com/praxis-8004-practice) |
+| Science | 8005 | 5005 | [Praxis 8005 guide](https://learndiag.com/praxis-8005-science) · [free 8005 practice test](https://learndiag.com/praxis-8005-practice) |
+| Teaching Reading (a separate reading-instruction test, not a fourth subject sitting alongside the other three) | 8006 | 7002 | [Praxis 8006 guide](https://learndiag.com/praxis-8006-teaching-reading) · [free 8006 practice test](https://learndiag.com/praxis-8006-practice) |
+
+Two structural differences are worth knowing before you pick a prep plan. First, 8005 Science is the only 90-minute test in the family; 8002, 8003, 8004, and 8006 run 100 minutes.[1] Second, 8006 Teaching Reading is its own exam rather than a component of the other four, and neither of the two states whose requirements we have verified uses it: West Virginia uses Praxis 5205 for teaching reading, and 8006 is not listed on the Arkansas page.[9][10]
+
 ## How the Test Blueprints and Question Counts Change
 
 The RLA test remains at 80 questions, but its balance shifts slightly toward reading. Math, social studies, and science all become longer.[1]
@@ -90,6 +104,41 @@ Praxis Steps also does not override licensing rules. A state or program still de
 Meanwhile, the ETS website still lists and sells the 5001 combined test. Its current listing describes a 245-question, four-subject test lasting 4 hours and 35 minutes, with the option to take all four subtests in one session.[2] That is why it would be inaccurate to say Praxis 5001 is already universally retired or invalid.
 
 You may still need 5001 if your current official requirement names 5001 or its subtests. You may need the 8000 series if your licensing authority has adopted the redesigned tests for your application window. If your paperwork is unclear, do not guess based on which test appears newer.
+
+## Which Test Should I Take? A Selector That Tells You What to Check
+
+This selector will not tell you which test to register for, and no page can: your state licensing agency and your educator preparation program set that requirement, and their answers differ by license type, grade band, and application date. What it does is take the four things that actually control the answer and turn them into the specific thing you should go and verify next.
+
+Start here
+
+Choose your state above, and add your program’s requirement, your planned test date, and the code you currently see if you know them. This box then lists exactly what to verify and where — and it says plainly what it cannot decide for you.
+
+## State Adoption Status: What We Have Verified, and What We Have Not
+
+Two states are confirmed in our records, both against the official ETS state page. Everything else is unverified, and unverified rows are labelled as such rather than filled in with a guess.
+
+| State | Accepted code | Effective date | Official source | Last checked | Status |
+| --- | --- | --- | --- | --- | --- |
+| **West Virginia** | 8002 · 8003 · 8004 · 8005 — 8006 is not used; the state lists Praxis 5205 for teaching reading instead | Not published on the source we checked | [ETS, Praxis test requirements: West Virginia](https://praxis.ets.org/state-requirements/westvirginia-tests.html)[9] | 2026-09-03 | Confirmed |
+| **Arkansas** | 8002 · 8003 · 8004 · 8005 — 8006 is not listed on the state’s ETS requirements page | Not published on the source we checked. 5000-series acceptance is listed as ending 2027-09-01. | [ETS, Praxis test requirements: Arkansas](https://praxis.ets.org/state-requirements/arkansas-tests.html)[10] | 2026-09-03 | Confirmed |
+| **Other states** — the remaining 48 states, plus the District of Columbia | Not verified | Not verified | [ETS state requirements directory](https://praxis.ets.org/state-requirements.html)[7] | — | Not verified |
+
+Qualifying scores are the other half of the answer, and they are set state by state rather than nationally. These are the only two sets we have verified:
+
+| State | 8002 | 8003 | 8004 | 8005 | 8006 | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| West Virginia | 152 | 152 | 147 | 143 | Not used | ETS West Virginia page[9] |
+| Arkansas | 137 | 136 | 130 | 126 | Not listed | ETS Arkansas page[10] |
+
+Those figures sit between 126 and 152, which is consistent with the 100–200 scale ETS uses for these tests — and inconsistent with the 100–300 scale and 240 cut score that some third-party pages repeat.[9][10] We do not print a qualifying score for any state whose official page we have not read, and we do not currently mark any state as being in transition, because we have not found a published transition status we could confirm.
+
+Last verified 2026-09-15 · state rows last checked against their official sources 2026-09-03
+
+**Three things you can do next:**
+
+- [Check the five new tests](https://learndiag.com/#five-8000-series-tests) — content areas, codes, and what each test covers.
+- **Take a free 8000-series readiness check** — original practice questions with explanations, one set per code: [8002](https://learndiag.com/praxis-8002-practice) · [8003](https://learndiag.com/praxis-8003-practice) · [8004](https://learndiag.com/praxis-8004-practice) · [8005](https://learndiag.com/praxis-8005-practice) · [8006](https://learndiag.com/praxis-8006-practice).
+- [Compare your current test code](https://learndiag.com/#which-test-selector) — enter the code your account or admission materials show, and the selector above lists what to verify and with whom.
 
 ## What to Check Before You Register
 
@@ -143,6 +192,10 @@ The Praxis 8000 series is a significant elementary education redesign, not a uni
 [7] [ETS, “Praxis Teacher Certification Requirements by State”](https://praxis.ets.org/state-requirements.html)
 
 [8] [ETS, “Elementary Education Fundamentals: Reading and Language Arts (8002)” product page](https://praxis.ets.org/test/elementary-education-fundamentals-reading-and-language-arts-8002.html)
+
+[9] [ETS, “Praxis Test Requirements: West Virginia”](https://praxis.ets.org/state-requirements/westvirginia-tests.html) — accepted codes and qualifying scores for 8002–8005; the page lists Praxis 5205 for teaching reading.
+
+[10] [ETS, “Praxis Test Requirements: Arkansas”](https://praxis.ets.org/state-requirements/arkansas-tests.html) — qualifying scores for 8002–8005, and the 5000-series acceptance window to 2027-09-01.
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 

@@ -4,7 +4,7 @@
 
 # Praxis 5001 Subtests Explained: What's on 5002, 5003, 5004, and 5005
 
-*Reading time: 6 min · Based on the official ETS Study Companion*
+*2026-08-25 · Reading time: about 6 min*
 
 The Praxis 5001 — officially *Elementary Education: Multiple Subjects* — is not one exam but **four separate subtests**, each timed, scored, and reported on its own.[1] You pass the 5001 by passing every subtest your state requires, which is why understanding what each one contains is the first step of any serious study plan.
 
@@ -14,10 +14,10 @@ Here is each subtest explained: what it covers, how many questions it has, how l
 
 | Code | Subtest | Questions | Time | Question types |
 | --- | --- | --- | --- | --- |
-| `5002` | Reading & Language Arts | 80 | 90 minutes | Selected response |
-| `5003` | Mathematics | 50 | 65 minutes | Selected response + numeric entry |
-| `5004` | Social Studies | 60 | 60 minutes | Selected response |
-| `5005` | Science | 55 | 60 minutes | Selected response |
+| 5002 | Reading & Language Arts | 80 | 90 minutes | Selected response |
+| 5003 | Mathematics | 50 | 65 minutes | Selected response + numeric entry |
+| 5004 | Social Studies | 60 | 60 minutes | Selected response |
+| 5005 | Science | 55 | 60 minutes | Selected response |
 
 Together that is roughly **245 questions across about four and a half hours** if you sit all four at once. Most states let you register for subtests individually, so many candidates split them across separate test appointments.
 
@@ -100,10 +100,14 @@ Four separately scored exams, four separate state-set pass lines, and one rule t
 
 ## Sources
 
-[1] ETS, "Passing Score Requirements" (qualifying scores are set by state or agency, not ETS). https://praxis.ets.org/scores
+[1] ETS, "Passing Score Requirements" (qualifying scores are set by state or agency, not ETS). [https://praxis.ets.org/scores](https://praxis.ets.org/scores)
 
-[2] ETS, "The Praxis Elementary Education Assessment: Updates and Enhancements." https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf
+[2] ETS, "The Praxis Elementary Education Assessment: Updates and Enhancements." [https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf)
 
-[3] ETS, "State Requirements." https://praxis.ets.org/state-requirements.html
+[3] ETS, "State Requirements." [https://praxis.ets.org/state-requirements.html](https://praxis.ets.org/state-requirements.html)
 
 Question counts, timing, and category weights reflect the official ETS Study Companion data as of 2026-08-25 and can change when blueprints are revised — confirm against current ETS materials before test day.
+
+**Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
+
+Related: [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Passing Scores by State](https://learndiag.com/praxis-5001-passing-score-by-state)
