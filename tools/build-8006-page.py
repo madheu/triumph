@@ -15,6 +15,7 @@ TEMPLATE = SITE / 'praxis-5001-vs-8000-series.html'
 OUT = SITE / 'praxis-8006-teaching-reading.html'
 
 PAGE_URL = 'https://learndiag.com/praxis-8006-teaching-reading'
+HUB_URL = 'https://learndiag.com/praxis-elementary-education-fundamentals'
 HERO_IMAGE = 'https://learndiag.com/images/praxis-8006-teaching-reading.png'
 TITLE = 'Praxis 8006 Teaching Reading: Format, Content & Practice'
 H1 = 'Praxis 8006 Teaching Reading: What the Test Covers and How to Prepare'
@@ -92,11 +93,13 @@ breadcrumb_jsonld = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     'itemListElement': [
-        # D12 hub not live yet: middle levels are name-only (no dead links)
+        # Every level except the last must carry "item", or Search Console flags
+        # "Missing field item". The old "Exam Updates" level had no page behind it
+        # (/exam-updates 404) — it was a category label, not a navigable level,
+        # so it is gone. The 8000 series hub has been live since 2026-09.
         {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://learndiag.com/'},
-        {'@type': 'ListItem', 'position': 2, 'name': 'Exam Updates'},
-        {'@type': 'ListItem', 'position': 3, 'name': 'Praxis 8000 Series'},
-        {'@type': 'ListItem', 'position': 4, 'name': 'Praxis 8006 Teaching Reading', 'item': PAGE_URL},
+        {'@type': 'ListItem', 'position': 2, 'name': 'Praxis 8000 Series', 'item': HUB_URL},
+        {'@type': 'ListItem', 'position': 3, 'name': 'Praxis 8006 Teaching Reading', 'item': PAGE_URL},
     ],
 }
 
@@ -143,7 +146,9 @@ sources_html = '\n'.join(
 
 ARTICLE = f'''
 <article class="wrap">
-  <span class="eyebrow">Exam updates \u00b7 Praxis 8000 Series</span>
+  <nav class="eyebrow" aria-label="Breadcrumb">
+    <a href="/" style="color:inherit">Home</a><span aria-hidden="true"> \u00b7 </span><a href="/praxis-elementary-education-fundamentals" style="color:inherit">Praxis 8000 Series</a><span aria-hidden="true"> \u00b7 </span><span aria-current="page">Praxis 8006 Teaching Reading</span>
+  </nav>
   <h1>{H1}</h1>
   <div class="meta-line">{LAST_VERIFIED} \u00b7 Last verified {LAST_VERIFIED} \u00b7 Reading time: about 9 min</div>
 
@@ -359,6 +364,15 @@ style = re.search(r'<style>.*?</style>', template, re.S).group(0)
 head_pre = re.search(r'^(.*?)(?=<style>)', template, re.S).group(1)
 nav = re.search(r'<header class="nav wrap">.*?</header>', template, re.S).group(0)
 nav = nav.replace('Praxis 5001 \u00b7 unofficial', 'Praxis 8006 \u00b7 unofficial')
+
+# The "8000 series hub" link was added to the live page by hand and never made it
+# into the shared template. Without this, running the generator silently drops an
+# internal link to the hub that the breadcrumb now points at.
+if '8000 series hub' not in nav:
+    note = '<span class="nav-note">Praxis 8006 \u00b7 unofficial</span>'
+    hub_link = ('<a class="nav-cta" href="/praxis-elementary-education-fundamentals">'
+                '8000 series hub</a>')
+    nav = nav.replace(note, f'{note}\n      {hub_link}')
 
 page = f'''<!DOCTYPE html>
 <html lang="en">

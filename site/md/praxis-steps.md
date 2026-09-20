@@ -1,6 +1,6 @@
 <!-- Markdown variant of https://learndiag.com/praxis-steps — request any page with Accept: text/markdown -->
 
-*Exam updates · Praxis 8000 Series*
+*[Home](https://learndiag.com/) · [Praxis 8000 Series](https://learndiag.com/praxis-elementary-education-fundamentals) · Praxis Steps*
 
 # Praxis Steps, Explained: Modular Testing for the Elementary Education Fundamentals Tests
 

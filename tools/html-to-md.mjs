@@ -246,7 +246,14 @@ export function blocksFrom(nodes) {
         out.push(hasBlockChild ? blocksFrom(n.children) : (inlineNodes(n.children).trim()));
         break;
       }
-      case 'script': case 'style': case 'nav': case 'button': case 'form': case 'input': case 'select': case 'label':
+      case 'nav': {
+        // A breadcrumb carried by .eyebrow is page path, not chrome — keep it in the
+        // markdown variant. Other <nav> (site header, footer links) stays skipped.
+        const cls = classNameOf(n);
+        if (/\beyebrow\b/.test(cls)) { const t = inlineNodes(n.children).trim(); if (t) out.push('*' + t + '*'); }
+        break;
+      }
+      case 'script': case 'style': case 'button': case 'form': case 'input': case 'select': case 'label':
         break;
       default: {
         const t = inlineNodes(n.children).trim();
