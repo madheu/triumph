@@ -46,6 +46,7 @@ const ARTICLES = [
   { slug: 'praxis-5001-south-carolina-requirements', title: 'South Carolina Requirements', tag: 'STATE: SC' },
   { slug: 'praxis-5001-tennessee-requirements', title: 'Tennessee Requirements', tag: 'STATE: TN' },
   { slug: 'praxis-5001-virginia-requirements', title: 'Virginia Requirements', tag: 'STATE: VA' },
+  { slug: 'when-do-praxis-scores-come-out', title: 'When Do Praxis Scores Come Out?', tag: 'SCORE RELEASE DATES' },
 ];
 
 function esc(s) {
@@ -86,8 +87,8 @@ function svgFor({ title, tag }) {
   <text x="80" y="208" font-family="'Courier New', monospace" font-size="26" letter-spacing="4" fill="${C.accentDeep}">${esc(tag)}</text>
   <!-- 标题（多行） -->
   ${titleHtml}
-  <!-- 副题：Praxis 5001 · 免费备考 -->
-  <text x="80" y="${dotY + 118}" font-family="'Courier New', monospace" font-size="22" fill="${C.inkSoft}">PRAXIS 5001 · ELEMENTARY EDUCATION · FREE PREP</text>
+  <!-- 副题：Praxis 5001 · 免费备考（固定在底部方块下方，避免两行标题时与其重叠） -->
+  <text x="80" y="${H - 40}" font-family="'Courier New', monospace" font-size="22" fill="${C.inkSoft}">PRAXIS 5001 · ELEMENTARY EDUCATION · FREE PREP</text>
   <!-- 底部 4 个方块（四个 subtest 隐喻） -->
   <g>
     <rect x="80" y="${H-120}" width="44" height="44" fill="${C.accent}" opacity="0.9"/>

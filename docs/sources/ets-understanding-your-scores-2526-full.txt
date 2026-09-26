@@ -1,0 +1,1351 @@
+Copyright © 2025 by ETS. ETS and Praxis are registered trademarks of ETS in the United States 
+and other countries. The Eight-Point logo is a trademark of ETS.
+Understanding Your Praxis® Scores
+2025–2026
+Selected-Response (SR) Questions
+On most Praxis® tests, each selected-response question answered 
+correctly is worth one raw point, and your total raw score is the 
+number of questions answered correctly on the full test. Selected-
+response questions are scored by computer.
+Constructed-Response (CR) Questions
+Constructed-response questions are scored by education profession­
+als in the appropriate content area. These individuals are carefully 
+trained and supervised to assure they apply E T S scoring methods in 
+a fair and accurate manner. Additional statistical checks are made to 
+account for differences in difficulty across editions of a test.
+Two scorers rate your responses to CR questions. Each one works 
+independently and does not know what the other scorer’s ratings are. 
+If the two ratings disagree by more than a specified amount, a third 
+scorer rates your response. Under no circumstances does your total 
+score depend entirely on one individual scorer.
+For some tests, c-rater is one of the scorers. c-rater is an automated 
+ETS scoring engine that scores responses to content-based, short-
+answer questions based on data from thousands of previously scored 
+essays.
+Mixed-Format Tests
+Some tests consist of one or more essays and a selected-response 
+portion. For some of the Praxis tests that contain both SR and CR 
+items, the ratings assigned by the scorers are simply added together 
+to contribute to your total raw score. On others, the ratings are first 
+multiplied by scoring weights, which can be different for different 
+questions, and the weighted ratings are added to contribute to your 
+total raw score. Your raw point score is then converted to a scaled 
+score that adjusts for the difficulty of that particular edition of the test.
+For the Core Academic Skills for Educators: Writing test, each essay 
+receives a score from at least one trained human reader, using a six-
+point holistic scale. In holistic scoring, readers are trained to assign 
+scores on the basis of the overall quality of an essay in response to 
+the assigned task. Both the Informative/Explanatory Essay and the 
+Argumentative Essay are scored by a human reader and e-rater®, 
+ETS software that computes a score based on data from thousands 
+of previously scored essays. If the human score and the e-rater score 
+agree, the two scores are added to become the final score for the 
+essay. If they differ by more than a specified amount, your response 
+is rated by a different human scorer, whose rating is used to resolve 
+the discrepancy. For a list of tests that include both essay and 
+selected-response questions, go to https://praxis.ets.org.
+Conversion of Raw Scores to Scaled Scores
+For most Praxis assessments, E T S develops multiple editions of the 
+same test that contain different sets of test questions conforming to 
+predefined content and statistical specifications. These different 
+editions are commonly called forms. To ensure that scores obtained 
+from different forms of the same test are comparable, raw scores are 
+converted to scaled scores that carry the same meaning regardless of 
+which form was administered. Scaled scores are used to determine 
+whether test takers have passed the test. The summary statistics shown 
+in section IV are presented in the scaled score metric.
+A Word of Caution
+The adjustment for difficulty makes it possible to give the same 
+interpretation to identical scores on different editions of the same test. 
+For example, a reported score of 150 on the Mathematics: Content 
+Knowledge test will reflect approximately the same level of knowl­
+edge, regardless of which edition of the test was administered.
+However, identical scores on different tests do not necessarily have 
+the same meaning. A score of 150 on the Mathematics: Content 
+Knowledge test, for example, does not reflect the same level of 
+knowledge as a score of 150 on the Physical Science: Content 
+Knowledge test.
+I How The Praxis® Tests Are Scored 
+The Praxis® Assessments are developed and administered by 
+Educational Testing Service (E T S®).
+Praxis® Core Academic Skills for Educators (Core) tests measure 
+academic skills in reading, writing and mathematics. They are 
+designed to provide comprehensive assessments that measure the 
+skills and content knowledge of candidates entering teacher 
+preparation programs.
+The Praxis Subject Assessments include the Subject Assessment/
+Specialty Area tests. The Content Knowledge for Teaching tests, 
+the Principles of Learning and Teaching (PLT) tests and the ParaPro 
+Assessment are also considered Praxis Subject Assessments.
+Average Performance Range—The range of scaled scores earned 
+by the middle 50 percent of the test takers taking the test. It provides 
+an indication of the difficulty of the test.
+Decision Reliability—The tendency of pass/fail decisions made on the 
+basis of test takers’ test scores to be consistent from one edition of the 
+test to another. E T S computes decision reliability statistics for a number 
+of different combinations of test taker groups and passing scores.
+Median—The score that separates the lower half of the scores from 
+the upper half.
+Passing Score—A qualifying score for a single test that is set by the 
+state or licensing agency.
+Possible Score Range—The lowest to the highest scaled score possible 
+on any edition of the test. 
+Raw Points—On a selected-response test, each raw point corresponds 
+to a single question. On a constructed-response test, the raw points 
+refer to the ratings assigned by the scorers. Raw points on different 
+forms of a test should not be compared; they are not adjusted for 
+differences in the difficulty of the test questions.
+Reliability—The tendency of individual scores to be consistent from 
+one edition of the test to another.
+Scaled Score—The reported score that determines whether a test 
+taker has passed the test. Scaled scores are derived from raw scores 
+and take into account the difficulty of the test form administered.
+Score Interval—The number of points separating the possible 
+score levels. If the score interval is 10, only scores divisible by 10 
+are possible.
+Standard Error of Measurement—A statistic that is often used to 
+describe the reliability of the scores of a group of test takers. A test taker’s 
+score on a single edition of a test will differ somewhat from the score 
+the test taker would get on a different edition of the test. The more 
+consistent the scores from one edition of the test to another, the smaller 
+the standard error of measurement. If a large number of test takers take 
+a test for which the standard error of measurement is 3 points, about 
+two-thirds of the test takers will receive scores within 3 points of the 
+scores that they would get by averaging over many editions of the test. 
+The Summary Statistics section shows the standard error of measurement 
+for many of the Praxis tests, estimated for the group of all test takers 
+taking the test. On some tests, the standard error of measurement could 
+not be estimated because there was no edition of the test that had been 
+taken by a sufficient number of test takers. On other tests, the standard 
+error of measurement could not be adequately estimated because the 
+test consists of a very small number of questions or tasks, each measur­
+ing a different type of knowledge or skill.
+Standard Error of Scoring—For tests in which the scoring involves 
+human judgment, this statistic describes the reliability of the process of 
+scoring the test takers’ responses. A test taker’s score on one of these 
+tests will depend to some extent on the particular scorers who rate the 
+test taker’s responses. The more consistent the ratings assigned to the 
+same responses by different scorers, the smaller the standard error 
+of scoring. If a large number of test takers take a test for which the 
+standard error of scoring is 4 points, about two-thirds of the test takers 
+will receive scores within 4 points of the scores that they would get if 
+their responses were scored by all possible scorers. The Summary 
+Statistics section shows the standard error of scoring for several of the 
+Praxis constructed-response tests, estimated for the group of all test 
+takers taking the test. For some constructed-response tests, the standard 
+error of scoring could not be estimated because there was no edition 
+of the test that had been taken by a sufficient number of test takers. 
+The standard error of scoring for a selected-response test is not 
+applicable, because selected-response scoring is a purely mechanical 
+process with no possibility of disagreement between scorers.
+Validity—The extent to which test scores actually reflect what they 
+are intended to measure. The Praxis tests are intended to measure 
+the knowledge, skills, or abilities that groups of experts determine 
+to be important for a beginning teacher.
+III Frequently Asked Questions About Praxis® Scores 
+Q	 Did I pass?
+A	 Your Test Taker Score Report will indicate a PASSED or NOT 
+PASSED status for the highest score earned on each test taken. 
+Your highest score will be compared to the state or agency’s 
+passing score indicated on your score report. 
+	
+The passing scores used in the Test Taker Score Reports are 
+the passing scores in effect, according to our records, at either 
+the date the test was taken (Test Date) or at the time the score 
+reports are produced (Report Date). You can find more about 
+passing scores at www.ets.org/praxis. E T S does not set 
+passing scores for the Praxis tests. Each state or agency sets 
+its own passing score for a Praxis test. If you have additional 
+questions regarding the establishment of passing scores or want 
+to verify passing scores, please contact the appropriate state or 
+agency directly.
+Q	 How many questions do I need to get right to pass the test?
+A	 Unfortunately, there is no way to predict this. There are several 
+editions of each of the Praxis tests, and each edition contains 
+different questions. The questions on one edition may be slightly 
+more difficult (or easier) than those on another edition. To make 
+all editions of a test comparable, raw scores are converted to 
+scaled scores that adjust for difficulty among editions. There is 
+no way to predict which edition of the test you will take next.
+Q	 Can I have my selected-response, essay, or constructed-
+response test score verified?
+A	 Yes. The Praxis score verification service is described in the 
+Praxis Information Bulletin and at www.ets.org/praxis.
+II Glossary of Terms
+Q	 Who receives a copy of my score report?
+A	 If you take a Praxis test in Alabama, Alaska, Arkansas, 
+California, Colorado, Connecticut, Delaware, District of 
+Columbia, Georgia, Hawaii, Indiana, Iowa, Kansas, Kentucky, 
+Louisiana, Maryland, Massachusetts, Mississippi, Missouri, 
+Montana, Nebraska, Nevada, New Hampshire, New Jersey, 
+New Mexico,  North Carolina, North Dakota, Ohio, Oklahoma, 
+Oregon, Pennsylvania, Rhode Island, South Carolina, South 
+Dakota, Tennessee, Utah, Vermont, Virginia, Washington, West 
+Virginia, or Wyoming, your scores are automatically reported 
+to the state education agency responsible for teacher licensure. 
+Some additional situations under which scores are reported are 
+listed in the Information Bulletin. Aside from these, your scores 
+will be sent only to you and the institutions or agencies you 
+designated as score recipients.
+Q	 How can I send my scores to recipients other than those 
+listed on my score report?
+A	 Sign in to your My Praxis account at www.ets.org/praxis 
+and select “Order Score Reports,” or download and complete 
+the Additional Score Report Request Form at www.ets.org/
+praxis and mail it with the appropriate fee to the address listed 
+on the form.
+Q	 Why didn’t I receive scores for all the tests I took on a 
+particular day?
+A	 Some tests, particularly those including essay questions, take 
+longer to score than others. Because important decisions often 
+depend on your scores, some Praxis test scores are reported 
+earlier than others. If all of your scores were not reported, you 
+will receive the rest of your test scores in a second report.
+Q	 I need to take one of the Praxis tests again. What should I 
+study to improve my score? 
+A	 The best preparation for taking any Praxis test is the knowledge 
+and experience you acquired in college. The detailed information 
+in your score report may help you identify the content categories 
+that offer the greatest opportunity to improve your score. E T S 
+publishes a variety of study aids to help you do your best. Study 
+Companions are available to download at www.ets.org/praxis, 
+and include content outlines and sample questions. Interactive 
+Practice Tests are also available for many of the tests. Interactive 
+Practice Tests are full-length tests that include correct answers 
+and explanations of answers.
+This section gives the Possible Score Range, Score Interval, Number of Test Takers, Median, Average Performance Range, Standard Error of Measurement, and Standard 
+Error of Scoring for many of The Praxis tests. Notes at the end of the section provide information about the statistics themselves.
+Test Name (Test Code)
+Possible 
+Score Range
+Score 
+Interval
+Number of 
+Test Takers
+Median
+Average 
+Performance 
+Range
+Standard 
+Error of 
+Measurement
+Standard 
+Error of 
+Scoring
+Agriculture (5701)
+100 - 200
+1
+1042
+165
+155 - 174
+5.5
+n/a
+Algebra I (5162)
+100 - 200
+1
+1347
+161
+148 - 174
+7.2
+n/a
+American Sign Language (0634)
+100 - 200
+1
+64
+160
+150 - 170
+i
+i
+Art: Content Knowledge (5134)
+100 - 200
+1
+4800
+163
+154 - 171
+5.6
+n/a
+Art: Content and Analysis (5135)
+100 - 200
+1
+2074
+164
+157 - 172
+5.8
+2.3
+Audiology (5343)
+100 - 200
+1
+2219
+168
+164 - 175
+5.7
+n/a
+Biology (5236)
+100 - 200
+1
+4686
+160
+145 - 174
+5.5
+n/a
+Braille Proficiency (0633)
+100 - 200
+1
+11
+184
+178 - 199
+6.2
+c
+Business Education: Content Knowledge (5101)
+100 - 200
+1
+5092
+169
+159 - 179
+5.5
+n/a
+Chemistry (5246)
+100 - 200
+1
+1558
+153
+141 - 172
+6.0
+n/a
+Chinese (Mandarin): World Language (5665)
+100 - 200
+1
+343
+193
+190 - 197
+4.1
+1.5
+Citizenship Education: Content Knowledge (5087)
+100 - 200
+1
+72
+162.5
+151 - 176
+5.2
+n/a
+Communication and Literacy: Reading (5714)
+100 - 200
+2
+70
+168
+158 - 182
+7.5
+n/a
+Communication and Literacy: Writing (5724)
+100 - 200
+2
+67
+162
+152 - 170
+5.7
+1.7
+Computer Science (5652)
+100 - 200
+1
+1774
+161
+147 - 181
+6.1
+n/a
+Core Academic Skills for Educators Mathematics 
+(5733)
+100 - 200
+2
+19652
+166
+150 - 180
+7.6
+n/a
+Core Academic Skills for Educators Reading 
+(5713)
+100 - 200
+2
+18898
+170
+158 - 184
+7.5
+n/a
+Core Academic Skills for Educators Writing (5723)
+100 - 200
+2
+20167
+162
+154 - 168
+5.7
+1.7
+Early Childhood Education (5025)
+100 - 200
+1
+11429
+167
+157 - 178
+5.5
+n/a
+Early Childhood Education Foundational 
+Knowledge (5533)
+100 - 200
+1
+f
+f
+f
+f
+f
+Early Childhood Education Foundational 
+Knowledge and Content (5534)
+100 - 200
+1
+f
+f
+f
+f
+f
+Early Childhood: Math and Science (5028)
+100 - 200
+1
+461
+170
+160 - 182
+6.5
+n/a
+Early Childhood: Reading and Language Arts and 
+Social Studies (5027)
+100 - 200
+1
+465
+172
+163 - 184
+6.6
+n/a
+Earth and Space Sciences (5572)
+100 - 200
+1
+933
+164
+151 - 179
+5.4
+n/a
+Economics (5911)
+100 - 200
+1
+379
+150
+140 - 162
+6.2
+n/a
+Education of Young Children (5024)
+100 - 200
+1
+4699
+166
+159 - 174
+5.4
+1.9
+Educational Leadership: Administration and 
+Supervision (5412)
+100 - 200
+1
+12655
+167
+159 - 174
+5.7
+n/a
+Elementary Education: Content Knowledge (5018)
+100 - 200
+1
+1934
+164
+145 - 175
+5.7
+n/a
+Elementary Education: Curriculum, Instruction, 
+and Assessment (5017)
+100 - 200
+1
+4485
+163
+155 - 173
+5.9
+n/a
+Elementary Education: Math Specialist (5037)
+100 - 200
+1
+106
+175
+164 - 184
+i
+i
+Elementary Education: Math and Science (5008)
+100 - 200
+1
+5028
+166
+158 - 176
+6.9
+n/a
+Elementary Education: Mathematics (7003)
+100 - 200
+1
+2171
+161
+145 - 178
+9.2
+n/a
+Elementary Education: Mathematics Subtest 
+(5003)
+100 - 200
+1
+37806
+169
+157 - 184
+9.2
+n/a
+Elementary Education: Mathematics-CKT (7813)
+100 - 200
+1
+13005
+158
+147 - 170
+7.6
+n/a
+Elementary Education: Reading and Language 
+Arts Subtest (5002)
+100 - 200
+1
+36831
+168
+159 - 178
+7.1
+n/a
+Elementary Education: Reading and Language 
+Arts-CKT (7812)
+100 - 200
+1
+5157
+168
+161 - 177
+6.8
+n/a
+IV Summary Statistics
+Test Name (Test Code)
+Possible 
+Score Range
+Score 
+Interval
+Number of 
+Test Takers
+Median
+Average 
+Performance 
+Range
+Standard 
+Error of 
+Measurement
+Standard 
+Error of 
+Scoring
+Elementary Education: Reading, Language Arts 
+and Social Studies (5007)
+100 - 200
+1
+4961
+170
+162 - 178
+6.2
+n/a
+Elementary Education: Science (7005)
+100 - 200
+1
+2118
+161
+148 - 172
+8.2
+n/a
+Elementary Education: Science Subtest (5005)
+100 - 200
+1
+37471
+168
+159 - 178
+8.2
+n/a
+Elementary Education: Science-CKT (7814)
+100 - 200
+1
+5002
+172
+160 - 185
+8.0
+n/a
+Elementary Education: Social Studies (7004)
+100 - 200
+1
+2152
+154
+142 - 167
+8.0
+n/a
+Elementary Education: Social Studies Subtest 
+(5004)
+100 - 200
+1
+37749
+164
+155 - 176
+8.0
+n/a
+Elementary Education: Social Studies-CKT (7815)
+100 - 200
+1
+5248
+169
+162 - 179
+7.3
+n/a
+Elementary Education: Teaching Reading (7002)
+100 - 200
+1
+2805
+152
+142 - 162
+6.5
+n/a
+Elementary Education: Three Subject Bundle-
+Mathematics (5903)
+100 - 200
+1
+7270
+169
+155 - 184
+9.2
+n/a
+Elementary Education: Three Subject Bundle-
+Science (5905)
+100 - 200
+1
+7066
+169
+159 - 181
+8.2
+n/a
+Elementary Education: Three Subject Bundle-
+Social Studies (5904)
+100 - 200
+1
+7083
+165
+154 - 180
+8.0
+n/a
+English Language Arts: Content Knowledge 
+(5038)
+100 - 200
+1
+14992
+176
+168 - 184
+5.0
+n/a
+English Language Arts: Content and Analysis 
+(5039)
+100 - 200
+1
+4431
+172
+165 - 179
+4.7
+2.2
+English to Speakers of Other Languages (5362)
+100 - 200
+1
+16164
+175
+165 - 184
+5.2
+n/a
+Family and Consumer Sciences (5123)
+100 - 200
+1
+257
+169
+162 - 174
+5.0
+n/a
+French: World Language (5174)
+100 - 200
+1
+631
+170
+156 - 181
+4.9
+2.0
+Fundamental Subjects: Content Knowledge 
+(5511)
+100 - 200
+1
+6494
+170
+157 - 183
+5.9
+n/a
+General Science (5436)
+100 - 200
+1
+3435
+154
+137 - 172
+6.2
+n/a
+Geography (5921)
+100 - 200
+1
+236
+171
+158 - 182
+5.1
+n/a
+Geometry (5163)
+100 - 200
+1
+226
+145
+132 - 158
+8.7
+n/a
+German: World Language (5183)
+100 - 200
+1
+178
+177
+157 - 198
+5.2
+2.1
+Gifted Education (5358)
+100 - 200
+1
+2431
+163
+158 - 169
+5.0
+n/a
+Government/Political Science (5931)
+100 - 200
+1
+647
+166
+156 - 177
+5.2
+n/a
+Health Education (5551)
+100 - 200
+1
+2685
+164
+155 - 173
+5.1
+n/a
+Health Occupations (5052)
+100 - 200
+1
+32
+175.5
+168 - 188
+i
+i
+Health and Physical Education: Content 
+Knowledge (5857)
+100 - 200
+1
+7142
+163
+155 - 171
+5.6
+n/a
+Interdisciplinary Early Childhood Education (5023)
+100 - 200
+1
+815
+177
+169 - 184
+4.6
+n/a
+Japanese: World Language (5661)
+100 - 200
+1
+29
+200
+168 - 200
+i
+i
+Journalism (5224)
+100 - 200
+1
+152
+180.5
+172 - 187
+4.9
+n/a
+Latin (5601)
+100 - 200
+1
+59
+184
+159 - 199
+4.9
+n/a
+Marketing Education (5561)
+100 - 200
+1
+589
+165
+153 - 175
+5.7
+n/a
+Mathematics (5165)
+100 - 200
+1
+12574
+168
+150 - 185
+7.0
+n/a
+Middle School English Language Arts (5047)
+100 - 200
+1
+6327
+161
+150 - 169
+5.7
+2.3
+Middle School Mathematics (5164)
+100 - 200
+1
+11520
+166
+152 - 179
+7.1
+n/a
+Middle School Science (5442)
+100 - 200
+1
+6785
+160
+147 - 175
+5.9
+n/a
+Middle School Social Studies (5089)
+100 - 200
+1
+4728
+164
+150 - 178
+6.2
+2.3
+Middle School Social Studies (5589)
+100 - 200
+1
+f
+f
+f
+f
+f
+Music Instrumental and General Knowledge 
+(5115)
+100 - 200
+1
+595
+161
+152 - 173
+5.9
+n/a
+Test Name (Test Code)
+Possible 
+Score Range
+Score 
+Interval
+Number of 
+Test Takers
+Median
+Average 
+Performance 
+Range
+Standard 
+Error of 
+Measurement
+Standard 
+Error of 
+Scoring
+Music Vocal and General Knowledge (5116)
+100 - 200
+1
+402
+163
+154 - 173
+5.8
+n/a
+Music: Content Knowledge (5113)
+100 - 200
+1
+4257
+164
+155 - 173
+5.7
+n/a
+Music: Content and Instruction (5114)
+100 - 200
+1
+2209
+163
+152 - 170
+6.0
+1.7
+ParaPathways: Mathematics (5759)
+310 - 350
+1
+f
+f
+f
+f
+f
+ParaPathways: Reading and Writing (5758)
+310 - 350
+1
+f
+f
+f
+f
+f
+ParaPro Assessment (1755)
+420 - 480
+1
+99086
+468
+459 - 474
+3.5
+n/a
+Pennsylvania Grades 4-8 Core Assessment: 
+English Language Arts and Social Studies (5154)
+100 - 200
+1
+3371
+160
+149 - 171
+8.1
+n/a
+Pennsylvania Grades 4-8 Core Assessment: 
+Mathematics and Science (5155)
+100 - 200
+1
+3316
+170
+156 - 182
+8.1
+n/a
+Pennsylvania Grades 4-8 Core Assessment: 
+Pedagogy (5153)
+100 - 200
+1
+1717
+177
+169 - 184
+5.6
+n/a
+Pennsylvania Grades 4-8 Subject Concentration: 
+English Language Arts (5156)
+100 - 200
+1
+825
+164
+153 - 177
+6.9
+n/a
+Pennsylvania Grades 4-8 Subject Concentration: 
+Mathematics (5158)
+100 - 200
+1
+1042
+174
+155 - 184
+7.5
+n/a
+Pennsylvania Grades 4-8 Subject Concentration: 
+Science (5159)
+100 - 200
+1
+558
+160
+147 - 172
+6.7
+n/a
+Pennsylvania Grades 4-8 Subject Concentration: 
+Social Studies (5157)
+100 - 200
+1
+472
+163
+150 - 177
+7.1
+n/a
+Physical Education: Content Knowledge (5091)
+100 - 200
+1
+5904
+153
+148 - 158
+4.0
+n/a
+Physical Education: Content and Design (5095)
+100 - 200
+1
+2438
+169
+161 - 174
+5.5
+2.3
+Physical Science (5485)
+100 - 200
+1
+239
+149
+131 - 165
+6.1
+n/a
+Physics (5266)
+100 - 200
+1
+872
+164
+145 - 182
+5.6
+n/a
+Pre-Kindergarten Education (5531)
+100 - 200
+1
+255
+168
+156 - 180
+5.7
+n/a
+Principles of Learning and Teaching: 5-9 (5623)
+100 - 200
+1
+3971
+174
+167 - 182
+5.0
+2.1
+Principles of Learning and Teaching: 7-12 (5624)
+100 - 200
+1
+18156
+175
+167 - 183
+5.4
+2.3
+Principles of Learning and Teaching: Early 
+Childhood (5621)
+100 - 200
+1
+4540
+166
+159 - 174
+5.0
+2.1
+Principles of Learning and Teaching: K-6 (5622)
+100 - 200
+1
+20195
+175
+166 - 182
+5.1
+2.1
+Principles of Learning and Teaching: Pre K-12 
+(5625)
+100 - 200
+1
+4291
+166
+158 - 176
+6.5
+n/a
+Psychology (5391)
+100 - 200
+1
+350
+167
+156 - 179
+5.1
+n/a
+Reading Specialist (5302)
+100 - 200
+1
+3740
+171
+165 - 178
+5.1
+1.9
+Russian: World Language (5671)
+100 - 200
+1
+6
+i
+i
+i
+i
+STEM for the Elementary Grades (5036)
+100 - 200
+1
+506
+187
+180 - 192
+5.6
+n/a
+School Counselor (5422)
+100 - 200
+1
+7477
+164
+157 - 171
+5.1
+n/a
+School Librarian (5312)
+100 - 200
+1
+2421
+171
+161 - 179
+5.5
+n/a
+School Psychologist (5403)
+100 - 200
+1
+5348
+172
+165 - 178
+4.8
+n/a
+Social Studies (5581)
+100 - 200
+1
+1385
+165
+153 - 178
+5.0
+n/a
+Social Studies: Content and Interpretation (5086)
+100 - 200
+1
+2366
+158
+146 - 168
+5.7
+2.1
+Sociology (5952)
+100 - 200
+1
+150
+171.5
+160 - 180
+5.0
+n/a
+Spanish: World Language (5195)
+100 - 200
+1
+4335
+176
+162 - 187
+5.2
+2.3
+Special Education: Early Childhood/Early 
+Intervention (5692)
+100 - 200
+1
+1525
+169
+161 - 177
+5.8
+n/a
+Special Education: Education of Deaf and Hard of 
+Hearing Students (5272)
+100 - 200
+1
+408
+166
+159 - 172
+5.5
+n/a
+Test Name (Test Code)
+Possible 
+Score Range
+Score 
+Interval
+Number of 
+Test Takers
+Median
+Average 
+Performance 
+Range
+Standard 
+Error of 
+Measurement
+Standard 
+Error of 
+Scoring
+Special Education: Foundational Knowledge 
+(5355)
+100 - 200
+1
+13366
+171
+162 - 179
+5.3
+n/a
+Special Education: Severe to Profound (5547)
+100 - 200
+1
+1188
+177
+168 - 183
+5.1
+n/a
+Special Education: Teaching Speech to Students 
+with Language Impairments (5881)
+100 - 200
+1
+54
+152
+149 - 161
+5.8
+n/a
+Special Education: Teaching Students with 
+Behavioral Disorders/Emotional Disturbances 
+(5372)
+100 - 200
+1
+264
+174
+166 - 182
+4.2
+n/a
+Special Education: Teaching Students with 
+Intellectual Disabilities (5322)
+100 - 200
+1
+102
+176.5
+165 - 183
+4.9
+n/a
+Special Education: Teaching Students with 
+Learning Disabilities (5383)
+100 - 200
+1
+457
+165
+155 - 173
+5.2
+n/a
+Special Education: Teaching Students with Visual 
+Impairments (5282)
+100 - 200
+1
+356
+168
+163 - 175
+5.4
+n/a
+Speech Communication: Content Knowledge 
+(5221)
+100 - 200
+1
+484
+158
+147 - 168
+4.6
+n/a
+Speech and Theatre (5222)
+100 - 200
+1
+57
+156
+147 - 162
+i
+i
+Speech-Language Pathology (5331)
+100 - 200
+1
+27077
+174
+168 - 182
+5.1
+n/a
+Teaching Reading K-12 (5206)
+100 - 200
+1
+1296
+165
+157 - 173
+5.1
+1.8
+Teaching Reading: Elementary (5205)
+100 - 200
+1
+30395
+168
+160 - 176
+4.9
+1.6
+Technology and Engineering Education (5053)
+100 - 200
+1
+165
+169
+163 - 177
+i
+i
+Theatre (5641)
+100 - 200
+1
+835
+168
+160 - 176
+5.4
+n/a
+World Languages Pedagogy (5841)
+100 - 200
+1
+526
+173
+161 - 184
+7.0
+2.0
+World and U.S. History: Content Knowledge 
+(5941)
+100 - 200
+1
+3047
+159
+148 - 171
+5.5
+n/a
+NOTES: (Section II. Glossary of Terms, provides definitions for each of the statistics provided.)
+	
+“Number of Test Takers,” “Median,” and “Average Performance Range” were calculated from the records of test takers who took the test between 
+August 2022 and July 2025, and who are in the particular educational group described below. If a test taker took the test more than once in this period, the 
+most recent score was used. Test takers were selected according to their responses to the question, “What is the highest educational level you have reached?” 
+The Median and Average Performance Range for the Core and Communication and Literacy tests were calculated on college freshmen, sophomores, juniors, 
+and earned associates degree. The Median and Average Performance Range for the ParaPro Assessment were calculated on test takers from all educational 
+levels.
+The Median and Average Performance Range for all other tests were calculated on test takers who were college seniors, college graduates, graduate students, 
+or holders of master’s or doctoral degrees. 
+Summary Statistics are not available for new tests administered for the first time in the 2025–26 testing year.
+c = Consensus scoring.
+i = Insufficient data. 
+f = New test. Data not yet available.
+n/a = not applicable.
+159564-09706 • UNLWEB1025
+847480

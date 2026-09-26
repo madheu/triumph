@@ -1,0 +1,6976 @@
+[
+ {
+  "place": "center",
+  "id": "5701",
+  "name": "Agriculture (5701)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5162",
+  "name": "Algebra I (5162)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5135",
+  "name": "Art: Content and Analysis (5135)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5134",
+  "name": "Art: Content Knowledge (5134)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5343",
+  "name": "Audiology (5343)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5236",
+  "name": "Biology (5236)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "0633",
+  "name": "Braille Proficiency (0633)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5101",
+  "name": "Business Education: Content Knowledge (5101)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5246",
+  "name": "Chemistry (5246)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5665",
+  "name": "Chinese (Mandarin): World Language (5665)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5087",
+  "name": "Citizenship Education: Content Knowledge (5087)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5714",
+  "name": "Communication and Literacy: Reading (5714)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5724",
+  "name": "Communication and Literacy: Writing (5724)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 10, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5753",
+  "name": "Communication and Literacy Combined (5753; subtests 5714, 5724)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5652",
+  "name": "Computer Science (5652)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "6412",
+  "name": "Connecticut Administrator Test (6412)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5733",
+  "name": "Core Academic Skills For Educators: Mathematics (5733)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5713",
+  "name": "Core Academic Skills For Educators: Reading (5713)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5723",
+  "name": "Core Academic Skills For Educators: Writing (5723)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 10, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5752",
+  "name": "Core Combined (5752; subtests 5713, 5723, 5733)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 10, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5028",
+  "name": "Early Childhood: Mathematics and Science (5028)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5027",
+  "name": "Early Childhood: Reading and Language Arts & Social Studies (5027)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5026",
+  "name": "Early Childhood Assessment (5026; subtests 5027, 5028)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5533",
+  "name": "Early Childhood Education: Foundational Knowledge (5533)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5534",
+  "name": "Early Childhood Education: Foundational Knowledge and Content (5534)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5025",
+  "name": "Early Childhood Education (5025)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5572",
+  "name": "Earth and Space Sciences (5572)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5911",
+  "name": "Economics (5911)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5412",
+  "name": "Educational Leadership: Administration and Supervision (5412)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5024",
+  "name": "Education of Young Children (5024)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5018",
+  "name": "Elementary Education: Content Knowledge (5018)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7811",
+  "name": "Elementary Education: Content Knowledge for Teaching (7811; subtests 7812, 7813, 7814, 7815)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5017",
+  "name": "Elementary Education: Curriculum, Instruction, and Assessment (5017)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7003",
+  "name": "Elementary Education: Mathematics (7003)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7813",
+  "name": "Elementary Education: Mathematics CKT (7813)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5003",
+  "name": "Elementary Education: Mathematics Subtest (5003)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5037",
+  "name": "Elementary Education: Math Specialist (5037)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5001",
+  "name": "Elementary Education: Multiple Subjects (5001; subtests 5002, 5003, 5004, 5005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7001",
+  "name": "Elementary Education: Multiple Subjects (7001; Subtests 7002, 7003, 7004, 7005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7812",
+  "name": "Elementary Education: Reading and Language Arts CKT (7812)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5002",
+  "name": "Elementary Education: Reading and Language Arts Subtest (5002)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7005",
+  "name": "Elementary Education: Science (7005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7814",
+  "name": "Elementary Education: Science\u2014CKT (7814)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5005",
+  "name": "Elementary Education: Science Subtest (5005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7004",
+  "name": "Elementary Education: Social Studies (7004)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7815",
+  "name": "Elementary Education: Social Studies\u2014CKT (7815)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5004",
+  "name": "Elementary Education: Social Studies Subtest (5004)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7002",
+  "name": "Elementary Education: Teaching Reading (7002)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5901",
+  "name": "Elementary Education: Three Subject Bundle\u2014Mathematics, Social Studies and Science (5901; subtests 5903, 5904, 5905)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5903",
+  "name": "Elementary Education: Three Subject Bundle\u2014Mathematics (5903)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5905",
+  "name": "Elementary Education: Three Subject Bundle\u2014Science (5905)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5904",
+  "name": "Elementary Education: Three Subject Bundle\u2014Social Studies (5904)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5008",
+  "name": "Elementary Education Assessment: Mathematics and Science (5008)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5007",
+  "name": "Elementary Education Assessment: Reading and Language Arts & Social Studies (5007)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5006",
+  "name": "Elementary Education Assessment (5006; subtests 5007, 5008)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8003",
+  "name": "Elementary Education Fundamentals: Mathematics (8003)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8002",
+  "name": "Elementary Education Fundamentals: Reading and Language Arts (8002)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8005",
+  "name": "Elementary Education Fundamentals: Science (8005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8004",
+  "name": "Elementary Education Fundamentals: Social Studies (8004)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8006",
+  "name": "Elementary Education Fundamentals: Teaching Reading (8006)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5039",
+  "name": "English Language Arts: Content and Analysis (5039)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5038",
+  "name": "English Language Arts: Content Knowledge (5038)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5362",
+  "name": "English to Speakers of Other Languages (5362)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5123",
+  "name": "Family and Consumer Sciences (5123)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5174",
+  "name": "French: World Language (5174)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5511",
+  "name": "Fundamental Subjects: Content Knowledge (5511)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "70",
+  "name": "General Science: Content Knowledge",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5436",
+  "name": "General Science (5436)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5921",
+  "name": "Geography (5921)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5163",
+  "name": "Geometry (5163)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5183",
+  "name": "German: World Language (5183)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5358",
+  "name": "Gifted Education (5358)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5931",
+  "name": "Government/Political Science (5931)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5857",
+  "name": "Health and Physical Education: Content Knowledge (5857)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5551",
+  "name": "Health Education (5551)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5052",
+  "name": "Health Occupations (5052)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5023",
+  "name": "Interdisciplinary Early Childhood Education (5023)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5661",
+  "name": "Japanese: World Language (5661)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5224",
+  "name": "Journalism (5224)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5601",
+  "name": "Latin (5601)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5561",
+  "name": "Marketing Education (5561)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5165",
+  "name": "Mathematics (5165)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "56",
+  "name": "Middle School: Social Studies",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5047",
+  "name": "Middle School English Language Arts (5047)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5164",
+  "name": "Middle School Mathematics (5164)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5442",
+  "name": "Middle School Science (5442)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5089",
+  "name": "Middle School Social Studies (5089)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5589",
+  "name": "Middle School Social Studies (5589)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5114",
+  "name": "Music: Content and Instruction (5114)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5113",
+  "name": "Music: Content Knowledge (5113)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5115",
+  "name": "Music: Instrumental and General Knowledge (5115)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5116",
+  "name": "Music: Vocal and General Knowledge (5116)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5154",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: English Language Arts and Social Studies (5154)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5155",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: Mathematics and Science (5155)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5152",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: Pedagogy, English Language Arts and Social Studies, Mathematics and Science (5152; subtests: 5153, 5154, 5155)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5153",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: Pedagogy (5153)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5156",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: English Language Arts (5156)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5158",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: Mathematics (5158)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5159",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: Science (5159)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5157",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: Social Studies (5157)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "PASL",
+  "name": "Performance Assessment for School Leaders (PASL)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5095",
+  "name": "Physical Education: Content and Design (5095)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5091",
+  "name": "Physical Education: Content Knowledge (5091)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5485",
+  "name": "Physical Science (5485)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5266",
+  "name": "Physics (5266)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5621",
+  "name": "Principles of Learning and Teaching (PLT): Early Childhood (5621)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5623",
+  "name": "Principles of Learning and Teaching (PLT): Grades 5-9 (5623)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5624",
+  "name": "Principles of Learning and Teaching (PLT): Grades 7-12 (5624)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5622",
+  "name": "Principles of Learning and Teaching (PLT): Grades K-6 (5622)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5625",
+  "name": "Principles of Learning and Teaching (PLT): PreK\u201312 (5625)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5391",
+  "name": "Psychology (5391)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5302",
+  "name": "Reading Specialist (5302)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5671",
+  "name": "Russian: World Language (5671)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5422",
+  "name": "School Counselor (5422)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "6990",
+  "name": "School Leaders Licensure Assessment (SLLA) (6990)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5312",
+  "name": "School Librarian (5312)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5403",
+  "name": "School Psychologist (5403)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "6991",
+  "name": "School Superintendent Assessment (SSA) (6991)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5086",
+  "name": "Social Studies: Content and Interpretation (5086)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5581",
+  "name": "Social Studies (5581)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5952",
+  "name": "Sociology (5952)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "60",
+  "name": "Soc Studies: Content Knowledge",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5195",
+  "name": "Spanish: World Language (5195)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5692",
+  "name": "Special Education: Early Childhood/Early Intervention (5692)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5272",
+  "name": "Special Education: Education of Deaf and Hard of Hearing Students (5272)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5355",
+  "name": "Special Education: Foundational Knowledge (5355)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5547",
+  "name": "Special Education: Severe to Profound (5547)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5881",
+  "name": "Special Education: Teaching Speech to Students with Language Impairments (5881)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5372",
+  "name": "Special Education: Teaching Students with Behavioral Disorders and Emotional Disturbances (5372)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5322",
+  "name": "Special Education: Teaching Students with Intellectual Disabilities (5322)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5383",
+  "name": "Special Education: Teaching Students with Learning Disabilities (5383)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5282",
+  "name": "Special Education: Teaching Students with Visual Impairments (5282)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5222",
+  "name": "Speech and Theatre (5222)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5221",
+  "name": "Speech Communication: Content Knowledge (5221)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5331",
+  "name": "Speech-Language Pathology (5331)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5036",
+  "name": "STEM for the Elementary Grades (5036)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5205",
+  "name": "Teaching Reading: Elementary (5205)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5206",
+  "name": "Teaching Reading: K-12 (5206)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5053",
+  "name": "Technology and Engineering Education (5053)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5641",
+  "name": "Theatre (5641)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5941",
+  "name": "World and U.S. History: Content Knowledge (5941)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5841",
+  "name": "World Languages Pedagogy (5841)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 13, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 15, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 6, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 20, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "center",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "center",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5701",
+  "name": "Agriculture (5701)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5162",
+  "name": "Algebra I (5162)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5135",
+  "name": "Art: Content and Analysis (5135)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5134",
+  "name": "Art: Content Knowledge (5134)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5343",
+  "name": "Audiology (5343)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5236",
+  "name": "Biology (5236)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "0633",
+  "name": "Braille Proficiency (0633)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5101",
+  "name": "Business Education: Content Knowledge (5101)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5246",
+  "name": "Chemistry (5246)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5665",
+  "name": "Chinese (Mandarin): World Language (5665)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5087",
+  "name": "Citizenship Education: Content Knowledge (5087)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5714",
+  "name": "Communication and Literacy: Reading (5714)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5724",
+  "name": "Communication and Literacy: Writing (5724)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 10, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5753",
+  "name": "Communication and Literacy Combined (5753; subtests 5714, 5724)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5652",
+  "name": "Computer Science (5652)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "6412",
+  "name": "Connecticut Administrator Test (6412)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5733",
+  "name": "Core Academic Skills For Educators: Mathematics (5733)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5713",
+  "name": "Core Academic Skills For Educators: Reading (5713)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5723",
+  "name": "Core Academic Skills For Educators: Writing (5723)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 10, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5752",
+  "name": "Core Combined (5752; subtests 5713, 5723, 5733)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 10, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5028",
+  "name": "Early Childhood: Mathematics and Science (5028)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5027",
+  "name": "Early Childhood: Reading and Language Arts & Social Studies (5027)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5026",
+  "name": "Early Childhood Assessment (5026; subtests 5027, 5028)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5533",
+  "name": "Early Childhood Education: Foundational Knowledge (5533)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5534",
+  "name": "Early Childhood Education: Foundational Knowledge and Content (5534)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5025",
+  "name": "Early Childhood Education (5025)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5572",
+  "name": "Earth and Space Sciences (5572)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5911",
+  "name": "Economics (5911)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5412",
+  "name": "Educational Leadership: Administration and Supervision (5412)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5024",
+  "name": "Education of Young Children (5024)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5018",
+  "name": "Elementary Education: Content Knowledge (5018)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7811",
+  "name": "Elementary Education: Content Knowledge for Teaching (7811; subtests 7812, 7813, 7814, 7815)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5017",
+  "name": "Elementary Education: Curriculum, Instruction, and Assessment (5017)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7003",
+  "name": "Elementary Education: Mathematics (7003)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7813",
+  "name": "Elementary Education: Mathematics CKT (7813)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5003",
+  "name": "Elementary Education: Mathematics Subtest (5003)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5037",
+  "name": "Elementary Education: Math Specialist (5037)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5001",
+  "name": "Elementary Education: Multiple Subjects (5001; subtests 5002, 5003, 5004, 5005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7001",
+  "name": "Elementary Education: Multiple Subjects (7001; Subtests 7002, 7003, 7004, 7005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7812",
+  "name": "Elementary Education: Reading and Language Arts CKT (7812)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5002",
+  "name": "Elementary Education: Reading and Language Arts Subtest (5002)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7005",
+  "name": "Elementary Education: Science (7005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7814",
+  "name": "Elementary Education: Science\u2014CKT (7814)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5005",
+  "name": "Elementary Education: Science Subtest (5005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7004",
+  "name": "Elementary Education: Social Studies (7004)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7815",
+  "name": "Elementary Education: Social Studies\u2014CKT (7815)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5004",
+  "name": "Elementary Education: Social Studies Subtest (5004)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7002",
+  "name": "Elementary Education: Teaching Reading (7002)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5901",
+  "name": "Elementary Education: Three Subject Bundle\u2014Mathematics, Social Studies and Science (5901; subtests 5903, 5904, 5905)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5903",
+  "name": "Elementary Education: Three Subject Bundle\u2014Mathematics (5903)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5905",
+  "name": "Elementary Education: Three Subject Bundle\u2014Science (5905)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5904",
+  "name": "Elementary Education: Three Subject Bundle\u2014Social Studies (5904)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5008",
+  "name": "Elementary Education Assessment: Mathematics and Science (5008)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5007",
+  "name": "Elementary Education Assessment: Reading and Language Arts & Social Studies (5007)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5006",
+  "name": "Elementary Education Assessment (5006; subtests 5007, 5008)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8003",
+  "name": "Elementary Education Fundamentals: Mathematics (8003)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8002",
+  "name": "Elementary Education Fundamentals: Reading and Language Arts (8002)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8005",
+  "name": "Elementary Education Fundamentals: Science (8005)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8004",
+  "name": "Elementary Education Fundamentals: Social Studies (8004)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8006",
+  "name": "Elementary Education Fundamentals: Teaching Reading (8006)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5039",
+  "name": "English Language Arts: Content and Analysis (5039)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5038",
+  "name": "English Language Arts: Content Knowledge (5038)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5362",
+  "name": "English to Speakers of Other Languages (5362)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5123",
+  "name": "Family and Consumer Sciences (5123)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5174",
+  "name": "French: World Language (5174)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5511",
+  "name": "Fundamental Subjects: Content Knowledge (5511)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5436",
+  "name": "General Science (5436)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5921",
+  "name": "Geography (5921)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5163",
+  "name": "Geometry (5163)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5183",
+  "name": "German: World Language (5183)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5358",
+  "name": "Gifted Education (5358)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5931",
+  "name": "Government/Political Science (5931)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5857",
+  "name": "Health and Physical Education: Content Knowledge (5857)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5551",
+  "name": "Health Education (5551)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5052",
+  "name": "Health Occupations (5052)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5023",
+  "name": "Interdisciplinary Early Childhood Education (5023)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5661",
+  "name": "Japanese: World Language (5661)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5224",
+  "name": "Journalism (5224)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5601",
+  "name": "Latin (5601)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5561",
+  "name": "Marketing Education (5561)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5165",
+  "name": "Mathematics (5165)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5047",
+  "name": "Middle School English Language Arts (5047)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5164",
+  "name": "Middle School Mathematics (5164)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5442",
+  "name": "Middle School Science (5442)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5089",
+  "name": "Middle School Social Studies (5089)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5589",
+  "name": "Middle School Social Studies (5589)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5114",
+  "name": "Music: Content and Instruction (5114)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5113",
+  "name": "Music: Content Knowledge (5113)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5115",
+  "name": "Music: Instrumental and General Knowledge (5115)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5116",
+  "name": "Music: Vocal and General Knowledge (5116)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5154",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: English Language Arts and Social Studies (5154)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5155",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: Mathematics and Science (5155)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5152",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: Pedagogy, English Language Arts and Social Studies, Mathematics and Science (5152; subtests: 5153, 5154, 5155)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5153",
+  "name": "Pennsylvania Grades 4-8 Core Assessment: Pedagogy (5153)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5156",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: English Language Arts (5156)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5158",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: Mathematics (5158)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5159",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: Science (5159)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5157",
+  "name": "Pennsylvania Grades 4-8 Subject Concentration: Social Studies (5157)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5095",
+  "name": "Physical Education: Content and Design (5095)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5091",
+  "name": "Physical Education: Content Knowledge (5091)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5485",
+  "name": "Physical Science (5485)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5266",
+  "name": "Physics (5266)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5621",
+  "name": "Principles of Learning and Teaching (PLT): Early Childhood (5621)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5623",
+  "name": "Principles of Learning and Teaching (PLT): Grades 5-9 (5623)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5624",
+  "name": "Principles of Learning and Teaching (PLT): Grades 7-12 (5624)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5622",
+  "name": "Principles of Learning and Teaching (PLT): Grades K-6 (5622)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5625",
+  "name": "Principles of Learning and Teaching (PLT): PreK\u201312 (5625)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5391",
+  "name": "Psychology (5391)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5302",
+  "name": "Reading Specialist (5302)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5671",
+  "name": "Russian: World Language (5671)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5422",
+  "name": "School Counselor (5422)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "6990",
+  "name": "School Leaders Licensure Assessment (SLLA) (6990)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5312",
+  "name": "School Librarian (5312)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5403",
+  "name": "School Psychologist (5403)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "6991",
+  "name": "School Superintendent Assessment (SSA) (6991)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5086",
+  "name": "Social Studies: Content and Interpretation (5086)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5581",
+  "name": "Social Studies (5581)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5952",
+  "name": "Sociology (5952)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5195",
+  "name": "Spanish: World Language (5195)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5692",
+  "name": "Special Education: Early Childhood/Early Intervention (5692)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5272",
+  "name": "Special Education: Education of Deaf and Hard of Hearing Students (5272)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5355",
+  "name": "Special Education: Foundational Knowledge (5355)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5547",
+  "name": "Special Education: Severe to Profound (5547)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5881",
+  "name": "Special Education: Teaching Speech to Students with Language Impairments (5881)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5372",
+  "name": "Special Education: Teaching Students with Behavioral Disorders and Emotional Disturbances (5372)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5322",
+  "name": "Special Education: Teaching Students with Intellectual Disabilities (5322)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5383",
+  "name": "Special Education: Teaching Students with Learning Disabilities (5383)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5282",
+  "name": "Special Education: Teaching Students with Visual Impairments (5282)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5222",
+  "name": "Speech and Theatre (5222)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5221",
+  "name": "Speech Communication: Content Knowledge (5221)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5331",
+  "name": "Speech-Language Pathology (5331)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5036",
+  "name": "STEM for the Elementary Grades (5036)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5205",
+  "name": "Teaching Reading: Elementary (5205)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5206",
+  "name": "Teaching Reading: K-12 (5206)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5053",
+  "name": "Technology and Engineering Education (5053)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5641",
+  "name": "Theatre (5641)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5941",
+  "name": "World and U.S. History: Content Knowledge (5941)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 26, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5841",
+  "name": "World Languages Pedagogy (5841)",
+  "testDate": "2026-09-19",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5001",
+  "name": "5001",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5002",
+  "name": "5002",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5003",
+  "name": "5003",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5004",
+  "name": "5004",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5005",
+  "name": "5005",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5901",
+  "name": "5901",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "7811",
+  "name": "7811",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8002",
+  "name": "8002",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8003",
+  "name": "8003",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8004",
+  "name": "8004",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8005",
+  "name": "8005",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "8006",
+  "name": "8006",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5713",
+  "name": "5713",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 13, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 15, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5723",
+  "name": "5723",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 6, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5733",
+  "name": "5733",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5101",
+  "name": "5101",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5025",
+  "name": "5025",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5412",
+  "name": "5412",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5038",
+  "name": "5038",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 16, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5039",
+  "name": "5039",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 20, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5652",
+  "name": "5652",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5362",
+  "name": "5362",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5511",
+  "name": "5511",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "September 29, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 1, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 2, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5857",
+  "name": "5857",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 23, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5358",
+  "name": "5358",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "November 13, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-09-22",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-09-24",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-09-25",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "success": true,
+   "scoreReportDate": "October 9, 2026"
+  }
+ },
+ {
+  "place": "home",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-10-02",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ },
+ {
+  "place": "home",
+  "id": "5123",
+  "name": "5123",
+  "testDate": "2026-10-16",
+  "resp": {
+   "action": "ScoreReports-ReportDateForEveryone",
+   "queryString": "",
+   "locale": "en_US",
+   "error": true
+  }
+ }
+]

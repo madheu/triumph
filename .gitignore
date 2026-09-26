@@ -8,6 +8,9 @@ backups/
 *.zip
 *.7z
 
+# ---- 生产库导出（含真实用户邮箱等 PII，禁止入库）----
+db/backup-*
+
 # ---- Question-bank intermediate batches (final = assets/questions-full.json) ----
 assets/batches/
 

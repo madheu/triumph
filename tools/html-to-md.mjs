@@ -339,6 +339,8 @@ const PAGES = [
   'praxis-5001-kentucky-requirements',
   // 2026-09-14 batch: Praxis Steps explainer
   'praxis-steps',
+  // 2026-09-20 batch: Praxis score release dates
+  'when-do-praxis-scores-come-out',
   // static trust/developer pages — markdown generated from their <article> so it never drifts
   'about',
   'contact',

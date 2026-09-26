@@ -22,6 +22,8 @@ export const MD_ROUTES = (() => {
     '/praxis-8006-teaching-reading',
     // 2026-09-14 batch: Praxis Steps explainer
     '/praxis-steps',
+    // 2026-09-20 batch: Praxis score release dates
+    '/when-do-praxis-scores-come-out',
   ];
   const map = new Map();
   const mdName = p => (p === '/' || p === '/index' ? '/md/index.md' : `/md${p}.md`);
