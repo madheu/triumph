@@ -100,5 +100,6 @@
             </div>
           </div>`,l.querySelectorAll(".opt:not(:disabled)").forEach(r=>{r.addEventListener("click",()=>{y=Number(r.dataset.i),f=!0,m()})}),l.querySelectorAll("[data-r]").forEach(r=>{r.addEventListener("click",()=>{const d=r.dataset.r,c=h(),s=c[a]||{stage:0};if(d==="again")s.stage=0,s.nextDue=Date.now()+w;else if(d==="easy")s.stage=4,s.nextDue=Date.now()+21*w;else{s.stage=Math.min(s.stage+1,4);const L=b[Math.min(s.stage,b.length-1)];s.nextDue=Date.now()+L*w}s.lastResult=d,c[a]=s,x(c),g++,f=!1,y=null,g>=v.length&&(n.view="done",n.reviewed=v.length),m()})})}async function k(){if(o.isLoggedIn())try{await o.syncPull()}catch(e){}const t=D().srs,a=E(t);a.length===0?n.view="empty":(v=a,g=0,n.view="cards"),m()}function boot(){loadBank(),k()}if(window.LDTestSwitcher)LDTestSwitcher.mount("#test-switcher",{onChange:function(){n={view:"loading"},v=[],g=0,y=null,f=!1,boot()}});boot()})();
 </script>
+<script src="/js/pro-click-tracking.js" defer></script>
 </body>
 </html>

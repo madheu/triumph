@@ -66,7 +66,6 @@ Agents can call Learndiag programmatically: REST API (`GET https://learndiag.com
 - [New Jersey](https://learndiag.com/praxis-5001-new-jersey-requirements): Praxis 5001 for Elementary K–6, scores 157/157/155/159.
 - [South Carolina](https://learndiag.com/praxis-5001-south-carolina-requirements): 5001 accepted only through Aug 2026/2027; 5901 bundle and 7811 CKT are the newer options.
 - [Kentucky](https://learndiag.com/praxis-5001-kentucky-requirements): still requires Praxis 5001 for elementary (P–5); scores 157/157/155/159 plus PLT K–6 at 160, set in 16 KAR 6:010.
-- [Pennsylvania](https://learndiag.com/praxis-5001-pennsylvania-requirements): PreK–4 runs on the PECT exams, not Praxis 5001; the only Praxis tests for elementary are the Grades 5–6 add-on pair (5154/5155).
 - [Alabama](https://learndiag.com/praxis-5001-alabama-requirements): dropped the 5001 reading subtest in 2020; elementary K–6 takes Praxis 5901 (math 157 / social studies 154) plus Foundations of Reading 190 (233) and edTPA.
 - [Maryland](https://learndiag.com/praxis-5001-maryland-requirements): no 5001; elementary 1–6 takes Teaching Reading 5205 (159) plus the 7811 CKT series (161/150/154/161).
 

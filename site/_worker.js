@@ -3501,7 +3501,7 @@ var MD_ROUTES = (() => {
     "/praxis-5001-south-carolina-requirements",
     "/praxis-5001-kentucky-requirements",
     // 2026-08-24 batch: non-5001 state research pages
-    "/praxis-5001-pennsylvania-requirements",
+    // (/praxis-5001-pennsylvania-requirements retired 2026-09-27 → 410, see worker.mjs)
     "/praxis-5001-alabama-requirements",
     "/praxis-5001-maryland-requirements",
     // 2026-09-04 batch: 8006 pillar page
@@ -4380,6 +4380,12 @@ var worker_default = {
       }
       if (path === "/praxis-5001-passing-scores" || path === "/praxis-5001-passing-scores.html") {
         return Response.redirect("https://learndiag.com/score-calculator", 301);
+      }
+      if (path === "/praxis-5001-pennsylvania-requirements" || path === "/praxis-5001-pennsylvania-requirements.html") {
+        return new Response("410 Gone \u2014 this page was retired. Pennsylvania PreK-4 certification uses the PECT/PAPA system (Pearson), not Praxis 5001.", {
+          status: 410,
+          headers: { "content-type": "text/plain; charset=utf-8" }
+        });
       }
       if (path === "/mcp") return handleMcp(request, env);
       const authDoc = AUTH_DISCOVERY_ROUTES[path];

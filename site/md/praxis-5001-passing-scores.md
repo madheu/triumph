@@ -68,14 +68,13 @@ Do not assume "no score listed" means "no test required." Verify with the agency
 
 ## State Guides for Elementary Candidates
 
-For a deeper look at eight states where elementary candidates still use the Praxis 5001 family, are navigating its transition, or take a different elementary exam entirely, see our state guides:
+For a deeper look at seven states where elementary candidates still use the Praxis 5001 family, are navigating its transition, or take a different elementary exam entirely, see our state guides:
 
 - [Praxis 5001 Requirements in Virginia](https://learndiag.com/praxis-5001-virginia-requirements) — 5001 plus Teaching Reading 5205
 - [Praxis 5001 Requirements in Tennessee](https://learndiag.com/praxis-5001-tennessee-requirements) — 5001 plus 5205, scores via TNCompass
 - [Praxis 5001 Requirements in Kentucky](https://learndiag.com/praxis-5001-kentucky-requirements) — scores set by regulation 16 KAR 6:010
 - [Praxis 5001 Requirements in New Jersey](https://learndiag.com/praxis-5001-new-jersey-requirements) — 5001 for Elementary K–6
 - [Praxis 5001 Requirements in South Carolina](https://learndiag.com/praxis-5001-south-carolina-requirements) — the 2026 transition to the 5901 bundle and CKT
-- [Praxis 5001 Requirements in Pennsylvania](https://learndiag.com/praxis-5001-pennsylvania-requirements) — what elementary candidates take instead of the 5001
 - [Praxis 5001 Requirements in Alabama](https://learndiag.com/praxis-5001-alabama-requirements) — the 2025–26 transition and which test your cohort needs
 - [Praxis 5001 Requirements in Maryland](https://learndiag.com/praxis-5001-maryland-requirements) — Teaching Reading plus the CKT path for Elementary (1–6)
 

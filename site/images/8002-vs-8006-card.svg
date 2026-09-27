@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .t-title{font-size:30px;font-weight:700;fill:#1a2332}
+      .t-sub{font-size:15px;fill:#5a6a7d}
+      .t-code2{font-size:15px;font-weight:700;fill:#1f6feb;letter-spacing:.05em}
+      .t-code6{font-size:15px;font-weight:700;fill:#0f8a5f;letter-spacing:.05em}
+      .t-q{font-size:26px;font-weight:700;fill:#1a2332}
+      .t-body{font-size:14.5px;fill:#2b3748}
+      .t-small{font-size:12.5px;fill:#5a6a7d}
+      .t-vs{font-size:20px;font-weight:800;fill:#ffffff}
+      .t-foot{font-size:11.5px;fill:#8a97a6}
+    </style>
+  </defs>
+
+  <rect width="900" height="560" rx="18" fill="#f6f8fb"/>
+  <rect width="900" height="560" rx="18" fill="none" stroke="#dde5ee"/>
+
+  <!-- Header -->
+  <text x="40" y="52" class="t-title">Praxis 8002 vs Praxis 8006</text>
+  <text x="40" y="76" class="t-sub">Both are in the Praxis 8000 series (Elementary Education Fundamentals). They test very different things.</text>
+
+  <!-- Card 8002 -->
+  <rect x="40" y="105" width="390" height="330" rx="14" fill="#ffffff" stroke="#dde5ee"/>
+  <rect x="40" y="105" width="390" height="6" rx="3" fill="#1f6feb"/>
+  <text x="62" y="142" class="t-code2">PRAXIS 8002</text>
+  <text x="62" y="164" class="t-small" fill="#5a6a7d">Reading and Language Arts</text>
+  <text x="62" y="208" class="t-q">"Can you read?"</text>
+  <text x="62" y="236" class="t-body">Tests your own reading &amp; language</text>
+  <text x="62" y="256" class="t-body">arts skills.</text>
+
+  <line x1="62" y1="278" x2="408" y2="278" stroke="#eef2f7"/>
+  <text x="62" y="300" class="t-body">100 min · 80 selected-response</text>
+  <text x="62" y="324" class="t-small">Reading (42)</text>
+  <text x="62" y="344" class="t-small">Writing, Speaking &amp; Listening (38)</text>
+  <line x1="62" y1="362" x2="408" y2="362" stroke="#eef2f7"/>
+  <text x="62" y="384" class="t-small">Praxis Steps: September 2026</text>
+  <text x="62" y="404" class="t-small">Confirmed: WV 152 · AR 137 (institution-level)</text>
+
+  <!-- Card 8006 -->
+  <rect x="470" y="105" width="390" height="330" rx="14" fill="#ffffff" stroke="#dde5ee"/>
+  <rect x="470" y="105" width="390" height="6" rx="3" fill="#0f8a5f"/>
+  <text x="492" y="142" class="t-code6">PRAXIS 8006</text>
+  <text x="492" y="164" class="t-small" fill="#5a6a7d">Teaching Reading</text>
+  <text x="492" y="208" class="t-q">"Can you teach</text>
+  <text x="492" y="234" class="t-q">someone to read?"</text>
+  <text x="492" y="262" class="t-body">Tests professional knowledge of</text>
+  <text x="492" y="282" class="t-body">reading instruction.</text>
+
+  <line x1="492" y1="300" x2="838" y2="300" stroke="#eef2f7"/>
+  <text x="492" y="322" class="t-body">100 min · 80 selected-response</text>
+  <text x="492" y="346" class="t-small">Foundational Literacy Skills (32)</text>
+  <text x="492" y="366" class="t-small">Fluency &amp; Vocabulary (24)</text>
+  <text x="492" y="386" class="t-small">Comprehension &amp; Written Expression (24)</text>
+  <line x1="492" y1="404" x2="838" y2="404" stroke="#eef2f7"/>
+  <text x="492" y="424" class="t-small">Praxis Steps: 2027 · Not adopted in WV / AR</text>
+
+  <!-- VS badge -->
+  <circle cx="450" cy="270" r="26" fill="#1a2332"/>
+  <text x="450" y="277" class="t-vs" text-anchor="middle">VS</text>
+
+  <!-- Footer strip -->
+  <rect x="40" y="460" width="820" height="60" rx="10" fill="#eef3fb"/>
+  <text x="60" y="485" class="t-body" font-weight="600">Not the same as PECT 8006 — that's a Pearson exam for Pennsylvania.</text>
+  <text x="60" y="505" class="t-small">Score scale 100–200 · learndiag.com · Last verified 2026-09-26</text>
+</svg>

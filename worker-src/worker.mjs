@@ -150,6 +150,16 @@ export default {
         return Response.redirect('https://learndiag.com/score-calculator', 301);
       }
 
+      // 410 Gone: PA page retired. Pennsylvania elementary (PreK-4) certification uses
+      // PECT/PAPA (Pearson), not Praxis 5001 — the page's premise was wrong, so no
+      // redirect target (a 301 to an unrelated page would be a soft-404).
+      if (path === '/praxis-5001-pennsylvania-requirements' || path === '/praxis-5001-pennsylvania-requirements.html') {
+        return new Response('410 Gone — this page was retired. Pennsylvania PreK-4 certification uses the PECT/PAPA system (Pearson), not Praxis 5001.', {
+          status: 410,
+          headers: { 'content-type': 'text/plain; charset=utf-8' },
+        });
+      }
+
       /* ---------- machine routes ---------- */
 
       if (path === '/mcp') return handleMcp(request, env);

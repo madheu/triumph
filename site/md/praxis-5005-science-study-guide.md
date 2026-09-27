@@ -206,6 +206,49 @@ A balanced study guide helps you cover Praxis 5005, but efficient preparation st
 
 Take Learndiag’s [free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic) to identify where to focus. Then build your review around missed concepts, not around the chapters that feel most comfortable.
 
+## Praxis 5005 Science Study Guide: Content Areas, Prep Strategy, and the New Praxis 8005
+
+### The three content areas of elementary science
+
+Whether you are preparing for the legacy 5005 or its 8000-series counterpart, elementary science exams are built around the same three domains:
+
+- **Earth and Space Science** — Earth's structure and materials, weather and climate, the water cycle, and the solar system.
+- **Life Science** — cells and organisms, ecosystems and food webs, heredity, and adaptation.
+- **Physical Science** — matter and its properties, forces and motion, and energy.
+
+Expect questions beyond recall: many items describe a classroom investigation or a student's misconception and ask you to respond as a teacher. Inquiry skills — forming hypotheses, reading data tables and graphs, designing fair tests — run through all three domains, so practice interpreting data, not just memorizing facts. Verify the 5005's current question count and time limit in the official Study Companion before scheduling your prep.
+
+### A science prep strategy that works
+
+1. **Diagnose by domain.** Score a timed practice set separately for Earth, Life, and Physical Science — most candidates are uneven, and a blended score hides it.
+2. **Rebuild fundamentals in your weakest domain first.** The exam tests breadth at K–6 depth, so reviewing core concepts (states of matter, rock cycle, food webs) pays off faster than advanced study.
+3. **Drill data interpretation.** Charts, graphs, and experiment descriptions appear everywhere; make extracting answers from them automatic.
+4. **Finish with realistic timed practice** in the final week, reviewing every missed item — including lucky guesses.
+
+### Praxis 5005 and Praxis 8005: how they correspond
+
+Praxis 8005, *Elementary Education Fundamentals: Science*, is the 8000-series counterpart of the 5005. The new series was first administered on **March 9, 2026**; the legacy 5000 series retires in **August 2028**. Praxis 8005 is a 90-minute selected-response test — the only one of the five 8000-series exams with that shorter timing — with an on-screen scientific calculator, covering the same three domains on the same 100–200 scale. From **September 2026** it is also available in the modular Praxis Steps format.
+
+Which exam you should take depends on which code your state or program accepts — adoption is still rolling out, so verify on the official state requirements page before registering. For the new-format exam, see our [Praxis 8005 Science study guide](https://learndiag.com/praxis-8005-science).
+
+### Praxis 5005 Science FAQ
+
+#### Which science domain should I study most?
+
+Let your diagnostic decide — the domains carry comparable weight, so the fastest gains come from closing gaps in your weakest area. Physical science is the most common weak spot for elementary candidates.
+
+#### Do I need a calculator for the Praxis 5005?
+
+Check the official test information page for the policy in effect on your test date. On Praxis 8005 an on-screen scientific calculator is provided — but policies are test-specific, so never assume one exam's rules apply to another.
+
+#### Should I take the 5005 or Praxis 8005?
+
+That depends entirely on which test your state or preparation program accepts. The legacy series runs until August 2028; the 8000 series began in March 2026 and is being adopted state by state. Confirm the accepted code on the official ETS state requirements page or with your program before registering — the tests are not interchangeable.
+
+#### Can I use 5005 materials to prepare for Praxis 8005?
+
+Content review transfers — the three domains are the same — but format practice does not. Praxis 8005 has its own 90-minute timing, an on-screen calculator, and a modular Steps option. Finish with practice built for the exam you will actually take.
+
 ## Sources
 
 [6] [https://praxis.ets.org/test/elementary-education-science-subtest-5005.html](https://praxis.ets.org/test/elementary-education-science-subtest-5005.html)
@@ -213,5 +256,7 @@ Take Learndiag’s [free Praxis 5001 readiness diagnostic](https://learndiag.com
 [8] [https://praxis.ets.org/test-takers/test-day-calculator-use.html](https://praxis.ets.org/test-takers/test-day-calculator-use.html)
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
+
+Related Guide   [Praxis 8005 Science study guide](https://learndiag.com/praxis-8005-science) — the 8000-series counterpart of the 5005, first administered March 9, 2026. Covers the 90-minute format with on-screen scientific calculator, the Earth & Space, Life, and Physical Science domains, and the modular Praxis Steps option available from September 2026.
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

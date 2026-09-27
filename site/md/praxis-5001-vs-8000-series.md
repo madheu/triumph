@@ -155,6 +155,34 @@ Use this checklist before paying for either test family:
 
 Start with the [ETS state requirements directory](https://praxis.ets.org/state-requirements.html), then verify the details with your state licensing agency or preparation program. ETS itself notes that each state and licensing organization establishes its own requirements.[7]
 
+## September 2026 Update: Where the Changeover Stands Now
+
+Since this guide was first published, the 5001-to-8000 transition has moved from "announced" to "underway." Here is what has actually changed — and what has not — as of September 2026.
+
+### Praxis Steps 8002–8005 are now live
+
+The four subject tests of the Praxis Elementary Education Fundamentals series — 8002 Reading and Language Arts, 8003 Mathematics, 8004 Social Studies, and 8005 Science — entered their first operational Steps window in September 2026, so candidates in adopting states can now sit the new tests instead of the legacy subtests. The fifth test, **Praxis 8006** Teaching Reading: Elementary, follows in 2027 and is not yet part of any confirmed state requirement. All tests in both series report on the **100–200 score scale**.
+
+### Seven states have confirmed adoption so far
+
+As of this update, seven states confirm the 8000 series on their official ETS state requirements pages — and they split in a notable pattern:
+
+- **West Virginia, Arkansas, Virginia (use 8002):** qualifying scores 152/137/152 (8002), with 8003–8005 at 152/147/143 in WV and VA, 136/130/126 in AR. Praxis 8006 is not listed.
+- **Idaho, South Dakota, Vermont (use Praxis 8006):** 8003–8005 at 152/147/143, plus Praxis 8006 at 152; 8002 is not listed.
+- **South Carolina (uses neither for reading):** 8003–8005 at 152/147/143 effective 2026-09-02, with reading covered by 5205 Teaching Reading: Elementary (159); legacy 5003/5004/5005 run in parallel through 2027-09-01.
+
+For every other state, adoption is **not listed or not verified** as of September 2026 — check your state's official ETS requirements page before registering. The legacy 5000 series remains available until its retirement in **August 2028**, so in most states you still have a genuine choice. Full detail: [8000 series state requirements tracker](https://learndiag.com/praxis-8000-series-state-requirements).
+
+### Three new free tools to plan your next step
+
+Whichever series you take, these free tools plug directly into the comparison on this page:
+
+- [Praxis score calculator](https://learndiag.com/score-calculator) — convert a raw practice score into an estimated scaled score on the 100–200 scale, for both series.
+- [14-day study planner](https://learndiag.com/study-planner) — turn your test date and weakest domain into a day-by-day prep plan.
+- [Which test should you take?](https://learndiag.com/which-praxis-elementary-education-test) — a verification path based on your state and program, so you register for the right code.
+
+*This page is an independent study resource and is not affiliated with ETS. Adoption details above are re-verified regularly; the date at the bottom of this page shows the last verification.*
+
 ## Frequently Asked Questions
 
 ### Is Praxis 8001 the replacement for Praxis 5001?

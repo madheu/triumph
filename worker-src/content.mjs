@@ -16,7 +16,8 @@ export const MD_ROUTES = (() => {
     '/praxis-5001-new-jersey-requirements', '/praxis-5001-south-carolina-requirements',
     '/praxis-5001-kentucky-requirements',
     // 2026-08-24 batch: non-5001 state research pages
-    '/praxis-5001-pennsylvania-requirements', '/praxis-5001-alabama-requirements',
+    // (/praxis-5001-pennsylvania-requirements retired 2026-09-27 → 410, see worker.mjs)
+    '/praxis-5001-alabama-requirements',
     '/praxis-5001-maryland-requirements',
     // 2026-09-04 batch: 8006 pillar page
     '/praxis-8006-teaching-reading',

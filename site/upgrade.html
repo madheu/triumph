@@ -71,7 +71,7 @@
         <li>Early access to all new Pro study tools</li>
       </ul>
 
-      <button id="upgrade-btn" class="btn btn-primary">Upgrade to Pro</button>
+      <button id="upgrade-btn" class="btn btn-primary" data-pro-click data-pro-click-source="pricing_table_cta">Upgrade to Pro</button>
       <button id="portal-btn" class="btn btn-secondary" style="display:none">Manage subscription</button>
 
       <div style="text-align:center;margin-top:18px">
@@ -104,7 +104,7 @@
         <span class="badge pro" style="margin:0;flex-shrink:0">14-DAY REFUND</span>
         <span style="font-size:13.5px;line-height:1.6">Same 14-day refund applies to this one-off purchase.</span>
       </div>
-      <button id="report-btn" class="btn btn-secondary" style="margin-top:0">Buy one report &mdash; $9.99</button>
+      <button id="report-btn" class="btn btn-secondary" style="margin-top:0" data-pro-click data-pro-click-source="pricing_table_report_cta">Buy one report &mdash; $9.99</button>
       <p id="report-err" class="err" style="margin-top:12px"></p>
       <p class="note">
         You can buy it without signing in. If you do create a free account first, the report is also
@@ -195,5 +195,6 @@
     });
   })();</script>
 
+<script src="/js/pro-click-tracking.js" defer></script>
 </body>
 </html>

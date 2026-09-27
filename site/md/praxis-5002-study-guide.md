@@ -170,10 +170,52 @@ Before test day, make sure you can:
 
 You do not need to study every topic equally. You need a clear picture of what you know, what you confuse, and what to practice next. [Take the free Praxis 5001 readiness diagnostic](https://learndiag.com/diagnostic) to turn that picture into a focused study plan.
 
+## Praxis 5002 Test Prep: Study Methods, Question Format, and the New 8000 Series
+
+Effective Praxis 5002 test prep starts with knowing what the Reading and Language Arts subtest measures: reading comprehension and foundational skills on one side, writing, speaking, and listening on the other. Questions are selected-response, and many are framed as classroom scenarios that ask you to apply knowledge as a teacher would. Confirm the current question count and time limit in the official Study Companion before building your plan.
+
+### A practical 5002 prep method
+
+1. **Diagnose first.** Take a timed practice set before opening a review book, and score it by content area so you know where your gaps actually are.
+2. **Study to the gap.** Put most of your hours into your two weakest domains. Rereading what you already know feels productive but rarely moves a scaled score.
+3. **Re-test under time pressure.** In the final two weeks, alternate full timed sections with review of every missed question — including lucky guesses. Write down why the right answer is right; that habit transfers to unfamiliar items.
+
+When evaluating any 5002 test prep resource, check three things: whether its questions mirror the scenario-based style of the real exam, whether explanations teach the underlying skill, and whether it was written for the current version of the test.
+
+### Praxis 5002 and the new Praxis 8002
+
+Praxis 8002, *Elementary Education Fundamentals: Reading and Language Arts*, is the 8000-series counterpart of the 5002. The 8000 series was first administered on **March 9, 2026**, and the legacy 5000 series is scheduled to retire in **August 2028**. Praxis 8002 is a 100-minute, 80-question selected-response test covering Reading and Writing, Speaking & Listening, scored on the same 100–200 scale, and available in the modular Praxis Steps format from **September 2026**.
+
+Which test you should take depends on which code your state or program accepts — adoption of the 8000 series is still rolling out, so verify on the official state requirements page before registering. The two tests are not interchangeable. For the new-format exam in detail, see our [Praxis 8002 Reading and Language Arts study guide](https://learndiag.com/praxis-8002-reading-and-language-arts).
+
+### Praxis 5002 Test Prep FAQ
+
+#### How long should I study for the Praxis 5002?
+
+Most candidates need four to eight weeks, but let your diagnostic score set the calendar. Close to your state's qualifying score? Two to three focused weeks may suffice; a large gap in one domain calls for a longer runway.
+
+#### What question types appear on the Praxis 5002?
+
+Selected-response questions, including scenario-based items that describe a classroom situation and ask for the best instructional response. Verify current counts and timing in the official Study Companion.
+
+#### Should I take Praxis 5002 or Praxis 8002?
+
+That depends on which test your state or preparation program accepts. The 5000 series runs until August 2028; the 8000 series began in March 2026 and is being adopted state by state. Check the official ETS state requirements page for your state, or ask your program, before you register.
+
+#### Is the Praxis 5002 being discontinued?
+
+Yes — the legacy 5000 series, including 5002, retires in August 2028. Until then it remains fully available. If you are testing near the transition, confirm with your state that 5002 scores will be accepted for your certification timeline.
+
+#### Can I use Praxis 8002 materials to prepare for the 5002?
+
+Partially. The underlying content overlaps heavily, so skill-building transfers — but format and structure differ, so always finish with practice written for the 5002 specifically.
+
 ## Sources
 
 [3] ETS, “Elementary Education: Reading and Language Arts Subtest (5002).” [https://praxis.ets.org/test/elementary-education-reading-and-language-arts-subtest-5002.html](https://praxis.ets.org/test/elementary-education-reading-and-language-arts-subtest-5002.html)
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
+
+Related Guide   [Praxis 8002 Reading and Language Arts study guide](https://learndiag.com/praxis-8002-reading-and-language-arts) — the 8000-series counterpart of the 5002, first administered March 9, 2026. Covers the new 100-minute, 80-question format, the Reading and Writing/Speaking/Listening domains, and how the modular Praxis Steps option works from September 2026.
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)

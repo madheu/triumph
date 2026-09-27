@@ -83,6 +83,53 @@ Each subtest produces its own scaled score, typically reported on a 100–200 sc
 
 → [Take the free 5001 readiness diagnostic](https://learndiag.com/diagnostic)
 
+## Choosing a Praxis 5001 Study Book and Prep Materials
+
+Search for a "Praxis 5001 study book" and you will find dozens of options, but they fall into two categories: official materials from the test maker and third-party study guides. Knowing how to combine them matters more than which single book you buy.
+
+### Official materials first
+
+Start with the free Study Companion for each 5001 subtest — the only resource written by the people who write the exam, and the closest thing to an official syllabus. The official interactive practice tests use real retired questions in the real on-screen format, which no printed book reproduces. Use them as benchmarks: one at the start to diagnose, one near the end to confirm readiness.
+
+### How to evaluate a third-party study book
+
+Third-party books fill the gap official materials leave: structured content review and extra practice volume. Before buying, check four things:
+
+- **Edition.** It should explicitly cover the current 5001 subtests (5002, 5003, 5004, 5005), not the retired pre-2014 format.
+- **Question style.** The real exam uses selected-response items, many framed as classroom scenarios. Books that test only vocabulary recall will underprepare you.
+- **Explanations.** A good book teaches why wrong answers are wrong. Skim a sample chapter first.
+- **Diagnostics.** A pre-test or domain-level scoring makes it far easier to aim your study hours.
+
+### Free resources worth using
+
+Beyond the official Study Companions, useful free options include state curriculum standards (the exam tracks elementary standards closely), open courseware for weak subjects, and free question banks from reputable prep sites. Treat free practice tests as content review, not score predictors — only an official practice test approximates real scoring.
+
+### Planning ahead: the 8000 series
+
+The legacy 5001 series retires in August 2028, and its replacement — the 8000-series Elementary Education Fundamentals tests — was first administered on March 9, 2026, on the same 100–200 score scale. If your certification timeline crosses the transition, understand both systems before investing in materials; our [guide to the Praxis Elementary Education Fundamentals tests](https://learndiag.com/praxis-elementary-education-fundamentals) covers the new structure, pricing, and confirmed state adoption.
+
+### Praxis 5001 Study Materials FAQ
+
+#### Is one Praxis 5001 study book enough to pass?
+
+Usually not by itself. The most reliable combination is the official Study Companion for scope, one well-reviewed third-party book for structured review, and at least one official practice test for realistic scoring. Strong recent coursework may let you skip the book for that subtest.
+
+#### Are free Praxis 5001 practice tests accurate?
+
+They vary widely. Free third-party tests are useful for stamina and content review, but difficulty and scoring rarely match the real exam. Use them to find weak topics; use an official practice test for a score estimate.
+
+#### One combined book or a separate book per subtest?
+
+A combined 5001 book is usually the better value and covers all four subtests at consistent quality. Add a dedicated single-subject book only where your diagnostic shows a large gap needing deeper review.
+
+#### Do 5001 study books cover the new 8000 series?
+
+Generally no — the two series differ in structure and timing, and their prep materials are sold separately. Content knowledge overlaps substantially, so subject review still transfers; just finish with practice that matches the test you will actually take.
+
+#### How do I know whether to prepare for the 5001 or the 8000 series?
+
+That is decided by which test your state or educator preparation program accepts — not by preference. Check the official ETS state requirements page for your state, or confirm with your program, before registering.
+
 ## Subtest study guides
 
 Go deeper on each gate with our single-subject guides:
@@ -91,5 +138,7 @@ Go deeper on each gate with our single-subject guides:
 - [Praxis 5003 Math Study Guide](https://learndiag.com/praxis-5003-math-study-guide) — what to study and how to use the calculator
 - [Praxis 5004 Social Studies Study Guide](https://learndiag.com/praxis-5004-social-studies-study-guide) — a high-yield review plan
 - [Praxis 5005 Science Study Guide](https://learndiag.com/praxis-5005-science-study-guide) — earth, life, physical science, and inquiry
+
+Planning Beyond the 5001  The legacy 5001 series retires in August 2028, and its replacement is already live: the 8000-series Elementary Education Fundamentals tests were first administered on March 9, 2026, with a modular Praxis Steps option rolling out from September 2026. If your certification timeline crosses the transition window, read our [complete guide to the Praxis Elementary Education Fundamentals tests](https://learndiag.com/praxis-elementary-education-fundamentals) — it covers all five new-format exams, current pricing, confirmed state adoption, and how to verify which series your state accepts.
 
 Related: [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [Subtests Explained](https://learndiag.com/praxis-5001-subtests-explained)

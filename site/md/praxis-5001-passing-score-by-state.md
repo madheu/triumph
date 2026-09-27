@@ -45,7 +45,7 @@ A "passing score by state" list is incomplete without the states where the 5001 
 
 | State | What elementary candidates take instead |
 | --- | --- |
-| Pennsylvania | The PreK–4 certificate runs on the PECT modules, not Praxis. Praxis tests appear only for the Grades 5–6 add-on pair (5154 + 5155).[6] |
+| Pennsylvania | The PreK–4 certificate runs on the PECT modules, not Praxis. Praxis tests appear only for the Grades 5–6 add-on pair (5154 + 5155).[10] |
 | Maryland | No 5001. Elementary 1–6 candidates take Teaching Reading 5205 (159) plus the 7811 CKT series (161/150/154/161).[6] |
 | Alabama | Elementary K–6 takes the 5003/5004/5005 single subtests or the 5903/5904/5905 bundle at 157/154/158, plus Foundations of Reading 890 (Pearson, 233) and edTPA (K–6 cut 44).[6] |
 | North Carolina | Moved its elementary mathematics requirement from 5003 to the Mathematics CKT test (7813).[8] |
@@ -92,14 +92,13 @@ Keep two different clocks apart. ETS will send a score report for some years aft
 
 ## State-by-State Praxis 5001 Guides
 
-Learndiag maintains a per-state guide covering required tests, per-subtest qualifying scores, and how to verify them — including the three states (Pennsylvania, Alabama, Maryland) where the elementary exam is not the 5001:
+Learndiag maintains a per-state guide covering required tests, per-subtest qualifying scores, and how to verify them — including two of the states (Alabama, Maryland) where the elementary exam is not the 5001:
 
 - [Praxis 5001 Requirements in Tennessee](https://learndiag.com/praxis-5001-tennessee-requirements) — tests, scores, and certification steps
 - [Praxis 5001 Requirements in Kentucky](https://learndiag.com/praxis-5001-kentucky-requirements) — scores set by regulation 16 KAR 6:010
 - [Praxis 5001 Requirements in Virginia](https://learndiag.com/praxis-5001-virginia-requirements) — 5001 plus Teaching Reading 5205
 - [Praxis 5001 Requirements in New Jersey](https://learndiag.com/praxis-5001-new-jersey-requirements) — 5001 for Elementary K–6
 - [Praxis 5001 Requirements in South Carolina](https://learndiag.com/praxis-5001-south-carolina-requirements) — the 2026 transition to the 5901 bundle and CKT
-- [Praxis 5001 Requirements in Pennsylvania](https://learndiag.com/praxis-5001-pennsylvania-requirements) — what elementary candidates take instead of the 5001
 - [Praxis 5001 Requirements in Alabama](https://learndiag.com/praxis-5001-alabama-requirements) — the 2025–26 transition and which test your cohort needs
 - [Praxis 5001 Requirements in Maryland](https://learndiag.com/praxis-5001-maryland-requirements) — Teaching Reading plus the CKT path for Elementary (1–6)
 
@@ -143,13 +142,15 @@ Your Praxis 5001 target is four state-specific numbers, not one national constan
 
 [5] ETS, "South Carolina Required Tests." [https://praxis.ets.org/state-requirements/southcarolina-tests.html](https://praxis.ets.org/state-requirements/southcarolina-tests.html)
 
-[6] State requirements documented in Learndiag's individual state guides: [Pennsylvania](https://learndiag.com/praxis-5001-pennsylvania-requirements), [Maryland](https://learndiag.com/praxis-5001-maryland-requirements), and [Alabama](https://learndiag.com/praxis-5001-alabama-requirements).
+[6] State requirements documented in Learndiag's individual state guides: [Maryland](https://learndiag.com/praxis-5001-maryland-requirements) and [Alabama](https://learndiag.com/praxis-5001-alabama-requirements).
 
 [7] Kentucky Administrative Regulation 16 KAR 6:010, "Selection of Assessment for Educator Preparation and Certification." [https://apps.legislature.ky.gov/law/kar/titles/016/006/010/](https://apps.legislature.ky.gov/law/kar/titles/016/006/010/)
 
 [8] ETS, "North Carolina Required Tests" and "The Praxis Elementary Education Assessment: Updates and Enhancements." [https://praxis.ets.org/state-requirements/northcarolina-tests.html](https://praxis.ets.org/state-requirements/northcarolina-tests.html) · [https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf)
 
 [9] South Carolina Department of Education, "Subject-Area Assessments (2026–27)" and "Assessment Requirements in Designated Fields." [https://ed.sc.gov/educators/certification/required-examinations/-subject-area-assessments-2026-27/](https://ed.sc.gov/educators/certification/required-examinations/-subject-area-assessments-2026-27/) · [https://ed.sc.gov/educators/certification/required-examinations/assessment-requirements-in-designated-fields/](https://ed.sc.gov/educators/certification/required-examinations/assessment-requirements-in-designated-fields/) · ETS, "Understanding Your Praxis Scores." [https://praxis.ets.org/understanding-scores.html](https://praxis.ets.org/understanding-scores.html)
+
+[10] Pennsylvania Department of Education, educator certification testing information, and the PECT/PAPA testing portal at pa.nesinc.com.
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 

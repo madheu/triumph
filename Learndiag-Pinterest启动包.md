@@ -51,7 +51,7 @@
 | 6 | Praxis 数学救星：5003 复习路线 | Praxis 5003 Math Study Guide — Free Prep | Praxis 5003 math concepts broken down simply, with free practice. Perfect for the math subtest of the 5001 series. | /praxis-5003-math-study-guide | Praxis Math Help (5003) |
 | 7 | 5005 科学：别被术语吓退 | Praxis 5005 Science Study Guide | Life, Earth, and physical science for the Praxis 5005 — what to prioritize so you don't drown in vocabulary. | /praxis-5005-science-study-guide | Praxis Elementary Education (5002–5005) |
 | 8 | Virginia 考生必看 | Praxis 5001 Virginia Requirements — Passing Score & More | Teaching in Virginia? Here's the Praxis 5001 score Virginia requires plus the license steps after you pass. | /praxis-5001-virginia-requirements | Praxis Passing Scores by State |
-| 9 | Pennsylvania 考生必看 | Praxis 5001 Pennsylvania Requirements — What You Need | PA teaching candidate? See the Praxis 5001 scores Pennsylvania expects and your next steps to certification. | /praxis-5001-pennsylvania-requirements | Praxis Passing Scores by State |
+| 9 | Maryland 考生必看 | Praxis 5001 Maryland Requirements — The CKT Path | Maryland doesn’t use 5001 for elementary (1–6): Teaching Reading 5205 (159) plus the 7811 CKT series. Here’s what you actually take instead. | /praxis-5001-maryland-requirements | Praxis Passing Scores by State |
 | 10 | Tennessee 考生必看 | Praxis 5001 Tennessee Requirements — Passing Scores | Tennessee bound? Praxis 5001 score requirements for TN, plus which tests you take instead in some cases. | /praxis-5001-tennessee-requirements | Praxis Passing Scores by State |
 | 11 | 你只剩 N 周，该先做哪套题？ | Praxis 5001 Study Planner — Weekly Prep Schedule | A week-by-week Praxis 5001 study planner that tells you exactly what to drill each day before test day. | /study-planner | Praxis 5001 Study Tips |
 | 12 | 算一下你的通过概率 | Free Praxis 5001 Score Checker & Pass Probability | Answer a few questions and see your Praxis 5001 pass probability before you book the test date. | /diagnostic | Free Praxis Practice Tests |
@@ -70,7 +70,7 @@ Cloudflare 那边的 token 读不到来源（referer）维度，所以用 UTM �
 | 6 | `https://learndiag.com/praxis-5003-math-study-guide?utm_source=pinterest&utm_medium=pin&utm_campaign=math_5003` |
 | 7 | `https://learndiag.com/praxis-5005-science-study-guide?utm_source=pinterest&utm_medium=pin&utm_campaign=science_5005` |
 | 8 | `https://learndiag.com/praxis-5001-virginia-requirements?utm_source=pinterest&utm_medium=pin&utm_campaign=state_va` |
-| 9 | `https://learndiag.com/praxis-5001-pennsylvania-requirements?utm_source=pinterest&utm_medium=pin&utm_campaign=state_pa` |
+| 9 | `https://learndiag.com/praxis-5001-maryland-requirements?utm_source=pinterest&utm_medium=pin&utm_campaign=state_md` |
 | 10 | `https://learndiag.com/praxis-5001-tennessee-requirements?utm_source=pinterest&utm_medium=pin&utm_campaign=state_tn` |
 | 11 | `https://learndiag.com/study-planner?utm_source=pinterest&utm_medium=pin&utm_campaign=study_planner` |
 | 12 | `https://learndiag.com/diagnostic?utm_source=pinterest&utm_medium=pin&utm_campaign=diagnostic` |

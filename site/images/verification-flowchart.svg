@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1120" width="800" height="1120" role="img" aria-labelledby="fg-title fg-desc">
+  <title id="fg-title">How to Verify Your Required Praxis Code — 4-step verification flowchart</title>
+  <desc id="fg-desc">A four-step flowchart showing where to verify which Praxis elementary education test code applies: ETS state requirements page, state department of education, educator preparation program, and a date check against series transition milestones.</desc>
+
+  <defs>
+    <style>
+      .title { font: 700 34px Arial, Helvetica, sans-serif; fill: #ffffff; }
+      .subtitle { font: 400 15px Arial, Helvetica, sans-serif; fill: #d8ece8; }
+      .stepnum { font: 700 20px Arial, Helvetica, sans-serif; fill: #ffffff; }
+      .stepname { font: 700 19px Arial, Helvetica, sans-serif; fill: #0f4448; }
+      .lbl { font: 700 12.5px Arial, Helvetica, sans-serif; fill: #175e63; letter-spacing: .8px; }
+      .txt { font: 400 13.5px Arial, Helvetica, sans-serif; fill: #33424e; }
+      .warnh { font: 700 14px Arial, Helvetica, sans-serif; fill: #b91c1c; }
+      .warnt { font: 400 12.5px Arial, Helvetica, sans-serif; fill: #7f1d1d; }
+      .footh { font: 700 13px Arial, Helvetica, sans-serif; fill: #0f4448; }
+      .foott { font: 400 11.5px Arial, Helvetica, sans-serif; fill: #5b6b78; }
+      .datet { font: 700 12px Arial, Helvetica, sans-serif; fill: #0f4448; }
+      .dates { font: 400 11.5px Arial, Helvetica, sans-serif; fill: #33424e; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="800" height="1120" fill="#f7f5f0"/>
+
+  <!-- header -->
+  <rect x="0" y="0" width="800" height="128" fill="#0f4448"/>
+  <rect x="0" y="128" width="800" height="6" fill="#b45309"/>
+  <text x="400" y="52" text-anchor="middle" class="title">How to Verify Your Required Praxis Code</text>
+  <text x="400" y="80" text-anchor="middle" class="subtitle">Legacy series (5001 / 7001 / 5901 / 7811) and the new 8000 series overlap until August 2028.</text>
+  <text x="400" y="102" text-anchor="middle" class="subtitle">Four official stops, checked in order — this shows you where to verify, not which test to take.</text>
+
+  <!-- STEP 1 -->
+  <g>
+    <rect x="60" y="156" width="680" height="150" rx="12" fill="#ffffff" stroke="#e3ded4" stroke-width="1.5"/>
+    <rect x="60" y="156" width="8" height="150" rx="4" fill="#175e63"/>
+    <circle cx="112" cy="206" r="24" fill="#175e63"/>
+    <text x="112" y="213" text-anchor="middle" class="stepnum">1</text>
+    <text x="152" y="200" class="stepname">ETS State Requirements Page</text>
+    <text x="152" y="222" class="lbl">WHERE</text>
+    <text x="152" y="240" class="txt">The ETS Praxis site's per-state listing of required tests and qualifying scores.</text>
+    <text x="152" y="266" class="lbl">COMPARE</text>
+    <text x="152" y="284" class="txt">Exact test code + exact test name + qualifying score. The 8000 series uses a 100–200 scale —</text>
+    <text x="152" y="300" class="txt">disregard any page claiming 100–300 or a 240 passing score.</text>
+  </g>
+  <path d="M400 306 L400 330" stroke="#175e63" stroke-width="3"/>
+  <path d="M392 322 L400 334 L408 322 Z" fill="#175e63"/>
+
+  <!-- STEP 2 -->
+  <g>
+    <rect x="60" y="340" width="680" height="150" rx="12" fill="#ffffff" stroke="#e3ded4" stroke-width="1.5"/>
+    <rect x="60" y="340" width="8" height="150" rx="4" fill="#175e63"/>
+    <circle cx="112" cy="390" r="24" fill="#175e63"/>
+    <text x="112" y="397" text-anchor="middle" class="stepnum">2</text>
+    <text x="152" y="384" class="stepname">State Department of Education</text>
+    <text x="152" y="406" class="lbl">WHERE</text>
+    <text x="152" y="424" class="txt">Your state's certification / licensure pages — the authority that ETS listings reflect.</text>
+    <text x="152" y="450" class="lbl">COMPARE</text>
+    <text x="152" y="468" class="txt">Which exams the state accepts for your license area, plus any published transition or</text>
+    <text x="152" y="484" class="txt">sunset dates between the old and new series.</text>
+  </g>
+  <path d="M400 490 L400 514" stroke="#175e63" stroke-width="3"/>
+  <path d="M392 506 L400 518 L408 506 Z" fill="#175e63"/>
+
+  <!-- STEP 3 -->
+  <g>
+    <rect x="60" y="524" width="680" height="150" rx="12" fill="#ffffff" stroke="#e3ded4" stroke-width="1.5"/>
+    <rect x="60" y="524" width="8" height="150" rx="4" fill="#175e63"/>
+    <circle cx="112" cy="574" r="24" fill="#175e63"/>
+    <text x="112" y="581" text-anchor="middle" class="stepnum">3</text>
+    <text x="152" y="568" class="stepname">Your Educator Preparation Program</text>
+    <text x="152" y="590" class="lbl">WHERE</text>
+    <text x="152" y="608" class="txt">Program handbook, advising page, or certification officer.</text>
+    <text x="152" y="634" class="lbl">COMPARE</text>
+    <text x="152" y="652" class="txt">The code your program names vs. what the state lists; cohort-specific transition rules;</text>
+    <text x="152" y="668" class="txt">whether Praxis Steps are accepted. If sources disagree, raise it before registering.</text>
+  </g>
+  <path d="M400 674 L400 698" stroke="#175e63" stroke-width="3"/>
+  <path d="M392 690 L400 702 L408 690 Z" fill="#175e63"/>
+
+  <!-- STEP 4 -->
+  <g>
+    <rect x="60" y="708" width="680" height="184" rx="12" fill="#ffffff" stroke="#e3ded4" stroke-width="1.5"/>
+    <rect x="60" y="708" width="8" height="184" rx="4" fill="#175e63"/>
+    <circle cx="112" cy="758" r="24" fill="#175e63"/>
+    <text x="112" y="765" text-anchor="middle" class="stepnum">4</text>
+    <text x="152" y="752" class="stepname">Match Everything Against Your Test Date</text>
+    <text x="152" y="774" class="lbl">THE SAME CODE CAN BE VALID FOR ONE DATE AND RETIRED FOR ANOTHER</text>
+
+    <g>
+      <circle cx="168" cy="804" r="5" fill="#b45309"/>
+      <text x="184" y="808" class="datet">2026-03-09</text>
+      <text x="268" y="808" class="dates">First 8000-series administration</text>
+    </g>
+    <g>
+      <circle cx="168" cy="828" r="5" fill="#b45309"/>
+      <text x="184" y="832" class="datet">Sep 2026</text>
+      <text x="268" y="832" class="dates">Praxis Steps available for 8002–8005</text>
+    </g>
+    <g>
+      <circle cx="168" cy="852" r="5" fill="#b45309"/>
+      <text x="184" y="856" class="datet">2027</text>
+      <text x="268" y="856" class="dates">Praxis Steps available for Praxis 8006</text>
+    </g>
+    <g>
+      <circle cx="168" cy="876" r="5" fill="#b45309"/>
+      <text x="184" y="880" class="datet">Aug 2028</text>
+      <text x="268" y="880" class="dates">Legacy series retires (5001 / 7001 / 5901 / 7811)</text>
+    </g>
+  </g>
+
+  <!-- collision warning -->
+  <g>
+    <rect x="60" y="912" width="680" height="92" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+    <rect x="60" y="912" width="8" height="92" rx="4" fill="#b91c1c"/>
+    <text x="92" y="942" class="warnh">! Code collision alert</text>
+    <text x="92" y="964" class="warnt">Praxis 8006 (ETS, Teaching Reading) and PECT 8006 (Pearson, Pennsylvania PreK-4 Module 1) are unrelated tests</text>
+    <text x="92" y="982" class="warnt">sharing a number. In PA materials, 8001/8002/8003 are PAPA modules, not Praxis. Identify the publisher first.</text>
+  </g>
+
+  <!-- footer -->
+  <rect x="0" y="1024" width="800" height="96" fill="#0f4448"/>
+  <text x="400" y="1054" text-anchor="middle" class="footh" fill="#ffffff" style="fill:#ffffff">Verification shows you where to check — your state licensing agency and educator</text>
+  <text x="400" y="1072" text-anchor="middle" class="footh" fill="#ffffff" style="fill:#ffffff">preparation program determine which test you must take.</text>
+  <text x="400" y="1098" text-anchor="middle" class="foott" fill="#cfe4e0" style="fill:#cfe4e0">learndiag.com · Last verified 2026-09-26 · Independent resource, not affiliated with ETS or Pearson</text>
+</svg>

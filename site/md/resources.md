@@ -22,12 +22,6 @@ study guideThe four subtests explained: question counts, time limits, content ca
 
 2026-08-24
 
-## [Praxis 5001 Requirements in Pennsylvania: What Elementary Candidates Take Instead](https://learndiag.com/praxis-5001-pennsylvania-requirements)
-
-state guidePennsylvania’s PreK–4 elementary certificate runs on the PECT exams — not Praxis 5001. The Praxis tests that do apply (Grades 5–6 add-on: 5154 + 5155) with fees and scores, and where to confirm.
-
-2026-08-24
-
 ## [Praxis 5001 Requirements in Alabama: What Elementary (K–6) Candidates Take Instead](https://learndiag.com/praxis-5001-alabama-requirements)
 
 state guideAlabama dropped the 5001 reading subtest in September 2020. Elementary K–6 now takes Praxis 5901 Three Subject Bundle (math 157 / social studies 154) plus Pearson Foundations of Reading 190 and edTPA.

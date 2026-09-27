@@ -346,16 +346,15 @@ const PAGES = [
   'contact',
   'privacy',
   'developers',
-  // 2026-09-20: the nine pages below already had md mirrors in site/md/ but were absent from
+  // 2026-09-20: these pages already had md mirrors in site/md/ but were absent from
   // this list, so a full `npm run build:md` never touched them and they silently drifted
-  // for weeks (see test/md-sync.test.mjs). Eight are added; `index` is deliberately NOT —
+  // for weeks (see test/md-sync.test.mjs). Seven are added; `index` is deliberately NOT —
   // html-to-md cannot parse the home page (it has no <article>), falls back to whole-document
   // conversion and emits <head> GTM/GA script text as body. site/md/index.md is hand-maintained.
   'praxis-5001-passing-score-by-state',
   'praxis-5001-subtests-explained',
   'praxis-5001-alabama-requirements',
   'praxis-5001-maryland-requirements',
-  'praxis-5001-pennsylvania-requirements',
   'praxis-8006-teaching-reading',
   'resources',
   'terms',

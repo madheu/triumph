@@ -42,7 +42,6 @@ const ARTICLES = [
   { slug: 'praxis-5001-kentucky-requirements', title: 'Kentucky Requirements', tag: 'STATE: KY' },
   { slug: 'praxis-5001-maryland-requirements', title: 'Maryland Requirements', tag: 'STATE: MD' },
   { slug: 'praxis-5001-new-jersey-requirements', title: 'New Jersey Requirements', tag: 'STATE: NJ' },
-  { slug: 'praxis-5001-pennsylvania-requirements', title: 'Pennsylvania Requirements', tag: 'STATE: PA' },
   { slug: 'praxis-5001-south-carolina-requirements', title: 'South Carolina Requirements', tag: 'STATE: SC' },
   { slug: 'praxis-5001-tennessee-requirements', title: 'Tennessee Requirements', tag: 'STATE: TN' },
   { slug: 'praxis-5001-virginia-requirements', title: 'Virginia Requirements', tag: 'STATE: VA' },
