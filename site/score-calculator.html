@@ -54,9 +54,9 @@
 </script>
 <style>
   :root{
-    --ink:#1a2332; --muted:#5a6472; --line:#dfe5ec; --bg:#f6f8fb; --card:#ffffff;
-    --brand:#1f5fd0; --brand-dark:#174aa3; --accent:#0e9f6e; --warn:#b45309;
-    --est-bg:#fff7e6; --est-border:#f0c36d; --est-ink:#8a5a00;
+    --ink:#3C3733; --muted:#6E6760; --line:#D8D1C5; --bg:#F2EFE9; --card:#FFFCF8;
+    --brand:#A67D7A; --brand-dark:#8E6360; --accent:#3E6B3A; --warn:#96742B;
+    --est-bg:#FBF3DF; --est-border:#D8D1C5; --est-ink:#8A5A00;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.65;}
@@ -81,7 +81,7 @@
   li{margin:5px 0;}
   a{color:var(--brand);}
   .lede{font-size:17px; color:var(--muted);}
-  .disclaimer{background:#eef4ff; border:1px solid #c7dbff; border-radius:10px; padding:12px 16px; font-size:14px; color:#2b3f66; margin:18px 0;}
+  .disclaimer{background:var(--accent-soft); border:1px solid var(--accent-line); border-radius:10px; padding:12px 16px; font-size:14px; color:var(--ink); margin:18px 0;}
   .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; margin:22px 0; box-shadow:0 1px 2px rgba(16,24,40,.04);}
   label{display:block; font-weight:600; font-size:14px; margin:14px 0 6px;}
   select,input[type=number],input[type=email]{width:100%; padding:12px 14px; font-size:16px; border:1px solid var(--line); border-radius:10px; background:#fff;}
@@ -92,7 +92,7 @@
   button:hover{background:var(--brand-dark);}
   button.secondary{background:#fff; color:var(--brand); border:1px solid var(--brand); width:auto; padding:8px 14px; font-size:14px; margin-top:8px;}
   .presets{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;}
-  .preset{background:#eef2f8; border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:6px 14px; font-size:13px; font-weight:600; cursor:pointer;}
+  .preset{background:var(--bg-soft); border:1px solid var(--line); color:var(--ink); border-radius:999px; padding:6px 14px; font-size:13px; font-weight:600; cursor:pointer;}
   .preset:hover{border-color:var(--brand); color:var(--brand);}
   .result{margin-top:18px; border-top:1px dashed var(--line); padding-top:18px; display:none;}
   .result.show{display:block;}
@@ -104,16 +104,16 @@
   .stat .k{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em;}
   .stat .v{font-size:22px; font-weight:800;}
   .meta{font-size:13px; color:var(--muted); margin-top:6px;}
-  .callout{border-left:4px solid var(--warn); background:#fffaf2; padding:14px 18px; border-radius:0 10px 10px 0; margin:18px 0;}
+  .callout{border-left:4px solid var(--warn); background:var(--warn-soft); padding:14px 18px; border-radius:0 10px 10px 0; margin:18px 0;}
   .callout h3{margin-top:0; color:var(--warn);}
   table{width:100%; border-collapse:collapse; font-size:14px; margin:14px 0;}
   th,td{border:1px solid var(--line); padding:8px 10px; text-align:left;}
   th{background:var(--bg);}
-  .save-wall{margin-top:20px; background:#f0fdf6; border:1px solid #b7e6cf; border-radius:12px; padding:18px;}
-  .save-wall h3{margin-top:0; color:#065f46;}
+  .save-wall{margin-top:20px; background:var(--correct-soft); border:1px solid var(--correct-line); border-radius:12px; padding:18px;}
+  .save-wall h3{margin-top:0; color:var(--correct);}
   .save-wall.locked .after{display:none;}
   .save-wall.unlocked .before{display:none;}
-  .saved-line{font-weight:600; color:#065f46;}
+  .saved-line{font-weight:600; color:var(--correct);}
   details{border:1px solid var(--line); border-radius:10px; background:#fff; margin:10px 0; padding:0 16px;}
   summary{cursor:pointer; font-weight:600; padding:14px 0; list-style:none;}
   summary::before{content:"+ "; color:var(--brand); font-weight:800;}
@@ -127,6 +127,7 @@
     nav a{margin-left:10px; font-size:13px;}
   }
 </style>
+<link rel="stylesheet" href="/css/theme.css?v=2">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>

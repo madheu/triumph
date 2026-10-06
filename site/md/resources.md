@@ -2,6 +2,18 @@
 
 # Resources — Praxis 5001 Study Guides & Tips
 
+2026-09-27
+
+## [When Do Praxis Scores Come Out? Release Dates & Timelines](https://learndiag.com/when-do-praxis-scores-come-out)
+
+scoresHow ETS reports your results: the 7-day rule, Tuesday/Friday release cycles, per-test timelines, and what to do when your report is late.
+
+2026-09-27
+
+## [Praxis 8002 vs Praxis 8006: What's the Difference?](https://learndiag.com/praxis-8002-vs-8006)
+
+comparison8002 asks whether you can read and use language; 8006 asks whether you can teach someone to read. Side-by-side format, content domains, timing, and state adoption.
+
 2026-09-03
 
 ## [Praxis 8006 Teaching Reading: Format, Content & Free Mini Practice Test](https://learndiag.com/praxis-8006-teaching-reading)
