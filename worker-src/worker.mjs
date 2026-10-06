@@ -46,7 +46,7 @@ import { ATTEMPT_ROUTES, ADMIN_STATS_ROUTES } from './analytics.mjs';
 import { FEEDBACK_ROUTES } from './feedback.mjs';
 import { AI_ROUTES } from './ai-analyst.mjs';
 import { REPORT_ROUTES } from './diagnostic-report.mjs';
-import { MD_ROUTES, PRODUCIBLE_PAGE_TYPES, negotiatePageVariant, varyWithAccept } from './content.mjs';
+import { MD_ROUTES, PRODUCIBLE_PAGE_TYPES, mdAssetFor, negotiatePageVariant, varyWithAccept } from './content.mjs';
 import { handleMcp } from './mcp.mjs';
 import { openApiSpec, specToYaml } from './openapi.mjs';
 
@@ -298,7 +298,7 @@ export default {
 
       /* ---------- markdown negotiation on content pages ---------- */
 
-      const mdAsset = MD_ROUTES.get(path);
+      const mdAsset = mdAssetFor(path);
       if (mdAsset) {
         // Homepage responses (both representations) carry the RFC 8288 / RFC
         // 9727 §3 discovery Link header pointing agents at the catalog, the
@@ -361,5 +361,5 @@ export default {
 
 // Named exports preserved for the test suite (test/agentic.test.mjs imports
 // these directly from site/_worker.js).
-export { MD_ROUTES, PRODUCIBLE_PAGE_TYPES, parseAccept, negotiatePageVariant, varyWithAccept } from './content.mjs';
+export { MD_ROUTES, PRODUCIBLE_PAGE_TYPES, mdAssetFor, parseAccept, negotiatePageVariant, varyWithAccept } from './content.mjs';
 export { openApiSpec, specToYaml } from './openapi.mjs';

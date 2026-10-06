@@ -1,39 +1,53 @@
 // worker-src/content.mjs — Accept-header parsing & markdown negotiation,
 // RFC 7763 (Section 6 of the original site/_worker.js, ported verbatim).
 
-// Paths that have a text/markdown representation under /md/.
-export const MD_ROUTES = (() => {
-  const pages = [
-    '/', '/index', '/about', '/contact', '/privacy', '/terms', '/developers', '/resources',
-    '/praxis-5001-study-guide', '/praxis-5001-four-gate-strategy', '/praxis-5001-retake-guide',
-    '/praxis-5001-vs-7001', '/praxis-5001-vs-8000-series',
-    '/praxis-5002-study-guide', '/praxis-5003-math-study-guide',
-    '/praxis-5004-social-studies-study-guide', '/praxis-5005-science-study-guide',
-    // 2026-08-20 batch: keyword articles (passing-scores merged into /score-calculator via 301)
-    '/praxis-5001-free-practice-test', '/praxis-5001-registration-guide',
-    // 2026-08-20 batch: state landing pages
-    '/praxis-5001-virginia-requirements', '/praxis-5001-tennessee-requirements',
-    '/praxis-5001-new-jersey-requirements', '/praxis-5001-south-carolina-requirements',
-    '/praxis-5001-kentucky-requirements',
-    // 2026-08-24 batch: non-5001 state research pages
-    // (/praxis-5001-pennsylvania-requirements retired 2026-09-27 → 410, see worker.mjs)
-    '/praxis-5001-alabama-requirements',
-    '/praxis-5001-maryland-requirements',
-    // 2026-09-04 batch: 8006 pillar page
-    '/praxis-8006-teaching-reading',
-    // 2026-09-14 batch: Praxis Steps explainer
-    '/praxis-steps',
-    // 2026-09-20 batch: Praxis score release dates
-    '/when-do-praxis-scores-come-out',
-  ];
-  const map = new Map();
-  const mdName = p => (p === '/' || p === '/index' ? '/md/index.md' : `/md${p}.md`);
-  for (const p of pages) {
-    map.set(p, mdName(p));
-    if (p !== '/' && p !== '/index') map.set(p + '.html', mdName(p)); // .html variants negotiate too
-  }
-  return map;
-})();
+// Path → md asset mapping. Historically this was a hand-written whitelist
+// (`const pages = [...]`) that had to be edited every time a guide shipped.
+// It silently rotted: on 2026-10-06, 19 pages had a working md mirror under
+// site/md/ but were absent from the list, so `Accept: text/markdown` on them
+// fell through to HTML (verified live: Content-Type came back text/html).
+//
+// A static list cannot stay correct — the failure mode is silent (no error, no
+// failed test, HTML just quietly serves instead of markdown). So we no longer
+// ask "is this path in the list?"; we ask "does /md/<slug>.md actually exist?"
+// and fall back to HTML when it doesn't (worker.mjs does that probe fetch).
+// Adding a guide now needs nothing but `node tools/md-one.mjs <slug> --write`.
+//
+// Request path → md asset filename under site/md/. Homepage and /index are the
+// only two paths whose mirror isn't `/md/<slug>.md`.
+const mdName = p => (p === '/' || p === '/index' ? '/md/index.md' : `/md${p}.md`);
+
+// Only the homepage is pinned here; every other content page is resolved by
+// mdAssetFor() below (probe-and-fallback) rather than by membership in a list.
+export const MD_ROUTES = new Map([
+  ['/', mdName('/')],
+  ['/index', mdName('/index')],
+]);
+
+/**
+ * Given a request path, return the md asset path to probe — or null when the
+ * request cannot possibly be a content page (so we don't waste a fetch).
+ *
+ * Rules:
+ *  · explicit Map entries win (homepage/index);
+ *  · anything under /md/, /api/, /mcp, /.well-known/ is not a content page;
+ *  · a path with a non-HTML extension (/js/theme.js, /images/x.webp) isn't one
+ *    either — probing it would 404 anyway, but we'd pay a fetch per asset.
+ */
+export function mdAssetFor(path) {
+  const known = MD_ROUTES.get(path);
+  if (known) return known;
+  if (!path.startsWith('/') || path.includes('..')) return null;
+  // Exact-segment reserved prefixes, with or without a trailing slash
+  // (/mcp and /api must be excluded as bare paths too).
+  const first = path.split('/')[1] || '';
+  if (['md', 'api', 'mcp', 'assets', 'data', 'js', 'css', 'images', 'fonts', 'icons', 'files', '.well-known'].includes(first)) return null;
+  const slug = path.endsWith('.html') ? path.slice(0, -5) : path;
+  if (slug === '/' || slug === '') return null;
+  // Only .html or extension-less paths are candidate content pages.
+  if (!path.endsWith('.html') && /\.[a-z0-9]{2,5}$/i.test(path)) return null;
+  return mdName(slug);
+}
 
 export const PRODUCIBLE_PAGE_TYPES = ['text/markdown', 'text/html'];
 

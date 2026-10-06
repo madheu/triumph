@@ -3472,53 +3472,22 @@ var REPORT_ROUTES = {
 };
 
 // worker-src/content.mjs
-var MD_ROUTES = (() => {
-  const pages = [
-    "/",
-    "/index",
-    "/about",
-    "/contact",
-    "/privacy",
-    "/terms",
-    "/developers",
-    "/resources",
-    "/praxis-5001-study-guide",
-    "/praxis-5001-four-gate-strategy",
-    "/praxis-5001-retake-guide",
-    "/praxis-5001-vs-7001",
-    "/praxis-5001-vs-8000-series",
-    "/praxis-5002-study-guide",
-    "/praxis-5003-math-study-guide",
-    "/praxis-5004-social-studies-study-guide",
-    "/praxis-5005-science-study-guide",
-    // 2026-08-20 batch: keyword articles (passing-scores merged into /score-calculator via 301)
-    "/praxis-5001-free-practice-test",
-    "/praxis-5001-registration-guide",
-    // 2026-08-20 batch: state landing pages
-    "/praxis-5001-virginia-requirements",
-    "/praxis-5001-tennessee-requirements",
-    "/praxis-5001-new-jersey-requirements",
-    "/praxis-5001-south-carolina-requirements",
-    "/praxis-5001-kentucky-requirements",
-    // 2026-08-24 batch: non-5001 state research pages
-    // (/praxis-5001-pennsylvania-requirements retired 2026-09-27 → 410, see worker.mjs)
-    "/praxis-5001-alabama-requirements",
-    "/praxis-5001-maryland-requirements",
-    // 2026-09-04 batch: 8006 pillar page
-    "/praxis-8006-teaching-reading",
-    // 2026-09-14 batch: Praxis Steps explainer
-    "/praxis-steps",
-    // 2026-09-20 batch: Praxis score release dates
-    "/when-do-praxis-scores-come-out"
-  ];
-  const map = /* @__PURE__ */ new Map();
-  const mdName = (p) => p === "/" || p === "/index" ? "/md/index.md" : `/md${p}.md`;
-  for (const p of pages) {
-    map.set(p, mdName(p));
-    if (p !== "/" && p !== "/index") map.set(p + ".html", mdName(p));
-  }
-  return map;
-})();
+var mdName = (p) => p === "/" || p === "/index" ? "/md/index.md" : `/md${p}.md`;
+var MD_ROUTES = /* @__PURE__ */ new Map([
+  ["/", mdName("/")],
+  ["/index", mdName("/index")]
+]);
+function mdAssetFor(path) {
+  const known = MD_ROUTES.get(path);
+  if (known) return known;
+  if (!path.startsWith("/") || path.includes("..")) return null;
+  const first = path.split("/")[1] || "";
+  if (["md", "api", "mcp", "assets", "data", "js", "css", "images", "fonts", "icons", "files", ".well-known"].includes(first)) return null;
+  const slug = path.endsWith(".html") ? path.slice(0, -5) : path;
+  if (slug === "/" || slug === "") return null;
+  if (!path.endsWith(".html") && /\.[a-z0-9]{2,5}$/i.test(path)) return null;
+  return mdName(slug);
+}
 var PRODUCIBLE_PAGE_TYPES = ["text/markdown", "text/html"];
 function parseAccept(header) {
   if (header === void 0 || header === null || header === "") return null;
@@ -4510,7 +4479,7 @@ var worker_default = {
         }
         return withCors(apiError("not_found", { path }));
       }
-      const mdAsset = MD_ROUTES.get(path);
+      const mdAsset = mdAssetFor(path);
       if (mdAsset) {
         const isHomepage = path === "/" || path === "/index";
         const discoveryLinks = isHomepage ? { Link: DISCOVERY_LINK_HEADER } : null;
@@ -4563,6 +4532,7 @@ export {
   MD_ROUTES,
   PRODUCIBLE_PAGE_TYPES,
   worker_default as default,
+  mdAssetFor,
   negotiatePageVariant,
   openApiSpec,
   parseAccept,

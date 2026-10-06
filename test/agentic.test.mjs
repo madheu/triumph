@@ -20,6 +20,7 @@ const {
   negotiatePageVariant,
   varyWithAccept,
   MD_ROUTES,
+  mdAssetFor,
 } = workerModule;
 
 /* ================= shared mock environment ================= */
@@ -121,6 +122,69 @@ test('worker: every MD route serves its markdown asset', async () => {
     const r = await call(env, pathKey, 'GET', null, { Accept: 'text/markdown' });
     assert.equal(r.status, 200, `md route ${pathKey} should serve markdown`);
     assert.match(r.headers.get('content-type'), /text\/markdown/, pathKey);
+  }
+});
+
+// The MD route list is no longer a hand-maintained whitelist (see content.mjs),
+// so "every route serves markdown" now only proves the homepage works. These two
+// guard the behaviour that replaced it: any page with a mirror negotiates, and
+// a page without one still falls back to HTML instead of erroring.
+
+test('worker: pages outside the MD route list still negotiate when a mirror exists', async () => {
+  const env = makeEnv();
+  // Deliberately NOT in MD_ROUTES (it only pins / and /index) — these are the
+  // pages that silently returned HTML before the whitelist was removed.
+  const samples = [
+    '/praxis-5001-study-guide',
+    '/when-do-praxis-scores-come-out',
+    '/praxis-8005-science',
+    '/score-calculator',
+    '/which-praxis-elementary-education-test',
+  ];
+  for (const p of samples) {
+    assert.ok(!MD_ROUTES.has(p), `${p} should not be pinned in MD_ROUTES`);
+    const r = await call(env, p, 'GET', null, { Accept: 'text/markdown' });
+    assert.equal(r.status, 200, `${p} should serve markdown`);
+    assert.match(r.headers.get('content-type'), /text\/markdown/, p);
+    assert.match((r.headers.get('vary') || '').toLowerCase(), /accept/, `${p} Vary`);
+    // .html variant must negotiate to the same mirror
+    const h = await call(env, p + '.html', 'GET', null, { Accept: 'text/markdown' });
+    assert.match(h.headers.get('content-type'), /text\/markdown/, p + '.html');
+  }
+});
+
+test('worker: page with no mirror falls back to HTML (no 404, no 500)', async () => {
+  const env = makeEnv();
+  // /terms has a mirror; this one deliberately does not.
+  for (const p of ['/tools', '/login', '/nonexistent-page-abc']) {
+    const r = await call(env, p, 'GET', null, { Accept: 'text/markdown' });
+    assert.ok(r.status === 200 || r.status === 404,
+      `${p} must not 500 when no md mirror exists (got ${r.status})`);
+    if (r.status === 200) {
+      assert.match(r.headers.get('content-type'), /text\/html/, `${p} should fall back to HTML`);
+    }
+  }
+});
+
+test('mdAssetFor: only content-page paths are probed', () => {
+  const probes = [
+    ['/', '/md/index.md'],
+    ['/index', '/md/index.md'],
+    ['/terms', '/md/terms.md'],
+    ['/terms.html', '/md/terms.md'],
+    ['/praxis-5001-study-guide', '/md/praxis-5001-study-guide.md'],
+  ];
+  for (const [input, want] of probes) {
+    assert.equal(mdAssetFor(input), want, input);
+  }
+  // Static assets & API paths must return null — probing them would waste a fetch.
+  const skips = [
+    '/js/theme.js', '/css/main.css', '/images/og-image.png', '/md/terms.md',
+    '/api/login', '/mcp', '/robots.txt', '/.well-known/agent-skills/index.json',
+    '/../secrets.json',
+  ];
+  for (const p of skips) {
+    assert.equal(mdAssetFor(p), null, `${p} should not be probed`);
   }
 });
 
