@@ -110,4 +110,4 @@ Question counts, timing, and category weights reflect the official ETS Study Com
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Passing Scores by State](https://learndiag.com/praxis-5001-passing-score-by-state)
+Related: [Praxis Test Codes Explained](https://learndiag.com/praxis-test-codes-explained) · [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Passing Scores by State](https://learndiag.com/praxis-5001-passing-score-by-state)
