@@ -32,7 +32,7 @@ This page explains what the test covers, who it is for, how it is structured, an
 | **Qualifying score** | Set by your state or program — there is no national passing score. Confirmed 8004 values: West Virginia 147, Arkansas 130[2][3] |
 | **First administration** | 2026-03-09[5] |
 | **Praxis Steps** | ETS lists 8401, 8402 and 8403 for 8004; the published launch windows disagree — see the notes on source limitations[1] |
-| **Legacy series** | The 5000-series tests retire in 2028-08[2][3] |
+| **Legacy series** | The 5000-series tests have a target retirement date of 2028-08[2][3] |
 
 Sources are listed at the bottom of this page.
 
@@ -144,7 +144,7 @@ Candidates preparing for the older social studies test will find the content fam
 | **Dating convention in materials** | Not specified on the test page | B.C.E. / C.E.[4] |
 | **Calculator** | Not provided | Not provided[1] |
 | **Modular category retakes** | Not available | Praxis Steps lists 8401 / 8402 / 8403 for 8004[1] |
-| **Legacy status** | Retires with the 5000 series in 2028-08[2][3] | Current test in the 8000 series[5] |
+| **Legacy status** | Target retirement with the 5000 series: 2028-08[2][3] | Current test in the 8000 series[5] |
 
 Three practical consequences:
 
@@ -232,10 +232,12 @@ Every factual claim above traces to one of these. Verification dates are shown b
 
 - **ETS publishes three different launch windows for the 8000 series.** The partner brochure says “Spring 2026”; another ETS PDF says “Summer 2026”; the official test pages say “September 2026” for 8002–8005. The inconsistency is ETS’s, not a transcription error, so we do not state a Praxis Steps date for 8004 on this page. Confirm the current window on the official test page before you plan a category-by-category retake[1].
 - **Source 4 has not been re-opened in this session.** The Study Companion URL is carried over from ETS’s own cross-references and from Learndiag’s 5004 guide. The B.C.E./C.E. convention and the multiple-select wording are confirmed in our fact library, but the PDF itself should be re-read before this page is treated as final on those two points.
-- **Source 7 is a comparison, not an official mapping.** We state that 5004 and 8004 cover the same content area and that the 5000 series retires in 2028-08. We do *not* claim an official one-to-one 5004 → 8004 replacement mapping, because our verified sources state the retirement and the new test family rather than a per-code mapping. Confirm which code your state requires.
+- **Source 7 is a comparison, not an official mapping.** We state that 5004 and 8004 cover the same content area and that the 5000 series has a target retirement date of 2028-08. We do *not* claim an official one-to-one 5004 → 8004 replacement mapping, because our verified sources state the retirement and the new test family rather than a per-code mapping. Confirm which code your state requires.
 - **48 states remain unverified.** This is a deliberate gap, not an oversight. Only West Virginia and Arkansas are confirmed for 8004.
 - **The practice bank is flagged as unreviewed.** All 30 items carry `review_status: draft` and have not been through human fact-checking. Treat them as practice, and [tell us](https://learndiag.com/contact) if one of them is wrong — we correct errors and note the correction.
 
 **Figures we deliberately do not publish.** Six things were left off this page because we could not confirm them: the exact Praxis Steps launch date for 8004; the qualifying scores of the other 48 states; a raw-to-scaled conversion table; a sub-skill-level blueprint for any of the three categories; the number of 8004 items ETS fields in any single administration window; and any per-code replacement mapping from the 5000 series. Where a competing site gives you one of these without naming an official source, treat it as an estimate.
 
 Last verified 2026-09-15. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) targets August 2028 for retirement of the 5001, 7001, 5901 and 7811 series, with timing aligned to states' transition needs. Verify appointment availability and score-acceptance deadlines separately. Source checked October 9, 2026.

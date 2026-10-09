@@ -14,8 +14,8 @@
  *
  * 覆盖：
  *   A 选择器行为：全组合非空白 / 不给绝对结论 / 不泄露与所选州无关的合格分 / 不出现被证伪数据
- *   B 页面结构：五科映射表内链、州状态表 6 列、三个 CTA、dateModified、无 JS 时的静态兜底文案
- *   C 不变量：TDK 逐字未变、基线每一行都还在（只做加法）—— 需要 git 能读到基线，读不到则跳过
+ *   B 页面结构：五科映射表内链、官方核验导航、三个 CTA、编辑日期、无 JS 时的静态兜底文案
+ *   C 不变量：TDK 与既有内链保留；已纠正的旧州数据、退休判断和估分承诺不得回归
  *
  * 用法：node tools/test-8000-selector.mjs        （或 node --test tools/test-8000-selector.mjs）
  */
@@ -177,9 +177,9 @@ test('A4 不出现被证伪的第三方说法（100–300 尺度 / 合格分 240
   assert.deepEqual(hits.slice(0, 5), [], `${hits.length} 处出现错误信息`);
 });
 
-test('A5 未核实州：只说 Not verified，且不泄露与所选州无关的合格分', () => {
-  const unverified = STATE_OPTS.filter((s) => s !== 'West Virginia' && s !== 'Arkansas');
-  assert.ok(unverified.length >= 50, `未核实州应≥50（含「未选州」「其他州」两档），实际 ${unverified.length}`);
+test('A5 所有州均提供核验路径，不把链接当作已核实采用状态或发布合格分', () => {
+  const unverified = STATE_OPTS;
+  assert.ok(unverified.length >= 50, `应覆盖全部州选项，实际 ${unverified.length}`);
   const bad = [];
   for (const state of unverified) {
     const named = state && state !== 'Other';
@@ -200,30 +200,33 @@ test('A5 未核实州：只说 Not verified，且不泄露与所选州无关的�
   assert.deepEqual(bad.slice(0, 5), [], `${bad.length} 处问题`);
 });
 
-test('A6 West Virginia / Arkansas：只给官方确认过的事实（合格分、8006 未采用、AR 过渡窗口）', () => {
-  const wv = plain(LD.html(LD.guidance({ state: 'West Virginia', program: '5000', date: '2026-10-15', code: 'both' })));
-  assert.match(wv, /Confirmed/);
-  for (const v of ['152', '147', '143', '5205', '8006']) assert.ok(wv.includes(v), `WV 输出应含 ${v}`);
-
-  const ar = plain(LD.html(LD.guidance({ state: 'Arkansas', program: '5000', date: '2026-10-15', code: '8000' })));
-  assert.match(ar, /Confirmed/);
-  for (const v of ['137', '136', '130', '126', '2027', '2031']) assert.ok(ar.includes(v), `AR 输出应含 ${v}`);
-
-  // AR + 晚于 2027-08-31 的日期 → 必须提示那次窗口结束
-  const late = plain(LD.html(LD.guidance({ state: 'Arkansas', program: '', date: '2027-09-01', code: '' })));
-  assert.match(late, /after September 1, 2027/);
-
-  // 同一日期在别州不得出现 AR 专属提示
-  const other = plain(LD.html(LD.guidance({ state: 'Ohio', program: '', date: '2027-09-01', code: '' })));
-  assert.ok(!other.includes('after September 1, 2027'), 'AR 专属窗口提示不该出现在俄亥俄');
+test('A6 已有官方州页直达链接与tracker一致，其余州回到ETS目录', () => {
+  const tracker = readFileSync(ROOT + 'site/praxis-8000-series-state-requirements.html', 'utf8');
+  const states = ['West Virginia', 'Arkansas', 'Idaho', 'South Carolina', 'South Dakota', 'Vermont', 'Virginia'];
+  assert.deepEqual(Object.keys(LD.sources).sort(), states.sort());
+  for (const state of states) {
+    const m = LD.guidance({ state, program: '5000', date: '2027-09-01', code: 'both' });
+    assert.match(m.status, /Not verified by this selector/);
+    assert.equal(m.facts.length, 0, '不得维护第二份州要求数据');
+    assert.ok(m.links.some((link) => link.href === LD.sources[state]));
+    assert.ok(tracker.includes(`href="${LD.sources[state]}"`), '官方链接必须来自已有tracker');
+    assert.ok(m.links.some((link) => link.href === '/praxis-8000-series-state-requirements'));
+  }
+  const ohio = LD.guidance({ state: 'Ohio' });
+  assert.ok(ohio.links.some((link) => link.href === 'https://praxis.ets.org/state-requirements.html'));
 });
 
-test('A7 旧系列退役分界：2028-08 前后给不同引导', () => {
-  const before = plain(LD.html(LD.guidance({ state: 'Ohio', program: '', date: '2028-07-31', code: '' })));
-  const after = plain(LD.html(LD.guidance({ state: 'Ohio', program: '', date: '2028-08-01', code: '' })));
-  assert.match(before, /before the published retirement target/);
-  assert.match(after, /at or after the published retirement target/);
-  assert.notEqual(before, after);
+test('A7 日期只提示核验考试与申请窗口，不依据未经本轮核验的退役日分支', () => {
+  for (const state of ['Ohio', 'Arkansas']) {
+    const outputs = DATE_OPTS.filter(Boolean).map((date) => {
+      const out = plain(LD.html(LD.guidance({ state, date })));
+      assert.match(out, /confirm appointment availability with ETS and acceptance with your licensing authority/);
+      assert.match(out, /testing, score acceptance, program completion, or your license application/);
+      assert.doesNotMatch(out, /retirement|both families may still be open|after September 1, 2027/i);
+      return out.replace(date, '[DATE]');
+    });
+    assert.equal(new Set(outputs).size, 1, '除回显日期外不得按旧硬编码日期改变结论');
+  }
 });
 
 test('A8 空输入 / 脏输入不崩、不空白', () => {
@@ -250,7 +253,7 @@ test('A9 表单绑定：下拉变化 → 结果区被填上，且提交不会真
   let prevented = false;
   form.fire('submit', { preventDefault: () => { prevented = true; } });
   assert.ok(prevented, 'submit 必须 preventDefault，否则整页刷新');
-  assert.ok(out.innerHTML.includes('152'), '结果区应被写入 WV 的合格分');
+  assert.ok(out.innerHTML.includes('https://praxis.ets.org/state-requirements/westvirginia-tests.html'), '结果区应写入 WV 官方核验链接');
   assert.ok(out.innerHTML.includes('West Virginia'));
   // 换成未核实州，结果区应被覆盖
   els.get('ld-wt-state').value = 'Ohio';
@@ -307,31 +310,18 @@ test('B1 五科映射表把五个新页面全部链上（内容页 + 练习页�
   });
 });
 
-test('B2 州采用状态表：6 列齐全，只有 WV/AR 是 Confirmed，其余 48 州合并为 Not verified', () => {
+test('B2 静态官方核验导航与选择器链接一致，无第二份州采用和分数表', () => {
   const m = html.match(/<h2 id="state-adoption-status">[\s\S]*?<\/table>/);
-  assert.ok(m, '应有州采用状态表（id=state-adoption-status）');
+  assert.ok(m, '应保留州要求核验导航锚点');
   const head = [...m[0].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/g)].map((x) => plain(x[1]));
-  assert.deepEqual(head, ['State', 'Accepted code', 'Effective date', 'Official source', 'Last checked', 'Status']);
+  assert.deepEqual(head, ['State', 'Official requirements page', 'What to verify']);
   const body = m[0].match(/<tbody>([\s\S]*?)<\/tbody>/)[1];
-  const rows = [...body.matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((r) =>
-    [...r[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((c) => plain(c[1]))
-  );
-  assert.equal(rows.length, 3, '应只有 3 行：WV、AR、其余合并行');
-  assert.equal(rows[0][0], 'West Virginia');
-  assert.equal(rows[0][5], 'Confirmed');
-  assert.match(rows[0][1], /8002.*8003.*8004.*8005/);
-  assert.match(rows[1][0], /Arkansas/);
-  assert.equal(rows[1][5], 'Confirmed');
-  assert.equal(rows[2][5], 'Not verified');
-  assert.match(rows[2][0], /Other states/);
-  assert.match(rows[2][1], /^Not verified$/);
-  assert.match(rows[2][2], /^Not verified$/);
-  // 官方来源必须真的指到 ETS 州页 / 目录
-  assert.ok(m[0].includes('https://praxis.ets.org/state-requirements/westvirginia-tests.html'));
-  assert.ok(m[0].includes('https://praxis.ets.org/state-requirements/arkansas-tests.html'));
-  assert.ok(m[0].includes('https://praxis.ets.org/state-requirements.html'));
-  // 逐字：不得给另外 48 州编造行或把 Not verified 写成事实
-  assert.ok(!/Transition/.test(m[0]) || /not currently mark any state as being in transition/.test(html));
+  const rows = [...body.matchAll(/<tr>([\s\S]*?)<\/tr>/g)];
+  assert.equal(rows.length, Object.keys(LD.sources).length + 1);
+  for (const url of Object.values(LD.sources)) assert.ok(m[0].includes(`href="${url}"`));
+  assert.ok(m[0].includes('href="/praxis-8000-series-state-requirements"'));
+  assert.ok(m[0].includes('href="https://praxis.ets.org/state-requirements.html"'));
+  assert.doesNotMatch(plain(body), /\b(Confirmed|152|147|143|137|136|130|126)\b/);
 });
 
 test('B3 三个 CTA 文案齐全，且指向本页锚点 / 真实存在的页面', () => {
@@ -343,20 +333,22 @@ test('B3 三个 CTA 文案齐全，且指向本页锚点 / 真实存在的页面
   assert.ok(html.includes('id="which-test-selector"'));
 });
 
-test('B4 结构化数据仍是合法 JSON，dateModified 与可见核验日期一致（2026-09-15）', () => {
+test('B4 结构化数据合法，编辑日期一致且明确不表示官方重新核验', () => {
   const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]);
   assert.ok(blocks.length >= 1, '应有 JSON-LD');
   const parsed = blocks.map((b) => JSON.parse(b.trim()));
   const article = parsed.find((p) => p['@type'] === 'Article');
   assert.ok(article, 'Article 结构化数据应保留且可解析');
-  assert.equal(article.dateModified, '2026-09-15');
+  assert.equal(article.dateModified, '2026-10-09');
   assert.equal(article.datePublished, '2026-08-20', 'datePublished 不应被改动');
   assert.equal(article.mainEntityOfPage, 'https://learndiag.com/praxis-5001-vs-8000-series');
   assert.equal(parsed.filter((p) => p['@type'] === 'FAQPage').length, 0, '本页原本没有 FAQPage，不要新增未展示的标记');
-  assert.ok(html.includes('Last verified 2026-09-15'), '要有可见的最后核验日期');
+  assert.ok(html.includes('Editorial update 2026-10-09'), '要有可见编辑日期');
+  assert.ok(html.includes('Official state requirements were not reverified for this update'));
+  assert.doesNotMatch(html, /Last verified 2026-10-09/);
 });
 
-/* ---------- C. 只做加法 + TDK 未变（需要 git 能读到基线） ---------- */
+/* ---------- C. 旧错误回归防护 + TDK 与内链保留 ---------- */
 
 function baseline() {
   try {
@@ -383,15 +375,20 @@ test('C1 TDK 逐字未变（title / meta description / h1）', (t) => {
   }
 });
 
-test('C2 只做加法：基线每一行都还在（唯一允许的例外是 dateModified）', (t) => {
-  if (!base) return t.skip('读不到 git 基线，跳过（请在仓库内运行）');
-  const now = new Set(html.split('\n').map((l) => l.trimEnd()));
-  const missing = base
-    .split('\n')
-    .map((l) => l.trimEnd())
-    .filter((l) => l.length && !l.includes('"dateModified"'))
-    .filter((l) => !now.has(l));
-  assert.deepEqual(missing.slice(0, 5), [], `${missing.length} 行原内容消失或被改写`);
+test('C2 不再出现相互冲突的采用数、退役断言和raw-to-scaled承诺', () => {
+  for (const pattern of [
+    /Most candidates should still register/i,
+    /(?:only two|Two states are confirmed|Seven states have confirmed)/i,
+    /neither of the two states|not yet part of any confirmed state requirement/i,
+    /(?:retires|fully available until) (?:in )?August 2028|2028-08-01/i,
+    /raw-to-scaled score calculator|convert a raw practice score into an estimated scaled score/i,
+    /how many correct answers that cut score actually demands/i,
+  ]) assert.doesNotMatch(html, pattern);
+  assert.ok(html.includes('practice accuracy calculator and study record'));
+  assert.ok(html.includes('Those dates concern the modular option'));
+  assert.ok(html.includes('August 2028 as the target retirement date'));
+  assert.ok(html.includes('praxis-steps-epp-faq.pdf'));
+  assert.ok(html.includes('not a universal score-acceptance deadline'));
 });
 
 test('C3 基线里的内链一个没少', (t) => {

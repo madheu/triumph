@@ -4,15 +4,15 @@
 
 # Praxis 5001 vs. the New 8000 Series: What Candidates Need to Check
 
-*2026-08-20 · Updated 2026-09-04 · Reading time: about 9 min*
+*Published 2026-08-20 · Editorial update 2026-10-09 · Reading time: about 9 min*
 
 The short answer
 
-**Most candidates should still register for Praxis 5001 — unless their state or preparation program has already switched to the 8000 series.** ETS describes the new tests as a replacement product line, not as a rule that cancels your current requirement. The 5001 series is still sold, and ETS targets retirement of the older elementary education series in August 2028.[1][2]
+**Choose the test codes accepted for your specific licensing pathway and application date.** ETS describes the 8000 series as a replacement product line, but that does not establish which test you personally need. Confirm the required codes with your licensing authority and preparation program before registering.[1][7]
 
 Find your situation below:
 
-- **Your requirement names 5001 (or 5002–5005).** Take 5001. ETS still maintains a purchasable listing for it.[2]
+- **Your requirement names 5001 (or 5002–5005).** Confirm that those exact codes apply to your cohort and application date, and check whether you need the combined appointment or individual subtests.[2][7]
 - **Your state has adopted the new series.** Register for each required test separately — 8002, 8003, 8004, 8005, and/or 8006. There is no combined all-in-one option.[1]
 - **You already passed one or more 5001 subtests.** Ask for written guidance on whether those scores still count; ETS treats that as a state decision.[7]
 - **You were searching for “Praxis 8001.”** That code does not appear anywhere in ETS’s redesign. The published series runs 8002–8006.[1]
@@ -21,7 +21,7 @@ Not sure which series your state uses? Check the [Praxis 5001 passing scores and
 
 If you are preparing for an elementary education license, you may now see two different sets of Praxis test codes: the familiar **Praxis 5001** series and the new **8000-series Elementary Education Fundamentals** tests. The change is real—but it does **not** mean every candidate should automatically register for the new tests.
 
-ETS says the redesigned Elementary Education Fundamentals tests launch in **spring 2026** and are designed to replace the 5001, 7001, 5901, and 7811 series.[1] At the same time, ETS still lists Praxis 5001 as an available test product and explicitly tells candidates to make sure their certifying state accepts it.[2]
+ETS’s redesign brochure described a **spring 2026** launch for Elementary Education Fundamentals and identified the 5001, 7001, 5901, and 7811 series as the tests it would replace.[1] A product launch, a Praxis Steps rollout, and a state’s acceptance deadline are separate events. Check the official product listing and your licensing requirement for the dates that apply to you.[2][7]
 
 The practical takeaway: **check your current licensing requirement before choosing a test.** Your state agency, licensing organization, or educator preparation program—not a general comparison article—determines which test code and qualifying score apply to you.[7]
 
@@ -72,7 +72,7 @@ If your requirement names the 8000 series, you register for specific codes, not 
 | Science | 8005 | 5005 | [Praxis 8005 guide](https://learndiag.com/praxis-8005-science) · [free 8005 practice test](https://learndiag.com/praxis-8005-practice) |
 | Teaching Reading (a separate reading-instruction test, not a fourth subject sitting alongside the other three) | 8006 | 7002 | [Praxis 8006 guide](https://learndiag.com/praxis-8006-teaching-reading) · [free 8006 practice test](https://learndiag.com/praxis-8006-practice) |
 
-Two structural differences are worth knowing before you pick a prep plan. First, 8005 Science is the only 90-minute test in the family; 8002, 8003, 8004, and 8006 run 100 minutes.[1] Second, 8006 Teaching Reading is its own exam rather than a component of the other four, and neither of the two states whose requirements we have verified uses it: West Virginia uses Praxis 5205 for teaching reading, and 8006 is not listed on the Arkansas page.[9][10]
+8006 Teaching Reading is a separate exam, not a component automatically included with the other four. Do not assume that every pathway requires all five codes or that 8002 and 8006 are interchangeable. Check the reading requirement for your certificate in the [state requirements tracker](https://learndiag.com/praxis-8000-series-state-requirements) and follow its official source links before choosing your prep materials. Confirm appointment length on the official product page for your exact test.
 
 ## How the Test Blueprints and Question Counts Change
 
@@ -93,15 +93,17 @@ The new tests are designed to work with **Praxis Steps**, a modular testing appr
 
 You do not have to wait for Steps to get category-level feedback. A [12-question readiness diagnostic](https://learndiag.com/diagnostic) answers the same question Steps is built around: which content categories are weakest right now.
 
-That does not mean every 8000-series appointment is automatically broken into small categories from day one. ETS's product pages date the start of category-level testing through Praxis Steps to **September 2026 for the 8002–8005 tests**, with 8006 Teaching Reading following in **2027** — and ETS's Steps hub now describes the capability itself as available.[1][8] But the modular option still applies only "if your state accepts" the redesigned tests, and **adoption is uneven**: at least one state has already published separate Steps registrations, while most have announced nothing. We keep a sourced record of every adoption we have been able to verify in [Praxis Steps explained: what changes, and which states have adopted it](https://learndiag.com/praxis-steps). Check the live registration details for your test date rather than assuming a specific Steps option is available to you.
+That does not mean every 8000-series appointment automatically uses smaller categories. Our September 3, 2026 source notes recorded ETS product-page wording that scheduled Praxis Steps for **September 2026 for 8002–8005** and **2027 for 8006**.[8] Those dates concern the modular option, not whether a full test can appear in a state requirement. They have not been reverified for this editorial update. Read [Praxis Steps explained](https://learndiag.com/praxis-steps), then confirm the options available for your code, state, and test date in ETS registration.
 
 Praxis Steps also does not override licensing rules. A state or program still decides which tests count and what qualifying results candidates must earn.[7]
 
 ## Does Everyone Need to Switch From 5001?
 
+The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) gives **August 2028 as the target retirement date** for the 5001, 7001, 5901 and 7811 series, and says timing will be aligned with states’ transition needs. This is not a universal score-acceptance deadline or a guarantee that either test family is accepted for your pathway. Source checked October 9, 2026.
+
 **No.** ETS’s redesign document describes the 8000 series as replacing earlier elementary education series, but adoption is controlled by states and licensing organizations.[1][7] Transition dates may differ by jurisdiction or candidate pathway.
 
-Meanwhile, the ETS website still lists and sells the 5001 combined test. Its current listing describes a 245-question, four-subject test lasting 4 hours and 35 minutes, with the option to take all four subtests in one session.[2] That is why it would be inaccurate to say Praxis 5001 is already universally retired or invalid.
+The 5001 combined format covers 245 questions across four subject subtests, with an option to schedule all four in one session.[2] Check ETS for current appointment availability. A test being offered does not establish whether your licensing authority accepts it, and a redesign announcement does not by itself invalidate scores you already earned.
 
 You may still need 5001 if your current official requirement names 5001 or its subtests. You may need the 8000 series if your licensing authority has adopted the redesigned tests for your application window. If your paperwork is unclear, do not guess based on which test appears newer.
 
@@ -113,26 +115,24 @@ Start here
 
 Choose your state above, and add your program’s requirement, your planned test date, and the code you currently see if you know them. This box then lists exactly what to verify and where — and it says plainly what it cannot decide for you.
 
-## State Adoption Status: What We Have Verified, and What We Have Not
+## State Requirements: Where to Verify Your Codes
 
-Two states are confirmed in our records, both against the official ETS state page. Everything else is unverified, and unverified rows are labelled as such rather than filled in with a guess.
+Use the [8000-series state requirements tracker](https://learndiag.com/praxis-8000-series-state-requirements) for dated source notes, then open the official source for your certificate area. This comparison page and its selector provide verification links, not a second adoption or qualifying-score table. A link below does not establish current acceptance for your pathway.
 
-| State | Accepted code | Effective date | Official source | Last checked | Status |
-| --- | --- | --- | --- | --- | --- |
-| **West Virginia** | 8002 · 8003 · 8004 · 8005 — 8006 is not used; the state lists Praxis 5205 for teaching reading instead | Not published on the source we checked | [ETS, Praxis test requirements: West Virginia](https://praxis.ets.org/state-requirements/westvirginia-tests.html)[9] | 2026-09-03 | Confirmed |
-| **Arkansas** | 8002 · 8003 · 8004 · 8005 — 8006 is not listed on the state’s ETS requirements page | Not published on the source we checked. 5000-series acceptance is listed as ending 2027-09-01. | [ETS, Praxis test requirements: Arkansas](https://praxis.ets.org/state-requirements/arkansas-tests.html)[10] | 2026-09-03 | Confirmed |
-| **Other states** — the remaining 48 states, plus the District of Columbia | Not verified | Not verified | [ETS state requirements directory](https://praxis.ets.org/state-requirements.html)[7] | — | Not verified |
+| State | Official requirements page | What to verify |
+| --- | --- | --- |
+| West Virginia | [ETS West Virginia](https://praxis.ets.org/state-requirements/westvirginia-tests.html)[9] | Exact codes, reading requirement, and qualifying scores for your certificate |
+| Arkansas | [ETS Arkansas](https://praxis.ets.org/state-requirements/arkansas-tests.html)[10] | Exact codes, test and score-acceptance deadlines, and prior-score rules |
+| Idaho | [ETS Idaho](https://praxis.ets.org/state-requirements/idaho-tests.html) | Exact codes and reading requirement for your endorsement |
+| South Carolina | [ETS South Carolina](https://praxis.ets.org/state-requirements/southcarolina-tests.html) | Exact codes, reading requirement, and applicable transition dates |
+| South Dakota | [ETS South Dakota](https://praxis.ets.org/state-requirements/southdakota-tests.html) | Exact codes and qualifying scores for your endorsement |
+| Vermont | [ETS Vermont](https://praxis.ets.org/state-requirements/vermont-tests.html) | Exact codes, reading requirement, and applicable effective dates |
+| Virginia | [ETS Virginia](https://praxis.ets.org/state-requirements/virginia-tests.html) | Exact codes and qualifying scores for your grade band |
+| Other states and territories | [ETS state requirements directory](https://praxis.ets.org/state-requirements.html)[7] | Find your jurisdiction and verify its requirements with your licensing authority |
 
-Qualifying scores are the other half of the answer, and they are set state by state rather than nationally. These are the only two sets we have verified:
+Qualifying scores and transition rules depend on the licensing pathway. Confirm whether a deadline refers to the test date, score acceptance, program completion, or license application. Do not infer permission to combine old and new scores from the fact that both test families appear on a page.
 
-| State | 8002 | 8003 | 8004 | 8005 | 8006 | Source |
-| --- | --- | --- | --- | --- | --- | --- |
-| West Virginia | 152 | 152 | 147 | 143 | Not used | ETS West Virginia page[9] |
-| Arkansas | 137 | 136 | 130 | 126 | Not listed | ETS Arkansas page[10] |
-
-Those figures sit between 126 and 152, which is consistent with the 100–200 scale ETS uses for these tests — and inconsistent with the 100–300 scale and 240 cut score that some third-party pages repeat.[9][10] We do not print a qualifying score for any state whose official page we have not read, and we do not currently mark any state as being in transition, because we have not found a published transition status we could confirm.
-
-Last verified 2026-09-15 · state rows last checked against their official sources 2026-09-03
+Editorial update: 2026-10-09. Official state requirements were not reverified for this update; consult the tracker’s dated notes and current official sources.
 
 **Three things you can do next:**
 
@@ -148,40 +148,28 @@ Use this checklist before paying for either test family:
 - **Find the exact required test code.** Look for 5001/5002–5005 or 8002–8006—not just “Elementary Education Praxis.”
 - **Check the effective date.** A transition rule may depend on when you register, test, complete your program, or submit your license application.
 - **Confirm whether individual subtests are allowed.** Do not assume the combined 5001 appointment or a particular set of 8000-series tests is required.
-- **Verify the qualifying score for each test.** States and licensing organizations set their own certification and Praxis qualifying-score requirements.[7] A [raw-to-scaled score calculator](https://learndiag.com/score-calculator) shows how many correct answers that cut score actually demands.
+- **Verify the qualifying score for each test.** States and licensing organizations set their own certification and Praxis qualifying-score requirements.[7] Use the [practice accuracy calculator and study record](https://learndiag.com/score-calculator) to track correct answers by subject; it does not convert practice results to ETS scaled scores or predict a pass.
 - **Ask how prior passing scores will be handled.** If you already passed one or more 5001 subtests, get written guidance on whether those scores remain valid during the transition.
 - **Match prep materials to your code.** The new blueprints include different question counts and category weights.[1]
 - **Save proof of the requirement.** Keep the official page, bulletin, or written program guidance you relied on when registering.
 
 Start with the [ETS state requirements directory](https://praxis.ets.org/state-requirements.html), then verify the details with your state licensing agency or preparation program. ETS itself notes that each state and licensing organization establishes its own requirements.[7]
 
-## September 2026 Update: Where the Changeover Stands Now
+## Full Tests, Praxis Steps, and State Acceptance Are Separate Checks
 
-Since this guide was first published, the 5001-to-8000 transition has moved from "announced" to "underway." Here is what has actually changed — and what has not — as of September 2026.
+A full 8000-series test and its category-level Praxis Steps option are different registration formats. A later Steps rollout for 8006 does not mean the full Teaching Reading test cannot already appear in a licensing requirement. Check the exact format offered in ETS registration and the exact code accepted for your pathway.
 
-### Praxis Steps 8002–8005 are now live
+Use the [8000-series state requirements tracker](https://learndiag.com/praxis-8000-series-state-requirements) to locate dated adoption notes and official sources. Neither a nationwide product announcement nor the availability of two test families establishes that you can choose either one or mix prior scores.
 
-The four subject tests of the Praxis Elementary Education Fundamentals series — 8002 Reading and Language Arts, 8003 Mathematics, 8004 Social Studies, and 8005 Science — entered their first operational Steps window in September 2026, so candidates in adopting states can now sit the new tests instead of the legacy subtests. The fifth test, **Praxis 8006** Teaching Reading: Elementary, follows in 2027 and is not yet part of any confirmed state requirement. All tests in both series report on the **100–200 score scale**.
-
-### Seven states have confirmed adoption so far
-
-As of this update, seven states confirm the 8000 series on their official ETS state requirements pages — and they split in a notable pattern:
-
-- **West Virginia, Arkansas, Virginia (use 8002):** qualifying scores 152/137/152 (8002), with 8003–8005 at 152/147/143 in WV and VA, 136/130/126 in AR. Praxis 8006 is not listed.
-- **Idaho, South Dakota, Vermont (use Praxis 8006):** 8003–8005 at 152/147/143, plus Praxis 8006 at 152; 8002 is not listed.
-- **South Carolina (uses neither for reading):** 8003–8005 at 152/147/143 effective 2026-09-02, with reading covered by 5205 Teaching Reading: Elementary (159); legacy 5003/5004/5005 run in parallel through 2027-09-01.
-
-For every other state, adoption is **not listed or not verified** as of September 2026 — check your state's official ETS requirements page before registering. The legacy 5000 series remains available until its retirement in **August 2028**, so in most states you still have a genuine choice. Full detail: [8000 series state requirements tracker](https://learndiag.com/praxis-8000-series-state-requirements).
-
-### Three new free tools to plan your next step
+### Free tools to plan your next step
 
 Whichever series you take, these free tools plug directly into the comparison on this page:
 
-- [Praxis score calculator](https://learndiag.com/score-calculator) — convert a raw practice score into an estimated scaled score on the 100–200 scale, for both series.
+- [Practice accuracy calculator and study record](https://learndiag.com/score-calculator) — record correct answers and practice totals by subject, then identify what to review. Practice accuracy is not an ETS scaled-score estimate.
 - [14-day study planner](https://learndiag.com/study-planner) — turn your test date and weakest domain into a day-by-day prep plan.
 - [Which test should you take?](https://learndiag.com/which-praxis-elementary-education-test) — a verification path based on your state and program, so you register for the right code.
 
-*This page is an independent study resource and is not affiliated with ETS. Adoption details above are re-verified regularly; the date at the bottom of this page shows the last verification.*
+*This page is an independent study resource and is not affiliated with ETS. The editorial update date records changes to this article, not a fresh verification of official requirements.*
 
 ## Frequently Asked Questions
 
@@ -191,7 +179,7 @@ ETS’s redesign identifies separate tests 8002, 8003, 8004, and 8005, plus 8006
 
 ### Can I still take Praxis 5001?
 
-ETS currently maintains a purchasable listing for Praxis 5001.[2] Availability, however, is not the same as acceptance. Confirm that your certifying organization will accept the test for your application timeline before registering.[7]
+Check the [official ETS 5001 listing](https://praxis.ets.org/test/elementary-education-multiple-subjects-subtests-5001.html) for current appointments.[2] Availability is not the same as acceptance: confirm that your certifying organization will accept the exact code for your application timeline before registering.[7]
 
 ### What is the difference between the “8000 series,” 8001, and 8002?
 
@@ -221,9 +209,9 @@ The Praxis 8000 series is a significant elementary education redesign, not a uni
 
 [8] [ETS, “Elementary Education Fundamentals: Reading and Language Arts (8002)” product page](https://praxis.ets.org/test/elementary-education-fundamentals-reading-and-language-arts-8002.html)
 
-[9] [ETS, “Praxis Test Requirements: West Virginia”](https://praxis.ets.org/state-requirements/westvirginia-tests.html) — accepted codes and qualifying scores for 8002–8005; the page lists Praxis 5205 for teaching reading.
+[9] [ETS, “Praxis Test Requirements: West Virginia”](https://praxis.ets.org/state-requirements/westvirginia-tests.html) — official verification link; check your certificate area and current dates.
 
-[10] [ETS, “Praxis Test Requirements: Arkansas”](https://praxis.ets.org/state-requirements/arkansas-tests.html) — qualifying scores for 8002–8005, and the 5000-series acceptance window to 2027-09-01.
+[10] [ETS, “Praxis Test Requirements: Arkansas”](https://praxis.ets.org/state-requirements/arkansas-tests.html) — official verification link; check current codes, transition dates, and prior-score rules.
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 

@@ -29,7 +29,7 @@ This page explains what the test covers, who it is for, how the three content do
 | **Qualifying score** | Set by your state or program — there is no national passing score[2][3] |
 | **First administration** | 2026-03-09[5] |
 | **Praxis Steps categories** | 8301 Numbers and Operations · 8302 Algebraic Thinking · 8303 Geometry, Measurement and Data[5] |
-| **Older series status** | The 5000 series (including 5003) retires 2028-08[5] |
+| **Older series status** | The 5000 series (including 5003) has a target retirement date of 2028-08[5] |
 
 Sources are listed at the bottom of this page.
 
@@ -55,7 +55,7 @@ For the remaining 48 states, adoption status and cut scores are **not verified**
 **How to confirm your test code in about five minutes:**
 
 1. Open your state’s ETS requirements page: `https://praxis.ets.org/state-requirements/<state>-tests.html`. (State names are written as one word, no hyphen — `westvirginia`, not `west-virginia`.)
-2. Search the page for **Elementary Education Fundamentals: Mathematics** and note the code and the qualifying score. If your state still lists **5003**, that is the test you need until it retires[5].
+2. Search the page for **Elementary Education Fundamentals: Mathematics** and note the code and the qualifying score. If your state still lists **5003**, confirm that code is accepted for your pathway and planned date[5].
 3. If the page lists both an old and a new code, contact your educator preparation program or state licensing agency and ask which code applies to your certification pathway.
 
 If you are unsure after both steps, do not register yet. The fee is $79.00 and retake windows are limited[1].
@@ -157,7 +157,7 @@ Candidates who prepared for 5003 will recognise the mathematics. The structure, 
 | **Third domain name** | Geometry and Measurement, Data, Statistics, and Probability[7] | Geometry, Measurement and Data[4][5] |
 | **Calculator** | On-screen scientific calculator provided[7] | On-screen scientific calculator provided[1] |
 | **Category-level retakes** | Not available | Praxis Steps categories 8301 / 8302 / 8303[5] |
-| **Retirement** | Retires 2028-08[5] | Current series |
+| **Retirement** | Target retirement: 2028-08[5] | Current series |
 
 The two practical consequences: you get **35 more minutes and 18 more questions**, which is a slightly more generous pace than 5003 (about 88 seconds per item against about 78), and the third domain is now named without statistics and probability in the title. The mathematics itself is not more advanced — it is elementary content tested at greater length, with more room for the reasoning items that separate a passing score from a comfortable one.
 
@@ -186,7 +186,7 @@ Two claims circulate online that are wrong, and that we do not repeat:
 
 Because there is no public official conversion table from raw items to scaled score for the 8000 series, **we do not convert your practice percentage into a projected scaled score, and we do not give a pass probability.** A practice percentage is a practice percentage. Presenting it as a predicted scaled score would be a fabrication, and it is the kind of number people make registration decisions on.
 
-If you want to understand how raw scores and scaled scores relate to each other on the Praxis tests that *do* publish a conversion basis, our [Praxis raw score calculator](https://learndiag.com/score-calculator) walks through the 5001 series and is explicit about where its own numbers stop being trustworthy.
+Use the [Praxis practice accuracy calculator](https://learndiag.com/score-calculator) to record correct answers and attempted questions for each subject. It reports practice percentages, not a scaled score or a prediction of passing.
 
 ## Frequently Asked Questions
 
@@ -249,3 +249,5 @@ Every factual claim above traces to one of these. Verification dates are shown b
 - **48 states remain unverified.** This is a deliberate gap, not an oversight. We publish the two 8003 cut scores we have confirmed and no others.
 
 Last verified 2026-09-15. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) targets August 2028 for retirement of the 5001, 7001, 5901 and 7811 series, with timing aligned to states' transition needs. Verify appointment availability and score-acceptance deadlines separately. Source checked October 9, 2026.

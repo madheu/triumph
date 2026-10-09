@@ -184,7 +184,7 @@ When evaluating any 5002 test prep resource, check three things: whether its que
 
 ### Praxis 5002 and the new Praxis 8002
 
-Praxis 8002, *Elementary Education Fundamentals: Reading and Language Arts*, is the 8000-series counterpart of the 5002. The 8000 series was first administered on **March 9, 2026**, and the legacy 5000 series is scheduled to retire in **August 2028**. Praxis 8002 is a 100-minute, 80-question selected-response test covering Reading and Writing, Speaking & Listening, scored on the same 100–200 scale, and available in the modular Praxis Steps format from **September 2026**.
+Praxis 8002, *Elementary Education Fundamentals: Reading and Language Arts*, is the 8000-series counterpart of the 5002. The 8000 series was first administered on **March 9, 2026**, and the legacy 5000 series has a target retirement date of **August 2028**. Praxis 8002 is a 100-minute, 80-question selected-response test covering Reading and Writing, Speaking & Listening, scored on the same 100–200 scale, and available in the modular Praxis Steps format from **September 2026**.
 
 Which test you should take depends on which code your state or program accepts — adoption of the 8000 series is still rolling out, so verify on the official state requirements page before registering. The two tests are not interchangeable. For the new-format exam in detail, see our [Praxis 8002 Reading and Language Arts study guide](https://learndiag.com/praxis-8002-reading-and-language-arts).
 
@@ -200,11 +200,11 @@ Selected-response questions, including scenario-based items that describe a clas
 
 #### Should I take Praxis 5002 or Praxis 8002?
 
-That depends on which test your state or preparation program accepts. The 5000 series runs until August 2028; the 8000 series began in March 2026 and is being adopted state by state. Check the official ETS state requirements page for your state, or ask your program, before you register.
+That depends on which test your state or preparation program accepts. The 5000 series has an August 2028 retirement target; verify appointment availability and state acceptance; the 8000 series began in March 2026 and is being adopted state by state. Check the official ETS state requirements page for your state, or ask your program, before you register.
 
 #### Is the Praxis 5002 being discontinued?
 
-Yes — the legacy 5000 series, including 5002, retires in August 2028. Until then it remains fully available. If you are testing near the transition, confirm with your state that 5002 scores will be accepted for your certification timeline.
+ETS targets August 2028 for retirement of the legacy 5000 series, including 5002, with timing aligned to state transition needs. Check current appointment availability separately. If you are testing near the transition, confirm with your state that 5002 scores will be accepted for your certification timeline.
 
 #### Can I use Praxis 8002 materials to prepare for the 5002?
 
@@ -219,3 +219,5 @@ Partially. The underlying content overlaps heavily, so skill-building transfers 
 Related Guide   [Praxis 8002 Reading and Language Arts study guide](https://learndiag.com/praxis-8002-reading-and-language-arts) — the 8000-series counterpart of the 5002, first administered March 9, 2026. Covers the new 100-minute, 80-question format, the Reading and Writing/Speaking/Listening domains, and how the modular Praxis Steps option works from September 2026.
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) gives August 2028 as the *target* retirement date for the 5001, 7001, 5901 and 7811 series and says timing will be aligned with states' transition needs. This is not a universal score-acceptance deadline or a guarantee of appointment availability. Source checked October 9, 2026.

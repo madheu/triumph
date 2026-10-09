@@ -6,11 +6,15 @@
 
 *2026-09-03 · Last verified 2026-09-03 · Reading time: about 9 min*
 
-**Test requirements vary by state, preparation program, and effective date. Confirm your required test code with your state licensing agency or educator preparation program before registering.**
+**8006 focuses on teaching reading.** It covers evidence-based reading instruction; 8002 covers reading and language arts knowledge. Both include teaching scenarios. See the [Praxis 8002 vs 8006 comparison](https://learndiag.com/praxis-8002-vs-8006) for the different content categories.
 
-Praxis 8006 measures whether you can teach reading, not whether you can read.
+**Do not assume either test satisfies a requirement for the other.** Confirm the exact code required by your state licensing agency or preparation program before registering.
 
-**Praxis 8006** — officially *Elementary Education Fundamentals: Teaching Reading* — is the reading instruction exam in ETS’s redesigned Elementary Education Fundamentals family. It is a 100-minute, 80-question selected-response test that replaces Praxis 7002 (Teaching Reading)[4]. Unlike the four core subject tests in the 8000 series, Praxis 8006 is a specialized reading pedagogy exam: it measures whether you can *teach* reading, not whether you can read.
+[Try the free 8006 mini test](https://learndiag.com/#mini-test): select “Start the mini test,” answer each question, then read its explanation. Use the category results to plan your review, not to predict an official score.
+
+Praxis 8006 focuses on the knowledge and skills needed to teach reading.
+
+**Praxis 8006** — officially *Elementary Education Fundamentals: Teaching Reading* — is the reading instruction exam in ETS’s redesigned Elementary Education Fundamentals family. It is a 100-minute, 80-question selected-response test that replaces Praxis 7002 (Teaching Reading)[4]. Its focus is the knowledge and skills needed to teach reading, including evidence-based literacy practices and essential writing components[1]. The [Praxis 8002 Reading and Language Arts test](https://learndiag.com/praxis-8002-reading-and-language-arts) has a different content scope, but its [official ETS description](https://praxis.ets.org/test/8002.html) also includes applying subject knowledge to teaching scenarios and instructional tasks.
 
 This page explains what the test covers, who it is for, how it is structured, and how to confirm whether it is the test you should register for. It also includes a free 30-question practice mini test with explanations.
 

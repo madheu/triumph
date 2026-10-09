@@ -199,7 +199,7 @@
     var step1 = el('div', 'ld-su-step1');
     var h = el('p', null, null);
     h.style.cssText = 'font-size:16px;margin:0 0 6px';
-    h.innerHTML = '<strong>Unlock your pass forecast &amp; study plan</strong> — free, no password.';
+    h.innerHTML = '<strong>Save your practice results &amp; unlock answer explanations</strong> — free, no password.';
     var sub = el('p', null, 'We email you a 6-digit code. Your results above are saved with it — nothing to re-enter.');
     sub.style.cssText = 'font-size:13px;color:var(--ink-soft);margin:0 0 12px;line-height:1.5';
 

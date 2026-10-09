@@ -106,7 +106,7 @@ Beyond the official Study Companions, useful free options include state curricul
 
 ### Planning ahead: the 8000 series
 
-The legacy 5001 series retires in August 2028, and its replacement — the 8000-series Elementary Education Fundamentals tests — was first administered on March 9, 2026, on the same 100–200 score scale. If your certification timeline crosses the transition, understand both systems before investing in materials; our [guide to the Praxis Elementary Education Fundamentals tests](https://learndiag.com/praxis-elementary-education-fundamentals) covers the new structure, pricing, and confirmed state adoption.
+The legacy 5001 series has a target retirement date of August 2028, and its replacement — the 8000-series Elementary Education Fundamentals tests — was first administered on March 9, 2026, on the same 100–200 score scale. If your certification timeline crosses the transition, understand both systems before investing in materials; our [guide to the Praxis Elementary Education Fundamentals tests](https://learndiag.com/praxis-elementary-education-fundamentals) covers the new structure, pricing, and confirmed state adoption.
 
 ### Praxis 5001 Study Materials FAQ
 
@@ -139,6 +139,8 @@ Go deeper on each gate with our single-subject guides:
 - [Praxis 5004 Social Studies Study Guide](https://learndiag.com/praxis-5004-social-studies-study-guide) — a high-yield review plan
 - [Praxis 5005 Science Study Guide](https://learndiag.com/praxis-5005-science-study-guide) — earth, life, physical science, and inquiry
 
-Planning Beyond the 5001  The legacy 5001 series retires in August 2028, and its replacement is already live: the 8000-series Elementary Education Fundamentals tests were first administered on March 9, 2026, with a modular Praxis Steps option rolling out from September 2026. If your certification timeline crosses the transition window, read our [complete guide to the Praxis Elementary Education Fundamentals tests](https://learndiag.com/praxis-elementary-education-fundamentals) — it covers all five new-format exams, current pricing, confirmed state adoption, and how to verify which series your state accepts.
+Planning Beyond the 5001  The legacy 5001 series has a target retirement date of August 2028, and its replacement is already live: the 8000-series Elementary Education Fundamentals tests were first administered on March 9, 2026, with a modular Praxis Steps option rolling out from September 2026. If your certification timeline crosses the transition window, read our [complete guide to the Praxis Elementary Education Fundamentals tests](https://learndiag.com/praxis-elementary-education-fundamentals) — it covers all five new-format exams, current pricing, confirmed state adoption, and how to verify which series your state accepts.
 
 Related: [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [Subtests Explained](https://learndiag.com/praxis-5001-subtests-explained)
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) gives August 2028 as the *target* retirement date for the 5001, 7001, 5901 and 7811 series and says timing will be aligned with states' transition needs. This is not a universal score-acceptance deadline or a guarantee of appointment availability. Source checked October 9, 2026.

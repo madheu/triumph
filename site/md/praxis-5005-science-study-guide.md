@@ -227,7 +227,7 @@ Expect questions beyond recall: many items describe a classroom investigation or
 
 ### Praxis 5005 and Praxis 8005: how they correspond
 
-Praxis 8005, *Elementary Education Fundamentals: Science*, is the 8000-series counterpart of the 5005. The new series was first administered on **March 9, 2026**; the legacy 5000 series retires in **August 2028**. Praxis 8005 is a 90-minute selected-response test — the only one of the five 8000-series exams with that shorter timing — with an on-screen scientific calculator, covering the same three domains on the same 100–200 scale. From **September 2026** it is also available in the modular Praxis Steps format.
+Praxis 8005, *Elementary Education Fundamentals: Science*, is the 8000-series counterpart of the 5005. The new series was first administered on **March 9, 2026**; the legacy 5000 series has a target retirement date of **August 2028**. Praxis 8005 is a 90-minute selected-response test — the only one of the five 8000-series exams with that shorter timing — with an on-screen scientific calculator, covering the same three domains on the same 100–200 scale. From **September 2026** it is also available in the modular Praxis Steps format.
 
 Which exam you should take depends on which code your state or program accepts — adoption is still rolling out, so verify on the official state requirements page before registering. For the new-format exam, see our [Praxis 8005 Science study guide](https://learndiag.com/praxis-8005-science).
 
@@ -243,7 +243,7 @@ Check the official test information page for the policy in effect on your test d
 
 #### Should I take the 5005 or Praxis 8005?
 
-That depends entirely on which test your state or preparation program accepts. The legacy series runs until August 2028; the 8000 series began in March 2026 and is being adopted state by state. Confirm the accepted code on the official ETS state requirements page or with your program before registering — the tests are not interchangeable.
+That depends entirely on which test your state or preparation program accepts. The legacy series has an August 2028 retirement target; verify appointment availability and state acceptance; the 8000 series began in March 2026 and is being adopted state by state. Confirm the accepted code on the official ETS state requirements page or with your program before registering — the tests are not interchangeable.
 
 #### Can I use 5005 materials to prepare for Praxis 8005?
 
@@ -260,3 +260,5 @@ Content review transfers — the three domains are the same — but format pract
 Related Guide   [Praxis 8005 Science study guide](https://learndiag.com/praxis-8005-science) — the 8000-series counterpart of the 5005, first administered March 9, 2026. Covers the 90-minute format with on-screen scientific calculator, the Earth & Space, Life, and Physical Science domains, and the modular Praxis Steps option available from September 2026.
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) gives August 2028 as the *target* retirement date for the 5001, 7001, 5901 and 7811 series and says timing will be aligned with states' transition needs. This is not a universal score-acceptance deadline or a guarantee of appointment availability. Source checked October 9, 2026.

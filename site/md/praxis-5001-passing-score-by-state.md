@@ -154,4 +154,4 @@ Your Praxis 5001 target is four state-specific numbers, not one national constan
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis raw score calculator: estimate your scaled score](https://learndiag.com/score-calculator) · [Praxis 5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)
+Related: [Praxis practice accuracy calculator: review each subtest](https://learndiag.com/score-calculator) · [Praxis 5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

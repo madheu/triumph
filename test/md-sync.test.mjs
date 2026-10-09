@@ -25,6 +25,14 @@ const SITE = path.join(ROOT, 'site');
 const MD_DIR = path.join(SITE, 'md');
 const mod = await import(pathToFileURL(path.join(ROOT, 'tools', 'html-to-md.mjs')).href);
 
+test('full-document markdown excludes scripts, styles, and metadata but keeps body text', () => {
+  const html = '<html><head><title>Metadata only</title><script>window.secret = "<article>Script bait</article>";</script><style>.x{color:red}</style></head><body><main><h1>Practice summary</h1><p>18 of 24 correct.</p></main><script>var code = "<p>Fake body</p>";</script></body></html>';
+  const md = mod.convertHtmlToMarkdown(html);
+  assert.match(md, /Practice summary/);
+  assert.match(md, /18 of 24 correct/);
+  assert.doesNotMatch(md, /Metadata only|Script bait|Fake body|window.secret|color:red/);
+});
+
 const front = slug =>
   `<!-- Markdown variant of https://learndiag.com/${slug} — request any page with Accept: text/markdown -->\n\n`;
 // 行尾差异不是内容差异 —— CRLF 会让逐字比对假报「全文重写」。

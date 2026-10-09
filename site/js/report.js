@@ -77,7 +77,28 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
-  function money(n, dflt) { return typeof n === 'number' && isFinite(n) ? n : dflt; }
+  // 只用服务端的真实计数；缺失、零分母和不合法计数不能显示为 0% 或成功。
+  function counts(correct, total) {
+    if (typeof correct !== 'number' || typeof total !== 'number' ||
+        !Number.isInteger(correct) || !Number.isInteger(total) ||
+        total <= 0 || correct < 0 || correct > total) return null;
+    return { correct: correct, total: total, accuracy: Math.round(correct / total * 100) };
+  }
+  function summaryCounts(r) {
+    var s = r.summary || {};
+    return counts(s.correct_count, s.question_count);
+  }
+  function countText(c) {
+    return c ? c.correct + '/' + c.total + ' correct (' + c.accuracy + '%)' : 'Insufficient answer-count data';
+  }
+  function reviewRows(r) {
+    return (r.subtests || []).filter(function (s) { return counts(s.correct, s.attempted); });
+  }
+  function reviewPriorities(r) {
+    var rows = reviewRows(r);
+    var lowest = Math.min.apply(null, rows.map(function (s) { return s.correct / s.attempted; }));
+    return lowest < 1 ? rows.filter(function (s) { return s.correct / s.attempted === lowest; }) : [];
+  }
 
   // ---------------------------------------------------------------- 雷达图
 
@@ -159,74 +180,44 @@
   }
 
   function summaryStrip(r) {
-    var s = r.summary || {};
+    var c = summaryCounts(r);
     var head = el('div', 'score-head');
-    head.appendChild(el('span', 'big-score', money(s.score, '—')));
-    var cap = el('span', 'score-caption');
-    cap.appendChild(document.createTextNode('estimated scaled score \u00B7 '));
-    cap.appendChild(el('span', 'mono', money(s.pass_probability, '—') + '%'));
-    cap.appendChild(document.createTextNode(' pass probability. Averaged over all four subtests; your state sets the real line.'));
-    head.appendChild(cap);
+    head.appendChild(el('span', 'big-score', c ? c.accuracy + '%' : '—'));
+    head.appendChild(el('span', 'score-caption', c
+      ? 'practice accuracy · ' + c.correct + '/' + c.total + ' correct'
+      : 'Insufficient answer-count data for practice accuracy.'));
     return head;
   }
 
   /** 「真实反映做题数量」：题数一律取自服务端实际匹配到的答卷，不是前端声称的。 */
   function countLine(r) {
-    var s = r.summary || {};
+    var c = summaryCounts(r);
     var p = el('p', 'score-caption');
     p.style.marginTop = '10px';
-    p.appendChild(document.createTextNode('This report was built from '));
-    p.appendChild(el('strong', null, s.question_count + ' question' + (s.question_count === 1 ? '' : 's')));
-    p.appendChild(document.createTextNode(' you actually answered \u2014 '));
-    p.appendChild(el('strong', null, s.correct_count + ' correct'));
-    p.appendChild(document.createTextNode(', '));
-    p.appendChild(el('strong', null, s.accuracy + '% accuracy'));
-    p.appendChild(document.createTextNode(s.previous_score
-      ? '. Your previous diagnostic estimated ' + s.previous_score + '.'
-      : '. This is your first recorded diagnostic.'));
+    p.textContent = (c ? 'This report uses ' + c.total + ' answered questions matched by the server. ' : 'There is not enough answer-count data to summarize this session. ') +
+      'This small practice sample does not estimate an official Praxis score or predict whether you will pass. Different random sets can differ in difficulty.';
     return p;
-  }
-
-  function radarBlock(r) {
-    var box = document.createElement('div');
-    box.innerHTML = radarSvg(r.radar || []);
-    var rows = el('div', null);
-    rows.style.marginTop = '22px';
-    (r.radar || []).forEach(function (d) {
-      var row = el('div', 'subtest-line');
-      row.appendChild(el('span', 'code', (d.measured === false ? '\u2014' : d.value)));
-      var name = el('span', 'name', d.label);
-      name.style.fontSize = '16px';
-      row.appendChild(name);
-      var acc = el('span', 'acc', d.measured === false ? 'not measured' : d.value + '/100');
-      row.appendChild(acc);
-      var track = el('div', 'bar-track');
-      var fill = el('div', 'bar-fill');
-      fill.style.width = (d.measured === false ? 0 : Math.max(3, d.value)) + '%';
-      track.appendChild(fill);
-      row.appendChild(track);
-      row.title = d.hint || '';
-      rows.appendChild(row);
-    });
-    return { chart: box, rows: rows };
   }
 
   function subtestBlock(r) {
     var wrap = el('div', 'subtest-report');
+    var priorities = reviewPriorities(r);
+    if (!(r.subtests || []).length) wrap.appendChild(el('p', 'score-caption', 'Insufficient subtest data.'));
     (r.subtests || []).forEach(function (s) {
+      var c = counts(s.correct, s.attempted);
       var row = el('div', 'subtest-line');
       row.appendChild(el('span', 'code', s.code));
       var name = el('span', 'name');
       name.appendChild(document.createTextNode(s.name));
-      if (r.summary && r.summary.weakest && r.summary.weakest.code === s.code) {
-        var em = el('span', 'weak', ' \u2014 weakest gate');
+      if (priorities.indexOf(s) !== -1) {
+        var em = el('span', 'weak', ' \u2014 review next');
         name.appendChild(em);
       }
       row.appendChild(name);
-      row.appendChild(el('span', 'acc', s.accuracy + '%'));
+      row.appendChild(el('span', 'acc', countText(c)));
       var track = el('div', 'bar-track');
       var fill = el('div', 'bar-fill');
-      fill.style.width = Math.max(6, s.accuracy) + '%';
+      fill.style.width = (c ? c.accuracy : 0) + '%';
       track.appendChild(fill);
       row.appendChild(track);
       wrap.appendChild(row);
@@ -236,17 +227,18 @@
 
   function knowledgeBlock(r) {
     var wrap = el('div', 'subtest-report');
+    if (!(r.knowledge_points || []).length) wrap.appendChild(el('p', 'score-caption', 'Insufficient knowledge-point data.'));
     (r.knowledge_points || []).forEach(function (c) {
+      var measured = counts(c.correct, c.attempted);
       var row = el('div', 'subtest-line');
       row.appendChild(el('span', 'code', c.code));
       var name = el('span', 'name', c.category);
       name.style.fontSize = '15px';
       row.appendChild(name);
-      row.appendChild(el('span', 'acc', c.accuracy + '%'));
+      row.appendChild(el('span', 'acc', countText(measured)));
       var track = el('div', 'bar-track');
       var fill = el('div', 'bar-fill');
-      fill.style.width = Math.max(4, c.accuracy) + '%';
-      if (c.accuracy < 50) fill.style.background = 'var(--wrong)';
+      fill.style.width = (measured ? measured.accuracy : 0) + '%';
       track.appendChild(fill);
       row.appendChild(track);
       wrap.appendChild(row);
@@ -255,7 +247,9 @@
   }
 
   function paceBlock(r) {
-    if (!r.pace) {
+    if (!r.pace || !['median_s', 'fastest_s', 'slowest_s', 'under_15s'].every(function (key) {
+      return typeof r.pace[key] === 'number' && isFinite(r.pace[key]) && r.pace[key] >= 0;
+    })) {
       return el('p', 'score-caption', 'Timing was incomplete for this session, so pace is not scored. Keep the tab open from the first question next time.');
     }
     var ul = el('div', null);
@@ -276,7 +270,10 @@
 
   function missTopicBlock(r) {
     if (!(r.miss_topics || []).length) {
-      return el('p', 'weak-note', 'No missed questions in this session \u2014 run a longer diagnostic from your dashboard settings to find the real ceiling.');
+      var c = summaryCounts(r);
+      return el('p', 'weak-note', c && c.correct === c.total
+        ? 'No missed questions in this sample. Try more topics across all subtests.'
+        : 'Missed-topic details are unavailable for this session. Review the available question explanations below.');
     }
     var wrap = el('div', null);
     r.miss_topics.forEach(function (t) {
@@ -289,72 +286,33 @@
   }
 
   function narrativeBlock(r) {
-    var n = r.narrative || {};
+    // 旧版服务端叙述可能混有模型分数和通过预测，展示层只从已授权的答题事实生成建议。
     var wrap = el('div', null);
-
-    if (n.headline) {
-      var h = el('p', 'weak-note');
-      h.textContent = n.headline;
-      wrap.appendChild(h);
-    }
-    ['trend', 'pace_read', 'knowledge_read', 'miss_read', 'risk'].forEach(function (k) {
-      if (!n[k]) return;
-      var label = {
-        trend: 'Overall trend',
-        pace_read: 'Answering pace',
-        knowledge_read: 'Knowledge points',
-        miss_read: 'Where the misses sit',
-        risk: 'Biggest risk',
-      }[k];
-      var p = el('p', 'score-caption');
-      p.style.marginTop = '14px';
-      var st = el('strong', null, label + ': ');
-      p.appendChild(st);
-      p.appendChild(document.createTextNode(n[k]));
-      wrap.appendChild(p);
+    var priorities = reviewPriorities(r);
+    var c = summaryCounts(r);
+    var focus = priorities.map(function (s) { return s.name + ' (' + countText(counts(s.correct, s.attempted)) + ')'; }).join('; ');
+    wrap.appendChild(el('p', 'weak-note', focus
+      ? 'Review next: ' + focus + '. These subtests had the lowest accuracy in this sample, not a measured exam weakness.'
+      : c && c.correct === c.total
+        ? 'You answered every question in this sample correctly. Broaden your practice to topics not sampled here.'
+        : 'There is not enough subtest data to identify a review priority. Use the available missed-question explanations to guide your review.'));
+    var actions = [
+      focus ? 'Start with the missed concepts in ' + priorities.map(function (s) { return s.name; }).join(', ') + '. Read each explanation and write why your chosen answer did not fit.'
+        : 'Review any available missed-question explanations. If none are available, start a fresh set across all four subtests.',
+      'Practice fresh questions on the reviewed concepts and record correct answers alongside the number attempted.',
+      'Then cover other subtests and topics. Compare missed concepts between sessions; different random sets are not a reliable readiness trend.'
+    ];
+    actions.forEach(function (action, i) {
+      var row = el('div', 'plan-item');
+      row.appendChild(el('span', 'day', 'Step ' + (i + 1)));
+      row.appendChild(el('span', null, action));
+      wrap.appendChild(row);
     });
-
-    if ((n.weak_points || []).length) {
-      wrap.appendChild(sectionLabel('Missed question points'));
-      n.weak_points.forEach(function (w) {
-        var box = el('div', 'plan-item');
-        box.style.display = 'block';
-        var topic = el('p', null);
-        topic.style.fontWeight = '600';
-        topic.textContent = w.topic;
-        box.appendChild(topic);
-        if (w.why) box.appendChild(el('p', 'score-caption', w.why));
-        if (w.fix) {
-          var fix = el('p', 'score-caption');
-          fix.style.marginTop = '6px';
-          var b = el('strong', null, 'Do this: ');
-          fix.appendChild(b);
-          fix.appendChild(document.createTextNode(w.fix));
-          box.appendChild(fix);
-        }
-        wrap.appendChild(box);
-      });
-    }
-
-    if ((n.next_actions || []).length) {
-      wrap.appendChild(sectionLabel('Your next five moves'));
-      n.next_actions.forEach(function (a, i) {
-        var row = el('div', 'plan-item');
-        row.appendChild(el('span', 'day', String(i + 1)));
-        row.appendChild(el('span', null, a));
-        wrap.appendChild(row);
-      });
-    }
-
-    if (r.ai_generated === false) {
-      var note = el('p', 'demo-note');
-      note.textContent = 'Written by our rule engine \u2014 the language model was unavailable when this report was generated. Every number above is unaffected.';
-      wrap.appendChild(note);
-    }
+    wrap.appendChild(el('p', 'demo-note', 'This study plan is based on the recorded practice counts. It does not measure pass probability, guessing, concentration or exam readiness.'));
     return wrap;
   }
 
-  function buildReportNode(r) {
+  function buildReportNode(r, forDownload) {
     var s = el('section', 'report wrap');
     s.id = ROOT_ID;
     s.setAttribute('data-ld-report', '1');
@@ -364,7 +322,8 @@
 
     var h2 = el('h2');
     h2.style.marginTop = '12px';
-    h2.appendChild(document.createTextNode('What the last ' + ((r.summary || {}).question_count || '') + ' questions '));
+    var c = summaryCounts(r);
+    h2.appendChild(document.createTextNode(c ? 'What these ' + c.total + ' answered questions ' : 'What the available practice records '));
     var em = el('em', null, 'actually say');
     h2.appendChild(em);
     h2.appendChild(document.createTextNode('.'));
@@ -372,11 +331,6 @@
 
     s.appendChild(summaryStrip(r));
     s.appendChild(countLine(r));
-
-    s.appendChild(sectionLabel('Nine-dimension readiness'));
-    var rb = radarBlock(r);
-    s.appendChild(rb.chart);
-    s.appendChild(rb.rows);
 
     s.appendChild(sectionLabel('By subtest'));
     s.appendChild(subtestBlock(r));
@@ -390,7 +344,7 @@
     s.appendChild(sectionLabel('Where the misses sit'));
     s.appendChild(missTopicBlock(r));
 
-    s.appendChild(sectionLabel('Readiness trend analysis'));
+    s.appendChild(sectionLabel('Review priorities & study plan'));
     s.appendChild(narrativeBlock(r));
 
     // 逐题回顾（付费层才有完整 12 题）
@@ -433,7 +387,7 @@
     pr.type = 'button';
     pr.addEventListener('click', function () { window.print(); });
     footer.appendChild(pr);
-    s.appendChild(footer);
+    if (!forDownload) s.appendChild(footer);
 
     var note = el('p', 'demo-note');
     note.textContent = 'Keep this link \u2014 this report stays available for 180 days. ' + REFUND + '.';
@@ -446,13 +400,17 @@
 
   function download(r) {
     try {
-      var s = r.summary || {};
       var html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">' +
         '<meta name="viewport" content="width=device-width,initial-scale=1">' +
         '<title>Learndiag diagnostic report</title>' +
         '<style>' +
         'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;' +
         'max-width:760px;margin:0 auto;padding:40px 24px;color:#3C3733;background:#F2EFE9;line-height:1.6}' +
+        ':root{--line:#D8D1C5;--ink-soft:#6E6760;--wrong-deep:#934E49;--correct-deep:#52694D}' +
+        '.big-score{display:block;font-size:48px;color:#A67D7A}.score-caption,.demo-note{color:#6E6760;font-size:14px}' +
+        '.section-label{font-size:17px;font-weight:600;margin:28px 0 12px;border-bottom:1px solid #D8D1C5}' +
+        '.subtest-line,.plan-item{display:flex;gap:12px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid #D8D1C5}' +
+        '.subtest-line .name{flex:1}.plan-item .day{font-weight:600}.bar-track{display:none}.weak{font-size:12px}' +
         'h1{font-size:26px;margin:0 0 6px}h2{font-size:17px;margin:30px 0 10px;border-bottom:1px solid #D8D1C5;padding-bottom:6px}' +
         '.big{font-size:48px;color:#A67D7A;font-weight:600;margin:10px 0}' +
         '.meta{color:#6E6760;font-size:14px}table{width:100%;border-collapse:collapse;margin:10px 0}' +
@@ -462,66 +420,11 @@
         '.rp{background:#E8E3D8;padding:12px 14px;font-size:13px;margin:10px 0}' +
         '</style></head><body>';
       html += '<h1>Learndiag \u2014 Praxis 5001 diagnostic report</h1>';
-      html += '<p class="meta">Generated ' + esc(new Date(r.generated_at || Date.now()).toISOString().slice(0, 16).replace('T', ' ')) + ' UTC \u00B7 built from ' +
-        esc(s.question_count) + ' answered questions' + (r.ai_generated ? ' \u00B7 AI trend analysis' : '') + '</p>';
-      html += '<p class="big">' + esc(s.score) + ' <span style="font-size:18px;color:#6E6760">estimated scaled score</span></p>';
-      html += '<p class="meta">' + esc(s.correct_count) + ' correct of ' + esc(s.question_count) + ' (' + esc(s.accuracy) + '% accuracy) \u00B7 ' +
-        esc(s.pass_probability) + '% estimated pass probability. Your state sets the real passing line.</p>';
-
-      html += '<h2>Nine-dimension readiness</h2>';
-      html += radarSvg(r.radar || [], { size: 380, labelPad: 60 });
-      html += '<table><tr><th>Dimension</th><th>Score</th></tr>' + (r.radar || []).map(function (d) {
-        return '<tr><td>' + esc(d.label) + '</td><td>' + (d.measured === false ? 'not measured' : esc(d.value) + '/100') + '</td></tr>';
-      }).join('') + '</table>';
-
-      html += '<h2>By subtest</h2><table><tr><th>Code</th><th>Subtest</th><th>Correct</th><th>Missed</th><th>Accuracy</th></tr>' +
-        (r.subtests || []).map(function (x) {
-          return '<tr><td>' + esc(x.code) + '</td><td>' + esc(x.name) + '</td><td>' + esc(x.correct) + '/' + esc(x.attempted) +
-            '</td><td>' + esc(x.misses) + '</td><td>' + esc(x.accuracy) + '%</td></tr>';
-        }).join('') + '</table>';
-
-      html += '<h2>By knowledge point</h2><table><tr><th>Code</th><th>Knowledge point</th><th>Accuracy</th></tr>' +
-        (r.knowledge_points || []).map(function (c) {
-          return '<tr><td>' + esc(c.code) + '</td><td>' + esc(c.category) + '</td><td>' + esc(c.accuracy) + '%</td></tr>';
-        }).join('') + '</table>';
-
-      if (r.pace) {
-        html += '<h2>Pace and timing</h2><table>' +
-          '<tr><td>Median per question</td><td>' + esc(r.pace.median_s) + 's</td></tr>' +
-          '<tr><td>Fastest</td><td>' + esc(r.pace.fastest_s) + 's</td></tr>' +
-          '<tr><td>Slowest</td><td>' + esc(r.pace.slowest_s) + 's</td></tr>' +
-          '<tr><td>Answered in under 15s</td><td>' + esc(r.pace.under_15s) + '</td></tr></table>';
-      }
-
-      var n = r.narrative || {};
-      html += '<h2>Readiness trend analysis</h2>';
-      if (n.headline) html += '<p><strong>' + esc(n.headline) + '</strong></p>';
-      [['trend', 'Overall trend'], ['pace_read', 'Answering pace'], ['knowledge_read', 'Knowledge points'],
-       ['miss_read', 'Where the misses sit'], ['risk', 'Biggest risk']].forEach(function (kv) {
-        if (n[kv[0]]) html += '<p><strong>' + esc(kv[1]) + ':</strong> ' + esc(n[kv[0]]) + '</p>';
-      });
-      if ((n.weak_points || []).length) {
-        html += '<h2>Missed question points</h2>';
-        n.weak_points.forEach(function (w) {
-          html += '<p><strong>' + esc(w.topic) + '</strong><br>' + esc(w.why) + '<br><em>Do this: ' + esc(w.fix) + '</em></p>';
-        });
-      }
-      if ((n.next_actions || []).length) {
-        html += '<h2>Your next moves</h2><ol>' + n.next_actions.map(function (a) { return '<li>' + esc(a) + '</li>'; }).join('') + '</ol>';
-      }
-
-      if ((r.misses || []).length) {
-        html += '<h2>Every question you missed</h2>';
-        r.misses.forEach(function (m, i) {
-          html += '<div class="mis"><div class="q">' + (i + 1) + '. [' + esc(m.code) + ' \u00B7 ' + esc(m.category) + '] ' + esc(m.question) + '</div>' +
-            '<div class="wrong">Your answer: ' + esc(m.selected_text) + '</div>' +
-            '<div class="right">Correct: ' + esc(m.answer_text) + '</div>' +
-            (m.explanation ? '<div class="ex">' + esc(m.explanation) + '</div>' : '') + '</div>';
-        });
-      }
-
-      html += '<h2>Sources</h2><div class="rp">Score model: linear estimate from per-subtest accuracy, calibrated to the Praxis 5001 scaled-score range (140\u2013190). ' +
-        'Pass probability is a demo model, not a prediction \u2014 your licensing state sets the binding passing line. ' +
+      html += '<p class="meta">Practice counts, missed-question explanations and a study plan based on this session.</p>';
+      // 下载与页面复用同一事实渲染，避免旧模型分数通过第二套模板重新出现。
+      html += buildReportNode(r, true).outerHTML;
+      html += '<h2>About this report</h2><div class="rp">Accuracy is correct answers divided by answered questions matched by the server. ' +
+        'A small practice sample cannot establish exam readiness. ' +
         'Practice questions are original Learndiag items written to the ETS 5001 blueprint; ETS does not endorse this site. ' +
         'Billing and refund terms: learndiag.com/terms.html</div>';
       html += '</body></html>';
@@ -601,8 +504,8 @@
 
     var h2 = el('h2');
     h2.style.marginTop = '12px';
-    h2.appendChild(document.createTextNode('Maybe you are one weak spot away from '));
-    h2.appendChild(el('em', null, 'passing'));
+    h2.appendChild(document.createTextNode('Turn your practice answers into a '));
+    h2.appendChild(el('em', null, 'study plan'));
     h2.appendChild(document.createTextNode('.'));
     s.appendChild(h2);
 
@@ -610,8 +513,8 @@
     p.style.marginTop = '14px';
     p.appendChild(document.createTextNode(
       'You have finished the diagnostic \u2014 that part was free. The report that turns your answers into a plan is not open yet: ' +
-      'the nine-dimension readiness radar, the timing analysis, the knowledge points behind each miss, and the AI trend write-up ' +
-      'are all generated on our server and only sent to unlocked accounts.'));
+      'your answer counts, subtest and topic accuracy, available timing data, missed-question explanations and review priorities ' +
+      'use server-verified answers and are only displayed after report access is confirmed.'));
     s.appendChild(p);
 
     var p2 = el('p', 'score-caption');
@@ -694,7 +597,7 @@
         }).then(function (r) {
           return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, j: j }; });
         }).then(function (res) {
-          if (res.status === 402 || !res.j || !res.j.report) {
+          if (res.status === 401 || res.status === 402 || !res.j || !res.j.report) {
             place(buildLockNode(null, { logged_in: loggedIn() }), attempt.attempt_id);
             return;
           }

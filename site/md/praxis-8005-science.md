@@ -10,7 +10,7 @@
 
 **Praxis 8005** — officially *Elementary Education Fundamentals: Science* — is the science test in ETS's redesigned Elementary Education Fundamentals family. It is a **90-minute, 74-question selected-response** test covering Earth and space science, life science, and physical science, with an on-screen scientific calculator provided[1][5].
 
-Still Preparing for the Legacy 5005?  The Praxis 5005 remains available until the legacy 5000 series retires in August 2028, and many states still accept it. If your state or program requires the 5005 rather than Praxis 8005, use our [Praxis 5005 science study guide](https://learndiag.com/praxis-5005-science-study-guide) — it covers the same three science domains with prep strategy tailored to the legacy exam's format. Always confirm which test code your state accepts on the official state requirements page before registering.
+Still Preparing for the Legacy 5005?  ETS targets August 2028 for retirement of the legacy series, including 5005. Verify current appointment availability and state acceptance separately. If your state or program requires the 5005 rather than Praxis 8005, use our [Praxis 5005 science study guide](https://learndiag.com/praxis-5005-science-study-guide) — it covers the same three science domains with prep strategy tailored to the legacy exam's format. Always confirm which test code your state accepts on the official state requirements page before registering.
 
 Two things make this test unusual. The first is the timing: at 90 minutes it is the *shortest* of the five Fundamentals tests — the other four run 100 minutes — so 8005 gives you roughly 73 seconds per item, the tightest pace in the family[1][5]. The second is the item mix. Science items lean on data displays and experimental design more heavily than the other subjects do, and both of those formats punish candidates who know the content but misread a table or confuse a control group with a controlled variable.
 
@@ -33,7 +33,7 @@ This page explains what the test covers, who it is for, how it is scored, and ho
 | **Qualifying score** | Set by your state or program — there is no national passing score. Verified: West Virginia 143, Arkansas 126[2][3] |
 | **First administration** | 2026-03-09[1] |
 | **Praxis Steps** | 8501 Earth and Space Sciences · 8502 Life Sciences · 8503 Physical Sciences[2] |
-| **Previous series counterpart** | Praxis 5005 (Elementary Education: Science subtest), which retires with the 5000 series in 2028-08[2][3] |
+| **Previous series counterpart** | Praxis 5005 (Elementary Education: Science subtest), which has a target retirement date of 2028-08 with the 5000 series[2][3] |
 
 The one number we will not give you
 
@@ -196,7 +196,7 @@ Candidates who prepared for the older science subtest will find the content fami
 | **Calculator** | An on-screen scientific calculator is provided[7] | On-screen scientific calculator provided[1] |
 | **Fee** | $64 as a subtest of the multiple-subjects test[7] | $79.00 as a standalone test[1] |
 | **Modular category retakes** | Not available | Praxis Steps lists 8501 / 8502 / 8503 for 8005[2] |
-| **Legacy status** | Retires with the 5000 series in 2028-08[2][3] | Current test in the 8000 series[1][5] |
+| **Legacy status** | Target retirement with the 5000 series: 2028-08[2][3] | Current test in the 8000 series[1][5] |
 
 Four practical consequences:
 
@@ -293,3 +293,5 @@ Every factual claim above traces to one of these. Verification dates are shown b
 **Figures we deliberately do not publish.** Five things were left off this page because we could not confirm them: the per-domain question count for 8005; the number of items ETS fields in any single administration window; a raw-to-scaled conversion table; the qualifying scores of the other 48 states; and a sub-skill-level blueprint for any of the three domains. Where a competing site gives you one of these without naming an official source, treat it as an estimate.
 
 Last verified 2026-09-15. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) gives August 2028 as the *target* retirement date for the 5001, 7001, 5901 and 7811 series and says timing will be aligned with states' transition needs. This is not a universal score-acceptance deadline or a guarantee of appointment availability. Source checked October 9, 2026.

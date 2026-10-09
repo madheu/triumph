@@ -110,7 +110,7 @@ If you want a quick read on where you currently stand across all four areas, the
 - **Individual subtest: $64 each** — register separately, subject to your state’s rules
 - **Total content: 245 questions, about 4 hours 35 minutes** — but each subtest is timed on its own, and unused time does not carry over
 
-Use the [Praxis score calculator](https://learndiag.com/score-calculator) to turn a raw score into an estimated scaled score (100–200) before you book, so you know what you are walking in with.
+Use the [Praxis practice accuracy calculator](https://learndiag.com/score-calculator) to review correct answers by subtest and decide what to practise next. A practice percentage does not predict an official scaled score or establish whether you will pass.
 
 ## Frequently Asked Questions
 

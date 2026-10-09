@@ -508,9 +508,9 @@
     // 工具结果区 -> 学习页/工具页的内链
     var next = el('p', null, null);
     next.style.cssText = 'font-size:14px;line-height:1.65;margin-top:14px';
-    next.innerHTML = 'How this connects to a real score: ETS publishes no raw-to-scaled conversion for the 8000 series, so we do not ' +
-      'convert this percentage into a projected score. For how raw scores relate to the 100\u2013200 scale on the older series, see the ' +
-      '<a href="/score-calculator">Praxis raw score calculator</a>, and for the full test outline go back to ' +
+    next.innerHTML = 'This result describes your practice answers, not an official score or a prediction of passing. ' +
+      'To review correct answers and question counts by subject, use the ' +
+      '<a href="/score-calculator">Praxis practice accuracy calculator</a>, and for the full test outline go back to ' +
       '<a href="/praxis-8003-mathematics">the Praxis 8003 guide</a>.';
     box.appendChild(next);
 

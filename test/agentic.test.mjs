@@ -155,7 +155,10 @@ test('worker: pages outside the MD route list still negotiate when a mirror exis
 
 test('worker: page with no mirror falls back to HTML (no 404, no 500)', async () => {
   const env = makeEnv();
-  // /terms has a mirror; this one deliberately does not.
+  // Simulate an absent mirror explicitly; /tools may gain a real mirror.
+  const fetchAsset = env.ASSETS.fetch.bind(env.ASSETS);
+  env.ASSETS.fetch = async req => new URL(req.url).pathname === '/md/tools.md'
+    ? new Response('not found', { status: 404 }) : fetchAsset(req);
   for (const p of ['/tools', '/login', '/nonexistent-page-abc']) {
     const r = await call(env, p, 'GET', null, { Accept: 'text/markdown' });
     assert.ok(r.status === 200 || r.status === 404,
@@ -510,7 +513,7 @@ test('every SKILL.md: frontmatter required fields + when-to-use + fallback secti
   for (const dir of readdirSync(base)) {
     const skillPath = base + dir;
     let src;
-    try { src = readFileSync(skillPath + '/SKILL.md', 'utf8'); } catch { continue; }
+    try { src = readFileSync(skillPath + '/SKILL.md', 'utf8').replace(/\r\n/g, '\n'); } catch { continue; }
     const fm = /^---\n([\s\S]*?)\n---\n/.exec(src);
     assert.ok(fm, `${dir}/SKILL.md frontmatter`);
     assert.match(fm[1], /^name: [a-z0-9-]+$/m);
@@ -525,7 +528,7 @@ test('every SKILL.md: frontmatter required fields + when-to-use + fallback secti
 });
 
 test('llms.txt follows llmstxt.org shape and includes when-to-use guidance (fix #25)', () => {
-  const t = readFileSync(SITE + 'llms.txt', 'utf8');
+  const t = readFileSync(SITE + 'llms.txt', 'utf8').replace(/\r\n/g, '\n');
   assert.match(t, /^# Learndiag\n/);
   assert.match(t, /^> /m); // blockquote summary
   assert.ok(t.includes('## When to use Learndiag'), 'explicit when-to-use section');

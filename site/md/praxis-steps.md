@@ -266,3 +266,5 @@ Every factual claim above traces to one of these. Verification dates are shown b
 - **The 7-day reporting rule has an effective date** (September 12, 2026, for 8002–8005). Candidates who tested earlier are on the schedule given at their registration[3].
 
 Last verified 2026-09-14. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) gives August 2028 as the *target* retirement date for the 5001, 7001, 5901 and 7811 series and says timing will be aligned with states' transition needs. This is not a universal score-acceptance deadline or a guarantee of appointment availability. Source checked October 9, 2026.

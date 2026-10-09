@@ -32,7 +32,7 @@ ETS redesigned its elementary education certification tests and grouped the repl
 | **Combined test option** | None — each content area is a separate test[6] |
 | **Praxis Steps availability** | September 2026 for 8002–8005, 2027 for 8006. ETS has published more than one window for Steps, so confirm the current date on the official test page[1][2][3][4][5][10] |
 | **Replaces** | The Elementary Education series 5001, 7001, 5901 and 7811[6] |
-| **Legacy series retirement** | 2028-08[6][9] |
+| **Legacy series retirement target** | 2028-08[6][9] |
 
 Sources are listed at the bottom of this page.
 
@@ -86,15 +86,15 @@ One number per test we deliberately leave out
 
 ## How the 5001, 7001 and 8000 Series Relate
 
-ETS states that the redesigned tests will replace the Elementary Education series **5001, 7001, 5901 and 7811**, and lists a retirement date of **2028-08** for the legacy series[6][9].
+ETS states that the redesigned tests will replace the Elementary Education series **5001, 7001, 5901 and 7811**, and lists a target retirement date of **2028-08** for the legacy series[6][9].
 
 | Legacy series | What it was | 8000-series counterpart | Status |
 | --- | --- | --- | --- |
-| **Praxis 5001** | Elementary Education: Multiple Subjects, taken as four subtests (5002 Reading and Language Arts, 5003 Mathematics, 5004 Social Studies, 5005 Science)[6] | 8002, 8003, 8004, 8005 — separate standalone tests, with no combined option in the new family[6] | Still administered; ETS lists retirement in 2028-08[6][9] |
-| **Praxis 7001 family** | Elementary Education tests including 7002 Teaching Reading[6] | 8006 Teaching Reading[6] | Still administered; retirement listed as 2028-08[6][9] |
-| **Praxis 5901 and 7811** | Two further Elementary Education series that ETS names among the ones being replaced[6] | Covered by the Elementary Education Fundamentals family. We publish no per-code mapping for these two — our verified sources give the family-level replacement, not a code-by-code table[6] | Still administered; retirement listed as 2028-08[6][9] |
+| **Praxis 5001** | Elementary Education: Multiple Subjects, taken as four subtests (5002 Reading and Language Arts, 5003 Mathematics, 5004 Social Studies, 5005 Science)[6] | 8002, 8003, 8004, 8005 — separate standalone tests, with no combined option in the new family[6] | ETS retirement target: 2028-08; confirm current availability and state acceptance[6][9] |
+| **Praxis 7001 family** | Elementary Education tests including 7002 Teaching Reading[6] | 8006 Teaching Reading[6] | ETS retirement target: 2028-08; confirm current availability and state acceptance[6][9] |
+| **Praxis 5901 and 7811** | Two further Elementary Education series that ETS names among the ones being replaced[6] | Covered by the Elementary Education Fundamentals family. We publish no per-code mapping for these two — our verified sources give the family-level replacement, not a code-by-code table[6] | ETS retirement target: 2028-08; confirm current availability and state acceptance[6][9] |
 
-**The retirement date is 2028-08. It is not today.** So the honest answer to “has the 8000 series replaced 5001?” is: ETS has published the replacement and the retirement date, and the transition is happening state by state on different schedules. Arkansas is a concrete example — that state’s ETS requirements page accepts 5000-series tests through **2027-08-31** and states that 5000-series and 8000-series scores may be **combined** during that period, provided each of the four content areas is satisfied by at least one passing test[8].
+**The target retirement date is 2028-08; state transition needs can affect timing.** So the honest answer to “has the 8000 series replaced 5001?” is: ETS has published the replacement and the retirement date, and the transition is happening state by state on different schedules. Arkansas is a concrete example — that state’s ETS requirements page accepts 5000-series tests through **2027-08-31** and states that 5000-series and 8000-series scores may be **combined** during that period, provided each of the four content areas is satisfied by at least one passing test[8].
 
 That is why we do not write that 8000 has superseded 5001, and why we would treat any page that says so without naming a state and an effective date as unreliable. Two codes can both be valid for the same subject in the same state, in the same year, for different candidates. The full comparison — codes, question counts, category renamings and what changed in the redesign — is on [Praxis 5001 vs. the 8000 series](https://learndiag.com/praxis-5001-vs-8000-series).
 
@@ -166,7 +166,7 @@ One caution about practice scores. A practice percentage tells you how you did o
 
 ### What is the Praxis 8000 series?
 
-The Praxis 8000 series is ETS’s redesigned Elementary Education Fundamentals family: five tests numbered 8002 through 8006. It replaces the older Elementary Education series (5001, 7001, 5901 and 7811), which ETS lists as retiring in 2028-08. The first administration was 2026-03-09 and each test costs $79.00. The family has five separate tests rather than one combined elementary exam, and 8006 Teaching Reading is a reading pedagogy test rather than a content test.
+The Praxis 8000 series is ETS’s redesigned Elementary Education Fundamentals family: five tests numbered 8002 through 8006. It replaces the older Elementary Education series (5001, 7001, 5901 and 7811), for which ETS targets retirement in 2028-08. The first administration was 2026-03-09 and each test costs $79.00. The family has five separate tests rather than one combined elementary exam, and 8006 Teaching Reading is a reading pedagogy test rather than a content test.
 
 ### What are the 8000-series test codes?
 
@@ -214,7 +214,7 @@ Every factual claim above traces to one of these. Verification dates are shown b
 | 6 | ETS, *The new Praxis Elementary Education Fundamentals tests* (V5, © 2025) — family structure, the replacement of 5001 / 7001 / 5901 / 7811, the absence of a combined test option, per-category item counts for 8002–8004 and 8006, standard alignment. **Note:** the 8005 content-domain section is truncated in our archived copy, which is why this page publishes no per-domain counts for 8005. Archived: docs/sources/ets-elementary-education-fundamentals-brochure-V5-2025.pdf | [link](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf) | 2026-09-15 (URL live, PDF byte-identical to our archive) |
 | 7 | ETS state requirements, West Virginia — 8002/8003/8004/8005 qualifying scores 152/152/147/143, Praxis 5205 used for teaching reading, Steps pricing | [link](https://praxis.ets.org/state-requirements/westvirginia-tests.html) | 2026-09-03 |
 | 8 | ETS state requirements, Arkansas — 8002/8003/8004/8005 qualifying scores 137/136/130/126, 5000-series acceptance through 2027-08-31, the mixed-score rule, 8006 not listed | [link](https://praxis.ets.org/state-requirements/arkansas-tests.html) | 2026-09-03 |
-| 9 | ETS early adoption pricing and key dates — first administration 2026-03-09, standard pricing from 2026-06-01, legacy series retirement 2028-08 | [link](https://praxis.ets.org/tomorrows-teacher/early-adoption-pricing.html) | 2026-09-03 |
+| 9 | ETS early adoption pricing and key dates — first administration 2026-03-09, standard pricing from 2026-06-01, legacy series retirement target 2028-08 | [link](https://praxis.ets.org/tomorrows-teacher/early-adoption-pricing.html) | 2026-09-03 |
 | 10 | ETS Praxis Steps hub — what Steps is, and how category-level testing is enabled | [link](https://praxis.ets.org/praxis-steps.html) | 2026-09-03 |
 | 11 | Learndiag official facts library, 8000 series — the consolidated fact set this page is built from, itself sourced to 1–10 | content-infra/official-facts-8000-series.json | 2026-09-03 |
 | 12 | National Reading Panel, *Teaching Children to Read* (2000) — the five components of reading instruction. Public-domain U.S. government report referenced by ETS source 6; the five components themselves are general professional knowledge, **not** an ETS specification. | No single canonical URL; the report is distributed by the U.S. government | 2026-09-03 |
@@ -228,3 +228,5 @@ Every factual claim above traces to one of these. Verification dates are shown b
 - **The practice banks are drafted, not human-reviewed.** The 8002–8006 mini tests are original items written to the published category definitions. They are not ETS items and have not been through independent fact-checking. Treat them as practice, and [tell us](https://learndiag.com/contact) if one of them is wrong — we correct errors and note the correction.
 
 Last verified 2026-09-03. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.
+
+**Retirement timing:** The [ETS Praxis Steps FAQ (printed page 2)](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) targets August 2028 for retirement of the 5001, 7001, 5901 and 7811 series, with timing aligned to states' transition needs. Verify appointment availability and score-acceptance deadlines separately. Source checked October 9, 2026.

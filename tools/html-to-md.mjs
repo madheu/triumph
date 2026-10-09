@@ -266,7 +266,12 @@ export function blocksFrom(nodes) {
 
 /** Convert a full HTML document (or fragment) to markdown body text. */
 export function convertHtmlToMarkdown(html) {
-  const tree = parseHtml(html);
+  // Strip raw-text elements before tokenizing: JS strings may contain HTML tags.
+  // Full-document fallbacks must not emit metadata, CSS, or executable code.
+  const content = html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '')
+    .replace(/<head\b[^>]*>[\s\S]*?<\/head\s*>/gi, '');
+  const tree = parseHtml(content);
   // Collect EVERY <article>, not just the first one.
   // Regression fixed 2026-09-20: hub pages carry many article cards (resources.html has 23),
   // and the old "return the first match" version silently dropped 22 of them — the md

@@ -22,7 +22,7 @@ Three question types appear, because all three appear on the real test:
 
 Every question comes with a full explanation, and a wrong answer also explains why the option you chose is tempting and wrong. Numeric-entry items have no options, so their explanation walks the calculation instead.
 
-**What this percentage is and is not.** ETS publishes no raw-to-scaled conversion for the 8000 series, so nothing here is converted into a projected scaled score — and we do not give a pass probability. A percentage is a percentage. Treat the domain breakdown as a readiness signal and a study pointer, not a score prediction. If you want to see how raw scores relate to scaled scores on the Praxis tests that do publish a conversion basis, use the [Praxis raw score calculator](https://learndiag.com/score-calculator).
+**What this percentage is and is not.** ETS publishes no raw-to-scaled conversion for the 8000 series, so nothing here is converted into a projected scaled score — and we do not give a pass probability. A percentage is a percentage. Treat the domain breakdown as a readiness signal and a study pointer, not a score prediction. Use the [Praxis practice accuracy calculator](https://learndiag.com/score-calculator) to review correct answers out of attempted questions without converting them to an official score.
 
 ## How to use the results
 
@@ -36,7 +36,7 @@ Every question comes with a full explanation, and a wrong answer also explains w
 - [Praxis 8003 Mathematics: what the test covers](https://learndiag.com/praxis-8003-mathematics) — the full domain breakdown, the calculator and numeric-entry rules, the 5003 comparison, and the verified state cut scores.
 - [Praxis Elementary Education Fundamentals hub](https://learndiag.com/praxis-elementary-education-fundamentals) — how the 8002–8006 tests fit together.
 - [Praxis 5003 math study guide](https://learndiag.com/praxis-5003-math-study-guide) — for candidates whose state still requires the older mathematics subtest.
-- [Praxis raw score calculator](https://learndiag.com/score-calculator) — how raw scores relate to scaled scores, and where the published basis stops.
+- [Praxis practice accuracy calculator](https://learndiag.com/score-calculator) — record your correct answers and review each subject separately.
 
 Last verified 2026-09-15. Learndiag is an independent study tool, not affiliated with or endorsed by ETS. Praxis is a registered trademark of ETS.
 

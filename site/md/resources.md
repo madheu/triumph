@@ -76,9 +76,9 @@ state guideKentucky still requires Praxis 5001 for elementary (P–5): subtest s
 
 2026-08-24
 
-## [Praxis Raw Score Calculator: Estimate Scaled + Pass Lines](https://learndiag.com/score-calculator)
+## [Praxis Practice Accuracy Calculator: Results by Subtest](https://learndiag.com/score-calculator)
 
-toolConvert correct answers to an estimated scaled score for 5002, 5003, 5004, and 5005, then check your state's passing line. No single national score exists, and here is why.
+toolRecord correct answers and attempted questions for each subtest. Review practice percentages and next study steps without an unsupported score conversion or pass prediction.
 
 2026-08-24
 
