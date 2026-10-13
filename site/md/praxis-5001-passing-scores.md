@@ -140,4 +140,4 @@ Your Praxis 5001 passing score is a state-specific number, not a national consta
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Praxis 5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)
+Related: [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Praxis 5001 passing scores by state](https://learndiag.com/praxis-5001-passing-score-by-state) · [Praxis 5001 vs the 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

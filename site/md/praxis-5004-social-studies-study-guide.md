@@ -177,4 +177,6 @@ The highest-yield plan is not "review everything." It is **diagnose, prioritize,
 
 **Want to practice the map and document questions?** Use the free [practice bank](https://learndiag.com/practice) filtered to 5004, or take the [readiness diagnostic](https://learndiag.com/diagnostic) to see which of the four gates is weakest.
 
+Related Guide   [Praxis 8004 Social Studies: format & practice](https://learndiag.com/praxis-8004-social-studies) — the 8000-series counterpart of the 5004, first administered March 9, 2026. Whether your state wants the 5001 or an 8000-series exam is a state-by-state decision.   [Free Praxis 8004 practice test](https://learndiag.com/praxis-8004-practice) — 30 original questions aligned to the 8004 blueprint, with full explanations.
+
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [5001 vs 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

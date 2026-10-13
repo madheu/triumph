@@ -152,4 +152,4 @@ Not sure which subtest needs the most attention, or how to prioritize your study
 
 **Not sure which gate is weakest?** Take the free readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related: [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [Praxis 5001 vs 7001](https://learndiag.com/praxis-5001-vs-7001)
+Related: [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [When do Praxis scores come out](https://learndiag.com/when-do-praxis-scores-come-out) · [Praxis 5001 vs 7001](https://learndiag.com/praxis-5001-vs-7001)

@@ -313,4 +313,6 @@ You do not need equal practice in every chapter — you need evidence about wher
 
 **Want more questions like these, organized by category?** Use the free [practice bank](https://learndiag.com/practice) and filter to 5003, or take the [readiness diagnostic](https://learndiag.com/diagnostic) to see which of the four gates is weakest.
 
+Related Guide   [Praxis 8003 Mathematics: format & practice](https://learndiag.com/praxis-8003-mathematics) — the 8000-series counterpart of the 5003, first administered March 9, 2026. Whether your state wants the 5001 or an 8000-series exam is a state-by-state decision.   [Free Praxis 8003 practice test](https://learndiag.com/praxis-8003-practice) — 30 original questions aligned to the 8003 blueprint, with full explanations.
+
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy) · [5001 vs 8000 Series](https://learndiag.com/praxis-5001-vs-8000-series)

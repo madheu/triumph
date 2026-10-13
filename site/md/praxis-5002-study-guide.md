@@ -216,7 +216,7 @@ Partially. The underlying content overlaps heavily, so skill-building transfers 
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related Guide   [Praxis 8002 Reading and Language Arts study guide](https://learndiag.com/praxis-8002-reading-and-language-arts) — the 8000-series counterpart of the 5002, first administered March 9, 2026. Covers the new 100-minute, 80-question format, the Reading and Writing/Speaking/Listening domains, and how the modular Praxis Steps option works from September 2026.
+Related Guide   [Praxis 8002 Reading and Language Arts study guide](https://learndiag.com/praxis-8002-reading-and-language-arts) — the 8000-series counterpart of the 5002, first administered March 9, 2026. Covers the new 100-minute, 80-question format, the Reading and Writing/Speaking/Listening domains, and how the modular Praxis Steps option works from September 2026.   [Free Praxis 8002 practice test](https://learndiag.com/praxis-8002-practice) — 30 original questions aligned to the 8002 blueprint, with full explanations.
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)
 

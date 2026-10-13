@@ -257,7 +257,7 @@ Content review transfers — the three domains are the same — but format pract
 
 **Not sure which gate is weakest?** Take the free Praxis readiness diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
-Related Guide   [Praxis 8005 Science study guide](https://learndiag.com/praxis-8005-science) — the 8000-series counterpart of the 5005, first administered March 9, 2026. Covers the 90-minute format with on-screen scientific calculator, the Earth & Space, Life, and Physical Science domains, and the modular Praxis Steps option available from September 2026.
+Related Guide   [Praxis 8005 Science study guide](https://learndiag.com/praxis-8005-science) — the 8000-series counterpart of the 5005, first administered March 9, 2026. Covers the 90-minute format with on-screen scientific calculator, the Earth & Space, Life, and Physical Science domains, and the modular Praxis Steps option available from September 2026.   [Free Praxis 8005 practice test](https://learndiag.com/praxis-8005-practice) — 30 original questions aligned to the 8005 blueprint, with full explanations.
 
 Related: [Praxis 5001 Study Guide (all four subtests)](https://learndiag.com/praxis-5001-study-guide) · [The Four-Gate Strategy](https://learndiag.com/praxis-5001-four-gate-strategy)
 
