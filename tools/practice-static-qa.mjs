@@ -28,6 +28,9 @@ const PAGES = [
   { slug: "praxis-8003-practice", bank: "questions-8003.js", schema: "B", test: "8003" },
   { slug: "praxis-8004-practice", bank: "questions-8004.js", schema: "B", test: "8004" },
   { slug: "praxis-8005-practice", bank: "questions-8005.js", schema: "B", test: "8005" },
+  // 8006 用 full 题库（200 题），页面实际引用 questions-8006-full.js / DM_BANK_8006_FULL。
+  // 2026-10-14 补:此前漏配 → 该页只有 195 词,是 8000 系列唯一没内联静态 Q&A 的 practice 页。
+  { slug: "praxis-8006-practice", bank: "questions-8006-full.js", schema: "A", test: "8006" },
 ];
 
 const esc = (s) =>

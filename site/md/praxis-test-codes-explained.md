@@ -140,7 +140,7 @@ It depends on your state. 5205 is Teaching Reading: Elementary in the older fram
 
 ## Sources
 
-[1] ETS, “Praxis Elementary Education: Multiple Subjects (5001)” and the ETS Study Companion for question counts, timing, and subtest structure. [https://praxis.ets.org/educator-certification/elementary-education-5001](https://praxis.ets.org/educator-certification/elementary-education-5001)
+[1] ETS, “Praxis Elementary Education: Multiple Subjects (5001)” and the ETS Study Companion for question counts, timing, and subtest structure. [https://praxis.ets.org/praxis/elementary-education-5001.html](https://praxis.ets.org/praxis/elementary-education-5001.html)
 
 [2] ETS, “Passing Score Requirements” — qualifying scores are set by each state or agency, not by ETS. [https://praxis.ets.org/scores](https://praxis.ets.org/scores)
 
