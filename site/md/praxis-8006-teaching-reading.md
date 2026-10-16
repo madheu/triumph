@@ -10,7 +10,7 @@
 
 **Do not assume either test satisfies a requirement for the other.** Confirm the exact code required by your state licensing agency or preparation program before registering.
 
-[Try the free 8006 mini test](https://learndiag.com/#mini-test): select “Start the mini test,” answer each question, then read its explanation. Use the category results to plan your review, not to predict an official score.
+[Try the free 8006 mini test](https://learndiag.com/praxis-8006-teaching-reading#mini-test): select “Start the mini test,” answer each question, then read its explanation. Use the category results to plan your review, not to predict an official score.
 
 Praxis 8006 focuses on the knowledge and skills needed to teach reading.
 

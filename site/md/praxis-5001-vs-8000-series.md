@@ -136,9 +136,9 @@ Editorial update: 2026-10-09. Official state requirements were not reverified fo
 
 **Three things you can do next:**
 
-- [Check the five new tests](https://learndiag.com/#five-8000-series-tests) — content areas, codes, and what each test covers.
+- [Check the five new tests](https://learndiag.com/praxis-5001-vs-8000-series#five-8000-series-tests) — content areas, codes, and what each test covers.
 - **Take a free 8000-series readiness check** — original practice questions with explanations, one set per code: [8002](https://learndiag.com/praxis-8002-practice) · [8003](https://learndiag.com/praxis-8003-practice) · [8004](https://learndiag.com/praxis-8004-practice) · [8005](https://learndiag.com/praxis-8005-practice) · [8006](https://learndiag.com/praxis-8006-practice).
-- [Compare your current test code](https://learndiag.com/#which-test-selector) — enter the code your account or admission materials show, and the selector above lists what to verify and with whom.
+- [Compare your current test code](https://learndiag.com/praxis-5001-vs-8000-series#which-test-selector) — enter the code your account or admission materials show, and the selector above lists what to verify and with whom.
 
 ## What to Check Before You Register
 

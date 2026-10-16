@@ -8,7 +8,7 @@ Learndiag is built and run by one independent developer — there is no call cen
 
 **General support, account issues, and content corrections:**
 
-[abc15531888397@gmail.com](https://learndiag.com/mailto:abc15531888397@gmail.com)
+[abc15531888397@gmail.com](mailto:abc15531888397@gmail.com)
 
 If your email client does not open a compose window (some browsers block mailto links), copy the address above and send from your own mail app.
 

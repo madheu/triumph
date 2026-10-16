@@ -128,6 +128,11 @@ function classNameOf(node) {
   return node.attrs.class || '';
 }
 
+// 当前正在转换的页面 slug（不含扩展名）。页内锚点要拼成「当前页 URL + #hash」，
+// 否则 `#mini-test` 会变成 `https://learndiag.com/#mini-test` —— 指回首页的锚点，而不是本页。
+// 由 convertGuideFile 设置；未设置时（直接调convertHtmlToMarkdown 的测试）锚点原样输出。
+let CURRENT_SLUG = '';
+
 export function inlineNodes(nodes) {
   let out = '';
   for (const n of nodes) {
@@ -150,9 +155,19 @@ export function inlineNodes(nodes) {
 }
 
 function absolute(href) {
-  if (/^(https?:)?\/\//.test(href)) return href;
-  if (href.startsWith('/')) return 'https://learndiag.com' + href;
-  return 'https://learndiag.com/' + href.replace(/^\.\//, '');
+  const h = href.trim();
+  if (!h) return h;
+  // 1) 页内锚点：#foo 保留为「本页 + #foo」。
+  if (h.startsWith('#')) {
+    return CURRENT_SLUG ? `https://learndiag.com/${CURRENT_SLUG}${h}` : h;
+  }
+  // 2) 任意 scheme（mailto: / tel: / data: …）原样输出。
+  //    以前只有 http(s) 和 // 被放行，mailto: 落到下面的兜底分支，被拼成
+  //    https://learndiag.com/mailto:xxx —— 实测 404，且 AI 爬虫读到的是死链。
+  if (/^[a-z][a-z0-9+.-]*:/i.test(h)) return h;
+  if (h.startsWith('//')) return 'https:' + h;
+  if (h.startsWith('/')) return 'https://learndiag.com' + h;
+  return 'https://learndiag.com/' + h.replace(/^\.\//, '');
 }
 
 function emitList(node, indent) {
@@ -292,6 +307,8 @@ export function convertHtmlToMarkdown(html) {
 /** Convert one of Triumph's guide files (plain HTML, babel-JSX const, or ART={body:"..."} JSON). */
 export function convertGuideFile(htmlPath) {
   const src = fs.readFileSync(htmlPath, 'utf8');
+  // 让 absolute() 能把页内锚点拼成「本页 URL + #hash」而不是首页。
+  CURRENT_SLUG = path.basename(htmlPath).replace(/\.html?$/i, '');
   const titleMatch = src.match(/<title>(.*?)<\/title>/s);
   const title = titleMatch ? decodeEntities(titleMatch[1]).split('|')[0].trim() : '';
   let md;
