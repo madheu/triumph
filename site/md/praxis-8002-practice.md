@@ -85,3 +85,23 @@ Q28Writing, Speaking and ListeningA writer needs a credible source for a claim a
 Q29Writing, Speaking and ListeningA speaker presenting to a general audience defines technical terms and replaces jargon with everyday words. What does this adjustment mainly address?   The speaker's rate of speech The acoustics of the room The length of the presentation The audience's background knowledge ✓  **Answer: D.** Defining terms and removing jargon are choices about what the listeners already know, so the speaker is calibrating to the audience's knowledge. Speaking rate, running time, and sound quality are separate concerns from wording.  **The speaker's rate of speech:** Confuses word choice with pace; defining a term says nothing about how fast the speaker talks. **The length of the presentation:** Links vocabulary to running time, though explaining terms can shorten or lengthen a talk. **The acoustics of the room:** Attributes a language choice to the room's sound quality, which no wording change can affect.
 
 Q30Writing, Speaking and ListeningA writer lists ideas, groups related ones, and orders the groups before beginning a first draft. Which stage of the writing process is this?   Drafting Editing Revising Planning ✓  **Answer: D.** Generating, grouping, and ordering ideas happens before any prose is produced, which is what planning covers. Drafting begins with the first attempt at text, while revising and editing work on material that already exists.  **Drafting:** Names the stage that produces the first version of the text, which the writer has not yet started. **Revising:** Places the work after a draft exists, although the writer has not yet produced one. **Editing:** Confuses getting ready to write with correcting grammar and punctuation in finished text.
+
+## Official Sources
+
+Every factual claim above traces to one of these. Verification dates are shown because ETS updates test pages.
+
+| # | Source | Link | Last verified |
+| --- | --- | --- | --- |
+| 1 | ETS official test page, Praxis 8002 — content categories, item counts and test structure | [link](https://praxis.ets.org/test/8002.html) | 2026-10-16 |
+| 2 | ETS, *The new Praxis Elementary Education Fundamentals tests* (V5, © 2025) — the two content category definitions used to write every question here | [link](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf) | 2026-10-16 |
+| 3 | ETS score scale and score reporting for the Praxis 8000 series | [link](https://praxis.ets.org/scores) | 2026-10-16 |
+| 4 | ETS Praxis Steps FAQ (printed page 2) — modular retake structure and the 5001/7001 retirement timing | [link](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/praxis-steps-epp-faq.pdf) | 2026-10-16 |
+
+**Notes on source limitations — read these before relying on the page:**
+
+- **We do not convert your percentage into a scaled score, and that is a sourcing decision, not a missing feature.** ETS publishes the 100–300 scaled-score range for the 8000 series but no raw-to-scaled conversion table, so any score we printed would be invented. Source 3 is where that absence is visible. Treat your percentage as a readiness signal only.
+- **The 30 questions here are not a scaled replica of the real test.** They are written to the published category definitions (source 2) and split to match the real test's category weighting, but the difficulty distribution is ours. Only ETS can say how a real score lands.
+- **The question count on this page (30) is a Learndiag choice, not an ETS specification.** ETS publishes no required practice-test length. Source 1 publishes the real test's item counts, which are different from anything we run here.
+- **Retirement timing is ETS's own statement, and states implement it on their own schedules.** Source 4 targets August 2028 for the 5001, 7001, 5901 and 7811 series. Appointment availability and score-acceptance deadlines are set per state — check your licensing agency separately.
+
+Last verified 2026-10-16. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.

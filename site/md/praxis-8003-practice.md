@@ -103,3 +103,23 @@ Q28Geometry, Measurement and DataTwo angles are complementary, and one of them m
 Q29Geometry, Measurement and DataWhich TWO of the following lengths are equal to 36 inches?   2 feet 36 centimeters 3 feet ✓ 1 meter 1 yard ✓  **Answers: C and E.** There are 12 inches in a foot, so 3 × 12 = 36 inches. There are also 3 feet in a yard, and since 3 feet is 36 inches, 1 yard is 36 inches as well. Both entries name the same length in different customary units.  **2 feet:** Counts only two of the three feet needed. At 12 inches per foot, 2 feet is 24 inches, a foot short of the target. **36 centimeters:** Keeps the number and changes the unit. Inches and centimeters are different lengths, and 36 centimeters is about 14 inches. **1 meter:** Substitutes a metric length for a customary one. A meter is a little over 39 inches, so it is longer than 36 inches.
 
 Q30Geometry, Measurement and DataA rectangular prism is 4 cm long, 3 cm wide, and 5 cm high. What is its volume in cubic centimeters? Enter a number only.  **Answer: 60.** Volume of a rectangular prism is length × width × height. Substituting the three dimensions gives 4 × 3 × 5 = 60, so the volume is 60 cubic centimeters. The unit is cubic because three lengths are multiplied together.
+
+## Official Sources
+
+Every factual claim above traces to one of these. Verification dates are shown because ETS updates test pages.
+
+| # | Source | Link | Last verified |
+| --- | --- | --- | --- |
+| 1 | ETS official test page, Praxis 8003 — the three content domains, item counts and calculator policy | [link](https://praxis.ets.org/test/8003.html) | 2026-10-16 |
+| 2 | ETS, *The new Praxis Elementary Education Fundamentals tests* (V5, © 2025) — the content domain definitions used to write every question here | [link](https://praxis.ets.org/on/demandware.static/-/Library-Sites-ets-praxisLibrary/default/pdfs/Elementary-Education-V5.pdf) | 2026-10-16 |
+| 3 | ETS calculator and numeric-entry policy for test day | [link](https://praxis.ets.org/test-takers/test-day-calculator-use.html) | 2026-10-16 |
+| 4 | ETS score scale and score reporting for the Praxis 8000 series | [link](https://praxis.ets.org/scores) | 2026-10-16 |
+
+**Notes on source limitations — read these before relying on the page:**
+
+- **We do not convert your percentage into a scaled score, and that is a sourcing decision, not a missing feature.** ETS publishes the 100–300 scaled-score range for the 8000 series but no raw-to-scaled conversion table, so any score we printed would be invented. Source 4 is where that absence is visible.
+- **The calculator statement is kept exactly as narrow as ETS states it.** Source 1 says an on-screen scientific calculator is provided. It does not say you may bring your own, and we do not claim that you can. Any change to the policy appears on source 1 or 3 first.
+- **The 30 questions here are not a scaled replica of the real test.** They are written to the published domain definitions (source 2) and split to match the real test's domain weighting, but the difficulty distribution is ours. Only ETS can say how a real score lands.
+- **The question count on this page (30) is a Learndiag choice, not an ETS specification.** Source 1 publishes the real test's item counts, which differ from anything we run here.
+
+Last verified 2026-10-16. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.

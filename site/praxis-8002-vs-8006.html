@@ -102,6 +102,9 @@
     th:first-child{width:30%}
     .links{grid-template-columns:1fr}
   }
+  /* 来源表在窄屏横向滚动，不撑破布局。定义抄自 praxis-8003-mathematics.html。 */
+  .table-scroll{overflow-x:auto}
+  .meta-line{font-family:var(--mono);font-size:13px;color:var(--ink-soft);margin:28px 0 0}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -330,6 +333,41 @@
         <div class="ld">All five exams, state adoption, dates, and pricing in one place.</div>
       </a>
     </div>
+  </section>
+<section>
+    <h2>Official Sources</h2>
+    <p>Every state-level claim above traces to one of these. Verification dates are shown because ETS updates these
+    pages and states change their adoption.</p>
+    <div class="table-scroll"><table>
+      <tr><th>#</th><th>Source</th><th>Link</th><th>Last verified</th></tr>
+      <tr><td>1</td><td>ETS official test page, Praxis 8002 — content categories and item counts</td><td><a href="https://praxis.ets.org/test/8002.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>2</td><td>ETS official test page, Praxis 8006 — domains and item counts</td><td><a href="https://praxis.ets.org/test/8006.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>3</td><td>ETS state requirements, West Virginia — accepts 8002 at 152, does not list 8006</td><td><a href="https://praxis.ets.org/state-requirements/westvirginia-tests.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>4</td><td>ETS state requirements, Arkansas — accepts 8002 at 137, does not list 8006</td><td><a href="https://praxis.ets.org/state-requirements/arkansas-tests.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>5</td><td>ETS state requirements, Virginia — accepts 8002 at 152, does not list 8006</td><td><a href="https://praxis.ets.org/state-requirements/virginia-tests.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>6</td><td>ETS state requirements, Idaho — accepts 8006 at 152, does not list 8002</td><td><a href="https://praxis.ets.org/state-requirements/idaho-tests.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>7</td><td>ETS state requirements, South Dakota — accepts 8006 at 152, does not list 8002</td><td><a href="https://praxis.ets.org/state-requirements/southdakota-tests.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>8</td><td>ETS state requirements, Vermont — accepts 8006 at 152, does not list 8002</td><td><a href="https://praxis.ets.org/state-requirements/vermont-tests.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>9</td><td>Learndiag state adoption tracker — the same six states with effective dates and status</td><td><a href="/praxis-8000-series-state-requirements">link</a></td><td>2026-09-27</td></tr>
+    </table></div>
+    <p><strong>Notes on source limitations — read these before relying on the page:</strong></p>
+    <ul>
+      <li><strong>Six states is a deliberately small number.</strong> These are the only 8000-series adoption decisions
+      we could confirm from an official ETS state requirements page. We do not publish a 50-state list, and we do not
+      infer adoption for the states we have not checked. Source 9 has the full breakdown of what is confirmed versus
+      unverified.</li>
+      <li><strong>“No confirmed state currently requires both” is not the same as “no state requires both.”</strong>
+      It means we found no state whose official page lists 8002 and 8006 together. We would rather say that than
+      assert something we have not checked in all 50 jurisdictions.</li>
+      <li><strong>Qualifying scores are set by states, not ETS.</strong> The numbers in the comparison come from each
+      state's own requirements page (sources 3–8), and those pages can change without notice. Check yours before
+      registering.</li>
+      <li><strong>“Does not list” is not the same as “rejected.”</strong> When a state's page does not name 8006, we
+      report that it does not list it. Whether a state has decided against the exam, has not updated its page, or
+      accepts an equivalent is not something the page tells us.</li>
+    </ul>
+    <p class="meta-line">Last verified 2026-10-16. If you find a factual error on this page, please
+    <a href="/contact">contact us</a> — we correct errors and note the correction.</p>
   </section>
 </main>
 

@@ -121,6 +121,29 @@ If you do not know which of the four subtests is your weakest, start there. Take
 
 [Take the free Praxis 5001 diagnostic](https://learndiag.com/diagnostic)
 
+## Official Sources
+
+The exam facts on this page trace to these. Verification dates are shown because ETS updates test pages and fees.
+
+| # | Source | Link | Last verified |
+| --- | --- | --- | --- |
+| 1 | ETS official test page, Praxis 5001 — the four subtests, their separate scoring, and item counts | [link](https://praxis.ets.org/test/elementary-education-multiple-subjects-subtests-5001.html) | 2026-10-16 |
+| 2 | ETS retake rules — the 28-day waiting period between attempts on the same test code | [link](https://praxis.ets.org/manage-praxis-test-appointment.html) | 2026-10-16 |
+| 3 | ETS Praxis test fees — the combined 5001 price; per-code prices are set per registration date | [link](https://www.ets.org/praxis/about/fees/) | 2026-10-16 |
+| 4 | ETS, Understanding Your Praxis Scores — how scaled scores work and what a subtest score means | [link](https://praxis.ets.org/understanding-scores.html) | 2026-10-16 |
+| 5 | ETS state licensing requirements — which state sets which passing line | [link](https://praxis.ets.org/state-requirements.html) | 2026-10-16 |
+| 6 | Our retake guide, where each of these numbers is worked through in detail | [link](https://learndiag.com/praxis-5001-retake-guide) | 2026-09-20 |
+
+**Notes on source limitations — read these before relying on the page:**
+
+- **The “spend 60% on your weakest gate” split is our recommendation, not a published ETS or research finding.** It follows from the structure ETS publishes — four separately scored subtests, each with its own line — but the specific 60/40 ratio is a judgment call we made. Treat it as a defensible starting point, not a rule.
+- **There is no retake discount.** A retake is a normal registration at the current price for that test code. Source 3 sets the price; check it for your own registration date rather than trusting the number printed here.
+- **We do not publish a universal passing score.** Each subtest line is set by the state, not by ETS, and they differ per subtest. Use source 5, or the table on our passing-scores page — there is no single number that is correct everywhere.
+- **The “many candidates…” patterns above are observations, not survey data.** We have no representative survey of Praxis 5001 candidates. We describe failure patterns we see in coaching conversations and forum discussions, which is a weaker form of evidence than source 1. We do not put percentages on them.
+- **Our own diagnostic estimates are estimates.** A readiness score from a 12-question sample is not a predicted scaled score, and ETS publishes no conversion that would let us produce one. Use it to choose where to study, not to predict your result.
+
+Last verified 2026-10-16. If you find a factual error on this page, please [contact us](https://learndiag.com/contact) — we correct errors and note the correction.
+
 **Not sure which gate is weakest?** Take the free 12-question diagnostic → [Learndiag readiness check](https://learndiag.com/diagnostic)
 
 Related: [Praxis 5001 Study Guide](https://learndiag.com/praxis-5001-study-guide) · [Retake Guide](https://learndiag.com/praxis-5001-retake-guide)

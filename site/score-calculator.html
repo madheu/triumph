@@ -107,6 +107,15 @@
     .card{padding:16px;}
     nav a{margin-left:10px; font-size:13px;}
   }
+/* 来源表在窄屏横向滚动，不撑破布局。定义抄自 praxis-8003-mathematics.html。 */
+.table-scroll{overflow-x:auto}
+.calc-sources{margin-top:32px;border-top:1px solid var(--line);padding-top:24px}
+.calc-sources h2{font-family:var(--serif);font-size:24px;font-weight:400;margin:0 0 12px}
+.calc-sources p{font-size:14.5px;line-height:1.75;color:var(--ink-soft);margin-bottom:14px}
+.calc-sources table{width:100%;border-collapse:collapse;font-size:13.5px}
+.calc-sources th,.calc-sources td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.calc-sources .calc-note{font-family:var(--mono);font-size:13px}
+.calc-sources .calc-note:last-child{color:var(--ink-soft)}
 </style>
 <link rel="stylesheet" href="/css/theme.css?v=2">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -248,6 +257,25 @@
     <details><summary>Can I use a short quiz instead of a full practice test?</summary><p>Yes. Enter the number of questions in your own practice set, followed by the number answered correctly. Counts must be whole numbers, the total must be positive, and correct answers cannot exceed the total. Your entered total is not an official exam question count.</p></details>
     <details><summary>How should I use the practice results?</summary><p>Review missed questions by topic, explain why each answer was wrong, and try a fresh set. Compare results from similar materials and conditions; different lengths or difficulty levels can make comparisons misleading. Even 100% on a practice set does not guarantee an exam pass.</p></details>
     <details><summary>How many questions can I miss on Praxis 5003 and still pass?</summary><p>This calculator cannot determine a fixed number of allowable mistakes. It only reports your practice accuracy and missed questions for 5003. An official passing decision requires the applicable score requirement and your official scaled score.</p></details>
+  </section>
+
+  <section class="calc-sources">
+    <h2>Where the exam facts come from</h2>
+    <p>The arithmetic on this page is one division: correct answers divided by the question count you enter. The exam
+    facts it refers to come from ETS, and the verification date matters because these pages change.</p>
+    <div class="table-scroll"><table>
+      <tr><th>#</th><th>Source</th><th>Link</th><th>Last verified</th></tr>
+      <tr><td>1</td><td>ETS Praxis 5001 test page — the four separately scored subtests</td><td><a href="https://praxis.ets.org/test/elementary-education-multiple-subjects-subtests-5001.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>2</td><td>ETS score scale — the 100–200 scaled range and why a raw score is not a scaled score</td><td><a href="https://praxis.ets.org/understanding-scores.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+      <tr><td>3</td><td>ETS state licensing requirements — passing lines are set per state, not by ETS</td><td><a href="https://praxis.ets.org/state-requirements.html" target="_blank" rel="noopener">link</a></td><td>2026-10-16</td></tr>
+    </table></div>
+    <p class="calc-note"><strong>Why there is no conversion here.</strong> Source 2 is where the absence is visible: ETS
+    publishes the scaled-score range but no table mapping a raw score to a scaled one, and the conversion depends on the
+    test form. A converter that claimed to do this would be inventing the number. This page reports your practice
+    accuracy and stops there. For the exact qualifying line your state has set, see
+    <a href="/praxis-5001-passing-score-by-state">passing scores by state</a>.</p>
+    <p class="calc-note">Last verified 2026-10-16. If something here does not match ETS, please
+    <a href="/contact">contact us</a> — we correct errors and note the correction.</p>
   </section>
 
   <footer>
