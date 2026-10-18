@@ -1,17 +1,15 @@
-/*!
- * motion.css — Learndiag 动效层 v1.1 · 2026-10-18
+﻿/*!
+ * motion.css 鈥?Learndiag 鍔ㄦ晥灞?v1.1 路 2026-10-18
  *
- * 改这个文件之前先读五条约束：
- *   1. 只动 transform / opacity —— 不碰 width/height/top/left，否则触发布局抖动（= 卡）
- *   2. 首屏元素不做 0→1 淡入（会推迟 LCP）。首屏只从 .92 起，见 mo-rise
- *   3. 【v1.1 关键】内容**默认可见**，进场只是"播放一段动画"（animation），
- *      不是"把元素从隐藏切到显示"（transition）。JS / IntersectionObserver
- *      任何一环失效，最坏结果都是"没有动画"，绝不会出现内容不可见。
- *   4. theme.css 由 gen-theme-css.py 生成，动效一律放这里
- *   5. 全部规则包在 prefers-reduced-motion: no-preference 里
- */
+ * 鏀硅繖涓枃浠朵箣鍓嶅厛璇讳簲鏉＄害鏉燂細
+ *   1. 鍙姩 transform / opacity 鈥斺€?涓嶇 width/height/top/left锛屽惁鍒欒Е鍙戝竷灞€鎶栧姩锛? 鍗★級
+ *   2. 棣栧睆鍏冪礌涓嶅仛 0鈫? 娣″叆锛堜細鎺ㄨ繜 LCP锛夈€傞灞忓彧浠?.92 璧凤紝瑙?mo-rise
+ *   3. 銆恦1.1 鍏抽敭銆戝唴瀹?*榛樿鍙**锛岃繘鍦哄彧鏄?鎾斁涓€娈靛姩鐢?锛坅nimation锛夛紝
+ *      涓嶆槸"鎶婂厓绱犱粠闅愯棌鍒囧埌鏄剧ず"锛坱ransition锛夈€侸S / IntersectionObserver
+ *      浠讳綍涓€鐜け鏁堬紝鏈€鍧忕粨鏋滈兘鏄?娌℃湁鍔ㄧ敾"锛岀粷涓嶄細鍑虹幇鍐呭涓嶅彲瑙併€? *   4. theme.css 鐢?gen-theme-css.py 鐢熸垚锛屽姩鏁堜竴寰嬫斁杩欓噷
+ *   5. 鍏ㄩ儴瑙勫垯鍖呭湪 prefers-reduced-motion: no-preference 閲? */
 
-/* 阅读进度条：基础样式放外面；JS 不赋值就一直 scaleX(0)（= 一条看不见的线） */
+/* 闃呰杩涘害鏉★細鍩虹鏍峰紡鏀惧闈紱JS 涓嶈祴鍊煎氨涓€鐩?scaleX(0)锛? 涓€鏉＄湅涓嶈鐨勭嚎锛?*/
 .mo-progress{
   position:fixed; top:0; left:0; right:0; height:2px;
   transform:scaleX(var(--mo-p,0)); transform-origin:0 50%;
@@ -25,7 +23,7 @@
     --mo-pop:  cubic-bezier(.34,1.5,.64,1);
   }
 
-  /* ---------- 1. 首屏标题：轻微上浮，最低 .92 不隐藏 ---------- */
+  /* ---------- 1. 棣栧睆鏍囬锛氳交寰笂娴紝鏈€浣?.92 涓嶉殣钘?---------- */
   article > .eyebrow  { animation: mo-rise .5s var(--mo-ease) both }
   article > h1        { animation: mo-rise .5s var(--mo-ease) .06s both }
   article > .meta-line{ animation: mo-rise .5s var(--mo-ease) .12s both }
@@ -35,16 +33,12 @@
     to  { opacity:1;   transform:translate3d(0,0,0) }
   }
 
-  /* ---------- 2. 滚动进场：播放动画，元素始终在文档流里可见 ----------
-   * 关键细节（想改这里先读）：
-   *   · fill-mode 用 forwards，不用 both —— both 会把元素钉在 from 状态
-   *   · 进场**只动 transform，不碰 opacity** ——
-   *       动画正常推进 → 16px 上浮 + 微缩放，位移由合成层处理
-   *       动画不推进（打印 / 截图 / 抓取渲染 / 节流）→ 内容原样可见，只是低 16px
-   *     任何情况下都不会出现"内容变淡或消失"，这是这条动效存在的底线。
-   */
+  /* ---------- 2. 婊氬姩杩涘満锛氭挱鏀惧姩鐢伙紝鍏冪礌濮嬬粓鍦ㄦ枃妗ｆ祦閲屽彲瑙?----------
+   * 鍏抽敭缁嗚妭锛堟兂鏀硅繖閲屽厛璇伙級锛?   *   路 fill-mode 鐢?forwards锛屼笉鐢?both 鈥斺€?both 浼氭妸鍏冪礌閽夊湪 from 鐘舵€?   *   路 杩涘満**鍙姩 transform锛屼笉纰?opacity** 鈥斺€?   *       鍔ㄧ敾姝ｅ父鎺ㄨ繘 鈫?16px 涓婃诞 + 寰缉鏀撅紝浣嶇Щ鐢卞悎鎴愬眰澶勭悊
+   *       鍔ㄧ敾涓嶆帹杩涳紙鎵撳嵃 / 鎴浘 / 鎶撳彇娓叉煋 / 鑺傛祦锛夆啋 鍐呭鍘熸牱鍙锛屽彧鏄綆 16px
+   *     浠讳綍鎯呭喌涓嬮兘涓嶄細鍑虹幇"鍐呭鍙樻贰鎴栨秷澶?锛岃繖鏄繖鏉″姩鏁堝瓨鍦ㄧ殑搴曠嚎銆?   */
   html.mo-on [data-mo].mo-in{
-    opacity:1; transform:none;                      /* 静态兜底：永远可见 */
+    opacity:1; transform:none;                      /* 闈欐€佸厹搴曪細姘歌繙鍙 */
     animation: mo-reveal .5s var(--mo-ease) forwards;
     animation-delay: var(--mo-d,0ms);
   }
@@ -53,11 +47,11 @@
     to  { transform:translate3d(0,0,0) scale(1) }
   }
 
-  /* 小节标题上方那道强调短线，随进场一起从 0 拉开 */
+  /* 灏忚妭鏍囬涓婃柟閭ｉ亾寮鸿皟鐭嚎锛岄殢杩涘満涓€璧蜂粠 0 鎷夊紑 */
   html.mo-on [data-mo].mo-h2::before{
     content:""; display:block; width:46px; height:2px; margin-bottom:14px;
     background:var(--accent,#C09D9B);
-    transform:scaleX(1); transform-origin:0 50%;    /* 静态兜底：可见 */
+    transform:scaleX(1); transform-origin:0 50%;    /* 闈欐€佸厹搴曪細鍙 */
   }
   html.mo-on [data-mo].mo-h2.mo-in::before{
     animation: mo-dash .55s var(--mo-ease) forwards;
@@ -68,7 +62,7 @@
     to  { transform:scaleX(1) }
   }
 
-  /* ---------- 3. 卡片 hover 抬起（只给精确指针，触屏不触发） ---------- */
+  /* ---------- 3. 鍗＄墖 hover 鎶捣锛堝彧缁欑簿纭寚閽堬紝瑙﹀睆涓嶈Е鍙戯級 ---------- */
   @media (hover:hover) and (pointer:fine){
     .card,.tool-card{
       transition: transform .28s var(--mo-ease),
@@ -81,7 +75,7 @@
     }
   }
 
-  /* ---------- 4. 主按钮：扫光 ---------- */
+  /* ---------- 4. 涓绘寜閽細鎵厜 ---------- */
   .btn-primary{ position:relative; overflow:hidden; isolation:isolate }
   .btn-primary::after{
     content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
@@ -92,9 +86,9 @@
   .btn-primary:hover::after{ transform:translate3d(130%,0,0) }
   .btn-primary:active{ transform:translate3d(0,1px,0) }
 
-  /* ---------- 5. 正文链接：下划线拉开（本来没下划线的链接不受影响） ---------- */
+  /* ---------- 5. 姝ｆ枃閾炬帴锛氫笅鍒掔嚎鎷夊紑锛堟湰鏉ユ病涓嬪垝绾跨殑閾炬帴涓嶅彈褰卞搷锛?---------- */
   article a:not(.btn-primary):not(.btn-secondary){
-    text-decoration-color:transparent;
+    text-decoration-color:rgba(166,125,122,.42);
     text-underline-offset:3px;
     transition: text-decoration-color .25s ease, text-underline-offset .25s var(--mo-ease);
   }
@@ -103,7 +97,7 @@
     text-underline-offset:6px;
   }
 
-  /* ---------- 6. 答题反馈 ---------- */
+  /* ---------- 6. 绛旈鍙嶉 ---------- */
   .opt{ transition: border-color .15s ease, background .15s ease, transform .15s var(--mo-pop) }
   .opt:active:not(:disabled){ transform:scale(.994) }
   .opt.selected{ animation: mo-pop .30s var(--mo-pop) }
@@ -121,12 +115,12 @@
     66%    { transform:translate3d(3px,0,0) }
   }
 
-  /* ---------- 7. 表格行 hover 走一点点底色 ---------- */
+  /* ---------- 7. 琛ㄦ牸琛?hover 璧颁竴鐐圭偣搴曡壊 ---------- */
   article table tbody tr{ transition: background-color .2s ease }
   article table tbody tr:hover{ background-color:rgba(192,157,155,.08) }
 }
 
-/* 用户要求降动效：动画全停，进度条不显示。内容本来就没被隐藏，所以只需清掉动画。 */
+/* 鐢ㄦ埛瑕佹眰闄嶅姩鏁堬細鍔ㄧ敾鍏ㄥ仠锛岃繘搴︽潯涓嶆樉绀恒€傚唴瀹规湰鏉ュ氨娌¤闅愯棌锛屾墍浠ュ彧闇€娓呮帀鍔ㄧ敾銆?*/
 @media (prefers-reduced-motion: reduce){
   .mo-progress{ display:none }
   article > .eyebrow,
@@ -136,4 +130,102 @@
   html.mo-on [data-mo],
   html.mo-on [data-mo].mo-in{ animation:none !important; opacity:1 !important; transform:none !important }
   html.mo-on [data-mo].mo-h2::before{ transform:scaleX(1) }
+}
+
+/* =====================================================================
+ * 8. 瑁呴グ灞?v1.2锛?026-10-18锛夆€斺€?"鐗堥潰澶礌"鐨勯拡瀵规€цˉ寮? *    鍏ㄩ儴鏄潤鎬佹笎鍙?/ 娣峰悎妯″紡 / 涓€灞傛瀬杞荤殑绾哥汗锛屾病鏈夊姩鐢诲惊鐜紝
+ *    涔熸病鏈変换浣曞竷灞€灞炴€э紱姣忛〉鍙涓€娆＄粯鍒躲€? * ===================================================================== */
+
+/* 8.1 鍏ㄧ珯绾哥汗棰楃矑銆?.045 鐨勪笉閫忔槑搴?+ multiply锛屽彧鍦ㄨ瑙変笂"鍘嬩綇"绾壊闈紝
+ *     涓嶆敼鍙樻枃瀛楀姣斿害锛堝疄娴嬫鏂囧姣斿害涓嶅彈褰卞搷锛夈€俻ointer-events:none 淇濊瘉鍙偣銆?*/
+body::after{
+  content:""; position:fixed; inset:0; z-index:2147482999; pointer-events:none;
+  opacity:.05;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  background-size:140px 140px;
+}
+
+/* 8.2 椤甸鏆栧厜銆備竴宸︿竴鍙充袱鍥㈡瀬娣＄殑鐜懓鑹茶緣鍏夛紝璁╅《閮ㄤ笉鍐嶆槸涓€鏁村潡骞宠壊銆?*/
+body::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(1100px 620px at 14% -14%, rgba(192,157,155,.11), transparent 72%),
+    radial-gradient(900px 520px at 96% -6%, rgba(166,125,122,.07), transparent 74%),
+    radial-gradient(140% 90% at 50% 0%, transparent 58%, rgba(60,55,51,.05));
+}
+
+/* 8.3 鍗＄墖锛氶《閮ㄤ竴閬撳己璋冩笎鍙橈紝hover 鏃朵粠宸︽媺寮€ */
+.card,.tool-card{ position:relative }
+.card::before,.tool-card::before{
+  content:""; position:absolute; left:0; right:0; top:-1px; height:2px;
+  background:linear-gradient(90deg,var(--accent,#C09D9B),rgba(192,157,155,0));
+  transform:scaleX(0); transform-origin:0 50%;
+  transition:transform .45s cubic-bezier(.22,1,.36,1);
+  pointer-events:none;
+}
+@media (hover:hover) and (pointer:fine){
+  .card:hover::before,.tool-card:hover::before{ transform:scaleX(1) }
+}
+
+/* 8.4 棣栧瓧涓嬫矇锛堢紪杈戜綋渚嬬殑鍛抽亾锛屽彧鍦ㄥ瀹界殑灞忎笂寮€锛岄伩鍏嶇獎灞忔尋鍘嬶級 */
+@media (min-width:760px){
+  article > p:first-of-type::first-letter{
+    float:left; font-family:var(--serif,Georgia),serif;
+    font-size:3.05em; line-height:.84; padding:.04em .1em 0 0;
+    color:var(--accent-deep,#A67D7A);
+  }
+}
+
+/* 8.5 琛ㄥご搴曡壊 + 寮鸿皟涓嬭竟绾?*/
+article table thead th{
+  background:rgba(192,157,155,.10);
+  border-bottom:1px solid var(--accent-line,#E5D5D2);
+}
+
+/* 8.6 寮曠敤鍧楋細宸︿晶寮鸿皟绾?+ 涓€棰楁贰寮曞彿 */
+article blockquote{ position:relative; padding-left:26px; border-left:2px solid var(--accent,#C09D9B) }
+article blockquote::before{
+  content:"\201C"; position:absolute; left:6px; top:-6px;
+  font-family:var(--serif,Georgia),serif; font-size:46px; line-height:1;
+  color:var(--accent,#C09D9B); opacity:.38; pointer-events:none;
+}
+
+/* 8.7 涓绘寜閽細绔栧悜涓婃祬涓嬫繁鐨勫井娓愬彉锛岃鑹插潡鏈変綋绉劅 */
+.btn-primary{ background-image:linear-gradient(180deg,rgba(255,255,255,.16),rgba(60,55,51,.06)) }
+
+/* 8.8 閫変腑鑹蹭笌閿洏鐒︾偣鐜紙椤烘墜琛ョ殑鍙闂€э級 */
+::selection{ background:rgba(192,157,155,.30); color:inherit }
+:focus-visible{ outline:2px solid var(--accent-deep,#A67D7A); outline-offset:3px; border-radius:3px }
+
+/* 8.9 鏋佺粏鍒嗛殧绾匡細姝ｆ枃閲岀殑 <hr> 鐢ㄦ笎鍙樻敹鍙ｏ紝涓嶇敤涓€鏍规绾?*/
+article hr{
+  border:0; height:1px; margin:36px 0;
+  background:linear-gradient(90deg,transparent,var(--line,#D8D1C5) 18%,var(--line,#D8D1C5) 82%,transparent);
+}
+
+/* 8.10 鎵撳嵃/闄嶇骇锛氬幓鎺夌焊绾逛笌杈夊厜锛岀渷涓€浠界粯鍒?*/
+@media print{
+  body::after,body::before{ display:none }
+}
+
+/* 8.11 eyebrow 改成小药丸：整页最显眼的一处"装饰性"变化，每页都有 */
+article > .eyebrow,
+.dash-head .eyebrow,
+.hero > .eyebrow{
+  display:inline-block;
+  padding:5px 12px 4px;
+  font-size:11px; letter-spacing:.16em;
+  color:var(--accent-deep,#A67D7A);
+  background:rgba(192,157,155,.15);
+  border:1px solid rgba(192,157,155,.34);
+  border-radius:999px;
+}
+article > .eyebrow::after,
+.dash-head .eyebrow::after,
+.hero > .eyebrow::after{ display:none }
+
+/* 8.12 卡片站得更"实"：一层极淡的接触阴影 + 一层大范围柔光 */
+.card,.tool-card{
+  box-shadow:0 1px 2px rgba(60,55,51,.05), 0 12px 30px -22px rgba(60,55,51,.26);
+  border-radius:3px;
 }
