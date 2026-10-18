@@ -1,0 +1,139 @@
+/*!
+ * motion.css — Learndiag 动效层 v1.1 · 2026-10-18
+ *
+ * 改这个文件之前先读五条约束：
+ *   1. 只动 transform / opacity —— 不碰 width/height/top/left，否则触发布局抖动（= 卡）
+ *   2. 首屏元素不做 0→1 淡入（会推迟 LCP）。首屏只从 .92 起，见 mo-rise
+ *   3. 【v1.1 关键】内容**默认可见**，进场只是"播放一段动画"（animation），
+ *      不是"把元素从隐藏切到显示"（transition）。JS / IntersectionObserver
+ *      任何一环失效，最坏结果都是"没有动画"，绝不会出现内容不可见。
+ *   4. theme.css 由 gen-theme-css.py 生成，动效一律放这里
+ *   5. 全部规则包在 prefers-reduced-motion: no-preference 里
+ */
+
+/* 阅读进度条：基础样式放外面；JS 不赋值就一直 scaleX(0)（= 一条看不见的线） */
+.mo-progress{
+  position:fixed; top:0; left:0; right:0; height:2px;
+  transform:scaleX(var(--mo-p,0)); transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--accent,#C09D9B),var(--accent-deep,#A67D7A));
+  z-index:2147483000; pointer-events:none; will-change:transform;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  :root{
+    --mo-ease: cubic-bezier(.22,1,.36,1);
+    --mo-pop:  cubic-bezier(.34,1.5,.64,1);
+  }
+
+  /* ---------- 1. 首屏标题：轻微上浮，最低 .92 不隐藏 ---------- */
+  article > .eyebrow  { animation: mo-rise .5s var(--mo-ease) both }
+  article > h1        { animation: mo-rise .5s var(--mo-ease) .06s both }
+  article > .meta-line{ animation: mo-rise .5s var(--mo-ease) .12s both }
+
+  @keyframes mo-rise{
+    from{ opacity:.92; transform:translate3d(0,10px,0) }
+    to  { opacity:1;   transform:translate3d(0,0,0) }
+  }
+
+  /* ---------- 2. 滚动进场：播放动画，元素始终在文档流里可见 ----------
+   * 关键细节（想改这里先读）：
+   *   · fill-mode 用 forwards，不用 both —— both 会把元素钉在 from 状态
+   *   · 进场**只动 transform，不碰 opacity** ——
+   *       动画正常推进 → 16px 上浮 + 微缩放，位移由合成层处理
+   *       动画不推进（打印 / 截图 / 抓取渲染 / 节流）→ 内容原样可见，只是低 16px
+   *     任何情况下都不会出现"内容变淡或消失"，这是这条动效存在的底线。
+   */
+  html.mo-on [data-mo].mo-in{
+    opacity:1; transform:none;                      /* 静态兜底：永远可见 */
+    animation: mo-reveal .5s var(--mo-ease) forwards;
+    animation-delay: var(--mo-d,0ms);
+  }
+  @keyframes mo-reveal{
+    from{ transform:translate3d(0,16px,0) scale(.996) }
+    to  { transform:translate3d(0,0,0) scale(1) }
+  }
+
+  /* 小节标题上方那道强调短线，随进场一起从 0 拉开 */
+  html.mo-on [data-mo].mo-h2::before{
+    content:""; display:block; width:46px; height:2px; margin-bottom:14px;
+    background:var(--accent,#C09D9B);
+    transform:scaleX(1); transform-origin:0 50%;    /* 静态兜底：可见 */
+  }
+  html.mo-on [data-mo].mo-h2.mo-in::before{
+    animation: mo-dash .55s var(--mo-ease) forwards;
+    animation-delay: var(--mo-d,0ms);
+  }
+  @keyframes mo-dash{
+    from{ transform:scaleX(0) }
+    to  { transform:scaleX(1) }
+  }
+
+  /* ---------- 3. 卡片 hover 抬起（只给精确指针，触屏不触发） ---------- */
+  @media (hover:hover) and (pointer:fine){
+    .card,.tool-card{
+      transition: transform .28s var(--mo-ease),
+                  box-shadow .28s var(--mo-ease),
+                  border-color .28s ease;
+    }
+    .card:hover,.tool-card:hover{
+      transform:translate3d(0,-3px,0);
+      box-shadow:0 14px 34px -20px rgba(60,55,51,.45);
+    }
+  }
+
+  /* ---------- 4. 主按钮：扫光 ---------- */
+  .btn-primary{ position:relative; overflow:hidden; isolation:isolate }
+  .btn-primary::after{
+    content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+    background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.34) 48%,transparent 72%);
+    transform:translate3d(-130%,0,0);
+    transition: transform .75s var(--mo-ease);
+  }
+  .btn-primary:hover::after{ transform:translate3d(130%,0,0) }
+  .btn-primary:active{ transform:translate3d(0,1px,0) }
+
+  /* ---------- 5. 正文链接：下划线拉开（本来没下划线的链接不受影响） ---------- */
+  article a:not(.btn-primary):not(.btn-secondary){
+    text-decoration-color:transparent;
+    text-underline-offset:3px;
+    transition: text-decoration-color .25s ease, text-underline-offset .25s var(--mo-ease);
+  }
+  article a:not(.btn-primary):not(.btn-secondary):hover{
+    text-decoration-color:currentColor;
+    text-underline-offset:6px;
+  }
+
+  /* ---------- 6. 答题反馈 ---------- */
+  .opt{ transition: border-color .15s ease, background .15s ease, transform .15s var(--mo-pop) }
+  .opt:active:not(:disabled){ transform:scale(.994) }
+  .opt.selected{ animation: mo-pop .30s var(--mo-pop) }
+  .opt.correct { animation: mo-pop .34s var(--mo-pop) }
+  .opt.wrong   { animation: mo-nudge .34s ease-in-out }
+
+  @keyframes mo-pop{
+    0%  { transform:scale(1) }
+    52% { transform:scale(1.014) }
+    100%{ transform:scale(1) }
+  }
+  @keyframes mo-nudge{
+    0%,100%{ transform:translate3d(0,0,0) }
+    22%    { transform:translate3d(-3px,0,0) }
+    66%    { transform:translate3d(3px,0,0) }
+  }
+
+  /* ---------- 7. 表格行 hover 走一点点底色 ---------- */
+  article table tbody tr{ transition: background-color .2s ease }
+  article table tbody tr:hover{ background-color:rgba(192,157,155,.08) }
+}
+
+/* 用户要求降动效：动画全停，进度条不显示。内容本来就没被隐藏，所以只需清掉动画。 */
+@media (prefers-reduced-motion: reduce){
+  .mo-progress{ display:none }
+  article > .eyebrow,
+  article > h1,
+  article > .meta-line,
+  .opt,.card,.tool-card{ animation:none !important; transition:none !important }
+  html.mo-on [data-mo],
+  html.mo-on [data-mo].mo-in{ animation:none !important; opacity:1 !important; transform:none !important }
+  html.mo-on [data-mo].mo-h2::before{ transform:scaleX(1) }
+}
