@@ -109,8 +109,29 @@ async function injectClarity(res) {
 }
 
 export default {
+  // Every /api/* response carries X-Robots-Tag: noindex so API JSON can never
+  // enter the index. Two reasons (measured 2026-10-22):
+  //   - GSC's index-coverage report listed /api/me under "blocked because it
+  //     returns 401" — a permanent red error row for a URL that is not a page.
+  //   - The 200 JSON endpoints are indexable, and /api/v1/questions returns
+  //     15.8 KB of raw item bank that duplicates the practice-page copy.
+  // robots.txt excludes /api/ for the wildcard (search) group only — AI agent
+  // groups keep full access, because /api + /mcp + /.well-known/ are this
+  // site's agent surface and the whole point of publishing them.
   async fetch(request, env, ctx) {
-    try {
+    const res = await handleRequest(request, env, ctx);
+    const apiPath = normalizePath(new URL(request.url).pathname);
+    if (!apiPath.startsWith('/api/')) return res;
+    if (res.headers.get('X-Robots-Tag')) return res;
+    if (res.status === 204 || res.status === 205 || res.status === 304) return res;
+    const headers = new Headers(res.headers);
+    headers.set('X-Robots-Tag', 'noindex, nofollow');
+    return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+  },
+};
+
+async function handleRequest(request, env, ctx) {
+  try {
       const url = new URL(request.url);
       const path = normalizePath(url.pathname);
 
@@ -150,14 +171,26 @@ export default {
         return Response.redirect('https://learndiag.com/score-calculator', 301);
       }
 
-      // 410 Gone: PA page retired. Pennsylvania elementary (PreK-4) certification uses
-      // PECT/PAPA (Pearson), not Praxis 5001 — the page's premise was wrong, so no
-      // redirect target (a 301 to an unrelated page would be a soft-404).
+      // 301 merge: bare /passing-scores was a hard 404 (GSC 2026-10-22 listed it
+      // under "Not found (404)"). Same intent as the sibling above → same target.
+      if (path === '/passing-scores' || path === '/passing-scores.html') {
+        return Response.redirect('https://learndiag.com/score-calculator', 301);
+      }
+
+      // 301 (was 410 Gone): the PA page had 41 impressions at avg position 19.54 and
+      // Google logged it under "Not found (404)" — a 410 throws that history away and
+      // parks the URL in the error bucket. Target is the "which test do I need" page,
+      // which carries a dedicated "Pennsylvania candidates: PECT / PAPA portal"
+      // section, so it is the topical answer for the same query — not a soft-404.
       if (path === '/praxis-5001-pennsylvania-requirements' || path === '/praxis-5001-pennsylvania-requirements.html') {
-        return new Response('410 Gone — this page was retired. Pennsylvania PreK-4 certification uses the PECT/PAPA system (Pearson), not Praxis 5001.', {
-          status: 410,
-          headers: { 'content-type': 'text/plain; charset=utf-8' },
-        });
+        return Response.redirect('https://learndiag.com/which-praxis-elementary-education-test', 301);
+      }
+
+      // 301: legacy URL with the wrong exam number (5002 vs 8002) — it was a hard 404
+      // in GSC's "Not found" bucket. The indexed 8000-series hub answers the same
+      // "which exam do I need" question and covers 8002–8006.
+      if (path === '/praxis-5002-vs-8006' || path === '/praxis-5002-vs-8006.html') {
+        return Response.redirect('https://learndiag.com/praxis-elementary-education-fundamentals', 301);
       }
 
       /* ---------- machine routes ---------- */
@@ -356,8 +389,7 @@ export default {
     } catch (err) {
       return json({ error: { code: 'internal_error', message: ERROR_CATALOG.internal_error.message, hint: ERROR_CATALOG.internal_error.hint }, status: 500 }, 500);
     }
-  },
-};
+}
 
 // Named exports preserved for the test suite (test/agentic.test.mjs imports
 // these directly from site/_worker.js).

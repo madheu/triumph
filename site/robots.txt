@@ -13,6 +13,14 @@
 
 User-agent: *
 Allow: /
+# Search engines must not crawl the JSON API. /api/v1/questions returns 15.8 KB
+# of raw item bank that duplicates the practice-page copy, /api/me returns 401
+# (GSC logged it as a hard "blocked page" error), and none of these endpoints
+# are pages. API responses also send X-Robots-Tag: noindex, nofollow.
+# NOTE: this rule is deliberately NOT repeated in the AI-agent groups below —
+# /api + /mcp + /.well-known/ are this site's agent surface, and a crawler
+# matching a specific group ignores the wildcard group, so agents keep access.
+Disallow: /api/
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 Sitemap: https://learndiag.com/sitemap.xml

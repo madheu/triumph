@@ -1,98 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- lastmod policy (2026-10-22): the date the page's CONTENT last changed, taken
+     from git (last non-decoration commit touching the file). It is deliberately
+     not bumped for the 2026-10-18 decoration-layer commits (8b0c7cd / 73b8ba9),
+     which only added a shared CSS/JS layer to every page — marking all 18 URLs
+     as "changed yesterday" would be a false freshness signal and would drown
+     the real recency signal. Update a page's lastmod when you change its
+     content; a blanket bump on every deploy defeats the purpose. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://learndiag.com/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://learndiag.com/diagnostic</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://learndiag.com/practice</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://learndiag.com/resources</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://learndiag.com/tools</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://learndiag.com/upgrade</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://learndiag.com/mistake-log</loc>
-    <lastmod>2026-08-25</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://learndiag.com/about</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://learndiag.com/contact</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://learndiag.com/privacy</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://learndiag.com/terms</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://learndiag.com/developers</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://learndiag.com/praxis-5001-vs-8000-series</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://learndiag.com/praxis-5001-registration-guide</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://learndiag.com/score-calculator</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://learndiag.com/study-planner</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -4329,205 +4329,227 @@ async function injectClarity(res) {
   return new Response(html, { status: wrapped.status, statusText: wrapped.statusText, headers });
 }
 var worker_default = {
+  // Every /api/* response carries X-Robots-Tag: noindex so API JSON can never
+  // enter the index. Two reasons (measured 2026-10-22):
+  //   - GSC's index-coverage report listed /api/me under "blocked because it
+  //     returns 401" — a permanent red error row for a URL that is not a page.
+  //   - The 200 JSON endpoints are indexable, and /api/v1/questions returns
+  //     15.8 KB of raw item bank that duplicates the practice-page copy.
+  // robots.txt excludes /api/ for the wildcard (search) group only — AI agent
+  // groups keep full access, because /api + /mcp + /.well-known/ are this
+  // site's agent surface and the whole point of publishing them.
   async fetch(request, env, ctx) {
-    try {
-      const url = new URL(request.url);
-      const path = normalizePath(url.pathname);
-      {
-        const host = url.hostname.toLowerCase();
-        const isLocalDev = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
-        const isCanonical = host === "learndiag.com";
-        const isProgrammatic = path.startsWith("/api/") || path === "/mcp" || path.startsWith("/.well-known/") || path === "/auth.md";
-        const isPreviewBranch = typeof env?.CF_PAGES_BRANCH === "string" && env.CF_PAGES_BRANCH !== "main";
-        const isPageRequest = request.method === "GET" || request.method === "HEAD";
-        if (isPageRequest && !isLocalDev && !isCanonical && !isProgrammatic && !isPreviewBranch) {
-          return Response.redirect(`https://learndiag.com${url.pathname}${url.search}`, 301);
-        }
-      }
-      if (path === "/diagnostic.html" || path === "/practice.html") {
-        return Response.redirect(`${url.origin}${path.replace(/\.html$/, "")}${url.search}`, 301);
-      }
-      if (path === "/praxis-5001-passing-scores" || path === "/praxis-5001-passing-scores.html") {
-        return Response.redirect("https://learndiag.com/score-calculator", 301);
-      }
-      if (path === "/praxis-5001-pennsylvania-requirements" || path === "/praxis-5001-pennsylvania-requirements.html") {
-        return new Response("410 Gone \u2014 this page was retired. Pennsylvania PreK-4 certification uses the PECT/PAPA system (Pearson), not Praxis 5001.", {
-          status: 410,
-          headers: { "content-type": "text/plain; charset=utf-8" }
-        });
-      }
-      if (path === "/mcp") return handleMcp(request, env);
-      const authDoc = AUTH_DISCOVERY_ROUTES[path];
-      if (authDoc) {
-        const handler = authDoc[request.method];
-        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(authDoc) }));
-        return handler(request, env);
-      }
-      if (path === API_CATALOG_PATH) {
-        if (request.method === "OPTIONS") return corsPreflight();
-        if (request.method !== "GET" && request.method !== "HEAD") {
-          return withCors(apiError("method_not_allowed", { allowed: ["GET", "HEAD"] }));
-        }
-        return hApiCatalog(request);
-      }
-      if (path.startsWith("/api/")) {
-        if (request.method === "OPTIONS") return corsPreflight();
-        if (path === "/api/openapi.yaml") {
-          return new Response(specToYaml(openApiSpec), {
-            status: 200,
-            headers: { "Content-Type": "text/yaml; charset=utf-8", "Cache-Control": "public, max-age=3600", ...CORS_HEADERS }
-          });
-        }
-        if (path === "/api/openapi.json") {
-          return json(openApiSpec, 200, { "Cache-Control": "public, max-age=3600", ...CORS_HEADERS });
-        }
-        const account = ACCOUNT_ROUTES[path];
-        if (account) {
-          const handler = account[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(account) }));
-          return withCors(await handler(request, env));
-        }
-        const magic = MAGIC_ROUTES[path];
-        if (magic) {
-          const handler = magic[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(magic) }));
-          return path === "/api/magic/redeem" ? await handler(request, env) : withCors(await handler(request, env));
-        }
-        const events = EVENT_ROUTES[path];
-        if (events) {
-          const handler = events[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(events) }));
-          return withCors(await handler(request, env));
-        }
-        const acctDel = ACCOUNT_DELETE_ROUTES[path];
-        if (acctDel) {
-          const handler = acctDel[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(acctDel) }));
-          return withCors(await handler(request, env));
-        }
-        const acctPw = ACCOUNT_PASSWORD_ROUTES[path];
-        if (acctPw) {
-          const handler = acctPw[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(acctPw) }));
-          return withCors(await handler(request, env));
-        }
-        const google = GOOGLE_AUTH_ROUTES[path];
-        if (google) {
-          const handler = google[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(google) }));
-          return handler(request, env);
-        }
-        const pw = PASSWORD_ROUTES[path];
-        if (pw) {
-          const handler = pw[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(pw) }));
-          return withCors(await handler(request, env));
-        }
-        const billing = BILLING_ROUTES[path];
-        if (billing) {
-          const handler = billing[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(billing) }));
-          return withCors(await handler(request, env));
-        }
-        const adminRoute = ADMIN_ROUTES[path];
-        if (adminRoute) {
-          const handler = adminRoute[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(adminRoute) }));
-          return withCors(await handler(request, env));
-        }
-        const cms = CMS_ROUTES[path];
-        if (cms) {
-          const handler = cms[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(cms) }));
-          return withCors(await handler(request, env));
-        }
-        const ticket = TICKET_ROUTES[path] || ADMIN_TICKET_ROUTES[path];
-        if (ticket) {
-          const handler = ticket[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(ticket) }));
-          return withCors(await handler(request, env));
-        }
-        const attempt = ATTEMPT_ROUTES[path] || ADMIN_STATS_ROUTES[path];
-        if (attempt) {
-          const handler = attempt[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(attempt) }));
-          return withCors(await handler(request, env));
-        }
-        const feedback = FEEDBACK_ROUTES[path];
-        if (feedback) {
-          const handler = feedback[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(feedback) }));
-          return withCors(await handler(request, env));
-        }
-        const ai = AI_ROUTES[path];
-        if (ai) {
-          const handler = ai[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(ai) }));
-          return withCors(await handler(request, env));
-        }
-        const report = REPORT_ROUTES[path];
-        if (report) {
-          const handler = report[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(report) }));
-          return withCors(await handler(request, env));
-        }
-        const v1 = V1_ROUTES[path];
-        if (v1) {
-          const handler = v1[request.method];
-          if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(v1) }));
-          return withCors(await handler(request, env));
-        }
-        return withCors(apiError("not_found", { path }));
-      }
-      const mdAsset = mdAssetFor(path);
-      if (mdAsset) {
-        const isHomepage = path === "/" || path === "/index";
-        const discoveryLinks = isHomepage ? { Link: DISCOVERY_LINK_HEADER } : null;
-        const decision = negotiatePageVariant(request.headers.get("Accept"));
-        if (decision.status === 406) {
-          return withCors(json({
-            error: {
-              code: "not_acceptable",
-              message: "No representation of this page matches the Accept header.",
-              hint: `Available representations: ${PRODUCIBLE_PAGE_TYPES.join(", ")}. Retry with one of these types in Accept.`,
-              details: { available_types: PRODUCIBLE_PAGE_TYPES, received_accept: request.headers.get("Accept") }
-            },
-            status: 406
-          }, 406, { Vary: "Accept, Accept-Encoding" }));
-        }
-        if (decision.variant === "text/markdown") {
-          const assetRes = await env.ASSETS.fetch(new Request(url.origin + mdAsset, { method: "GET" }));
-          if (!assetRes.ok) {
-            return serveAssetWithHeaders(request, env, true, discoveryLinks);
-          }
-          const out = new Response(assetRes.body, {
-            status: 200,
-            headers: {
-              "Content-Type": "text/markdown; charset=utf-8",
-              "Cache-Control": "public, max-age=300",
-              "Vary": "Accept, Accept-Encoding",
-              "Content-Language": "en",
-              ...discoveryLinks
-            }
-          });
-          return withCors(withSecurityHeaders(out));
-        }
-        return serveAssetWithHeaders(request, env, true, discoveryLinks).then(injectClarity);
-      }
-      if (path.startsWith("/md/") && path.endsWith(".md")) {
-        const res = await env.ASSETS.fetch(request);
-        if (res.status === 404) return res;
-        const out = new Response(res.body, res);
-        out.headers.set("Content-Type", "text/markdown; charset=utf-8");
-        out.headers.set("Vary", mergeVary(out.headers.get("Vary"), ["Accept"]));
-        return withSecurityHeaders(out);
-      }
-      return injectClarity(await env.ASSETS.fetch(request));
-    } catch (err) {
-      return json({ error: { code: "internal_error", message: ERROR_CATALOG.internal_error.message, hint: ERROR_CATALOG.internal_error.hint }, status: 500 }, 500);
-    }
+    const res = await handleRequest(request, env, ctx);
+    const apiPath = normalizePath(new URL(request.url).pathname);
+    if (!apiPath.startsWith("/api/")) return res;
+    if (res.headers.get("X-Robots-Tag")) return res;
+    if (res.status === 204 || res.status === 205 || res.status === 304) return res;
+    const headers = new Headers(res.headers);
+    headers.set("X-Robots-Tag", "noindex, nofollow");
+    return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
   }
 };
+async function handleRequest(request, env, ctx) {
+  try {
+    const url = new URL(request.url);
+    const path = normalizePath(url.pathname);
+    {
+      const host = url.hostname.toLowerCase();
+      const isLocalDev = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+      const isCanonical = host === "learndiag.com";
+      const isProgrammatic = path.startsWith("/api/") || path === "/mcp" || path.startsWith("/.well-known/") || path === "/auth.md";
+      const isPreviewBranch = typeof env?.CF_PAGES_BRANCH === "string" && env.CF_PAGES_BRANCH !== "main";
+      const isPageRequest = request.method === "GET" || request.method === "HEAD";
+      if (isPageRequest && !isLocalDev && !isCanonical && !isProgrammatic && !isPreviewBranch) {
+        return Response.redirect(`https://learndiag.com${url.pathname}${url.search}`, 301);
+      }
+    }
+    if (path === "/diagnostic.html" || path === "/practice.html") {
+      return Response.redirect(`${url.origin}${path.replace(/\.html$/, "")}${url.search}`, 301);
+    }
+    if (path === "/praxis-5001-passing-scores" || path === "/praxis-5001-passing-scores.html") {
+      return Response.redirect("https://learndiag.com/score-calculator", 301);
+    }
+    if (path === "/passing-scores" || path === "/passing-scores.html") {
+      return Response.redirect("https://learndiag.com/score-calculator", 301);
+    }
+    if (path === "/praxis-5001-pennsylvania-requirements" || path === "/praxis-5001-pennsylvania-requirements.html") {
+      return Response.redirect("https://learndiag.com/which-praxis-elementary-education-test", 301);
+    }
+    if (path === "/praxis-5002-vs-8006" || path === "/praxis-5002-vs-8006.html") {
+      return Response.redirect("https://learndiag.com/praxis-elementary-education-fundamentals", 301);
+    }
+    if (path === "/mcp") return handleMcp(request, env);
+    const authDoc = AUTH_DISCOVERY_ROUTES[path];
+    if (authDoc) {
+      const handler = authDoc[request.method];
+      if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(authDoc) }));
+      return handler(request, env);
+    }
+    if (path === API_CATALOG_PATH) {
+      if (request.method === "OPTIONS") return corsPreflight();
+      if (request.method !== "GET" && request.method !== "HEAD") {
+        return withCors(apiError("method_not_allowed", { allowed: ["GET", "HEAD"] }));
+      }
+      return hApiCatalog(request);
+    }
+    if (path.startsWith("/api/")) {
+      if (request.method === "OPTIONS") return corsPreflight();
+      if (path === "/api/openapi.yaml") {
+        return new Response(specToYaml(openApiSpec), {
+          status: 200,
+          headers: { "Content-Type": "text/yaml; charset=utf-8", "Cache-Control": "public, max-age=3600", ...CORS_HEADERS }
+        });
+      }
+      if (path === "/api/openapi.json") {
+        return json(openApiSpec, 200, { "Cache-Control": "public, max-age=3600", ...CORS_HEADERS });
+      }
+      const account = ACCOUNT_ROUTES[path];
+      if (account) {
+        const handler = account[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(account) }));
+        return withCors(await handler(request, env));
+      }
+      const magic = MAGIC_ROUTES[path];
+      if (magic) {
+        const handler = magic[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(magic) }));
+        return path === "/api/magic/redeem" ? await handler(request, env) : withCors(await handler(request, env));
+      }
+      const events = EVENT_ROUTES[path];
+      if (events) {
+        const handler = events[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(events) }));
+        return withCors(await handler(request, env));
+      }
+      const acctDel = ACCOUNT_DELETE_ROUTES[path];
+      if (acctDel) {
+        const handler = acctDel[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(acctDel) }));
+        return withCors(await handler(request, env));
+      }
+      const acctPw = ACCOUNT_PASSWORD_ROUTES[path];
+      if (acctPw) {
+        const handler = acctPw[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(acctPw) }));
+        return withCors(await handler(request, env));
+      }
+      const google = GOOGLE_AUTH_ROUTES[path];
+      if (google) {
+        const handler = google[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(google) }));
+        return handler(request, env);
+      }
+      const pw = PASSWORD_ROUTES[path];
+      if (pw) {
+        const handler = pw[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(pw) }));
+        return withCors(await handler(request, env));
+      }
+      const billing = BILLING_ROUTES[path];
+      if (billing) {
+        const handler = billing[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(billing) }));
+        return withCors(await handler(request, env));
+      }
+      const adminRoute = ADMIN_ROUTES[path];
+      if (adminRoute) {
+        const handler = adminRoute[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(adminRoute) }));
+        return withCors(await handler(request, env));
+      }
+      const cms = CMS_ROUTES[path];
+      if (cms) {
+        const handler = cms[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(cms) }));
+        return withCors(await handler(request, env));
+      }
+      const ticket = TICKET_ROUTES[path] || ADMIN_TICKET_ROUTES[path];
+      if (ticket) {
+        const handler = ticket[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(ticket) }));
+        return withCors(await handler(request, env));
+      }
+      const attempt = ATTEMPT_ROUTES[path] || ADMIN_STATS_ROUTES[path];
+      if (attempt) {
+        const handler = attempt[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(attempt) }));
+        return withCors(await handler(request, env));
+      }
+      const feedback = FEEDBACK_ROUTES[path];
+      if (feedback) {
+        const handler = feedback[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(feedback) }));
+        return withCors(await handler(request, env));
+      }
+      const ai = AI_ROUTES[path];
+      if (ai) {
+        const handler = ai[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(ai) }));
+        return withCors(await handler(request, env));
+      }
+      const report = REPORT_ROUTES[path];
+      if (report) {
+        const handler = report[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(report) }));
+        return withCors(await handler(request, env));
+      }
+      const v1 = V1_ROUTES[path];
+      if (v1) {
+        const handler = v1[request.method];
+        if (!handler) return withCors(apiError("method_not_allowed", { allowed: Object.keys(v1) }));
+        return withCors(await handler(request, env));
+      }
+      return withCors(apiError("not_found", { path }));
+    }
+    const mdAsset = mdAssetFor(path);
+    if (mdAsset) {
+      const isHomepage = path === "/" || path === "/index";
+      const discoveryLinks = isHomepage ? { Link: DISCOVERY_LINK_HEADER } : null;
+      const decision = negotiatePageVariant(request.headers.get("Accept"));
+      if (decision.status === 406) {
+        return withCors(json({
+          error: {
+            code: "not_acceptable",
+            message: "No representation of this page matches the Accept header.",
+            hint: `Available representations: ${PRODUCIBLE_PAGE_TYPES.join(", ")}. Retry with one of these types in Accept.`,
+            details: { available_types: PRODUCIBLE_PAGE_TYPES, received_accept: request.headers.get("Accept") }
+          },
+          status: 406
+        }, 406, { Vary: "Accept, Accept-Encoding" }));
+      }
+      if (decision.variant === "text/markdown") {
+        const assetRes = await env.ASSETS.fetch(new Request(url.origin + mdAsset, { method: "GET" }));
+        if (!assetRes.ok) {
+          return serveAssetWithHeaders(request, env, true, discoveryLinks);
+        }
+        const out = new Response(assetRes.body, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/markdown; charset=utf-8",
+            "Cache-Control": "public, max-age=300",
+            "Vary": "Accept, Accept-Encoding",
+            "Content-Language": "en",
+            ...discoveryLinks
+          }
+        });
+        return withCors(withSecurityHeaders(out));
+      }
+      return serveAssetWithHeaders(request, env, true, discoveryLinks).then(injectClarity);
+    }
+    if (path.startsWith("/md/") && path.endsWith(".md")) {
+      const res = await env.ASSETS.fetch(request);
+      if (res.status === 404) return res;
+      const out = new Response(res.body, res);
+      out.headers.set("Content-Type", "text/markdown; charset=utf-8");
+      out.headers.set("Vary", mergeVary(out.headers.get("Vary"), ["Accept"]));
+      return withSecurityHeaders(out);
+    }
+    return injectClarity(await env.ASSETS.fetch(request));
+  } catch (err) {
+    return json({ error: { code: "internal_error", message: ERROR_CATALOG.internal_error.message, hint: ERROR_CATALOG.internal_error.hint }, status: 500 }, 500);
+  }
+}
 export {
   MD_ROUTES,
   PRODUCIBLE_PAGE_TYPES,
